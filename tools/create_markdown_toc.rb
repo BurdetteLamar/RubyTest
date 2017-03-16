@@ -4,7 +4,7 @@ require 'find'
 
 # Verify that we're in the right directory.
 actual_dirname = File.basename(Dir.pwd)
-expected_dirname = 'ValuesHelper'
+expected_dirname = 'RubyTest'
 if actual_dirname != expected_dirname
   puts 'Actual dirpath: ' + Dir.pwd
   puts 'Actual dirname: ' + actual_dirname
