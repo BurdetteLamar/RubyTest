@@ -144,7 +144,7 @@ class ValuesHelperTest < Minitest::Test
     }.each_pair do |args, expected|
       range, base_string = *args
       actual = ValuesHelper.send(method, range, base_string)
-      # Accommodate Minitest, by not assserting equal for nil.
+      # Accommodate Minitest, by not asserting equal for nil.
       if expected.nil?
         assert_nil(actual, args.inspect)
       else
@@ -189,12 +189,7 @@ class ValuesHelperTest < Minitest::Test
     }.each_pair do |args, expected|
       range, base_string = *args
       actual = ValuesHelper.send(method, range, base_string)
-      # Accommodate Minitest, by not assserting equal for nil.
-      if expected.nil?
-        assert_nil(actual, args.inspect)
-      else
-        assert_equal(expected, actual, args.inspect)
-      end
+      assert_equal(expected, actual, args.inspect)
     end
 
     # Bad first argument.
