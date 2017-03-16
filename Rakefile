@@ -62,7 +62,7 @@ namespace :build do
         TOOLS_DIR,
         'create_markdown_toc.rb',
     )
-    command = "ruby #{path} -e MarkdownToc.create"
+    command = "ruby -r #{path} -e MarkdownToc.create"
     system(command)
   end
 
