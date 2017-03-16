@@ -1,0 +1,14 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    contracts (0.14.0)
+
+PLATFORMS
+  x64-mingw32
+
+DEPENDENCIES
+  bundler (= 1.14.6)
+  contracts (= 0.14.0)
+
+BUNDLED WITH
+   1.14.6
