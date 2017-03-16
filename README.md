@@ -1,7 +1,5 @@
 # RubyTest
 
-## Contents
+This project provides Ruby-based tools for software test automation.
 
-- [Lib](./lib/Lib.md)
-- [Test](./test/Test.md)
-- [Tools](./tools/Tools.md)
+- [Contents](./Contents.md)
