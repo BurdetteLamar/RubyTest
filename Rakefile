@@ -40,3 +40,30 @@ namespace :test do
    /
 
 end
+
+namespace :build do
+
+  require 'rdoc'
+
+  desc 'Build RDoc'
+  RDoc::Task.new :rdoc do |rdoc|
+    rdoc.rdoc_files.include('*.rb')
+    rdoc.title = 'RubyTest'
+  end
+
+  TOOLS_DIR = File.join(
+      File.dirname(__FILE__),
+      'tools',
+  )
+
+  desc 'Build markdown table of contents'
+  task :markdown_toc do
+    path = File.join(
+        TOOLS_DIR,
+        'create_markdown_toc.rb',
+    )
+    command = format('ruby %s', path)
+    system(command)
+  end
+
+end
