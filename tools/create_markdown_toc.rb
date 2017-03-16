@@ -23,9 +23,9 @@ class MarkdownToc
     end
 
     # Verify that we have the top file path.
-    top_file_path = './README.md'
-    unless file_paths.delete(top_file_path)
-      puts 'Did not find top file: ' + top_file_path
+    toc_file_path = './Contents.md'
+    unless file_paths.delete(toc_file_path)
+      puts 'Did not find top file: ' + toc_file_path
       fail
     end
 
@@ -57,9 +57,7 @@ class MarkdownToc
     end
 
     lines = [
-        '# ' + expected_dirname,
-        '',
-        '## Contents',
+        '# Contents',
         '',
     ]
     self.toc_lines(lines, toc_tree)
@@ -69,7 +67,7 @@ class MarkdownToc
 
     markdown = lines.join("\n")
 
-    File.open(top_file_path, 'w') do |file|
+    File.open(toc_file_path, 'w') do |file|
       file.write(markdown)
     end
 
