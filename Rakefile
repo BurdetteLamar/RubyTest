@@ -17,12 +17,20 @@ namespace :test do
 
   desc 'Test class StringHelper'
   task :string_helper do
-    autorun('string_helper_test.rb')
+    autorun(File.join(
+                    'helpers',
+                    'string_helper_test.rb',
+    )
+    )
   end
 
   desc 'Test class ValuesHelper'
   task :values_helper do
-    autorun('values_helper_test.rb')
+    autorun(File.join(
+        'helpers',
+        'values_helper_test.rb',
+    )
+    )
   end
 
   desc 'Test all classes'

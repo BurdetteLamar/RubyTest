@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 
-require_relative '../lib/string_helper'
+require_relative '../../lib/helpers/string_helper'
 
 class StringHelperTest < Minitest::Test
 
