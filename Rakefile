@@ -62,8 +62,14 @@ namespace :build do
         TOOLS_DIR,
         'create_markdown_toc.rb',
     )
-    command = format('ruby %s', path)
+    command = "ruby #{path} -e MarkdownToc.create"
     system(command)
   end
+
+  desc 'Build everything'
+  task :all => %w/
+     build:markdown_toc
+     build:rerdoc
+   /
 
 end
