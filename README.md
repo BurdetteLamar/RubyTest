@@ -2,15 +2,24 @@
 
 This project provides Ruby-based tools for software test automation.
 
-It begins modestly with some helper classes.
+It begins modestly, with just:
+ 
+- Some helper classes.
+- Tests for those classes.
 
 Much more to come.
 
-Hint:  You can build the Rdoc by cloning and running <code>rake build:rerdoc</code>.  The Rdoc will be in directory <code>html/</code>, with the index file at:
+Hint:  You can build the RDoc by cloning and running command
 
-- [Index](./html/index.html)
+- <code>rake build:rerdoc</code>
+  
+The RDoc output will be in directory <code>html/</code>, with the index file at:
 
-You can also review all rake tasks by running <code>rake -D</code>.
+- <code>html/index.html</code>
+
+You can also review all rake tasks by running command
+
+- <code>rake -D</code>.
 
 Links to the other markdown documentation is at:
 
