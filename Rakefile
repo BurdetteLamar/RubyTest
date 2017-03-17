@@ -118,6 +118,8 @@ EOT
   end
 
   desc 'Build everything'
+  # After other markdown built, do TOC.
+  # After everything else built, do RDoc.
   task :all => %w/
     build:markdown_for_gemfile
     build:markdown_for_rakefile

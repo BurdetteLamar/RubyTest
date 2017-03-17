@@ -1,7 +1,9 @@
 require 'find'
 
+require_relative '../lib/base_class'
+
 # Class to make a table of contents for markdown files.
-class MarkdownToc
+class MarkdownToc < BaseClass
 
   def self.create
 
@@ -47,7 +49,7 @@ class MarkdownToc
       names = path.split('/')[1..-1]
       node_names = names[1..-1]
       tree = toc_tree
-      node_names.each_with_index do |node_name, i|
+      names.each_with_index do |node_name, i|
         tree.store(node_name, {}) unless tree.include?(node_name)
         tree = tree.fetch(node_name)
         if i == node_names.size - 1
@@ -55,7 +57,7 @@ class MarkdownToc
         end
       end
     end
-
+    DebugHelper.puts_hash(toc_tree)
     lines = [
         '# Contents',
         '',
@@ -81,7 +83,12 @@ class MarkdownToc
         self.toc_lines(lines, value, level + 1)
       else
         indentation = ' ' * (level - 1) * 4
-        lines.push(format('%s- [%s](%s)', indentation, value, path))
+        value = value.split('/').last
+        if value.end_with?('.md')
+          lines.push(format('%s- [%s](%s)', indentation, value, path))
+        else
+          lines.push(format('%s- %s', indentation, value))
+        end
       end
     end
   end
