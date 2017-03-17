@@ -11,7 +11,6 @@ namespace :test do
         test_file_path,
     ))
     command = "ruby #{path}"
-    p command
     exit unless system(command)
   end
 
@@ -47,6 +46,8 @@ namespace :build do
 
   desc 'Build RDoc'
   RDoc::Task.new :rdoc do |rdoc|
+    # For some reason, RubyMine thinks it cannot 'resolve' the quoted string, so this pragma.
+    # noinspection RubyResolve
     rdoc.rdoc_files.include('*.rb')
     rdoc.title = 'RubyTest'
   end
