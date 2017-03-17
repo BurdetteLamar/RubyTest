@@ -134,28 +134,23 @@ class StringHelperTest < Minitest::Test
 
     # Good data.
     {
-        [(0..1), nil] => nil,
         [(1..1), nil] => StringHelper.string_of_length(0),
         [(4..4), nil] => StringHelper.string_of_length(3),
-        [(0..1), BASE_STRING] => nil,
         [(1..1), BASE_STRING] => '',
         [(2..2), BASE_STRING] => BASE_STRING[0],
         [(BASE_STRING.length * 2 - 1)..(BASE_STRING.length * 2), BASE_STRING] => (BASE_STRING * 2)[0..-3],
     }.each_pair do |args, expected|
       range, base_string = *args
       actual = StringHelper.send(method, range, base_string)
-      # Accommodate Minitest, by not asserting equal for nil.
-      if expected.nil?
-        assert_nil(actual, args.inspect)
-      else
-        assert_equal(expected, actual, args.inspect)
-      end
+      assert_equal(expected, actual, args.inspect)
     end
 
     # Bad first argument.
     [
         # Not Range.
         [0, BASE_STRING],
+        # Range.min not positive.
+        [0..1],
     ].each do |args|
       assert_raises(ParamContractError) do
         StringHelper.send(method, *args)

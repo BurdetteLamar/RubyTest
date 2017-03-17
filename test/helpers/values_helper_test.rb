@@ -8,6 +8,72 @@ class ValuesHelperTest < Minitest::Test
   DEFAULT_BASE_STRING = StringHelper::DEFAULT_BASE_STRING
   BASE_STRING = "not_#{DEFAULT_BASE_STRING}"
 
+  def test_integers_in_range
+
+    method = :integers_in_range
+
+    # Good argument.
+    [
+        (0..0),
+        (-1..1),
+    ].each do |range|
+      expected = {
+          :min => range.first,
+          :max => range.last,
+      }
+      actual = ValuesHelper.send(method, range)
+      assert_equal(expected, actual, range.inspect)
+    end
+
+    # Bad argument.
+    [
+        # Not Range.
+        0,
+        # Range min not integer.
+        (1.1..2),
+        # Range max not integer.
+        (0..2.1)
+    ].each do |range|
+      assert_raises(ParamContractError) do
+        ValuesHelper.send(method, range)
+      end
+    end
+
+  end
+
+  def test_integers_not_in_range
+
+    method = :integers_not_in_range
+
+    # Good argument.
+    [
+        (0..0),
+        (-1..1),
+    ].each do |range|
+      expected = {
+          :too_small => range.first - 1,
+          :too_large => range.last + 1,
+      }
+      actual = ValuesHelper.send(method, range)
+      assert_equal(expected, actual, range.inspect)
+    end
+
+    # Bad argument.
+    [
+        # Not Range.
+        0,
+        # Range min not integer.
+        (1.1..2),
+        # Range max not integer.
+        (0..2.1)
+    ].each do |range|
+      assert_raises(ParamContractError) do
+        ValuesHelper.send(method, range)
+      end
+    end
+
+  end
+
   def test_strings_in_range
 
     method = :strings_in_range

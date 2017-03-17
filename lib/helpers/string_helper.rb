@@ -53,7 +53,6 @@ class StringHelper
   # Return a string that's just out of lower range.
   # Use trimmed or extended base_string.
   def self.string_too_short(range, base_string=nil)
-    return nil if range.first == 0
     self.string_of_length(range.first - 1, base_string)
   end
 
