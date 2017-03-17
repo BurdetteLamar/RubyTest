@@ -11,25 +11,25 @@ class StringHelper
   PosInteger = And[Not[Neg], Integer]
 
   Contract PosInteger, Maybe[String] => String
-  # Return a string of the given size.
+  # Return a string of the given length.
   # Use trimmed or extended base_string, which defaults to 'x'.
-  def self.string_of_length(size, base_string = 'x')
-    raise ArgumentError.new('Size < 0: %d' % size) if size < 0
+  def self.string_of_length(length, base_string = 'x')
+    raise ArgumentError.new('length < 0: %d' % length) if length < 0
     case
-      when size == 0
+      when length == 0
         return ''
       when base_string.nil?
-        return 'x' * size
-      when base_string.size > size
+        return 'x' * length
+      when base_string.length > length
         # Trim.
-        return base_string[0..size-1]
+        return base_string[0..length-1]
       else
         # Extend.
         s = base_string
-        while s.size < size
+        while s.length < length
           s = s * 2
         end
-        return s[0..size-1]
+        return s[0..length-1]
     end
   end
 
