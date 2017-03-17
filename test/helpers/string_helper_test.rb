@@ -4,7 +4,7 @@ require_relative '../../lib/helpers/string_helper'
 
 class StringHelperTest < Minitest::Test
 
-  DEFAULT_BASE_STRING = 'x'
+  DEFAULT_BASE_STRING = StringHelper::DEFAULT_BASE_STRING
   BASE_STRING = "not_#{DEFAULT_BASE_STRING}"
 
   def test_string_of_length
