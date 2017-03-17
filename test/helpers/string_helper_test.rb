@@ -18,7 +18,7 @@ class StringHelperTest < Minitest::Test
         [4] => DEFAULT_BASE_STRING * 4,
         [0, BASE_STRING] => '',
         [1, BASE_STRING] => BASE_STRING[0],
-        [BASE_STRING.size * 2 - 1, BASE_STRING] => (BASE_STRING * 2)[0..-2],
+        [BASE_STRING.length * 2 - 1, BASE_STRING] => (BASE_STRING * 2)[0..-2],
     }.each_pair do |args, expected|
       actual = StringHelper.send(method, *args)
       assert_equal(expected, actual, args.inspect)
@@ -59,7 +59,7 @@ class StringHelperTest < Minitest::Test
         [(4..4), nil] => DEFAULT_BASE_STRING * 4,
         [(0..1), BASE_STRING] => '',
         [(1..1), BASE_STRING] => BASE_STRING[0],
-        [((BASE_STRING.size * 2 - 1)..100), BASE_STRING] => (BASE_STRING * 2)[0..-2],
+        [((BASE_STRING.length * 2 - 1)..100), BASE_STRING] => (BASE_STRING * 2)[0..-2],
     }.each_pair do |args, expected|
       range, base_string = *args
       actual = StringHelper.send(method, range, base_string)
@@ -99,7 +99,7 @@ class StringHelperTest < Minitest::Test
         [(0..4), nil] => DEFAULT_BASE_STRING * 4,
         [(0..0), BASE_STRING] => '',
         [(0..1), BASE_STRING] => BASE_STRING[0],
-        [(0..(BASE_STRING.size * 2 - 1)), BASE_STRING] => (BASE_STRING * 2)[0..-2],
+        [(0..(BASE_STRING.length * 2 - 1)), BASE_STRING] => (BASE_STRING * 2)[0..-2],
     }.each_pair do |args, expected|
       range, base_string = *args
       actual = StringHelper.send(method, range, base_string)
@@ -140,7 +140,7 @@ class StringHelperTest < Minitest::Test
         [(0..1), BASE_STRING] => nil,
         [(1..1), BASE_STRING] => '',
         [(2..2), BASE_STRING] => BASE_STRING[0],
-        [(BASE_STRING.size * 2 - 1)..(BASE_STRING.size * 2), BASE_STRING] => (BASE_STRING * 2)[0..-3],
+        [(BASE_STRING.length * 2 - 1)..(BASE_STRING.length * 2), BASE_STRING] => (BASE_STRING * 2)[0..-3],
     }.each_pair do |args, expected|
       range, base_string = *args
       actual = StringHelper.send(method, range, base_string)
@@ -185,7 +185,7 @@ class StringHelperTest < Minitest::Test
         [(0..3), nil] => StringHelper.string_of_length(4),
         [(0..0), BASE_STRING] => StringHelper.string_of_length(1, BASE_STRING),
         [(0..1), BASE_STRING] => StringHelper.string_of_length(2, BASE_STRING),
-        [0..(BASE_STRING.size * 2 - 1), BASE_STRING] => (BASE_STRING * 2)[0..-1],
+        [0..(BASE_STRING.length * 2 - 1), BASE_STRING] => (BASE_STRING * 2)[0..-1],
     }.each_pair do |args, expected|
       range, base_string = *args
       actual = StringHelper.send(method, range, base_string)
