@@ -17,21 +17,21 @@ class MarkdownToc < BaseClass
       fail
     end
 
-    # Get the p.md file paths.
+    toc_file_path = './Contents.md'
+
+    # Get the .md file paths.
     file_paths = []
     Find.find('.') do |path|
       next unless path.end_with?('.md')
       file_paths.push(path)
     end
 
-    # Verify that we have the top file path.
-    toc_file_path = './Contents.md'
-    unless file_paths.delete(toc_file_path)
-      puts 'Did not find top file: ' + toc_file_path
-      fail
-    end
+    # Don't put the TOC in the TOC.
+    file_paths.delete(toc_file_path)
 
+    # The title is from the .md file text, not the file name.
     titles_by_file_path = {}
+    # Use file_path as key;  title may be repeated.
     file_paths.sort.each do |path|
       File.open(path) do |file|
         title_line = file.readline
@@ -44,53 +44,62 @@ class MarkdownToc < BaseClass
       end
     end
 
-    toc_tree = {}
-    titles_by_file_path.each_pair do |path, title|
-      names = path.split('/')[1..-1]
-      node_names = names[1..-1]
-      tree = toc_tree
-      names.each_with_index do |node_name, i|
-        tree.store(node_name, {}) unless tree.include?(node_name)
-        tree = tree.fetch(node_name)
-        if i == node_names.size - 1
-          tree.store(path, title)
-        end
+    def self.store_p(hash, keys, value)
+      # Don't disturb caller's keys.
+      keys_clone = keys.clone
+      # Save the last key for the value.
+      last_key = keys_clone.pop
+      # Walk using this temp hash.
+      h = hash
+      keys_clone.each do |key|
+        # Create entry if necessary, and descend into it.
+        h.store(key, {}) unless h.include?(key)
+        h = h.fetch(key)
       end
+      # Store the value with the last key.
+      h.store(last_key, value)
+      hash
     end
-    DebugHelper.puts_hash(toc_tree)
+
+    tree = {}
+    titles_by_file_path.each_pair do |file_path, title|
+      # Split file_path into dir_names.
+      keys = file_path.split('/')
+      # Discard the file_name.
+      keys.pop
+      # Use the file_path as the key for the title:  file_path => title.
+      keys.push(file_path)
+      # Add to the tree hash.
+      self.store_p(tree, keys, title)
+    end
+
     lines = [
         '# Contents',
         '',
     ]
-    self.toc_lines(lines, toc_tree)
 
-    # End with a newline.
-    lines.push('')
-
-    markdown = lines.join("\n")
-
-    File.open(toc_file_path, 'w') do |file|
-      file.write(markdown)
-    end
-
-  end
-
-  private
-
-  def self.toc_lines(lines, tree, level = 0)
-    tree.each_pair do |path, value|
-      if value.respond_to?(:each_pair)
-        self.toc_lines(lines, value, level + 1)
-      else
-        indentation = ' ' * (level - 1) * 4
-        value = value.split('/').last
-        if value.end_with?('.md')
-          lines.push(format('%s- [%s](%s)', indentation, value, path))
+    def self.do_level(lines, entry, level)
+      entry.each_pair do |path, node|
+        if node.respond_to?(:each_pair)
+          if path != '.'
+            entry = format('%s - %s', '  ' * level, path)
+            lines.push(entry)
+          end
+          self.do_level(lines, node, level+1)
         else
-          lines.push(format('%s- %s', indentation, value))
+          link = format('%s - [%s](%s)', '  ' * level, node, path)
+          lines.push(link)
         end
       end
     end
+
+    level = 0
+    self.do_level(lines, tree, level)
+    lines.push('')
+    File.open(toc_file_path, 'w') do |file|
+      file.write(lines.join("\n"))
+    end
+
   end
 
 end

@@ -81,7 +81,7 @@ namespace :build do
 EOT
       file.puts(output)
       file.puts <<EOT
-## Code
+## Source
 
 - [Rakefile](Rakefile)
 EOT
@@ -110,7 +110,7 @@ EOT
 EOT
       file.puts(output)
       file.puts <<EOT
-## Code
+## Source
 
 - [Gemfile](Gemfile)
 EOT

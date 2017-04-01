@@ -42,6 +42,6 @@ rake test:values_helper
 
     Test class ValuesHelper
 
-## Code
+## Source
 
 - [Rakefile](Rakefile)
