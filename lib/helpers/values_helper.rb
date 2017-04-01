@@ -1,4 +1,4 @@
-require 'contracts'
+require_relative '../base_class'
 
 require_relative 'string_helper'
 
@@ -10,7 +10,7 @@ require_relative 'string_helper'
 #
 # For each, construct a verdict using the value in the expected value,
 # and the symbol in the verdict's message.
-class ValuesHelper
+class ValuesHelper < BaseClass
 
   include Contracts
 

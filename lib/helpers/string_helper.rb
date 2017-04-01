@@ -1,6 +1,6 @@
-require 'contracts'
+require_relative '../base_class'
 
-class StringHelper
+class StringHelper < BaseClass
 
   include Contracts
 

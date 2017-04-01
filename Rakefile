@@ -81,7 +81,7 @@ namespace :build do
 EOT
       file.puts(output)
       file.puts <<EOT
-## Code
+## Source
 
 - [Rakefile](Rakefile)
 EOT
@@ -110,7 +110,7 @@ EOT
 EOT
       file.puts(output)
       file.puts <<EOT
-## Code
+## Source
 
 - [Gemfile](Gemfile)
 EOT
@@ -118,6 +118,8 @@ EOT
   end
 
   desc 'Build everything'
+  # After other markdown built, do TOC.
+  # After everything else built, do RDoc.
   task :all => %w/
     build:markdown_for_gemfile
     build:markdown_for_rakefile
