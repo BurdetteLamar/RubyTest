@@ -5,9 +5,6 @@
    - [Rakefile](./Rakefile.md)
    - lib
      - [Lib](./lib/Lib.md)
-   - rakefiles
-     - [Gemfile](./rakefiles/Gemfile.md)
-     - [Rakefile](./rakefiles/Rakefile.md)
    - test
      - [Test](./test/Test.md)
    - tools
