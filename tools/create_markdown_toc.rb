@@ -74,7 +74,7 @@ class MarkdownToc < BaseClass
     end
 
     lines = [
-        '# Contents',
+        '# Contents (Markdown Pages)',
         '',
     ]
 
