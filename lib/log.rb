@@ -619,12 +619,14 @@ class Log < BaseClass
   end
   private :_verdict_same?
 
-  Contract VERDICT_ID, Object, Symbol, VERDICT_MESSAGE, VERDICT_VOLATILE, ARGS => Bool
-  # \Log a verdict using :assert_send.
-  def verdict_assert_send?(verdict_id, object, method, message, volatile = false, *args)
-    _verdict_send?(__method__, verdict_id, object, method, message, volatile, *args)
-  end
-  alias va_send? verdict_assert_send?
+  # Method :assert_send is deprecated, and emite a message to that effect.
+  # Let's omit it.
+  # Contract VERDICT_ID, Object, Symbol, VERDICT_MESSAGE, VERDICT_VOLATILE, ARGS => Bool
+  # # \Log a verdict using :assert_send.
+  # def verdict_assert_send?(verdict_id, object, method, message, volatile = false, *args)
+  #   _verdict_send?(__method__, verdict_id, object, method, message, volatile, *args)
+  # end
+  # alias va_send? verdict_assert_send?
 
   # Minitest::Assertions does not have :refute_send.
   # Contract VERDICT_ID, Object, Symbol, VERDICT_MESSAGE, VERDICT_VOLATILE, ARGS => Bool
