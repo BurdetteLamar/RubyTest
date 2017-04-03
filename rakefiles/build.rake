@@ -28,7 +28,7 @@ namespace :build do
 
   desc 'Build markdown for Rakefile'
   task :markdown_for_rakefile do
-    Dir.chdir(File.join(File.dirname(__FILE__), '..')) do |dir|
+    Dir.chdir(File.join(File.dirname(__FILE__), '..')) do |_|
       output = `rake -D`
       output.gsub!("\n    ", "\n\n    ")
       File.open('Rakefile.md', 'w') do |file|
