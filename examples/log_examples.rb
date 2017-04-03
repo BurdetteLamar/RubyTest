@@ -32,7 +32,6 @@ class LogExamples < MiniTest::Test
       verdict_assert_raises_examples(log)
       verdict_assert_respond_to_examples(log)
       verdict_assert_same_examples(log)
-      verdict_assert_send_examples(log)
       verdict_assert_silent_examples(log)
       verdict_assert_throws_examples(log)
 
@@ -534,28 +533,6 @@ class LogExamples < MiniTest::Test
     log.section('Use va_same?') do
       log.va_same?(:passing_va_same, object, object, 'Passing va_same?')
       log.va_same?(:failing_va_same, object, different_object, 'Failing va_same?')
-    end
-
-  end
-
-  # <em>In the Rdoc, click the method name to toggle source.</em>
-  #
-  # Here we show:
-  #
-  # - Method verdict_assert_send? passing and failing.
-  #
-  # - Alias va_send? passing and failing.
-  #
-  def verdict_assert_send_examples(log)
-
-    log.section('Use verdict_assert_send?') do
-      log.verdict_assert_send?(:passing_verdict_assert_send, '', :empty?, 'Passing verdict_assert_send?')
-      log.verdict_assert_send?(:failing_verdict_assert_send, 'a', :empty?, 'Failing verdict_assert_send?')
-    end
-
-    log.section('Use va_send?') do
-      log.va_send?(:passing_va_send, '', :empty?, 'Passing va_send?')
-      log.va_send?(:failing_va_send, 'a', :empty?, 'Failing va_send?')
     end
 
   end

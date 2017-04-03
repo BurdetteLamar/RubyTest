@@ -1198,27 +1198,7 @@ class LogTest < MiniTest::Test
 
   end
 
-  def test_verdict_assert_send
-
-    method = :verdict_assert_send?
-    passing_arguments = {
-        :object => '',
-        :method => :empty?,
-    }
-    failing_arguments = {
-        :object => 'foo',
-        :method => :empty?,
-    }
-
-    verdict_common_test(
-        :method => method,
-        :passing_arguments => passing_arguments,
-        :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id, *args)
-    end
-
-  end
+  # Minitest::Assertion treats method :assert_send as deprecated, so we don't have :verdict_assert_send.
 
   # Minitest::Assertion does not have :refute_send, so we don't have :verdict_refute_send?.
 
