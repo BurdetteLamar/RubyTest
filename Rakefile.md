@@ -30,9 +30,29 @@ rake build:rerdoc
 
     Rebuild RDoc HTML files
 
+rake examples:all
+
+    Run all examples
+
+rake examples:log
+
+    Run examples for class Log
+
 rake test:all
 
     Test all classes
+
+rake test:hash_helper
+
+    Test class HashHelper
+
+rake test:log
+
+    Test class Log
+
+rake test:set_helper
+
+    Test class SetHelper
 
 rake test:string_helper
 
