@@ -3,5 +3,5 @@
 Contains:
 
 - [BaseClass](base_class.rb)
-- [Helpers](Helpers.md)
+- [Helpers](helpers/helpers.md)
 - [Log](log.rb)
