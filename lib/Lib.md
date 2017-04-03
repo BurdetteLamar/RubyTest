@@ -1,8 +1,7 @@
 # Lib
 
-## Helpers
+Contains:
 
-Helper classes include:
-
-- StringHelper
-- ValuesHelper
+- [BaseClass](base_class.rb)
+- [Helpers](Helpers.md)
+- [Log](log.rb)
