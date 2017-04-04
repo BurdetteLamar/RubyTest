@@ -64,7 +64,7 @@ class LogExamples < MiniTest::Test
     verdict_refute_respond_to_examples
     verdict_refute_same_examples
 
-    puts 'The example log may be seen at %s.' % File.absolute_path(@dir_path)
+    puts 'The example logs may be seen at %s.' % File.absolute_path(@dir_path)
 
   end
 
