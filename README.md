@@ -13,6 +13,10 @@ These tools are intended primarily for use in developing and running regression 
 
 Much more to come.
 
+Links to the other markdown documentation are at:
+
+- [Contents](./Contents.md)
+
 You can build the RDoc by cloning and running command
 
 - <code>rake build:rerdoc</code>
@@ -24,7 +28,3 @@ You can also review all rake tasks by running command
 - <code>rake -D</code>
 
 or by visiting the documentation for the [Rakefile](./Rakefile.md).
-
-Links to the other markdown documentation is at:
-
-- [Contents](./Contents.md)
