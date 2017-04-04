@@ -13,6 +13,7 @@ class LogExamples < MiniTest::Test
     @dir_path = File.join(
                        'examples',
                        'output',
+                       'log',
     )
     Dir.mkdir(@dir_path) unless Dir.exist?(@dir_path)
 
@@ -64,7 +65,7 @@ class LogExamples < MiniTest::Test
     verdict_refute_respond_to_examples
     verdict_refute_same_examples
 
-    puts 'The example log may be seen at %s.' % File.absolute_path(@dir_path)
+    puts 'The example logs may be seen at %s.' % File.absolute_path(@dir_path)
 
   end
 
