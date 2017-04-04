@@ -10,7 +10,16 @@ class LogExamples < MiniTest::Test
 
     open_examples
 
-    Log.open(self) do |log|
+    dir_path = File.join(
+                       'examples',
+                       'output',
+    )
+    Dir.mkdir(dir_path) unless Dir.exist?(dir_path)
+    file_path = File.join(
+                        dir_path,
+                        'log_examples.xml',
+    )
+    Log.open(self, :file_path => file_path) do |log|
 
       section_examples(log)
 
