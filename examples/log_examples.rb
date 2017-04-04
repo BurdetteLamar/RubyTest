@@ -16,11 +16,6 @@ class LogExamples < MiniTest::Test
     )
     Dir.mkdir(@dir_path) unless Dir.exist?(@dir_path)
 
-    file_path = File.join(
-                        @dir_path,
-                        'log_examples.xml',
-    )
-
     def self.open_log(method)
       file_name = format('%s.xml', method)
       file_path = File.join(
@@ -38,14 +33,38 @@ class LogExamples < MiniTest::Test
     verdict_assert_examples
     verdict_assert_empty_examples
     verdict_assert_equal_examples
+    verdict_assert_in_delta_examples
+    verdict_assert_in_epsilon_examples
+    verdict_assert_includes_examples
+    verdict_assert_instance_of_examples
+    verdict_assert_kind_of_examples
+    verdict_assert_match_examples
+    verdict_assert_nil_examples
+    verdict_assert_operator_examples
+    verdict_assert_output_examples
+    verdict_assert_predicate_examples
+    verdict_assert_raises_examples
+    verdict_assert_respond_to_examples
+    verdict_assert_same_examples
+    verdict_assert_silent_examples
+    verdict_assert_throws_examples
 
-    Log.open(self, :file_path => file_path) do |log|
+    verdict_refute_examples
+    verdict_refute_empty_examples
+    verdict_refute_equal_examples
+    verdict_refute_in_delta_examples
+    verdict_refute_in_epsilon_examples
+    verdict_refute_includes_examples
+    verdict_refute_instance_of_examples
+    verdict_refute_kind_of_examples
+    verdict_refute_match_examples
+    verdict_refute_nil_examples
+    verdict_refute_operator_examples
+    verdict_refute_predicate_examples
+    verdict_refute_respond_to_examples
+    verdict_refute_same_examples
 
-
-
-      puts 'The example log may be seen at %s' % File.absolute_path(log.file_path)
-
-    end
+    puts 'The example log may be seen at %s.' % File.absolute_path(@dir_path)
 
   end
 
@@ -58,8 +77,8 @@ class LogExamples < MiniTest::Test
   #
   # We've used a temporary directory for this because there's little need to see the created log.
   def open_examples
-    @dir_path = Dir.mktmpdir
-    file_path = File.join(@dir_path, 'log.xml')
+    dir_path = Dir.mktmpdir
+    file_path = File.join(dir_path, 'log.xml')
     options = {
         :file_path => file_path, # defaults to ''./log.xml'
         :root_name => 'my_log', # defaults to 'log'
