@@ -13,6 +13,7 @@ class LogExamples < MiniTest::Test
     @dir_path = File.join(
                        'examples',
                        'output',
+                       'log',
     )
     Dir.mkdir(@dir_path) unless Dir.exist?(@dir_path)
 
