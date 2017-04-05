@@ -8,9 +8,9 @@ That's because the tests are not regression tests, but instead are build-verific
 
 ## Log
 
-The largest part of the testing here is for one class:
+The largest part of the testing here is for one class:  Log.
 
-- Log
+- LogTest
 
 ## Helpers
 
