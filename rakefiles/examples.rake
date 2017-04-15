@@ -18,7 +18,7 @@ namespace :examples do
 
   desc 'Run examples for class Log'
   task :log do
-    run_examples('log_examples.rb')
+    run_examples('log/log_examples.rb')
   end
 
   desc 'Run all examples'

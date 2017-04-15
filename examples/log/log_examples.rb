@@ -1,6 +1,6 @@
 require 'set'
 
-require_relative '../test/common_requires'
+require_relative '../../test/common_requires'
 
 # Class to show how to use the Log object.
 class LogExamples < MiniTest::Test
@@ -12,10 +12,10 @@ class LogExamples < MiniTest::Test
 
     @dir_path = File.join(
                        'examples',
-                       'output',
                        'log',
+                       'output',
     )
-    Dir.mkdir(@dir_path) unless Dir.exist?(@dir_path)
+    FileUtils.mkdir_p(@dir_path) unless Dir.exist?(@dir_path)
 
     def self.open_log(method)
       file_name = format('%s.xml', method)
