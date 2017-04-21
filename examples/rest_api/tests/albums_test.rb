@@ -13,13 +13,6 @@ class AlbumsTest < BaseClassForTest
       albums = GetAlbums.call(client)
       album = albums.first
       album.verdict_valid?(log, 'album')
-      # if log.verdict_assert_instance_of?('album class', Album, album, 'First object is an Album')
-      #   log.verdict_assert_operator?('positive id', 0, :<, album.id, 'Album id is positive')
-      #   log.verdict_assert_operator?('positive user-id', 0, :<, album.id, 'Album user-id is positive')
-      #   if log.verdict_assert_instance_of?('title class', String, album.title, 'Album title is a String')
-      #     log.verdict_refute_empty?('non-empty title', album.title, 'Album title is not empty')
-      #   end
-      # end
 
     end
 
