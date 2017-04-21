@@ -198,6 +198,14 @@ class Log < BaseClass
     nil
   end
 
+  Contract Args[Any] => NilClass
+  def test_method(*args)
+    put_element('test_method', *args) do
+      yield
+    end
+    nil
+  end
+
   Contract VERDICT_ID, Object, VERDICT_MESSAGE, VERDICT_VOLATILE, ARGS => Bool
   # \Log a verdict using :assert.
   def verdict_assert?(verdict_id, actual, message, volatile = false, *args)
