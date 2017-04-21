@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 
 require_relative '../../../lib/helpers/test_helper'
-require_relative '../rest_client'
+require_relative '../example_rest_client'
 
 class BaseClassForTest < Minitest::Test
 
@@ -11,7 +11,7 @@ class BaseClassForTest < Minitest::Test
 
     TestHelper.test(self) do |log|
 
-      RestClient.with(log) do |client|
+      ExampleRestClient.with(log) do |client|
         yield client, log
       end
 

@@ -1,8 +1,11 @@
-require_relative '../../lib/base_class'
-
+require 'json'
+require 'rest-client'
+require 'retriable'
 require 'uri'
 
-class RestClient < BaseClass
+require_relative '../../lib/base_class'
+
+class ExampleRestClient < BaseClass
 
   # Instantiate a client for the caller's block.
   Contract Log, Proc => nil
@@ -64,7 +67,7 @@ class RestClient < BaseClass
       url = '%s%s%s' % [url, char, s]
     end
     # Cannot allow uncaught exception in a log block.
-    @log.section(:timestamp, :duration, :method => rest_method.to_s.upcase, :url => url) do
+    @log.section('Rest client', :timestamp, :duration, :method => rest_method.to_s.upcase, :url => url) do
       unless parameters.nil?
         @log.put_element('parameters', parameters)
       end

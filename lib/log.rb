@@ -924,7 +924,7 @@ class Log < BaseClass
     while text.match(terminator) do
       terminator += s
     end
-    log_puts("CDATA<<#{terminator}")
+    log_puts("CDATA\t<<#{terminator}")
     log_puts(text)
     log_puts(terminator)
     nil
