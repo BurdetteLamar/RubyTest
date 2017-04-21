@@ -1,5 +1,7 @@
 require_relative '../../lib/base_class'
 
+require 'uri'
+
 class RestClient < BaseClass
 
   # Instantiate a client for the caller's block.
