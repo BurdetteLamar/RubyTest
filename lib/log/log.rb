@@ -8,6 +8,9 @@ require_relative '../../test/assertion_helper'
 require_relative '../helpers/hash_helper'
 require_relative '../helpers/set_helper'
 
+require_relative 'verdict_integer'
+require_relative 'verdict_string'
+
 ## Class to support XML logging.
 #
 # === About Volatility
@@ -37,6 +40,9 @@ require_relative '../helpers/set_helper'
 # Thus method verdict_assert_in_delta? has alias va_in_delta?,
 # and method verdict_refute_in_delta? has alias vr_in_delta?.
 class Log < BaseClass
+
+  include VerdictInteger
+  include VerdictString
 
   # :stopdoc:
 
