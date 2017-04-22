@@ -2,7 +2,11 @@ require_relative 'constants'
 
 module VerdictString
 
+  # TODO:  Create test for this module.
+  # TODO:  Create examples for this module.
+
   Contract VERDICT_ID, Any, VERDICT_MESSAGE, VERDICT_VOLATILE, ARGS => Bool
+  # \Log a verdict refuting an empty string.
   def verdict_refute_string_empty?(verdict_id, actual, message, volatile = false, *args)
     passed = true
     section(__method__.to_s) do

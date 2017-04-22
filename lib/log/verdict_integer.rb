@@ -2,7 +2,11 @@ require_relative 'constants'
 
 module VerdictInteger
 
+  # TODO:  Create test for this module.
+  # TODO:  Create examples for this module.
+
   Contract VERDICT_ID, Any, VERDICT_MESSAGE, VERDICT_VOLATILE, ARGS => Bool
+  # \Log a verdict asserting a positive integer.
   def verdict_assert_integer_positive?(verdict_id, actual, message, volatile = false, *args)
     passed = true
     section(__method__.to_s) do

@@ -2,6 +2,9 @@ require_relative 'constants'
 
 module VerdictAssertion
 
+  # TODO:  Separate testing for this module from that for Log class.
+  # TODO:  Separate examples for this module from those for Log class.
+
   Contract VERDICT_ID, Object, VERDICT_MESSAGE, VERDICT_VOLATILE, ARGS => Bool
   # \Log a verdict using :assert.
   def verdict_assert?(verdict_id, actual, message, volatile = false, *args)
