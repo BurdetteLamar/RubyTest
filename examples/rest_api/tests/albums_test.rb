@@ -10,7 +10,7 @@ class AlbumsTest < BaseClassForTest
 
     prelude do |client, log|
 
-      albums = GetAlbums.verdict_call_and_verify_success(client, log, 'get albums')
+      GetAlbums.verdict_call_and_verify_success(client, log, 'get albums')
 
     end
 
