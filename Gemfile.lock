@@ -7,6 +7,7 @@ GEM
     ffi (1.9.18-x86-mingw32)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
+    json (1.8.1)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
@@ -29,6 +30,7 @@ PLATFORMS
 DEPENDENCIES
   bundler (= 1.14.6)
   contracts (= 0.14.0)
+  json (= 1.8.1)
   minitest (= 5.10.1)
   rest-client (= 2.0.1)
   retriable (= 3.0.1)
