@@ -1,5 +1,8 @@
+require_relative 'constants'
+
 module VerdictString
 
+  Contract VERDICT_ID, Any, VERDICT_MESSAGE, VERDICT_VOLATILE, ARGS => Bool
   def verdict_refute_string_empty?(verdict_id, actual, message, volatile = false, *args)
     passed = true
     section(__method__.to_s) do

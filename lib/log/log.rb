@@ -8,6 +8,7 @@ require_relative '../../test/assertion_helper'
 require_relative '../helpers/hash_helper'
 require_relative '../helpers/set_helper'
 
+require_relative 'constants'
 require_relative 'verdict_integer'
 require_relative 'verdict_string'
 
@@ -64,15 +65,6 @@ class Log < BaseClass
   DEFAULT_DIR_PATH = '.'
   DEFAULT_XML_ROOT_TAG_NAME = 'log'
   DEFAULT_XML_INDENTATION = -1
-
-  # Custom contract type for verdict id.
-  VERDICT_ID = Or[Symbol, String]
-  # Custom contract type for verdict message.
-  VERDICT_MESSAGE = Or[Symbol, String]
-  # Custom contract type for verdict volatility.
-  VERDICT_VOLATILE = Maybe[Bool]
-  # Custom contract type for put_element args.
-  ARGS = Args[Any]
 
   # Message for no block error.
   NO_BLOCK_GIVEN_MSG = 'No block given'
