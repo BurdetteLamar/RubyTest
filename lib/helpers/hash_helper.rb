@@ -31,5 +31,13 @@ class HashHelper < BaseClass
     result
   end
 
+  Contract Hash => Hash
+  def self.rehash_to_symbol_keys(hash)
+    rehash = {}
+    hash.each_pair do |k, v|
+      rehash.store(k.to_sym, v)
+    end
+  end
+
 end
 

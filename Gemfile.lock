@@ -2,7 +2,25 @@ GEM
   remote: http://rubygems.org/
   specs:
     contracts (0.14.0)
+    domain_name (0.5.20170404)
+      unf (>= 0.0.5, < 1.0.0)
+    ffi (1.9.18-x86-mingw32)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
+    mime-types (3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0521)
     minitest (5.10.1)
+    netrc (0.11.0)
+    rest-client (2.0.1-x86-mingw32)
+      ffi (~> 1.9)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
+    retriable (3.0.1)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.4-x86-mingw32)
 
 PLATFORMS
   x64-mingw32
@@ -12,6 +30,8 @@ DEPENDENCIES
   bundler (= 1.14.6)
   contracts (= 0.14.0)
   minitest (= 5.10.1)
+  rest-client (= 2.0.1)
+  retriable (= 3.0.1)
 
 BUNDLED WITH
    1.14.6
