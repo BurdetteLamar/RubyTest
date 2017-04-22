@@ -1,12 +1,12 @@
 require 'rexml/document'
 require 'minitest/assertions'
 
-require_relative 'base_class'
+require_relative '../base_class'
 
-require_relative '../test/assertion_helper'
+require_relative '../../test/assertion_helper'
 
-require_relative 'helpers/hash_helper'
-require_relative 'helpers/set_helper'
+require_relative '../helpers/hash_helper'
+require_relative '../helpers/set_helper'
 
 ## Class to support XML logging.
 #

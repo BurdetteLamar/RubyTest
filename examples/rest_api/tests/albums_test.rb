@@ -2,7 +2,7 @@ require_relative 'base_class_for_test'
 
 require_relative '../endpoints/albums/get_albums'
 
-require_relative '../../../lib/log'
+require_relative '../../../lib/log/log'
 
 class AlbumsTest < BaseClassForTest
 

@@ -1,6 +1,6 @@
 require_relative '../../lib/base_class'
 
-require_relative '../../lib/log'
+require_relative '../../lib/log/log'
 
 class TestHelper < BaseClass
 
