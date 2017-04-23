@@ -26,21 +26,19 @@ class BaseClassForGet < BaseClassForRestRequest
     [objects, payload]
   end
 
-  # def self.verdict_call_and_verify_success(client, log, verdict_id, keys)
-  #   objects = []
-  #   log.section(:rescue, :timestamp, :duration, :name => verdict_id) do
-  #     log.verdict_nothing_raised?('%s - nothing raised' % verdict_id) do
-  #       objects, payload = self.call_and_return_payload(client)
-  #       log.section(:name => 'Evaluation') do
-  #         payload_keys = ObjectHelper.key_set(payload)
-  #         ExampleRestClient.verdict_payload_keys_valid_keys?(log, '%s - keys' % verdict_id, keys, payload_keys)
-  #         v_id = '%s - get %s' % [verdict_id, self.data_class_name]
-  #         object_class = ObjectHelper.get_class_for_class_name(self.data_class_name)
-  #         object_class.verdict_data_objects_valid_keys?(log, v_id, objects, keys)
-  #       end
-  #     end
-  #   end
-  #   objects
-  # end
+  def self.verdict_call_and_verify_success(client, log, verdict_id)
+    objects = []
+    log.section(verdict_id, :rescue, :timestamp, :duration) do
+      objects= self.call(client)
+      log.section('Evaluation') do
+        object = objects.first
+        log.put_element('data', {:fetched_object_count => objects.size})
+        object.log(log, 'First fetched ' + data_class_name)
+        object.verdict_valid?(log, verdict_id)
+      end
+      return objects
+    end
+    objects
+  end
 
 end
