@@ -5,7 +5,7 @@ require_relative '../../../../test/assertion_helper'
 
 class GetAlbums < BaseClassForGet
 
-  Contract ExampleRestClient => [ArrayOf[Any], Any]
+  Contract ExampleRestClient => [ArrayOf[Album], ArrayOf[Hash]]
   def self.call_and_return_payload(client)
     super(client)
   end
