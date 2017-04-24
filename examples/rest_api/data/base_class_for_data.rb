@@ -94,7 +94,7 @@ class BaseClassForData < BaseClass
     verdict
   end
 
-  def self.get_any(client)
+  def self.get_first(client)
     all = self.get_all(client)
     raise RuntimeError.new('No %s available' % self.class.name) unless all.size > 0
     all.first

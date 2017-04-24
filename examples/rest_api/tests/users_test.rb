@@ -22,7 +22,7 @@ class UsersTest < BaseClassForTest
 
     prelude do |client, log|
 
-      user_to_fetch = User.get_any(client)
+      user_to_fetch = User.get_first(client)
       GetUsersId.verdict_call_and_verify_success(client, log, 'get user', user_to_fetch)
     end
   end

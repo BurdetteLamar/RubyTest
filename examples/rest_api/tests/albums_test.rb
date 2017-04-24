@@ -22,7 +22,7 @@ class AlbumsTest < BaseClassForTest
 
     prelude do |client, log|
 
-      album_to_fetch = Album.get_any(client)
+      album_to_fetch = Album.get_first(client)
       GetAlbumsId.verdict_call_and_verify_success(client, log, 'get album', album_to_fetch)
     end
   end
