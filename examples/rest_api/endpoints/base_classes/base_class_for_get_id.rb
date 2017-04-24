@@ -27,7 +27,8 @@ class BaseClassForGetId < BaseClassForRestRequest
       object_fetched = self.call(client, object_to_fetch)
       log.section('Evaluation') do
         object_fetched.log(log, 'Fetched ' + data_class_name)
-        Album.verdict_equal?(log, data_class_name, object_to_fetch, object_fetched, 'Fetched')
+        klass = ObjectHelper.get_class_for_class_name(data_class_name)
+        klass.verdict_equal?(log, data_class_name, object_to_fetch, object_fetched, 'Fetched')
       end
       return object_fetched
     end

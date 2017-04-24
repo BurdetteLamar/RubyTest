@@ -86,19 +86,6 @@ class BaseClassForData < BaseClass
           when actual_value.class.respond_to?(:verdict_equal_recursive?)
             v_id = format('%s %s', verdict_id, field)
             self.verdict_equal_recursive?(log, v_id, expected_value, actual_value, message)
-          when actual_value.kind_of?(Array) && actual_value.first.kind_of?(BaseClassForData)
-            keys = ObjectHelper.key_set(expected_value)
-            v_id = format('%s %s', verdict_id, field)
-            log.section(v_id) do
-              log.put_element('exp_values', expected_value)
-              log.put_element('act_values', actual_value)
-              keys.each do |key|
-                v_id = format('%s %s %s', verdict_id, field, key)
-                actual_value_obj = actual_value.collect {|obj| obj.send(key)}
-                expected_value_obj = expected_value.collect {|obj| obj.send(key)}
-                verdict = log.verdict_assert_equal?(v_id, expected_value_obj, actual_value_obj) && verdict
-              end
-            end
           else
             verdict = log.verdict_assert_equal?('%s-%s' % [verdict_id, field.downcase], expected_value, actual_value, message) && verdict
         end
