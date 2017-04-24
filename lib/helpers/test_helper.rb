@@ -11,7 +11,7 @@ class TestHelper < BaseClass
     test_name = self.get_test_name
     # TODO:  Get log directory path from configuration file.
     # TODO:  Construct file path from directory path and test name.
-    xml_log_file_path = 'log.xml'
+    xml_log_file_path = test_name + '.xml'
     Log.open(test, :root_name => test_name, :file_path => xml_log_file_path) do |log|
       log.test_method(:rescue, :timestamp, :duration, :name => test_name) do
         yield log
