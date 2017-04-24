@@ -61,4 +61,56 @@ class BaseClassForData < BaseClass
     end
   end
 
+  # A derived class can call this method to test for equality.
+  Contract Log, String, Any, Any, String => Bool
+  def self.verdict_equal?(log, verdict_id, expected_obj, actual_obj, message)
+    # Verify recursively, so that nested objects can verify themselves.
+    unless expected_obj.respond_to?(:fields)
+      return log.verdict_assert_equal?(verdict_id, expected_obj, actual_obj, message)
+    end
+    self.verdict_equal_recursive?(log, verdict_id, expected_obj, actual_obj, message)
+  end
+
+  # Verify an object recursively,
+  # giving special handling to nested objects.
+  Contract Log, String, self, self, String => Bool
+  def self.verdict_equal_recursive?(log, verdict_id, expected_obj, actual_obj, message)
+    verdict = true
+    log.section(verdict_id) do
+      expected_obj.fields.each do |field|
+        expected_value = expected_obj.send(field)
+        # No expected value?  Skip it.
+        next if expected_value.nil?
+        actual_value = actual_obj.send(field)
+        case
+          when actual_value.class.respond_to?(:verdict_equal_recursive?)
+            v_id = format('%s %s', verdict_id, field)
+            self.verdict_equal_recursive?(log, v_id, expected_value, actual_value, message)
+          when actual_value.kind_of?(Array) && actual_value.first.kind_of?(BaseClassForData)
+            keys = ObjectHelper.key_set(expected_value)
+            v_id = format('%s %s', verdict_id, field)
+            log.section(v_id) do
+              log.put_element('exp_values', expected_value)
+              log.put_element('act_values', actual_value)
+              keys.each do |key|
+                v_id = format('%s %s %s', verdict_id, field, key)
+                actual_value_obj = actual_value.collect {|obj| obj.send(key)}
+                expected_value_obj = expected_value.collect {|obj| obj.send(key)}
+                verdict = log.verdict_assert_equal?(v_id, expected_value_obj, actual_value_obj) && verdict
+              end
+            end
+          else
+            verdict = log.verdict_assert_equal?('%s-%s' % [verdict_id, field.downcase], expected_value, actual_value, message) && verdict
+        end
+      end
+    end
+    verdict
+  end
+
+  def self.get_any(client)
+    all = self.get_all(client)
+    raise RuntimeError.new('No %s available' % self.class.name) unless all.size > 0
+    all.first
+  end
+
 end
