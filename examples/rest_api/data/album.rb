@@ -29,4 +29,9 @@ class Album < BaseClassForData
     end
   end
 
+  def self.get_all(client)
+    require_relative '../endpoints/albums/get_albums'
+    GetAlbums.call(client)
+  end
+
 end
