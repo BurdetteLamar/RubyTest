@@ -236,8 +236,8 @@ class Log < BaseClass
 
   def dispose
 
-    puts 'Counts:'
-    self.counts.each_pair do |label, count|
+    puts 'Counts for %s:' % TestHelper.get_test_name
+      self.counts.each_pair do |label, count|
       puts format('  %ss %s', label.to_s.capitalize.rjust(10), count.to_s.rjust(6))
     end
 
