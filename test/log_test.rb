@@ -201,7 +201,7 @@ class LogTest < MiniTest::Test
       verdict_id = format('contract_violation_for_%s', name).to_sym
       create_temp_log(self) do |log|
         assert_raises(ParamContractError, name) do
-          log.send(method, *violating_values, verdict_id)
+          log.send(method, *violating_values, verdict_id, message)
         end
       end
     end
