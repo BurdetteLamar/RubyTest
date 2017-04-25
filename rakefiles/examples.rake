@@ -21,9 +21,25 @@ namespace :examples do
     run_examples('log/log_examples.rb')
   end
 
+  desc 'Run examples for REST API'
+  task :rest_api do
+    %w/
+        albums
+        comments
+        photos
+        posts
+        todos
+        users
+    /.each do |name|
+      path = format('rest_api/tests/%s_test.rb', name)
+      run_examples(path)
+    end
+  end
+
   desc 'Run all examples'
   task :all => %w/
     examples:log
+    examples:rest_api
    /
 
 end
