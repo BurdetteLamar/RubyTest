@@ -14,9 +14,7 @@ class BaseClassForTest < Minitest::Test
         'rest_api',
         'output',
     )
-    log_file_name = TestHelper.get_test_name + '.xml'
-    log_file_path = File.join(log_dir_path, log_file_name)
-    TestHelper.test(self, log_file_path) do |log|
+    TestHelper.test(self, log_dir_path) do |log|
       ExampleRestClient.with(log) do |client|
         yield client, log
       end
