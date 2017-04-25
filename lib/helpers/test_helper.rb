@@ -1,4 +1,4 @@
-require_relative '../../lib/base_class'
+require_relative '../../lib/base_classes/base_class'
 
 require_relative '../../lib/log/log'
 

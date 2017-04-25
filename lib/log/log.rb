@@ -1,7 +1,7 @@
 require 'rexml/document'
 require 'minitest/assertions'
 
-require_relative '../base_class'
+require_relative '../base_classes/base_class'
 
 require_relative '../../test/assertion_helper'
 

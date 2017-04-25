@@ -1,4 +1,4 @@
-require_relative 'base_class_for_data'
+require_relative '../../../lib/base_classes/base_class_for_data'
 
 require_relative '../data/geo'
 
@@ -12,8 +12,9 @@ class Photo < BaseClassForData
          :thumbnailUrl,
   ])
 
-  # # This is redundant, but it helps RubyMine code inspection.
-  # attr_accessor \
+  # This is redundant, but it helps RubyMine code inspection.
+  attr_accessor \
+      :thumbnailUrl
 
   attr_accessor *FIELDS
 

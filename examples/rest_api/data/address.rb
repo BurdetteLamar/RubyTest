@@ -1,4 +1,4 @@
-require_relative 'base_class_for_data'
+require_relative '../../../lib/base_classes/base_class_for_data'
 
 require_relative '../data/geo'
 
@@ -16,7 +16,11 @@ class Address < BaseClassForData
   attr_accessor \
       :geo,
       :addressId,
-      :company
+      :company,
+      :street,
+      :suite,
+      :city,
+      :zipcode
 
   attr_accessor *FIELDS
 

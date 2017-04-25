@@ -1,6 +1,6 @@
 require 'set'
 
-require_relative '../../../lib/base_class'
+require_relative 'base_class'
 
 class BaseClassForData < BaseClass
 

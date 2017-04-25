@@ -1,4 +1,4 @@
-require_relative 'base_class_for_data'
+require_relative '../../../lib/base_classes/base_class_for_data'
 
 class Company < BaseClassForData
 
@@ -8,8 +8,10 @@ class Company < BaseClassForData
       :bs,
   ])
 
-  # # This is redundant, but it helps RubyMine code inspection.
-  # attr_accessor \
+  # This is redundant, but it helps RubyMine code inspection.
+  attr_accessor \
+      :catchPhrase,
+      :bs
 
   attr_accessor *FIELDS
 

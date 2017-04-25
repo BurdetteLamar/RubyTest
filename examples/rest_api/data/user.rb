@@ -1,4 +1,4 @@
-require_relative 'base_class_for_data'
+require_relative '../../../lib/base_classes/base_class_for_data'
 
 require_relative '../data/address'
 require_relative '../data/company'
@@ -18,7 +18,9 @@ class User < BaseClassForData
 
   # This is redundant, but it helps RubyMine code inspection.
   attr_accessor \
-      :address
+      :address,
+      :phone,
+      :website
 
   attr_accessor *FIELDS
 
