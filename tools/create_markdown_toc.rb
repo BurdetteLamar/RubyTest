@@ -1,6 +1,6 @@
 require 'find'
 
-require_relative '../lib/base_class'
+require_relative '../lib/base_classes/base_class'
 
 # Class to make a table of contents for markdown files.
 class MarkdownToc < BaseClass

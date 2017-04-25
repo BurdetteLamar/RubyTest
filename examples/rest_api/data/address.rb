@@ -16,7 +16,11 @@ class Address < BaseClassForData
   attr_accessor \
       :geo,
       :addressId,
-      :company
+      :company,
+      :street,
+      :suite,
+      :city,
+      :zipcode
 
   attr_accessor *FIELDS
 

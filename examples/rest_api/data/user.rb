@@ -18,7 +18,9 @@ class User < BaseClassForData
 
   # This is redundant, but it helps RubyMine code inspection.
   attr_accessor \
-      :address
+      :address,
+      :phone,
+      :website
 
   attr_accessor *FIELDS
 

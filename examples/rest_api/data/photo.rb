@@ -12,8 +12,9 @@ class Photo < BaseClassForData
          :thumbnailUrl,
   ])
 
-  # # This is redundant, but it helps RubyMine code inspection.
-  # attr_accessor \
+  # This is redundant, but it helps RubyMine code inspection.
+  attr_accessor \
+      :thumbnailUrl
 
   attr_accessor *FIELDS
 

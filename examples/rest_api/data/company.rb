@@ -8,8 +8,10 @@ class Company < BaseClassForData
       :bs,
   ])
 
-  # # This is redundant, but it helps RubyMine code inspection.
-  # attr_accessor \
+  # This is redundant, but it helps RubyMine code inspection.
+  attr_accessor \
+      :catchPhrase,
+      :bs
 
   attr_accessor *FIELDS
 
