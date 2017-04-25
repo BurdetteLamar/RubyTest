@@ -4,15 +4,17 @@ require_relative '../../lib/log/log'
 
 class TestHelper < BaseClass
 
-  Contract Minitest::Test, Proc => NilClass
+  Contract Minitest::Test, Or[String, Proc], Maybe[Proc] => NilClass
   # Set up for a test.
-  def self.test(test)
+  def self.test(test, log_dir_path = '.')
     raise 'No block given' unless (block_given?)
+    FileUtils.mkdir_p(log_dir_path)
     test_name = self.get_test_name
     # TODO:  Get log directory path from configuration file.
     # TODO:  Construct file path from directory path and test name.
-    xml_log_file_path = test_name + '.xml'
-    Log.open(test, :root_name => test_name, :file_path => xml_log_file_path) do |log|
+    log_file_name = test_name + '.xml'
+    log_file_path = File.join(log_dir_path, log_file_name)
+    Log.open(test, :root_name => test_name, :file_path => log_file_path) do |log|
       log.test_method(:rescue, :timestamp, :duration, :name => test_name) do
         yield log
       end
