@@ -25,26 +25,26 @@ class TestHelper < BaseClass
     # We are getting the test name from the call stack.
     # It begins with 'test_'
     all_names = []
-    test_names = []
-    test_file_names = []
+    test_files_by_name = {}
     caller.each do |_caller|
       words = _caller.split(/\W/)
       test_file_name = words[-6]
       name = words.last
       all_names.push(name)
       if name.start_with?('test_')
-        test_names.push(name)
-        test_file_names.push(test_file_name)
+        test_files_by_name.store(name, test_file_name)
       end
     end
-    case test_names.size
+    case test_files_by_name.size
       when 0
         message = 'Found no test name among %s' % all_names.inspect
         raise Exception.new(message)
       when 1
-        return [test_file_names.first, test_names.first]
+        test_name = test_files_by_name.keys.first
+        test_file_name = test_files_by_name.fetch(test_name)
+        return [test_name, test_file_name]
       else
-        message = 'Found %d test names among %s' % [test_names.size, all_names.inspect]
+        message = 'Found %d test names and files:  %s' % test_files_by_name.inspect
         raise Exception.new(message)
     end
   end
