@@ -4,13 +4,13 @@ class Album < BaseClassForData
 
   FIELDS = Set.new([
       :id,
-      :userId,
+      :albumId,
       :title,
   ])
 
   # This is redundant, but it helps RubyMine code inspection.
   attr_accessor \
-      :userId
+      :albumId
 
   attr_accessor *FIELDS
 
@@ -22,11 +22,16 @@ class Album < BaseClassForData
 
   Contract Log, String => Bool
   def verdict_valid?(log, verdict_id)
-    if log.verdict_assert_instance_of?(verdict_id + ' - class', Album, self, 'First object is an Album')
+    if log.verdict_assert_instance_of?(verdict_id + ' - class', Album, self, 'First object is of class Album')
       log.va_integer_positive?(verdict_id + ' - id', self.id, 'Album id')
-      log.va_integer_positive?(verdict_id + ' - user id', self.userId, 'Album id')
+      log.va_integer_positive?(verdict_id + ' - album id', self.albumId, 'Album id')
       log.va_string_not_empty?(verdict_id + ' - title', self.title, 'Album title')
     end
+  end
+
+  def self.get_all(client)
+    require_relative '../endpoints/albums/get_albums'
+    GetAlbums.call(client)
   end
 
 end

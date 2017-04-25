@@ -1,15 +1,15 @@
 require_relative '../base_classes/base_class_for_get'
 
-require_relative '../../data/album'
+require_relative '../../data/post'
 
-class GetAlbums < BaseClassForGet
+class GetPosts < BaseClassForGet
 
-  Contract ExampleRestClient => [ArrayOf[Album], ArrayOf[Hash]]
+  Contract ExampleRestClient => [ArrayOf[Post], ArrayOf[Hash]]
   def self.call_and_return_payload(client)
     super(client)
   end
 
-  Contract ExampleRestClient, Log, String => ArrayOf[Album]
+  Contract ExampleRestClient, Log, String => ArrayOf[Post]
   def self.verdict_call_and_verify_success(client, log, verdict_id)
     super(client, log, verdict_id)
   end
