@@ -7,6 +7,7 @@ require_relative '../../test/assertion_helper'
 
 require_relative '../helpers/hash_helper'
 require_relative '../helpers/set_helper'
+require_relative '../helpers/test_helper'
 
 require_relative 'constants'
 require_relative 'verdict_assertion'
