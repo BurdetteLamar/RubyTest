@@ -172,7 +172,7 @@ class LogTest < MiniTest::Test
     verdict_id = :contract_violation_for_verdict_id
     create_temp_log(self) do |log|
       assert_raises(ParamContractError, 'verdict id') do
-        log.send(method, nil, passing_arguments.values, verdict_id)
+        log.send(method, nil, *passing_arguments.values, verdict_id)
       end
     end
 
@@ -180,7 +180,7 @@ class LogTest < MiniTest::Test
     verdict_id = :contract_violation_for_message
     create_temp_log(self) do |log|
       assert_raises(ParamContractError, 'message') do
-        log.send(method, verdict_id, passing_arguments.values, nil)
+        log.send(method, verdict_id, *passing_arguments.values, nil)
       end
     end
 
@@ -188,7 +188,7 @@ class LogTest < MiniTest::Test
     verdict_id = :contract_violation_for_volatile
     create_temp_log(self) do |log|
       assert_raises(ParamContractError, 'volatile') do
-        log.send(method, verdict_id, passing_arguments.values, verdict_id, 0)
+        log.send(method, verdict_id, *passing_arguments.values, verdict_id, 0)
       end
     end
 
@@ -201,7 +201,7 @@ class LogTest < MiniTest::Test
       verdict_id = format('contract_violation_for_%s', name).to_sym
       create_temp_log(self) do |log|
         assert_raises(ParamContractError, name) do
-          log.send(method, *violating_values, verdict_id)
+          log.send(method, *violating_values, verdict_id, message)
         end
       end
     end
@@ -267,14 +267,14 @@ class LogTest < MiniTest::Test
     end
 
     # Block.
-    Dir.mktmpdir do |dir_path|
-      file_path = File.join(dir_path, 'log.xml')
-      AssertionHelper.assert_nothing_raised(self) do
-        Log.open(self, {:file_path => file_path}) do |log|
-          log.put_element('foo')
-        end
+    dir_path = Dir.mktmpdir
+    file_path = File.join(dir_path, 'log.xml')
+    AssertionHelper.assert_nothing_raised(self) do
+      Log.open(self, {:file_path => file_path}) do |log|
+        log.put_element('foo')
       end
     end
+    FileUtils.rm_r(dir_path)
 
   end
 
