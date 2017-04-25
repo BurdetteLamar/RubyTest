@@ -10,6 +10,7 @@ require_relative '../helpers/set_helper'
 
 require_relative 'constants'
 require_relative 'verdict_assertion'
+require_relative 'verdict_boolean'
 require_relative 'verdict_integer'
 require_relative 'verdict_string'
 
@@ -44,6 +45,7 @@ require_relative 'verdict_string'
 class Log < BaseClass
 
   include VerdictAssertion
+  include VerdictBoolean
   include VerdictInteger
   include VerdictString
 
