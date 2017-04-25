@@ -172,7 +172,7 @@ class LogTest < MiniTest::Test
     verdict_id = :contract_violation_for_verdict_id
     create_temp_log(self) do |log|
       assert_raises(ParamContractError, 'verdict id') do
-        log.send(method, nil, passing_arguments.values, verdict_id)
+        log.send(method, nil, *passing_arguments.values, verdict_id)
       end
     end
 
@@ -180,7 +180,7 @@ class LogTest < MiniTest::Test
     verdict_id = :contract_violation_for_message
     create_temp_log(self) do |log|
       assert_raises(ParamContractError, 'message') do
-        log.send(method, verdict_id, passing_arguments.values, nil)
+        log.send(method, verdict_id, *passing_arguments.values, nil)
       end
     end
 
@@ -188,7 +188,7 @@ class LogTest < MiniTest::Test
     verdict_id = :contract_violation_for_volatile
     create_temp_log(self) do |log|
       assert_raises(ParamContractError, 'volatile') do
-        log.send(method, verdict_id, passing_arguments.values, verdict_id, 0)
+        log.send(method, verdict_id, *passing_arguments.values, verdict_id, 0)
       end
     end
 
