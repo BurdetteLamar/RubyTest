@@ -267,14 +267,14 @@ class LogTest < MiniTest::Test
     end
 
     # Block.
-    Dir.mktmpdir do |dir_path|
-      file_path = File.join(dir_path, 'log.xml')
-      AssertionHelper.assert_nothing_raised(self) do
-        Log.open(self, {:file_path => file_path}) do |log|
-          log.put_element('foo')
-        end
+    dir_path = Dir.mktmpdir
+    file_path = File.join(dir_path, 'log.xml')
+    AssertionHelper.assert_nothing_raised(self) do
+      Log.open(self, {:file_path => file_path}) do |log|
+        log.put_element('foo')
       end
     end
+    FileUtils.rm_r(dir_path)
 
   end
 
