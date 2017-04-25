@@ -12,7 +12,7 @@ module VerdictBoolean
         TrueClass,
         FalseClass,
     ]
-    log.va_includes?(verdict_id, boolean_classes, actual.class, message, volatile, *args)
+    va_includes?(verdict_id, boolean_classes, actual.class, message, volatile, *args)
   end
   alias va_boolean? verdict_assert_boolean?
 
