@@ -33,31 +33,31 @@ class ExampleRestClient < BaseClass
   end
 
   # Get.
-  Contract ArrayOf[String], Maybe[ArrayOf[String]], Any => Or[String, Array, Hash]
+  Contract Array, Maybe[Array], Any => Or[String, Array, Hash]
   def get(url_elements, query_elements = [])
     client_method(__method__, url_elements, query_elements)
   end
 
   # Post.
-  Contract ArrayOf[String], Maybe[ArrayOf[String]], Any => Or[String, Array, Hash]
+  Contract Array, Maybe[Array], Any => Or[String, Array, Hash]
   def post(url_elements, query_elements = [], parameters = nil)
     client_method(__method__, url_elements, query_elements, parameters)
   end
 
   # Put.
-  Contract ArrayOf[String], Maybe[ArrayOf[String]], Any => Or[String, Array, Hash]
+  Contract Array, Maybe[Array], Any => Or[String, Array, Hash]
   def put(url_elements, query_elements = [], parameters = nil)
     client_method(__method__, url_elements, query_elements, parameters)
   end
 
   # Delete.
-  Contract ArrayOf[String], Maybe[ArrayOf[String]], Any => Or[String, Array, Hash]
+  Contract Array, Maybe[Array], Any => Or[String, Array, Hash]
   def delete(url_elements, query_elements = [], parameters = nil)
     client_method(__method__, url_elements, query_elements, parameters)
   end
 
   # Do one of the above.
-  Contract Symbol, ArrayOf[String], Maybe[ArrayOf[String]], Any => Or[String, Array, Hash]
+  Contract Symbol, Array, Maybe[Array], Any => Or[String, Array, Hash]
   def client_method(rest_method, url_elements, query_elements = [], parameters = nil)
     response = nil
     url = File.join(@base_url, *url_elements)
