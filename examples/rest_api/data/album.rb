@@ -29,9 +29,27 @@ class Album < BaseClassForData
     end
   end
 
+  def self.read(client, album)
+    require_relative '../endpoints/albums/get_albums_id'
+    GetAlbumsId(client, album)
+  end
+
   def self.get_all(client)
     require_relative '../endpoints/albums/get_albums'
     GetAlbums.call(client)
+  end
+
+  def self.exist?(client, album)
+    begin
+      self.read(client, album)
+      return true
+    rescue
+      return false
+    end
+  end
+
+  def self.verdict_not_exist?(client, log, album)
+    log.vr?('album_deleted', self.exist?(client, album), 'Album deleted')
   end
 
 end
