@@ -42,7 +42,6 @@ class TestHelper < BaseClass
         message = 'Found no test name among %s' % all_names.inspect
         raise Exception.new(message)
       when 1
-        p test_files_by_name
         return test_files_by_name.to_a.first
       else
         message = 'Found %d test names and files:  %s' % test_files_by_name.inspect
