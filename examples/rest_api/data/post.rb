@@ -31,6 +31,11 @@ class Post < BaseClassForData
     end
   end
 
+  def self.read(client, photo)
+    require_relative '../endpoints/posts/get_posts_id'
+    GetPostsId.call(client, photo)
+  end
+
   def self.get_all(client)
     require_relative '../endpoints/posts/get_posts'
     GetPosts.call(client)
