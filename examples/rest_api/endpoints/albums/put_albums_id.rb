@@ -1,8 +1,8 @@
-require_relative '../base_classes/base_class_for_put'
+require_relative '../base_classes/base_class_for_put_id'
 
 require_relative '../../../rest_api/data/album'
 
-class PutAlbums < BaseClassForPut
+class PutAlbumsId < BaseClassForPutId
 
   Contract ExampleRestClient, Album => [Album, Any]
   def self.call_and_return_payload(client, album)

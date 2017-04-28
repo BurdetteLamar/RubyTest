@@ -4,7 +4,7 @@ require_relative '../endpoints/albums/delete_albums_id'
 require_relative '../endpoints/albums/get_albums'
 require_relative '../endpoints/albums/get_albums_id'
 require_relative '../endpoints/albums/post_albums'
-require_relative '../endpoints/albums/put_albums'
+require_relative '../endpoints/albums/put_albums_id'
 
 require_relative '../data/album'
 require_relative '../../../lib/log/log'
@@ -81,7 +81,7 @@ class AlbumsTest < BaseClassForTest
         log.section('Put the modifications') do
           album_to_put.title = 'New Title'
           # This should fail, because JSONplaceholder will not actually update the album.
-          PutAlbums.verdict_call_and_verify_success(client, log, 'Album to put', album_to_put)
+          PutAlbumsId.verdict_call_and_verify_success(client, log, 'Album to put', album_to_put)
         end
       end
 

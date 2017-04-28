@@ -1,14 +1,14 @@
 require_relative '../base_classes/base_class_for_rest_request'
 # require_relative '../../../../lib/helpers/object_helper'
 
-class BaseClassForPut < BaseClassForRestRequest
+class BaseClassForPutId < BaseClassForRestRequest
 
   def self.data_class_name
     self.url_element.sub(/s$/, '')
   end
 
   def self.url_element
-    self.to_s.sub('Put', '')
+    self.to_s.sub('Put', '').sub('Id', '')
   end
 
   def self.call_and_return_payload(client, object_to_put)
