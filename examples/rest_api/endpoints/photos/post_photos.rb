@@ -1,10 +1,10 @@
-require_relative '../base_classes/base_class_for_get_id'
+require_relative '../base_classes/base_class_for_post'
 
 require_relative '../../../rest_api/data/photo'
 
-class GetPhotosId < BaseClassForGetId
+class PostPhotos < BaseClassForPost
 
-  Contract ExampleRestClient, Photo => [Photo, Hash]
+  Contract ExampleRestClient, Photo => [Photo, Any]
   def self.call_and_return_payload(client, photo)
     super
   end
