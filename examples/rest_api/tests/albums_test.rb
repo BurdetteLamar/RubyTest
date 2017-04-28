@@ -20,6 +20,7 @@ class AlbumsTest < BaseClassForTest
           album_to_delete = Album.get_first(client)
         end
         log.section('Delete the album') do
+          # This should fail, because JSONplaceholder will not actually delete the album.
           DeleteAlbumsId.verdict_call_and_verify_success(client, log, 'delete album', album_to_delete)
         end
       end
@@ -61,6 +62,7 @@ class AlbumsTest < BaseClassForTest
             :userId => 1,
             :title => 'My Album',
         )
+        # This should fail, because JSONplaceholder will not actually create the album.
         PostAlbums.verdict_call_and_verify_success(client, log, 'album to_create', album_to_post)
       end
     end
@@ -78,6 +80,7 @@ class AlbumsTest < BaseClassForTest
         end
         log.section('Put the modifications') do
           album_to_put.title = 'New Title'
+          # This should fail, because JSONplaceholder will not actually update the album.
           PutAlbums.verdict_call_and_verify_success(client, log, 'Album to put', album_to_put)
         end
       end
