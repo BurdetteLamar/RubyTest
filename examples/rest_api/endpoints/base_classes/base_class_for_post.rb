@@ -30,8 +30,9 @@ class BaseClassForPost < BaseClassForRestRequest
       log.section('Evaluation') do
         object_posted.log(log, 'Posted ' + data_class_name)
         klass = ObjectHelper.get_class_for_class_name(data_class_name)
-        klass.verdict_equal?(log, data_class_name, object_to_post, object_posted, 'Posted')
-        klass.verdict_exist?(client, log, verdict_id, object_to_post)
+        klass.verdict_equal?(log, data_class_name + ' - posted', object_to_post, object_posted, 'Posted')
+        object_fetched = klass.read(client, object_posted)
+        klass.verdict_equal?(log, data_class_name + ' - fetched', object_posted, object_fetched, 'Fetched')
       end
       return object_posted
     end

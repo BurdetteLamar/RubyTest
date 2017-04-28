@@ -58,7 +58,7 @@ class AlbumsTest < BaseClassForTest
     prelude do |client, log|
       log.section('Test PostAlbums') do
         album_to_post = Album.new(
-            :id => 101,
+            :id => 1,
             :userId => 1,
             :title => 'My Album',
         )

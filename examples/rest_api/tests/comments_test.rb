@@ -58,11 +58,12 @@ class CommentsTest < BaseClassForTest
     prelude do |client, log|
       log.section('Test PostComments') do
         comment_to_post = Comment.new(
-            "postId": 1,
-            "id": 1,
-            "name": "NewName",
-            "email": "New@Email.com",
-            "body": "New body"        )
+            :postId => 1,
+            :id => 1,
+            :name => 'NewName',
+            :email => 'New@Email.com',
+            :body => 'New body',
+        )
         # This should fail, because JSONplaceholder will not actually create the comment.
         PostComments.verdict_call_and_verify_success(client, log, 'comment to_create', comment_to_post)
       end
@@ -80,9 +81,9 @@ class CommentsTest < BaseClassForTest
           comment_to_put = comment_original.clone
         end
         log.section('Put the modifications') do
-          comment_to_put.title = 'New Title'
+          comment_to_put.body = 'New body'
           # This should fail, because JSONplaceholder will not actually update the comment.
-          PutComments.verdict_call_and_verify_success(client, log, 'Comment to put', comment_to_put)
+          PutCommentsId.verdict_call_and_verify_success(client, log, 'Comment to put', comment_to_put)
         end
       end
 
