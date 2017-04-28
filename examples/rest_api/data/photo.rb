@@ -14,6 +14,7 @@ class Photo < BaseClassForData
 
   # This is redundant, but it helps RubyMine code inspection.
   attr_accessor \
+      :albumId,
       :thumbnailUrl
 
   attr_accessor *FIELDS
@@ -36,8 +37,13 @@ class Photo < BaseClassForData
     end
   end
 
+  def self.read(client, photo)
+    require_relative '../endpoints/photos/get_photos_id'
+    GetPhotosId.call(client, photo)
+  end
+
   def self.get_all(client)
-    require_relative '../endpoints/users/get_users'
+    require_relative '../endpoints/photos/get_photos'
     GetPhotos.call(client)
   end
 

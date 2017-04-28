@@ -1,10 +1,10 @@
-require_relative '../base_classes/base_class_for_get_id'
+require_relative '../base_classes/base_class_for_post'
 
 require_relative '../../../rest_api/data/comment'
 
-class GetCommentsId < BaseClassForGetId
+class PostComments < BaseClassForPost
 
-  Contract ExampleRestClient, Comment => [Comment, Hash]
+  Contract ExampleRestClient, Comment => [Comment, Any]
   def self.call_and_return_payload(client, comment)
     super
   end

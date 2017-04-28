@@ -40,8 +40,13 @@ class Comment < BaseClassForData
   end
 
   def self.get_all(client)
-    require_relative '../endpoints/users/get_users'
+    require_relative '../endpoints/comments/get_comments'
     GetComments.call(client)
+  end
+
+  def self.read(client, album)
+    require_relative '../endpoints/comments/get_comments_id'
+    GetCommentsId.call(client, album)
   end
 
 end
