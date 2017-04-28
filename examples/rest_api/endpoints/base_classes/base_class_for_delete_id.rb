@@ -26,7 +26,7 @@ class BaseClassForDeleteId < BaseClassForRestRequest
       self.call(client, object_to_delete)
       log.section('Evaluation') do
         klass = ObjectHelper.get_class_for_class_name(data_class_name)
-        klass.verdict_not_exist?(client, log, object_to_delete)
+        klass.verdict_not_exist?(client, log, verdict_id, object_to_delete)
       end
     end
     nil
