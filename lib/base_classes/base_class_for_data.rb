@@ -22,7 +22,7 @@ class BaseClassForData < BaseClass
 
   # A derived class can call this method to log an instance of itself.
   Contract Log, String => nil
-  def log(log, comment = self.class.name)
+  def log(log, comment = self.name)
     # Log recursively, so that nested objects can log themselves.
     log_recursive(self, log, comment)
     nil
@@ -30,7 +30,7 @@ class BaseClassForData < BaseClass
 
   # Log an object recursively,
   # giving special handling to nested objects.
-  def log_recursive(obj, log, comment = obj.class.name)
+  def log_recursive(obj, log, comment = obj.name)
     return if obj.nil?
     unless obj.respond_to?(:fields)
       # Can't process it below;  just log it here.
@@ -94,10 +94,31 @@ class BaseClassForData < BaseClass
     verdict
   end
 
+  Contract ExampleRestClient => self
   def self.get_first(client)
     all = self.get_all(client)
-    raise RuntimeError.new('No %s available' % self.class.name) unless all.size > 0
+    raise RuntimeError.new('No %s available' % self.name) unless all.size > 0
     all.first
+  end
+
+  Contract ExampleRestClient, self => Bool
+  def self.exist?(client, album)
+    begin
+      self.read(client, album)
+      return true
+    rescue RestClient::NotFound
+      return false
+    end
+  end
+
+  Contract ExampleRestClient, Log, String, self => Bool
+  def self.verdict_exist?(client, log, verdict_id, album)
+    log.va?(verdict_id, self.exist?(client, album), self.name + ' exists')
+  end
+
+  Contract ExampleRestClient, Log, String, self => Bool
+  def self.verdict_not_exist?(client, log, verdict_id, album)
+    log.vr?(verdict_id, self.exist?(client, album), self.name + ' not exist')
   end
 
   Contract None => Hash
