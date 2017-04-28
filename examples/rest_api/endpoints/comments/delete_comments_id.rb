@@ -1,15 +1,15 @@
-require_relative '../base_classes/base_class_for_get_id'
+require_relative '../base_classes/base_class_for_delete_id'
 
 require_relative '../../../rest_api/data/comment'
 
-class GetCommentsId < BaseClassForGetId
+class DeleteCommentsId < BaseClassForDeleteId
 
-  Contract ExampleRestClient, Comment => [Comment, Hash]
+  Contract ExampleRestClient, Comment => nil
   def self.call_and_return_payload(client, comment)
     super
   end
 
-  Contract ExampleRestClient, Log, String, Comment => Comment
+  Contract ExampleRestClient, Log, String, Comment => nil
   def self.verdict_call_and_verify_success(client, log, verdict_id, comment)
     super
   end
