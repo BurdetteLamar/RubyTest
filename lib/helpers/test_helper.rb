@@ -55,4 +55,10 @@ class TestHelper < BaseClass
     test_name
   end
 
+  Contract None => String
+  def self.get_method_name
+    method_name, _ = self.get_test_name_and_test_method_name
+    method_name
+  end
+
 end
