@@ -1,15 +1,15 @@
-require_relative '../base_classes/base_class_for_get_id'
+require_relative '../base_classes/base_class_for_delete_id'
 
 require_relative '../../../rest_api/data/todo'
 
-class GetTodosId < BaseClassForGetId
+class DeleteTodosId < BaseClassForDeleteId
 
-  Contract ExampleRestClient, Todo => [Todo, Hash]
+  Contract ExampleRestClient, Todo => nil
   def self.call_and_return_payload(client, todo)
     super
   end
 
-  Contract ExampleRestClient, Log, String, Todo => Todo
+  Contract ExampleRestClient, Log, String, Todo => nil
   def self.verdict_call_and_verify_success(client, log, verdict_id, todo)
     super
   end
