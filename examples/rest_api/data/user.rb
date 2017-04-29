@@ -47,6 +47,11 @@ class User < BaseClassForData
     end
   end
 
+  def self.read(client, photo)
+    require_relative '../endpoints/users/get_users_id'
+    GetUsersId.call(client, photo)
+  end
+
   def self.get_all(client)
     require_relative '../endpoints/users/get_users'
     GetUsers.call(client)

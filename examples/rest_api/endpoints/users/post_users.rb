@@ -1,10 +1,10 @@
-require_relative '../base_classes/base_class_for_get_id'
+require_relative '../base_classes/base_class_for_post'
 
 require_relative '../../../rest_api/data/user'
 
-class GetUsersId < BaseClassForGetId
+class PostUsers < BaseClassForPost
 
-  Contract ExampleRestClient, User => [User, Hash]
+  Contract ExampleRestClient, User => [User, Any]
   def self.call_and_return_payload(client, user)
     super
   end
