@@ -124,7 +124,7 @@ class BaseClassForData < BaseClass
   Contract None => Hash
   def to_hash
     hash = {}
-    @fields.each do |key|
+    fields.each do |key|
       value = send "#{key}"
       next if value.nil?
       value = value.to_hash if value.respond_to?(:to_hash)
