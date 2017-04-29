@@ -3,6 +3,12 @@
    - [Gemfile](./Gemfile.md)
    - [RubyTest](./README.md)
    - [Rakefile](./Rakefile.md)
+   - examples
+     - [Examples](./examples/Examples.md)
+     - log
+       - [Log Examples](./examples/log/Log.md)
+     - rest_api
+       - [REST API Test Examples](./examples/rest_api/RestAPI.md)
    - lib
      - [Lib](./lib/Lib.md)
      - helpers
