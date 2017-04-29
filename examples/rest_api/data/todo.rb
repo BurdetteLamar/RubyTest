@@ -35,8 +35,13 @@ class Todo < BaseClassForData
     end
   end
 
+  def self.read(client, photo)
+    require_relative '../endpoints/todos/get_todos_id'
+    GetTodosId.call(client, photo)
+  end
+
   def self.get_all(client)
-    require_relative '../endpoints/users/get_users'
+    require_relative '../endpoints/todos/get_todos'
     GetTodos.call(client)
   end
 

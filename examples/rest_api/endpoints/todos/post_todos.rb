@@ -1,10 +1,10 @@
-require_relative '../base_classes/base_class_for_get_id'
+require_relative '../base_classes/base_class_for_post'
 
 require_relative '../../../rest_api/data/todo'
 
-class GetTodosId < BaseClassForGetId
+class PostTodos < BaseClassForPost
 
-  Contract ExampleRestClient, Todo => [Todo, Hash]
+  Contract ExampleRestClient, Todo => [Todo, Any]
   def self.call_and_return_payload(client, todo)
     super
   end

@@ -6,12 +6,12 @@ class GetTodos < BaseClassForGet
 
   Contract ExampleRestClient => [ArrayOf[Todo], ArrayOf[Hash]]
   def self.call_and_return_payload(client)
-    super(client)
+    super
   end
 
   Contract ExampleRestClient, Log, String => ArrayOf[Todo]
   def self.verdict_call_and_verify_success(client, log, verdict_id)
-    super(client, log, verdict_id)
+    super
   end
 
 end
