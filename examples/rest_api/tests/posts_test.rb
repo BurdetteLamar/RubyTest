@@ -81,6 +81,7 @@ class PostsTest < BaseClassForTest
         end
         log.section('Put the modifications') do
           post_to_put.title = 'New title'
+          post_to_put.body = 'New body'
           # This should fail, because JSONplaceholder will not actually update the post.
           PutPostsId.verdict_call_and_verify_success(client, log, 'Post to put', post_to_put)
         end

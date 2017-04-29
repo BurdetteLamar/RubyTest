@@ -15,7 +15,8 @@ class Photo < BaseClassForData
   # This is redundant, but it helps RubyMine code inspection.
   attr_accessor \
       :albumId,
-      :thumbnailUrl
+      :thumbnailUrl,
+      :url
 
   attr_accessor *FIELDS
 

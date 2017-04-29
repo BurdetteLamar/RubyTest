@@ -82,6 +82,8 @@ class PhotosTest < BaseClassForTest
         end
         log.section('Put the modifications') do
           photo_to_put.title = 'New title'
+          photo_to_put.url = 'NewUrl'
+          photo_to_put.thumbnailUrl = 'NewThumbnailUrl'
           # This should fail, because JSONplaceholder will not actually update the photo.
           PutPhotosId.verdict_call_and_verify_success(client, log, 'Photo to put', photo_to_put)
         end

@@ -81,6 +81,8 @@ class CommentsTest < BaseClassForTest
           comment_to_put = comment_original.clone
         end
         log.section('Put the modifications') do
+          comment_to_put.name = 'NewName'
+          comment_to_put.email = 'New@Email.com'
           comment_to_put.body = 'New body'
           # This should fail, because JSONplaceholder will not actually update the comment.
           PutCommentsId.verdict_call_and_verify_success(client, log, 'Comment to put', comment_to_put)

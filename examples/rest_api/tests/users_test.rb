@@ -59,25 +59,25 @@ class UsersTest < BaseClassForTest
       log.section('Test PostUsers') do
         user_to_post = User.new(
             :id => 1,
-            :name => 'Leanne Graham',
-            :username => 'Bret',
-            :email => 'Sincere@april.biz',
+            :name => 'New name',
+            :username => 'NewUsername',
+            :email => 'New@Email.com',
             :address => {
-                :street => 'Kulas Light',
-                :suite => 'Apt. 556',
-                :city => 'Gwenborough',
-                :zipcode => '92998-3874',
+                :street => 'New Street',
+                :suite => 'New Suite',
+                :city => 'New City',
+                :zipcode => '55555-5555',
                 :geo => {
-                    :lat => '-37.3159',
-                    :lng => '81.1496'
+                    :lat => '0.0',
+                    :lng => '0.0'
                 }
             },
-            :phone => '1-770-736-8031 x56442',
-            :website => 'hildegard.org',
+            :phone => '1-555-555-5555 x55',
+            :website => 'NewWebsite.org',
             :company => {
-                :name => 'Romaguera-Crona',
-                :catchPhrase => 'Multi-layered client-server neural-net',
-                :bs => 'harness real-time e-markets'
+                :name => 'New Company Name',
+                :catchPhrase => 'New catchphrase',
+                :bs => 'New BS'
             }
         )
         # This should fail, because JSONplaceholder will not actually create the user.
@@ -91,12 +91,31 @@ class UsersTest < BaseClassForTest
 
     prelude do |client, log|
       log.section('Test PutUsers') do
-        user_to_put = nil
-        log.section('Get a user to put') do
-          user_original = User.get_first(client)
-          user_to_put = user_original.clone
-        end
+        user_existing = User.get_first(client)
         log.section('Put the modifications') do
+          user_to_put = User.new(
+              :id => user_existing.id,
+              :name => 'New name',
+              :username => 'NewUsername',
+              :email => 'New@Email.com',
+              :address => {
+                  :street => 'New Street',
+                  :suite => 'New Suite',
+                  :city => 'New City',
+                  :zipcode => '55555-5555',
+                  :geo => {
+                      :lat => '0.0',
+                      :lng => '0.0'
+                  }
+              },
+              :phone => '1-555-555-5555 x55',
+              :website => 'NewWebsite.org',
+              :company => {
+                  :name => 'New Company Name',
+                  :catchPhrase => 'New catchphrase',
+                  :bs => 'New BS'
+              }
+          )
           user_to_put.name = 'New name'
           # This should fail, because JSONplaceholder will not actually update the user.
           PutUsersId.verdict_call_and_verify_success(client, log, 'User to put', user_to_put)
