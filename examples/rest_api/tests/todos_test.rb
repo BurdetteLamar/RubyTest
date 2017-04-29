@@ -81,6 +81,7 @@ class TodosTest < BaseClassForTest
         end
         log.section('Put the modifications') do
           todo_to_put.title = 'New title'
+          todo_to_put.completed = true
           # This should fail, because JSONplaceholder will not actually update the todo.
           PutTodosId.verdict_call_and_verify_success(client, log, 'Todo to put', todo_to_put)
         end
