@@ -23,13 +23,14 @@ class BaseClassForDeleteId < BaseClassForRestRequest
   def self.verdict_call_and_verify_success(client, log, verdict_id, object_to_delete)
     log.section(verdict_id, :rescue, :timestamp, :duration) do
       object_to_delete.log(log, data_class_name + ' to delete')
-      self.call(client, object_to_delete)
+      payload = self.call(client, object_to_delete)
       log.section('Evaluation') do
+        log.va_nil?('payload nil', payload, 'Payload nil')
         klass = ObjectHelper.get_class_for_class_name(data_class_name)
         klass.verdict_not_exist?(client, log, verdict_id, object_to_delete)
       end
+      return payload
     end
-    nil
   end
 
 end
