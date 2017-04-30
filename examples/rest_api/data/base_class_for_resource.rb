@@ -3,13 +3,6 @@ require_relative '../../../lib/helpers/object_helper'
 
 class BaseClassForResource < BaseClassForData
 
-  Contract ExampleRestClient => self
-  def self.get_first(client)
-    all = self.get_all(client)
-    raise RuntimeError.new('No %s available' % self.name) unless all.size > 0
-    all.first
-  end
-
   Contract ExampleRestClient, self => Bool
   def self.exist?(client, object)
     begin
@@ -30,6 +23,9 @@ class BaseClassForResource < BaseClassForData
     log.vr?(verdict_id, self.exist?(client, object), self.name + ' not exist')
   end
 
+  # Convenience CRUD, etc.
+  # Caller should not have to know the endpoint actions to do simple CRUD.
+
   Contract ExampleRestClient, self => self
   def self.read(client, object)
     token = self.name.downcase
@@ -39,12 +35,20 @@ class BaseClassForResource < BaseClassForData
     klass.call(client, object)
   end
 
+  Contract ExampleRestClient => Maybe[ArrayOf[self]]
   def self.get_all(client)
     token = self.name.downcase
     require_relative '../endpoints/%ss/get_%ss' % [token, token]
     endpoint_class_name = 'Get%ss' % self.name
     klass = ObjectHelper.get_class_for_class_name(endpoint_class_name)
     klass.call(client)
+  end
+
+  Contract ExampleRestClient => self
+  def self.get_first(client)
+    all = self.get_all(client)
+    raise RuntimeError.new('No %s available' % self.name) unless all.size > 0
+    all.first
   end
 
 end
