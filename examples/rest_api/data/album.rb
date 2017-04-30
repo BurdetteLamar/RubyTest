@@ -29,14 +29,4 @@ class Album < BaseClassForResource
     end
   end
 
-  def self.read(client, album)
-    require_relative '../endpoints/albums/get_albums_id'
-    GetAlbumsId.call(client, album)
-  end
-
-  def self.get_all(client)
-    require_relative '../endpoints/albums/get_albums'
-    GetAlbums.call(client)
-  end
-
 end
