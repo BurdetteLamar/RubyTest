@@ -1,8 +1,8 @@
-require_relative '../../../lib/base_classes/base_class_for_data'
+require_relative 'base_class_for_resource'
 
 require_relative '../data/geo'
 
-class Todo < BaseClassForData
+class Todo < BaseClassForResource
 
   FIELDS = Set.new([
          :userId,
