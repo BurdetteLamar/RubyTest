@@ -23,14 +23,41 @@ class BaseClassForResource < BaseClassForData
     log.vr?(verdict_id, self.exist?(client, object), self.name + ' not exist')
   end
 
-  # Convenience CRUD, etc.
-  # Caller should not have to know the endpoint actions to do simple CRUD.
+  # Convenience CRUD (create, read, update, delete), etc.
+  # Caller should not have to know how to do the CRUD.
+
+  Contract ExampleRestClient, self => self
+  def self.create(client, object)
+    token = self.name.downcase
+    require_relative '../endpoints/%ss/post_%ss' % [token, token]
+    endpoint_class_name = 'Post%ss' % self.name
+    klass = ObjectHelper.get_class_for_class_name(endpoint_class_name)
+    klass.call(client, object)
+  end
 
   Contract ExampleRestClient, self => self
   def self.read(client, object)
     token = self.name.downcase
     require_relative '../endpoints/%ss/get_%ss_id' % [token, token]
     endpoint_class_name = 'Get%ssId' % self.name
+    klass = ObjectHelper.get_class_for_class_name(endpoint_class_name)
+    klass.call(client, object)
+  end
+
+  Contract ExampleRestClient, self => self
+  def self.update(client, object)
+    token = self.name.downcase
+    require_relative '../endpoints/%ss/put_%ss_id' % [token, token]
+    endpoint_class_name = 'Put%ssId' % self.name
+    klass = ObjectHelper.get_class_for_class_name(endpoint_class_name)
+    klass.call(client, object)
+  end
+
+  Contract ExampleRestClient, self => nil
+  def self.delete(client, object)
+    token = self.name.downcase
+    require_relative '../endpoints/%ss/delete_%ss_id' % [token, token]
+    endpoint_class_name = 'Delete%ssId' % self.name
     klass = ObjectHelper.get_class_for_class_name(endpoint_class_name)
     klass.call(client, object)
   end
