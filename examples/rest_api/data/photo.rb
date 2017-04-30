@@ -38,14 +38,4 @@ class Photo < BaseClassForResource
     end
   end
 
-  def self.read(client, photo)
-    require_relative '../endpoints/photos/get_photos_id'
-    GetPhotosId.call(client, photo)
-  end
-
-  def self.get_all(client)
-    require_relative '../endpoints/photos/get_photos'
-    GetPhotos.call(client)
-  end
-
 end
