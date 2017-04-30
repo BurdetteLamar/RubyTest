@@ -1,8 +1,8 @@
-require_relative '../../../lib/base_classes/base_class_for_data'
+require_relative 'base_class_for_resource'
 
 require_relative '../data/geo'
 
-class Photo < BaseClassForData
+class Photo < BaseClassForResource
 
   FIELDS = Set.new([
          :albumId,

@@ -20,13 +20,35 @@ class BaseClassForData < BaseClass
     nil
   end
 
-  # A derived class can call this method to log an instance of itself.
   Contract Log, String => nil
+  # Log recursively, so that nested objects can log themselves.
   def log(log, comment = self.name)
-    # Log recursively, so that nested objects can log themselves.
     log_recursive(self, log, comment)
     nil
   end
+
+  Contract Log, String, Any, Any, String => Bool
+  # Verify recursively, so that nested objects can verify themselves.
+  def self.verdict_equal?(log, verdict_id, expected_obj, actual_obj, message)
+    unless expected_obj.respond_to?(:fields)
+      return log.verdict_assert_equal?(verdict_id, expected_obj, actual_obj, message)
+    end
+    self.verdict_equal_recursive?(log, verdict_id, expected_obj, actual_obj, message)
+  end
+
+  Contract None => Hash
+  def to_hash
+    hash = {}
+    fields.each do |key|
+      value = send "#{key}"
+      next if value.nil?
+      value = value.to_hash if value.respond_to?(:to_hash)
+      hash[key] = value
+    end
+    hash
+  end
+
+  private
 
   # Log an object recursively,
   # giving special handling to nested objects.
@@ -61,19 +83,8 @@ class BaseClassForData < BaseClass
     end
   end
 
-  # A derived class can call this method to test for equality.
-  Contract Log, String, Any, Any, String => Bool
-  def self.verdict_equal?(log, verdict_id, expected_obj, actual_obj, message)
-    # Verify recursively, so that nested objects can verify themselves.
-    unless expected_obj.respond_to?(:fields)
-      return log.verdict_assert_equal?(verdict_id, expected_obj, actual_obj, message)
-    end
-    self.verdict_equal_recursive?(log, verdict_id, expected_obj, actual_obj, message)
-  end
-
   # Verify an object recursively,
   # giving special handling to nested objects.
-  Contract Log, String, self, self, String => Bool
   def self.verdict_equal_recursive?(log, verdict_id, expected_obj, actual_obj, message)
     verdict = true
     log.section(verdict_id) do
@@ -92,45 +103,6 @@ class BaseClassForData < BaseClass
       end
     end
     verdict
-  end
-
-  Contract ExampleRestClient => self
-  def self.get_first(client)
-    all = self.get_all(client)
-    raise RuntimeError.new('No %s available' % self.name) unless all.size > 0
-    all.first
-  end
-
-  Contract ExampleRestClient, self => Bool
-  def self.exist?(client, album)
-    begin
-      self.read(client, album)
-      return true
-    rescue RestClient::NotFound
-      return false
-    end
-  end
-
-  Contract ExampleRestClient, Log, String, self => Bool
-  def self.verdict_exist?(client, log, verdict_id, album)
-    log.va?(verdict_id, self.exist?(client, album), self.name + ' exists')
-  end
-
-  Contract ExampleRestClient, Log, String, self => Bool
-  def self.verdict_not_exist?(client, log, verdict_id, album)
-    log.vr?(verdict_id, self.exist?(client, album), self.name + ' not exist')
-  end
-
-  Contract None => Hash
-  def to_hash
-    hash = {}
-    fields.each do |key|
-      value = send "#{key}"
-      next if value.nil?
-      value = value.to_hash if value.respond_to?(:to_hash)
-      hash[key] = value
-    end
-    hash
   end
 
 end

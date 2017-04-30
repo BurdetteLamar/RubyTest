@@ -1,9 +1,9 @@
-require_relative '../../../lib/base_classes/base_class_for_data'
+require_relative 'base_class_for_resource'
 
 require_relative '../data/address'
 require_relative '../data/company'
 
-class User < BaseClassForData
+class User < BaseClassForResource
 
   FIELDS = Set.new([
       :id,

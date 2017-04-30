@@ -1,6 +1,6 @@
-require_relative '../../../lib/base_classes/base_class_for_data'
+require_relative 'base_class_for_resource'
 
-class Album < BaseClassForData
+class Album < BaseClassForResource
 
   FIELDS = Set.new([
       :id,
