@@ -2,7 +2,7 @@ require_relative '../../../../lib/base_classes/base_class'
 
 require_relative '../../example_rest_client'
 
-class BaseClassForRestRequest < BaseClass
+class BaseClassForEndpoint < BaseClass
 
   Contract ExampleRestClient, Args[Any] => Any
   def self.call(client, *args)
