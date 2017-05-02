@@ -1,17 +1,14 @@
 # RubyTest
 
-This project provides Ruby-based tools for software test automation.
+This project provides _working software_ to help with automated software testing.
 
-It begins modestly, with just:
+The first major component is:
+ 
+- [Example testing for a REST API](./examples/rest_api/RestAPI.md).
 
-- A logger class.
-- Examples of its use.
-- Some helper classes.
-- Tests.
+The testing is supported by:
 
-These tools are intended primarily for use in developing and running regression tests for legacy software.
-
-Much more to come.
+- [Robust logging](./lib/log/log.rb).
 
 Links to the other markdown documentation are at:
 

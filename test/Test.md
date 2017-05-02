@@ -1,5 +1,7 @@
 # Test
 
+(This page is about the testing for RubyTest itself --  self-testing -- not about using RubyTest to test other software.)
+
 ## Assertions, Not Verdicts
 
 The testing here uses assertions (which halt the testing), not verdicts (which do not).
