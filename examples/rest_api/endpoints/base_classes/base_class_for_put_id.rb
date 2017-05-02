@@ -3,14 +3,6 @@ require_relative '../base_classes/base_class_for_endpoint'
 
 class BaseClassForPutId < BaseClassForEndpoint
 
-  def self.data_class_name
-    self.url_element.sub(/s$/, '')
-  end
-
-  def self.url_element
-    self.to_s.sub('Put', '').sub('Id', '')
-  end
-
   def self.call_and_return_payload(client, object_to_put)
     url_elements = [
         url_element.downcase,
@@ -38,6 +30,16 @@ class BaseClassForPutId < BaseClassForEndpoint
       end
       return object_put
     end
+  end
+
+  private
+
+  def self.data_class_name
+    self.url_element.sub(/s$/, '')
+  end
+
+  def self.url_element
+    self.to_s.sub('Put', '').sub('Id', '')
   end
 
 end
