@@ -14,13 +14,13 @@ class PhotosTest < BaseClassForTest
   def test_delete_photos_id
 
     prelude do |client, log|
-      log.section('Test DeletePhotos') do
+      log.section('Test DeletePhotosId') do
         photo_to_delete = nil
         log.section('Get a photo to delete') do
           photo_to_delete = Photo.get_first(client)
         end
         log.section('Delete the photo') do
-          # This should fail, because JSONplaceholder will not actually delete the photo.
+          # Some verdicts should fail, because JSONplaceholder will not actually delete the photo.
           DeletePhotosId.verdict_call_and_verify_success(client, log, 'delete photo', photo_to_delete)
         end
       end
@@ -64,7 +64,7 @@ class PhotosTest < BaseClassForTest
             :url => 'NewUrl',
             :thumbnailUrl => 'NewThumbmailUrl',
         )
-        # This should fail, because JSONplaceholder will not actually create the photo.
+        # Some verdicts should fail, because JSONplaceholder will not actually create the photo.
         PostPhotos.verdict_call_and_verify_success(client, log, 'photo to_create', photo_to_post)
       end
     end
@@ -74,7 +74,7 @@ class PhotosTest < BaseClassForTest
   def test_put_photos_id
 
     prelude do |client, log|
-      log.section('Test PutPhotos') do
+      log.section('Test PutPhotosId') do
         photo_to_put = nil
         log.section('Get a photo to put') do
           photo_original = Photo.get_first(client)
@@ -84,7 +84,7 @@ class PhotosTest < BaseClassForTest
           photo_to_put.title = 'New title'
           photo_to_put.url = 'NewUrl'
           photo_to_put.thumbnailUrl = 'NewThumbnailUrl'
-          # This should fail, because JSONplaceholder will not actually update the photo.
+          # Some verdicts should fail, because JSONplaceholder will not actually update the photo.
           PutPhotosId.verdict_call_and_verify_success(client, log, 'Photo to put', photo_to_put)
         end
       end
