@@ -14,13 +14,13 @@ class PostsTest < BaseClassForTest
   def test_delete_posts_id
 
     prelude do |client, log|
-      log.section('Test DeletePosts') do
+      log.section('Test DeletePostsId') do
         post_to_delete = nil
         log.section('Get a post to delete') do
           post_to_delete = Post.get_first(client)
         end
         log.section('Delete the post') do
-          # This should fail, because JSONplaceholder will not actually delete the post.
+          # Some verdicts should fail, because JSONplaceholder will not actually delete the post.
           DeletePostsId.verdict_call_and_verify_success(client, log, 'delete post', post_to_delete)
         end
       end
@@ -63,7 +63,7 @@ class PostsTest < BaseClassForTest
             :title => 'New title',
             :body => 'New body',
         )
-        # This should fail, because JSONplaceholder will not actually create the post.
+        # Some verdicts should fail, because JSONplaceholder will not actually create the post.
         PostPosts.verdict_call_and_verify_success(client, log, 'post to_create', post_to_post)
       end
     end
@@ -73,7 +73,7 @@ class PostsTest < BaseClassForTest
   def test_put_posts_id
 
     prelude do |client, log|
-      log.section('Test PutPosts') do
+      log.section('Test PutPostsId') do
         post_to_put = nil
         log.section('Get a post to put') do
           post_original = Post.get_first(client)
@@ -82,7 +82,7 @@ class PostsTest < BaseClassForTest
         log.section('Put the modifications') do
           post_to_put.title = 'New title'
           post_to_put.body = 'New body'
-          # This should fail, because JSONplaceholder will not actually update the post.
+          # Some verdicts should fail, because JSONplaceholder will not actually update the post.
           PutPostsId.verdict_call_and_verify_success(client, log, 'Post to put', post_to_put)
         end
       end

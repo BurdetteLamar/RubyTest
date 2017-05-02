@@ -14,13 +14,13 @@ class TodosTest < BaseClassForTest
   def test_delete_todos_id
 
     prelude do |client, log|
-      log.section('Test DeleteTodos') do
+      log.section('Test DeleteTodosId') do
         todo_to_delete = nil
         log.section('Get a todo to delete') do
           todo_to_delete = Todo.get_first(client)
         end
         log.section('Delete the todo') do
-          # This should fail, because JSONplaceholder will not actually delete the todo.
+          # Some verdicts should fail, because JSONplaceholder will not actually delete the todo.
           DeleteTodosId.verdict_call_and_verify_success(client, log, 'delete todo', todo_to_delete)
         end
       end
@@ -63,7 +63,7 @@ class TodosTest < BaseClassForTest
             :title => 'New title',
             :completed => false,
         )
-        # This should fail, because JSONplaceholder will not actually create the todo.
+        # Some verdicts should fail, because JSONplaceholder will not actually create the todo.
         PostTodos.verdict_call_and_verify_success(client, log, 'todo to_create', todo_to_post)
       end
     end
@@ -73,7 +73,7 @@ class TodosTest < BaseClassForTest
   def test_put_todos_id
 
     prelude do |client, log|
-      log.section('Test PutTodos') do
+      log.section('Test PutTodosId') do
         todo_to_put = nil
         log.section('Get a todo to put') do
           todo_original = Todo.get_first(client)
@@ -82,7 +82,7 @@ class TodosTest < BaseClassForTest
         log.section('Put the modifications') do
           todo_to_put.title = 'New title'
           todo_to_put.completed = true
-          # This should fail, because JSONplaceholder will not actually update the todo.
+          # Some verdicts should fail, because JSONplaceholder will not actually update the todo.
           PutTodosId.verdict_call_and_verify_success(client, log, 'Todo to put', todo_to_put)
         end
       end

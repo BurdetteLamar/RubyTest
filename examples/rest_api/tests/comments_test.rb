@@ -14,13 +14,13 @@ class CommentsTest < BaseClassForTest
   def test_delete_comments_id
 
     prelude do |client, log|
-      log.section('Test DeleteComments') do
+      log.section('Test DeleteCommentsId') do
         comment_to_delete = nil
         log.section('Get a comment to delete') do
           comment_to_delete = Comment.get_first(client)
         end
         log.section('Delete the comment') do
-          # This should fail, because JSONplaceholder will not actually delete the comment.
+          # Some verdicts should fail, because JSONplaceholder will not actually delete the comment.
           DeleteCommentsId.verdict_call_and_verify_success(client, log, 'delete comment', comment_to_delete)
         end
       end
@@ -64,7 +64,7 @@ class CommentsTest < BaseClassForTest
             :email => 'New@Email.com',
             :body => 'New body',
         )
-        # This should fail, because JSONplaceholder will not actually create the comment.
+        # Some verdicts should fail, because JSONplaceholder will not actually create the comment.
         PostComments.verdict_call_and_verify_success(client, log, 'comment to_create', comment_to_post)
       end
     end
@@ -74,7 +74,7 @@ class CommentsTest < BaseClassForTest
   def test_put_comments_id
 
     prelude do |client, log|
-      log.section('Test PutComments') do
+      log.section('Test PutCommentsId') do
         comment_to_put = nil
         log.section('Get a comment to put') do
           comment_original = Comment.get_first(client)
@@ -84,7 +84,7 @@ class CommentsTest < BaseClassForTest
           comment_to_put.name = 'NewName'
           comment_to_put.email = 'New@Email.com'
           comment_to_put.body = 'New body'
-          # This should fail, because JSONplaceholder will not actually update the comment.
+          # Some verdicts should fail, because JSONplaceholder will not actually update the comment.
           PutCommentsId.verdict_call_and_verify_success(client, log, 'Comment to put', comment_to_put)
         end
       end
