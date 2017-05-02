@@ -1,7 +1,7 @@
-require_relative '../base_classes/base_class_for_rest_request'
+require_relative '../base_classes/base_class_for_endpoint'
 require_relative '../../../../lib/helpers/object_helper'
 
-class BaseClassForGetId < BaseClassForRestRequest
+class BaseClassForGetId < BaseClassForEndpoint
 
   def self.data_class_name
     self.url_element.sub(/s$/, '')
