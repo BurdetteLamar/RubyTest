@@ -81,9 +81,9 @@ and a couple of other convenience methods:
 
 Additional data classes correspond to data structures that are not themselves resources, but instead are embedded in resource data:
 
-- [Address](address./data/.rb)
-- [Company](company./data/.rb)
-- [Geo](geo./data/.rb)
+- [Address](./data/address.rb)
+- [Company](./data/company.rb)
+- [Geo](./data/geo.rb)
 
 ## Endpoints
 
