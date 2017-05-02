@@ -87,9 +87,30 @@ Additional data classes correspond to data structures that are not themselves re
 
 ## Endpoints
 
-Each endpoint in the target REST API is encapsulated by an endpoint class.
+Each endpoint found in the target REST API is encapsulated by an endpoint class in this test example.
 
 These endpoint classes implement an _endpoint object pattern_ that corresponds directly to the well-known [page object pattern](http://www.assertselenium.com/automation-design-practices/page-object-pattern).
+
+Each endpoint class has three methods:
+
+- <code>self.call</code>:  sends request and returns data object(s) created from response.
+- <code>self.call_and_return_payload</code>:  sends request and returns both data object(s) and parsed JSON.
+- <code>self.verdict_call_and_verify_success</code>:  sends request and verifies response.
+
+The endpoint URLs and their behaviors are _very_ consistent, which makes it easy to implement base classes that do most of the work:
+
+- [BaseClassForDeleteId](./endpoints/base_classes/base_class_for_delete_id.rb)
+- [BaseClassForGet](./endpoints/base_classes/base_class_for_get.rb)
+- [BaseClassForGetId](./endpoints/base_classes/base_class_for_get_id.rb)
+- [BaseClassForPost](./endpoints/base_classes/base_class_for_post.rb)
+- [BaseClassForPutId](./endpoints/base_classes/base_class_for_put_id.rb)
+
+Each of these base classes implements methods <code>self.call_and_return_payload</code> and <code>self.verdict_call_and_verify_success</code.
+
+Method <code>self.call</code> is implemented in a higher-level base class:
+
+- [BaseClassForEndpoint](./endpoints/base_classes/base_class_for_endpoint.rb)
+
 
 ## Tests
 
