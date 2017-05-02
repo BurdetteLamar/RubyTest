@@ -105,7 +105,7 @@ The endpoint URLs and their behaviors are _very_ consistent, which makes it easy
 - [BaseClassForPost](./endpoints/base_classes/base_class_for_post.rb)
 - [BaseClassForPutId](./endpoints/base_classes/base_class_for_put_id.rb)
 
-Each of these base classes implements methods <code>self.call_and_return_payload</code> and <code>self.verdict_call_and_verify_success</code.
+Each of these base classes implements methods <code>self.call_and_return_payload</code> and <code>self.verdict_call_and_verify_success</code>.
 
 Method <code>self.call</code> is implemented in a higher-level base class:
 
