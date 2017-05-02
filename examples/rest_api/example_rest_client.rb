@@ -56,6 +56,8 @@ class ExampleRestClient < BaseClass
     client_method(__method__, url_elements, query_elements, parameters)
   end
 
+  private
+
   # Do one of the above.
   Contract Symbol, Array, Maybe[Array], Any => Or[String, Array, Hash]
   def client_method(rest_method, url_elements, query_elements = [], parameters = nil)
