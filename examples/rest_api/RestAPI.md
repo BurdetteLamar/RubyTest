@@ -111,9 +111,33 @@ Method <code>self.call</code> is implemented in a higher-level base class:
 
 - [BaseClassForEndpoint](./endpoints/base_classes/base_class_for_endpoint.rb)
 
-
 ## Tests
 
+### Base Class for Test
 
+If you've read this far, you won't be surprised that there's a:
 
+- [BaseClassForTest](./tests/base_class_for_test.rb)
 
+The class is derived from class <code>Minitest::Test</code>, in Ruby gem
+
+- [minitest](https://rubygems.org/gems/minitest)
+
+Its only method, <code>prelude</code> accepts a block, and yields with instances of [Log](../../lib/log/log.rb) and [ExampleRestClient](./example_rest_client.rb) for use in the block.
+
+### Test Classes
+
+Each test class performs testing for one of the REST API resources:
+
+- [AlbumsTest](./tests/albums_test.rb)
+- [CommentsTest](./tests/comments_test.rb)
+- [PhotosTest](./tests/photos_test.rb)
+- [PostsTest](./tests/posts_test.rb)
+- [TodosTest](./tests/todos_test.rb)
+- [UsersTest](./tests/users_test.rb)
+
+Each test method uses <code>Log</code>'s nested sections to give the test structure and improve readability.  The sections are reflected in the created XML log.
+
+If you have cloned this project, you can run the tests and produce logs by typing command:
+
+- <code>rake examples:rest_api</code>
