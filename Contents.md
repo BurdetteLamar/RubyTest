@@ -8,7 +8,7 @@
      - log
        - [Log Examples](./examples/log/Log.md)
      - rest_api
-       - [REST API Test Examples](./examples/rest_api/RestAPI.md)
+       - [REST API Test Example](./examples/rest_api/RestAPI.md)
    - lib
      - [Lib](./lib/Lib.md)
      - helpers
