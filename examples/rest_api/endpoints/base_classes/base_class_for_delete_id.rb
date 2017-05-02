@@ -3,14 +3,6 @@ require_relative '../../../../lib/helpers/object_helper'
 
 class BaseClassForDeleteId < BaseClassForEndpoint
 
-  def self.data_class_name
-    self.url_element.sub(/s$/, '')
-  end
-
-  def self.url_element
-    self.to_s.sub('Delete', '').sub('Id', '')
-  end
-
   def self.call_and_return_payload(client, object_to_delete)
     url_elements = [
         url_element.downcase,
@@ -31,6 +23,16 @@ class BaseClassForDeleteId < BaseClassForEndpoint
       end
       return payload
     end
+  end
+
+  private
+
+  def self.data_class_name
+    self.url_element.sub(/s$/, '')
+  end
+
+  def self.url_element
+    self.to_s.sub('Delete', '').sub('Id', '')
   end
 
 end

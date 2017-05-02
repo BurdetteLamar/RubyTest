@@ -3,14 +3,6 @@ require_relative '../../../../lib/helpers/object_helper'
 
 class BaseClassForGetId < BaseClassForEndpoint
 
-  def self.data_class_name
-    self.url_element.sub(/s$/, '')
-  end
-
-  def self.url_element
-    self.to_s.sub('Get', '').sub('Id', '')
-  end
-
   def self.call_and_return_payload(client, object_to_fetch)
     url_elements = [
         url_element.downcase,
@@ -32,6 +24,16 @@ class BaseClassForGetId < BaseClassForEndpoint
       end
       return object_fetched
     end
+  end
+
+  private
+
+  def self.data_class_name
+    self.url_element.sub(/s$/, '')
+  end
+
+  def self.url_element
+    self.to_s.sub('Get', '').sub('Id', '')
   end
 
 end

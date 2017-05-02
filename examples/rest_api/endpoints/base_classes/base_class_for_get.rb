@@ -3,14 +3,6 @@ require_relative '../../../../lib/helpers/object_helper'
 
 class BaseClassForGet < BaseClassForEndpoint
 
-  def self.data_class_name
-    self.url_element.sub(/s$/, '')
-  end
-
-  def self.url_element
-    self.to_s.sub('Get', '')
-  end
-
   def self.call_and_return_payload(client)
     url_elements = [
         url_element.downcase,
@@ -38,6 +30,16 @@ class BaseClassForGet < BaseClassForEndpoint
       return objects
     end
     objects
+  end
+
+  private
+
+  def self.data_class_name
+    self.url_element.sub(/s$/, '')
+  end
+
+  def self.url_element
+    self.to_s.sub('Get', '')
   end
 
 end

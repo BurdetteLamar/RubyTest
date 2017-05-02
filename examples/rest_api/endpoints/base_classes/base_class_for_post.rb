@@ -3,14 +3,6 @@ require_relative '../base_classes/base_class_for_endpoint'
 
 class BaseClassForPost < BaseClassForEndpoint
 
-  def self.data_class_name
-    self.url_element.sub(/s$/, '')
-  end
-
-  def self.url_element
-    self.to_s.sub('Post', '')
-  end
-
   def self.call_and_return_payload(client, object_to_create)
     url_elements = [
         url_element.downcase,
@@ -36,6 +28,16 @@ class BaseClassForPost < BaseClassForEndpoint
       end
       return object_posted
     end
+  end
+
+  private
+
+  def self.data_class_name
+    self.url_element.sub(/s$/, '')
+  end
+
+  def self.url_element
+    self.to_s.sub('Post', '')
   end
 
 end
