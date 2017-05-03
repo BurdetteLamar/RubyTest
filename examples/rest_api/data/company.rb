@@ -24,9 +24,9 @@ class Company < BaseClassForData
   Contract Log, String => Bool
   def verdict_valid?(log, verdict_id)
     if log.verdict_assert_instance_of?(verdict_id + ' - class', Company, self, 'First object is of class Company')
-      log.va_string_not_empty?(verdict_id + ' - name', self.name, 'Company name')
-      log.va_string_not_empty?(verdict_id + ' - catchPhrase', self.catchPhrase, 'Company catchPhrase')
-      log.va_string_not_empty?(verdict_id + ' - bs', self.bs, 'Company bs')
+      log.verdict_assert_string_not_empty?(verdict_id + ' - name', self.name, 'Company name')
+      log.verdict_assert_string_not_empty?(verdict_id + ' - catchPhrase', self.catchPhrase, 'Company catchPhrase')
+      log.verdict_assert_string_not_empty?(verdict_id + ' - bs', self.bs, 'Company bs')
     end
   end
 

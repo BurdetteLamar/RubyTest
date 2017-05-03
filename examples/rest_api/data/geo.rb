@@ -25,8 +25,8 @@ class Geo < BaseClassForData
   Contract Log, String => Bool
   def verdict_valid?(log, verdict_id)
     if log.verdict_assert_instance_of?(verdict_id + ' - class', Geo, self, 'First object is of class Geo')
-      log.va_in_delta?(verdict_id + ' - lat', 0, self.lat, 90, 'Geo lat')
-      log.va_in_delta?(verdict_id + ' - lng', 0, self.lng, 90, 'Geo lng')
+      log.verdict_assert_in_delta?(verdict_id + ' - lat', 0, self.lat, 90, 'Geo lat')
+      log.verdict_assert_in_delta?(verdict_id + ' - lng', 0, self.lng, 90, 'Geo lng')
     end
   end
 

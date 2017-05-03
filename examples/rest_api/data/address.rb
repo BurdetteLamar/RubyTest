@@ -35,10 +35,10 @@ class Address < BaseClassForData
   Contract Log, String => Bool
   def verdict_valid?(log, verdict_id)
     if log.verdict_assert_instance_of?(verdict_id + ' - class', Address, self, 'First object is of class Address')
-      log.va_string_not_empty?(verdict_id + ' - street', self.street, 'Address street')
-      log.va_string_not_empty?(verdict_id + ' - suite', self.suite, 'Address suite')
-      log.va_string_not_empty?(verdict_id + ' - city', self.city, 'Address city')
-      log.va_string_not_empty?(verdict_id + ' - zipcode', self.zipcode, 'Address zipcode')
+      log.verdict_assert_string_not_empty?(verdict_id + ' - street', self.street, 'Address street')
+      log.verdict_assert_string_not_empty?(verdict_id + ' - suite', self.suite, 'Address suite')
+      log.verdict_assert_string_not_empty?(verdict_id + ' - city', self.city, 'Address city')
+      log.verdict_assert_string_not_empty?(verdict_id + ' - zipcode', self.zipcode, 'Address zipcode')
       geo.verdict_valid?(log, verdict_id + ' - geo')
     end
   end
