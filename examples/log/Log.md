@@ -4,7 +4,7 @@
 
 Source code examples of logging may be found here:
 
-- [Source code](./log_examples.rb)
+- [log_examples.rb](./log_examples.rb)
 
 ## Log File Examples
 
