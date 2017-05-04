@@ -12,13 +12,13 @@ That's because the unit tests function as build-verification tests, which must p
 
 The largest part of the testing here is for one class:  Log.
 
-- LogTest
+- [log_test.rb](./log_test.rb)
 
 ## Helpers
 
 Tests for helper classes include:
 
-- HashHelperTest
-- SetHelperTest
-- StringHelperTest
-- ValuesHelperTest
+- [hash_helper_test.rb](./helpers/hash_helper_test.rb)
+- [set_helper_test.rb](./helpers/set_helper_test.rb)
+- [string_helper_test.rb](./helpers/string_helper_test.rb)
+- [values_helper_test.rb](./helpers/values_helper_test.rb)

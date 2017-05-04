@@ -3,21 +3,21 @@
    - [Gemfile](./Gemfile.md)
    - [RubyTest](./README.md)
    - [Rakefile](./Rakefile.md)
-   - examples
+   - examples/
      - [Examples](./examples/Examples.md)
-     - log
+     - log/
        - [Log Examples](./examples/log/Log.md)
-     - rest_api
+     - rest_api/
        - [REST API Test Example](./examples/rest_api/RestAPI.md)
-   - lib
+   - lib/
      - [Lib](./lib/Lib.md)
-     - base_classes
+     - base_classes/
        - [Base Classes](./lib/base_classes/BaseClasses.md)
-     - helpers
+     - helpers/
        - [Helpers](./lib/helpers/Helpers.md)
-     - log
+     - log/
        - [Log](./lib/log/Log.md)
-   - test
+   - test/
      - [Unit Tests](./test/Test.md)
-   - tools
+   - tools/
      - [Tools](./tools/Tools.md)
