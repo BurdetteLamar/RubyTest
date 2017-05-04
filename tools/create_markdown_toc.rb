@@ -82,7 +82,7 @@ class MarkdownToc < BaseClass
       entry.each_pair do |path, node|
         if node.respond_to?(:each_pair)
           if path != '.'
-            entry = format('%s - %s', '  ' * level, path)
+            entry = format('%s - %s/', '  ' * level, path)
             lines.push(entry)
           end
           self.do_level(lines, node, level+1)
