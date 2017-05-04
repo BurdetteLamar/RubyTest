@@ -11,9 +11,13 @@
        - [REST API Test Example](./examples/rest_api/RestAPI.md)
    - lib
      - [Lib](./lib/Lib.md)
+     - base_classes
+       - [Base Classes](./lib/base_classes/BaseClasses.md)
      - helpers
-       - [Helpers](./lib/helpers/helpers.md)
+       - [Helpers](./lib/helpers/Helpers.md)
+     - log
+       - [Log](./lib/log/Log.md)
    - test
-     - [Test](./test/Test.md)
+     - [Unit Tests](./test/Test.md)
    - tools
      - [Tools](./tools/Tools.md)

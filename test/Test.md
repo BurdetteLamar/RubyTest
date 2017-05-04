@@ -1,12 +1,12 @@
-# Test
+# Unit Tests
 
-(This page is about the testing for RubyTest itself --  self-testing -- not about using RubyTest to test other software.)
+(This page is about the testing for RubyTest itself -- unit testing -- not about using RubyTest to test other software.)
 
 ## Assertions, Not Verdicts
 
-The testing here uses assertions (which halt the testing), not verdicts (which do not).
+The unit tests use assertions (which halt the testing), not verdicts (which do not).
 
-That's because the tests are not regression tests, but instead are build-verification tests, which must pass before every merge.
+That's because the unit tests function as build-verification tests, which must pass before every merge.
 
 ## Log
 
