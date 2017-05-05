@@ -63,9 +63,9 @@ class ExampleRestClient < BaseClass
   def client_method(rest_method, url_elements, query_elements, parameters)
     response = nil
     url = File.join(@base_url, *url_elements)
-    query_elements.each_with_index do |s, i|
+    query_elements.to_a.each_with_index do |pair, i|
       char = (i == 0) ? '?' : '&'
-      url += '%s%s%s' % [url, char, s]
+      url += '%s%s=%s' % [char, *pair]
     end
     url = URI.escape(url)
     # Cannot allow uncaught exception in a log block.

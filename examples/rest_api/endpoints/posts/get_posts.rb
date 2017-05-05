@@ -4,8 +4,8 @@ require_relative '../../data/post'
 
 class GetPosts < BaseClassForGet
 
-  Contract ExampleRestClient => [ArrayOf[Post], ArrayOf[Hash]]
-  def self.call_and_return_payload(client)
+  Contract ExampleRestClient, Maybe[Hash] => [ArrayOf[Post], ArrayOf[Hash]]
+  def self.call_and_return_payload(client, query_elements = {})
     super
   end
 
