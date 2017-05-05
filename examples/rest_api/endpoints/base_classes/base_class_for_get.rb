@@ -3,11 +3,11 @@ require_relative '../../../../lib/helpers/object_helper'
 
 class BaseClassForGet < BaseClassForEndpoint
 
-  def self.call_and_return_payload(client)
+  def self.call_and_return_payload(client, query_elements)
     url_elements = [
         url_element.downcase,
     ]
-    payload = client.get(url_elements)
+    payload = client.get(url_elements, query_elements)
     objects = []
     payload.each do |hash|
       rehash = HashHelper.rehash_to_symbol_keys(hash)
@@ -17,10 +17,10 @@ class BaseClassForGet < BaseClassForEndpoint
     [objects, payload]
   end
 
-  def self.verdict_call_and_verify_success(client, log, verdict_id)
+  def self.verdict_call_and_verify_success(client, log, verdict_id, query_elements)
     objects = []
     log.section(verdict_id, :rescue, :timestamp, :duration) do
-      objects = self.call(client)
+      objects = self.call(client, query_elements)
       log.section('Evaluation') do
         object = objects.first
         log.put_element('data', {:fetched_object_count => objects.size})

@@ -54,7 +54,12 @@ module VerdictAssertion
   Contract VERDICT_ID, Object, Object, VERDICT_MESSAGE, VERDICT_VOLATILE, ARGS => Bool
   # \Log a verdict using :assert_equal.
   def verdict_assert_equal?(verdict_id, expected, actual, message, volatile = false, *args)
-    _verdict_equal?(__method__, verdict_id, expected, actual, message, volatile, *args)
+    if expected.nil?
+      # Minitest warns if we try to test for nil.
+      verdict_assert_nil?(verdict_id, expected, actual, message, volatile, *args)
+    else
+      _verdict_equal?(__method__, verdict_id, expected, actual, message, volatile, *args)
+    end
   end
   alias va_equal? verdict_assert_equal?
 

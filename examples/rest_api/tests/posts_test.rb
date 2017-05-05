@@ -31,7 +31,46 @@ class PostsTest < BaseClassForTest
 
     prelude do |client, log|
       log.section('Test GetPosts') do
-        GetPosts.verdict_call_and_verify_success(client, log, 'get posts')
+
+        all_posts = nil
+
+        log.section('GetPosts with no query') do
+          all_posts = GetPosts.verdict_call_and_verify_success(client, log, 'with no query')
+        end
+
+        log.section('GetPosts with simple query') do
+          post = all_posts.first
+          query_elements = {
+              :userId => post.userId,
+          }
+          expected_posts = all_posts.select { |p| p.userId == post.userId }
+          actual_posts = GetPosts.call(client, query_elements)
+          if log.verdict_assert_equal?('count for simple query', expected_posts.size, actual_posts.size, 'Count')
+            (0...expected_posts.size).each do |i|
+              expected_post = expected_posts[i]
+              actual_post = actual_posts[i]
+              Post.verdict_equal?(log, 'with simple query %d' % i, expected_post, actual_post, 'Post %d' % i)
+            end
+          end
+        end
+
+        log.section('GetPosts with complex query') do
+          post = all_posts.first
+          query_elements = {
+              :userId => post.userId,
+              :title => post.title,
+          }
+          expected_posts = all_posts.select { |p| (p.userId == post.userId) && (p.title == post.title) }
+          actual_posts = GetPosts.call(client, query_elements)
+          if log.verdict_assert_equal?('count for complex query', expected_posts.size, actual_posts.size, 'Count')
+            (0...expected_posts.size).each do |i|
+              expected_post = expected_posts[i]
+              actual_post = actual_posts[i]
+              Post.verdict_equal?(log, 'with complex query %d' % i, expected_post, actual_post, 'Post %d' % i)
+            end
+          end
+        end
+
       end
     end
 
