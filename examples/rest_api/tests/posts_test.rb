@@ -72,6 +72,7 @@ class PostsTest < BaseClassForTest
         end
 
       end
+
     end
 
   end

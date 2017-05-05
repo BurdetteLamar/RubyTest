@@ -31,8 +31,48 @@ class AlbumsTest < BaseClassForTest
 
     prelude do |client, log|
       log.section('Test GetAlbums') do
-        GetAlbums.verdict_call_and_verify_success(client, log, 'get albums')
+
+        all_albums = nil
+
+        log.section('GetAlbums with no query') do
+          all_albums = GetAlbums.verdict_call_and_verify_success(client, log, 'with no query')
+        end
+
+        log.section('GetAlbums with simple query') do
+          album = all_albums.first
+          query_elements = {
+              :userId => album.userId,
+          }
+          expected_albums = all_albums.select { |p| p.userId == album.userId }
+          actual_albums = GetAlbums.call(client, query_elements)
+          if log.verdict_assert_equal?('count for simple query', expected_albums.size, actual_albums.size, 'Count')
+            (0...expected_albums.size).each do |i|
+              expected_album = expected_albums[i]
+              actual_album = actual_albums[i]
+              Album.verdict_equal?(log, 'with simple query %d' % i, expected_album, actual_album, 'Album %d' % i)
+            end
+          end
+        end
+
+        log.section('GetAlbums with complex query') do
+          album = all_albums.first
+          query_elements = {
+              :userId => album.userId,
+              :title => album.title,
+          }
+          expected_albums = all_albums.select { |p| (p.userId == album.userId) && (p.title == album.title) }
+          actual_albums = GetAlbums.call(client, query_elements)
+          if log.verdict_assert_equal?('count for complex query', expected_albums.size, actual_albums.size, 'Count')
+            (0...expected_albums.size).each do |i|
+              expected_album = expected_albums[i]
+              actual_album = actual_albums[i]
+              Album.verdict_equal?(log, 'with complex query %d' % i, expected_album, actual_album, 'Album %d' % i)
+            end
+          end
+        end
+
       end
+
     end
 
   end
@@ -56,14 +96,14 @@ class AlbumsTest < BaseClassForTest
   def test_post_albums
 
     prelude do |client, log|
-      log.section('Test PostAlbums') do
-        album_to_post = Album.new(
+      log.section('Test AlbumAlbums') do
+        album_to_album = Album.new(
             :id => 1,
             :userId => 1,
             :title => 'My Album',
         )
         # Some verdicts should fail, because JSONplaceholder will not actually create the album.
-        PostAlbums.verdict_call_and_verify_success(client, log, 'album to_create', album_to_post)
+        PostAlbums.verdict_call_and_verify_success(client, log, 'album to_create', album_to_album)
       end
     end
 

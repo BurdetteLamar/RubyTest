@@ -31,8 +31,48 @@ class CommentsTest < BaseClassForTest
 
     prelude do |client, log|
       log.section('Test GetComments') do
-        GetComments.verdict_call_and_verify_success(client, log, 'get comments')
+
+        all_comments = nil
+
+        log.section('GetComments with no query') do
+          all_comments = GetComments.verdict_call_and_verify_success(client, log, 'with no query')
+        end
+
+        log.section('GetComments with simple query') do
+          comment = all_comments.first
+          query_elements = {
+              :postId => comment.postId,
+          }
+          expected_comments = all_comments.select { |p| p.postId == comment.postId }
+          actual_comments = GetComments.call(client, query_elements)
+          if log.verdict_assert_equal?('count for simple query', expected_comments.size, actual_comments.size, 'Count')
+            (0...expected_comments.size).each do |i|
+              expected_comment = expected_comments[i]
+              actual_comment = actual_comments[i]
+              Comment.verdict_equal?(log, 'with simple query %d' % i, expected_comment, actual_comment, 'Comment %d' % i)
+            end
+          end
+        end
+
+        log.section('GetComments with complex query') do
+          comment = all_comments.first
+          query_elements = {
+              :postId => comment.postId,
+              :name => comment.name,
+          }
+          expected_comments = all_comments.select { |p| (p.postId == comment.postId) && (p.name == comment.name) }
+          actual_comments = GetComments.call(client, query_elements)
+          if log.verdict_assert_equal?('count for complex query', expected_comments.size, actual_comments.size, 'Count')
+            (0...expected_comments.size).each do |i|
+              expected_comment = expected_comments[i]
+              actual_comment = actual_comments[i]
+              Comment.verdict_equal?(log, 'with complex query %d' % i, expected_comment, actual_comment, 'Comment %d' % i)
+            end
+          end
+        end
+
       end
+
     end
 
   end

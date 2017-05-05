@@ -31,11 +31,52 @@ class TodosTest < BaseClassForTest
 
     prelude do |client, log|
       log.section('Test GetTodos') do
-        GetTodos.verdict_call_and_verify_success(client, log, 'get todos')
+
+        all_todos = nil
+
+        log.section('GetTodos with no query') do
+          all_todos = GetTodos.verdict_call_and_verify_success(client, log, 'with no query')
+        end
+
+        log.section('GetTodos with simple query') do
+          todo = all_todos.first
+          query_elements = {
+              :userId => todo.userId,
+          }
+          expected_todos = all_todos.select { |p| p.userId == todo.userId }
+          actual_todos = GetTodos.call(client, query_elements)
+          if log.verdict_assert_equal?('count for simple query', expected_todos.size, actual_todos.size, 'Count')
+            (0...expected_todos.size).each do |i|
+              expected_todo = expected_todos[i]
+              actual_todo = actual_todos[i]
+              Todo.verdict_equal?(log, 'with simple query %d' % i, expected_todo, actual_todo, 'Todo %d' % i)
+            end
+          end
+        end
+
+        log.section('GetTodos with complex query') do
+          todo = all_todos.first
+          query_elements = {
+              :userId => todo.userId,
+              :title => todo.title,
+          }
+          expected_todos = all_todos.select { |p| (p.userId == todo.userId) && (p.title == todo.title) }
+          actual_todos = GetTodos.call(client, query_elements)
+          if log.verdict_assert_equal?('count for complex query', expected_todos.size, actual_todos.size, 'Count')
+            (0...expected_todos.size).each do |i|
+              expected_todo = expected_todos[i]
+              actual_todo = actual_todos[i]
+              Todo.verdict_equal?(log, 'with complex query %d' % i, expected_todo, actual_todo, 'Todo %d' % i)
+            end
+          end
+        end
+
       end
+
     end
 
   end
+
 
   def test_get_todos_id
 

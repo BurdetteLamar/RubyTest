@@ -31,12 +31,52 @@ class PhotosTest < BaseClassForTest
 
     prelude do |client, log|
       log.section('Test GetPhotos') do
-        GetPhotos.verdict_call_and_verify_success(client, log, 'get photos')
+
+        all_photos = nil
+
+        log.section('GetPhotos with no query') do
+          all_photos = GetPhotos.verdict_call_and_verify_success(client, log, 'with no query')
+        end
+
+        log.section('GetPhotos with simple query') do
+          photo = all_photos.first
+          query_elements = {
+              :albumId => photo.albumId,
+          }
+          expected_photos = all_photos.select { |p| p.albumId == photo.albumId }
+          actual_photos = GetPhotos.call(client, query_elements)
+          if log.verdict_assert_equal?('count for simple query', expected_photos.size, actual_photos.size, 'Count')
+            (0...expected_photos.size).each do |i|
+              expected_photo = expected_photos[i]
+              actual_photo = actual_photos[i]
+              Photo.verdict_equal?(log, 'with simple query %d' % i, expected_photo, actual_photo, 'Photo %d' % i)
+            end
+          end
+        end
+
+        log.section('GetPhotos with complex query') do
+          photo = all_photos.first
+          query_elements = {
+              :albumId => photo.albumId,
+              :title => photo.title,
+          }
+          expected_photos = all_photos.select { |p| (p.albumId == photo.albumId) && (p.title == photo.title) }
+          actual_photos = GetPhotos.call(client, query_elements)
+          if log.verdict_assert_equal?('count for complex query', expected_photos.size, actual_photos.size, 'Count')
+            (0...expected_photos.size).each do |i|
+              expected_photo = expected_photos[i]
+              actual_photo = actual_photos[i]
+              Photo.verdict_equal?(log, 'with complex query %d' % i, expected_photo, actual_photo, 'Photo %d' % i)
+            end
+          end
+        end
+
       end
+
     end
-
+    
   end
-
+  
   def test_get_photos_id
 
     prelude do |client, log|
