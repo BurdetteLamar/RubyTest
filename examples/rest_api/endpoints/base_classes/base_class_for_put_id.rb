@@ -9,9 +9,8 @@ class BaseClassForPutId < BaseClassForEndpoint
         object_to_put.id.to_s,
 
     ]
-    query_elements = []
     parameters = object_to_put.to_hash
-    payload = client.put(url_elements, query_elements, parameters)
+    payload = client.put(url_elements, parameters)
     rehash = HashHelper.rehash_to_symbol_keys(payload)
     object_posted = ObjectHelper.instantiate_class_for_class_name(data_class_name, rehash)
     [object_posted, payload]

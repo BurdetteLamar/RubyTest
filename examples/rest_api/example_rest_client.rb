@@ -33,41 +33,41 @@ class ExampleRestClient < BaseClass
   end
 
   # Get.
-  Contract Array, Maybe[Array], Any => Or[String, Array, Hash]
-  def get(url_elements, query_elements = [])
-    client_method(__method__, url_elements, query_elements)
+  Contract Array, Maybe[Hash] => Or[Array, Hash]
+  def get(url_elements, query_elements = {})
+    client_method(__method__, url_elements, query_elements, parameters = {})
   end
 
   # Post.
-  Contract Array, Maybe[Array], Any => Or[String, Array, Hash]
-  def post(url_elements, query_elements = [], parameters = nil)
-    client_method(__method__, url_elements, query_elements, parameters)
+  Contract Array, Hash => Hash
+  def post(url_elements, parameters)
+    client_method(__method__, url_elements, query_elements = {}, parameters)
   end
 
   # Put.
-  Contract Array, Maybe[Array], Any => Or[String, Array, Hash]
-  def put(url_elements, query_elements = [], parameters = nil)
-    client_method(__method__, url_elements, query_elements, parameters)
+  Contract Array, Hash => Hash
+  def put(url_elements, parameters)
+    client_method(__method__, url_elements, query_elements = {}, parameters)
   end
 
   # Delete.
-  Contract Array, Maybe[Array], Any => Or[String, Array, Hash]
-  def delete(url_elements, query_elements = [], parameters = nil)
-    client_method(__method__, url_elements, query_elements, parameters)
+  Contract Array => Hash
+  def delete(url_elements)
+    client_method(__method__, url_elements, query_elements = {}, parameters = {})
   end
 
   private
 
   # Do one of the above.
-  Contract Symbol, Array, Maybe[Array], Any => Or[String, Array, Hash]
-  def client_method(rest_method, url_elements, query_elements = [], parameters = nil)
+  Contract Symbol, Array, Hash, Hash => Or[String, Array, Hash]
+  def client_method(rest_method, url_elements, query_elements, parameters)
     response = nil
     url = File.join(@base_url, *url_elements)
-    url = URI.escape(url)
     query_elements.each_with_index do |s, i|
       char = (i == 0) ? '?' : '&'
-      url = '%s%s%s' % [url, char, s]
+      url += '%s%s%s' % [url, char, s]
     end
+    url = URI.escape(url)
     # Cannot allow uncaught exception in a log block.
     @log.section('Rest client', :timestamp, :duration, :method => rest_method.to_s.upcase, :url => url) do
       unless parameters.nil?
