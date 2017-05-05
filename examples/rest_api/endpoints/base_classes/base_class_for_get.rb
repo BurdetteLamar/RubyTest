@@ -17,7 +17,7 @@ class BaseClassForGet < BaseClassForEndpoint
     [objects, payload]
   end
 
-  def self.verdict_call_and_verify_success(client, log, verdict_id)
+  def self.verdict_call_and_verify_success(client, log, verdict_id, query_elements)
     objects = []
     log.section(verdict_id, :rescue, :timestamp, :duration) do
       objects = self.call(client)
