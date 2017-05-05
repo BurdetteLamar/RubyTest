@@ -31,11 +31,52 @@ class UsersTest < BaseClassForTest
 
     prelude do |client, log|
       log.section('Test GetUsers') do
-        GetUsers.verdict_call_and_verify_success(client, log, 'get users')
+
+        all_users = nil
+
+        log.section('GetUsers with no query') do
+          all_users = GetUsers.verdict_call_and_verify_success(client, log, 'with no query')
+        end
+
+        log.section('GetUsers with simple query') do
+          user = all_users.first
+          query_elements = {
+              :name => user.name,
+          }
+          expected_users = all_users.select { |p| p.name == user.name }
+          actual_users = GetUsers.call(client, query_elements)
+          if log.verdict_assert_equal?('count for simple query', expected_users.size, actual_users.size, 'Count')
+            (0...expected_users.size).each do |i|
+              expected_user = expected_users[i]
+              actual_user = actual_users[i]
+              User.verdict_equal?(log, 'with simple query %d' % i, expected_user, actual_user, 'User %d' % i)
+            end
+          end
+        end
+
+        log.section('GetUsers with complex query') do
+          user = all_users.first
+          query_elements = {
+              :name => user.name,
+              :phone => user.phone,
+          }
+          expected_users = all_users.select { |p| (p.name == user.name) && (p.phone == user.phone) }
+          actual_users = GetUsers.call(client, query_elements)
+          if log.verdict_assert_equal?('count for complex query', expected_users.size, actual_users.size, 'Count')
+            (0...expected_users.size).each do |i|
+              expected_user = expected_users[i]
+              actual_user = actual_users[i]
+              User.verdict_equal?(log, 'with complex query %d' % i, expected_user, actual_user, 'User %d' % i)
+            end
+          end
+        end
+
       end
+
     end
 
   end
+
 
   def test_get_users_id
 
