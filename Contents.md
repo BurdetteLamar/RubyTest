@@ -1,6 +1,7 @@
 # Contents (Markdown Pages)
 
    - [Gemfile](./Gemfile.md)
+   - [Principles](./Principles.md)
    - [RubyTest](./README.md)
    - [Rakefile](./Rakefile.md)
    - examples/
