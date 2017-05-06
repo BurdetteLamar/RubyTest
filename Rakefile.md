@@ -46,6 +46,10 @@ rake test:all
 
     Test all classes
 
+rake test:configuration
+
+    Test class Configuration
+
 rake test:hash_helper
 
     Test class HashHelper

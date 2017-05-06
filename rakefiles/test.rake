@@ -14,15 +14,26 @@ namespace :test do
     exit unless system(command)
   end
 
+  desc 'Test class Configuration'
+  task :configuration do
+    autorun(File.join(
+                '..',
+                '..',
+                'test',
+                'configuration_test.rb',
+            )
+    )
+  end
+
   desc 'Test class HashHelper'
   task :hash_helper do
     autorun(File.join(
-        '..',
-        '..',
-        'test',
-        'helpers',
-        'hash_helper_test.rb',
-    )
+                '..',
+                '..',
+                'test',
+                'helpers',
+                'hash_helper_test.rb',
+            )
     )
   end
 
@@ -75,6 +86,7 @@ namespace :test do
 
   desc 'Test all classes'
   task :all => %w/
+      test:configuration
       test:hash_helper
       test:log
       test:set_helper
