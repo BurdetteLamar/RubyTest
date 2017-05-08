@@ -1,10 +1,10 @@
 # Contents (Markdown Pages)
 
-   - [Future](./Future.md)
-   - [Gemfile](./Gemfile.md)
-   - [Principles](./Principles.md)
    - [RubyTest](./README.md)
+   - [Principles](./Principles.md)
+   - [Future](./Future.md)
    - [Rakefile](./Rakefile.md)
+   - [Gemfile](./Gemfile.md)
    - examples/
      - [Examples](./examples/Examples.md)
      - log/

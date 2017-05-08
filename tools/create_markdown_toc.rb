@@ -79,6 +79,24 @@ class MarkdownToc < BaseClass
     ]
 
     def self.do_level(lines, entry, level)
+      if level == 1
+        # Sensibly order the uppermost .md files.
+        inverted_entry = entry.invert
+        p entry
+        p inverted_entry
+        %w/
+            RubyTest
+            Principles
+            Future
+            Rakefile
+            Gemfile
+        /.each do |node|
+          path = inverted_entry.fetch(node)
+          entry.delete(path)
+          link = format('%s - [%s](%s)', '  ' * level, node, path)
+          lines.push(link)
+        end
+      end
       entry.each_pair do |path, node|
         if node.respond_to?(:each_pair)
           if path != '.'
