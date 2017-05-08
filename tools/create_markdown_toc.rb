@@ -82,8 +82,6 @@ class MarkdownToc < BaseClass
       if level == 1
         # Sensibly order the uppermost .md files.
         inverted_entry = entry.invert
-        p entry
-        p inverted_entry
         %w/
             RubyTest
             Principles
