@@ -1,5 +1,6 @@
 # Contents (Markdown Pages)
 
+   - [Future](./Future.md)
    - [Gemfile](./Gemfile.md)
    - [Principles](./Principles.md)
    - [RubyTest](./README.md)
