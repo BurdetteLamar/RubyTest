@@ -1,0 +1,10 @@
+desc 'Run examples'
+task :examples do
+  rakefile_dir_path = File.dirname(__FILE__)
+  test_file_path = File.join(
+                           rakefile_dir_path,
+                           'log_examples.rb',
+  )
+  command = format('ruby %s', test_file_path)
+  system(command)
+end
