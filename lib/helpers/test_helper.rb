@@ -1,6 +1,10 @@
+require 'minitest/test'
+require 'rbconfig'
+
 require_relative '../../lib/base_classes/base_class'
 
 require_relative '../../lib/log/log'
+require_relative 'time_helper'
 
 class TestHelper < BaseClass
 
@@ -59,6 +63,56 @@ class TestHelper < BaseClass
   def self.get_method_name
     method_name, _ = self.get_test_name_and_test_method_name
     method_name
+  end
+
+  def self.get_log_root_dir_path
+    host_os = RbConfig::CONFIG['host_os']
+    dir_path = case
+      when host_os =~ /mswin|windows|cygwin|mingw32/i
+        # Some Windows OS.
+        File.join(
+            ENV['appdata'],
+            'RubyTest',
+            'logs',
+        )
+      when host_os =~ /linux/i
+        # Some linux OS.
+        '/var/log/RubyTest'
+      else
+        raise NotImplementedError.new(host_os)
+               end
+    File.absolute_path(dir_path)
+  end
+
+  def self.create_log_root_dir
+    log_root_dir_path = self.get_log_root_dir_path
+    FileUtils.mkdir_p(log_root_dir_path)
+    log_root_dir_path
+  end
+
+  def self.create_app_log_dir(app_name)
+    dir_path = File.join(
+                       self.get_log_root_dir_path,
+                       app_name,
+                       TimeHelper.timestamp(milliseconds = false),
+    )
+    FileUtils.mkdir_p(dir_path)
+    dir_path
+  end
+
+  # Get app test logs directory path.
+  # This will have a timestamp directory name.
+  # Accepts a non-positive offset into the list of directory names:
+  # 0 for most recent result;  -1 for the next earlier;  etc.
+  Contract String, And[Num, Not[Neg]] => String
+  def self.get_app_log_dir_path(app_name, back = 0)
+    timestamp_dir_names = Dir.glob(File.join(
+        self.get_log_root_dir_path,
+        app_name,
+        '*',
+        ''
+    ))
+    timestamp_dir_names.sort.reverse[-back]
   end
 
 end

@@ -9,11 +9,8 @@ class BaseClassForTest < Minitest::Test
 
     raise 'No block given' unless (block_given?)
 
-    log_dir_path = File.join(
-        'examples',
-        'rest_api',
-        'output',
-    )
+    log_dir_path = TestHelper.get_app_log_dir_path('rest_api')
+
     TestHelper.test(self, log_dir_path) do |log|
       ExampleRestClient.with(log) do |client|
         yield client, log

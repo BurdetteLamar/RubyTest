@@ -1,3 +1,5 @@
+require_relative '../../lib/helpers/test_helper'
+
 desc 'Run examples'
 task :examples do
   rakefile_dir_path = File.dirname(__FILE__)
@@ -5,6 +7,7 @@ task :examples do
                           rakefile_dir_path,
                           'tests',
   )
+  log_dir_path = TestHelper.create_app_log_dir('rest_api')
   %w/
         albums
         comments

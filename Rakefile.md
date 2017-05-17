@@ -34,14 +34,6 @@ rake examples:all
 
     Run all examples
 
-rake examples:log
-
-    Run examples for class Log
-
-rake examples:rest_api
-
-    Run examples for REST API
-
 rake test:all
 
     Test all classes

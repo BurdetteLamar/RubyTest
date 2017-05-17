@@ -1,3 +1,6 @@
+require_relative '../lib/helpers/test_helper'
+require_relative '../lib/helpers/time_helper'
+
 namespace :examples do
 
   desc 'Run all examples'
@@ -7,15 +10,15 @@ namespace :examples do
       log
       rest_api
     /.each do |examples_dir_name|
-      rake_file_path = File.join(
+      log_dir_path = TestHelper.create_app_log_dir(examples_dir_name)
+      rake_file_path = File.absolute_path(File.join(
                                rakefile_dir_path,
                                '..',
                                'examples',
                                examples_dir_name,
                                'Rakefile',
-      )
-      # p rake_file_path
-      command = 'rake -f %s examples' % rake_file_path
+      ))
+      command = format('rake -f %s examples', rake_file_path)
       system(command)
     end
   end
