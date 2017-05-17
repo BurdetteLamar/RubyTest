@@ -1,6 +1,7 @@
 require 'set'
 
 require_relative '../../test/common_requires'
+require_relative '../../lib/helpers/test_helper'
 
 # Class to show how to use the Log object.
 class LogExamples < MiniTest::Test
@@ -10,17 +11,12 @@ class LogExamples < MiniTest::Test
 
     open_examples
 
-    @dir_path = File.join(
-                       'examples',
-                       'log',
-                       'output',
-    )
-    FileUtils.mkdir_p(@dir_path) unless Dir.exist?(@dir_path)
+    @log_dir_path = TestHelper.create_app_log_dir('log')
 
     def self.open_log(method)
       file_name = format('%s.xml', method)
       file_path = File.join(
-                          @dir_path,
+                          @log_dir_path,
                           file_name,
       )
       Log.open(self, :file_path => file_path) do |log|
@@ -65,7 +61,7 @@ class LogExamples < MiniTest::Test
     verdict_refute_respond_to_examples
     verdict_refute_same_examples
 
-    puts 'The example logs may be seen at %s.' % File.absolute_path(@dir_path)
+    puts 'The example logs may be seen at %s.' % File.absolute_path(@log_dir_path)
 
   end
 
