@@ -321,23 +321,32 @@ class Log < BaseClass
   def _get_verdict?(verdict_method, verdict_id, volatile, message, args_hash, *args)
     assertion_method = assertion_method_for(verdict_method)
     if block_given?
-      outcome = get_assertion_outcome(verdict_id, assertion_method, *args_hash.values) do
+      outcome, exception = get_assertion_outcome(verdict_id, assertion_method, *args_hash.values) do
         yield
       end
     else
-      outcome = get_assertion_outcome(verdict_id, assertion_method, *args_hash.values)
+      outcome, exception = get_assertion_outcome(verdict_id, assertion_method, *args_hash.values)
     end
-    put_element('verdict', {
+    element_attributes = {
         :method => verdict_method,
         :outcome => outcome,
         :id => verdict_id,
         :volatile => volatile,
         :message => message,
-    },
-                *args
-    ) do
+    }
+    put_element('verdict', element_attributes, *args) do
       args_hash.each_pair do |k, v|
         put_element(k.to_s, v)
+      end
+      if exception
+        self.counts[:failure] += 1
+        put_element('exception') do
+          put_element('class', exception.class)
+          put_element('message', exception.message)
+          put_element('backtrace') do
+            cdata(filter_backtrace(exception.backtrace))
+          end
+        end
       end
     end
     outcome == :passed
@@ -378,7 +387,7 @@ class Log < BaseClass
     nil
   end
 
-  Contract VERDICT_ID, Symbol, ARGS,  Maybe[Proc] => Symbol
+  Contract VERDICT_ID, Symbol, ARGS,  Maybe[Proc] => [Symbol, Maybe[Exception]]
   def get_assertion_outcome(verdict_id, assertion_method, *assertion_args)
     validate_verdict_id(verdict_id)
     self.counts[:verdict] += 1
@@ -391,27 +400,10 @@ class Log < BaseClass
       else
         send(assertion_method, *assertion_args)
       end
-      outcome = :passed
+      return :passed, nil
     rescue Minitest::Assertion => x
-      # p x.class
-      # p x.message
-      # x.backtrace.each do |x|
-      #   p x
-      # end
-      log_puts("#{assertion_method} #{assertion_args.inspect}")
-      self.counts[:failure] += 1
-      outcome = :failed
-      if x
-        put_element('exception') do
-          put_element('class', x.class)
-          put_element('message', x.message)
-          put_element('backtrace') do
-            cdata(filter_backtrace(x.backtrace))
-          end
-        end
-      end
+      return :failed, x
     end
-    outcome
   end
 
   Contract String => nil
