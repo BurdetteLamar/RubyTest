@@ -112,7 +112,7 @@ class TestHelper < BaseClass
         '*',
         ''
     ))
-    timestamp_dir_names.sort.reverse[-back]
+    timestamp_dir_names.sort.reverse[back]
   end
 
 end

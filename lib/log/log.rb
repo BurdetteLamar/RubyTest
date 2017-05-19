@@ -1,5 +1,6 @@
 require 'rexml/document'
 require 'minitest/assertions'
+require 'nokogiri'
 
 require_relative '../base_classes/base_class'
 
@@ -209,6 +210,73 @@ class Log < BaseClass
     nil
   end
 
+  class Verdict
+
+    attr_accessor \
+      :file_path,
+      :id,
+      :message,
+      :method,
+      :outcome,
+      :volatile,
+      :exception
+
+    def initialize(file_path, xml_verdict)
+      self.file_path = file_path
+      # Stow the attributes.
+      xml_verdict.attributes.each_pair do |name, value|
+        method = "#{name}=".to_sym
+        send(method, value.to_s)
+      end
+      # Possible child is element exception.
+      xml_exception = xml_verdict.xpath('//exception').first
+      if xml_exception
+        self.exception = Exception.new(xml_exception)
+      else
+        self.exception = nil
+      end
+    end
+
+    class Exception
+
+      attr_accessor \
+        :class,
+        :message,
+        :backtrace
+
+      def initialize(xml_exception)
+        xml_exception.children.each do |child|
+          method = "#{child.name}=".to_sym
+          value = child.text.to_s
+          send(method, value)
+        end
+      end
+    end
+
+  end
+
+  Contract String => ArrayOf[Verdict]
+  def self.get_verdicts_from_directory(dir_path)
+    file_paths = Dir.glob(File.join(dir_path, '*'))
+    verdicts = []
+    file_paths.each do |file_path|
+      verdicts.push(*self.get_verdicts_from_file(file_path))
+    end
+    verdicts
+  end
+
+  Contract String => ArrayOf[Verdict]
+  def self.get_verdicts_from_file(file_path)
+    verdicts = []
+    doc = Nokogiri::XML(File.open(file_path))
+    xml_verdicts = doc.xpath('//verdict')
+    xml_verdicts.each do |xml_verdict|
+      verdict = Verdict.new(file_path, xml_verdict)
+      verdicts.push(verdict)
+    end
+    verdicts
+  end
+
   private
 
   Contract MiniTest::Test, Maybe[Hash], Maybe[Bool] => nil
@@ -351,7 +419,6 @@ class Log < BaseClass
     end
     outcome == :passed
   end
-  private :_get_verdict?
 
   Contract HashOf[Symbol, Any], Symbol => nil
   def put_attributes(attributes)
@@ -391,7 +458,6 @@ class Log < BaseClass
   def get_assertion_outcome(verdict_id, assertion_method, *assertion_args)
     validate_verdict_id(verdict_id)
     self.counts[:verdict] += 1
-    outcome = nil
     begin
       if block_given?
         send(assertion_method, *assertion_args) do

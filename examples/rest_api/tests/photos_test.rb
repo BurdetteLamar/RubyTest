@@ -102,7 +102,7 @@ class PhotosTest < BaseClassForTest
             :id => 1,
             :title => 'New title',
             :url => 'NewUrl',
-            :thumbnailUrl => 'NewThumbmailUrl',
+            :thumbnailUrl => 'NewThumbnailUrl',
         )
         # Some verdicts should fail, because JSONplaceholder will not actually create the photo.
         PostPhotos.verdict_call_and_verify_success(client, log, 'photo to_create', photo_to_post)
