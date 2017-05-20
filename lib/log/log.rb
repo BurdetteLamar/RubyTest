@@ -231,10 +231,15 @@ class Log < BaseClass
       # Possible child is element exception.
       xml_exception = xml_verdict.xpath('//exception').first
       if xml_exception
-        self.exception = Exception.new(xml_exception)
+        self.exception = Verdict::Exception.new(xml_exception)
       else
         self.exception = nil
       end
+    end
+
+    def path
+      test_name = File.basename(file_path, '.xml')
+      File.join(test_name, id)
     end
 
     class Exception
@@ -255,26 +260,26 @@ class Log < BaseClass
 
   end
 
-  Contract String => ArrayOf[Verdict]
+  Contract String => HashOf[String, Verdict]
   def self.get_verdicts_from_directory(dir_path)
     file_paths = Dir.glob(File.join(dir_path, '*'))
-    verdicts = []
+    verdicts_by_path = {}
     file_paths.each do |file_path|
-      verdicts.push(*self.get_verdicts_from_file(file_path))
+      verdicts_by_path.merge!(self.get_verdicts_from_file(file_path))
     end
-    verdicts
+    verdicts_by_path
   end
 
-  Contract String => ArrayOf[Verdict]
+  Contract String => HashOf[String, Verdict]
   def self.get_verdicts_from_file(file_path)
-    verdicts = []
     doc = Nokogiri::XML(File.open(file_path))
     xml_verdicts = doc.xpath('//verdict')
+    verdicts_by_path = {}
     xml_verdicts.each do |xml_verdict|
       verdict = Verdict.new(file_path, xml_verdict)
-      verdicts.push(verdict)
+      verdicts_by_path.store(verdict.path, verdict)
     end
-    verdicts
+    verdicts_by_path
   end
 
   private
