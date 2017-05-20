@@ -447,15 +447,15 @@ module VerdictAssertion
   #   _verdict_send?(__method__, verdict_id, object, method, message, volatile, *args)
   # end
   # alias vr_send? verdict_refute_send?
-
-  Contract Symbol, VERDICT_ID, Object, Symbol, VERDICT_MESSAGE, VERDICT_VOLATILE, ARGS => Bool
-  def _verdict_send?(verdict_method, verdict_id, object, method, message, volatile = false, *args)
-    args_hash = {
-        :send_array => [object, method],
-    }
-    _get_verdict?(verdict_method, verdict_id, volatile, message, args_hash, *args)
-  end
-  private :_verdict_send?
+  #
+  # Contract Symbol, VERDICT_ID, Object, Symbol, VERDICT_MESSAGE, VERDICT_VOLATILE, ARGS => Bool
+  # def _verdict_send?(verdict_method, verdict_id, object, method, message, volatile = false, *args)
+  #   args_hash = {
+  #       :send_array => [object, method],
+  #   }
+  #   _get_verdict?(verdict_method, verdict_id, volatile, message, args_hash, *args)
+  # end
+  # private :_verdict_send?
 
   Contract VERDICT_ID, VERDICT_MESSAGE, VERDICT_VOLATILE, ARGS, Proc => Bool
   # \Log a verdict using :assert_silent.

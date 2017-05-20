@@ -4,6 +4,7 @@ GEM
     contracts (0.14.0)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
+    ffi (1.9.18-x64-mingw32)
     ffi (1.9.18-x86-mingw32)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -11,8 +12,18 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
+    mini_portile2 (2.0.0)
     minitest (5.10.1)
     netrc (0.11.0)
+    nokogiri (1.6.7.2-x64-mingw32)
+      mini_portile2 (~> 2.0.0.rc2)
+    nokogiri (1.6.7.2-x86-mingw32)
+      mini_portile2 (~> 2.0.0.rc2)
+    rest-client (2.0.1-x64-mingw32)
+      ffi (~> 1.9)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     rest-client (2.0.1-x86-mingw32)
       ffi (~> 1.9)
       http-cookie (>= 1.0.2, < 2.0)
@@ -21,6 +32,7 @@ GEM
     retriable (3.0.1)
     unf (0.1.4)
       unf_ext
+    unf_ext (0.0.7.4-x64-mingw32)
     unf_ext (0.0.7.4-x86-mingw32)
 
 PLATFORMS
@@ -32,6 +44,7 @@ DEPENDENCIES
   contracts (= 0.14.0)
   json (= 1.8.1)
   minitest (= 5.10.1)
+  nokogiri (= 1.6.7.2)
   rest-client (= 2.0.1)
   retriable (= 3.0.1)
 

@@ -1,5 +1,6 @@
 require 'rexml/document'
 require 'minitest/assertions'
+require 'nokogiri'
 
 require_relative '../base_classes/base_class'
 
@@ -209,6 +210,73 @@ class Log < BaseClass
     nil
   end
 
+  class Verdict
+
+    attr_accessor \
+      :file_path,
+      :id,
+      :message,
+      :method,
+      :outcome,
+      :volatile,
+      :exception
+
+    def initialize(file_path, xml_verdict)
+      self.file_path = file_path
+      # Stow the attributes.
+      xml_verdict.attributes.each_pair do |name, value|
+        method = "#{name}=".to_sym
+        send(method, value.to_s)
+      end
+      # Possible child is element exception.
+      xml_exception = xml_verdict.xpath('//exception').first
+      if xml_exception
+        self.exception = Exception.new(xml_exception)
+      else
+        self.exception = nil
+      end
+    end
+
+    class Exception
+
+      attr_accessor \
+        :class,
+        :message,
+        :backtrace
+
+      def initialize(xml_exception)
+        xml_exception.children.each do |child|
+          method = "#{child.name}=".to_sym
+          value = child.text.to_s
+          send(method, value)
+        end
+      end
+    end
+
+  end
+
+  Contract String => ArrayOf[Verdict]
+  def self.get_verdicts_from_directory(dir_path)
+    file_paths = Dir.glob(File.join(dir_path, '*'))
+    verdicts = []
+    file_paths.each do |file_path|
+      verdicts.push(*self.get_verdicts_from_file(file_path))
+    end
+    verdicts
+  end
+
+  Contract String => ArrayOf[Verdict]
+  def self.get_verdicts_from_file(file_path)
+    verdicts = []
+    doc = Nokogiri::XML(File.open(file_path))
+    xml_verdicts = doc.xpath('//verdict')
+    xml_verdicts.each do |xml_verdict|
+      verdict = Verdict.new(file_path, xml_verdict)
+      verdicts.push(verdict)
+    end
+    verdicts
+  end
+
   private
 
   Contract MiniTest::Test, Maybe[Hash], Maybe[Bool] => nil
@@ -321,28 +389,36 @@ class Log < BaseClass
   def _get_verdict?(verdict_method, verdict_id, volatile, message, args_hash, *args)
     assertion_method = assertion_method_for(verdict_method)
     if block_given?
-      outcome = get_assertion_outcome(verdict_id, assertion_method, *args_hash.values) do
+      outcome, exception = get_assertion_outcome(verdict_id, assertion_method, *args_hash.values) do
         yield
       end
     else
-      outcome = get_assertion_outcome(verdict_id, assertion_method, *args_hash.values)
+      outcome, exception = get_assertion_outcome(verdict_id, assertion_method, *args_hash.values)
     end
-    put_element('verdict', {
+    element_attributes = {
         :method => verdict_method,
         :outcome => outcome,
         :id => verdict_id,
         :volatile => volatile,
         :message => message,
-    },
-                *args
-    ) do
+    }
+    put_element('verdict', element_attributes, *args) do
       args_hash.each_pair do |k, v|
         put_element(k.to_s, v)
+      end
+      if exception
+        self.counts[:failure] += 1
+        put_element('exception') do
+          put_element('class', exception.class)
+          put_element('message', exception.message)
+          put_element('backtrace') do
+            cdata(filter_backtrace(exception.backtrace))
+          end
+        end
       end
     end
     outcome == :passed
   end
-  private :_get_verdict?
 
   Contract HashOf[Symbol, Any], Symbol => nil
   def put_attributes(attributes)
@@ -378,11 +454,10 @@ class Log < BaseClass
     nil
   end
 
-  Contract VERDICT_ID, Symbol, ARGS,  Maybe[Proc] => Symbol
+  Contract VERDICT_ID, Symbol, ARGS,  Maybe[Proc] => [Symbol, Maybe[Exception]]
   def get_assertion_outcome(verdict_id, assertion_method, *assertion_args)
     validate_verdict_id(verdict_id)
     self.counts[:verdict] += 1
-    outcome = nil
     begin
       if block_given?
         send(assertion_method, *assertion_args) do
@@ -391,27 +466,10 @@ class Log < BaseClass
       else
         send(assertion_method, *assertion_args)
       end
-      outcome = :passed
+      return :passed, nil
     rescue Minitest::Assertion => x
-      # p x.class
-      # p x.message
-      # x.backtrace.each do |x|
-      #   p x
-      # end
-      log_puts("#{assertion_method} #{assertion_args.inspect}")
-      self.counts[:failure] += 1
-      outcome = :failed
-      if x
-        put_element('exception') do
-          put_element('class', x.class)
-          put_element('message', x.message)
-          put_element('backtrace') do
-            cdata(filter_backtrace(x.backtrace))
-          end
-        end
-      end
+      return :failed, x
     end
-    outcome
   end
 
   Contract String => nil

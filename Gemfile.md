@@ -6,6 +6,7 @@
 - [contracts](https://rubygems.org/gems/contracts)
 - [json](https://rubygems.org/gems/json)
 - [minitest](https://rubygems.org/gems/minitest)
+- [nokogiri](https://rubygems.org/gems/nokogiri)
 - [rest-client](https://rubygems.org/gems/rest-client)
 - [retriable](https://rubygems.org/gems/retriable)
 ## Source
