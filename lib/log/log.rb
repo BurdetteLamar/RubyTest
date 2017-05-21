@@ -210,24 +210,31 @@ class Log < BaseClass
     nil
   end
 
-  class Verdict
+  require_relative '../base_classes/base_class_for_data'
+  class Verdict < BaseClassForData
 
-    attr_accessor \
-      :file_path,
-      :id,
-      :message,
-      :method,
-      :outcome,
-      :volatile,
-      :exception
+    FIELDS = Set.new([
+                         :file_path,
+                         :id,
+                         :message,
+                         :method,
+                         :outcome,
+                         :volatile,
+                         :exception,
+                     ])
+
+    attr_accessor *FIELDS
 
     def initialize(file_path, xml_verdict)
-      self.file_path = file_path
+      values = {
+          :file_path => file_path,
+      }
       # Stow the attributes.
       xml_verdict.attributes.each_pair do |name, value|
-        method = "#{name}=".to_sym
-        send(method, value.to_s)
+        field = name.to_sym
+        values.store(name, value)
       end
+      super(FIELDS, values)
       # Possible child is element exception.
       xml_exception = xml_verdict.xpath('//exception').first
       if xml_exception
@@ -242,21 +249,30 @@ class Log < BaseClass
       File.join(test_name, id)
     end
 
-    class Exception
+    class Exception < BaseClassForData
 
-      attr_accessor \
-        :class,
-        :message,
-        :backtrace
+      FIELDS = Set.new([
+                           :class,
+                           :message,
+                           :backtrace,
+                       ])
 
+      attr_accessor *FIELDS
+
+      # Constructor.
+      Contract Nokogiri::XML::Element => nil
       def initialize(xml_exception)
+        values = {}
         xml_exception.children.each do |child|
-          method = "#{child.name}=".to_sym
+          field = child.name.to_sym
           value = child.text.to_s
-          send(method, value)
+          values.store(field, value)
         end
+        super(FIELDS, values)
+        nil
       end
     end
+
 
   end
 
