@@ -223,6 +223,10 @@ class Log < BaseClass
                          :exception,
                      ])
 
+    # This is redundant, but it helps RubyMine code inspection.
+    attr_accessor \
+        :outcome
+
     attr_accessor *FIELDS
 
     def initialize(file_path, xml_verdict)
