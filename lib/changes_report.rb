@@ -10,8 +10,53 @@ class ChangesReport < BaseClass
   class VerdictPair
 
     attr_accessor :prev, :curr, :status
-    def initialize(prev_verdict, curr_verdict)
 
+    def initialize(prev_verdict, curr_verdict)
+      self.prev = prev_verdict
+      self.curr = curr_verdict
+      if prev.nil?
+        if curr.nil?
+          # Both nil.
+          self.status = :old_blocked
+        else
+          # Prev nil, curr non-nil.
+          self.status = {
+              :passed => :new_passed,
+              :failed => :new_passed,
+              :blocked => :new_blocked,
+          }[curr.outcome]
+        end
+      else
+        if curr.nil?
+          # Prev non-nil, curr nil.
+          self.status = :new_blocked
+        else
+          # Both non-nil.
+          self.status = case
+                     when (curr.class.equal?(prev, curr))
+                       # Old news.
+                       {
+                           :passed => :old_passed,
+                           :failed => :old_failed,
+                           :blocked => :old_blocked, # Don't think this can happen.
+                       }[curr.outcome]
+                     when (curr.outcome == prev.outcome)
+                       # The outcomes were the same, so the values must have changed.
+                       {
+                           :passed => :changed_passed,
+                           :failed => :changed_failed,
+                           :blocked => :changed_blocked, # Don't think this can happen.
+                       }[curr.outcome]
+                     else
+                       # The outcomes were different.
+                       {
+                           :passed => :new_passed,
+                           :failed => :new_failed,
+                           :blocked => :new_blocked,
+                       }[curr.outcome]
+                   end
+        end
+      end
     end
 
   end
@@ -92,30 +137,13 @@ EOT
 
     # One more case:  Verdict was in neither prev or curr, but was expected
     # (i.e., was in verdict_paths.txt).
-    p expected_verdict_paths.class
-    p prev_verdict_paths.class
-    p curr_verdict_paths.class
     old_blocked_paths = expected_verdict_paths - prev_verdict_paths - curr_verdict_paths
     old_blocked_paths.each do |verdict_path|
       verdict_pair = ChangesReport::VerdictPair.new(nil, nil)
+      verdict_pairs.store(verdict_path, verdict_pair)
     end
 
-    # Ok:  verdict was in both prev and curr.
-    # Old passed:  both passed with no change.
-    # Old failed:  both failed with no change.
-    # Changed passed:  both passed with change.
-    # Changed failed:  both failed with change.
-    # New failed:  prev passed, curr failed.
-    # New passed:  prev failed, curr passed.
-
-    # Missing:  verdict was in prev, but not in curr.
-    # New blocked.
-
-    # Unexpected:  Verdict was in curr, but not in prev.
-    # New passed.
-    # New failed.
-
-    # Old blocked.
+    p report_file_path
     nil
   end
 
