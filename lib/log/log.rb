@@ -236,7 +236,7 @@ class Log < BaseClass
       # Stow the attributes.
       xml_verdict.attributes.each_pair do |name, value|
         field = name.to_sym
-        values.store(name, value)
+        values.store(name, value.to_s)
       end
       super(FIELDS, values)
       # Possible child is element exception.
@@ -276,7 +276,6 @@ class Log < BaseClass
         nil
       end
     end
-
 
   end
 
