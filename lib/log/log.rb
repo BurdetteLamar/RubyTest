@@ -218,6 +218,8 @@ class Log < BaseClass
                          :id,
                          :message,
                          :method,
+                         :exp_value,
+                         :act_value,
                          :outcome,
                          :volatile,
                          :exception,
@@ -239,6 +241,16 @@ class Log < BaseClass
         values.store(name, value.to_s)
       end
       super(FIELDS, values)
+      # Possible child is element exp_value.
+      exp_value = xml_verdict.xpath('//exp_value').first
+      if exp_value
+        self.exp_value = exp_value.text
+      end
+      # Possible child is element act_value.
+      act_value = xml_verdict.xpath('//act_value').first
+      if act_value
+        self.act_value = act_value.text
+      end
       # Possible child is element exception.
       xml_exception = xml_verdict.xpath('//exception').first
       if xml_exception
@@ -246,6 +258,10 @@ class Log < BaseClass
       else
         self.exception = nil
       end
+    end
+
+    def self.equal?(expected_obj, actual_obj)
+      super(expected_obj, actual_obj, fields_to_ignore = [:file_path])
     end
 
     def path
@@ -256,7 +272,7 @@ class Log < BaseClass
     class Exception < BaseClassForData
 
       FIELDS = Set.new([
-                           :class,
+                           :klass,
                            :message,
                            :backtrace,
                        ])
@@ -269,12 +285,14 @@ class Log < BaseClass
         values = {}
         xml_exception.children.each do |child|
           field = child.name.to_sym
+          field = :klass if field == :class
           value = child.text.to_s
           values.store(field, value)
         end
         super(FIELDS, values)
         nil
       end
+
     end
 
   end
@@ -338,7 +356,8 @@ class Log < BaseClass
 
     # An error may have caused some blocked verdicts, but does not itself show up as a verdict.
     # Take a verdict here, so that an error will cause a :failed in the log.
-    verdict_assert_equal?('error count', 0, self.counts[:error], 'error count')
+    # The count is volatile, so it's not an error to differ from previous.
+    verdict_assert_equal?('error count', 0, self.counts[:error], 'error count', volatile = true)
 
     # Close the text log.
     log_puts("END\t#{self.root_name}")
