@@ -24,7 +24,7 @@ class ChangesReport < BaseClass
               :passed => :new_passed,
               :failed => :new_passed,
               :blocked => :new_blocked,
-          }[curr.outcome]
+          }[curr.outcome.to_sym]
         end
       else
         if curr.nil?
@@ -33,36 +33,41 @@ class ChangesReport < BaseClass
         else
           # Both non-nil.
           self.status = case
-                     when (curr.class.equal?(prev, curr))
-                       # Old news.
-                       {
-                           :passed => :old_passed,
-                           :failed => :old_failed,
-                           :blocked => :old_blocked, # Don't think this can happen.
-                       }[curr.outcome]
-                     when (curr.outcome == prev.outcome)
-                       # The outcomes were the same, so the values must have changed.
-                       {
-                           :passed => :changed_passed,
-                           :failed => :changed_failed,
-                           :blocked => :changed_blocked, # Don't think this can happen.
-                       }[curr.outcome]
-                     else
-                       # The outcomes were different.
-                       {
-                           :passed => :new_passed,
-                           :failed => :new_failed,
-                           :blocked => :new_blocked,
-                       }[curr.outcome]
-                   end
+                          when (prev.outcome != curr.outcome)
+                            # The outcomes were different.
+                            {
+                                :passed => :new_passed,
+                                :failed => :new_failed,
+                                :blocked => :new_blocked,
+                            }[curr.outcome]
+                          when (curr.class.equal?(prev, curr))
+                             # Old news.
+                            {
+                                :passed => :old_passed,
+                                :failed => :old_failed,
+                                :blocked => :old_blocked, # Don't think this can happen.
+                            }[curr.outcome]
+                          else
+                            # The outcomes were the same, so the values must have changed.
+                            if curr.volatile
+                              # The change is ok.
+                              :old_passed
+                            else
+                              {
+                                  :passed => :changed_passed,
+                                  :failed => :changed_failed,
+                                  :blocked => :changed_blocked, # Don't think this can happen.
+                              }[curr.outcome]
+                            end
+                        end
         end
       end
     end
 
   end
 
-  Contract String, String => nil
-  def self.create_report(app_name, report_file_path)
+  Contract String => nil
+  def self.create_report(app_name)
 
     prev_dir_path = TestHelper.get_app_log_dir_path(app_name, back = 1)
     prev_verdicts = Log.get_verdicts_from_directory(prev_dir_path)
@@ -112,6 +117,7 @@ EOT
 
     # Key comparison is hash with keys :missing, :unexpected, :ok.
     key_comparison = SetHelper.compare(prev_verdicts.keys.to_set, curr_verdicts.keys.to_set)
+
     verdict_pairs = {}
 
     key_comparison.fetch(:missing).each do |verdict_path|
@@ -143,7 +149,22 @@ EOT
       verdict_pairs.store(verdict_path, verdict_pair)
     end
 
-    p report_file_path
+    puts 'RESULTS'
+    [
+        :new_blocked,
+        :new_failed,
+        :changed_failed,
+        :new_passed,
+        :changed_passed,
+        :old_failed,
+        :old_blocked,
+        :old_passed,
+    ].each do |status|
+      pairs = verdict_pairs.select{|k, v| v.status == status}
+      p [status, pairs.size]
+    end
+
+
     nil
   end
 
