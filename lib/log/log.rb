@@ -264,7 +264,6 @@ class Log < BaseClass
       act_value = xml_verdict.xpath('./act_value').first
       if act_value
         self.act_value = act_value.text
-        p self.act_value
       end
       # Possible child is element exception.
       xml_exception = xml_verdict.xpath('./exception').first
