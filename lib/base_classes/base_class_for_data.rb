@@ -27,11 +27,11 @@ class BaseClassForData < BaseClass
     nil
   end
 
-  Contract Any, Any => Bool
+  Contract Any, Any, ArrayOf[Symbol] => Bool
   # Compare recursively, so that nested objects are compared.
-  def self.equal?(expected_obj, actual_obj)
-    if expected_obj.kind_of?(self.class)
-      self.equal_recursive?(expected_obj, actual_obj)
+  def self.equal?(expected_obj, actual_obj, fields_to_ignore = [])
+    if expected_obj.kind_of?(self)
+      self.equal_recursive?(expected_obj, actual_obj, fields_to_ignore)
     else
       actual_obj == expected_obj
     end
@@ -96,17 +96,19 @@ class BaseClassForData < BaseClass
 
   # Compare an object recursively,
   # giving special handling to nested objects.
-  def self.equal_recursive?(expected_obj, actual_obj)
-    expected_obj.fields do |field|
+  def self.equal_recursive?(expected_obj, actual_obj, fields_to_ignore)
+    expected_obj.fields.each do |field|
+      next if fields_to_ignore.include?(field)
       expected_value = expected_obj.send(field)
       next if expected_value.nil?
       actual_value = actual_obj.send(field)
-      if actual_obj.kind_of?(self.class)
-        self.equal_recursive?(expected_obj, actual_obj)
+      if actual_value.kind_of?(BaseClassForData)
+        self.equal_recursive?(expected_value, actual_value, fields_to_ignore) && field_equal
       else
-        actual_value == expected_value
+        return false unless actual_value == expected_value
       end
     end
+    true
   end
 
   # Verify an object recursively,
