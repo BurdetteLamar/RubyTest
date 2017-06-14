@@ -236,23 +236,38 @@ class Log < BaseClass
           :file_path => file_path,
       }
       # Stow the attributes.
-      xml_verdict.attributes.each_pair do |name, value|
+      xml_verdict.attributes.each_pair do |name, attribute|
         field = name.to_sym
-        values.store(name, value.to_s)
+        value_s = attribute.to_s
+        value = case
+                  when [
+                      :volatile,
+                  ].include?(field)
+                    value_s == 'true' ? true : false
+                  when [
+                      :method,
+                      :outcome,
+                  ].include?(field)
+                    value_s.to_sym
+                  else
+                    value_s.to_s
+                end
+        values.store(name, value)
       end
       super(FIELDS, values)
       # Possible child is element exp_value.
-      exp_value = xml_verdict.xpath('//exp_value').first
+      exp_value = xml_verdict.xpath('./exp_value').first
       if exp_value
         self.exp_value = exp_value.text
       end
       # Possible child is element act_value.
-      act_value = xml_verdict.xpath('//act_value').first
+      act_value = xml_verdict.xpath('./act_value').first
       if act_value
         self.act_value = act_value.text
+        p self.act_value
       end
       # Possible child is element exception.
-      xml_exception = xml_verdict.xpath('//exception').first
+      xml_exception = xml_verdict.xpath('./exception').first
       if xml_exception
         self.exception = Verdict::Exception.new(xml_exception)
       else
@@ -302,7 +317,8 @@ class Log < BaseClass
     file_paths = Dir.glob(File.join(dir_path, '*'))
     verdicts_by_path = {}
     file_paths.each do |file_path|
-      verdicts_by_path.merge!(self.get_verdicts_from_file(file_path))
+      new_verdicts_by_path = self.get_verdicts_from_file(file_path)
+      verdicts_by_path.merge!(new_verdicts_by_path)
     end
     verdicts_by_path
   end
