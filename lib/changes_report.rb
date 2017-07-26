@@ -177,10 +177,13 @@ EOT
       verdict_pairs.store(verdict_path, verdict_pair)
     end
 
-    puts 'RESULTS'
+    # puts 'RESULTS'
     VerdictPair::STATUS_SYMBOLS.each do |status|
+      p status
       pairs = verdict_pairs.select{|k, v| v.status == status}
-      p [status, pairs.size]
+      # p verdict_pairs.class
+      # p pairs.class
+      # p [status, pairs.size]
     end
 
     changes_by_status = {}
@@ -232,13 +235,19 @@ EOT
     td_ele << Text.new(count.to_s)
     td_ele = tr_ele.add_element('th', {'align' => 'left'})
     td_ele << Text.new('Total')
+
+    def self.text_for_status(status)
+      words = status.to_s.split('_').collect {|word| word.capitalize}
+      words.join(' ')
+    end
+
     VerdictPair::STATUS_SYMBOLS.each do |status|
       changes = changes_by_status[status]
       # Make count and text for link and section title.
       count = changes.size
       # Text for link and subsection title
-      title_text = '%s (%d)' % [status, count]
-      link_text = '%s' % status
+      title_text = '%s (%d)' % [self.text_for_status(status), count]
+      link_text = self.text_for_status(status)
       _class = VerdictPair.ele_class_for_status_symbol(status)
       # Add row to summary table.  It has a link to the section.
       tr_ele = summary_table_ele.add_element('tr', {'class' => _class})
@@ -260,7 +269,10 @@ EOT
       next if (changes.size == 0)
       # Table of changes.
       table_ele = section.add_element('table', {'border' => '1'})
-      # changes.each do |change|
+      changes.each do |change|
+        # p 'CHANGE'
+        # p change.size
+        # p change
       #   # Make text for link and subsection title.
       #   text = change.verdict_curr.verdict_path.join('/')
       #   tr_ele = table_ele.add_element('tr', {'class' => _class})
@@ -278,9 +290,10 @@ EOT
       #     # There is no data to link to (must be an old_blocked);  just insert the text.
       #     td_ele << Text.new(text)
       #   end
-      # end
+      end
     end
 
+    # p report_file_path
     File.open(report_file_path, 'w') do |file|
       doc.write(file, 2)
     end
