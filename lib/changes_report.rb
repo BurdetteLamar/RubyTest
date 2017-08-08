@@ -177,15 +177,6 @@ EOT
       verdict_pairs.store(verdict_path, verdict_pair)
     end
 
-    # puts 'RESULTS'
-    VerdictPair::STATUS_SYMBOLS.each do |status|
-      p status
-      pairs = verdict_pairs.select{|k, v| v.status == status}
-      # p verdict_pairs.class
-      # p pairs.class
-      # p [status, pairs.size]
-    end
-
     changes_by_status = {}
     VerdictPair::STATUS_SYMBOLS.each do |status|
       pairs = verdict_pairs.select{|k, v| v.status == status}
@@ -270,9 +261,6 @@ EOT
       # Table of changes.
       table_ele = section.add_element('table', {'border' => '1'})
       changes.each do |change|
-        # p 'CHANGE'
-        # p change.size
-        # p change
       #   # Make text for link and subsection title.
       #   text = change.verdict_curr.verdict_path.join('/')
       #   tr_ele = table_ele.add_element('tr', {'class' => _class})
@@ -293,7 +281,6 @@ EOT
       end
     end
 
-    # p report_file_path
     File.open(report_file_path, 'w') do |file|
       doc.write(file, 2)
     end
