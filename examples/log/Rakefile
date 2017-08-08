@@ -10,16 +10,16 @@ task :examples do
   system(command)
 end
 
-namespace :report do
-
-  desc 'Create changes report'
-  task :changes do
-    report_file_path = File.join(
-                                       rakefile_dir_path,
-                                       'changes_report.html',
-    )
-    require_relative '../../lib/changes_report'
-    ChangesReport.create_report('log', report_file_path)
-  end
-
-end
+# namespace :report do
+#
+#   desc 'Create changes report'
+#   task :changes do
+#     report_file_path = File.join(
+#                                        rakefile_dir_path,
+#                                        'changes_report.html',
+#     )
+#     require_relative '../../lib/changes_report'
+#     ChangesReport.create_report('log', report_file_path)
+#   end
+#
+# end

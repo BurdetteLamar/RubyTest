@@ -210,71 +210,128 @@ class Log < BaseClass
     nil
   end
 
-  class Verdict
+  require_relative '../base_classes/base_class_for_data'
+  class Verdict < BaseClassForData
 
+    FIELDS = Set.new([
+                         :file_path,
+                         :id,
+                         :message,
+                         :method,
+                         :exp_value,
+                         :act_value,
+                         :outcome,
+                         :volatile,
+                         :exception,
+                     ])
+
+    # This is redundant, but it helps RubyMine code inspection.
     attr_accessor \
-      :file_path,
-      :id,
-      :message,
-      :method,
-      :outcome,
-      :volatile,
-      :exception
+        :outcome
+
+    attr_accessor *FIELDS
 
     def initialize(file_path, xml_verdict)
-      self.file_path = file_path
+      values = {
+          :file_path => file_path,
+      }
       # Stow the attributes.
-      xml_verdict.attributes.each_pair do |name, value|
-        method = "#{name}=".to_sym
-        send(method, value.to_s)
+      xml_verdict.attributes.each_pair do |name, attribute|
+        field = name.to_sym
+        value_s = attribute.to_s
+        value = case
+                  when [
+                      :volatile,
+                  ].include?(field)
+                    value_s == 'true' ? true : false
+                  when [
+                      :method,
+                      :outcome,
+                  ].include?(field)
+                    value_s.to_sym
+                  else
+                    value_s.to_s
+                end
+        values.store(name, value)
+      end
+      super(FIELDS, values)
+      # Possible child is element exp_value.
+      exp_value = xml_verdict.xpath('./exp_value').first
+      if exp_value
+        self.exp_value = exp_value.text
+      end
+      # Possible child is element act_value.
+      act_value = xml_verdict.xpath('./act_value').first
+      if act_value
+        self.act_value = act_value.text
       end
       # Possible child is element exception.
-      xml_exception = xml_verdict.xpath('//exception').first
+      xml_exception = xml_verdict.xpath('./exception').first
       if xml_exception
-        self.exception = Exception.new(xml_exception)
+        self.exception = Verdict::Exception.new(xml_exception)
       else
         self.exception = nil
       end
     end
 
-    class Exception
+    def self.equal?(expected_obj, actual_obj)
+      super(expected_obj, actual_obj, fields_to_ignore = [:file_path])
+    end
 
-      attr_accessor \
-        :class,
-        :message,
-        :backtrace
+    def path
+      test_name = File.basename(file_path, '.xml')
+      File.join(test_name, id)
+    end
 
+    class Exception < BaseClassForData
+
+      FIELDS = Set.new([
+                           :klass,
+                           :message,
+                           :backtrace,
+                       ])
+
+      attr_accessor *FIELDS
+
+      # Constructor.
+      Contract Nokogiri::XML::Element => nil
       def initialize(xml_exception)
+        values = {}
         xml_exception.children.each do |child|
-          method = "#{child.name}=".to_sym
+          field = child.name.to_sym
+          field = :klass if field == :class
           value = child.text.to_s
-          send(method, value)
+          values.store(field, value)
         end
+        super(FIELDS, values)
+        nil
       end
+
     end
 
   end
 
-  Contract String => ArrayOf[Verdict]
+  Contract String => HashOf[String, Verdict]
   def self.get_verdicts_from_directory(dir_path)
     file_paths = Dir.glob(File.join(dir_path, '*'))
-    verdicts = []
+    verdicts_by_path = {}
     file_paths.each do |file_path|
-      verdicts.push(*self.get_verdicts_from_file(file_path))
+      new_verdicts_by_path = self.get_verdicts_from_file(file_path)
+      verdicts_by_path.merge!(new_verdicts_by_path)
     end
-    verdicts
+    verdicts_by_path
   end
 
-  Contract String => ArrayOf[Verdict]
+  Contract String => HashOf[String, Verdict]
   def self.get_verdicts_from_file(file_path)
-    verdicts = []
     doc = Nokogiri::XML(File.open(file_path))
     xml_verdicts = doc.xpath('//verdict')
+    verdicts_by_path = {}
     xml_verdicts.each do |xml_verdict|
       verdict = Verdict.new(file_path, xml_verdict)
-      verdicts.push(verdict)
+      verdicts_by_path.store(verdict.path, verdict)
     end
-    verdicts
+    verdicts_by_path
   end
 
   private
@@ -314,7 +371,8 @@ class Log < BaseClass
 
     # An error may have caused some blocked verdicts, but does not itself show up as a verdict.
     # Take a verdict here, so that an error will cause a :failed in the log.
-    verdict_assert_equal?('error count', 0, self.counts[:error], 'error count')
+    # The count is volatile, so it's not an error to differ from previous.
+    verdict_assert_equal?('error count', 0, self.counts[:error], 'error count', volatile = true)
 
     # Close the text log.
     log_puts("END\t#{self.root_name}")
