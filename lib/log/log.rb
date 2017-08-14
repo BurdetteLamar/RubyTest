@@ -216,11 +216,11 @@ class Log < BaseClass
     FIELDS = Set.new([
                          :file_path,
                          :id,
-                         :message,
                          :method,
                          :exp_value,
                          :act_value,
                          :outcome,
+                         :message,
                          :volatile,
                          :exception,
                      ])
@@ -285,6 +285,8 @@ class Log < BaseClass
 
     class Exception < BaseClassForData
 
+      include REXML
+
       FIELDS = Set.new([
                            :klass,
                            :message,
@@ -305,6 +307,14 @@ class Log < BaseClass
         end
         super(FIELDS, values)
         nil
+      end
+
+      def to_html
+        table_ele = Element.new('table')
+        table_ele << tr_ele = Element.new('tr')
+        tr_ele << th_ele = Element.new('th')
+        th_ele << Text.new('Class')
+        table_ele
       end
 
     end
