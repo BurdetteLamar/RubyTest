@@ -14,6 +14,8 @@ class ChangesReport < BaseClass
 
     attr_accessor :prev, :curr, :status
 
+    include REXML
+
     def initialize(prev_verdict, curr_verdict)
       self.prev = prev_verdict
       self.curr = curr_verdict
@@ -84,9 +86,57 @@ class ChangesReport < BaseClass
       ELE_CLASS_FOR_STATUS_SYMBOL[status_symbol]
     end
 
+    def to_table
+      table_ele = Element.new('table')
+      table_ele.add_attribute('border', '1')
+      table_ele << tr_head_ele = Element.new('tr')
+      tr_head_ele << th_head_ele = Element.new('th')
+      th_head_ele << Text.new('')
+      # Rows for prev and curr.
+      tr_prev_ele = tr_curr_ele = nil
+      unless prev.nil?
+        table_ele << tr_prev_ele = Element.new('tr')
+        tr_prev_ele << th_prev_ele = Element.new('th')
+        th_prev_ele << Text.new('Previous')
+      end
+      unless curr.nil?
+        table_ele << tr_curr_ele = Element.new('tr')
+        tr_curr_ele << th_curr_ele = Element.new('th')
+        th_curr_ele << Text.new('Current')
+      end
+      #  Add columns as needed.
+      Log::Verdict::FIELDS.each do |method|\
+        # File path not needed.
+        next if method == :file_path
+        # Id is already in the section header
+        next if method == :id
+        value_prev = prev.nil? ? nil : prev.send(method).to_s
+        value_curr = curr.nil? ? nil : curr.send(method).to_s
+        next if value_prev.nil? && value_curr.nil?
+        # Add column header.
+        tr_head_ele << th_head_ele = Element.new('th')
+        th_head_ele << Text.new(method.to_s)
+        # Add value for prev.
+        unless tr_prev_ele.nil?
+          tr_prev_ele << td_prev_ele = Element.new('td')
+          td_prev_ele << Text.new(value_prev)
+        end
+        # Add value_for_curr.
+        unless tr_curr_ele.nil?
+          tr_curr_ele << td_curr_ele = Element.new('td')
+          td_curr_ele << Text.new(value_curr)
+        end
+      end
+      table_ele
+    end
+
   end
 
   Contract String => nil
+  # XML generator requires string (not symbol) as hash key.
+  # But RubyMine does not like a string hash key.
+  # So, this pragma.
+  # noinspection RubyStringKeysInHashInspection
   def self.create_report(app_name)
 
     prev_dir_path = TestHelper.get_app_log_dir_path(app_name, back = 1)
@@ -179,7 +229,7 @@ EOT
 
     changes_by_status = {}
     VerdictPair::STATUS_SYMBOLS.each do |status|
-      pairs = verdict_pairs.select{|k, v| v.status == status}
+      pairs = verdict_pairs.select{|_, v| v.status == status}
       changes_by_status.store(status, pairs)
     end
 
@@ -211,11 +261,9 @@ EOT
     timestamp_table_ele = body_ele.add_element('table', {'border' => '1'})
     tr_ele = timestamp_table_ele.add_element('tr')
     tr_ele.add_element('th') << Text.new('Previous Test Run')
-    # tr_ele.add_element('td', {'class' => 'data'}) << Text.new(test_run_prev.timestamp)
     tr_ele.add_element('td', {'class' => 'data'}) << Text.new(prev_timestamp)
     tr_ele = timestamp_table_ele.add_element('tr')
     tr_ele.add_element('th') << Text.new('Current Test Run')
-    # tr_ele.add_element('td', {'class' => 'data'}) << Text.new(test_run_curr.timestamp)
     tr_ele.add_element('td', {'class' => 'data'}) << Text.new(curr_timestamp)
 
     body_ele.add_element('p')
@@ -232,52 +280,63 @@ EOT
       words.join(' ')
     end
 
+    # Summary and section for each status.
+    status_sections = {}
     VerdictPair::STATUS_SYMBOLS.each do |status|
+      # Changes for this status.
       changes = changes_by_status[status]
-      # Make count and text for link and section title.
+      # count and text for link and section title.
       count = changes.size
       # Text for link and subsection title
       title_text = '%s (%d)' % [self.text_for_status(status), count]
       link_text = self.text_for_status(status)
       _class = VerdictPair.ele_class_for_status_symbol(status)
-      # Add row to summary table.  It has a link to the section.
+      # Add row to summary table and link it to the section.
       tr_ele = summary_table_ele.add_element('tr', {'class' => _class})
       td_ele = tr_ele.add_element('td', {'align' => 'right'})
       td_ele << Text.new(count.to_s)
       td_ele = tr_ele.add_element('td')
       a_ele = td_ele.add_element('a', 'href' => '#' + title_text)
       a_ele << Text.new(link_text)
-      # Begin section.
-      body_ele << section = Element.new('h2')
-      section << Text.new(title_text)
-      section.add_element('a', {'name' => title_text})
-      # Don't report on old passed.
+      # Begin section with title.
+      body_ele << status_section = Element.new('h2')
+      # Save the section.
+      status_sections.store(status, status_section)
+      status_section << Text.new(title_text)
+      status_section.add_element('a', {'name' => title_text})
+      # Don't itemize old passed.
       if status == :old_passed
-        section.add_element('p') << Text.new('[Too many to list]')
+        status_section.add_element('p') << Text.new('[Too many to list]')
         next
       end
       # Don't make the table for an empty section.
       next if (changes.size == 0)
-      # Table of changes.
-      table_ele = section.add_element('table', {'border' => '1'})
+      # Table listing the changes.
+      table_ele = status_section.add_element('table', {'border' => '1'})
       changes.each do |change|
-      #   # Make text for link and subsection title.
-      #   text = change.verdict_curr.verdict_path.join('/')
-      #   tr_ele = table_ele.add_element('tr', {'class' => _class})
-      #   td_ele = tr_ele.add_element('td')
-      #   if change.verdict_prev.method_name || change.verdict_curr.method_name
-      #     # There is data;  build it and link to it.
-      #     a_ele = td_ele.add_element('a', {'href' => '#' + text})
-      #     a_ele << Text.new(text)
-      #     # Begin section.
-      #     section << subsection = Element.new('h5')
-      #     subsection.add_element('a', {'name' => text})
-      #     subsection << Text.new(text)
-      #     subsection << change.to_html_table
-      #   else
-      #     # There is no data to link to (must be an old_blocked);  just insert the text.
-      #     td_ele << Text.new(text)
-      #   end
+        verdict_path, verdict_pair = change
+        verdict_prev = verdict_pair.prev
+        verdict_curr = verdict_pair.curr
+        # Entry in the summary table for this status.
+        tr_ele = table_ele.add_element('tr', {'class' => _class})
+        td_ele = tr_ele.add_element('td')
+        if status == :old_blocked
+          # Just put in the verdict path (there's no data to link to).
+          td_ele << Text.new(verdict_path)
+          next
+        end
+        # There will be data to link to, so....
+        # Attribute values for anchor href (linker) and anchor name (linkee).
+        anchor_href = '#' + verdict_path
+        anchor_name = verdict_path
+        # Entry in status summary table, linked to change details section
+        a_ele = td_ele.add_element('a', {'href' => anchor_href})
+        a_ele << Text.new(verdict_path)
+        # Change details section.
+        change_section = status_section << Element.new('h5')
+        change_section.add_element('a', {'name' => anchor_name})
+        change_section << Text.new(verdict_path)
+        change_section.add_element(verdict_pair.to_table)
       end
     end
 
