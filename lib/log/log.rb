@@ -311,9 +311,28 @@ class Log < BaseClass
 
       def to_html
         table_ele = Element.new('table')
+        table_ele.add_attribute('border', '1')
         table_ele << tr_ele = Element.new('tr')
         tr_ele << th_ele = Element.new('th')
         th_ele << Text.new('Class')
+        tr_ele << td_ele = Element.new('td')
+        td_ele << Text.new(self.klass)
+        # Message.
+        table_ele << tr_ele = Element.new('tr')
+        tr_ele << th_ele = Element.new('th')
+        th_ele << Text.new('Message')
+        tr_ele << td_ele = Element.new('td')
+        td_ele << Text.new(self.message)
+        # Backtrace.
+        table_ele << tr_ele = Element.new('tr')
+        tr_ele << th_ele = Element.new('th')
+        th_ele << Text.new('Backtrace')
+        tr_ele << td_ele = Element.new('td')
+        td_ele << ul_ele = Element.new('ul')
+        self.backtrace.split("\n").each do |line|
+          ul_ele << li_ele = Element.new('li')
+          li_ele << Text.new(line)
+        end
         table_ele
       end
 
