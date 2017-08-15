@@ -14,7 +14,7 @@ class ExampleTest < Minitest::Test
                             log_dir_path,
                             'log.xml'
     )
-    Log.open(self, :file_path => log_file_path) do |log|
+    Log.open(self, :file_path => log_file_path, :backtrace_filter => /ruby/) do |log|
 
       @log = log
 

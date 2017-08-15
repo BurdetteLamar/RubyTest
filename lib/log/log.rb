@@ -58,6 +58,7 @@ class Log < BaseClass
     :counts,
     :file,
     :file_path,
+    :backtrace_filter,
     :root_name,
     :section_numbers,
     :test,
@@ -328,9 +329,11 @@ class Log < BaseClass
         tr_ele << th_ele = Element.new('th')
         th_ele << Text.new('Backtrace')
         tr_ele << td_ele = Element.new('td')
-        td_ele << ul_ele = Element.new('ul')
+        td_ele << ol_ele = Element.new('ol')
         self.backtrace.split("\n").each do |line|
-          ul_ele << li_ele = Element.new('li')
+          ol_ele << li_ele = Element.new('li')
+          ol_ele.add_attribute('start', '0')
+          ol_ele.add_attribute('reversed', 'reversed')
           li_ele << Text.new(line)
         end
         table_ele
@@ -378,6 +381,7 @@ class Log < BaseClass
     self.file_path = options[:file_path]
     self.root_name = options[:root_name]
     self.xml_indentation = options[:xml_indentation]
+    self.backtrace_filter = options[:backtrace_filter] || /log|ruby/
     self.file = File.open(self.file_path, 'w')
     log_puts("REMARK\tThis text log is the precursor for an XML log.")
     log_puts("REMARK\tIf the logged process completes, this text will be converted to XML.")
@@ -575,17 +579,12 @@ class Log < BaseClass
 
   Contract ArrayOf[String], Maybe[ArrayOf[String]] => String
   # Filters lines that are from ruby or log, to make the backtrace more readable.
-  def filter_backtrace(lines, words = %w/log ruby/)
+  def filter_backtrace(lines)
     filtered = []
     lines.each do |line|
-      unless words.any? { |s| line.include?(s) }
+      unless line.match(self.backtrace_filter)
         filtered.push(line)
       end
-    end
-    # If nothing left, we were (likely?) testing the logging itself,
-    # so just filter out ruby.
-    if filtered.empty?
-      return filter_backtrace(lines, %w/ruby/)
     end
     filtered.join("\n")
   end

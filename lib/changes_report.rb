@@ -6,6 +6,11 @@ require_relative 'base_classes/base_class'
 require_relative '../lib/helpers/set_helper'
 require_relative '../lib/helpers/test_helper'
 
+# TODO:  Add bgcolor to table rows.
+# TODO:  Set fonts for data cells.
+# TODO:  Create more methods for verdicts (e.g., :epsilon).
+# TODO:  Check backtrace (being improperly filtered?).
+
 class ChangesReport < BaseClass
 
   include REXML
