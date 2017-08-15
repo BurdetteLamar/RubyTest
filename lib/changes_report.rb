@@ -10,6 +10,15 @@ class ChangesReport < BaseClass
 
   include REXML
 
+  def self.cell_data(data)
+    case
+      when data.respond_to?(:to_html)
+        data.to_html
+      else
+        Text.new(data.to_s)
+    end
+  end
+
   class VerdictPair
 
     attr_accessor :prev, :curr, :status
@@ -91,40 +100,40 @@ class ChangesReport < BaseClass
       table_ele.add_attribute('border', '1')
       table_ele << tr_head_ele = Element.new('tr')
       tr_head_ele << th_head_ele = Element.new('th')
-      th_head_ele << Text.new('')
+      th_head_ele << ChangesReport.cell_data('')
       # Rows for prev and curr.
       tr_prev_ele = tr_curr_ele = nil
       unless prev.nil?
         table_ele << tr_prev_ele = Element.new('tr')
         tr_prev_ele << th_prev_ele = Element.new('th')
-        th_prev_ele << Text.new('Previous')
+        th_prev_ele << ChangesReport.cell_data('Previous')
       end
       unless curr.nil?
         table_ele << tr_curr_ele = Element.new('tr')
         tr_curr_ele << th_curr_ele = Element.new('th')
-        th_curr_ele << Text.new('Current')
+        th_curr_ele << ChangesReport.cell_data('Current')
       end
       #  Add columns as needed.
       Log::Verdict::FIELDS.each do |method|\
-        # File path not needed.
+        # Verdict :file_path is not needed.
         next if method == :file_path
-        # Id is already in the section header
+        # Verdict :id is already in the section header
         next if method == :id
-        value_prev = prev.nil? ? nil : prev.send(method).to_s
-        value_curr = curr.nil? ? nil : curr.send(method).to_s
+        value_prev = prev.nil? ? nil : prev.send(method)
+        value_curr = curr.nil? ? nil : curr.send(method)
         next if value_prev.nil? && value_curr.nil?
         # Add column header.
         tr_head_ele << th_head_ele = Element.new('th')
-        th_head_ele << Text.new(method.to_s)
+        th_head_ele << ChangesReport.cell_data(method)
         # Add value for prev.
         unless tr_prev_ele.nil?
           tr_prev_ele << td_prev_ele = Element.new('td')
-          td_prev_ele << Text.new(value_prev)
+          td_prev_ele << ChangesReport.cell_data(value_prev)
         end
         # Add value_for_curr.
         unless tr_curr_ele.nil?
           tr_curr_ele << td_curr_ele = Element.new('td')
-          td_curr_ele << Text.new(value_curr)
+          td_curr_ele << ChangesReport.cell_data(value_curr)
         end
       end
       table_ele
@@ -246,34 +255,34 @@ EOT
     .data { font-family: Courier New, monospace }
     .data_centered { text-align: center; font-family: Courier New, monospace }
 EOT
-    style_ele << Text.new(styles)
+    style_ele << ChangesReport.cell_data(styles)
     body_ele = html_ele.add_element('body')
     body_ele << summary_h1 = Element.new('h1')
     count = 0
     changes_by_status.each do |_, changes|
       count = count + changes.size
     end
-    summary_h1 << Text.new('Changes Report')
+    summary_h1 << ChangesReport.cell_data('Changes Report')
 
-    body_ele << Text.new('Generated %s' % Log.timestamp)
+    body_ele << ChangesReport.cell_data('Generated %s' % Log.timestamp)
     body_ele.add_element('p')
 
     timestamp_table_ele = body_ele.add_element('table', {'border' => '1'})
     tr_ele = timestamp_table_ele.add_element('tr')
-    tr_ele.add_element('th') << Text.new('Previous Test Run')
-    tr_ele.add_element('td', {'class' => 'data'}) << Text.new(prev_timestamp)
+    tr_ele.add_element('th') << ChangesReport.cell_data('Previous Test Run')
+    tr_ele.add_element('td', {'class' => 'data'}) << ChangesReport.cell_data(prev_timestamp)
     tr_ele = timestamp_table_ele.add_element('tr')
-    tr_ele.add_element('th') << Text.new('Current Test Run')
-    tr_ele.add_element('td', {'class' => 'data'}) << Text.new(curr_timestamp)
+    tr_ele.add_element('th') << ChangesReport.cell_data('Current Test Run')
+    tr_ele.add_element('td', {'class' => 'data'}) << ChangesReport.cell_data(curr_timestamp)
 
     body_ele.add_element('p')
 
     summary_table_ele = body_ele.add_element('table', {'border' => '1'})
     tr_ele = summary_table_ele.add_element('tr')
     td_ele = tr_ele.add_element('th', {'align' => 'right'})
-    td_ele << Text.new(count.to_s)
+    td_ele << ChangesReport.cell_data(count)
     td_ele = tr_ele.add_element('th', {'align' => 'left'})
-    td_ele << Text.new('Total')
+    td_ele << ChangesReport.cell_data('Total')
 
     def self.text_for_status(status)
       words = status.to_s.split('_').collect {|word| word.capitalize}
@@ -294,19 +303,19 @@ EOT
       # Add row to summary table and link it to the section.
       tr_ele = summary_table_ele.add_element('tr', {'class' => _class})
       td_ele = tr_ele.add_element('td', {'align' => 'right'})
-      td_ele << Text.new(count.to_s)
+      td_ele << ChangesReport.cell_data(count)
       td_ele = tr_ele.add_element('td')
       a_ele = td_ele.add_element('a', 'href' => '#' + title_text)
-      a_ele << Text.new(link_text)
+      a_ele << ChangesReport.cell_data(link_text)
       # Begin section with title.
       body_ele << status_section = Element.new('h2')
       # Save the section.
       status_sections.store(status, status_section)
-      status_section << Text.new(title_text)
+      status_section << ChangesReport.cell_data(title_text)
       status_section.add_element('a', {'name' => title_text})
       # Don't itemize old passed.
       if status == :old_passed
-        status_section.add_element('p') << Text.new('[Too many to list]')
+        status_section.add_element('p') << ChangesReport.cell_data('[Too many to list]')
         next
       end
       # Don't make the table for an empty section.
@@ -322,7 +331,7 @@ EOT
         td_ele = tr_ele.add_element('td')
         if status == :old_blocked
           # Just put in the verdict path (there's no data to link to).
-          td_ele << Text.new(verdict_path)
+          td_ele << ChangesReport.cell_data(verdict_path)
           next
         end
         # There will be data to link to, so....
@@ -331,11 +340,11 @@ EOT
         anchor_name = verdict_path
         # Entry in status summary table, linked to change details section
         a_ele = td_ele.add_element('a', {'href' => anchor_href})
-        a_ele << Text.new(verdict_path)
+        a_ele << ChangesReport.cell_data(verdict_path)
         # Change details section.
         change_section = status_section << Element.new('h5')
         change_section.add_element('a', {'name' => anchor_name})
-        change_section << Text.new(verdict_path)
+        change_section << ChangesReport.cell_data(verdict_path)
         change_section.add_element(verdict_pair.to_table)
       end
     end
