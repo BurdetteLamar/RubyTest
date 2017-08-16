@@ -102,8 +102,8 @@ class TestHelper < BaseClass
 
   # Get app test logs directory path.
   # This will have a timestamp directory name.
-  # Accepts a non-positive offset into the list of directory names:
-  # 0 for most recent result;  -1 for the next earlier;  etc.
+  # Accepts a non-negative offset into the list of directory names:
+  # 0 for most recent result;  1 for the next earlier;  etc.
   Contract String, And[Num, Not[Neg]] => String
   def self.get_app_log_dir_path(app_name, back = 0)
     timestamp_dir_names = Dir.glob(File.join(

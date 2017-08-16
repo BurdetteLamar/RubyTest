@@ -4,6 +4,8 @@ require_relative '../../../lib/helpers/object_helper'
 class BaseClassForResource < BaseClassForData
 
   Contract ExampleRestClient, self => Bool
+  # RubyMine cannot find RestClient::NotFound
+  # noinspection RubyResolve
   def self.exist?(client, object)
     begin
       self.read(client, object)
