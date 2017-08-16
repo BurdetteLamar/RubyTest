@@ -260,27 +260,22 @@ class Log < BaseClass
         values.store(name, value)
       end
       super(FIELDS, values)
-      # Possible child is element exp_value.
-      exp_value = xml_verdict.xpath('./exp_value').first
-      if exp_value
-        self.exp_value = exp_value.text
-      end
-      # Possible child is element act_value.
-      act_value = xml_verdict.xpath('./act_value').first
-      if act_value
-        self.act_value = act_value.text
-      end
-      # Possible child is element delta.
-      delta = xml_verdict.xpath('./delta').first
-      if delta
-        self.delta = delta.text
-      end
-      # Possible child is element exception.
-      xml_exception = xml_verdict.xpath('./exception').first
-      if xml_exception
-        self.exception = Verdict::Exception.new(xml_exception)
-      else
-        self.exception = nil
+      xml_verdict.children.each do |child|
+        name = child.name
+        case
+          when %w/
+              act_value
+              exp_value
+              delta
+          /.include?(name)
+            method = format('%s=', name)
+            value = child.text
+            send(method, value)
+          when name == 'exception'
+            self.exception = Verdict::Exception.new(child)
+          else
+            raise NotImplementedError.new(name)
+        end
       end
     end
 
