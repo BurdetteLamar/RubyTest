@@ -6,6 +6,8 @@ gem 'contracts', '0.14.0'
 
 gem 'json', '1.8.1'
 
+gem 'lorem-ipsum', '0.1.1'
+
 gem 'minitest', '5.10.1'
 
 gem 'nokogiri', '1.6.7.2'

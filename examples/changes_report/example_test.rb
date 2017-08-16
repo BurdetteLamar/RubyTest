@@ -2,12 +2,15 @@ require 'minitest/autorun'
 
 require_relative '../../lib/helpers/test_helper'
 require_relative '../../lib/log/log'
+require_relative '../../lib/lorem_helper'
 
 class ExampleTest < Minitest::Test
 
   def create_logs(prev)
 
     @prev = prev
+
+    @lorem = LoremHelper::Lorem.new
 
     log_dir_path = TestHelper.create_app_log_dir('changes_report')
     log_file_path = File.join(
@@ -44,7 +47,14 @@ class ExampleTest < Minitest::Test
           args_for_status.each_pair do |status, args_pair|
             args = args_pair[i]
             next if args.nil?
-            verdict_id = format('%s %s', method, status)
+            key = [method, status]
+            verdict_id = nil
+            if @verdict_ids.include?(key)
+              verdict_id = @verdict_ids.fetch(key)
+            else
+              verdict_id = @lorem.words(3)
+              @verdict_ids.store(key, verdict_id)
+            end
             @log.send(method, verdict_id, *args, verdict_id)
           end
         end
@@ -118,7 +128,10 @@ class ExampleTest < Minitest::Test
 
   def test_changes
 
+    @verdict_ids = {}
+
     create_logs(prev = true)
+    # Make sure the timestamp-based dirnames will be different.
     sleep 2
     create_logs(prev = false)
 

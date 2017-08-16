@@ -8,6 +8,7 @@ require_relative '../lib/helpers/test_helper'
 
 # TODO:  Create more methods for verdicts (e.g., :epsilon).
 # TODO:  Change verdict :id values.
+# TODO:  Make some instances of :old_blocked.
 
 class ChangesReport < BaseClass
 
