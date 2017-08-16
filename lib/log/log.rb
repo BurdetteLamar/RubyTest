@@ -220,6 +220,7 @@ class Log < BaseClass
                          :method,
                          :exp_value,
                          :act_value,
+                         :delta,
                          :outcome,
                          :message,
                          :volatile,
@@ -268,6 +269,11 @@ class Log < BaseClass
       act_value = xml_verdict.xpath('./act_value').first
       if act_value
         self.act_value = act_value.text
+      end
+      # Possible child is element delta.
+      delta = xml_verdict.xpath('./delta').first
+      if delta
+        self.delta = delta.text
       end
       # Possible child is element exception.
       xml_exception = xml_verdict.xpath('./exception').first

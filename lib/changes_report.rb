@@ -7,7 +7,6 @@ require_relative '../lib/helpers/set_helper'
 require_relative '../lib/helpers/test_helper'
 
 # TODO:  Create more methods for verdicts (e.g., :epsilon).
-# TODO:  Change verdict :id values.
 # TODO:  Make some instances of :old_blocked.
 
 class ChangesReport < BaseClass
@@ -131,7 +130,7 @@ class ChangesReport < BaseClass
       class_curr = VerdictPair.ele_class_for_outcome_symbol(outcome_curr)
       classes_curr = format('data %s', class_curr)
       #  Add columns as needed.
-      Log::Verdict::FIELDS.each do |method|\
+      Log::Verdict::FIELDS.each do |method|
         # Verdict :file_path is not needed.
         next if method == :file_path
         # Verdict :id is already in the section header
