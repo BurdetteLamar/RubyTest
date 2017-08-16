@@ -228,7 +228,10 @@ class Log < BaseClass
 
     # This is redundant, but it helps RubyMine code inspection.
     attr_accessor \
-        :outcome
+        :act_value,
+        :exp_value,
+        :outcome,
+        :volatile
 
     attr_accessor *FIELDS
 

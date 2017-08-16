@@ -103,7 +103,7 @@ class BaseClassForData < BaseClass
       next if expected_value.nil?
       actual_value = actual_obj.send(field)
       if actual_value.kind_of?(BaseClassForData)
-        self.equal_recursive?(expected_value, actual_value, fields_to_ignore) && field_equal
+        self.equal_recursive?(expected_value, actual_value, fields_to_ignore)
       else
         return false unless actual_value == expected_value
       end
