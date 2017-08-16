@@ -6,10 +6,8 @@ require_relative 'base_classes/base_class'
 require_relative '../lib/helpers/set_helper'
 require_relative '../lib/helpers/test_helper'
 
-# TODO:  Add bgcolor to table rows.
-# TODO:  Set fonts for data cells.
 # TODO:  Create more methods for verdicts (e.g., :epsilon).
-# TODO:  Check backtrace (being improperly filtered?).
+# TODO:  Change verdict :id values.
 
 class ChangesReport < BaseClass
 
@@ -100,6 +98,18 @@ class ChangesReport < BaseClass
       ELE_CLASS_FOR_STATUS_SYMBOL[status_symbol]
     end
 
+    ELE_CLASS_FOR_OUTCOME_SYMBOL = {
+        :blocked => :neutral,
+        :failed => :bad,
+        :passed => :good,
+    }
+
+    OUTCOME_SYMBOLS = ELE_CLASS_FOR_OUTCOME_SYMBOL.keys
+
+    def self.ele_class_for_outcome_symbol(outcome_symbol)
+      ELE_CLASS_FOR_OUTCOME_SYMBOL[outcome_symbol]
+    end
+
     def to_table
       table_ele = Element.new('table')
       table_ele.add_attribute('border', '1')
@@ -107,17 +117,18 @@ class ChangesReport < BaseClass
       tr_head_ele << th_head_ele = Element.new('th')
       th_head_ele << ChangesReport.cell_data('')
       # Rows for prev and curr.
-      tr_prev_ele = tr_curr_ele = nil
-      unless prev.nil?
-        table_ele << tr_prev_ele = Element.new('tr')
-        tr_prev_ele << th_prev_ele = Element.new('th')
-        th_prev_ele << ChangesReport.cell_data('Previous')
-      end
-      unless curr.nil?
-        table_ele << tr_curr_ele = Element.new('tr')
-        tr_curr_ele << th_curr_ele = Element.new('th')
-        th_curr_ele << ChangesReport.cell_data('Current')
-      end
+      table_ele << tr_prev_ele = Element.new('tr')
+      tr_prev_ele << th_prev_ele = Element.new('th')
+      th_prev_ele << ChangesReport.cell_data('Previous')
+      table_ele << tr_curr_ele = Element.new('tr')
+      tr_curr_ele << th_curr_ele = Element.new('th')
+      th_curr_ele << ChangesReport.cell_data('Current')
+      outcome_prev = prev ? prev.outcome : :blocked
+      class_prev = VerdictPair.ele_class_for_outcome_symbol(outcome_prev)
+      classes_prev = format('data %s', class_prev)
+      outcome_curr = curr ? curr.outcome : :blocked
+      class_curr = VerdictPair.ele_class_for_outcome_symbol(outcome_curr)
+      classes_curr = format('data %s', class_curr)
       #  Add columns as needed.
       Log::Verdict::FIELDS.each do |method|\
         # Verdict :file_path is not needed.
@@ -129,17 +140,15 @@ class ChangesReport < BaseClass
         next if value_prev.nil? && value_curr.nil?
         # Add column header.
         tr_head_ele << th_head_ele = Element.new('th')
-        th_head_ele << ChangesReport.cell_data(method)
+        th_head_ele << ChangesReport.cell_data(ChangesReport.title_from_symbol(method))
         # Add value for prev.
-        unless tr_prev_ele.nil?
-          tr_prev_ele << td_prev_ele = Element.new('td')
-          td_prev_ele << ChangesReport.cell_data(value_prev)
-        end
+        tr_prev_ele << td_prev_ele = Element.new('td')
+        td_prev_ele.add_attribute('class', classes_prev)
+        td_prev_ele << ChangesReport.cell_data(value_prev)
         # Add value_for_curr.
-        unless tr_curr_ele.nil?
-          tr_curr_ele << td_curr_ele = Element.new('td')
-          td_curr_ele << ChangesReport.cell_data(value_curr)
-        end
+        tr_curr_ele << td_curr_ele = Element.new('td')
+        td_curr_ele.add_attribute('class', classes_curr)
+        td_curr_ele << ChangesReport.cell_data(value_curr)
       end
       table_ele
     end
@@ -289,7 +298,7 @@ EOT
     td_ele = tr_ele.add_element('th', {'align' => 'left'})
     td_ele << ChangesReport.cell_data('Total')
 
-    def self.text_for_status(status)
+    def self.title_from_symbol(status)
       words = status.to_s.split('_').collect {|word| word.capitalize}
       words.join(' ')
     end
@@ -302,8 +311,8 @@ EOT
       # count and text for link and section title.
       count = changes.size
       # Text for link and subsection title
-      title_text = '%s (%d)' % [self.text_for_status(status), count]
-      link_text = self.text_for_status(status)
+      title_text = '%s (%d)' % [self.title_from_symbol(status), count]
+      link_text = self.title_from_symbol(status)
       _class = VerdictPair.ele_class_for_status_symbol(status)
       # Add row to summary table and link it to the section.
       tr_ele = summary_table_ele.add_element('tr', {'class' => _class})
@@ -320,7 +329,7 @@ EOT
       status_section.add_element('a', {'name' => title_text})
       # Don't itemize old passed.
       if status == :old_passed
-        status_section.add_element('p') << ChangesReport.cell_data('[Too many to list]')
+        body_ele.add_element('p') << ChangesReport.cell_data('Not listed')
         next
       end
       # Don't make the table for an empty section.
@@ -329,8 +338,6 @@ EOT
       table_ele = status_section.add_element('table', {'border' => '1'})
       changes.each do |change|
         verdict_path, verdict_pair = change
-        verdict_prev = verdict_pair.prev
-        verdict_curr = verdict_pair.curr
         # Entry in the summary table for this status.
         tr_ele = table_ele.add_element('tr', {'class' => _class})
         td_ele = tr_ele.add_element('td')
