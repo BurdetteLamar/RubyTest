@@ -262,19 +262,18 @@ class Log < BaseClass
       super(FIELDS, values)
       xml_verdict.children.each do |child|
         name = child.name
-        case
-          when %w/
-              act_value
-              exp_value
-              delta
-          /.include?(name)
-            method = format('%s=', name)
-            value = child.text
-            send(method, value)
-          when name == 'exception'
-            self.exception = Verdict::Exception.new(child)
-          else
-            raise NotImplementedError.new(name)
+        # Exception needs to be an object.
+        if  name == 'exception'
+          self.exception = Verdict::Exception.new(child)
+          next
+        end
+        # Others are simple values.
+        value = child.text
+        method = format('%s=', name)
+        if self.respond_to?(method)
+          send(method, value)
+        else
+          raise NotImplementedError.new(method)
         end
       end
     end
