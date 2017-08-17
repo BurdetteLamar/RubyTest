@@ -51,11 +51,14 @@ class ExampleTest < Minitest::Test
             verdict_id = nil
             if @verdict_ids.include?(key)
               verdict_id = @verdict_ids.fetch(key)
+              message = @messages.fetch(key)
             else
               verdict_id = @lorem.words(3)
               @verdict_ids.store(key, verdict_id)
+              message = @lorem.sentence(4)
+              @messages.store(key, message)
             end
-            @log.send(method, verdict_id, *args, verdict_id)
+            @log.send(method, verdict_id, *args, message)
           end
         end
 
@@ -129,6 +132,7 @@ class ExampleTest < Minitest::Test
   def test_changes
 
     @verdict_ids = {}
+    @messages = {}
 
     create_logs(prev = true)
     # Make sure the timestamp-based dirnames will be different.
