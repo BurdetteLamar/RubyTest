@@ -57,7 +57,8 @@ class ExampleTest < Minitest::Test
               message = @lorem.sentence(4)
               @messages.store(key, message)
             end
-            message = key.inspect
+            # For debugging;  tells what we're trying to do.
+            # message = key.inspect
             @log.send(method, verdict_id, *args, message)
           end
         end
