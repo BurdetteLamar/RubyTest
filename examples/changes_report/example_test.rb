@@ -48,7 +48,6 @@ class ExampleTest < Minitest::Test
             args = args_pair[i]
             next if args.nil?
             key = [method, status]
-            verdict_id = nil
             if @verdict_ids.include?(key)
               verdict_id = @verdict_ids.fetch(key)
               message = @messages.fetch(key)
@@ -58,6 +57,7 @@ class ExampleTest < Minitest::Test
               message = @lorem.sentence(4)
               @messages.store(key, message)
             end
+            message = key.inspect
             @log.send(method, verdict_id, *args, message)
           end
         end
@@ -120,6 +120,21 @@ class ExampleTest < Minitest::Test
             changed_pass_values: [1.0, 2.0, 0.2],
             fail_values: [0.0, 0.1, 0.2],
             changed_fail_values: [1.0, 1.1, 0.2],
+        )
+
+        do_method(
+            method: :verdict_assert_in_epsilon?,
+            pass_values: [0.0, 0.0, 1.0],
+            changed_pass_values: [1.0, 1.0, 1.0],
+            fail_values: [0.0, 4.0, 1.0],
+            changed_fail_values: [0.0, 5.0, 1.0],
+        )
+        do_method(
+            method: :verdict_refute_in_epsilon?,
+            pass_values: [0.0, 4.0, 1.0],
+            changed_pass_values: [0.0, 5.0, 1.0],
+            fail_values: [0.0, 0.0, 1.0],
+            changed_fail_values: [1.0, 1.0, 1.0],
         )
 
       end

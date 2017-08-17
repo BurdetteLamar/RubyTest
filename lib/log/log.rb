@@ -221,6 +221,7 @@ class Log < BaseClass
                          :exp_value,
                          :act_value,
                          :delta,
+                         :epsilon,
                          :outcome,
                          :message,
                          :volatile,
