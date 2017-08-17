@@ -14,8 +14,8 @@ class ExampleTest < Minitest::Test
 
     log_dir_path = TestHelper.create_app_log_dir('changes_report')
     log_file_path = File.join(
-                            log_dir_path,
-                            'log.xml'
+        log_dir_path,
+        'log.xml'
     )
     Log.open(self, :file_path => log_file_path, :backtrace_filter => /ruby/) do |log|
 
@@ -25,23 +25,23 @@ class ExampleTest < Minitest::Test
       @log.section(section_title, :timestamp, :duration) do
 
         def do_method(
-          method:,
-          pass_values:,
-          changed_pass_values:,
-          fail_values:,
-          changed_fail_values:
+            method:,
+            pass_values:,
+            changed_pass_values:,
+            fail_values:,
+            changed_fail_values:
         )
           block_values = nil
           # Arguments for prev and curr data.
           args_for_status = {
-                :old_passed => [pass_values, pass_values],
-                :new_passed => [fail_values, pass_values],
-                :changed_passed => [pass_values, changed_pass_values],
-                :old_failed => [fail_values, fail_values],
-                :new_failed => [pass_values, fail_values],
-                :changed_failed => [fail_values, changed_fail_values],
-                :old_blocked => [block_values, block_values],
-                :new_blocked => [pass_values, block_values],
+              :old_passed => [pass_values, pass_values],
+              :new_passed => [fail_values, pass_values],
+              :changed_passed => [pass_values, changed_pass_values],
+              :old_failed => [fail_values, fail_values],
+              :new_failed => [pass_values, fail_values],
+              :changed_failed => [fail_values, changed_fail_values],
+              :old_blocked => [block_values, block_values],
+              :new_blocked => [pass_values, block_values],
           }
           i = @prev ? 0 : 1
           args_for_status.each_pair do |status, args_pair|
