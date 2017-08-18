@@ -58,7 +58,7 @@ class ExampleTest < Minitest::Test
               @messages.store(key, message)
             end
             # For debugging;  tells what we're trying to do.
-            message = key.inspect
+            # message = key.inspect
             @log.send(method, verdict_id, *args, message)
           end
         end
