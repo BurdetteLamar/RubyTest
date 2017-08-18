@@ -6,10 +6,6 @@ require_relative 'base_classes/base_class'
 require_relative '../lib/helpers/set_helper'
 require_relative '../lib/helpers/test_helper'
 
-# TODO:  Create more methods for verdicts (e.g., :epsilon).
-# TODO:  Create more verdicts in logs.
-# TODO:  Make some instances of :old_blocked.
-
 class ChangesReport < BaseClass
 
   include REXML
