@@ -139,6 +139,11 @@ class ChangesReport < BaseClass
         next if method == :id
         value_prev = prev.nil? ? nil : prev.send(method)
         value_curr = curr.nil? ? nil : curr.send(method)
+        # Put in an outcome for a blocked verdict.
+        if method == :outcome
+          value_prev = 'blocked' unless value_prev
+          value_curr = 'blocked' unless value_curr
+        end
         next if value_prev.nil? && value_curr.nil?
         # Add column header.
         tr_head_ele << th_head_ele = Element.new('th')
