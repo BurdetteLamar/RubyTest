@@ -58,6 +58,7 @@ class Log < BaseClass
     :counts,
     :file,
     :file_path,
+    :backtrace_filter,
     :root_name,
     :section_numbers,
     :test,
@@ -216,18 +217,23 @@ class Log < BaseClass
     FIELDS = Set.new([
                          :file_path,
                          :id,
-                         :message,
                          :method,
                          :exp_value,
                          :act_value,
+                         :delta,
+                         :epsilon,
                          :outcome,
+                         :message,
                          :volatile,
                          :exception,
                      ])
 
     # This is redundant, but it helps RubyMine code inspection.
     attr_accessor \
-        :outcome
+        :act_value,
+        :exp_value,
+        :outcome,
+        :volatile
 
     attr_accessor *FIELDS
 
@@ -255,22 +261,21 @@ class Log < BaseClass
         values.store(name, value)
       end
       super(FIELDS, values)
-      # Possible child is element exp_value.
-      exp_value = xml_verdict.xpath('./exp_value').first
-      if exp_value
-        self.exp_value = exp_value.text
-      end
-      # Possible child is element act_value.
-      act_value = xml_verdict.xpath('./act_value').first
-      if act_value
-        self.act_value = act_value.text
-      end
-      # Possible child is element exception.
-      xml_exception = xml_verdict.xpath('./exception').first
-      if xml_exception
-        self.exception = Verdict::Exception.new(xml_exception)
-      else
-        self.exception = nil
+      xml_verdict.children.each do |child|
+        name = child.name
+        # Exception needs to be an object.
+        if  name == 'exception'
+          self.exception = Verdict::Exception.new(child)
+          next
+        end
+        # Others are simple values.
+        value = child.text
+        method = format('%s=', name)
+        if self.respond_to?(method)
+          send(method, value)
+        else
+          raise NotImplementedError.new(method)
+        end
       end
     end
 
@@ -284,6 +289,8 @@ class Log < BaseClass
     end
 
     class Exception < BaseClassForData
+
+      include REXML
 
       FIELDS = Set.new([
                            :klass,
@@ -305,6 +312,35 @@ class Log < BaseClass
         end
         super(FIELDS, values)
         nil
+      end
+
+      def to_html
+        table_ele = Element.new('table')
+        table_ele.add_attribute('border', '1')
+        table_ele << tr_ele = Element.new('tr')
+        tr_ele << th_ele = Element.new('th')
+        th_ele << Text.new('Class')
+        tr_ele << td_ele = Element.new('td')
+        td_ele << Text.new(self.klass)
+        # Message.
+        table_ele << tr_ele = Element.new('tr')
+        tr_ele << th_ele = Element.new('th')
+        th_ele << Text.new('Message')
+        tr_ele << td_ele = Element.new('td')
+        td_ele << Text.new(self.message)
+        # Backtrace.
+        table_ele << tr_ele = Element.new('tr')
+        tr_ele << th_ele = Element.new('th')
+        th_ele << Text.new('Backtrace')
+        tr_ele << td_ele = Element.new('td')
+        td_ele << ol_ele = Element.new('ol')
+        self.backtrace.split("\n").each do |line|
+          ol_ele << li_ele = Element.new('li')
+          ol_ele.add_attribute('start', '0')
+          ol_ele.add_attribute('reversed', 'reversed')
+          li_ele << Text.new(line)
+        end
+        table_ele
       end
 
     end
@@ -349,6 +385,7 @@ class Log < BaseClass
     self.file_path = options[:file_path]
     self.root_name = options[:root_name]
     self.xml_indentation = options[:xml_indentation]
+    self.backtrace_filter = options[:backtrace_filter] || /log|ruby/
     self.file = File.open(self.file_path, 'w')
     log_puts("REMARK\tThis text log is the precursor for an XML log.")
     log_puts("REMARK\tIf the logged process completes, this text will be converted to XML.")
@@ -546,17 +583,12 @@ class Log < BaseClass
 
   Contract ArrayOf[String], Maybe[ArrayOf[String]] => String
   # Filters lines that are from ruby or log, to make the backtrace more readable.
-  def filter_backtrace(lines, words = %w/log ruby/)
+  def filter_backtrace(lines)
     filtered = []
     lines.each do |line|
-      unless words.any? { |s| line.include?(s) }
+      unless line.match(self.backtrace_filter)
         filtered.push(line)
       end
-    end
-    # If nothing left, we were (likely?) testing the logging itself,
-    # so just filter out ruby.
-    if filtered.empty?
-      return filter_backtrace(lines, %w/ruby/)
     end
     filtered.join("\n")
   end
