@@ -25,11 +25,11 @@ class ExampleTest < Minitest::Test
       @log.section(section_title, :timestamp, :duration) do
 
         def do_method(
-            method:,
-            pass_values:,
-            changed_pass_values:,
-            fail_values:,
-            changed_fail_values:
+            method,
+            pass_values,
+            changed_pass_values,
+            fail_values,
+            changed_fail_values
         )
           block_values = nil
           # Arguments for prev and curr data.
@@ -58,85 +58,65 @@ class ExampleTest < Minitest::Test
               @messages.store(key, message)
             end
             # For debugging;  tells what we're trying to do.
-            # message = key.inspect
+            message = key.inspect
             @log.send(method, verdict_id, *args, message)
           end
         end
 
-        do_method(
-            method: :verdict_assert?,
-            pass_values: [true],
-            changed_pass_values: [1],
-            fail_values: [false],
-            changed_fail_values: [nil],
-        )
-        do_method(
-            method: :verdict_refute?,
-            pass_values: [false],
-            changed_pass_values: [nil],
-            fail_values: [true],
-            changed_fail_values: [1],
-        )
+        values_for_method = {
+            :verdict_assert? => {
+                :pass => true,
+                :changed_pass => [1],
+                :fail => false,
+                :changed_fail => [nil],
+            },
+            :verdict_assert_empty? => {
+                :pass => [''],
+                :changed_pass => [[]],
+                :fail => ['a'],
+                :changed_fail => ['b'],
+            },
+            :verdict_assert_equal? => {
+                :pass => [0, 0],
+                :changed_pass => [1, 1],
+                :fail => [0, 1],
+                :changed_fail => [0, 2],
+            },
+            :verdict_assert_in_delta? => {
+                :pass => [0.0, 0.1, 0.2],
+                :changed_pass => [1.0, 1.1, 0.2],
+                :fail=> [0.0, 1.0, 0.2],
+                :changed_fail=> [1.0, 2.0, 0.2],
+            },
+            :verdict_assert_in_epsilon? => {
+                :pass => [0.0, 0.0, 1.0],
+                :changed_pass => [1.0, 1.0, 1.0],
+                :fail => [0.0, 4.0, 1.0],
+                :changed_fail => [0.0, 5.0, 1.0],
+            }
+        }
 
-        do_method(
-            method: :verdict_assert_empty?,
-            pass_values: [''],
-            changed_pass_values: [[]],
-            fail_values: ['a'],
-            changed_fail_values: ['b'],
-        )
-        do_method(
-            method: :verdict_refute_empty?,
-            pass_values: ['a'],
-            changed_pass_values: ['b'],
-            fail_values: ['true'],
-            changed_fail_values: [[]],
-        )
+        values_for_method.each_pair do |assert_method, values|
+          do_method(
+              assert_method,
+              values.fetch(:pass),
+              values.fetch(:changed_pass),
+              values.fetch(:fail),
+              values.fetch(:changed_fail)
+          )
+          refute_method = assert_method.to_s.sub('assert', 'refute').to_sym
+          # Not all assert methods have corresponding refute methods.
+          next unless @log.respond_to?(refute_method)
+          # For refute, we reverse the data:  pass <=> fail.
+          do_method(
+              refute_method,
+              values.fetch(:fail),
+              values.fetch(:changed_fail),
+              values.fetch(:pass),
+              values.fetch(:changed_pass),
+          )
+        end
 
-        do_method(
-            method: :verdict_assert_equal?,
-            pass_values: [0, 0],
-            changed_pass_values: [1, 1],
-            fail_values: [0, 1],
-            changed_fail_values: [0, 2],
-        )
-        do_method(
-            method: :verdict_refute_equal?,
-            pass_values: [0, 1],
-            changed_pass_values: [0, 2],
-            fail_values: [0, 0],
-            changed_fail_values: [1, 1],
-        )
-
-        do_method(
-            method: :verdict_assert_in_delta?,
-            pass_values: [0.0, 0.1, 0.2],
-            changed_pass_values: [1.0, 1.1, 0.2],
-            fail_values: [0.0, 1.0, 0.2],
-            changed_fail_values: [1.0, 2.0, 0.2],
-        )
-        do_method(
-            method: :verdict_refute_in_delta?,
-            pass_values: [0.0, 1.0, 0.2],
-            changed_pass_values: [1.0, 2.0, 0.2],
-            fail_values: [0.0, 0.1, 0.2],
-            changed_fail_values: [1.0, 1.1, 0.2],
-        )
-
-        do_method(
-            method: :verdict_assert_in_epsilon?,
-            pass_values: [0.0, 0.0, 1.0],
-            changed_pass_values: [1.0, 1.0, 1.0],
-            fail_values: [0.0, 4.0, 1.0],
-            changed_fail_values: [0.0, 5.0, 1.0],
-        )
-        do_method(
-            method: :verdict_refute_in_epsilon?,
-            pass_values: [0.0, 4.0, 1.0],
-            changed_pass_values: [0.0, 5.0, 1.0],
-            fail_values: [0.0, 0.0, 1.0],
-            changed_fail_values: [1.0, 1.0, 1.0],
-        )
 
       end
 
@@ -147,11 +127,12 @@ class ExampleTest < Minitest::Test
 
   def test_changes
 
+    # Need to preserve verdict id and message from prev to curr.
     @verdict_ids = {}
     @messages = {}
 
     create_logs(prev = true)
-    # Make sure the timestamp-based dirnames will be different.
+    # Make sure the timestamp-based directory names will be different.
     sleep 2
     create_logs(prev = false)
 
