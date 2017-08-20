@@ -6,9 +6,6 @@ require_relative 'base_classes/base_class'
 require_relative '../lib/helpers/set_helper'
 require_relative '../lib/helpers/test_helper'
 
-# TODO:  Create more methods for verdicts (e.g., :epsilon).
-# TODO:  Change verdict :id values.
-
 class ChangesReport < BaseClass
 
   include REXML
@@ -130,13 +127,18 @@ class ChangesReport < BaseClass
       class_curr = VerdictPair.ele_class_for_outcome_symbol(outcome_curr)
       classes_curr = format('data %s', class_curr)
       #  Add columns as needed.
-      Log::Verdict::FIELDS.each do |method|\
+      Log::Verdict::FIELDS.each do |method|
         # Verdict :file_path is not needed.
         next if method == :file_path
         # Verdict :id is already in the section header
         next if method == :id
         value_prev = prev.nil? ? nil : prev.send(method)
         value_curr = curr.nil? ? nil : curr.send(method)
+        # Put in an outcome for a blocked verdict.
+        if method == :outcome
+          value_prev = 'blocked' unless value_prev
+          value_curr = 'blocked' unless value_curr
+        end
         next if value_prev.nil? && value_curr.nil?
         # Add column header.
         tr_head_ele << th_head_ele = Element.new('th')
