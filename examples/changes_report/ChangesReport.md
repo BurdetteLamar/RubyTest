@@ -18,11 +18,11 @@ Here are some ways to handle that problem:
   
 - :heavy_multiplication_x::heavy_multiplication_x::heavy_multiplication_x:  **Dumber:** Disable offending tests entirely.
 
+  (Believe it or not, I've worked in a group that did this.)
+  
   A test that has a persistent but trivial failure certainly could nevertheless reveal a new and important (crash?) bug.
   
   Every test should execute in every test run.
-  
-  (Believe it or not, I've worked in a group that did this.)
   
 - :heavy_check_mark::heavy_check_mark::heavy_check_mark:  **Smart:** Generate a Changes Report.
 
