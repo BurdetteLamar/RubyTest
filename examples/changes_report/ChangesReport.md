@@ -43,8 +43,6 @@ The Changes Report details verdict outcomes in the current and previous test run
 | Old Failed | Failed | Failed identically |
 | Old Passed | Passed | Passed identically |
 
-Example:  [ChangesReport.html]{ChangesReport.html)
-
 ## Ignore the Ignorable
 
 The key feature of the Changes Report is that it specifies *what can safely be ignored*:
