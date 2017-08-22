@@ -1,6 +1,6 @@
-# Principles
+# Watchwords
 
-| Principle | Remarks |
+| Watchword | Remarks |
 | :-------: | ------- |
 | Readability | Make code easy to read:  code is read more often than written. |
 | DRYness (Don't Repeat Yourself) | Avoid redundant code and data.  |
