@@ -1,7 +1,7 @@
 # Contents (Markdown Pages)
 
    - [RubyTest](./README.md)
-   - [Principles](./Principles.md)
+   - [Watchwords](./Watchwords.md)
    - [Future](./Future.md)
    - [Rakefile](./Rakefile.md)
    - [Gemfile](./Gemfile.md)
