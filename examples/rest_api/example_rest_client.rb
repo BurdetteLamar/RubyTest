@@ -109,6 +109,8 @@ class ExampleRestClient < BaseClass
     Retriable.retriable on: RestClient::RequestTimeout, tries: 10, base_interval: 1, on_retry: log_retry do
       response = RestClient::Request.execute(args)
     end
+    # RubyMine inspection thinks this should have no argument.
+    # noinspection RubyArgCount
     parser = JSON::Ext::Parser.new(response)
     parser.parse
   end
