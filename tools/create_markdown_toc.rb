@@ -84,7 +84,7 @@ class MarkdownToc < BaseClass
         inverted_entry = entry.invert
         %w/
             RubyTest
-            Principles
+            Watchwords
             Future
             Rakefile
             Gemfile

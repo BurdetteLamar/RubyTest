@@ -1,12 +1,14 @@
 # Contents (Markdown Pages)
 
    - [RubyTest](./README.md)
-   - [Principles](./Principles.md)
+   - [Watchwords](./Watchwords.md)
    - [Future](./Future.md)
    - [Rakefile](./Rakefile.md)
    - [Gemfile](./Gemfile.md)
    - examples/
      - [Examples](./examples/Examples.md)
+     - changes_report/
+       - [Changes Report](./examples/changes_report/ChangesReport.md)
      - log/
        - [Log Examples](./examples/log/Log.md)
      - rest_api/
