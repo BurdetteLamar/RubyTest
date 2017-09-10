@@ -57,7 +57,7 @@ Of particular value is that **Old Failed** verdicts are now *known* to behave *e
 
 ## Focus on the Significant
 
-A vercdict that is **New Blocked** or **New Failed** is obviously significant.  It represent a new software failure that must be investigated.
+A verdict that is **New Blocked** or **New Failed** is obviously significant.  It represent a new software failure that must be investigated.
 
 A verdict that is **Changed Failed** or even **Changed Passed** also must be investigated -- something's different.
 
