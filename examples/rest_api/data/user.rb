@@ -85,6 +85,38 @@ class User < BaseClassForResource
       end
     end
 
+    class Geo < BaseClassForData
+
+      FIELDS = Set.new([
+                           :lat,
+                           :lng,
+                       ])
+      # This is redundant, but it helps RubyMine code inspection.
+      attr_accessor \
+      :lat,
+      :lng
+
+      attr_accessor *FIELDS
+
+      # Constructor.
+      Contract Hash => nil
+      def initialize(values = {})
+        super(FIELDS, values)
+        self.lat = self.lat.to_f
+        self.lng = self.lng.to_f
+        nil
+      end
+
+      Contract Log, String => Bool
+      def verdict_valid?(log, verdict_id)
+        if log.verdict_assert_instance_of?(verdict_id + ' - class', Geo, self, 'First object is of class Geo')
+          log.verdict_assert_in_delta?(verdict_id + ' - lat', 0, self.lat, 90, 'Geo lat')
+          log.verdict_assert_in_delta?(verdict_id + ' - lng', 0, self.lng, 90, 'Geo lng')
+        end
+      end
+
+    end
+
   end
 
   class Company < BaseClassForData
@@ -114,38 +146,6 @@ class User < BaseClassForResource
         log.verdict_assert_string_not_empty?(verdict_id + ' - name', self.name, 'Company name')
         log.verdict_assert_string_not_empty?(verdict_id + ' - catchPhrase', self.catchPhrase, 'Company catchPhrase')
         log.verdict_assert_string_not_empty?(verdict_id + ' - bs', self.bs, 'Company bs')
-      end
-    end
-
-  end
-
-  class Geo < BaseClassForData
-
-    FIELDS = Set.new([
-                         :lat,
-                         :lng,
-                     ])
-    # This is redundant, but it helps RubyMine code inspection.
-    attr_accessor \
-      :lat,
-      :lng
-
-    attr_accessor *FIELDS
-
-    # Constructor.
-    Contract Hash => nil
-    def initialize(values = {})
-      super(FIELDS, values)
-      self.lat = self.lat.to_f
-      self.lng = self.lng.to_f
-      nil
-    end
-
-    Contract Log, String => Bool
-    def verdict_valid?(log, verdict_id)
-      if log.verdict_assert_instance_of?(verdict_id + ' - class', Geo, self, 'First object is of class Geo')
-        log.verdict_assert_in_delta?(verdict_id + ' - lat', 0, self.lat, 90, 'Geo lat')
-        log.verdict_assert_in_delta?(verdict_id + ' - lng', 0, self.lng, 90, 'Geo lng')
       end
     end
 
