@@ -6,9 +6,6 @@ require_relative '../endpoints/albums/get_albums_id'
 require_relative '../endpoints/albums/post_albums'
 require_relative '../endpoints/albums/put_albums_id'
 
-require_relative '../data/album'
-require_relative '../../../lib/log/log'
-
 class AlbumsTest < BaseClassForTest
 
   def test_delete_albums_id

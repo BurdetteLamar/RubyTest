@@ -6,9 +6,6 @@ require_relative '../endpoints/users/get_users_id'
 require_relative '../endpoints/users/post_users'
 require_relative '../endpoints/users/put_users_id'
 
-require_relative '../data/user'
-require_relative '../../../lib/log/log'
-
 class UsersTest < BaseClassForTest
 
   def test_delete_users_id

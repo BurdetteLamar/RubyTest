@@ -6,9 +6,6 @@ require_relative '../endpoints/photos/get_photos_id'
 require_relative '../endpoints/photos/post_photos'
 require_relative '../endpoints/photos/put_photos_id'
 
-require_relative '../data/photo'
-require_relative '../../../lib/log/log'
-
 class PhotosTest < BaseClassForTest
 
   def test_delete_photos_id

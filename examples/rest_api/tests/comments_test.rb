@@ -6,9 +6,6 @@ require_relative '../endpoints/comments/get_comments_id'
 require_relative '../endpoints/comments/post_comments'
 require_relative '../endpoints/comments/put_comments_id'
 
-require_relative '../data/comment'
-require_relative '../../../lib/log/log'
-
 class CommentsTest < BaseClassForTest
 
   def test_delete_comments_id

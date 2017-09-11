@@ -6,9 +6,6 @@ require_relative '../endpoints/todos/get_todos_id'
 require_relative '../endpoints/todos/post_todos'
 require_relative '../endpoints/todos/put_todos_id'
 
-require_relative '../data/todo'
-require_relative '../../../lib/log/log'
-
 class TodosTest < BaseClassForTest
 
   def test_delete_todos_id
