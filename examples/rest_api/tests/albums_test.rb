@@ -1,4 +1,4 @@
-require_relative 'base_class_for_test'
+require_relative '../base_classes/base_class_for_test'
 
 require_relative '../endpoints/albums/delete_albums_id'
 require_relative '../endpoints/albums/get_albums'

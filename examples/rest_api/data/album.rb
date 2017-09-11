@@ -1,4 +1,4 @@
-require_relative 'base_class_for_resource'
+require_relative '../base_classes/base_class_for_resource'
 
 class Album < BaseClassForResource
 

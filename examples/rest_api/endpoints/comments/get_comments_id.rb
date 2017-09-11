@@ -1,4 +1,4 @@
-require_relative '../base_classes/base_class_for_get_id'
+require_relative '../../base_classes/endpoints/base_class_for_get_id'
 
 require_relative '../../../rest_api/data/comment'
 
