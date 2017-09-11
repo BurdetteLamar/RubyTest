@@ -1,8 +1,5 @@
 require_relative 'base_class_for_resource'
 
-require_relative '../data/address'
-require_relative '../data/company'
-
 class User < BaseClassForResource
 
   FIELDS = Set.new([
@@ -47,4 +44,112 @@ class User < BaseClassForResource
     end
   end
 
+  class Address < BaseClassForData
+
+    FIELDS = Set.new([
+                         :street,
+                         :suite,
+                         :city,
+                         :zipcode,
+                         :geo,
+                     ])
+
+    # This is redundant, but it helps RubyMine code inspection.
+    attr_accessor \
+      :geo,
+      :addressId,
+      :company,
+      :street,
+      :suite,
+      :city,
+      :zipcode
+
+    attr_accessor *FIELDS
+
+    # Constructor.
+    Contract Hash => nil
+    def initialize(values = {})
+      super(FIELDS, values)
+      self.geo = Geo.new(self.geo) unless self.geo.nil?
+      nil
+    end
+
+    Contract Log, String => Bool
+    def verdict_valid?(log, verdict_id)
+      if log.verdict_assert_instance_of?(verdict_id + ' - class', Address, self, 'First object is of class Address')
+        log.verdict_assert_string_not_empty?(verdict_id + ' - street', self.street, 'Address street')
+        log.verdict_assert_string_not_empty?(verdict_id + ' - suite', self.suite, 'Address suite')
+        log.verdict_assert_string_not_empty?(verdict_id + ' - city', self.city, 'Address city')
+        log.verdict_assert_string_not_empty?(verdict_id + ' - zipcode', self.zipcode, 'Address zipcode')
+        geo.verdict_valid?(log, verdict_id + ' - geo')
+      end
+    end
+
+  end
+
+  class Company < BaseClassForData
+
+    FIELDS = Set.new([
+                         :name,
+                         :catchPhrase,
+                         :bs,
+                     ])
+
+    # This is redundant, but it helps RubyMine code inspection.
+    attr_accessor \
+      :catchPhrase,
+      :bs
+
+    attr_accessor *FIELDS
+
+    # Constructor.
+    Contract Hash => nil
+    def initialize(values = {})
+      super(FIELDS, values)
+    end
+
+    Contract Log, String => Bool
+    def verdict_valid?(log, verdict_id)
+      if log.verdict_assert_instance_of?(verdict_id + ' - class', Company, self, 'First object is of class Company')
+        log.verdict_assert_string_not_empty?(verdict_id + ' - name', self.name, 'Company name')
+        log.verdict_assert_string_not_empty?(verdict_id + ' - catchPhrase', self.catchPhrase, 'Company catchPhrase')
+        log.verdict_assert_string_not_empty?(verdict_id + ' - bs', self.bs, 'Company bs')
+      end
+    end
+
+  end
+
+  class Geo < BaseClassForData
+
+    FIELDS = Set.new([
+                         :lat,
+                         :lng,
+                     ])
+    # This is redundant, but it helps RubyMine code inspection.
+    attr_accessor \
+      :lat,
+      :lng
+
+    attr_accessor *FIELDS
+
+    # Constructor.
+    Contract Hash => nil
+    def initialize(values = {})
+      super(FIELDS, values)
+      self.lat = self.lat.to_f
+      self.lng = self.lng.to_f
+      nil
+    end
+
+    Contract Log, String => Bool
+    def verdict_valid?(log, verdict_id)
+      if log.verdict_assert_instance_of?(verdict_id + ' - class', Geo, self, 'First object is of class Geo')
+        log.verdict_assert_in_delta?(verdict_id + ' - lat', 0, self.lat, 90, 'Geo lat')
+        log.verdict_assert_in_delta?(verdict_id + ' - lng', 0, self.lng, 90, 'Geo lng')
+      end
+    end
+
+  end
+
 end
+

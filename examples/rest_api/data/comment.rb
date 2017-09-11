@@ -1,7 +1,5 @@
 require_relative 'base_class_for_resource'
 
-require_relative '../data/geo'
-
 class Comment < BaseClassForResource
 
   FIELDS = Set.new([
@@ -12,19 +10,12 @@ class Comment < BaseClassForResource
       :body,
   ])
 
-  # This is redundant, but it helps RubyMine code inspection.
-  attr_accessor \
-      :geo,
-      :commentId,
-      :company
-
   attr_accessor *FIELDS
 
   # Constructor.
   Contract Hash => nil
   def initialize(values = {})
     super(FIELDS, values)
-    self.geo = Geo.new(self.geo) unless self.geo.nil?
     nil
   end
 

@@ -1,7 +1,5 @@
 require_relative 'base_class_for_resource'
 
-require_relative '../data/geo'
-
 class Photo < BaseClassForResource
 
   FIELDS = Set.new([
