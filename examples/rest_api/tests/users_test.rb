@@ -1,4 +1,4 @@
-require_relative 'base_class_for_test'
+require_relative '../base_classes/base_class_for_test'
 
 require_relative '../endpoints/users/delete_users_id'
 require_relative '../endpoints/users/get_users'

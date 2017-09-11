@@ -1,4 +1,4 @@
-require_relative '../base_classes/base_class_for_endpoint'
+require_relative '../base_class_for_endpoint'
 require_relative '../../../../lib/helpers/object_helper'
 
 class BaseClassForDeleteId < BaseClassForEndpoint
