@@ -9,11 +9,6 @@ class Todo < BaseClassForResource
          :completed,
   ])
 
-  # This is redundant, but it helps RubyMine code inspection.
-  attr_accessor \
-      :userId,
-      :completed
-
   attr_accessor *FIELDS
 
   # Constructor.
@@ -32,5 +27,10 @@ class Todo < BaseClassForResource
       log.verdict_assert_boolean?(verdict_id + ' - completed', self.completed, 'Todo completed')
     end
   end
+
+  # This is redundant, but it helps RubyMine code inspection.
+  attr_accessor \
+      :userId,
+      :completed
 
 end
