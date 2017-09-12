@@ -94,13 +94,13 @@ class TodosTest < BaseClassForTest
 
     prelude do |client, log|
       log.section('Test PostTodos') do
-        todo_to_post = Todo.new(
+        todo_to_create = Todo.new(
             :userId => 1,
             :id => 1,
             :title => 'New title',
             :completed => false,
         )
-        PostTodos.verdict_call_and_verify_success(client, log, 'todo to_create', todo_to_post)
+        PostTodos.verdict_call_and_verify_success(client, log, 'todo to create', todo_to_create)
       end
     end
 
@@ -110,15 +110,15 @@ class TodosTest < BaseClassForTest
 
     prelude do |client, log|
       log.section('Test PutTodosId') do
-        todo_to_put = nil
-        log.section('Get a todo to put') do
+        todo_to_update = nil
+        log.section('Get a todo to update') do
           todo_original = Todo.get_first(client)
-          todo_to_put = todo_original.clone
+          todo_to_update = todo_original.clone
         end
         log.section('Put the modifications') do
-          todo_to_put.title = 'New title'
-          todo_to_put.completed = true
-          PutTodosId.verdict_call_and_verify_success(client, log, 'Todo to put', todo_to_put)
+          todo_to_update.title = 'New title'
+          todo_to_update.completed = true
+          PutTodosId.verdict_call_and_verify_success(client, log, 'Todo to update', todo_to_update)
         end
       end
 

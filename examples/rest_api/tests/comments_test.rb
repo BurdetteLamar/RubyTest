@@ -93,14 +93,14 @@ class CommentsTest < BaseClassForTest
 
     prelude do |client, log|
       log.section('Test PostComments') do
-        comment_to_post = Comment.new(
+        comment_to_create = Comment.new(
             :postId => 1,
             :id => 1,
             :name => 'NewName',
             :email => 'New@Email.com',
             :body => 'New body',
         )
-        PostComments.verdict_call_and_verify_success(client, log, 'comment to_create', comment_to_post)
+        PostComments.verdict_call_and_verify_success(client, log, 'comment to create', comment_to_create)
       end
     end
 
@@ -110,16 +110,16 @@ class CommentsTest < BaseClassForTest
 
     prelude do |client, log|
       log.section('Test PutCommentsId') do
-        comment_to_put = nil
-        log.section('Get a comment to put') do
+        comment_to_update = nil
+        log.section('Get a comment to update') do
           comment_original = Comment.get_first(client)
-          comment_to_put = comment_original.clone
+          comment_to_update = comment_original.clone
         end
         log.section('Put the modifications') do
-          comment_to_put.name = 'NewName'
-          comment_to_put.email = 'New@Email.com'
-          comment_to_put.body = 'New body'
-          PutCommentsId.verdict_call_and_verify_success(client, log, 'Comment to put', comment_to_put)
+          comment_to_update.name = 'NewName'
+          comment_to_update.email = 'New@Email.com'
+          comment_to_update.body = 'New body'
+          PutCommentsId.verdict_call_and_verify_success(client, log, 'Comment to update', comment_to_update)
         end
       end
 
