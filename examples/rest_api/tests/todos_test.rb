@@ -17,7 +17,6 @@ class TodosTest < BaseClassForTest
           todo_to_delete = Todo.get_first(client)
         end
         log.section('Delete the todo') do
-          # Some verdicts should fail, because JSONplaceholder will not actually delete the todo.
           DeleteTodosId.verdict_call_and_verify_success(client, log, 'delete todo', todo_to_delete)
         end
       end
@@ -101,7 +100,6 @@ class TodosTest < BaseClassForTest
             :title => 'New title',
             :completed => false,
         )
-        # Some verdicts should fail, because JSONplaceholder will not actually create the todo.
         PostTodos.verdict_call_and_verify_success(client, log, 'todo to_create', todo_to_post)
       end
     end
@@ -120,7 +118,6 @@ class TodosTest < BaseClassForTest
         log.section('Put the modifications') do
           todo_to_put.title = 'New title'
           todo_to_put.completed = true
-          # Some verdicts should fail, because JSONplaceholder will not actually update the todo.
           PutTodosId.verdict_call_and_verify_success(client, log, 'Todo to put', todo_to_put)
         end
       end

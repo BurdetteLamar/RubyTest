@@ -17,7 +17,6 @@ class PostsTest < BaseClassForTest
           post_to_delete = Post.get_first(client)
         end
         log.section('Delete the post') do
-          # Some verdicts should fail, because JSONplaceholder will not actually delete the post.
           DeletePostsId.verdict_call_and_verify_success(client, log, 'delete post', post_to_delete)
         end
       end
@@ -100,7 +99,6 @@ class PostsTest < BaseClassForTest
             :title => 'New title',
             :body => 'New body',
         )
-        # Some verdicts should fail, because JSONplaceholder will not actually create the post.
         PostPosts.verdict_call_and_verify_success(client, log, 'post to_create', post_to_post)
       end
     end
@@ -119,7 +117,6 @@ class PostsTest < BaseClassForTest
         log.section('Put the modifications') do
           post_to_put.title = 'New title'
           post_to_put.body = 'New body'
-          # Some verdicts should fail, because JSONplaceholder will not actually update the post.
           PutPostsId.verdict_call_and_verify_success(client, log, 'Post to put', post_to_put)
         end
       end

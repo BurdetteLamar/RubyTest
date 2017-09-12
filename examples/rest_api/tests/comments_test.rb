@@ -17,7 +17,6 @@ class CommentsTest < BaseClassForTest
           comment_to_delete = Comment.get_first(client)
         end
         log.section('Delete the comment') do
-          # Some verdicts should fail, because JSONplaceholder will not actually delete the comment.
           DeleteCommentsId.verdict_call_and_verify_success(client, log, 'delete comment', comment_to_delete)
         end
       end
@@ -101,7 +100,6 @@ class CommentsTest < BaseClassForTest
             :email => 'New@Email.com',
             :body => 'New body',
         )
-        # Some verdicts should fail, because JSONplaceholder will not actually create the comment.
         PostComments.verdict_call_and_verify_success(client, log, 'comment to_create', comment_to_post)
       end
     end
@@ -121,7 +119,6 @@ class CommentsTest < BaseClassForTest
           comment_to_put.name = 'NewName'
           comment_to_put.email = 'New@Email.com'
           comment_to_put.body = 'New body'
-          # Some verdicts should fail, because JSONplaceholder will not actually update the comment.
           PutCommentsId.verdict_call_and_verify_success(client, log, 'Comment to put', comment_to_put)
         end
       end

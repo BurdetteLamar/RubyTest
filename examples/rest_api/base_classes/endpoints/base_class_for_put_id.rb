@@ -17,6 +17,7 @@ class BaseClassForPutId < BaseClassForEndpoint
   end
 
   def self.verdict_call_and_verify_success(client, log, verdict_id, object_to_put)
+    # Some verdicts should fail, because JSONplaceholder will not actually update the instance.
     log.section(verdict_id, :rescue, :timestamp, :duration) do
       object_to_put.log(log, '%s to put' % object_to_put.class.name)
       object_put = self.call(client, object_to_put)
