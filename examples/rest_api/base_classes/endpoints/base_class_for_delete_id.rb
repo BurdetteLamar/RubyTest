@@ -1,5 +1,4 @@
 require_relative '../base_class_for_endpoint'
-require_relative '../../../../lib/helpers/object_helper'
 
 class BaseClassForDeleteId < BaseClassForEndpoint
 
@@ -13,6 +12,7 @@ class BaseClassForDeleteId < BaseClassForEndpoint
   end
 
   def self.verdict_call_and_verify_success(client, log, verdict_id, object_to_delete)
+    # Some verdicts should fail, because JSONplaceholder will not actually delete the instance.
     log.section(verdict_id, :rescue, :timestamp, :duration) do
       object_to_delete.log(log, data_class_name + ' to delete')
       payload = self.call(client, object_to_delete)

@@ -17,7 +17,6 @@ class AlbumsTest < BaseClassForTest
           album_to_delete = Album.get_first(client)
         end
         log.section('Delete the album') do
-          # Some verdicts should fail, because JSONplaceholder will not actually delete the album.
           DeleteAlbumsId.verdict_call_and_verify_success(client, log, 'delete album', album_to_delete)
         end
       end
@@ -27,10 +26,10 @@ class AlbumsTest < BaseClassForTest
   def test_get_albums
 
     prelude do |client, log|
+
       log.section('Test GetAlbums') do
 
         all_albums = nil
-
         log.section('GetAlbums with no query') do
           all_albums = GetAlbums.verdict_call_and_verify_success(client, log, 'with no query')
         end
@@ -94,13 +93,12 @@ class AlbumsTest < BaseClassForTest
 
     prelude do |client, log|
       log.section('Test AlbumAlbums') do
-        album_to_album = Album.new(
+        album_to_create = Album.new(
             :id => 1,
             :userId => 1,
             :title => 'My Album',
         )
-        # Some verdicts should fail, because JSONplaceholder will not actually create the album.
-        PostAlbums.verdict_call_and_verify_success(client, log, 'album to_create', album_to_album)
+        PostAlbums.verdict_call_and_verify_success(client, log, 'album to create', album_to_create)
       end
     end
 
@@ -110,15 +108,14 @@ class AlbumsTest < BaseClassForTest
 
     prelude do |client, log|
       log.section('Test PutAlbumsId') do
-        album_to_put = nil
-        log.section('Get a album to put') do
+        album_to_update = nil
+        log.section('Get a album to update') do
           album_original = Album.get_first(client)
-          album_to_put = album_original.clone
+          album_to_update = album_original.clone
         end
         log.section('Put the modifications') do
-          album_to_put.title = 'New Title'
-          # Some verdicts should fail, because JSONplaceholder will not actually update the album.
-          PutAlbumsId.verdict_call_and_verify_success(client, log, 'Album to put', album_to_put)
+          album_to_update.title = 'New Title'
+          PutAlbumsId.verdict_call_and_verify_success(client, log, 'Album to update', album_to_update)
         end
       end
 

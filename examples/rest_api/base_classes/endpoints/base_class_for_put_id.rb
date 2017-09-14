@@ -1,5 +1,4 @@
 require_relative '../base_class_for_endpoint'
-# require_relative '../../../../lib/helpers/object_helper'
 
 class BaseClassForPutId < BaseClassForEndpoint
 
@@ -7,7 +6,6 @@ class BaseClassForPutId < BaseClassForEndpoint
     url_elements = [
         url_element.downcase,
         object_to_put.id.to_s,
-
     ]
     parameters = object_to_put.to_hash
     payload = client.put(url_elements, parameters)
@@ -17,6 +15,8 @@ class BaseClassForPutId < BaseClassForEndpoint
   end
 
   def self.verdict_call_and_verify_success(client, log, verdict_id, object_to_put)
+    # Some verdicts should fail, because JSONplaceholder will not actually update the instance.
+    object_to_put.log(log, data_class_name + ' to put')
     log.section(verdict_id, :rescue, :timestamp, :duration) do
       object_to_put.log(log, '%s to put' % object_to_put.class.name)
       object_put = self.call(client, object_to_put)

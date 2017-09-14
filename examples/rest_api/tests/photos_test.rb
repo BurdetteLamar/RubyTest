@@ -17,7 +17,6 @@ class PhotosTest < BaseClassForTest
           photo_to_delete = Photo.get_first(client)
         end
         log.section('Delete the photo') do
-          # Some verdicts should fail, because JSONplaceholder will not actually delete the photo.
           DeletePhotosId.verdict_call_and_verify_success(client, log, 'delete photo', photo_to_delete)
         end
       end
@@ -94,15 +93,14 @@ class PhotosTest < BaseClassForTest
 
     prelude do |client, log|
       log.section('Test PostPhotos') do
-        photo_to_post = Photo.new(
+        photo_to_create = Photo.new(
             :albumId => 1,
             :id => 1,
             :title => 'New title',
             :url => 'NewUrl',
             :thumbnailUrl => 'NewThumbnailUrl',
         )
-        # Some verdicts should fail, because JSONplaceholder will not actually create the photo.
-        PostPhotos.verdict_call_and_verify_success(client, log, 'photo to_create', photo_to_post)
+        PostPhotos.verdict_call_and_verify_success(client, log, 'photo to create', photo_to_create)
       end
     end
 
@@ -112,17 +110,16 @@ class PhotosTest < BaseClassForTest
 
     prelude do |client, log|
       log.section('Test PutPhotosId') do
-        photo_to_put = nil
-        log.section('Get a photo to put') do
+        photo_to_update = nil
+        log.section('Get a photo to update') do
           photo_original = Photo.get_first(client)
-          photo_to_put = photo_original.clone
+          photo_to_update = photo_original.clone
         end
         log.section('Put the modifications') do
-          photo_to_put.title = 'New title'
-          photo_to_put.url = 'NewUrl'
-          photo_to_put.thumbnailUrl = 'NewThumbnailUrl'
-          # Some verdicts should fail, because JSONplaceholder will not actually update the photo.
-          PutPhotosId.verdict_call_and_verify_success(client, log, 'Photo to put', photo_to_put)
+          photo_to_update.title = 'New title'
+          photo_to_update.url = 'NewUrl'
+          photo_to_update.thumbnailUrl = 'NewThumbnailUrl'
+          PutPhotosId.verdict_call_and_verify_success(client, log, 'Photo to update', photo_to_update)
         end
       end
 

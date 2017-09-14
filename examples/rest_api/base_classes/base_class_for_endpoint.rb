@@ -1,4 +1,5 @@
 require_relative '../../../lib/base_classes/base_class'
+require_relative '../../../lib/helpers/object_helper'
 
 require_relative '../example_rest_client'
 

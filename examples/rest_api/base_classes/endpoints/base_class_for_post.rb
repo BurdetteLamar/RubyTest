@@ -1,5 +1,4 @@
 require_relative '../base_class_for_endpoint'
-# require_relative '../../../../lib/helpers/object_helper'
 
 class BaseClassForPost < BaseClassForEndpoint
 
@@ -15,6 +14,7 @@ class BaseClassForPost < BaseClassForEndpoint
   end
 
   def self.verdict_call_and_verify_success(client, log, verdict_id, object_to_post)
+    # Some verdicts should fail, because JSONplaceholder will not actually create the instance.
     log.section(verdict_id, :rescue, :timestamp, :duration) do
       object_to_post.log(log, data_class_name + ' to post')
       object_posted = self.call(client, object_to_post)

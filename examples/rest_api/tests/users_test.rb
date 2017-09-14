@@ -17,7 +17,6 @@ class UsersTest < BaseClassForTest
           user_to_delete = User.get_first(client)
         end
         log.section('Delete the user') do
-          # Some verdicts should fail, because JSONplaceholder will not actually delete the user.
           DeleteUsersId.verdict_call_and_verify_success(client, log, 'delete user', user_to_delete)
         end
       end
@@ -95,7 +94,7 @@ class UsersTest < BaseClassForTest
 
     prelude do |client, log|
       log.section('Test PostUsers') do
-        user_to_post = User.new(
+        user_to_create = User.new(
             :id => 1,
             :name => 'New name',
             :username => 'NewUsername',
@@ -118,8 +117,7 @@ class UsersTest < BaseClassForTest
                 :bs => 'New BS'
             }
         )
-        # Some verdicts should fail, because JSONplaceholder will not actually create the user.
-        PostUsers.verdict_call_and_verify_success(client, log, 'user to_create', user_to_post)
+        PostUsers.verdict_call_and_verify_success(client, log, 'user to create', user_to_create)
       end
     end
 
@@ -131,7 +129,7 @@ class UsersTest < BaseClassForTest
       log.section('Test PutUsersId') do
         user_existing = User.get_first(client)
         log.section('Put the modifications') do
-          user_to_put = User.new(
+          user_to_update = User.new(
               :id => user_existing.id,
               :name => 'New name',
               :username => 'NewUsername',
@@ -154,9 +152,8 @@ class UsersTest < BaseClassForTest
                   :bs => 'New BS'
               }
           )
-          user_to_put.name = 'New name'
-          # Some verdicts should fail, because JSONplaceholder will not actually update the user.
-          PutUsersId.verdict_call_and_verify_success(client, log, 'User to put', user_to_put)
+          user_to_update.name = 'New name'
+          PutUsersId.verdict_call_and_verify_success(client, log, 'User to update', user_to_update)
         end
       end
 

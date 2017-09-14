@@ -17,7 +17,6 @@ class CommentsTest < BaseClassForTest
           comment_to_delete = Comment.get_first(client)
         end
         log.section('Delete the comment') do
-          # Some verdicts should fail, because JSONplaceholder will not actually delete the comment.
           DeleteCommentsId.verdict_call_and_verify_success(client, log, 'delete comment', comment_to_delete)
         end
       end
@@ -94,15 +93,14 @@ class CommentsTest < BaseClassForTest
 
     prelude do |client, log|
       log.section('Test PostComments') do
-        comment_to_post = Comment.new(
+        comment_to_create = Comment.new(
             :postId => 1,
             :id => 1,
             :name => 'NewName',
             :email => 'New@Email.com',
             :body => 'New body',
         )
-        # Some verdicts should fail, because JSONplaceholder will not actually create the comment.
-        PostComments.verdict_call_and_verify_success(client, log, 'comment to_create', comment_to_post)
+        PostComments.verdict_call_and_verify_success(client, log, 'comment to create', comment_to_create)
       end
     end
 
@@ -112,17 +110,16 @@ class CommentsTest < BaseClassForTest
 
     prelude do |client, log|
       log.section('Test PutCommentsId') do
-        comment_to_put = nil
-        log.section('Get a comment to put') do
+        comment_to_update = nil
+        log.section('Get a comment to update') do
           comment_original = Comment.get_first(client)
-          comment_to_put = comment_original.clone
+          comment_to_update = comment_original.clone
         end
         log.section('Put the modifications') do
-          comment_to_put.name = 'NewName'
-          comment_to_put.email = 'New@Email.com'
-          comment_to_put.body = 'New body'
-          # Some verdicts should fail, because JSONplaceholder will not actually update the comment.
-          PutCommentsId.verdict_call_and_verify_success(client, log, 'Comment to put', comment_to_put)
+          comment_to_update.name = 'NewName'
+          comment_to_update.email = 'New@Email.com'
+          comment_to_update.body = 'New body'
+          PutCommentsId.verdict_call_and_verify_success(client, log, 'Comment to update', comment_to_update)
         end
       end
 
