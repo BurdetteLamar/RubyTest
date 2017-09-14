@@ -8,10 +8,6 @@ class Album < BaseClassForResource
       :title,
   ])
 
-  # This is redundant, but it helps RubyMine code inspection.
-  attr_accessor \
-      :userId
-
   attr_accessor *FIELDS
 
   # Constructor.

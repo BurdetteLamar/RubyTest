@@ -6,9 +6,6 @@ require_relative '../endpoints/posts/get_posts_id'
 require_relative '../endpoints/posts/post_posts'
 require_relative '../endpoints/posts/put_posts_id'
 
-require_relative '../data/post'
-require_relative '../../../lib/log/log'
-
 class PostsTest < BaseClassForTest
 
   def test_delete_posts_id

@@ -10,12 +10,6 @@ class Photo < BaseClassForResource
          :thumbnailUrl,
   ])
 
-  # This is redundant, but it helps RubyMine code inspection.
-  attr_accessor \
-      :albumId,
-      :thumbnailUrl,
-      :url
-
   attr_accessor *FIELDS
 
   # Constructor.
@@ -35,5 +29,11 @@ class Photo < BaseClassForResource
       log.verdict_assert_string_not_empty?(verdict_id + ' - thumbnailUrl', self.thumbnailUrl, 'Photo thumbnailUrl')
     end
   end
+
+  # This is redundant, but it helps RubyMine code inspection.
+  attr_accessor \
+      :albumId,
+      :thumbnailUrl,
+      :url
 
 end
