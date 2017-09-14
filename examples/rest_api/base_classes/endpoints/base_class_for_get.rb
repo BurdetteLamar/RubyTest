@@ -1,5 +1,4 @@
 require_relative '../base_class_for_endpoint'
-require_relative '../../../../lib/helpers/object_helper'
 
 class BaseClassForGet < BaseClassForEndpoint
 
@@ -18,7 +17,6 @@ class BaseClassForGet < BaseClassForEndpoint
   end
 
   def self.verdict_call_and_verify_success(client, log, verdict_id, query_elements)
-    objects = []
     log.section(verdict_id, :rescue, :timestamp, :duration) do
       objects = self.call(client, query_elements)
       log.section('Evaluation') do
@@ -29,7 +27,6 @@ class BaseClassForGet < BaseClassForEndpoint
       end
       return objects
     end
-    objects
   end
 
   private
