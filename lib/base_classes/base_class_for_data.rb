@@ -20,10 +20,10 @@ class BaseClassForData < BaseClass
     nil
   end
 
-  Contract Log, String => nil
+  Contract Log => nil
   # Log recursively, so that nested objects can log themselves.
-  def log(log, comment = self.name)
-    log_recursive(self, log, comment)
+  def log(log)
+    log_recursive(self, log)
     nil
   end
 
@@ -63,33 +63,31 @@ class BaseClassForData < BaseClass
 
   # Log an object recursively,
   # giving special handling to nested objects.
-  def log_recursive(obj, log, comment = obj.name)
+  def log_recursive(obj, log)
     return if obj.nil?
     unless obj.kind_of?(self.class)
       # Can't process it below;  just log it here.
       log.put_element('data', obj.to_s)
       return
     end
-    log.section(comment) do
-      obj.fields.each do |key|
-        value = obj.send "#{key}"
-        # Don't log nil.
-        next if value.nil?
-        case
-          when value.respond_to?(:log)
-            # This value is an object that can log itself.
-            value.log(log, key.to_s)
-          when value.respond_to?(:each)
-            # Log each element.
-            log.section(key.to_s) do
-              value.each do |x|
-                self.log_recursive(x, log)
-              end
+    obj.fields.each do |key|
+      value = obj.send "#{key}"
+      # Don't log nil.
+      next if value.nil?
+      case
+        when value.respond_to?(:log)
+          # This value is an object that can log itself.
+          value.log(log, key.to_s)
+        when value.respond_to?(:each)
+          # Log each element.
+          log.section(key.to_s) do
+            value.each do |x|
+              self.log_recursive(x, log)
             end
-          else
-            # Log here.
-            log.put_element('data', {:field => key, :value => value})
-        end
+          end
+        else
+          # Log here.
+          log.put_element('data', {:field => key, :value => value})
       end
     end
   end
@@ -115,18 +113,16 @@ class BaseClassForData < BaseClass
   # giving special handling to nested objects.
   def self.verdict_equal_recursive?(log, verdict_id, expected_obj, actual_obj, message)
     verdict = true
-    log.section(verdict_id) do
-      expected_obj.fields.each do |field|
-        expected_value = expected_obj.send(field)
-        # No expected value?  Skip it.
-        next if expected_value.nil?
-        actual_value = actual_obj.send(field)
-        if actual_obj.kind_of?(self.class)
-          v_id = format('%s %s', verdict_id, field)
-          self.verdict_equal_recursive?(log, v_id, expected_value, actual_value, message)
-        else
-          verdict = log.verdict_assert_equal?('%s-%s' % [verdict_id, field.downcase], expected_value, actual_value, message) && verdict
-        end
+    expected_obj.fields.each do |field|
+      expected_value = expected_obj.send(field)
+      # No expected value?  Skip it.
+      next if expected_value.nil?
+      actual_value = actual_obj.send(field)
+      if actual_obj.kind_of?(self.class)
+        v_id = format('%s %s', verdict_id, field)
+        self.verdict_equal_recursive?(log, v_id, expected_value, actual_value, message)
+      else
+        verdict = log.verdict_assert_equal?('%s-%s' % [verdict_id, field.downcase], expected_value, actual_value, message) && verdict
       end
     end
     verdict
