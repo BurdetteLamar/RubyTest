@@ -40,7 +40,7 @@ class BaseClassForData < BaseClass
   Contract Log, String, Any, Any, String => Bool
   # Verify recursively, so that nested objects can verify themselves.
   def self.verdict_equal?(log, verdict_id, expected_obj, actual_obj, message)
-    if expected_obj.kind_of?(self.class)
+    if expected_obj.kind_of?(self)
       self.verdict_equal_recursive?(log, verdict_id, expected_obj, actual_obj, message)
     else
       log.verdict_assert_equal?(verdict_id, expected_obj, actual_obj, message)
