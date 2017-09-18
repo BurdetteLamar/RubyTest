@@ -15,10 +15,8 @@ class BaseClassForGetId < BaseClassForEndpoint
 
   def self.verdict_call_and_verify_success(client, log, verdict_id, object_to_get)
     log.section(verdict_id, :rescue, :timestamp, :duration) do
-      object_to_get.log(log, data_class_name + ' to get')
       object_fetched = self.call(client, object_to_get)
       log.section('Evaluation') do
-        object_fetched.log(log, 'Fetched ' + data_class_name)
         klass = ObjectHelper.get_class_for_class_name(data_class_name)
         klass.verdict_equal?(log, data_class_name, object_to_get, object_fetched, 'Fetched')
       end
