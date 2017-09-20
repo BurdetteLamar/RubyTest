@@ -5,9 +5,7 @@ class NothingTest < BaseClassForTest
   def test_nothing
 
     prelude do |client, log|
-
       # Test code goes here.
-
     end
 
   end
