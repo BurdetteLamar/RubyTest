@@ -8,11 +8,9 @@ require_relative '../../base_classes/base_class_for_test'
 class NothingTest < BaseClassForTest
 
   def test_nothing
-
     prelude do |client, log|
       # Test code goes here.
     end
-
   end
 
 end
@@ -31,7 +29,7 @@ end
 ```xml
 <nothing_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='nothing_test' timestamp='2017-09-20-Wed-15.30.52.773'>
+  <test_method duration_seconds='0.000' name='nothing_test' timestamp='2017-09-20-Wed-15.36.34.882'>
     <section name='With ExampleRestClient'/>
   </test_method>
   <verdict id='error count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
