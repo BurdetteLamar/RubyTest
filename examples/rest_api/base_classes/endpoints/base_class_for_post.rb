@@ -16,10 +16,8 @@ class BaseClassForPost < BaseClassForEndpoint
   def self.verdict_call_and_verify_success(client, log, verdict_id, object_to_post)
     # Some verdicts should fail, because JSONplaceholder will not actually create the instance.
     log.section(verdict_id, :rescue, :timestamp, :duration) do
-      object_to_post.log(log, data_class_name + ' to post')
       object_posted = self.call(client, object_to_post)
       log.section('Evaluation') do
-        object_posted.log(log, 'Posted ' + data_class_name)
         klass = ObjectHelper.get_class_for_class_name(data_class_name)
         klass.verdict_equal?(log, data_class_name + ' - posted', object_to_post, object_posted, 'Posted')
         object_fetched = klass.read(client, object_posted)

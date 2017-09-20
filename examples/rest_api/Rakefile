@@ -1,4 +1,82 @@
+require 'rexml/document'
+include REXML
+
+require_relative '../../lib/helpers/markdown_helper'
+require_relative '../../lib/helpers/string_helper'
 require_relative '../../lib/helpers/test_helper'
+
+desc 'Build tutorials'
+task :tutorials do
+  rakefile_dir_path = File.dirname(__FILE__)
+  test_dir_path = File.join(
+      rakefile_dir_path,
+      'tutorial',
+      'tests',
+  )
+  log_dir_path = TestHelper.create_app_log_dir('rest_api')
+  template_dir_path = File.join(
+      rakefile_dir_path,
+      'tutorial',
+      'md_templates',
+  )
+  conditioned_log_dir_path = File.join(
+      rakefile_dir_path,
+      'tutorial',
+      'logs',
+  )
+  FileUtils.mkdir_p(conditioned_log_dir_path)
+  md_file_dir_path = File.join(
+      rakefile_dir_path,
+      'tutorial',
+      'md_files',
+  )
+  FileUtils.mkdir_p(md_file_dir_path)
+  %w/
+          nothing
+  /.each do |name|
+    # Run the test.
+    test_file_name = format('%s_test.rb', name)
+    test_file_path = File.absolute_path(File.join(
+         test_dir_path,
+         test_file_name,
+    ))
+    command = format('ruby %s', test_file_path)
+    system(command)
+    # Process the log.
+    log_file_name = format('test_%s.xml', name)
+    log_file_path = File.join(
+        log_dir_path,
+        log_file_name,
+    )
+    conditioned_file_path = File.join(
+        conditioned_log_dir_path,
+        log_file_name,
+    )
+    doc = nil
+    formatter = REXML::Formatters::Pretty.new(2)
+    formatter.compact = true
+    File.open(log_file_path, 'r') do |file|
+      doc = REXML::Document.new(file)
+    end
+    File.open(conditioned_file_path, 'w') do |file|
+      file.puts(formatter.write(doc.root, ''))
+    end
+    file_basename = format('%sTest', StringHelper.to_upper_camel_case(name))
+    md_file_name = format('%s.md', file_basename)
+    template_file_name = format('%s.txt', file_basename)
+    template_file_path = File.join(
+        template_dir_path,
+        template_file_name,
+    )
+    md_file_path = File.join(
+        md_file_dir_path,
+        md_file_name,
+    )
+    MarkdownHelper.build_markdown_file(template_file_path, md_file_path)
+  end
+  FileUtils.rm_rf(conditioned_log_dir_path)
+
+end
 
 desc 'Run examples'
 task :examples do
@@ -24,4 +102,5 @@ task :examples do
     command = format('ruby %s', test_file_path)
     system(command)
   end
+
 end

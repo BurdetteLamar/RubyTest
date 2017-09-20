@@ -22,7 +22,9 @@ class BaseClassForGet < BaseClassForEndpoint
       log.section('Evaluation') do
         object = objects.first
         log.put_element('data', {:fetched_object_count => objects.size})
-        object.log(log, 'First fetched ' + data_class_name)
+        log.section('First fetched') do
+          object.log(log)
+        end
         object.verdict_valid?(log, verdict_id)
       end
       return objects

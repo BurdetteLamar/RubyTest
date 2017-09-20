@@ -60,7 +60,6 @@ class Log < BaseClass
     :file_path,
     :backtrace_filter,
     :root_name,
-    :section_numbers,
     :test,
     :verdict_ids,
     :xml_indentation
@@ -189,17 +188,9 @@ class Log < BaseClass
   # Start a \new \section, within the current \section.
   # Sections may be nested.
   def section(name, *args)
-    # Note that section numbers can vary among test runs,
-    # due to raised exceptions, or to changes to the test themselves.
-    # Therefore it's useful only to refer to a section number
-    # within the log file for a specific test run.
-    self.section_numbers[-1] = self.section_numbers[-1] + 1
-    section_number = self.section_numbers.collect {|i| i.to_s}.join('.')
-    self.section_numbers.push(0)
-    put_element('section', {:name => name, :number => section_number}, *args) do
+    put_element('section', {:name => name}, *args) do
       yield
     end
-    self.section_numbers.pop
     nil
   end
 
@@ -395,7 +386,6 @@ class Log < BaseClass
         :failure => 0,
         :error => 0,
     ]
-    self.section_numbers = [0]
     nil
   end
 

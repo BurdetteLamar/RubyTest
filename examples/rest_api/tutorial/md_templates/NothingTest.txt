@@ -1,0 +1,27 @@
+# NothingTest
+
+## Test Source Code
+
+[file_source](../tests/nothing_test.rb)
+
+Notes:
+
+- Test class <code>NothingTest</code> derives from class<code>BaseClassForTest</code>.
+- Test method <code>test_nothing</code> begins with <code>test</code>, which tells the test framework that it is a test method and should be executed at test-time.
+- Inherited method <code>prelude</code> yields:
+  - The domain-specific client to be used for testing the REST API.
+  - The already-open log to be used for documenting the test execution.
+
+##  Test Log
+
+[file_source](../logs/test_nothing.xml)
+
+Elements:
+
+- <code>summary</code>:  counts of verdicts, failures (failed verdicts), and errors (unexpected exceptions).
+- <code>test_method</code>:  logging for test steps and verdicts.  (This test did nothing, so there's not much here.)
+- <code>verdict</code>:  Expected no errors (unexpected exceptions), got none.
+
+## Under the Hood
+
+[file_source](../../base_classes/base_class_for_test.rb)

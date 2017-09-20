@@ -63,4 +63,14 @@ class StringHelper < BaseClass
     self.string_of_length(range.last + 1, base_string)
   end
 
+  Contract String => String
+  # Return the upper camel case version of a snake case string.
+  def self.to_upper_camel_case(snake_case)
+    upper_camel_words = []
+    snake_case.split('_').each do |w|
+      upper_camel_words.push(w.capitalize)
+    end
+    upper_camel_words.join('')
+  end
+
 end
