@@ -59,7 +59,6 @@ task :tutorials do
       doc = REXML::Document.new(file)
     end
     File.open(conditioned_file_path, 'w') do |file|
-      p conditioned_file_path
       file.puts(formatter.write(doc.root, ''))
     end
     file_basename = format('%sTest', StringHelper.to_upper_camel_case(name))
