@@ -2,6 +2,7 @@
 
 ## Test Source Code
 
+<code>nothing_test.rb</code>
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
 
@@ -16,7 +17,7 @@ class NothingTest < BaseClassForTest
 end
 ```
 
-### Notes
+Notes:
 
 - Test class <code>NothingTest</code> derives from class<code>BaseClassForTest</code>.
 - Test method <code>test_nothing</code> begins with <code>test</code>, which tells the test framework that it is a test method and should be executed at test-time.
@@ -26,10 +27,11 @@ end
 
 ##  Test Log
 
+<code>test_nothing.xml</code>
 ```xml
 <nothing_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='nothing_test' timestamp='2017-09-20-Wed-16.04.50.087'>
+  <test_method duration_seconds='0.001' name='nothing_test' timestamp='2017-09-20-Wed-16.36.51.832'>
     <section name='With ExampleRestClient'/>
   </test_method>
   <verdict id='error count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
@@ -39,8 +41,6 @@ end
 </nothing_test>
 ```
 
-### Notes
-
 Elements:
 
 - <code>summary</code>:  counts of verdicts, failures (failed verdicts), and errors (unexpected exceptions).
@@ -49,8 +49,7 @@ Elements:
 
 ## Under the Hood
 
-### Base Class for Test
-
+<code>base_class_for_test.rb</code>
 ```ruby
 require 'minitest/autorun'
 
@@ -72,5 +71,3 @@ class BaseClassForTest < Minitest::Test
 end
 
 ```
-
-

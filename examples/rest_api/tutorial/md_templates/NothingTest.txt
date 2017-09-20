@@ -4,7 +4,7 @@
 
 [file_source](../tests/nothing_test.rb)
 
-### Notes
+Notes:
 
 - Test class <code>NothingTest</code> derives from class<code>BaseClassForTest</code>.
 - Test method <code>test_nothing</code> begins with <code>test</code>, which tells the test framework that it is a test method and should be executed at test-time.
@@ -16,8 +16,6 @@
 
 [file_source](../logs/test_nothing.xml)
 
-### Notes
-
 Elements:
 
 - <code>summary</code>:  counts of verdicts, failures (failed verdicts), and errors (unexpected exceptions).
@@ -25,7 +23,5 @@ Elements:
 - <code>verdict</code>:  Expected no errors (unexpected exceptions), got none.
 
 ## Under the Hood
-
-### Base Class for Test
 
 [file_source](../../base_classes/base_class_for_test.rb)

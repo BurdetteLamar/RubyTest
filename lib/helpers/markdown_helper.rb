@@ -15,6 +15,8 @@ class MarkdownHelper < BaseClass
                   File.dirname(template_file_path),
                   relative_path,
               ))
+              label_line = format('<code>%s</code>', File.basename(absolute_path))
+              md_file.puts(label_line)
               if highlight
                 extname = File.extname(absolute_path)
                 case extname
