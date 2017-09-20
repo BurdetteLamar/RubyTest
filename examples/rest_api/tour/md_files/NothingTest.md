@@ -31,7 +31,7 @@ Notes:
 ```xml
 <nothing_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.001' name='nothing_test' timestamp='2017-09-20-Wed-16.36.51.832'>
+  <test_method duration_seconds='0.000' name='nothing_test' timestamp='2017-09-20-Wed-17.00.41.915'>
     <section name='With ExampleRestClient'/>
   </test_method>
   <verdict id='error count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>

@@ -5,29 +5,29 @@ require_relative '../../lib/helpers/markdown_helper'
 require_relative '../../lib/helpers/string_helper'
 require_relative '../../lib/helpers/test_helper'
 
-desc 'Build tutorials'
-task :tutorials do
+desc 'Build tour'
+task :tour do
   rakefile_dir_path = File.dirname(__FILE__)
-  test_dir_path = File.join(
+  tour_dir_path = File.join(
       rakefile_dir_path,
-      'tutorial',
+      'tour',
+  )
+  test_dir_path = File.join(
+      tour_dir_path,
       'tests',
   )
   log_dir_path = TestHelper.create_app_log_dir('rest_api')
   template_dir_path = File.join(
-      rakefile_dir_path,
-      'tutorial',
+      tour_dir_path,
       'md_templates',
   )
   conditioned_log_dir_path = File.join(
-      rakefile_dir_path,
-      'tutorial',
+      tour_dir_path,
       'logs',
   )
   FileUtils.mkdir_p(conditioned_log_dir_path)
   md_file_dir_path = File.join(
-      rakefile_dir_path,
-      'tutorial',
+      tour_dir_path,
       'md_files',
   )
   FileUtils.mkdir_p(md_file_dir_path)
