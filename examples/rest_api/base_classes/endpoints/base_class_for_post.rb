@@ -19,9 +19,9 @@ class BaseClassForPost < BaseClassForEndpoint
       object_posted = self.call(client, object_to_post)
       log.section('Evaluation') do
         klass = ObjectHelper.get_class_for_class_name(data_class_name)
-        klass.verdict_equal?(log, data_class_name + ' - posted', object_to_post, object_posted, 'Posted')
+        klass.verdict_equal?(log, data_class_name + 'class name', object_to_post, object_posted, 'Posted')
         object_fetched = klass.read(client, object_posted)
-        klass.verdict_equal?(log, data_class_name + ' - posted', object_posted, object_fetched, 'Fetched')
+        klass.verdict_equal?(log, data_class_name, object_posted, object_fetched, 'Fetched')
       end
       return object_posted
     end
