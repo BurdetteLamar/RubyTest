@@ -9,18 +9,18 @@ class BaseClassForGetId < BaseClassForEndpoint
     ]
     payload = client.get(url_elements)
     rehash = HashHelper.rehash_to_symbol_keys(payload)
-    object_fetched = ObjectHelper.instantiate_class_for_class_name(data_class_name, rehash)
-    [object_fetched, payload]
+    object_got = ObjectHelper.instantiate_class_for_class_name(data_class_name, rehash)
+    [object_got, payload]
   end
 
   def self.verdict_call_and_verify_success(client, log, verdict_id, object_to_get)
     log.section(verdict_id, :rescue, :timestamp, :duration) do
-      object_fetched = self.call(client, object_to_get)
+      object_got = self.call(client, object_to_get)
       log.section('Evaluation') do
         klass = ObjectHelper.get_class_for_class_name(data_class_name)
-        klass.verdict_equal?(log, data_class_name, object_to_get, object_fetched, 'Fetched')
+        klass.verdict_equal?(log, data_class_name, object_to_get, object_got, 'Got')
       end
-      return object_fetched
+      return object_got
     end
   end
 

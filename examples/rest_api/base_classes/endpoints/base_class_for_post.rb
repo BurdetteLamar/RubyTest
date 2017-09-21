@@ -21,7 +21,7 @@ class BaseClassForPost < BaseClassForEndpoint
         klass = ObjectHelper.get_class_for_class_name(data_class_name)
         klass.verdict_equal?(log, data_class_name + ' - posted', object_to_post, object_posted, 'Posted')
         object_fetched = klass.read(client, object_posted)
-        klass.verdict_equal?(log, data_class_name + ' - fetched', object_posted, object_fetched, 'Fetched')
+        klass.verdict_equal?(log, data_class_name + ' - posted', object_posted, object_fetched, 'Fetched')
       end
       return object_posted
     end
