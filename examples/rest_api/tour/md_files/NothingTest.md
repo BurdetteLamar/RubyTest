@@ -31,7 +31,7 @@ Notes:
 ```xml
 <nothing_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='nothing_test' timestamp='2017-09-20-Wed-17.00.41.915'>
+  <test_method duration_seconds='0.001' name='nothing_test' timestamp='2017-09-21-Thu-12.02.14.670'>
     <section name='With ExampleRestClient'/>
   </test_method>
   <verdict id='error count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
@@ -41,33 +41,8 @@ Notes:
 </nothing_test>
 ```
 
-Elements:
+Notes:
 
-- <code>summary</code>:  counts of verdicts, failures (failed verdicts), and errors (unexpected exceptions).
-- <code>test_method</code>:  logging for test steps and verdicts.  (This test did nothing, so there's not much here.)
-- <code>verdict</code>:  Expected no errors (unexpected exceptions), got none.
-
-## Under the Hood
-
-<code>base_class_for_test.rb</code>
-```ruby
-require 'minitest/autorun'
-
-require_relative '../../../lib/helpers/test_helper'
-require_relative '../example_rest_client'
-
-class BaseClassForTest < Minitest::Test
-
-  def prelude
-    raise 'No block given' unless (block_given?)
-    log_dir_path = TestHelper.get_app_log_dir_path('rest_api')
-    TestHelper.test(self, log_dir_path) do |log|
-      ExampleRestClient.with(log) do |client|
-        yield client, log
-      end
-    end
-  end
-
-end
-
-```
+- Element <code>summary</code>:  counts of verdicts, failures (failed verdicts), and errors (unexpected exceptions).
+- Element <code>test_method</code>:  logging for test steps and verdicts.  (This test did nothing, so there's not much here.)
+- Element <code>verdict</code>:  Expected no errors (unexpected exceptions), got none.  This verdict is added at the end of every test.

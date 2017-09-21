@@ -1,0 +1,26 @@
+# GetAlbumsIdTest
+
+## Test Source Code
+
+[file_source](../tests/get_albums_id_test.rb)
+
+Notes:
+
+- Nested log sections help organize both the test source code and the test log.
+- Method <code>Album.get_first</code> is a convenience method that fetches the first album as an <code>Album</object>.
+- Variable <code>verdict_id</code> is a verdict identifier that must be unique within the test method.
+- Method <code>GetAlbumsId.verdict_call_and_verify_success</code> interacts with the REST API and logs information:
+  1.  Does <code>GET albums/</code><i>id</i>, using field <code>:id</code> from the given album <code>album_to_get</code>.
+  2.  Forms the response payload into a new <code>Album</code> object, <code>album_fetched</code>.
+  3.  Verifies that the values in <code>album_to_get</code> are equal to those in <code>album_fetched</code>.
+
+##  Test Log
+
+[file_source](../logs/test_get_albums_id.xml)
+
+Notes:
+
+- The <code>section</code> elements organize the log.
+- Each <code>section</code> element whose <code>name</code> is <code>Rest client</code> records an interaction with the REST API, including any passed parameters.
+- Each <code>verdict</code> element contains a verification.
+- The <code>section</code> whose <code>name</code> is <code>Evaluation</code> contains verdicts about the returned data.

@@ -6,7 +6,7 @@ class GetAlbumsIdTest < BaseClassForTest
 
   def test_get_albums_id
 
-  prelude do |client, log|
+    prelude do |client, log|
 
       log.section('Test endpoint GET albums/id') do
 
