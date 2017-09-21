@@ -13,6 +13,10 @@
        - [Log Examples](./examples/log/Log.md)
      - rest_api/
        - [REST API Test Example](./examples/rest_api/RestAPI.md)
+       - tour/
+         - md_files/
+           - [GetAlbumsIdTest](./examples/rest_api/tour/md_files/GetAlbumsIdTest.md)
+           - [NothingTest](./examples/rest_api/tour/md_files/NothingTest.md)
    - lib/
      - [Lib](./lib/Lib.md)
      - base_classes/
@@ -23,5 +27,3 @@
        - [Log](./lib/log/Log.md)
    - test/
      - [Unit Tests](./test/Test.md)
-   - tools/
-     - [Tools](./tools/Tools.md)

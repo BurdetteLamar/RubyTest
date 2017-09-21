@@ -33,6 +33,7 @@ task :tour do
   FileUtils.mkdir_p(md_file_dir_path)
   %w/
           nothing
+          get_albums_id
   /.each do |name|
     # Run the test.
     test_file_name = format('%s_test.rb', name)
@@ -72,7 +73,7 @@ task :tour do
         md_file_dir_path,
         md_file_name,
     )
-    MarkdownHelper.build_markdown_file(template_file_path, md_file_path)
+    MarkdownHelper.build_file(template_file_path, md_file_path)
   end
   FileUtils.rm_rf(conditioned_log_dir_path)
 

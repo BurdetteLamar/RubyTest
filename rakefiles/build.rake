@@ -10,19 +10,16 @@ namespace :build do
     rdoc.title = 'RubyTest'
   end
 
-  TOOLS_DIR = File.join(
-      File.dirname(__FILE__),
-      '..',
-      'tools',
-  )
-
   desc 'Build markdown table of contents'
   task :markdown_toc do
     path = File.join(
-        TOOLS_DIR,
-        'create_markdown_toc.rb',
+        File.dirname(__FILE__),
+        '..',
+        'lib',
+        'helpers',
+        'markdown_helper.rb',
     )
-    command = "ruby -r #{path} -e MarkdownToc.create"
+    command = "ruby -r #{path} -e MarkdownHelper.build_toc"
     system(command)
   end
 
