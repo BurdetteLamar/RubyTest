@@ -6,8 +6,8 @@ class NothingTest < BaseClassForTest
     prelude do |client, log|
       # Test code goes here.
       # Citation of each keeps RubyMine inspection from complaining.
-      p client
-      p log
+      client.class
+      log.class
     end
   end
 
