@@ -33,6 +33,7 @@ task :tour do
   FileUtils.mkdir_p(md_file_dir_path)
   %w/
           nothing
+          delete_albums_id
           get_albums_id
   /.each do |name|
     # Run the test.
