@@ -5,7 +5,7 @@
 
 This page introduces verdict volatility.
 
-The Changes Report (elsewhere in this project) identifies changes found by comparing the results of the current and previous test runs.
+The Changes Report (elsewhere in this project) identifies changes found in comparing the results of the current and previous test runs.
 
 If a verdict's actual value is different in the two runs, the change would be reported.
 
@@ -51,7 +51,7 @@ Notes:
 ```xml
 <volatility_test>
   <summary errors='0' failures='0' verdicts='3'/>
-  <test_method duration_seconds='1.002' name='volatility_test' timestamp='2017-09-23-Sat-12.53.50.137'>
+  <test_method duration_seconds='1.016' name='volatility_test' timestamp='2017-09-23-Sat-14.06.44.638'>
     <section name='With ExampleRestClient'>
       <section name='Non-volatile value'>
         <verdict id='positive' message='Cos(0) positive' method='verdict_assert?' outcome='passed' volatile='false'>

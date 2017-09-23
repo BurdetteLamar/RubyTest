@@ -10,13 +10,15 @@ This page introduces the handling of unexpected exceptions.
 
 Notes:
 
--
+- The first outer section rescues its exception.  Remaining code in the section is not reached.
+- The second outer section does not rescue its exception.  Remaining code in the test is not reached.
+
 ##  Test Log
 
 [file_source](../logs/test_exception.xml)
 
 Notes:
 
--
+- Each exception is logged, including its message and backtrace.
 
 [navigation_links]
