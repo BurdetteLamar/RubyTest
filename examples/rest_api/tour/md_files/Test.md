@@ -1,19 +1,19 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
- [Next](./SectionsTest.md)
+ [Next](./Sections.md)
 
-# NothingTest
+# Test
 
 This page introduces the test class, along with the REST API client and the test log.
 
 ## Test Source Code
 
-<code>nothing_test.rb</code>
+<code>test_test.rb</code>
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
 
 class NothingTest < BaseClassForTest
 
-  def test_nothing
+  def test_test
     prelude do |client, log|
       # Citing client and log keeps RubyMine code inspection from complaining.
       client.class
@@ -26,19 +26,19 @@ end
 
 Notes:
 
-- Test class <code>NothingTest</code> derives from class<code>BaseClassForTest</code>.
-- Method name <code>test_nothing</code> begins with <code>test</code>, which tells the test framework that it is a test method and should be executed at test-time.
+- Test class <code>TestTest</code> derives from class<code>BaseClassForTest</code>.
+- Method name <code>test_test</code> begins with <code>test</code>, which tells the test framework that it is a test method and should be executed at test-time.
 - Inherited method <code>prelude</code> yields:
   - The domain-specific client to be used for testing the REST API.
   - The already-open log to be used for documenting the test execution.
 
 ##  Test Log
 
-<code>test_nothing.xml</code>
+<code>test_test.xml</code>
 ```xml
-<nothing_test>
+<test_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='nothing_test' timestamp='2017-09-23-Sat-15.09.27.961'>
+  <test_method duration_seconds='0.000' name='test_test' timestamp='2017-09-23-Sat-15.48.45.249'>
     <section name='With ExampleRestClient'/>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
@@ -47,7 +47,7 @@ Notes:
       <act_value>0</act_value>
     </verdict>
   </section>
-</nothing_test>
+</test_test>
 ```
 
 Notes:
@@ -56,4 +56,4 @@ Notes:
 - Element <code>test_method</code>:  logging for test steps and verdicts.  (This test did nothing, so there's not much here.)
 - The last section gives the count of errors (unexpected exceptions).  Its verdict expects the count to be 0.
 
- [Next](./SectionsTest.md)
+ [Next](./Sections.md)

@@ -9,7 +9,7 @@ desc 'Build tour'
 task :tour do
   def md_file_path_for_name(md_dir_path, name)
     return nil if name.nil?
-    file_basename = format('%sTest', StringHelper.to_upper_camel_case(name))
+    file_basename = format('%s', StringHelper.to_upper_camel_case(name))
     md_file_name = format('%s.md', file_basename)
     md_file_path = File.join(
         md_dir_path,

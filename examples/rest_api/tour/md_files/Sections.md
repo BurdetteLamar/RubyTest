@@ -1,5 +1,5 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-[Prev](./TestTest.md) [Next](./VerdictsTest.md)
+[Prev](./Test.md) [Next](./Verdicts.md)
 
 # Sections
 
@@ -56,17 +56,17 @@ Notes:
 ```xml
 <sections_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='3.037' name='sections_test' timestamp='2017-09-23-Sat-15.38.29.859'>
+  <test_method duration_seconds='3.035' name='sections_test' timestamp='2017-09-23-Sat-15.48.46.242'>
     <section name='With ExampleRestClient'>
       <section name='First outer section'>
         <section name='First inner section'/>
         <section name='Second inner section'/>
       </section>
       <section name='Second outer section'/>
-      <section name='Section with timestamp' timestamp='2017-09-23-Sat-15.38.29.859'/>
-      <section duration_seconds='1.023' name='Section with timestamp'/>
-      <section duration_seconds='1.009' name='Section with timestamp and duration' timestamp='2017-09-23-Sat-15.38.30.882'/>
-      <section duration_seconds='1.006' name='Order does not matter' timestamp='2017-09-23-Sat-15.38.31.890'/>
+      <section name='Section with timestamp' timestamp='2017-09-23-Sat-15.48.46.242'/>
+      <section duration_seconds='1.015' name='Section with timestamp'/>
+      <section duration_seconds='1.012' name='Section with timestamp and duration' timestamp='2017-09-23-Sat-15.48.47.256'/>
+      <section duration_seconds='1.009' name='Order does not matter' timestamp='2017-09-23-Sat-15.48.48.268'/>
     </section>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
@@ -82,4 +82,4 @@ Notes:
 
 - The sections in the test are propagated to the log, giving it the same structure.
 
-[Prev](./TestTest.md) [Next](./VerdictsTest.md)
+[Prev](./Test.md) [Next](./Verdicts.md)
