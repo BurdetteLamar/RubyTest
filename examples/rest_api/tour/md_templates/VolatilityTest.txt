@@ -1,0 +1,20 @@
+[navigation_links]
+
+# VolatilityTest
+
+## Test Source Code
+
+[file_source](../tests/volatility_test.rb)
+
+Notes:
+
+- The Changes Report (elsewhere in this project) evaluates a current test run's logs against those of the previous test run.
+- Above:
+  - The first verdict's values are non-volatile, expected to be the same in each test run.  If the value changed from the previous, the Changes Report would mark the verdict as changed.
+  - The second verdict's values are volatile, changing with each test run.  The Changes Report will not mark the verdict as changed.
+
+##  Test Log
+
+[file_source](../logs/test_volatility.xml)
+
+[navigation_links]

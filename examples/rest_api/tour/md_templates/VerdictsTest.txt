@@ -1,0 +1,27 @@
+[navigation_links]
+
+# VerdictsTest
+
+## Test Source Code
+
+[file_source](../tests/verdicts_test.rb)
+
+Notes:
+
+- Use sections to organize the test steps;  sections can nest.
+- Each verdict has:
+  - A verdict identifier, which must be unique within the test.
+  - A message string.
+- Use an assert verdict to express a positive expectation.
+- Use a refute verdict to express a negative expectation.
+
+
+##  Test Log
+
+[file_source](../logs/test_verdicts.xml)
+
+Notes:
+
+- The failed verdict logs an exception, including the message and backtrace.
+
+[navigation_links]

@@ -5,12 +5,26 @@ require_relative '../../lib/base_classes/base_class'
 class MarkdownHelper < BaseClass
 
   FILE_SOURCE_TAG = '[file_source]'
+  NAVIGATION_LINKS_TAG = '[navigation_links]'
 
-  def self.build_file(template_file_path, markdown_file_path, highlight = true)
+  def self.build_file(template_file_path, markdown_file_path, options)
+    default_options = {
+        :highlight => true,
+        :prev_file_path => nil,
+        :next_file_path => nil,
+    }
+    effective_options = default_options.merge(options)
+    highlight = options[:highlight]
+    prev_file_path = options[:prev_file_path]
+    next_file_path = options[:next_file_path]
     File.open(template_file_path, 'r') do |template_file|
       File.open(markdown_file_path, 'w') do |md_file|
         template_file.each_line do |line|
           case
+            when line.start_with?(NAVIGATION_LINKS_TAG)
+              prev_link = prev_file_path ? format('[Prev](%s)', prev_file_path): ''
+              next_link = next_file_path ? format('[Next](%s)', next_file_path): ''
+              md_file.puts(format('%s %s', prev_link, next_link))
             when line.start_with?(FILE_SOURCE_TAG)
               relative_path = line.sub(FILE_SOURCE_TAG, '').gsub(/[()]/, '').strip
               absolute_path = File.absolute_path(File.join(

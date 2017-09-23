@@ -1,3 +1,5 @@
+ [Next](c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tour/md_files/VerdictsTest.md)
+
 # NothingTest
 
 ## Test Source Code
@@ -10,7 +12,9 @@ class NothingTest < BaseClassForTest
 
   def test_nothing
     prelude do |client, log|
-      # Test code goes here.
+      # Citation of client and log keeps RubyMine inspection from complaining.
+      client.class
+      log.class
     end
   end
 
@@ -20,7 +24,7 @@ end
 Notes:
 
 - Test class <code>NothingTest</code> derives from class<code>BaseClassForTest</code>.
-- Test method <code>test_nothing</code> begins with <code>test</code>, which tells the test framework that it is a test method and should be executed at test-time.
+- Method name <code>test_nothing</code> begins with <code>test</code>, which tells the test framework that it is a test method and should be executed at test-time.
 - Inherited method <code>prelude</code> yields:
   - The domain-specific client to be used for testing the REST API.
   - The already-open log to be used for documenting the test execution.
@@ -31,13 +35,15 @@ Notes:
 ```xml
 <nothing_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.001' name='nothing_test' timestamp='2017-09-21-Thu-12.02.14.670'>
+  <test_method duration_seconds='0.000' name='nothing_test' timestamp='2017-09-23-Sat-12.01.11.477'>
     <section name='With ExampleRestClient'/>
   </test_method>
-  <verdict id='error count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
-    <exp_value>0</exp_value>
-    <act_value>0</act_value>
-  </verdict>
+  <section name='Count of errors (unexpected exceptions)'>
+    <verdict id='error count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
+      <exp_value>0</exp_value>
+      <act_value>0</act_value>
+    </verdict>
+  </section>
 </nothing_test>
 ```
 
@@ -45,4 +51,6 @@ Notes:
 
 - Element <code>summary</code>:  counts of verdicts, failures (failed verdicts), and errors (unexpected exceptions).
 - Element <code>test_method</code>:  logging for test steps and verdicts.  (This test did nothing, so there's not much here.)
-- Element <code>verdict</code>:  Expected no errors (unexpected exceptions), got none.  This verdict is added at the end of every test.
+- The last section gives the count of errors (unexpected exceptions).  Its verdict expects the count to be 0.
+
+ [Next](c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tour/md_files/VerdictsTest.md)

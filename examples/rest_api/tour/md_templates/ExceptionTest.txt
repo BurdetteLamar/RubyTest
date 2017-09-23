@@ -1,0 +1,20 @@
+[navigation_links]
+
+# ExceptionTest
+
+## Test Source Code
+
+[file_source](../tests/exception_test.rb)
+
+Notes:
+
+-
+##  Test Log
+
+[file_source](../logs/test_exception.xml)
+
+Notes:
+
+-
+
+[navigation_links]

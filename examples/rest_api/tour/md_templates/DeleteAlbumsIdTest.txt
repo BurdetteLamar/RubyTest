@@ -10,7 +10,7 @@ Notes:
 - Method <code>Album.get_first</code> is a convenience method that fetches the first album as an <code>Album</object>.
 - Variable <code>verdict_id</code> is a verdict identifier that must be unique within the test method.
 - Method <code>DeleteAlbumsId.verdict_call_and_verify_success</code> interacts with the REST API and logs information:
-  1.  Does <code>DELETE albums/</code><i>id</i>, using field <code>:id</code> from the given album <code>album_to_delete</code>.
+  1.  Does <code>DELETE albums/,id</code><i>id</i>, using field <code>:id</code> from the given album <code>album_to_delete</code>.
   2.  Verifies that the return had no payload.
   3.  Verifies that the album no longer exists.
 
