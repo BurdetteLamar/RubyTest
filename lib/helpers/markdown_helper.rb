@@ -19,6 +19,7 @@ class MarkdownHelper < BaseClass
     next_file_path = options[:next_file_path]
     File.open(template_file_path, 'r') do |template_file|
       File.open(markdown_file_path, 'w') do |md_file|
+        md_file.puts('<!--- GENERATED FILE, DO NOT EDIT --->')
         template_file.each_line do |line|
           case
             when line.start_with?(NAVIGATION_LINKS_TAG)
@@ -59,6 +60,7 @@ class MarkdownHelper < BaseClass
   def self.build_toc
 
     # Verify that we're in the right directory.
+    # TODO:  This needs to be better!
     actual_dirname = File.basename(Dir.pwd)
     expected_dirname = 'RubyTest'
     if actual_dirname != expected_dirname

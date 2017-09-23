@@ -1,8 +1,19 @@
+<!--- GENERATED FILE, DO NOT EDIT --->
 [Prev](./VerdictsTest.md) [Next](./ExceptionTest.md)
 
 # VolatilityTest
 
 This page introduces verdict volatility.
+
+The Changes Report (elsewhere in this project) identifies changes seen in comparing the results of the current and previous test runs.
+
+If a verdict's actual value is different in the two runs, the change would be reported.
+
+There are cases, though, when this would be inappropriate.
+
+Suppose a request creates an object (say, a new user) whose identifier is a new GUID.  Then the identifier will be different in every test run, and by default the Changes Report would include the change, even though the change is actually expected.
+
+Marking a verdict as <code>volatile</code> handles this case.  For a volatile verdict, the Changes Report will ignore the differing values.
 
 ## Test Source Code
 
@@ -31,10 +42,8 @@ end
 
 Notes:
 
-- The Changes Report (elsewhere in this project) evaluates a current test run's logs against those of the previous test run.
-- Above:
-  - The first verdict's values are non-volatile, expected to be the same in each test run.  If the value changed from the previous, the Changes Report would mark the verdict as changed.
-  - The second verdict's values are volatile, changing with each test run.  The Changes Report will not mark the verdict as changed.
+- The first verdict's values are non-volatile, expected to be the same in each test run.  If the value changed from the previous, the Changes Report would mark the verdict as changed.
+- The second verdict's values are volatile, changing with each test run.  The Changes Report will not mark the verdict as changed.
 
 ##  Test Log
 
@@ -42,7 +51,7 @@ Notes:
 ```xml
 <volatility_test>
   <summary errors='0' failures='0' verdicts='3'/>
-  <test_method duration_seconds='1.016' name='volatility_test' timestamp='2017-09-23-Sat-12.29.34.222'>
+  <test_method duration_seconds='1.024' name='volatility_test' timestamp='2017-09-23-Sat-12.49.01.352'>
     <section name='With ExampleRestClient'>
       <section name='Non-volatile value'>
         <verdict id='positive' message='Cos(0) positive' method='verdict_assert?' outcome='passed' volatile='false'>

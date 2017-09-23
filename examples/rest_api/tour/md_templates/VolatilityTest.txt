@@ -4,16 +4,24 @@
 
 This page introduces verdict volatility.
 
+The Changes Report (elsewhere in this project) identifies changes found by comparing the results of the current and previous test runs.
+
+If a verdict's actual value is different in the two runs, the change would be reported.
+
+There are cases, though, when this would be inappropriate.
+
+Suppose a request creates an object (say, a new user) whose identifier is a new GUID.  Then the identifier will be different in every test run, and by default the Changes Report would include the change, even though the change is actually expected.
+
+Marking a verdict as <code>volatile</code> handles this case.  For a volatile verdict, the Changes Report will ignore the differing values, which is what's wanted.
+
 ## Test Source Code
 
 [file_source](../tests/volatility_test.rb)
 
 Notes:
 
-- The Changes Report (elsewhere in this project) evaluates a current test run's logs against those of the previous test run.
-- Above:
-  - The first verdict's values are non-volatile, expected to be the same in each test run.  If the value changed from the previous, the Changes Report would mark the verdict as changed.
-  - The second verdict's values are volatile, changing with each test run.  The Changes Report will not mark the verdict as changed.
+- The first verdict's values are non-volatile, expected to be the same in each test run.  If the value changed from the previous, the Changes Report would mark the verdict as changed.
+- The second verdict's values are volatile, changing with each test run.  The Changes Report will not mark the verdict as changed.
 
 ##  Test Log
 
