@@ -45,8 +45,8 @@ end
 
 Notes:
 
-- The first outer section rescues its exception.  Following code in the **section** is not reached.
-- The second outer section does not rescue its exception.  Following code in the **test** is not reached.
+- The first outer section rescues its exception.  Following code in the _section_ is not reached.
+- The second outer section does not rescue its exception.  Following code in the _test_ is not reached.
 
 ##  Test Log
 
@@ -54,8 +54,8 @@ Notes:
 ```xml
 <exceptions_test>
   <summary errors='2' failures='1' verdicts='2'/>
-  <test_method name='exceptions_test' timestamp='2017-09-23-Sat-16.28.18.964'>
-    <section duration_seconds='0.003' name='With ExampleRestClient'>
+  <test_method name='exceptions_test' timestamp='2017-09-23-Sat-16.39.10.091'>
+    <section duration_seconds='0.000' name='With ExampleRestClient'>
       <section name='Section rescues exception'>
         <uncaught_exception>
           <verdict_id>Section rescues exception</verdict_id>

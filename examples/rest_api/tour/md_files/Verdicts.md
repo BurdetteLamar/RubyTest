@@ -69,7 +69,7 @@ Notes:
 ```xml
 <verdicts_test>
   <summary errors='0' failures='2' verdicts='5'/>
-  <test_method duration_seconds='0.005' name='verdicts_test' timestamp='2017-09-23-Sat-16.28.15.942'>
+  <test_method duration_seconds='0.016' name='verdicts_test' timestamp='2017-09-23-Sat-16.39.07.050'>
     <section name='With ExampleRestClient'>
       <section name='These verdicts should pass'>
         <section name='An assertion verdict that should pass'>

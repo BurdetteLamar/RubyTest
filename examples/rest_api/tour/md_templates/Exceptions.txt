@@ -10,8 +10,8 @@ This page introduces the handling of unexpected exceptions.
 
 Notes:
 
-- The first outer section rescues its exception.  Following code in the *section* is not reached.
-- The second outer section does not rescue its exception.  Following code in the *test* is not reached.
+- The first outer section rescues its exception.  Following code in the _section_ is not reached.
+- The second outer section does not rescue its exception.  Following code in the _test_ is not reached.
 
 ##  Test Log
 

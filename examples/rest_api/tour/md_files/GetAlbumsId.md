@@ -3,7 +3,7 @@
 
 # GetAlbumsId
 
-This page shows how to test endpoint GET albums/**id**.
+This page shows how to test endpoint GET albums/_id_.
 
 ## Test Source Code
 
@@ -50,11 +50,11 @@ Notes:
 ```xml
 <get_albums_id_test>
   <summary errors='0' failures='0' verdicts='4'/>
-  <test_method name='get_albums_id_test' timestamp='2017-09-23-Sat-16.28.22.520'>
-    <section duration_seconds='1.983' name='With ExampleRestClient'>
+  <test_method name='get_albums_id_test' timestamp='2017-09-23-Sat-16.39.13.666'>
+    <section duration_seconds='1.642' name='With ExampleRestClient'>
       <section name='Test endpoint GET albums/id'>
         <section name='Fetch an album to GET'>
-          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-23-Sat-16.28.22.523' url='https://jsonplaceholder.typicode.com/albums'>
+          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-23-Sat-16.39.13.666' url='https://jsonplaceholder.typicode.com/albums'>
             <parameters/>
           </section>
           <section name='Album fetched'>
@@ -64,8 +64,8 @@ Notes:
           </section>
         </section>
         <section name='GET the album'>
-          <section name='GET album' timestamp='2017-09-23-Sat-16.28.24.191'>
-            <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-23-Sat-16.28.24.191' url='https://jsonplaceholder.typicode.com/albums/1'>
+          <section name='GET album' timestamp='2017-09-23-Sat-16.39.15.183'>
+            <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-23-Sat-16.39.15.183' url='https://jsonplaceholder.typicode.com/albums/1'>
               <parameters/>
             </section>
             <section name='Evaluation'>

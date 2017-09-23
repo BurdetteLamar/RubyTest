@@ -56,17 +56,17 @@ Notes:
 ```xml
 <sections_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='3.003' name='sections_test' timestamp='2017-09-23-Sat-16.28.11.907'>
+  <test_method duration_seconds='3.028' name='sections_test' timestamp='2017-09-23-Sat-16.39.03.024'>
     <section name='With ExampleRestClient'>
       <section name='First outer section'>
         <section name='First inner section'/>
         <section name='Second inner section'/>
       </section>
       <section name='Second outer section'/>
-      <section name='Section with timestamp' timestamp='2017-09-23-Sat-16.28.11.909'/>
-      <section duration_seconds='1.000' name='Section with timestamp'/>
-      <section duration_seconds='1.000' name='Section with timestamp and duration' timestamp='2017-09-23-Sat-16.28.12.910'/>
-      <section duration_seconds='1.000' name='Order does not matter' timestamp='2017-09-23-Sat-16.28.13.910'/>
+      <section name='Section with timestamp' timestamp='2017-09-23-Sat-16.39.03.024'/>
+      <section duration_seconds='1.010' name='Section with timestamp'/>
+      <section duration_seconds='1.009' name='Section with timestamp and duration' timestamp='2017-09-23-Sat-16.39.04.034'/>
+      <section duration_seconds='1.009' name='Order does not matter' timestamp='2017-09-23-Sat-16.39.05.043'/>
     </section>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
