@@ -2,6 +2,8 @@
 
 # ExceptionTest
 
+This page introduces the handling of unexpected exceptions.
+
 ## Test Source Code
 
 [file_source](../tests/exception_test.rb)

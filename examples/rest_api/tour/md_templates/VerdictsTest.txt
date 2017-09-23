@@ -4,6 +4,8 @@
 
 ## Test Source Code
 
+This page introduces verdicts.
+
 [file_source](../tests/verdicts_test.rb)
 
 Notes:

@@ -2,6 +2,8 @@
 
 # NothingTest
 
+This page introduces the test class, along with the REST API client and the test log.
+
 ## Test Source Code
 
 [file_source](../tests/nothing_test.rb)

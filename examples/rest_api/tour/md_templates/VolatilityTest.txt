@@ -2,6 +2,8 @@
 
 # VolatilityTest
 
+This page introduces verdict volatility.
+
 ## Test Source Code
 
 [file_source](../tests/volatility_test.rb)

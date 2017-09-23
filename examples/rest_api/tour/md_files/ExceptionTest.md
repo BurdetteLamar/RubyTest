@@ -2,6 +2,8 @@
 
 # ExceptionTest
 
+This page introduces the handling of unexpected exceptions.
+
 ## Test Source Code
 
 <code>exception_test.rb</code>
@@ -32,8 +34,8 @@ Notes:
 ```xml
 <exception_test>
   <summary errors='1' failures='1' verdicts='1'/>
-  <test_method name='exception_test' timestamp='2017-09-23-Sat-12.18.19.023'>
-    <section duration_seconds='0.000' name='With ExampleRestClient'>
+  <test_method name='exception_test' timestamp='2017-09-23-Sat-12.29.36.280'>
+    <section duration_seconds='0.002' name='With ExampleRestClient'>
       <section name='Raise unexpected exception'>
         <uncaught_exception>
           <verdict_id>With ExampleRestClient</verdict_id>

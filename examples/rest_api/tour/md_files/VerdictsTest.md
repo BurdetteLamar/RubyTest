@@ -4,6 +4,8 @@
 
 ## Test Source Code
 
+This page introduces verdicts.
+
 <code>verdicts_test.rb</code>
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
@@ -49,7 +51,7 @@ Notes:
 ```xml
 <verdicts_test>
   <summary errors='0' failures='1' verdicts='3'/>
-  <test_method duration_seconds='0.000' name='verdicts_test' timestamp='2017-09-23-Sat-12.18.15.989'>
+  <test_method duration_seconds='0.003' name='verdicts_test' timestamp='2017-09-23-Sat-12.29.33.218'>
     <section name='With ExampleRestClient'>
       <section name='A verdict that should pass'>
         <verdict id='different' message='The client and log are not equal' method='verdict_assert?' outcome='passed' volatile='false'>

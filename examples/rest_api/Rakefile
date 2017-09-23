@@ -17,7 +17,6 @@ task :tour do
     )
   end
   rakefile_dir_path = File.dirname(__FILE__)
-  p rakefile_dir_path
   tour_dir_path = File.join(
       rakefile_dir_path,
       'tour',

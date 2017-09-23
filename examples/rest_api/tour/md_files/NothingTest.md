@@ -2,6 +2,8 @@
 
 # NothingTest
 
+This page introduces the test class, along with the REST API client and the test log.
+
 ## Test Source Code
 
 <code>nothing_test.rb</code>
@@ -35,7 +37,7 @@ Notes:
 ```xml
 <nothing_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='nothing_test' timestamp='2017-09-23-Sat-12.18.14.999'>
+  <test_method duration_seconds='0.000' name='nothing_test' timestamp='2017-09-23-Sat-12.29.32.183'>
     <section name='With ExampleRestClient'/>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
