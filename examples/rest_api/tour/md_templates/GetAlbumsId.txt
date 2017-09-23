@@ -2,7 +2,7 @@
 
 # GetAlbumsId
 
-This page shows how to test endpoint GET albums/**id**.
+This page shows how to test endpoint GET albums/*id*.
 
 ## Test Source Code
 

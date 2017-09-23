@@ -3,7 +3,7 @@
 
 ## Test Source Code
 
-This page shows how to test endpoint DELETE albums/**id**.
+This page shows how to test endpoint DELETE albums/*id*.
 
 [file_source](../tests/delete_albums_id_test.rb)
 
