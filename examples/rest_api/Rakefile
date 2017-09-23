@@ -53,6 +53,9 @@ task :tour do
       verdicts
       volatility
       exceptions
+      get_albums
+      get_albums_id
+      delete_albums_id
   /
   names.each_with_index do |name, i|
     # Run the test.
