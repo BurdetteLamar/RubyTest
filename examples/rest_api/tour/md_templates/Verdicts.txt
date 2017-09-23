@@ -6,6 +6,10 @@
 
 This page introduces verdicts.
 
+Each verdict method returns a boolean value, and therefore follows the ruby convention of ending the method name with *?*.
+
+There are many verdict methods.  See [Log](../../../../lib/log/Log.md).
+
 [file_source](../tests/verdicts_test.rb)
 
 Notes:

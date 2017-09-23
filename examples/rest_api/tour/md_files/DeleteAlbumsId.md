@@ -38,7 +38,7 @@ end
 Notes:
 
 - Method <code>DeleteAlbumsId.verdict_call_and_verify_success</code>:
-  1.  Does <code>DELETE albums/,id</code><i>id</i>, using field <code>:id</code> from the given album <code>album_to_delete</code>.
+  1.  Accesses endpoint DELETE albums/_id_, using field <code>:id</code> from the given album <code>album_to_delete</code>.
   2.  Verifies that the return had no payload.
   3.  Verifies that the album no longer exists.
 
@@ -48,11 +48,11 @@ Notes:
 ```xml
 <delete_albums_id_test>
   <summary errors='0' failures='1' verdicts='3'/>
-  <test_method name='delete_albums_id_test' timestamp='2017-09-23-Sat-16.39.16.349'>
-    <section duration_seconds='2.060' name='With ExampleRestClient'>
+  <test_method name='delete_albums_id_test' timestamp='2017-09-23-Sat-16.58.02.433'>
+    <section duration_seconds='2.046' name='With ExampleRestClient'>
       <section name='Test endpoint DELETE albums/id'>
         <section name='Fetch an album to DELETE'>
-          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-23-Sat-16.39.16.353' url='https://jsonplaceholder.typicode.com/albums'>
+          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-23-Sat-16.58.02.433' url='https://jsonplaceholder.typicode.com/albums'>
             <parameters/>
           </section>
           <section name='Album fetched'>
@@ -62,15 +62,15 @@ Notes:
           </section>
         </section>
         <section name='DELETE the album'>
-          <section name='DELETE album' timestamp='2017-09-23-Sat-16.39.17.862'>
-            <section duration_seconds='0.000' method='DELETE' name='Rest client' timestamp='2017-09-23-Sat-16.39.17.863' url='https://jsonplaceholder.typicode.com/albums/1'>
+          <section name='DELETE album' timestamp='2017-09-23-Sat-16.58.03.955'>
+            <section duration_seconds='0.000' method='DELETE' name='Rest client' timestamp='2017-09-23-Sat-16.58.03.955' url='https://jsonplaceholder.typicode.com/albums/1'>
               <parameters/>
             </section>
             <section name='Evaluation'>
               <verdict id='payload nil' message='Payload nil' method='verdict_assert_nil?' outcome='passed' volatile='false'>
                 <act_value>nil</act_value>
               </verdict>
-              <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-23-Sat-16.39.18.313' url='https://jsonplaceholder.typicode.com/albums/1'>
+              <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-23-Sat-16.58.04.355' url='https://jsonplaceholder.typicode.com/albums/1'>
                 <parameters/>
               </section>
               <verdict id='DELETE album' message='Album not exist' method='verdict_refute?' outcome='failed' volatile='false'>
@@ -116,6 +116,6 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tour/tests/delete_
 
 Notes:
 
-- The verdict that confirms the deletion fails, because the JSONPlaceholder REST API does not really delete the album.  That is intentional, and documented at the website.
+- The verdict that confirms the deletion fails, because the JSONPlaceholder REST API does not really delete the album.  That is intentional, and is documented at the website.
 
 [Prev](./GetAlbumsId.md) 

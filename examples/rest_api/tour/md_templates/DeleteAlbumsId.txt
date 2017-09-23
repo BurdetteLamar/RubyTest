@@ -10,7 +10,7 @@ This page shows how to test endpoint DELETE albums/_id_.
 Notes:
 
 - Method <code>DeleteAlbumsId.verdict_call_and_verify_success</code>:
-  1.  Does <code>DELETE albums/,id</code><i>id</i>, using field <code>:id</code> from the given album <code>album_to_delete</code>.
+  1.  Accesses endpoint DELETE albums/_id_, using field <code>:id</code> from the given album <code>album_to_delete</code>.
   2.  Verifies that the return had no payload.
   3.  Verifies that the album no longer exists.
 
@@ -20,6 +20,6 @@ Notes:
 
 Notes:
 
-- The verdict that confirms the deletion fails, because the JSONPlaceholder REST API does not really delete the album.  That is intentional, and documented at the website.
+- The verdict that confirms the deletion fails, because the JSONPlaceholder REST API does not really delete the album.  That is intentional, and is documented at the website.
 
 [navigation_links]

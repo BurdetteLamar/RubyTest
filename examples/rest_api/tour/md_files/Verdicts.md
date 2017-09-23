@@ -7,6 +7,10 @@
 
 This page introduces verdicts.
 
+Each verdict method returns a boolean value, and therefore follows the ruby convention of ending the method name with *?*.
+
+There are many verdict methods.  See [Log](../../../../lib/log/Log.md).
+
 <code>verdicts_test.rb</code>
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
@@ -69,7 +73,7 @@ Notes:
 ```xml
 <verdicts_test>
   <summary errors='0' failures='2' verdicts='5'/>
-  <test_method duration_seconds='0.016' name='verdicts_test' timestamp='2017-09-23-Sat-16.39.07.050'>
+  <test_method duration_seconds='0.005' name='verdicts_test' timestamp='2017-09-23-Sat-16.57.52.831'>
     <section name='With ExampleRestClient'>
       <section name='These verdicts should pass'>
         <section name='An assertion verdict that should pass'>

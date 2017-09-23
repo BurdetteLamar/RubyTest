@@ -32,7 +32,7 @@ end
 Notes:
 
 - Method <code>GetAlbums.verdict_call_and_verify_success</code>:
-  1.  Does <code>GET albums</code>.
+  1.  Accesses endpoint GET albums.
   2.  Forms the response payload into new <code>Album</code> objects.
   3.  Logs the count of returned albums.
   4.  Logs the content of the first album.
@@ -44,12 +44,12 @@ Notes:
 ```xml
 <get_albums_test>
   <summary errors='0' failures='0' verdicts='8'/>
-  <test_method name='get_albums_test' timestamp='2017-09-23-Sat-16.39.11.087'>
-    <section duration_seconds='1.561' name='With ExampleRestClient'>
+  <test_method name='get_albums_test' timestamp='2017-09-23-Sat-16.57.57.007'>
+    <section duration_seconds='1.478' name='With ExampleRestClient'>
       <section name='Test endpoint GET albums'>
         <section name='GET albums'>
-          <section name='GET albums' timestamp='2017-09-23-Sat-16.39.11.087'>
-            <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-23-Sat-16.39.11.087' url='https://jsonplaceholder.typicode.com/albums'>
+          <section name='GET albums' timestamp='2017-09-23-Sat-16.57.57.008'>
+            <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-23-Sat-16.57.57.008' url='https://jsonplaceholder.typicode.com/albums'>
               <parameters/>
             </section>
             <section name='Evaluation'>
@@ -62,7 +62,7 @@ Notes:
               <verdict id='GET albums - class' message='First object is of class Album' method='verdict_assert_instance_of?' outcome='passed' volatile='false'>
                 <exp_value>Album</exp_value>
                 <act_value>
-                  #&lt;Album:0x3f18048 @fields=#&lt;Set: {:id, :userId,
+                  #&lt;Album:0x2c535c0 @fields=#&lt;Set: {:id, :userId,
                   :title}&gt;, @userId=1, @id=1, @title=&quot;quidem molestiae
                   enim&quot;&gt;
                 </act_value>

@@ -11,7 +11,7 @@ This page shows how to test endpoint GET albums.
 Notes:
 
 - Method <code>GetAlbums.verdict_call_and_verify_success</code>:
-  1.  Does <code>GET albums</code>.
+  1.  Accesses endpoint GET albums.
   2.  Forms the response payload into new <code>Album</code> objects.
   3.  Logs the count of returned albums.
   4.  Logs the content of the first album.
