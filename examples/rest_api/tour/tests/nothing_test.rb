@@ -4,7 +4,7 @@ class NothingTest < BaseClassForTest
 
   def test_nothing
     prelude do |client, log|
-      # Citation of client and log keeps RubyMine inspection from complaining.
+      # Citing client and log keeps RubyMine code inspection from complaining.
       client.class
       log.class
     end

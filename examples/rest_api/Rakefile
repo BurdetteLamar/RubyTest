@@ -49,6 +49,7 @@ task :tour do
 =end
   names = %w/
       nothing
+      sections
       verdicts
       volatility
       exception

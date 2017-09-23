@@ -45,8 +45,8 @@ end
 
 Notes:
 
-- The first outer section rescues its exception.  Remaining code in the section is not reached.
-- The second outer section does not rescue its exception.  Remaining code in the test is not reached.
+- The first outer section rescues its exception.  Following code in the **section** is not reached.
+- The second outer section does not rescue its exception.  Following code in the **test** is not reached.
 
 ##  Test Log
 
@@ -54,7 +54,7 @@ Notes:
 ```xml
 <exception_test>
   <summary errors='2' failures='1' verdicts='2'/>
-  <test_method name='exception_test' timestamp='2017-09-23-Sat-14.06.46.666'>
+  <test_method name='exception_test' timestamp='2017-09-23-Sat-14.34.56.063'>
     <section duration_seconds='0.004' name='With ExampleRestClient'>
       <section name='Section rescues exception'>
         <uncaught_exception>
@@ -125,6 +125,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tour/tests/excepti
 
 Notes:
 
-- Each exception is logged, including its message and backtrace.
+- Each logged exception includes its message and backtrace.
+- The second exception, the one the test didn't rescue, is actually rescued by the log itself, and of course logged.
 
 [Prev](./VolatilityTest.md) 

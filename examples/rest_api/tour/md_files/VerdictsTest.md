@@ -1,5 +1,5 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-[Prev](./NothingTest.md) [Next](./VolatilityTest.md)
+[Prev](./SectionsTest.md) [Next](./VolatilityTest.md)
 
 # VerdictsTest
 
@@ -52,7 +52,7 @@ Notes:
 ```xml
 <verdicts_test>
   <summary errors='0' failures='1' verdicts='3'/>
-  <test_method duration_seconds='0.003' name='verdicts_test' timestamp='2017-09-23-Sat-14.06.43.646'>
+  <test_method duration_seconds='0.003' name='verdicts_test' timestamp='2017-09-23-Sat-14.34.52.965'>
     <section name='With ExampleRestClient'>
       <section name='A verdict that should pass'>
         <verdict id='different' message='The client and log are not equal' method='verdict_assert?' outcome='passed' volatile='false'>
@@ -96,4 +96,4 @@ Notes:
 
 - The failed verdict logs an exception, including the message and backtrace.
 
-[Prev](./NothingTest.md) [Next](./VolatilityTest.md)
+[Prev](./SectionsTest.md) [Next](./VolatilityTest.md)

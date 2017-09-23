@@ -1,0 +1,23 @@
+[navigation_links]
+
+# SectionsTest
+
+This page introduces sections, including nesting, timestamps, and durations.
+
+## Test Source Code
+
+[file_source](../tests/sections_test.rb)
+
+Notes:
+
+- Use nested sections to structure test steps.
+
+##  Test Log
+
+[file_source](../logs/test_sections.xml)
+
+[navigation_links]
+
+Notes:
+
+- The sections in the test are propagated to the log, giving it the same structure.
