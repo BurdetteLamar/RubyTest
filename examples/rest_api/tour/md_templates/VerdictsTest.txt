@@ -10,7 +10,6 @@ This page introduces verdicts.
 
 Notes:
 
-- Use sections to organize the test steps;  sections can nest.
 - Each verdict has:
   - A verdict identifier, which must be unique within the test.
   - A message string.
@@ -24,6 +23,6 @@ Notes:
 
 Notes:
 
-- The failed verdict logs an exception, including the message and backtrace.
+- A failed verdict logs an exception, including the message and backtrace.
 
 [navigation_links]
