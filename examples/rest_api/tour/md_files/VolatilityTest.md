@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-[Prev](./VerdictsTest.md) [Next](./ExceptionTest.md)
+[Prev](./VerdictsTest.md) [Next](./ExceptionsTest.md)
 
-# VolatilityTest
+# Volatility
 
 This page introduces verdict volatility.
 
@@ -51,7 +51,7 @@ Notes:
 ```xml
 <volatility_test>
   <summary errors='0' failures='0' verdicts='3'/>
-  <test_method duration_seconds='1.023' name='volatility_test' timestamp='2017-09-23-Sat-15.09.34.315'>
+  <test_method duration_seconds='1.005' name='volatility_test' timestamp='2017-09-23-Sat-15.38.34.925'>
     <section name='With ExampleRestClient'>
       <section name='Non-volatile value'>
         <verdict id='positive' message='Cos(0) positive' method='verdict_assert?' outcome='passed' volatile='false'>
@@ -74,4 +74,4 @@ Notes:
 </volatility_test>
 ```
 
-[Prev](./VerdictsTest.md) [Next](./ExceptionTest.md)
+[Prev](./VerdictsTest.md) [Next](./ExceptionsTest.md)

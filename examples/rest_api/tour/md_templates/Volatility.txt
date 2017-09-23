@@ -1,6 +1,6 @@
 [navigation_links]
 
-# VolatilityTest
+# Volatility
 
 This page introduces verdict volatility.
 

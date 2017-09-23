@@ -1,8 +1,8 @@
 require_relative '../../base_classes/base_class_for_test'
 
-class ExceptionTest < BaseClassForTest
+class ExceptionsTest < BaseClassForTest
 
-  def test_exception
+  def test_exceptions
     prelude do |client, log|
       log.section('Section rescues exception', :rescue) do
         numerator = 1

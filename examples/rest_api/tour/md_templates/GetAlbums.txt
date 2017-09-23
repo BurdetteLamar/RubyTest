@@ -1,6 +1,6 @@
 [navigation_links]
 
-# GetAlbumsTest
+# GetAlbums
 
 ## Test Source Code
 

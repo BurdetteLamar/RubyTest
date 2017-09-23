@@ -1,4 +1,5 @@
-# DeleteAlbumsIdTest
+[navigation_links]
+# DeleteAlbumsId
 
 ## Test Source Code
 
@@ -26,3 +27,5 @@ Notes:
 - The <code>section</code> whose <code>name</code> is <code>Evaluation</code> contains verdicts about the returned data.
 - The verdict that confirms the deletion fails, because the JSONPlaceholder REST API does not really delete the album.  That is intentional, and documented at the website.
 - For the failed verdict, the log reports the exception, including the message and backtrace.
+
+[navigation_links]

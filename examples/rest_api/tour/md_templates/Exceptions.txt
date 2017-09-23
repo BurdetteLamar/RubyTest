@@ -1,12 +1,12 @@
 [navigation_links]
 
-# ExceptionTest
+# Exception
 
 This page introduces the handling of unexpected exceptions.
 
 ## Test Source Code
 
-[file_source](../tests/exception_test.rb)
+[file_source](../tests/exceptions_test.rb)
 
 Notes:
 
@@ -15,7 +15,7 @@ Notes:
 
 ##  Test Log
 
-[file_source](../logs/test_exception.xml)
+[file_source](../logs/test_exceptions.xml)
 
 Notes:
 

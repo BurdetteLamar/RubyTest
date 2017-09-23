@@ -48,11 +48,11 @@ task :tour do
       put_albums_id
 =end
   names = %w/
-      nothing
+      test
       sections
       verdicts
       volatility
-      exception
+      exceptions
   /
   names.each_with_index do |name, i|
     # Run the test.
@@ -86,7 +86,7 @@ task :tour do
     prev_name = i == 0 ? nil : names[i - 1]
     prev_md_file_path = md_file_path_for_name('.', prev_name)
     next_md_file_path = md_file_path_for_name('.', names[i + 1])
-    file_basename = format('%sTest', StringHelper.to_upper_camel_case(name))
+    file_basename = format('%s', StringHelper.to_upper_camel_case(name))
     template_file_name = format('%s.txt', file_basename)
     template_file_path = File.join(
         template_dir_path,

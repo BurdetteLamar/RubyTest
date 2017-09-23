@@ -1,6 +1,6 @@
 [navigation_links]
 
-# SectionsTest
+# Sections
 
 This page introduces sections, including nesting, timestamps, and durations.
 
@@ -16,8 +16,8 @@ Notes:
 
 [file_source](../logs/test_sections.xml)
 
-[navigation_links]
-
 Notes:
 
 - The sections in the test are propagated to the log, giving it the same structure.
+
+[navigation_links]
