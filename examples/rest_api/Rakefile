@@ -7,6 +7,15 @@ require_relative '../../lib/helpers/test_helper'
 
 desc 'Build tour'
 task :tour do
+  def md_file_path_for_name(md_dir_path, name)
+    return nil if name.nil?
+    file_basename = format('%s', StringHelper.to_upper_camel_case(name))
+    md_file_name = format('%s.md', file_basename)
+    md_file_path = File.join(
+        md_dir_path,
+        md_file_name,
+    )
+  end
   rakefile_dir_path = File.dirname(__FILE__)
   tour_dir_path = File.join(
       rakefile_dir_path,
@@ -26,22 +35,35 @@ task :tour do
       'logs',
   )
   FileUtils.mkdir_p(conditioned_log_dir_path)
-  md_file_dir_path = File.join(
+  md_dir_path = File.join(
       tour_dir_path,
       'md_files',
   )
-  FileUtils.mkdir_p(md_file_dir_path)
-  %w/
-          nothing
-          delete_albums_id
-          get_albums_id
-  /.each do |name|
+  FileUtils.mkdir_p(md_dir_path)
+=begin
+      get_albums
+      get_albums_id
+      delete_albums_id
+      post_albums
+      put_albums_id
+=end
+  names = %w/
+      test
+      sections
+      verdicts
+      volatility
+      exceptions
+      get_albums
+      get_albums_id
+      delete_albums_id
+  /
+  names.each_with_index do |name, i|
     # Run the test.
     test_file_name = format('%s_test.rb', name)
-    test_file_path = File.absolute_path(File.join(
+    test_file_path = File.join(
          test_dir_path,
          test_file_name,
-    ))
+    )
     command = format('ruby %s', test_file_path)
     system(command)
     # Process the log.
@@ -63,18 +85,22 @@ task :tour do
     File.open(conditioned_file_path, 'w') do |file|
       file.puts(formatter.write(doc.root, ''))
     end
-    file_basename = format('%sTest', StringHelper.to_upper_camel_case(name))
-    md_file_name = format('%s.md', file_basename)
+    md_file_path = md_file_path_for_name(md_dir_path, name)
+    prev_name = i == 0 ? nil : names[i - 1]
+    prev_md_file_path = md_file_path_for_name('.', prev_name)
+    next_md_file_path = md_file_path_for_name('.', names[i + 1])
+    file_basename = format('%s', StringHelper.to_upper_camel_case(name))
     template_file_name = format('%s.txt', file_basename)
     template_file_path = File.join(
         template_dir_path,
         template_file_name,
     )
-    md_file_path = File.join(
-        md_file_dir_path,
-        md_file_name,
-    )
-    MarkdownHelper.build_file(template_file_path, md_file_path)
+    options = {
+        :highlight => true,
+        :prev_file_path => prev_md_file_path,
+        :next_file_path => next_md_file_path,
+    }
+    MarkdownHelper.build_file(template_file_path, md_file_path, options)
   end
   FileUtils.rm_rf(conditioned_log_dir_path)
 
@@ -97,10 +123,10 @@ task :examples do
         users
     /.each do |name|
     test_file_name = format('%s_test.rb', name)
-    test_file_path = File.absolute_path(File.join(
+    test_file_path = File.join(
         test_dir_path,
         test_file_name,
-    ))
+    )
     command = format('ruby %s', test_file_path)
     system(command)
   end

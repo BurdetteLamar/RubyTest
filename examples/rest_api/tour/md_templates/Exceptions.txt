@@ -1,0 +1,25 @@
+[navigation_links]
+
+# Exceptions
+
+This page introduces the handling of unexpected exceptions.
+
+## Test Source Code
+
+[file_source](../tests/exceptions_test.rb)
+
+Notes:
+
+- The first outer section rescues its exception.  Following code in the _section_ is not reached.
+- The second outer section does not rescue its exception.  Following code in the _test_ is not reached.
+
+##  Test Log
+
+[file_source](../logs/test_exceptions.xml)
+
+Notes:
+
+- Each logged exception includes its message and backtrace.
+- The second exception, the one the test didn't rescue, is actually rescued by the log itself, and of course logged.
+
+[navigation_links]

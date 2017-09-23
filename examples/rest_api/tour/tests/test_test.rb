@@ -2,10 +2,9 @@ require_relative '../../base_classes/base_class_for_test'
 
 class NothingTest < BaseClassForTest
 
-  def test_nothing
+  def test_test
     prelude do |client, log|
-      # Test code goes here.
-      # Citation of each keeps RubyMine inspection from complaining.
+      # Citing client and log keeps RubyMine code inspection from complaining.
       client.class
       log.class
     end

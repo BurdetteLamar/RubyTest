@@ -1,0 +1,23 @@
+[navigation_links]
+
+# GetAlbumsId
+
+This page shows how to test endpoint GET albums/_id_.
+
+## Test Source Code
+
+[file_source](../tests/get_albums_id_test.rb)
+
+Notes:
+
+- Method <code>Album.get_first</code> is a convenience method that fetches the first album as an <code>Album</object>.
+- Method <code>GetAlbumsId.verdict_call_and_verify_success</code>:
+  1.  Accesses endpoint GET albums/_id_, using field <code>:id</code> from the given album <code>album_to_get</code>.
+  2.  Forms the response payload into a new <code>Album</code> object, <code>album_fetched</code>.
+  3.  Verifies that the values in <code>album_to_get</code> are equal to those in <code>album_fetched</code>.
+
+##  Test Log
+
+[file_source](../logs/test_get_albums_id.xml)
+
+[navigation_links]

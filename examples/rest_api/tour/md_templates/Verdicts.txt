@@ -1,0 +1,32 @@
+[navigation_links]
+
+# Verdicts
+
+## Test Source Code
+
+This page introduces verdicts.
+
+Each verdict method returns a boolean value, and therefore follows the ruby convention of ending the method name with *?*.
+
+There are many verdict methods.  See [Log](../../../../lib/log/Log.md).
+
+[file_source](../tests/verdicts_test.rb)
+
+Notes:
+
+- Each verdict has:
+  - A verdict identifier, which must be unique within the test.
+  - A message string.
+- Use an assert verdict to express a positive expectation.
+- Use a refute verdict to express a negative expectation.
+
+
+##  Test Log
+
+[file_source](../logs/test_verdicts.xml)
+
+Notes:
+
+- A failed verdict logs an exception, including the message and backtrace.
+
+[navigation_links]
