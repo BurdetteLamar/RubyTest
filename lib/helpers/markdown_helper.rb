@@ -76,6 +76,7 @@ class MarkdownHelper < BaseClass
     file_paths = []
     Find.find('.') do |path|
       next unless path.end_with?('.md')
+      next if path.match(%r:/tour/:)
       file_paths.push(path)
     end
 
