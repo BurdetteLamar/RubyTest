@@ -24,17 +24,19 @@ class MarkdownHelper < BaseClass
             when line.start_with?(NAVIGATION_LINKS_TAG)
               prev_link = prev_file_path ? format('[Prev](%s)', prev_file_path): ''
               next_link = next_file_path ? format('[Next](%s)', next_file_path): ''
+              p prev_link
+              p next_link
               md_file.puts(format('%s %s', prev_link, next_link))
             when line.start_with?(FILE_SOURCE_TAG)
               relative_path = line.sub(FILE_SOURCE_TAG, '').gsub(/[()]/, '').strip
-              absolute_path = File.absolute_path(File.join(
+              include_file_path = File.join(
                   File.dirname(template_file_path),
                   relative_path,
-              ))
-              label_line = format('<code>%s</code>', File.basename(absolute_path))
+              )
+              label_line = format('<code>%s</code>', File.basename(include_file_path))
               md_file.puts(label_line)
               if highlight
-                extname = File.extname(absolute_path)
+                extname = File.extname(include_file_path)
                 case extname
                   when '.xml'
                     md_file.puts('```xml')
@@ -44,7 +46,7 @@ class MarkdownHelper < BaseClass
                     raise NotImplementedError.new(extname)
                 end
               end
-              file_source = File.read(absolute_path)
+              file_source = File.read(include_file_path)
               md_file.puts(file_source)
               md_file.puts('```') if highlight
             else

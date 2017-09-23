@@ -17,6 +17,7 @@ task :tour do
     )
   end
   rakefile_dir_path = File.dirname(__FILE__)
+  p rakefile_dir_path
   tour_dir_path = File.join(
       rakefile_dir_path,
       'tour',
@@ -56,10 +57,10 @@ task :tour do
   names.each_with_index do |name, i|
     # Run the test.
     test_file_name = format('%s_test.rb', name)
-    test_file_path = File.absolute_path(File.join(
+    test_file_path = File.join(
          test_dir_path,
          test_file_name,
-    ))
+    )
     command = format('ruby %s', test_file_path)
     system(command)
     # Process the log.
@@ -83,8 +84,8 @@ task :tour do
     end
     md_file_path = md_file_path_for_name(md_dir_path, name)
     prev_name = i == 0 ? nil : names[i - 1]
-    prev_md_file_path = md_file_path_for_name(md_dir_path, prev_name)
-    next_md_file_path = md_file_path_for_name(md_dir_path, names[i + 1])
+    prev_md_file_path = md_file_path_for_name('.', prev_name)
+    next_md_file_path = md_file_path_for_name('.', names[i + 1])
     file_basename = format('%sTest', StringHelper.to_upper_camel_case(name))
     template_file_name = format('%s.txt', file_basename)
     template_file_path = File.join(
@@ -119,10 +120,10 @@ task :examples do
         users
     /.each do |name|
     test_file_name = format('%s_test.rb', name)
-    test_file_path = File.absolute_path(File.join(
+    test_file_path = File.join(
         test_dir_path,
         test_file_name,
-    ))
+    )
     command = format('ruby %s', test_file_path)
     system(command)
   end

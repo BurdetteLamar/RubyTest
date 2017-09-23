@@ -1,4 +1,4 @@
-[Prev](c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tour/md_files/NothingTest.md) [Next](c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tour/md_files/VolatilityTest.md)
+[Prev](./NothingTest.md) [Next](./VolatilityTest.md)
 
 # VerdictsTest
 
@@ -49,7 +49,7 @@ Notes:
 ```xml
 <verdicts_test>
   <summary errors='0' failures='1' verdicts='3'/>
-  <test_method duration_seconds='0.000' name='verdicts_test' timestamp='2017-09-23-Sat-12.01.12.480'>
+  <test_method duration_seconds='0.000' name='verdicts_test' timestamp='2017-09-23-Sat-12.18.15.989'>
     <section name='With ExampleRestClient'>
       <section name='A verdict that should pass'>
         <verdict id='different' message='The client and log are not equal' method='verdict_assert?' outcome='passed' volatile='false'>
@@ -93,4 +93,4 @@ Notes:
 
 - The failed verdict logs an exception, including the message and backtrace.
 
-[Prev](c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tour/md_files/NothingTest.md) [Next](c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tour/md_files/VolatilityTest.md)
+[Prev](./NothingTest.md) [Next](./VolatilityTest.md)

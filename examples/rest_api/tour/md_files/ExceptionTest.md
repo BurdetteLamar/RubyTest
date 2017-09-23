@@ -1,4 +1,4 @@
-[Prev](c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tour/md_files/VolatilityTest.md) 
+[Prev](./VolatilityTest.md) 
 
 # ExceptionTest
 
@@ -32,7 +32,7 @@ Notes:
 ```xml
 <exception_test>
   <summary errors='1' failures='1' verdicts='1'/>
-  <test_method name='exception_test' timestamp='2017-09-23-Sat-12.01.15.516'>
+  <test_method name='exception_test' timestamp='2017-09-23-Sat-12.18.19.023'>
     <section duration_seconds='0.000' name='With ExampleRestClient'>
       <section name='Raise unexpected exception'>
         <uncaught_exception>
@@ -79,4 +79,4 @@ Notes:
 
 -
 
-[Prev](c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tour/md_files/VolatilityTest.md) 
+[Prev](./VolatilityTest.md) 

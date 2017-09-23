@@ -1,4 +1,4 @@
- [Next](c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tour/md_files/VerdictsTest.md)
+ [Next](./VerdictsTest.md)
 
 # NothingTest
 
@@ -35,7 +35,7 @@ Notes:
 ```xml
 <nothing_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='nothing_test' timestamp='2017-09-23-Sat-12.01.11.477'>
+  <test_method duration_seconds='0.000' name='nothing_test' timestamp='2017-09-23-Sat-12.18.14.999'>
     <section name='With ExampleRestClient'/>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
@@ -53,4 +53,4 @@ Notes:
 - Element <code>test_method</code>:  logging for test steps and verdicts.  (This test did nothing, so there's not much here.)
 - The last section gives the count of errors (unexpected exceptions).  Its verdict expects the count to be 0.
 
- [Next](c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tour/md_files/VerdictsTest.md)
+ [Next](./VerdictsTest.md)

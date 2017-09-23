@@ -1,4 +1,4 @@
-[Prev](c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tour/md_files/VerdictsTest.md) [Next](c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tour/md_files/ExceptionTest.md)
+[Prev](./VerdictsTest.md) [Next](./ExceptionTest.md)
 
 # VolatilityTest
 
@@ -40,7 +40,7 @@ Notes:
 ```xml
 <volatility_test>
   <summary errors='0' failures='0' verdicts='3'/>
-  <test_method duration_seconds='1.018' name='volatility_test' timestamp='2017-09-23-Sat-12.01.13.492'>
+  <test_method duration_seconds='1.004' name='volatility_test' timestamp='2017-09-23-Sat-12.18.16.986'>
     <section name='With ExampleRestClient'>
       <section name='Non-volatile value'>
         <verdict id='positive' message='Cos(0) positive' method='verdict_assert?' outcome='passed' volatile='false'>
@@ -63,4 +63,4 @@ Notes:
 </volatility_test>
 ```
 
-[Prev](c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tour/md_files/VerdictsTest.md) [Next](c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tour/md_files/ExceptionTest.md)
+[Prev](./VerdictsTest.md) [Next](./ExceptionTest.md)
