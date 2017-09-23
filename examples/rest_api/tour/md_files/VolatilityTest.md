@@ -5,7 +5,7 @@
 
 This page introduces verdict volatility.
 
-The Changes Report (elsewhere in this project) identifies changes seen in comparing the results of the current and previous test runs.
+The Changes Report (elsewhere in this project) identifies changes found by comparing the results of the current and previous test runs.
 
 If a verdict's actual value is different in the two runs, the change would be reported.
 
@@ -13,7 +13,7 @@ There are cases, though, when this would be inappropriate.
 
 Suppose a request creates an object (say, a new user) whose identifier is a new GUID.  Then the identifier will be different in every test run, and by default the Changes Report would include the change, even though the change is actually expected.
 
-Marking a verdict as <code>volatile</code> handles this case.  For a volatile verdict, the Changes Report will ignore the differing values.
+Marking a verdict as <code>volatile</code> handles this case.  For a volatile verdict, the Changes Report will ignore the differing values, which is what's wanted.
 
 ## Test Source Code
 
@@ -51,7 +51,7 @@ Notes:
 ```xml
 <volatility_test>
   <summary errors='0' failures='0' verdicts='3'/>
-  <test_method duration_seconds='1.024' name='volatility_test' timestamp='2017-09-23-Sat-12.49.01.352'>
+  <test_method duration_seconds='1.002' name='volatility_test' timestamp='2017-09-23-Sat-12.53.50.137'>
     <section name='With ExampleRestClient'>
       <section name='Non-volatile value'>
         <verdict id='positive' message='Cos(0) positive' method='verdict_assert?' outcome='passed' volatile='false'>

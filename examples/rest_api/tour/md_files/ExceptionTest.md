@@ -35,8 +35,8 @@ Notes:
 ```xml
 <exception_test>
   <summary errors='1' failures='1' verdicts='1'/>
-  <test_method name='exception_test' timestamp='2017-09-23-Sat-12.49.03.385'>
-    <section duration_seconds='0.000' name='With ExampleRestClient'>
+  <test_method name='exception_test' timestamp='2017-09-23-Sat-12.53.52.164'>
+    <section duration_seconds='0.002' name='With ExampleRestClient'>
       <section name='Raise unexpected exception'>
         <uncaught_exception>
           <verdict_id>With ExampleRestClient</verdict_id>
