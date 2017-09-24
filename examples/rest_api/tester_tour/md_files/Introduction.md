@@ -1,0 +1,14 @@
+<!--- GENERATED FILE, DO NOT EDIT --->
+ [Next](./Test.md)
+
+# Introduction
+
+This page begins the Tester Tour of the example REST API testing.
+
+The tour covers only topics of interest to a tester who wants to develop and/or run tests for a REST API.
+
+This tester is distinguished from an infrastructure developer, who would want to develop infrastructure that supports testing a REST API.
+
+Each following page assumes you've seen all its predecessors, and so there's little repetition.
+
+ [Next](./Test.md)
