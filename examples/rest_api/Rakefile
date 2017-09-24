@@ -13,7 +13,7 @@ task :tester_tour do
     return nil if name.nil?
     file_basename = format('%s', StringHelper.to_upper_camel_case(name))
     md_file_name = format('%s.md', file_basename)
-    md_file_path = File.join(
+    File.join(
         md_dir_path,
         md_file_name,
     )
@@ -41,7 +41,11 @@ The Tester Tour covers only topics of interest to a tester who wants to develop 
 
 This tester is distinguished from an infrastructure developer, who would want to develop infrastructure that supports testing a REST API.
 
-Each following page assumes you've seen all its predecessors, and so there's little repetition.
+The tour shows how to use the example infrastructure to test a REST API.  The target REST API may be seen at:
+
+- [JSONPlaceholder](https://jsonplaceholder.typicode.com)
+
+Each following page assumes you've seen all its predecessors, so repetition is minimal.
 
 EOT
   index_file << heading_text
@@ -67,10 +71,6 @@ EOT
   )
   FileUtils.mkdir_p(md_dir_path)
 
-=begin
-      post_albums
-      put_albums_id
-=end
   names = %w/
       test
       sections
@@ -80,6 +80,8 @@ EOT
       get_albums
       get_albums_id
       delete_albums_id
+      put_albums_id
+      post_albums
   /
   names.each_with_index do |name, i|
     test_file_name = format('%s_test.rb', name)

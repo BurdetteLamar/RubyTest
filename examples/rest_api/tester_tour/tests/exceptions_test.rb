@@ -4,6 +4,8 @@ class ExceptionsTest < BaseClassForTest
 
   def test_exceptions
     prelude do |client, log|
+      # Citing client keeps RubyMine code inspection from complaining.
+      client.class
       log.section('Section rescues exception', :rescue) do
         numerator = 1
         denominator = 0
