@@ -14,9 +14,9 @@ class MarkdownHelper < BaseClass
         :next_file_path => nil,
     }
     effective_options = default_options.merge(options)
-    highlight = options[:highlight]
-    prev_file_path = options[:prev_file_path]
-    next_file_path = options[:next_file_path]
+    highlight = effective_options[:highlight]
+    prev_file_path = effective_options[:prev_file_path]
+    next_file_path = effective_options[:next_file_path]
     File.open(template_file_path, 'r') do |template_file|
       File.open(markdown_file_path, 'w') do |md_file|
         md_file.puts('<!--- GENERATED FILE, DO NOT EDIT --->')
@@ -76,7 +76,7 @@ class MarkdownHelper < BaseClass
     file_paths = []
     Find.find('.') do |path|
       next unless path.end_with?('.md')
-      next if path.match(%r:/tour/:)
+      next if path.match(%r:/tester_tour/md_files/:)
       file_paths.push(path)
     end
 
@@ -91,7 +91,7 @@ class MarkdownHelper < BaseClass
         title_line = file.readline
         unless title_line.start_with?('# ')
           puts 'First line is not a title: ' + title_line
-          fail
+          fail path
         end
         title = title_line[2..-1].chomp
         titles_by_file_path.store(path, title)
