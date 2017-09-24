@@ -5,8 +5,8 @@ require_relative '../../lib/helpers/markdown_helper'
 require_relative '../../lib/helpers/string_helper'
 require_relative '../../lib/helpers/test_helper'
 
-desc 'Build tour'
-task :tour do
+desc 'Build Tester Tour'
+task :tester_tour do
   def md_file_path_for_name(md_dir_path, name)
     return nil if name.nil?
     file_basename = format('%s', StringHelper.to_upper_camel_case(name))
@@ -19,7 +19,7 @@ task :tour do
   rakefile_dir_path = File.dirname(__FILE__)
   tour_dir_path = File.join(
       rakefile_dir_path,
-      'tour',
+      'tester_tour',
   )
   test_dir_path = File.join(
       tour_dir_path,
