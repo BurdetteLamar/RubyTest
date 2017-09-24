@@ -1,5 +1,5 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
- [Next](./Sections.md)
+[Prev](./Introduction.md) [Next](./Sections.md)
 
 # Test
 
@@ -38,7 +38,7 @@ Notes:
 ```xml
 <test_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='test_test' timestamp='2017-09-23-Sat-16.57.47.692'>
+  <test_method duration_seconds='0.000' name='test_test' timestamp='2017-09-24-Sun-13.21.55.774'>
     <section name='With ExampleRestClient'/>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
@@ -56,4 +56,4 @@ Notes:
 - Element <code>test_method</code>:  logging for test steps and verdicts.  (This test did nothing, so there's not much here.)
 - The last section gives the count of errors (unexpected exceptions).  Its verdict expects the count to be 0.
 
- [Next](./Sections.md)
+[Prev](./Introduction.md) [Next](./Sections.md)
