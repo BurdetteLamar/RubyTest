@@ -7,8 +7,9 @@ require_relative '../../lib/helpers/test_helper'
 
 desc 'Build Tester Tour'
 task :tester_tour do
-  def md_file_path_for_name(md_dir_path, name)
 
+  # Make the markdown file path for the given name
+  def md_file_path_for_name(md_dir_path, name)
     return nil if name.nil?
     file_basename = format('%s', StringHelper.to_upper_camel_case(name))
     md_file_name = format('%s.md', file_basename)
@@ -19,10 +20,31 @@ task :tester_tour do
   end
 
   rakefile_dir_path = File.dirname(__FILE__)
+
   tour_dir_path = File.join(
       rakefile_dir_path,
       'tester_tour',
   )
+
+  # For the index
+  index_file_path = File.join(
+      rakefile_dir_path,
+      'TesterTour.md'
+  )
+  index_file = File.open(index_file_path, 'w')
+  heading_text = <<EOT
+# Tester Tour
+
+## Pages
+
+The Tester Tour covers only topics of interest to a tester who wants to develop and/or run tests for a REST API.
+
+This tester is distinguished from an infrastructure developer, who would want to develop infrastructure that supports testing a REST API.
+
+Each following page assumes you've seen all its predecessors, and so there's little repetition.
+
+EOT
+  index_file << heading_text
 
   test_dir_path = File.join(
       tour_dir_path,
@@ -50,7 +72,6 @@ task :tester_tour do
       put_albums_id
 =end
   names = %w/
-      introduction
       test
       sections
       verdicts
@@ -107,8 +128,11 @@ task :tester_tour do
         :next_file_path => next_md_file_path,
     }
     MarkdownHelper.build_file(template_file_path, md_file_path, options)
+    link_item = format('- [%s](%s)', file_basename, md_file_path)
+    index_file.puts(link_item)
 
   end
+  index_file.close
   FileUtils.rm_rf(conditioned_log_dir_path)
 
 end
