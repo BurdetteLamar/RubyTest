@@ -1,5 +1,5 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-[Prev](./GetAlbumsId.md) 
+[Prev](./GetAlbumsId.md) [Next](./PutAlbumsId.md)
 # DeleteAlbumsId
 
 ## Test Source Code
@@ -48,11 +48,11 @@ Notes:
 ```xml
 <delete_albums_id_test>
   <summary errors='0' failures='1' verdicts='3'/>
-  <test_method name='delete_albums_id_test' timestamp='2017-09-23-Sat-16.58.02.433'>
-    <section duration_seconds='2.046' name='With ExampleRestClient'>
+  <test_method name='delete_albums_id_test' timestamp='2017-09-25-Mon-08.37.14.961'>
+    <section duration_seconds='1.923' name='With ExampleRestClient'>
       <section name='Test endpoint DELETE albums/id'>
         <section name='Fetch an album to DELETE'>
-          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-23-Sat-16.58.02.433' url='https://jsonplaceholder.typicode.com/albums'>
+          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-25-Mon-08.37.14.965' url='https://jsonplaceholder.typicode.com/albums'>
             <parameters/>
           </section>
           <section name='Album fetched'>
@@ -62,15 +62,15 @@ Notes:
           </section>
         </section>
         <section name='DELETE the album'>
-          <section name='DELETE album' timestamp='2017-09-23-Sat-16.58.03.955'>
-            <section duration_seconds='0.000' method='DELETE' name='Rest client' timestamp='2017-09-23-Sat-16.58.03.955' url='https://jsonplaceholder.typicode.com/albums/1'>
+          <section name='DELETE album' timestamp='2017-09-25-Mon-08.37.16.486'>
+            <section duration_seconds='0.000' method='DELETE' name='Rest client' timestamp='2017-09-25-Mon-08.37.16.487' url='https://jsonplaceholder.typicode.com/albums/1'>
               <parameters/>
             </section>
             <section name='Evaluation'>
               <verdict id='payload nil' message='Payload nil' method='verdict_assert_nil?' outcome='passed' volatile='false'>
                 <act_value>nil</act_value>
               </verdict>
-              <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-23-Sat-16.58.04.355' url='https://jsonplaceholder.typicode.com/albums/1'>
+              <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-25-Mon-08.37.16.781' url='https://jsonplaceholder.typicode.com/albums/1'>
                 <parameters/>
               </section>
               <verdict id='DELETE album' message='Album not exist' method='verdict_refute?' outcome='failed' volatile='false'>
@@ -84,9 +84,9 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/endpo
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/endpoints/base_class_for_delete_id.rb:18:in `block in verdict_call_and_verify_success'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/endpoints/base_class_for_delete_id.rb:16:in `verdict_call_and_verify_success'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/endpoints/albums/delete_albums_id.rb:14:in `verdict_call_and_verify_success'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tour/tests/delete_albums_id_test.rb:19:in `block (3 levels) in test_delete_albums_id'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tour/tests/delete_albums_id_test.rb:17:in `block (2 levels) in test_delete_albums_id'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tour/tests/delete_albums_id_test.rb:9:in `block in test_delete_albums_id'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/delete_albums_id_test.rb:19:in `block (3 levels) in test_delete_albums_id'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/delete_albums_id_test.rb:17:in `block (2 levels) in test_delete_albums_id'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/delete_albums_id_test.rb:9:in `block in test_delete_albums_id'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/example_rest_client.rb:18:in `block in with'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/example_rest_client.rb:14:in `with'
@@ -95,7 +95,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `bl
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:11:in `prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tour/tests/delete_albums_id_test.rb:8:in `test_delete_albums_id']]>
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/delete_albums_id_test.rb:8:in `test_delete_albums_id']]>
                   </backtrace>
                 </exception>
               </verdict>
@@ -118,4 +118,4 @@ Notes:
 
 - The verdict that confirms the deletion fails, because the JSONPlaceholder REST API does not really delete the album.  That is intentional, and is documented at the website.
 
-[Prev](./GetAlbumsId.md) 
+[Prev](./GetAlbumsId.md) [Next](./PutAlbumsId.md)

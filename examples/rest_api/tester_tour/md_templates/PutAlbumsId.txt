@@ -1,0 +1,28 @@
+[navigation_links]
+
+# PutAlbumsId
+
+This page shows how to test endpoint PUT albums/_id_.
+
+## Test Source Code
+
+[file_source](../tests/put_albums_id_test.rb)
+
+Notes:
+
+- Method <code>Album.get_first</code> is a convenience method that fetches the first album as an <code>Album</object>.  It is modified and becomes <album_to_put>.
+- Method <code>PutAlbumsId.verdict_call_and_verify_success</code>:
+  1.  Accesses endpoint PUT albums/_id_, using field <code>:id</code> from <code>album_to_put</code>.
+  2.  Forms the response payload into a new Album object, <code>album_put</code>.
+  3.  Verifies that the values in <code>album_put</code> are equal to those in <code>album_to_put</code>.
+  4.  Fetches the updated album <code>album_fetched</code>, using parameters from <code>album_put</code>.
+  4.  Verifies that the values in <code>album_put</code> are equal to those in <code>album_fetched</code>.
+
+##  Test Log
+
+[file_source](../logs/test_put_albums_id.xml)
+
+- The fetched album does not match the put album, because JSONPlaceholder does not really update the album.  That is intentional, and is documented at the website.
+[navigation_links]
+
+[navigation_links]

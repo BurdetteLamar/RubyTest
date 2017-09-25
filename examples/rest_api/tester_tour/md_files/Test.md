@@ -1,5 +1,5 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-[Prev](./Introduction.md) [Next](./Sections.md)
+ [Next](./Sections.md)
 
 # Test
 
@@ -15,7 +15,8 @@ class NothingTest < BaseClassForTest
 
   def test_test
     prelude do |client, log|
-      # Citing client and log keeps RubyMine code inspection from complaining.
+      # Citing client and log keeps RubyMine code inspection from complaining
+      # about unused variables.
       client.class
       log.class
     end
@@ -38,7 +39,7 @@ Notes:
 ```xml
 <test_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='test_test' timestamp='2017-09-24-Sun-13.21.55.774'>
+  <test_method duration_seconds='0.001' name='test_test' timestamp='2017-09-25-Mon-08.36.59.711'>
     <section name='With ExampleRestClient'/>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
@@ -56,4 +57,4 @@ Notes:
 - Element <code>test_method</code>:  logging for test steps and verdicts.  (This test did nothing, so there's not much here.)
 - The last section gives the count of errors (unexpected exceptions).  Its verdict expects the count to be 0.
 
-[Prev](./Introduction.md) [Next](./Sections.md)
+ [Next](./Sections.md)

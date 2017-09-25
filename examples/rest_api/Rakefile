@@ -7,22 +7,48 @@ require_relative '../../lib/helpers/test_helper'
 
 desc 'Build Tester Tour'
 task :tester_tour do
-  def md_file_path_for_name(md_dir_path, name)
 
+  # Make the markdown file path for the given name
+  def md_file_path_for_name(md_dir_path, name)
     return nil if name.nil?
     file_basename = format('%s', StringHelper.to_upper_camel_case(name))
     md_file_name = format('%s.md', file_basename)
-    md_file_path = File.join(
+    File.join(
         md_dir_path,
         md_file_name,
     )
   end
 
   rakefile_dir_path = File.dirname(__FILE__)
+
   tour_dir_path = File.join(
       rakefile_dir_path,
       'tester_tour',
   )
+
+  # For the index
+  index_file_path = File.join(
+      rakefile_dir_path,
+      'TesterTour.md'
+  )
+  index_file = File.open(index_file_path, 'w')
+  heading_text = <<EOT
+# Tester Tour
+
+The Tester Tour covers only topics of interest to a tester who wants to develop and/or run tests for a REST API.
+
+This tester is distinguished from an infrastructure developer, who would want to develop infrastructure that supports testing a REST API.
+
+The tour shows how to use the example infrastructure to test a REST API.  The target REST API may be seen at:
+
+- [JSONPlaceholder](https://jsonplaceholder.typicode.com)
+
+Each following page assumes you've seen all its predecessors, so repetition is minimal.
+
+## Pages
+
+EOT
+  index_file << heading_text
 
   test_dir_path = File.join(
       tour_dir_path,
@@ -45,12 +71,7 @@ task :tester_tour do
   )
   FileUtils.mkdir_p(md_dir_path)
 
-=begin
-      post_albums
-      put_albums_id
-=end
   names = %w/
-      introduction
       test
       sections
       verdicts
@@ -59,6 +80,8 @@ task :tester_tour do
       get_albums
       get_albums_id
       delete_albums_id
+      put_albums_id
+      post_albums
   /
   names.each_with_index do |name, i|
     test_file_name = format('%s_test.rb', name)
@@ -67,7 +90,6 @@ task :tester_tour do
          test_file_name,
     )
     if File.exist?(test_file_path)
-      p test_file_name
       command = format('ruby %s', test_file_path)
       system(command)
       # Process the log.
@@ -107,8 +129,22 @@ task :tester_tour do
         :next_file_path => next_md_file_path,
     }
     MarkdownHelper.build_file(template_file_path, md_file_path, options)
+    # require 'pathname'
+    # md_path = Pathname.new(md_file_path)
+    # rakefile_file_path = Pathname.new(__FILE__)
+    # relative = md_path.relative_path_from(rakefile_file_path)
+    md_file_name = File.basename(md_file_path)
+    relative_link_path = File.join(
+        '.',
+        'tester_tour',
+        'md_files',
+        md_file_name,
+    )
+    link_item = format('- [%s](%s)', file_basename, relative_link_path)
+    index_file.puts(link_item)
 
   end
+  index_file.close
   FileUtils.rm_rf(conditioned_log_dir_path)
 
 end
