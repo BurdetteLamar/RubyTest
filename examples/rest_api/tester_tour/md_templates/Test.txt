@@ -1,6 +1,6 @@
 [navigation_links]
 
-# Test
+# The Simplest Test
 
 This page introduces the test class, along with the REST API client and the test log.
 

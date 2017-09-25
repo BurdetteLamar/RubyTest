@@ -1,8 +1,8 @@
 [navigation_links]
 
-# PostAlbums
+# Test for POST Albums
 
-This page shows how to test endpoint POST albums.
+This page shows how to test POST Albums.
 
 ## Test Source Code
 

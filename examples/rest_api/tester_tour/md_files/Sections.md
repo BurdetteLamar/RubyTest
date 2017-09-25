@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
 [Prev](./Test.md) [Next](./Verdicts.md)
 
-# Sections
+# Sections and Nesting
 
 This page introduces sections, including nesting, timestamps, and durations.
 
@@ -57,17 +57,17 @@ Notes:
 ```xml
 <sections_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='3.003' name='sections_test' timestamp='2017-09-25-Mon-08.37.00.782'>
+  <test_method duration_seconds='3.014' name='sections_test' timestamp='2017-09-25-Mon-15.42.47.399'>
     <section name='With ExampleRestClient'>
       <section name='First outer section'>
         <section name='First inner section'/>
         <section name='Second inner section'/>
       </section>
       <section name='Second outer section'/>
-      <section name='Section with timestamp' timestamp='2017-09-25-Mon-08.37.00.783'/>
-      <section duration_seconds='1.000' name='Section with timestamp'/>
-      <section duration_seconds='1.000' name='Section with timestamp and duration' timestamp='2017-09-25-Mon-08.37.01.784'/>
-      <section duration_seconds='1.000' name='Order does not matter' timestamp='2017-09-25-Mon-08.37.02.784'/>
+      <section name='Section with timestamp' timestamp='2017-09-25-Mon-15.42.47.399'/>
+      <section duration_seconds='1.004' name='Section with timestamp'/>
+      <section duration_seconds='1.006' name='Section with timestamp and duration' timestamp='2017-09-25-Mon-15.42.48.403'/>
+      <section duration_seconds='1.004' name='Order does not matter' timestamp='2017-09-25-Mon-15.42.49.409'/>
     </section>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>

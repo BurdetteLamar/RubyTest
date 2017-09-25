@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
  [Next](./Sections.md)
 
-# Test
+# The Simplest Test
 
 This page introduces the test class, along with the REST API client and the test log.
 
@@ -39,7 +39,7 @@ Notes:
 ```xml
 <test_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.001' name='test_test' timestamp='2017-09-25-Mon-08.36.59.711'>
+  <test_method duration_seconds='0.000' name='test_test' timestamp='2017-09-25-Mon-15.42.46.355'>
     <section name='With ExampleRestClient'/>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>

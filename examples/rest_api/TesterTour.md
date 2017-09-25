@@ -12,13 +12,13 @@ Each following page assumes you've seen all its predecessors, so repetition is m
 
 ## Pages
 
-- [Test](./tester_tour/md_files/Test.md)
-- [Sections](./tester_tour/md_files/Sections.md)
+- [The Simplest Test](./tester_tour/md_files/Test.md)
+- [Sections and Nesting](./tester_tour/md_files/Sections.md)
 - [Verdicts](./tester_tour/md_files/Verdicts.md)
-- [Volatility](./tester_tour/md_files/Volatility.md)
-- [Exceptions](./tester_tour/md_files/Exceptions.md)
-- [GetAlbums](./tester_tour/md_files/GetAlbums.md)
-- [GetAlbumsId](./tester_tour/md_files/GetAlbumsId.md)
-- [DeleteAlbumsId](./tester_tour/md_files/DeleteAlbumsId.md)
-- [PutAlbumsId](./tester_tour/md_files/PutAlbumsId.md)
-- [PostAlbums](./tester_tour/md_files/PostAlbums.md)
+- [Volatile Return Values](./tester_tour/md_files/Volatility.md)
+- [Exceptions, Rescued, and Not](./tester_tour/md_files/Exceptions.md)
+- [Test for GET Albums](./tester_tour/md_files/GetAlbums.md)
+- [Test for GET Albums/_id_](./tester_tour/md_files/GetAlbumsId.md)
+- [Test for DELETE Albums/_id_](./tester_tour/md_files/DeleteAlbumsId.md)
+- [Test for PUT Albums/_id_](./tester_tour/md_files/PutAlbumsId.md)
+- [Test for POST Albums](./tester_tour/md_files/PostAlbums.md)

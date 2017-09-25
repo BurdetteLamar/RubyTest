@@ -1,9 +1,10 @@
 [navigation_links]
-# DeleteAlbumsId
+
+# Test for DELETE Albums/_id_
+
+This page shows how to test DELETE Albums/_id_.
 
 ## Test Source Code
-
-This page shows how to test endpoint DELETE albums/_id_.
 
 [file_source](../tests/delete_albums_id_test.rb)
 

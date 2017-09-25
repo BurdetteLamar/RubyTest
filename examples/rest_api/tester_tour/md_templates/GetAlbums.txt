@@ -1,8 +1,8 @@
 [navigation_links]
 
-# GetAlbums
+# Test for GET Albums
 
-This page shows how to test endpoint GET albums.
+This page shows how to test GET Albums.
 
 ## Test Source Code
 
