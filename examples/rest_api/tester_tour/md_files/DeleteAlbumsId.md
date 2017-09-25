@@ -48,11 +48,11 @@ Notes:
 ```xml
 <delete_albums_id_test>
   <summary errors='0' failures='1' verdicts='3'/>
-  <test_method name='delete_albums_id_test' timestamp='2017-09-24-Sun-16.28.06.582'>
-    <section duration_seconds='1.966' name='With ExampleRestClient'>
+  <test_method name='delete_albums_id_test' timestamp='2017-09-25-Mon-08.37.14.961'>
+    <section duration_seconds='1.923' name='With ExampleRestClient'>
       <section name='Test endpoint DELETE albums/id'>
         <section name='Fetch an album to DELETE'>
-          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-24-Sun-16.28.06.585' url='https://jsonplaceholder.typicode.com/albums'>
+          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-25-Mon-08.37.14.965' url='https://jsonplaceholder.typicode.com/albums'>
             <parameters/>
           </section>
           <section name='Album fetched'>
@@ -62,15 +62,15 @@ Notes:
           </section>
         </section>
         <section name='DELETE the album'>
-          <section name='DELETE album' timestamp='2017-09-24-Sun-16.28.08.112'>
-            <section duration_seconds='0.000' method='DELETE' name='Rest client' timestamp='2017-09-24-Sun-16.28.08.112' url='https://jsonplaceholder.typicode.com/albums/1'>
+          <section name='DELETE album' timestamp='2017-09-25-Mon-08.37.16.486'>
+            <section duration_seconds='0.000' method='DELETE' name='Rest client' timestamp='2017-09-25-Mon-08.37.16.487' url='https://jsonplaceholder.typicode.com/albums/1'>
               <parameters/>
             </section>
             <section name='Evaluation'>
               <verdict id='payload nil' message='Payload nil' method='verdict_assert_nil?' outcome='passed' volatile='false'>
                 <act_value>nil</act_value>
               </verdict>
-              <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-24-Sun-16.28.08.434' url='https://jsonplaceholder.typicode.com/albums/1'>
+              <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-25-Mon-08.37.16.781' url='https://jsonplaceholder.typicode.com/albums/1'>
                 <parameters/>
               </section>
               <verdict id='DELETE album' message='Album not exist' method='verdict_refute?' outcome='failed' volatile='false'>

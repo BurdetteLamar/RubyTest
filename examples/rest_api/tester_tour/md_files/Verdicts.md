@@ -19,8 +19,6 @@ class VerdictsTest < BaseClassForTest
 
   def test_verdicts
     prelude do |client, log|
-      # Citing client keeps RubyMine code inspection from complaining.
-      client.class
       # Using extra variables in these verdicts, to make usage clear.
       log.section('These verdicts should pass') do
         log.section('An assertion verdict that should pass') do
@@ -54,6 +52,9 @@ class VerdictsTest < BaseClassForTest
           )
         end
       end
+      # Citing client keeps RubyMine code inspection from complaining
+      # about the unused variable.
+      client.class
     end
   end
 
@@ -75,7 +76,7 @@ Notes:
 ```xml
 <verdicts_test>
   <summary errors='0' failures='2' verdicts='5'/>
-  <test_method duration_seconds='0.005' name='verdicts_test' timestamp='2017-09-24-Sun-16.27.57.122'>
+  <test_method duration_seconds='0.005' name='verdicts_test' timestamp='2017-09-25-Mon-08.37.04.900'>
     <section name='With ExampleRestClient'>
       <section name='These verdicts should pass'>
         <section name='An assertion verdict that should pass'>
@@ -97,9 +98,9 @@ Notes:
               <class>Minitest::Assertion</class>
               <message>Expected false to be truthy.</message>
               <backtrace>
-                <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/verdicts_test.rb:28:in `block (3 levels) in test_verdicts'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/verdicts_test.rb:27:in `block (2 levels) in test_verdicts'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/verdicts_test.rb:26:in `block in test_verdicts'
+                <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/verdicts_test.rb:26:in `block (3 levels) in test_verdicts'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/verdicts_test.rb:25:in `block (2 levels) in test_verdicts'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/verdicts_test.rb:24:in `block in test_verdicts'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/example_rest_client.rb:18:in `block in with'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/example_rest_client.rb:14:in `with'
@@ -120,9 +121,9 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/
               <class>Minitest::Assertion</class>
               <message>Expected true to not be truthy.</message>
               <backtrace>
-                <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/verdicts_test.rb:35:in `block (3 levels) in test_verdicts'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/verdicts_test.rb:34:in `block (2 levels) in test_verdicts'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/verdicts_test.rb:26:in `block in test_verdicts'
+                <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/verdicts_test.rb:33:in `block (3 levels) in test_verdicts'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/verdicts_test.rb:32:in `block (2 levels) in test_verdicts'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/verdicts_test.rb:24:in `block in test_verdicts'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/example_rest_client.rb:18:in `block in with'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/example_rest_client.rb:14:in `with'

@@ -25,8 +25,6 @@ class VolatilityTest < BaseClassForTest
 
   def test_volatility
     prelude do |client, log|
-      # Citing client keeps RubyMine code inspection from complaining.
-      client.class
       log.section('Non-volatile value') do
         log.verdict_assert?('positive', Math.cos(0) > 0, 'Cos(0) positive')
       end
@@ -37,6 +35,9 @@ class VolatilityTest < BaseClassForTest
         log.verdict_assert?('sequence', earlier < later, 'Time order', volatile = true)
       end
     end
+    # Citing client keeps RubyMine code inspection from complaining
+    # about the unused variable.
+    client.class
   end
 
 end
@@ -53,7 +54,7 @@ Notes:
 ```xml
 <volatility_test>
   <summary errors='0' failures='0' verdicts='3'/>
-  <test_method duration_seconds='1.012' name='volatility_test' timestamp='2017-09-24-Sun-16.27.58.158'>
+  <test_method duration_seconds='1.002' name='volatility_test' timestamp='2017-09-25-Mon-08.37.05.981'>
     <section name='With ExampleRestClient'>
       <section name='Non-volatile value'>
         <verdict id='positive' message='Cos(0) positive' method='verdict_assert?' outcome='passed' volatile='false'>

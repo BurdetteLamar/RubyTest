@@ -15,8 +15,6 @@ class SectionsTest < BaseClassForTest
 
   def test_sections
     prelude do |client, log|
-      # Citing client keeps RubyMine code inspection from complaining.
-      client.class
       log.section('First outer section') do
         log.section('First inner section') do
           # Some test code here.
@@ -41,6 +39,9 @@ class SectionsTest < BaseClassForTest
         sleep 1
       end
     end
+    # Citing client keeps RubyMine code inspection from complaining
+    # about the unused variable.
+    client.class
   end
 
 end
@@ -56,17 +57,17 @@ Notes:
 ```xml
 <sections_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='3.003' name='sections_test' timestamp='2017-09-24-Sun-16.27.53.004'>
+  <test_method duration_seconds='3.003' name='sections_test' timestamp='2017-09-25-Mon-08.37.00.782'>
     <section name='With ExampleRestClient'>
       <section name='First outer section'>
         <section name='First inner section'/>
         <section name='Second inner section'/>
       </section>
       <section name='Second outer section'/>
-      <section name='Section with timestamp' timestamp='2017-09-24-Sun-16.27.53.005'/>
+      <section name='Section with timestamp' timestamp='2017-09-25-Mon-08.37.00.783'/>
       <section duration_seconds='1.000' name='Section with timestamp'/>
-      <section duration_seconds='1.000' name='Section with timestamp and duration' timestamp='2017-09-24-Sun-16.27.54.006'/>
-      <section duration_seconds='1.000' name='Order does not matter' timestamp='2017-09-24-Sun-16.27.55.007'/>
+      <section duration_seconds='1.000' name='Section with timestamp and duration' timestamp='2017-09-25-Mon-08.37.01.784'/>
+      <section duration_seconds='1.000' name='Order does not matter' timestamp='2017-09-25-Mon-08.37.02.784'/>
     </section>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
