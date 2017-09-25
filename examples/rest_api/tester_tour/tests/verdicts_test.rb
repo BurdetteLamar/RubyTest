@@ -4,8 +4,6 @@ class VerdictsTest < BaseClassForTest
 
   def test_verdicts
     prelude do |client, log|
-      # Citing client keeps RubyMine code inspection from complaining.
-      client.class
       # Using extra variables in these verdicts, to make usage clear.
       log.section('These verdicts should pass') do
         log.section('An assertion verdict that should pass') do
@@ -39,6 +37,9 @@ class VerdictsTest < BaseClassForTest
           )
         end
       end
+      # Citing client keeps RubyMine code inspection from complaining
+      # about the unused variable.
+      client.class
     end
   end
 
