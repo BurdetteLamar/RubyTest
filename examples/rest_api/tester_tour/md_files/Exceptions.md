@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
 [Prev](./Volatility.md) [Next](./GetAlbums.md)
 
-# Exceptions
+# Exceptions, Rescued, and Not
 
 This page introduces the handling of unexpected exceptions.
 
@@ -56,8 +56,8 @@ Notes:
 ```xml
 <exceptions_test>
   <summary errors='2' failures='1' verdicts='2'/>
-  <test_method name='exceptions_test' timestamp='2017-09-25-Mon-08.37.08.086'>
-    <section duration_seconds='0.003' name='With ExampleRestClient'>
+  <test_method name='exceptions_test' timestamp='2017-09-25-Mon-15.42.54.541'>
+    <section duration_seconds='0.004' name='With ExampleRestClient'>
       <section name='Section rescues exception'>
         <uncaught_exception>
           <verdict_id>Section rescues exception</verdict_id>

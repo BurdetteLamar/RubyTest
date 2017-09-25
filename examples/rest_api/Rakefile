@@ -129,10 +129,6 @@ EOT
         :next_file_path => next_md_file_path,
     }
     MarkdownHelper.build_file(template_file_path, md_file_path, options)
-    # require 'pathname'
-    # md_path = Pathname.new(md_file_path)
-    # rakefile_file_path = Pathname.new(__FILE__)
-    # relative = md_path.relative_path_from(rakefile_file_path)
     md_file_name = File.basename(md_file_path)
     relative_link_path = File.join(
         '.',
@@ -140,7 +136,14 @@ EOT
         'md_files',
         md_file_name,
     )
-    link_item = format('- [%s](%s)', file_basename, relative_link_path)
+    title = nil
+    title_tag = /^#\s+/
+    File.foreach(md_file_path) do |line|
+      if line.match(title_tag)
+        title = line.sub(title_tag, '').chomp
+      end
+    end
+    link_item = format('- [%s](%s)', title, relative_link_path)
     index_file.puts(link_item)
 
   end

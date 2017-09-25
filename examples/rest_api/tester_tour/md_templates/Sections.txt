@@ -1,6 +1,6 @@
 [navigation_links]
 
-# Sections
+# Sections and Nesting
 
 This page introduces sections, including nesting, timestamps, and durations.
 

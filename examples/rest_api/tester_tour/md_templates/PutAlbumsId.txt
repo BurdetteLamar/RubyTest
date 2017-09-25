@@ -1,8 +1,8 @@
 [navigation_links]
 
-# PutAlbumsId
+# Test for PUT Albums/_id_
 
-This page shows how to test endpoint PUT albums/_id_.
+This page shows how to test PUT Albums/_id_.
 
 ## Test Source Code
 

@@ -1,6 +1,6 @@
 [navigation_links]
 
-# Exceptions
+# Exceptions, Rescued, and Not
 
 This page introduces the handling of unexpected exceptions.
 
