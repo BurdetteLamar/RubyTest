@@ -9,7 +9,7 @@ class DataNewComplexTest < BaseClassForTest
     prelude do |client, log|
       log.section('Create and log an instance of a complex data object') do
         user = User.new(
-            :id => 1,
+            :id => nil,
             :name => 'Leanne Graham',
             :username => 'Bret',
             :email => 'Sincere@april.biz',

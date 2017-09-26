@@ -39,7 +39,7 @@ Notes:
 ```xml
 <test_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='test_test' timestamp='2017-09-25-Mon-19.49.56.878'>
+  <test_method duration_seconds='0.000' name='test_test' timestamp='2017-09-25-Mon-19.54.09.446'>
     <section name='With ExampleRestClient'/>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>

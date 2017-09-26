@@ -11,7 +11,7 @@ This page introduces complex data classes, and shows how to create instances of 
 Notes:
 
 - Unlike an album, which has only scalar values, a user has a more complex structure.
-- Some of its values, such as those for <code>:id</code> and <code>:name</code>, are simple scalars.
+- Some of its values, such as those for <code>:name</code> and <code>:username</code>, are simple scalars.
 - Other values, such as those for <code>:address</code> and <code>:company</code>, are more complex.
 - When the <code>User</code> instance is created, the values for <code>:address</code> are formed into an instance of <code>User::Address</code>.
 - Similarly, the values for <code>:company</code> are formed into an instance of <code>User::Company</code>.

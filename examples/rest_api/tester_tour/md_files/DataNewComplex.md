@@ -20,7 +20,7 @@ class DataNewComplexTest < BaseClassForTest
     prelude do |client, log|
       log.section('Create and log an instance of a complex data object') do
         user = User.new(
-            :id => 1,
+            :id => nil,
             :name => 'Leanne Graham',
             :username => 'Bret',
             :email => 'Sincere@april.biz',
@@ -53,7 +53,7 @@ end
 Notes:
 
 - Unlike an album, which has only scalar values, a user has a more complex structure.
-- Some of its values, such as those for <code>:id</code> and <code>:name</code>, are simple scalars.
+- Some of its values, such as those for <code>:name</code> and <code>:username</code>, are simple scalars.
 - Other values, such as those for <code>:address</code> and <code>:company</code>, are more complex.
 - When the <code>User</code> instance is created, the values for <code>:address</code> are formed into an instance of <code>User::Address</code>.
 - Similarly, the values for <code>:company</code> are formed into an instance of <code>User::Company</code>.
@@ -65,10 +65,9 @@ Notes:
 ```xml
 <data_new_complex_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='data_new_complex_test' timestamp='2017-09-25-Mon-19.50.21.628'>
+  <test_method duration_seconds='0.003' name='data_new_complex_test' timestamp='2017-09-25-Mon-19.54.34.479'>
     <section name='With ExampleRestClient'>
       <section name='Create and log an instance of a complex data object'>
-        <data field='id' value='1'/>
         <data field='name' value='Leanne Graham'/>
         <data field='username' value='Bret'/>
         <data field='email' value='Sincere@april.biz'/>
