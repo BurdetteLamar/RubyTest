@@ -1,5 +1,5 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-[Prev](./PutAlbumsId.md) 
+[Prev](./PutAlbumsId.md) [Next](./DataNewSimple.md)
 
 # Test for POST Albums
 
@@ -51,11 +51,11 @@ Notes:
 ```xml
 <post_albums_test>
   <summary errors='0' failures='1' verdicts='7'/>
-  <test_method name='post_albums_test' timestamp='2017-09-25-Mon-15.43.07.309'>
-    <section duration_seconds='1.952' name='With ExampleRestClient'>
+  <test_method name='post_albums_test' timestamp='2017-09-25-Mon-20.11.53.100'>
+    <section duration_seconds='1.977' name='With ExampleRestClient'>
       <section name='Test endpoint POST albums'>
         <section name='Album to post'>
-          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-25-Mon-15.43.07.313' url='https://jsonplaceholder.typicode.com/albums'>
+          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-25-Mon-20.11.53.104' url='https://jsonplaceholder.typicode.com/albums'>
             <parameters/>
           </section>
           <data field='id' value='1'/>
@@ -63,8 +63,8 @@ Notes:
           <data field='title' value='My album title'/>
         </section>
         <section name='POST the album'>
-          <section name='POST album' timestamp='2017-09-25-Mon-15.43.08.800'>
-            <section duration_seconds='0.000' method='POST' name='Rest client' timestamp='2017-09-25-Mon-15.43.08.800' url='https://jsonplaceholder.typicode.com/albums'>
+          <section name='POST album' timestamp='2017-09-25-Mon-20.11.54.653'>
+            <section duration_seconds='0.000' method='POST' name='Rest client' timestamp='2017-09-25-Mon-20.11.54.653' url='https://jsonplaceholder.typicode.com/albums'>
               <parameters id='1' title='My album title' userId='1'/>
             </section>
             <section name='Evaluation'>
@@ -80,7 +80,7 @@ Notes:
                 <exp_value>My album title</exp_value>
                 <act_value>My album title</act_value>
               </verdict>
-              <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-25-Mon-15.43.09.117' url='https://jsonplaceholder.typicode.com/albums/1'>
+              <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-25-Mon-20.11.54.893' url='https://jsonplaceholder.typicode.com/albums/1'>
                 <parameters/>
               </section>
               <verdict id='Album fetched-id' message='Fetched' method='verdict_assert_equal?' outcome='passed' volatile='false'>
@@ -143,4 +143,4 @@ Notes:
 
 - The fetched album does not match the posted album, because JSONPlaceholder does not really create the album.  That is intentional, and is documented at the website.
 
-[Prev](./PutAlbumsId.md) 
+[Prev](./PutAlbumsId.md) [Next](./DataNewSimple.md)

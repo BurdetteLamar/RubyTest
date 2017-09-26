@@ -18,7 +18,7 @@ require_relative '../../base_classes/base_class_for_test'
 class VerdictsTest < BaseClassForTest
 
   def test_verdicts
-    prelude do |client, log|
+    prelude do |_, log|
       # Using extra variables in these verdicts, to make usage clear.
       log.section('These verdicts should pass') do
         log.section('An assertion verdict that should pass') do
@@ -52,9 +52,6 @@ class VerdictsTest < BaseClassForTest
           )
         end
       end
-      # Citing client keeps RubyMine code inspection from complaining
-      # about the unused variable.
-      client.class
     end
   end
 
@@ -76,7 +73,7 @@ Notes:
 ```xml
 <verdicts_test>
   <summary errors='0' failures='2' verdicts='5'/>
-  <test_method duration_seconds='0.014' name='verdicts_test' timestamp='2017-09-25-Mon-15.42.51.472'>
+  <test_method duration_seconds='0.005' name='verdicts_test' timestamp='2017-09-25-Mon-20.11.37.557'>
     <section name='With ExampleRestClient'>
       <section name='These verdicts should pass'>
         <section name='An assertion verdict that should pass'>

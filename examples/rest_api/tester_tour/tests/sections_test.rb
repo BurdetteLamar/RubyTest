@@ -3,7 +3,7 @@ require_relative '../../base_classes/base_class_for_test'
 class SectionsTest < BaseClassForTest
 
   def test_sections
-    prelude do |client, log|
+    prelude do |_, log|
       log.section('First outer section') do
         log.section('First inner section') do
           # Some test code here.
@@ -28,9 +28,6 @@ class SectionsTest < BaseClassForTest
         sleep 1
       end
     end
-    # Citing client keeps RubyMine code inspection from complaining
-    # about the unused variable.
-    client.class
   end
 
 end

@@ -44,12 +44,12 @@ Notes:
 ```xml
 <get_albums_test>
   <summary errors='0' failures='0' verdicts='8'/>
-  <test_method name='get_albums_test' timestamp='2017-09-25-Mon-15.42.55.584'>
-    <section duration_seconds='1.577' name='With ExampleRestClient'>
+  <test_method name='get_albums_test' timestamp='2017-09-25-Mon-20.11.41.681'>
+    <section duration_seconds='1.518' name='With ExampleRestClient'>
       <section name='Test endpoint GET albums'>
         <section name='GET albums'>
-          <section name='GET albums' timestamp='2017-09-25-Mon-15.42.55.585'>
-            <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-25-Mon-15.42.55.585' url='https://jsonplaceholder.typicode.com/albums'>
+          <section name='GET albums' timestamp='2017-09-25-Mon-20.11.41.691'>
+            <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-25-Mon-20.11.41.691' url='https://jsonplaceholder.typicode.com/albums'>
               <parameters/>
             </section>
             <section name='Evaluation'>
@@ -62,7 +62,7 @@ Notes:
               <verdict id='GET albums - class' message='First object is of class Album' method='verdict_assert_instance_of?' outcome='passed' volatile='false'>
                 <exp_value>Album</exp_value>
                 <act_value>
-                  #&lt;Album:0x4013970 @fields=#&lt;Set: {:id, :userId,
+                  #&lt;Album:0x3ef9bc8 @fields=#&lt;Set: {:id, :userId,
                   :title}&gt;, @userId=1, @id=1, @title=&quot;quidem molestiae
                   enim&quot;&gt;
                 </act_value>

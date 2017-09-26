@@ -13,10 +13,10 @@ class VolatilityTest < BaseClassForTest
         later = Time.now
         log.verdict_assert?('sequence', earlier < later, 'Time order', volatile = true)
       end
+      # Citing client keeps RubyMine code inspection from complaining
+      # about the unused variable.
+      client.class
     end
-    # Citing client keeps RubyMine code inspection from complaining
-    # about the unused variable.
-    client.class
   end
 
 end

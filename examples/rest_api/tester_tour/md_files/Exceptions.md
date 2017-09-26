@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
 [Prev](./Volatility.md) [Next](./GetAlbums.md)
 
-# Exceptions, Rescued, and Not
+# Exceptions, Rescued and Not
 
 This page introduces the handling of unexpected exceptions.
 
@@ -14,9 +14,7 @@ require_relative '../../base_classes/base_class_for_test'
 class ExceptionsTest < BaseClassForTest
 
   def test_exceptions
-    prelude do |client, log|
-      # Citing client keeps RubyMine code inspection from complaining.
-      client.class
+    prelude do |_, log|
       log.section('Section rescues exception', :rescue) do
         numerator = 1
         denominator = 0
@@ -56,17 +54,17 @@ Notes:
 ```xml
 <exceptions_test>
   <summary errors='2' failures='1' verdicts='2'/>
-  <test_method name='exceptions_test' timestamp='2017-09-25-Mon-15.42.54.541'>
-    <section duration_seconds='0.004' name='With ExampleRestClient'>
+  <test_method name='exceptions_test' timestamp='2017-09-25-Mon-20.11.40.636'>
+    <section duration_seconds='0.003' name='With ExampleRestClient'>
       <section name='Section rescues exception'>
         <uncaught_exception>
           <verdict_id>Section rescues exception</verdict_id>
           <class>ZeroDivisionError</class>
           <message>divided by 0</message>
           <backtrace>
-            <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/exceptions_test.rb:12:in `/'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/exceptions_test.rb:12:in `block (2 levels) in test_exceptions'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/exceptions_test.rb:9:in `block in test_exceptions'
+            <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/exceptions_test.rb:10:in `/'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/exceptions_test.rb:10:in `block (2 levels) in test_exceptions'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/exceptions_test.rb:7:in `block in test_exceptions'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/example_rest_client.rb:18:in `block in with'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/example_rest_client.rb:14:in `with'
@@ -90,9 +88,9 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/
           <class>ZeroDivisionError</class>
           <message>divided by 0</message>
           <backtrace>
-            <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/exceptions_test.rb:23:in `/'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/exceptions_test.rb:23:in `block (2 levels) in test_exceptions'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/exceptions_test.rb:20:in `block in test_exceptions'
+            <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/exceptions_test.rb:21:in `/'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/exceptions_test.rb:21:in `block (2 levels) in test_exceptions'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/exceptions_test.rb:18:in `block in test_exceptions'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/example_rest_client.rb:18:in `block in with'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/example_rest_client.rb:14:in `with'
