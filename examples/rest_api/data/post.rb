@@ -19,12 +19,10 @@ class Post < BaseClassForResource
 
   Contract Log, String => Bool
   def verdict_valid?(log, verdict_id)
-    if log.verdict_assert_instance_of?(verdict_id + ' - class', Post, self, 'First object is of class Post')
-      log.verdict_assert_integer_positive?(verdict_id + ' - id', self.id, 'Post id')
-      log.verdict_assert_integer_positive?(verdict_id + ' - user id', self.userId, 'Post user id')
-      log.verdict_assert_string_not_empty?(verdict_id + ' - title', self.title, 'Post title')
-      log.verdict_assert_string_not_empty?(verdict_id + ' - body', self.body, 'Post body')
-    end
+    log.verdict_assert_integer_positive?(verdict_id + ' - id', self.id, 'Post id')
+    log.verdict_assert_integer_positive?(verdict_id + ' - user id', self.userId, 'Post user id')
+    log.verdict_assert_string_not_empty?(verdict_id + ' - title', self.title, 'Post title')
+    log.verdict_assert_string_not_empty?(verdict_id + ' - body', self.body, 'Post body')
   end
 
   # This is redundant, but it helps RubyMine code inspection.
