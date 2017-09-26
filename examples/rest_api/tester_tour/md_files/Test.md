@@ -15,8 +15,8 @@ class NothingTest < BaseClassForTest
 
   def test_test
     prelude do |client, log|
-      # Citing client and log keeps RubyMine code inspection from complaining
-      # about unused variables.
+      # Citing client and log prevents RubyMine code inspection
+      # from complaining about unused variables.
       client.class
       log.class
     end
@@ -39,7 +39,7 @@ Notes:
 ```xml
 <test_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='test_test' timestamp='2017-09-25-Mon-15.42.46.355'>
+  <test_method duration_seconds='0.000' name='test_test' timestamp='2017-09-25-Mon-18.08.28.300'>
     <section name='With ExampleRestClient'/>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>

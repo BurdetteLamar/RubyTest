@@ -4,8 +4,8 @@ class NothingTest < BaseClassForTest
 
   def test_test
     prelude do |client, log|
-      # Citing client and log keeps RubyMine code inspection from complaining
-      # about unused variables.
+      # Citing client and log prevents RubyMine code inspection
+      # from complaining about unused variables.
       client.class
       log.class
     end

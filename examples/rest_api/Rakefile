@@ -82,6 +82,7 @@ EOT
       delete_albums_id
       put_albums_id
       post_albums
+      data_new_simple
   /
   names.each_with_index do |name, i|
     test_file_name = format('%s_test.rb', name)

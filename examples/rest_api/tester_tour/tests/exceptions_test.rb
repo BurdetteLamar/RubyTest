@@ -3,9 +3,7 @@ require_relative '../../base_classes/base_class_for_test'
 class ExceptionsTest < BaseClassForTest
 
   def test_exceptions
-    prelude do |client, log|
-      # Citing client keeps RubyMine code inspection from complaining.
-      client.class
+    prelude do |_, log|
       log.section('Section rescues exception', :rescue) do
         numerator = 1
         denominator = 0
