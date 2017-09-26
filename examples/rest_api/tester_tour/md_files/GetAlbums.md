@@ -43,13 +43,13 @@ Notes:
 <code>test_get_albums.xml</code>
 ```xml
 <get_albums_test>
-  <summary errors='0' failures='0' verdicts='8'/>
-  <test_method name='get_albums_test' timestamp='2017-09-25-Mon-20.11.41.681'>
-    <section duration_seconds='1.518' name='With ExampleRestClient'>
+  <summary errors='0' failures='0' verdicts='7'/>
+  <test_method name='get_albums_test' timestamp='2017-09-26-Tue-17.08.24.734'>
+    <section duration_seconds='1.507' name='With ExampleRestClient'>
       <section name='Test endpoint GET albums'>
         <section name='GET albums'>
-          <section name='GET albums' timestamp='2017-09-25-Mon-20.11.41.691'>
-            <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-25-Mon-20.11.41.691' url='https://jsonplaceholder.typicode.com/albums'>
+          <section name='GET albums' timestamp='2017-09-26-Tue-17.08.24.734'>
+            <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-26-Tue-17.08.24.734' url='https://jsonplaceholder.typicode.com/albums'>
               <parameters/>
             </section>
             <section name='Evaluation'>
@@ -59,14 +59,6 @@ Notes:
                 <data field='userId' value='1'/>
                 <data field='title' value='quidem molestiae enim'/>
               </section>
-              <verdict id='GET albums - class' message='First object is of class Album' method='verdict_assert_instance_of?' outcome='passed' volatile='false'>
-                <exp_value>Album</exp_value>
-                <act_value>
-                  #&lt;Album:0x3ef9bc8 @fields=#&lt;Set: {:id, :userId,
-                  :title}&gt;, @userId=1, @id=1, @title=&quot;quidem molestiae
-                  enim&quot;&gt;
-                </act_value>
-              </verdict>
               <section name='verdict_assert_integer_positive?'>
                 <verdict id='GET albums - id - integer' message='Album id' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
                   <exp_value>Fixnum</exp_value>
