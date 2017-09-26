@@ -84,6 +84,7 @@ EOT
       post_albums
       data_new_simple
       data_new_complex
+      more_to_come
   /
   names.each_with_index do |name, i|
     test_file_name = format('%s_test.rb', name)

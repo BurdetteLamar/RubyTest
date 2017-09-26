@@ -55,17 +55,17 @@ Notes:
 ```xml
 <sections_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='3.002' name='sections_test' timestamp='2017-09-25-Mon-20.07.36.601'>
+  <test_method duration_seconds='3.003' name='sections_test' timestamp='2017-09-25-Mon-20.11.33.509'>
     <section name='With ExampleRestClient'>
       <section name='First outer section'>
         <section name='First inner section'/>
         <section name='Second inner section'/>
       </section>
       <section name='Second outer section'/>
-      <section name='Section with timestamp' timestamp='2017-09-25-Mon-20.07.36.602'/>
+      <section name='Section with timestamp' timestamp='2017-09-25-Mon-20.11.33.511'/>
       <section duration_seconds='1.000' name='Section with timestamp'/>
-      <section duration_seconds='1.000' name='Section with timestamp and duration' timestamp='2017-09-25-Mon-20.07.37.603'/>
-      <section duration_seconds='1.000' name='Order does not matter' timestamp='2017-09-25-Mon-20.07.38.603'/>
+      <section duration_seconds='1.000' name='Section with timestamp and duration' timestamp='2017-09-25-Mon-20.11.34.512'/>
+      <section duration_seconds='1.000' name='Order does not matter' timestamp='2017-09-25-Mon-20.11.35.512'/>
     </section>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>

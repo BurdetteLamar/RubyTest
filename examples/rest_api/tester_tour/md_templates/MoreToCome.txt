@@ -1,6 +1,6 @@
 [navigation_links]
 
-# More to Come
+# More to Come ...
 
 This tour documentation is under active development.
 
