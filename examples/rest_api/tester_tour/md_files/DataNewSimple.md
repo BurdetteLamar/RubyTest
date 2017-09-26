@@ -1,9 +1,9 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-[Prev](./PostAlbums.md) 
+[Prev](./PostAlbums.md) [Next](./DataNewComplex.md)
 
-# Create Data Objects
+# Creating a Data Object
 
-This page introduces the data classes, and shows how to create instances of them.
+This page introduces simple data classes, and shows how to create instances of them.
 
 ## Test Source Code
 
@@ -18,7 +18,7 @@ class DataNewTest < BaseClassForTest
 
   def test_data_new_simple
     prelude do |_, log|
-      log.section('Create an instance of Album') do
+      log.section('Create and log an instance of Album') do
         album = Album.new(
             :id => nil,
             :userId => 1,
@@ -49,9 +49,9 @@ Notes:
 ```xml
 <data_new_simple_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='data_new_simple_test' timestamp='2017-09-25-Mon-18.08.51.746'>
+  <test_method duration_seconds='0.000' name='data_new_simple_test' timestamp='2017-09-25-Mon-19.50.20.582'>
     <section name='With ExampleRestClient'>
-      <section name='Create an instance of Album'>
+      <section name='Create and log an instance of Album'>
         <section name='Created album'>
           <data field='userId' value='1'/>
           <data field='title' value='My album title'/>
@@ -68,6 +68,4 @@ Notes:
 </data_new_simple_test>
 ```
 
-Notes:
-
-[Prev](./PostAlbums.md) 
+[Prev](./PostAlbums.md) [Next](./DataNewComplex.md)

@@ -1,8 +1,8 @@
 [navigation_links]
 
-# Create Data Objects
+# Creating a Data Object
 
-This page introduces the data classes, and shows how to create instances of them.
+This page introduces simple data classes, and shows how to create instances of them.
 
 ## Test Source Code
 

@@ -7,7 +7,7 @@ class DataNewTest < BaseClassForTest
 
   def test_data_new_simple
     prelude do |_, log|
-      log.section('Create an instance of Album') do
+      log.section('Create and log an instance of Album') do
         album = Album.new(
             :id => nil,
             :userId => 1,

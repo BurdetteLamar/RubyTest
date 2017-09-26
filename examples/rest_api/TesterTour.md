@@ -22,4 +22,5 @@ Each following page assumes you've seen all its predecessors, so repetition is m
 - [Test for DELETE Albums/_id_](./tester_tour/md_files/DeleteAlbumsId.md)
 - [Test for PUT Albums/_id_](./tester_tour/md_files/PutAlbumsId.md)
 - [Test for POST Albums](./tester_tour/md_files/PostAlbums.md)
-- [Create Data Objects](./tester_tour/md_files/DataNewSimple.md)
+- [Creating a Data Object](./tester_tour/md_files/DataNewSimple.md)
+- [Creating a Complex Data Object](./tester_tour/md_files/DataNewComplex.md)
