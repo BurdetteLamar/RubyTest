@@ -32,16 +32,14 @@ class User < BaseClassForResource
 
   Contract Log, String => Bool
   def verdict_valid?(log, verdict_id)
-    if log.verdict_assert_instance_of?(verdict_id + ' - class', User, self, 'First object is of class User')
-      log.verdict_assert_integer_positive?(verdict_id + ' - id', self.id, 'User id')
-      log.verdict_assert_string_not_empty?(verdict_id + ' - name', self.name, 'User name')
-      log.verdict_assert_string_not_empty?(verdict_id + ' - username', self.username, 'User username')
-      log.verdict_assert_string_not_empty?(verdict_id + ' - email', self.email, 'User email')
-      log.verdict_assert_string_not_empty?(verdict_id + ' - phone', self.phone, 'User phone')
-      log.verdict_assert_string_not_empty?(verdict_id + ' - website', self.website, 'User website')
-      address.verdict_valid?(log, verdict_id + ' - address')
-      company.verdict_valid?(log, verdict_id + ' - company')
-    end
+    log.verdict_assert_integer_positive?(verdict_id + ' - id', self.id, 'User id')
+    log.verdict_assert_string_not_empty?(verdict_id + ' - name', self.name, 'User name')
+    log.verdict_assert_string_not_empty?(verdict_id + ' - username', self.username, 'User username')
+    log.verdict_assert_string_not_empty?(verdict_id + ' - email', self.email, 'User email')
+    log.verdict_assert_string_not_empty?(verdict_id + ' - phone', self.phone, 'User phone')
+    log.verdict_assert_string_not_empty?(verdict_id + ' - website', self.website, 'User website')
+    address.verdict_valid?(log, verdict_id + ' - address')
+    company.verdict_valid?(log, verdict_id + ' - company')
   end
 
   class Address < BaseClassForData
@@ -76,13 +74,11 @@ class User < BaseClassForResource
 
     Contract Log, String => Bool
     def verdict_valid?(log, verdict_id)
-      if log.verdict_assert_instance_of?(verdict_id + ' - class', Address, self, 'First object is of class Address')
-        log.verdict_assert_string_not_empty?(verdict_id + ' - street', self.street, 'Address street')
-        log.verdict_assert_string_not_empty?(verdict_id + ' - suite', self.suite, 'Address suite')
-        log.verdict_assert_string_not_empty?(verdict_id + ' - city', self.city, 'Address city')
-        log.verdict_assert_string_not_empty?(verdict_id + ' - zipcode', self.zipcode, 'Address zipcode')
-        geo.verdict_valid?(log, verdict_id + ' - geo')
-      end
+      log.verdict_assert_string_not_empty?(verdict_id + ' - street', self.street, 'Address street')
+      log.verdict_assert_string_not_empty?(verdict_id + ' - suite', self.suite, 'Address suite')
+      log.verdict_assert_string_not_empty?(verdict_id + ' - city', self.city, 'Address city')
+      log.verdict_assert_string_not_empty?(verdict_id + ' - zipcode', self.zipcode, 'Address zipcode')
+      geo.verdict_valid?(log, verdict_id + ' - geo')
     end
 
     class Geo < BaseClassForData
@@ -109,10 +105,8 @@ class User < BaseClassForResource
 
       Contract Log, String => Bool
       def verdict_valid?(log, verdict_id)
-        if log.verdict_assert_instance_of?(verdict_id + ' - class', Geo, self, 'First object is of class Geo')
-          log.verdict_assert_in_delta?(verdict_id + ' - lat', 0, self.lat, 90, 'Geo lat')
-          log.verdict_assert_in_delta?(verdict_id + ' - lng', 0, self.lng, 90, 'Geo lng')
-        end
+        log.verdict_assert_in_delta?(verdict_id + ' - lat', 0, self.lat, 90, 'Geo lat')
+        log.verdict_assert_in_delta?(verdict_id + ' - lng', 0, self.lng, 90, 'Geo lng')
       end
 
     end
@@ -137,11 +131,9 @@ class User < BaseClassForResource
 
     Contract Log, String => Bool
     def verdict_valid?(log, verdict_id)
-      if log.verdict_assert_instance_of?(verdict_id + ' - class', Company, self, 'First object is of class Company')
-        log.verdict_assert_string_not_empty?(verdict_id + ' - name', self.name, 'Company name')
-        log.verdict_assert_string_not_empty?(verdict_id + ' - catchPhrase', self.catchPhrase, 'Company catchPhrase')
-        log.verdict_assert_string_not_empty?(verdict_id + ' - bs', self.bs, 'Company bs')
-      end
+      log.verdict_assert_string_not_empty?(verdict_id + ' - name', self.name, 'Company name')
+      log.verdict_assert_string_not_empty?(verdict_id + ' - catchPhrase', self.catchPhrase, 'Company catchPhrase')
+      log.verdict_assert_string_not_empty?(verdict_id + ' - bs', self.bs, 'Company bs')
     end
 
   end
