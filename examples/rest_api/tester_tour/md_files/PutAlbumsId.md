@@ -40,7 +40,7 @@ end
 
 Notes:
 
-- Method <code>Album.get_first</code> is a convenience method that fetches the first album as an <code>Album</object>.  It is modified and becomes <album_to_put>.
+- Method <code>Album.get_first</code> is a convenience method that fetches the first album as an <code>Album</code> object.  It is modified and becomes <album_to_put>.
 - Method <code>PutAlbumsId.verdict_call_and_verify_success</code>:
   1.  Accesses endpoint PUT albums/_id_, using field <code>:id</code> from <code>album_to_put</code>.
   2.  Forms the response payload into a new Album object, <code>album_put</code>.
@@ -54,11 +54,11 @@ Notes:
 ```xml
 <put_albums_id_test>
   <summary errors='0' failures='1' verdicts='7'/>
-  <test_method name='put_albums_id_test' timestamp='2017-09-27-Wed-15.09.04.988'>
-    <section duration_seconds='2.048' name='With ExampleRestClient'>
+  <test_method name='put_albums_id_test' timestamp='2017-09-27-Wed-15.13.09.225'>
+    <section duration_seconds='2.029' name='With ExampleRestClient'>
       <section name='Test endpoint PUT albums/id'>
         <section name='Make a modified album'>
-          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-27-Wed-15.09.04.988' url='https://jsonplaceholder.typicode.com/albums'>
+          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-27-Wed-15.13.09.225' url='https://jsonplaceholder.typicode.com/albums'>
             <parameters/>
           </section>
           <section name='Album to put'>
@@ -68,8 +68,8 @@ Notes:
           </section>
         </section>
         <section name='PUT the album'>
-          <section name='PUT album' timestamp='2017-09-27-Wed-15.09.06.470'>
-            <section duration_seconds='0.000' method='PUT' name='Rest client' timestamp='2017-09-27-Wed-15.09.06.470' url='https://jsonplaceholder.typicode.com/albums/1'>
+          <section name='PUT album' timestamp='2017-09-27-Wed-15.13.10.801'>
+            <section duration_seconds='0.000' method='PUT' name='Rest client' timestamp='2017-09-27-Wed-15.13.10.802' url='https://jsonplaceholder.typicode.com/albums/1'>
               <parameters id='1' title='My new title' userId='1'/>
             </section>
             <section name='Evaluation'>
@@ -85,7 +85,7 @@ Notes:
                 <exp_value>My new title</exp_value>
                 <act_value>My new title</act_value>
               </verdict>
-              <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-27-Wed-15.09.06.820' url='https://jsonplaceholder.typicode.com/albums/1'>
+              <section duration_seconds='0.001' method='GET' name='Rest client' timestamp='2017-09-27-Wed-15.13.11.069' url='https://jsonplaceholder.typicode.com/albums/1'>
                 <parameters/>
               </section>
               <verdict id='Fetched-id' message='Fetched' method='verdict_assert_equal?' outcome='passed' volatile='false'>
