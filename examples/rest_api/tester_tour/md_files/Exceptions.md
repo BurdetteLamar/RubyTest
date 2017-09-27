@@ -54,8 +54,8 @@ Notes:
 ```xml
 <exceptions_test>
   <summary errors='2' failures='1' verdicts='2'/>
-  <test_method name='exceptions_test' timestamp='2017-09-26-Tue-17.08.23.677'>
-    <section duration_seconds='0.016' name='With ExampleRestClient'>
+  <test_method name='exceptions_test' timestamp='2017-09-27-Wed-15.12.59.567'>
+    <section duration_seconds='0.004' name='With ExampleRestClient'>
       <section name='Section rescues exception'>
         <uncaught_exception>
           <verdict_id>Section rescues exception</verdict_id>

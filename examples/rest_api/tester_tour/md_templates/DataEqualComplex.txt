@@ -1,0 +1,30 @@
+[navigation_links]
+
+# Complex Data Object Equality
+
+## Test Source Code
+
+[file_source](../tests/data_equal_complex_test.rb)
+
+Notes:
+
+- The test gets a known User, then clones it.
+- We know that User is complex, so in this it's necessary to use <code>deep_clone</code>, not <code>clone</code>.
+- In the first section:
+  - Method <code>User.equal?</code> returns <code>true</code>, but does no logging.
+  - The <code>fail unless</code> proves that it worked.
+  - Method <code>User.verdict_equal?</code> verifies and logs each value in the users.
+- In the second section:
+  - One value in the user is modified.  The changed value is in a nested object.
+  - Method <code>User.equal?</code> returns <code>false</code>, but does no logging.
+  - The <code>fail if </code> proves that it worked.
+  - Method <code>User.verdict_equal?</code> verifies and logs each value in the users.
+
+##  Test Log
+
+[file_source](../logs/test_data_equal_complex.xml)
+
+- In the first section, all verdicts pass.
+- In the second section, one verdict fails.
+
+[navigation_links]

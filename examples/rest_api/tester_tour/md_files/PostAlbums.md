@@ -51,11 +51,11 @@ Notes:
 ```xml
 <post_albums_test>
   <summary errors='0' failures='1' verdicts='7'/>
-  <test_method name='post_albums_test' timestamp='2017-09-26-Tue-17.08.35.991'>
-    <section duration_seconds='1.935' name='With ExampleRestClient'>
+  <test_method name='post_albums_test' timestamp='2017-09-27-Wed-15.13.12.329'>
+    <section duration_seconds='2.050' name='With ExampleRestClient'>
       <section name='Test endpoint POST albums'>
         <section name='Album to post'>
-          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-26-Tue-17.08.35.995' url='https://jsonplaceholder.typicode.com/albums'>
+          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-27-Wed-15.13.12.347' url='https://jsonplaceholder.typicode.com/albums'>
             <parameters/>
           </section>
           <data field='id' value='1'/>
@@ -63,8 +63,8 @@ Notes:
           <data field='title' value='My album title'/>
         </section>
         <section name='POST the album'>
-          <section name='POST album' timestamp='2017-09-26-Tue-17.08.37.477'>
-            <section duration_seconds='0.016' method='POST' name='Rest client' timestamp='2017-09-26-Tue-17.08.37.477' url='https://jsonplaceholder.typicode.com/albums'>
+          <section name='POST album' timestamp='2017-09-27-Wed-15.13.13.993'>
+            <section duration_seconds='0.000' method='POST' name='Rest client' timestamp='2017-09-27-Wed-15.13.13.993' url='https://jsonplaceholder.typicode.com/albums'>
               <parameters id='1' title='My album title' userId='1'/>
             </section>
             <section name='Evaluation'>
@@ -80,7 +80,7 @@ Notes:
                 <exp_value>My album title</exp_value>
                 <act_value>My album title</act_value>
               </verdict>
-              <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-26-Tue-17.08.37.768' url='https://jsonplaceholder.typicode.com/albums/1'>
+              <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-27-Wed-15.13.14.226' url='https://jsonplaceholder.typicode.com/albums/1'>
                 <parameters/>
               </section>
               <verdict id='Album fetched-id' message='Fetched' method='verdict_assert_equal?' outcome='passed' volatile='false'>
@@ -102,7 +102,7 @@ Notes:
                     enim&quot;
                   </message>
                   <backtrace>
-                    <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:127:in `block in verdict_equal_recursive?'
+                    <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:129:in `block in verdict_equal_recursive?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:118:in `verdict_equal_recursive?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:44:in `verdict_equal?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/endpoints/base_class_for_post.rb:24:in `block (2 levels) in verdict_call_and_verify_success'

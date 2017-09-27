@@ -54,7 +54,7 @@ Notes:
 ```xml
 <volatility_test>
   <summary errors='0' failures='0' verdicts='3'/>
-  <test_method duration_seconds='1.015' name='volatility_test' timestamp='2017-09-26-Tue-17.08.21.633'>
+  <test_method duration_seconds='1.004' name='volatility_test' timestamp='2017-09-27-Wed-15.12.57.479'>
     <section name='With ExampleRestClient'>
       <section name='Non-volatile value'>
         <verdict id='positive' message='Cos(0) positive' method='verdict_assert?' outcome='passed' volatile='false'>

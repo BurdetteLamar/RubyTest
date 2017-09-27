@@ -6,7 +6,7 @@ require_relative '../../../rest_api/data/user'
 class DataNewComplexTest < BaseClassForTest
 
   def test_data_new_complex
-    prelude do |client, log|
+    prelude do |_, log|
       log.section('Create and log an instance of a complex data object') do
         user = User.new(
             :id => nil,
