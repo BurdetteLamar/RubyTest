@@ -1,0 +1,15 @@
+[navigation_links]
+
+# Simple Data Object Equality
+
+## Test Source Code
+
+[file_source](../tests/data_equal_simple_test.rb)
+
+Notes:
+
+##  Test Log
+
+[file_source](../logs/test_data_equal_simple.xml)
+
+[navigation_links]

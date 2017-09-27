@@ -1,0 +1,15 @@
+[navigation_links]
+
+# Complex Data Object Equality
+
+## Test Source Code
+
+[file_source](../tests/data_equal_complex_test.rb)
+
+Notes:
+
+##  Test Log
+
+[file_source](../logs/test_data_equal_complex.xml)
+
+[navigation_links]

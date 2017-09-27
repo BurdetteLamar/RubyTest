@@ -65,7 +65,7 @@ Notes:
 ```xml
 <data_new_complex_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='data_new_complex_test' timestamp='2017-09-26-Tue-17.08.39.985'>
+  <test_method duration_seconds='0.004' name='data_new_complex_test' timestamp='2017-09-27-Wed-08.47.00.677'>
     <section name='With ExampleRestClient'>
       <section name='Create and log an instance of a complex data object'>
         <data field='name' value='Leanne Graham'/>
