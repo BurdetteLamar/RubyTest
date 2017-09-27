@@ -44,12 +44,12 @@ Notes:
 ```xml
 <get_albums_test>
   <summary errors='0' failures='0' verdicts='7'/>
-  <test_method name='get_albums_test' timestamp='2017-09-27-Wed-15.01.22.854'>
-    <section duration_seconds='1.508' name='With ExampleRestClient'>
+  <test_method name='get_albums_test' timestamp='2017-09-27-Wed-15.08.56.255'>
+    <section duration_seconds='1.713' name='With ExampleRestClient'>
       <section name='Test endpoint GET albums'>
         <section name='GET albums'>
-          <section name='GET albums' timestamp='2017-09-27-Wed-15.01.22.856'>
-            <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-27-Wed-15.01.22.856' url='https://jsonplaceholder.typicode.com/albums'>
+          <section name='GET albums' timestamp='2017-09-27-Wed-15.08.56.255'>
+            <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-27-Wed-15.08.56.255' url='https://jsonplaceholder.typicode.com/albums'>
               <parameters/>
             </section>
             <section name='Evaluation'>

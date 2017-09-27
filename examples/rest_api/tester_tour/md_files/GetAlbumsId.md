@@ -38,7 +38,7 @@ end
 
 Notes:
 
-- Method <code>Album.get_first</code> is a convenience method that fetches the first album as an <code>Album</object>.
+- Method <code>Album.get_first</code> is a convenience method that fetches the first album as an <code>Album</code> object.
 - Method <code>GetAlbumsId.verdict_call_and_verify_success</code>:
   1.  Accesses endpoint GET albums/_id_, using field <code>:id</code> from the given album <code>album_to_get</code>.
   2.  Forms the response payload into a new <code>Album</code> object, <code>album_fetched</code>.
@@ -50,11 +50,11 @@ Notes:
 ```xml
 <get_albums_id_test>
   <summary errors='0' failures='0' verdicts='4'/>
-  <test_method name='get_albums_id_test' timestamp='2017-09-27-Wed-15.01.25.430'>
-    <section duration_seconds='1.576' name='With ExampleRestClient'>
+  <test_method name='get_albums_id_test' timestamp='2017-09-27-Wed-15.08.59.027'>
+    <section duration_seconds='1.528' name='With ExampleRestClient'>
       <section name='Test endpoint GET albums/id'>
         <section name='Fetch an album to GET'>
-          <section duration_seconds='0.001' method='GET' name='Rest client' timestamp='2017-09-27-Wed-15.01.25.434' url='https://jsonplaceholder.typicode.com/albums'>
+          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-27-Wed-15.08.59.030' url='https://jsonplaceholder.typicode.com/albums'>
             <parameters/>
           </section>
           <section name='Album fetched'>
@@ -64,8 +64,8 @@ Notes:
           </section>
         </section>
         <section name='GET the album'>
-          <section name='GET album' timestamp='2017-09-27-Wed-15.01.26.932'>
-            <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-27-Wed-15.01.26.932' url='https://jsonplaceholder.typicode.com/albums/1'>
+          <section name='GET album' timestamp='2017-09-27-Wed-15.09.00.476'>
+            <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-27-Wed-15.09.00.476' url='https://jsonplaceholder.typicode.com/albums/1'>
               <parameters/>
             </section>
             <section name='Evaluation'>
