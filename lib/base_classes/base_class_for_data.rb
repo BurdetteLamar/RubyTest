@@ -103,7 +103,7 @@ class BaseClassForData < BaseClass
       next if expected_value.nil?
       actual_value = actual_obj.send(field)
       if expected_value.kind_of?(BaseClassForData)
-        self.equal_recursive?(expected_value, actual_value, fields_to_ignore)
+        return false unless self.equal_recursive?(expected_value, actual_value, [])
       else
         return false unless actual_value == expected_value
       end
@@ -130,6 +130,55 @@ class BaseClassForData < BaseClass
       end
     end
     verdict
+  end
+
+  # This is an instance method, to allow a data object to call conveniently
+  # (and omit the argument).
+  # The optional argument can be used to specify the source as something other than self.
+  Contract Any => Any
+  def self.deep_clone(obj = self)
+    # If obj is a scalar that cannot clone, return obj.
+    # The expression obj.respond_to?(:clone) is not a reliable test for clonability,
+    # because every object has :clone (but some raise an error if it's called).
+    # So we explicate here.
+    if [
+        Bignum,
+        FalseClass,
+        Fixnum,
+        NilClass,
+        Symbol,
+        TrueClass,
+        DateTime,
+        Float,
+    ].include?(obj.class)
+      return obj
+    end
+    # If obj is a scalar that can clone, return a clone of it.
+    if [
+        String,
+    ].include?(obj.class)
+      return obj.clone
+    end
+    # Ok, we need to make the deep clone.
+    clone = ObjectHelper.instantiate_class_for_class_name(obj.class.name)
+    case
+      when obj.kind_of?(BaseClassForData)
+        obj.fields.each do |field|
+          old_value = obj.send(field)
+          clone.send("#{field}=", self.deep_clone(old_value))
+        end
+      when obj.kind_of?(Array)
+        obj.each do |old_value|
+          clone.push(self.deep_clone(old_value))
+        end
+      when obj.kind_of?(Hash)
+        obj.each_pair do |key, old_value|
+          clone.store(key, self.deep_clone(old_value))
+        end
+      else
+        raise NotImplementedError.new(obj.class.name)
+    end
+    clone
   end
 
 end

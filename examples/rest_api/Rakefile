@@ -84,14 +84,10 @@ EOT
       post_albums
       data_new_simple
       data_new_complex
-      more_to_come
       data_equal_simple
       data_equal_complex
+      more_to_come
   /
-  # names = %w/
-  #     data_equal_simple
-  #     data_equal_complex
-  # /
   names.each_with_index do |name, i|
     test_file_name = format('%s_test.rb', name)
     test_file_path = File.join(

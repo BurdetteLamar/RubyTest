@@ -6,9 +6,17 @@ class DataEqualTest < BaseClassForTest
 
   def test_data_equal_complex
     prelude do |client, log|
-      user = User.get_first(client)
-      User.equal?(user, user)
-      User.verdict_equal?(log, 'user equal', user, user, 'Using User.verdict_equal?')
+      user_0 = User.get_first(client)
+      user_1 = User.deep_clone(user_0)
+      log.section('These are equal') do
+        fail unless User.equal?(user_0, user_1)
+        User.verdict_equal?(log, 'user equal', user_0, user_1, 'Using User.verdict_equal?')
+      end
+      log.section('These are not equal') do
+        user_1.address.geo.lat += 1.0
+        fail if User.equal?(user_0, user_1)
+        User.verdict_equal?(log, 'user not equal', user_0, user_1, 'Using User.verdict_equal?')
+      end
     end
   end
 
