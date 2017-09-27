@@ -1,5 +1,8 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-[Prev](./DataEqualSimple.md) [Next](./MoreToCome.md)
+**Prev** [Simple Data Object Equality](./DataEqualSimple.md)
+
+**Next** [More to Come ...](./MoreToCome.md)
+
 
 # Complex Data Object Equality
 
@@ -52,9 +55,9 @@ Notes:
 ```xml
 <data_equal_complex_test>
   <summary errors='0' failures='1' verdicts='31'/>
-  <test_method duration_seconds='1.555' name='data_equal_complex_test' timestamp='2017-09-27-Wed-15.13.20.306'>
+  <test_method duration_seconds='1.514' name='data_equal_complex_test' timestamp='2017-09-27-Wed-17.36.23.880'>
     <section name='With ExampleRestClient'>
-      <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-27-Wed-15.13.20.310' url='https://jsonplaceholder.typicode.com/users'>
+      <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-27-Wed-17.36.23.885' url='https://jsonplaceholder.typicode.com/users'>
         <parameters/>
       </section>
       <section name='These are equal'>
@@ -233,4 +236,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/
 - In the first section, all verdicts pass.
 - In the second section, one verdict fails.
 
-[Prev](./DataEqualSimple.md) [Next](./MoreToCome.md)
+**Prev** [Simple Data Object Equality](./DataEqualSimple.md)
+
+**Next** [More to Come ...](./MoreToCome.md)
+

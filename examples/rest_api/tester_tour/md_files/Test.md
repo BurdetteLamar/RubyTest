@@ -1,5 +1,6 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
- [Next](./Sections.md)
+**Next** [Sections and Nesting](./Sections.md)
+
 
 # The Simplest Test
 
@@ -39,7 +40,7 @@ Notes:
 ```xml
 <test_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='test_test' timestamp='2017-09-27-Wed-15.12.51.229'>
+  <test_method duration_seconds='0.000' name='test_test' timestamp='2017-09-27-Wed-17.35.55.158'>
     <section name='With ExampleRestClient'/>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
@@ -57,4 +58,5 @@ Notes:
 - Element <code>test_method</code>:  logging for test steps and verdicts.  (This test did nothing, so there's not much here.)
 - The last section gives the count of errors (unexpected exceptions).  Its verdict expects the count to be 0.
 
- [Next](./Sections.md)
+**Next** [Sections and Nesting](./Sections.md)
+

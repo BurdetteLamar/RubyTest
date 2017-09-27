@@ -12,20 +12,31 @@ class MarkdownHelper < BaseClass
         :highlight => true,
         :prev_file_path => nil,
         :next_file_path => nil,
+        :prev_title => nil,
+        :next_title => nil,
     }
     effective_options = default_options.merge(options)
     highlight = effective_options[:highlight]
     prev_file_path = effective_options[:prev_file_path]
     next_file_path = effective_options[:next_file_path]
+    prev_title = effective_options[:prev_title]
+    next_title = effective_options[:next_title]
     File.open(template_file_path, 'r') do |template_file|
       File.open(markdown_file_path, 'w') do |md_file|
         md_file.puts('<!--- GENERATED FILE, DO NOT EDIT --->')
         template_file.each_line do |line|
           case
             when line.start_with?(NAVIGATION_LINKS_TAG)
-              prev_link = prev_file_path ? format('[Prev](%s)', prev_file_path): ''
-              next_link = next_file_path ? format('[Next](%s)', next_file_path): ''
-              md_file.puts(format('%s %s', prev_link, next_link))
+              if prev_file_path
+                prev_link = format('**Prev** [%s](%s)', prev_title, prev_file_path)
+                md_file.puts(prev_link)
+                md_file.puts('')
+              end
+              if next_file_path
+                next_link = format('**Next** [%s](%s)', next_title, next_file_path)
+                md_file.puts(next_link)
+                md_file.puts('')
+              end
             when line.start_with?(FILE_SOURCE_TAG)
               relative_path = line.sub(FILE_SOURCE_TAG, '').gsub(/[()]/, '').strip
               include_file_path = File.join(

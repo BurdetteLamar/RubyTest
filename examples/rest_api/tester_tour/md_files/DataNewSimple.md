@@ -1,5 +1,8 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-[Prev](./PostAlbums.md) [Next](./DataNewComplex.md)
+**Prev** [Test for POST Albums](./PostAlbums.md)
+
+**Next** [Creating a Complex Data Object](./DataNewComplex.md)
+
 
 # Creating a Data Object
 
@@ -49,7 +52,7 @@ Notes:
 ```xml
 <data_new_simple_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='data_new_simple_test' timestamp='2017-09-27-Wed-15.13.15.463'>
+  <test_method duration_seconds='0.002' name='data_new_simple_test' timestamp='2017-09-27-Wed-17.36.19.166'>
     <section name='With ExampleRestClient'>
       <section name='Create and log an instance of Album'>
         <section name='Created album'>
@@ -68,4 +71,7 @@ Notes:
 </data_new_simple_test>
 ```
 
-[Prev](./PostAlbums.md) [Next](./DataNewComplex.md)
+**Prev** [Test for POST Albums](./PostAlbums.md)
+
+**Next** [Creating a Complex Data Object](./DataNewComplex.md)
+

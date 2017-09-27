@@ -1,5 +1,8 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-[Prev](./DataNewComplex.md) [Next](./DataEqualComplex.md)
+**Prev** [Creating a Complex Data Object](./DataNewComplex.md)
+
+**Next** [Complex Data Object Equality](./DataEqualComplex.md)
+
 
 # Simple Data Object Equality
 
@@ -52,9 +55,9 @@ Notes:
 ```xml
 <data_equal_simple_test>
   <summary errors='0' failures='1' verdicts='7'/>
-  <test_method duration_seconds='1.506' name='data_equal_simple_test' timestamp='2017-09-27-Wed-15.13.17.676'>
+  <test_method duration_seconds='1.503' name='data_equal_simple_test' timestamp='2017-09-27-Wed-17.36.21.302'>
     <section name='With ExampleRestClient'>
-      <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-27-Wed-15.13.17.680' url='https://jsonplaceholder.typicode.com/albums'>
+      <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-27-Wed-17.36.21.306' url='https://jsonplaceholder.typicode.com/albums'>
         <parameters/>
       </section>
       <section name='These are equal'>
@@ -121,4 +124,7 @@ Notes:
 - In the first section, all verdicts pass.
 - In the second section, one verdict fails.
 
-[Prev](./DataNewComplex.md) [Next](./DataEqualComplex.md)
+**Prev** [Creating a Complex Data Object](./DataNewComplex.md)
+
+**Next** [Complex Data Object Equality](./DataEqualComplex.md)
+

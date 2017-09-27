@@ -1,5 +1,8 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-[Prev](./Sections.md) [Next](./Volatility.md)
+**Prev** [Sections and Nesting](./Sections.md)
+
+**Next** [Volatile Return Values](./Volatility.md)
+
 
 # Verdicts
 
@@ -73,7 +76,7 @@ Notes:
 ```xml
 <verdicts_test>
   <summary errors='0' failures='2' verdicts='5'/>
-  <test_method duration_seconds='0.005' name='verdicts_test' timestamp='2017-09-27-Wed-15.12.56.398'>
+  <test_method duration_seconds='0.000' name='verdicts_test' timestamp='2017-09-27-Wed-17.36.00.307'>
     <section name='With ExampleRestClient'>
       <section name='These verdicts should pass'>
         <section name='An assertion verdict that should pass'>
@@ -150,4 +153,7 @@ Notes:
 
 - A failed verdict logs an exception, including the message and backtrace.
 
-[Prev](./Sections.md) [Next](./Volatility.md)
+**Prev** [Sections and Nesting](./Sections.md)
+
+**Next** [Volatile Return Values](./Volatility.md)
+
