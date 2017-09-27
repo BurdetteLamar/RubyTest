@@ -1,5 +1,8 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-[Prev](./Volatility.md) [Next](./GetAlbums.md)
+**Prev** [Volatile Return Values](./Volatility.md)
+
+**Next** [Test for GET Albums](./GetAlbums.md)
+
 
 # Exceptions, Rescued and Not
 
@@ -54,8 +57,8 @@ Notes:
 ```xml
 <exceptions_test>
   <summary errors='2' failures='1' verdicts='2'/>
-  <test_method name='exceptions_test' timestamp='2017-09-27-Wed-15.12.59.567'>
-    <section duration_seconds='0.004' name='With ExampleRestClient'>
+  <test_method name='exceptions_test' timestamp='2017-09-27-Wed-17.36.03.429'>
+    <section duration_seconds='0.003' name='With ExampleRestClient'>
       <section name='Section rescues exception'>
         <uncaught_exception>
           <verdict_id>Section rescues exception</verdict_id>
@@ -128,4 +131,7 @@ Notes:
 - Each logged exception includes its message and backtrace.
 - The second exception, the one the test didn't rescue, is actually rescued by the log itself, and of course logged.
 
-[Prev](./Volatility.md) [Next](./GetAlbums.md)
+**Prev** [Volatile Return Values](./Volatility.md)
+
+**Next** [Test for GET Albums](./GetAlbums.md)
+

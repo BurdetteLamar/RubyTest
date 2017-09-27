@@ -1,5 +1,8 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-[Prev](./GetAlbums.md) [Next](./DeleteAlbumsId.md)
+**Prev** [Test for GET Albums](./GetAlbums.md)
+
+**Next** [Test for DELETE Albums/_id_](./DeleteAlbumsId.md)
+
 
 # Test for GET Albums/_id_
 
@@ -50,11 +53,11 @@ Notes:
 ```xml
 <get_albums_id_test>
   <summary errors='0' failures='0' verdicts='4'/>
-  <test_method name='get_albums_id_test' timestamp='2017-09-27-Wed-15.13.03.302'>
-    <section duration_seconds='1.603' name='With ExampleRestClient'>
+  <test_method name='get_albums_id_test' timestamp='2017-09-27-Wed-17.36.07.077'>
+    <section duration_seconds='1.599' name='With ExampleRestClient'>
       <section name='Test endpoint GET albums/id'>
         <section name='Fetch an album to GET'>
-          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-27-Wed-15.13.03.306' url='https://jsonplaceholder.typicode.com/albums'>
+          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-27-Wed-17.36.07.081' url='https://jsonplaceholder.typicode.com/albums'>
             <parameters/>
           </section>
           <section name='Album fetched'>
@@ -64,8 +67,8 @@ Notes:
           </section>
         </section>
         <section name='GET the album'>
-          <section name='GET album' timestamp='2017-09-27-Wed-15.13.04.828'>
-            <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-27-Wed-15.13.04.828' url='https://jsonplaceholder.typicode.com/albums/1'>
+          <section name='GET album' timestamp='2017-09-27-Wed-17.36.08.593'>
+            <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-27-Wed-17.36.08.593' url='https://jsonplaceholder.typicode.com/albums/1'>
               <parameters/>
             </section>
             <section name='Evaluation'>
@@ -96,4 +99,7 @@ Notes:
 </get_albums_id_test>
 ```
 
-[Prev](./GetAlbums.md) [Next](./DeleteAlbumsId.md)
+**Prev** [Test for GET Albums](./GetAlbums.md)
+
+**Next** [Test for DELETE Albums/_id_](./DeleteAlbumsId.md)
+

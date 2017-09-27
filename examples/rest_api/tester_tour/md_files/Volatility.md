@@ -1,5 +1,8 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-[Prev](./Verdicts.md) [Next](./Exceptions.md)
+**Prev** [Verdicts](./Verdicts.md)
+
+**Next** [Exceptions, Rescued and Not](./Exceptions.md)
+
 
 # Volatile Return Values
 
@@ -54,7 +57,7 @@ Notes:
 ```xml
 <volatility_test>
   <summary errors='0' failures='0' verdicts='3'/>
-  <test_method duration_seconds='1.004' name='volatility_test' timestamp='2017-09-27-Wed-15.12.57.479'>
+  <test_method duration_seconds='1.002' name='volatility_test' timestamp='2017-09-27-Wed-17.36.01.365'>
     <section name='With ExampleRestClient'>
       <section name='Non-volatile value'>
         <verdict id='positive' message='Cos(0) positive' method='verdict_assert?' outcome='passed' volatile='false'>
@@ -77,4 +80,7 @@ Notes:
 </volatility_test>
 ```
 
-[Prev](./Verdicts.md) [Next](./Exceptions.md)
+**Prev** [Verdicts](./Verdicts.md)
+
+**Next** [Exceptions, Rescued and Not](./Exceptions.md)
+

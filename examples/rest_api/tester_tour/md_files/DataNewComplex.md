@@ -1,5 +1,8 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-[Prev](./DataNewSimple.md) [Next](./DataEqualSimple.md)
+**Prev** [Creating a Data Object](./DataNewSimple.md)
+
+**Next** [Simple Data Object Equality](./DataEqualSimple.md)
+
 
 # Creating a Complex Data Object
 
@@ -65,7 +68,7 @@ Notes:
 ```xml
 <data_new_complex_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='data_new_complex_test' timestamp='2017-09-27-Wed-15.13.16.589'>
+  <test_method duration_seconds='0.003' name='data_new_complex_test' timestamp='2017-09-27-Wed-17.36.20.246'>
     <section name='With ExampleRestClient'>
       <section name='Create and log an instance of a complex data object'>
         <data field='name' value='Leanne Graham'/>
@@ -102,4 +105,7 @@ Notes:
 
 - When the <code>User</code> object logs itself, the nested objects also log themselves.
 
-[Prev](./DataNewSimple.md) [Next](./DataEqualSimple.md)
+**Prev** [Creating a Data Object](./DataNewSimple.md)
+
+**Next** [Simple Data Object Equality](./DataEqualSimple.md)
+

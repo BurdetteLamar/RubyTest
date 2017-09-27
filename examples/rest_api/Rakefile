@@ -19,6 +19,18 @@ task :tester_tour do
     )
   end
 
+  def title_for_md_file(md_file_path)
+    title = nil
+    title_tag = /^#\s+/
+    File.foreach(md_file_path) do |line|
+      if line.match(title_tag)
+        title = line.sub(title_tag, '').chomp
+        break
+      end
+    end
+    title
+  end
+
   rakefile_dir_path = File.dirname(__FILE__)
 
   tour_dir_path = File.join(
@@ -88,6 +100,14 @@ EOT
       data_equal_complex
       more_to_come
   /
+
+  titles = []
+  names.each do |name|
+    md_file_path = md_file_path_for_name(md_dir_path, name)
+    title = title_for_md_file(md_file_path)
+    titles.push(title)
+  end
+
   names.each_with_index do |name, i|
     test_file_name = format('%s_test.rb', name)
     test_file_path = File.join(
@@ -120,7 +140,9 @@ EOT
 
     md_file_path = md_file_path_for_name(md_dir_path, name)
     prev_name = i == 0 ? nil : names[i - 1]
+    prev_title = i == 0 ? nil : titles[i - 1]
     prev_md_file_path = md_file_path_for_name('.', prev_name)
+    next_title = titles[i + 1]
     next_md_file_path = md_file_path_for_name('.', names[i + 1])
     file_basename = format('%s', StringHelper.to_upper_camel_case(name))
     template_file_name = format('%s.txt', file_basename)
@@ -132,6 +154,8 @@ EOT
         :highlight => true,
         :prev_file_path => prev_md_file_path,
         :next_file_path => next_md_file_path,
+        :prev_title => prev_title,
+        :next_title => next_title,
     }
     MarkdownHelper.build_file(template_file_path, md_file_path, options)
     md_file_name = File.basename(md_file_path)
@@ -141,13 +165,7 @@ EOT
         'md_files',
         md_file_name,
     )
-    title = nil
-    title_tag = /^#\s+/
-    File.foreach(md_file_path) do |line|
-      if line.match(title_tag)
-        title = line.sub(title_tag, '').chomp
-      end
-    end
+    title = titles[i]
     link_item = format('- [%s](%s)', title, relative_link_path)
     index_file.puts(link_item)
 
