@@ -1,10 +1,10 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
 **Prev** [Creating a Complex Data Object](./DataNewComplex.md)
 
-**Next** [Complex Data Object Equality](./DataEqualComplex.md)
+**Next** [Verifying a Complex Data Object](./DataEqualComplex.md)
 
 
-# Simple Data Object Equality
+# Verifying a Simple Data Object
 
 ## Test Source Code
 
@@ -55,9 +55,9 @@ Notes:
 ```xml
 <data_equal_simple_test>
   <summary errors='0' failures='1' verdicts='7'/>
-  <test_method duration_seconds='1.466' name='data_equal_simple_test' timestamp='2017-09-28-Thu-15.39.50.007'>
+  <test_method duration_seconds='1.518' name='data_equal_simple_test' timestamp='2017-09-28-Thu-15.43.58.763'>
     <section name='With ExampleRestClient'>
-      <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-28-Thu-15.39.50.007' url='https://jsonplaceholder.typicode.com/albums'>
+      <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-28-Thu-15.43.58.767' url='https://jsonplaceholder.typicode.com/albums'>
         <parameters/>
       </section>
       <section name='These are equal'>
@@ -127,5 +127,5 @@ Notes:
 
 **Prev** [Creating a Complex Data Object](./DataNewComplex.md)
 
-**Next** [Complex Data Object Equality](./DataEqualComplex.md)
+**Next** [Verifying a Complex Data Object](./DataEqualComplex.md)
 

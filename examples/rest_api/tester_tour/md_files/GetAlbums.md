@@ -1,5 +1,5 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev** [Complex Data Object Equality](./DataEqualComplex.md)
+**Prev** [Verifying a Complex Data Object](./DataEqualComplex.md)
 
 **Next** [Test for GET Albums/_id_](./GetAlbumsId.md)
 
@@ -48,12 +48,12 @@ Notes:
 ```xml
 <get_albums_test>
   <summary errors='0' failures='0' verdicts='7'/>
-  <test_method name='get_albums_test' timestamp='2017-09-28-Thu-15.39.55.174'>
-    <section duration_seconds='1.515' name='With ExampleRestClient'>
+  <test_method name='get_albums_test' timestamp='2017-09-28-Thu-15.44.04.016'>
+    <section duration_seconds='1.749' name='With ExampleRestClient'>
       <section name='Test endpoint GET albums'>
         <section name='GET albums'>
-          <section name='GET albums' timestamp='2017-09-28-Thu-15.39.55.175'>
-            <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-28-Thu-15.39.55.176' url='https://jsonplaceholder.typicode.com/albums'>
+          <section name='GET albums' timestamp='2017-09-28-Thu-15.44.04.017'>
+            <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-28-Thu-15.44.04.018' url='https://jsonplaceholder.typicode.com/albums'>
               <parameters/>
             </section>
             <section name='Evaluation'>
@@ -114,7 +114,7 @@ Notes:
 - Each <code>section</code> element whose <code>name</code> is <code>Rest client</code> records an interaction with the REST API, including any passed parameters.
 - The <code>section</code> whose <code>name</code> is <code>Evaluation</code> contains verdicts about the returned data.
 
-**Prev** [Complex Data Object Equality](./DataEqualComplex.md)
+**Prev** [Verifying a Complex Data Object](./DataEqualComplex.md)
 
 **Next** [Test for GET Albums/_id_](./GetAlbumsId.md)
 

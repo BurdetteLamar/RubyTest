@@ -58,8 +58,8 @@ Notes:
 ```xml
 <exceptions_test>
   <summary errors='2' failures='1' verdicts='2'/>
-  <test_method name='exceptions_test' timestamp='2017-09-28-Thu-15.39.41.710'>
-    <section duration_seconds='0.004' name='With ExampleRestClient'>
+  <test_method name='exceptions_test' timestamp='2017-09-28-Thu-15.43.49.742'>
+    <section duration_seconds='0.000' name='With ExampleRestClient'>
       <section name='Section rescues exception'>
         <uncaught_exception>
           <verdict_id>Section rescues exception</verdict_id>

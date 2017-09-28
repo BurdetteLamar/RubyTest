@@ -1,10 +1,10 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev** [Simple Data Object Equality](./DataEqualSimple.md)
+**Prev** [Verifying a Simple Data Object](./DataEqualSimple.md)
 
 **Next** [Test for GET Albums](./GetAlbums.md)
 
 
-# Complex Data Object Equality
+# Verifying a Complex Data Object
 
 ## Test Source Code
 
@@ -55,9 +55,9 @@ Notes:
 ```xml
 <data_equal_complex_test>
   <summary errors='0' failures='1' verdicts='31'/>
-  <test_method duration_seconds='1.539' name='data_equal_complex_test' timestamp='2017-09-28-Thu-15.39.52.534'>
+  <test_method duration_seconds='1.515' name='data_equal_complex_test' timestamp='2017-09-28-Thu-15.44.01.335'>
     <section name='With ExampleRestClient'>
-      <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-28-Thu-15.39.52.534' url='https://jsonplaceholder.typicode.com/users'>
+      <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-28-Thu-15.44.01.335' url='https://jsonplaceholder.typicode.com/users'>
         <parameters/>
       </section>
       <section name='These are equal'>
@@ -237,7 +237,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/
 - In the first section, all verdicts pass.
 - In the second section, one verdict fails.
 
-**Prev** [Simple Data Object Equality](./DataEqualSimple.md)
+**Prev** [Verifying a Simple Data Object](./DataEqualSimple.md)
 
 **Next** [Test for GET Albums](./GetAlbums.md)
 

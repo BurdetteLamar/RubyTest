@@ -47,7 +47,7 @@ Notes:
 ```xml
 <data_new_simple_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.001' name='data_new_simple_test' timestamp='2017-09-28-Thu-15.39.47.903'>
+  <test_method duration_seconds='0.002' name='data_new_simple_test' timestamp='2017-09-28-Thu-15.43.56.535'>
     <section name='With ExampleRestClient'>
       <section name='Create and log an instance of Album'>
         <section name='Created album'>

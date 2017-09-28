@@ -1,6 +1,6 @@
 [navigation_links]
 
-# Complex Data Object Equality
+# Verifying a Complex Data Object
 
 ## Test Source Code
 

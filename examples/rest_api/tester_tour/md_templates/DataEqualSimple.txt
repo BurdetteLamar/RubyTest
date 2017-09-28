@@ -1,6 +1,6 @@
 [navigation_links]
 
-# Simple Data Object Equality
+# Verifying a Simple Data Object
 
 ## Test Source Code
 

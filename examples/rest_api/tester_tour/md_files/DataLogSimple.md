@@ -47,11 +47,11 @@ Notes:
 ```xml
 <data_log_simple_test>
   <summary errors='1' failures='1' verdicts='1'/>
-  <test_method name='data_log_simple_test' timestamp='2017-09-28-Thu-15.39.42.784'>
+  <test_method name='data_log_simple_test' timestamp='2017-09-28-Thu-15.43.50.827'>
     <section name='With ExampleRestClient'>
-      <section duration_seconds='1.518' name='Fetch and log an instance of Album'>
+      <section duration_seconds='1.792' name='Fetch and log an instance of Album'>
         <section name='Fetch an album'>
-          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-28-Thu-15.39.42.789' url='https://jsonplaceholder.typicode.com/albums'>
+          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-28-Thu-15.43.50.843' url='https://jsonplaceholder.typicode.com/albums'>
             <parameters/>
           </section>
         </section>
@@ -61,7 +61,7 @@ Notes:
             <class>NameError</class>
             <message>
               undefined local variable or method `album&apos; for
-              #&lt;DataNewTest:0x3b37780&gt;
+              #&lt;DataNewTest:0x3b150d0&gt;
             </message>
             <backtrace>
               <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
