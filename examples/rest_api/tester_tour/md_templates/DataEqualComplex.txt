@@ -24,6 +24,7 @@ Notes:
 
 [file_source](../logs/test_data_equal_complex.xml)
 
+- Each actual value, even one that's in a nested object, is verified in a separate verdict.  This makes evaluating the test execution unambiguous.
 - In the first section, all verdicts pass.
 - In the second section, one verdict fails.
 

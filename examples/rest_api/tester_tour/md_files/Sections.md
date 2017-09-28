@@ -58,17 +58,17 @@ Notes:
 ```xml
 <sections_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='3.020' name='sections_test' timestamp='2017-09-28-Thu-14.15.15.358'>
+  <test_method duration_seconds='3.005' name='sections_test' timestamp='2017-09-28-Thu-14.43.14.463'>
     <section name='With ExampleRestClient'>
       <section name='First outer section'>
         <section name='First inner section'/>
         <section name='Second inner section'/>
       </section>
       <section name='Second outer section'/>
-      <section name='Section with timestamp' timestamp='2017-09-28-Thu-14.15.15.360'/>
-      <section duration_seconds='1.006' name='Section with timestamp'/>
-      <section duration_seconds='1.000' name='Section with timestamp and duration' timestamp='2017-09-28-Thu-14.15.16.366'/>
-      <section duration_seconds='1.013' name='Order does not matter' timestamp='2017-09-28-Thu-14.15.17.366'/>
+      <section name='Section with timestamp' timestamp='2017-09-28-Thu-14.43.14.465'/>
+      <section duration_seconds='1.001' name='Section with timestamp'/>
+      <section duration_seconds='1.000' name='Section with timestamp and duration' timestamp='2017-09-28-Thu-14.43.15.466'/>
+      <section duration_seconds='1.000' name='Order does not matter' timestamp='2017-09-28-Thu-14.43.16.466'/>
     </section>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
@@ -82,7 +82,7 @@ Notes:
 
 Notes:
 
-- The sections in the test are propagated to the log, giving it the same structure.
+- The sections in the test are propagated to the log, so that both test and log have the same structure.
 
 **Prev** [The Simplest Test](./Test.md)
 

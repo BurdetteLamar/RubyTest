@@ -1,5 +1,5 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev** [Volatile Return Values](./Volatility.md)
+**Prev** [Exceptions, Rescued and Not](./Exceptions.md)
 
 **Next** [Creating a Complex Data Object](./DataNewComplex.md)
 
@@ -15,7 +15,6 @@ This page introduces simple data classes, and shows how to create instances of t
 require_relative '../../base_classes/base_class_for_test'
 
 require_relative '../../../rest_api/data/album'
-require_relative '../../../rest_api/data/user'
 
 class DataNewTest < BaseClassForTest
 
@@ -52,7 +51,7 @@ Notes:
 ```xml
 <data_new_simple_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.001' name='data_new_simple_test' timestamp='2017-09-28-Thu-14.15.24.082'>
+  <test_method duration_seconds='0.001' name='data_new_simple_test' timestamp='2017-09-28-Thu-14.43.20.651'>
     <section name='With ExampleRestClient'>
       <section name='Create and log an instance of Album'>
         <section name='Created album'>
@@ -71,7 +70,7 @@ Notes:
 </data_new_simple_test>
 ```
 
-**Prev** [Volatile Return Values](./Volatility.md)
+**Prev** [Exceptions, Rescued and Not](./Exceptions.md)
 
 **Next** [Creating a Complex Data Object](./DataNewComplex.md)
 

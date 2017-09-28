@@ -94,6 +94,7 @@ EOT
       data_crud
       data_convenience
       helpers
+      volatility
   /
   # Done.
   names = %w/
@@ -101,7 +102,6 @@ EOT
       sections
       verdicts
       exceptions
-      volatility
       data_new_simple
       data_new_complex
       data_equal_simple

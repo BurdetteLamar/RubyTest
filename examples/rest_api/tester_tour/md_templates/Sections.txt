@@ -19,6 +19,6 @@ Notes:
 
 Notes:
 
-- The sections in the test are propagated to the log, giving it the same structure.
+- The sections in the test are propagated to the log, so that both test and log have the same structure.
 
 [navigation_links]

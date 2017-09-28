@@ -21,6 +21,4 @@ Notes:
 
 [file_source](../logs/test_data_new_complex.xml)
 
-- When the <code>User</code> object logs itself, the nested objects also log themselves.
-
 [navigation_links]

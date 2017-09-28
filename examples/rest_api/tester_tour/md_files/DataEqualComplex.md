@@ -55,9 +55,9 @@ Notes:
 ```xml
 <data_equal_complex_test>
   <summary errors='0' failures='1' verdicts='31'/>
-  <test_method duration_seconds='1.521' name='data_equal_complex_test' timestamp='2017-09-28-Thu-14.15.29.432'>
+  <test_method duration_seconds='1.517' name='data_equal_complex_test' timestamp='2017-09-28-Thu-14.43.25.360'>
     <section name='With ExampleRestClient'>
-      <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-28-Thu-14.15.29.437' url='https://jsonplaceholder.typicode.com/users'>
+      <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-28-Thu-14.43.25.365' url='https://jsonplaceholder.typicode.com/users'>
         <parameters/>
       </section>
       <section name='These are equal'>
@@ -233,6 +233,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/
 </data_equal_complex_test>
 ```
 
+- Each actual value, even one that's in a nested object, is verified in a separate verdict.  This makes evaluating the test execution unambiguous.
 - In the first section, all verdicts pass.
 - In the second section, one verdict fails.
 

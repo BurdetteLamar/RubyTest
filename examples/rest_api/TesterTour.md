@@ -16,7 +16,6 @@ Each following page assumes you've seen all its predecessors, so repetition is m
 - [Sections and Nesting](./tester_tour/md_files/Sections.md)
 - [Verdicts](./tester_tour/md_files/Verdicts.md)
 - [Exceptions, Rescued and Not](./tester_tour/md_files/Exceptions.md)
-- [Volatile Return Values](./tester_tour/md_files/Volatility.md)
 - [Creating a Data Object](./tester_tour/md_files/DataNewSimple.md)
 - [Creating a Complex Data Object](./tester_tour/md_files/DataNewComplex.md)
 - [Simple Data Object Equality](./tester_tour/md_files/DataEqualSimple.md)

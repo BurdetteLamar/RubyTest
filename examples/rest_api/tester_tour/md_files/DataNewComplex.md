@@ -14,7 +14,6 @@ This page introduces complex data classes, and shows how to create instances of 
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
 
-require_relative '../../../rest_api/data/album'
 require_relative '../../../rest_api/data/user'
 
 class DataNewComplexTest < BaseClassForTest
@@ -68,7 +67,7 @@ Notes:
 ```xml
 <data_new_complex_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.004' name='data_new_complex_test' timestamp='2017-09-28-Thu-14.15.25.308'>
+  <test_method duration_seconds='0.000' name='data_new_complex_test' timestamp='2017-09-28-Thu-14.43.21.694'>
     <section name='With ExampleRestClient'>
       <section name='Create and log an instance of a complex data object'>
         <data field='name' value='Leanne Graham'/>
@@ -102,8 +101,6 @@ Notes:
   </section>
 </data_new_complex_test>
 ```
-
-- When the <code>User</code> object logs itself, the nested objects also log themselves.
 
 **Prev** [Creating a Data Object](./DataNewSimple.md)
 

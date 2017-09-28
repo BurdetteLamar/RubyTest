@@ -40,7 +40,7 @@ Notes:
 ```xml
 <test_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='test_test' timestamp='2017-09-28-Thu-14.15.14.145'>
+  <test_method duration_seconds='0.001' name='test_test' timestamp='2017-09-28-Thu-14.43.13.424'>
     <section name='With ExampleRestClient'/>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
@@ -57,6 +57,7 @@ Notes:
 - Element <code>summary</code>:  counts of verdicts, failures (failed verdicts), and errors (unexpected exceptions).
 - Element <code>test_method</code>:  logging for test steps and verdicts.  (This test did nothing, so there's not much here.)
 - The last section gives the count of errors (unexpected exceptions).  Its verdict expects the count to be 0.
+- Attribute <code>volatile</code>, seen in each <code>verdict</code> element, has to do with the Changes Report, and is of no present.
 
 **Next** [Sections and Nesting](./Sections.md)
 
