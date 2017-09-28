@@ -19,10 +19,20 @@ task :tester_tour do
     )
   end
 
-  def title_for_md_file(md_file_path)
+  def template_file_path_for_name(template_dir_path, name)
+    file_basename = format('%s', StringHelper.to_upper_camel_case(name))
+    template_file_name = format('%s.txt', file_basename)
+    template_file_path = File.join(
+        template_dir_path,
+        template_file_name,
+    )
+
+  end
+
+  def title_from_template_file(template_file_path)
     title = nil
     title_tag = /^#\s+/
-    File.foreach(md_file_path) do |line|
+    File.foreach(template_file_path) do |line|
       if line.match(title_tag)
         title = line.sub(title_tag, '').chomp
         break
@@ -86,8 +96,6 @@ EOT
   # To do.
   names = %w/
       verdict_return_values
-      data_log_simple
-      data_log_complex
       data_valid_simple
       data_valid_complex
       data_exist
@@ -102,6 +110,8 @@ EOT
       sections
       verdicts
       exceptions
+      data_log_simple
+      data_log_complex
       data_new_simple
       data_new_complex
       data_equal_simple
@@ -119,8 +129,8 @@ EOT
 
   titles = []
   names.each do |name|
-    md_file_path = md_file_path_for_name(md_dir_path, name)
-    title = title_for_md_file(md_file_path)
+    template_file_path = template_file_path_for_name(template_dir_path, name)
+    title = title_from_template_file(template_file_path)
     titles.push(title)
   end
 
@@ -160,12 +170,7 @@ EOT
     prev_md_file_path = md_file_path_for_name('.', prev_name)
     next_title = titles[i + 1]
     next_md_file_path = md_file_path_for_name('.', names[i + 1])
-    file_basename = format('%s', StringHelper.to_upper_camel_case(name))
-    template_file_name = format('%s.txt', file_basename)
-    template_file_path = File.join(
-        template_dir_path,
-        template_file_name,
-    )
+    template_file_path = template_file_path_for_name(template_dir_path, name)
     options = {
         :highlight => true,
         :prev_file_path => prev_md_file_path,

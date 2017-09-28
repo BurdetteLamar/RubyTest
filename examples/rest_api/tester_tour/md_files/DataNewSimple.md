@@ -1,5 +1,5 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev** [Exceptions, Rescued and Not](./Exceptions.md)
+**Prev** [Logging a Complex Data Object](./DataLogComplex.md)
 
 **Next** [Creating a Complex Data Object](./DataNewComplex.md)
 
@@ -38,13 +38,8 @@ end
 
 Notes:
 
-- The JSONPlaceholder REST API has several resources, including the Album resource.  That resource is represented in this test framework by class <code>Album</code>.
-- Because this test uses albums, it requires the album class.
-- The Album resource and its corresponding class are flat, each consisting of only three scalar values, seen here in the call to <code>Album.new</code>.
 - These values are passed to method <code>Album.new</code> in a hash that gives the names and values.
 - Note that the created album exists only here in the test, and not in the REST API itself.  If it were later created in the API, it would be assigned a non-nil <code>:id</code> value.
-- Class <code>Album</code> derives from base classes that provide it with the ability to log itself, as seen here in the call to method <code>album.log</code>.
-- This is true of all data objects in the framework.
 
 ##  Test Log
 
@@ -52,7 +47,7 @@ Notes:
 ```xml
 <data_new_simple_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.002' name='data_new_simple_test' timestamp='2017-09-28-Thu-15.04.42.158'>
+  <test_method duration_seconds='0.001' name='data_new_simple_test' timestamp='2017-09-28-Thu-15.39.47.903'>
     <section name='With ExampleRestClient'>
       <section name='Create and log an instance of Album'>
         <section name='Created album'>
@@ -71,7 +66,7 @@ Notes:
 </data_new_simple_test>
 ```
 
-**Prev** [Exceptions, Rescued and Not](./Exceptions.md)
+**Prev** [Logging a Complex Data Object](./DataLogComplex.md)
 
 **Next** [Creating a Complex Data Object](./DataNewComplex.md)
 

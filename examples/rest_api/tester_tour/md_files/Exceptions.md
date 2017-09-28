@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
 **Prev** [Verdicts](./Verdicts.md)
 
-**Next** [Creating a Data Object](./DataNewSimple.md)
+**Next** [Logging a Simple Data Object](./DataLogSimple.md)
 
 
 # Exceptions, Rescued and Not
@@ -58,7 +58,7 @@ Notes:
 ```xml
 <exceptions_test>
   <summary errors='2' failures='1' verdicts='2'/>
-  <test_method name='exceptions_test' timestamp='2017-09-28-Thu-15.04.41.102'>
+  <test_method name='exceptions_test' timestamp='2017-09-28-Thu-15.39.41.710'>
     <section duration_seconds='0.004' name='With ExampleRestClient'>
       <section name='Section rescues exception'>
         <uncaught_exception>
@@ -134,5 +134,5 @@ Notes:
 
 **Prev** [Verdicts](./Verdicts.md)
 
-**Next** [Creating a Data Object](./DataNewSimple.md)
+**Next** [Logging a Simple Data Object](./DataLogSimple.md)
 

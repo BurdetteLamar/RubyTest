@@ -1,21 +1,24 @@
 [navigation_links]
 
-# Creating a Complex Data Object
+# Logging a Complex Data Object
 
-This page introduces complex data classes, and shows how to create instances of them.
+This page introduces complex data classes, and shows how to log instances of them.
 
 ## Test Source Code
 
-[file_source](../tests/data_new_complex_test.rb)
+[file_source](../tests/data_log_complex_test.rb)
 
 Notes:
 
+- Unlike an album, which has only scalar values, a user has a more complex structure.
+- Some of its values, such as those for <code>:name</code> and <code>:username</code>, are simple scalars.
+- Other values, such as those for <code>:address</code> and <code>:company</code>, are more complex.
 - When the <code>User</code> instance is created, the values for <code>:address</code> are formed into an instance of <code>User::Address</code>.
 - Similarly, the values for <code>:company</code> are formed into an instance of <code>User::Company</code>.
 - There is a further nesting in the values for <code>:address</code>:  it contains multi-valued data for <code>:geo</code>.  These values are formed into an instance of <code>User::Address::Geo</code>.
 
 ##  Test Log
 
-[file_source](../logs/test_data_new_complex.xml)
+[file_source](../logs/test_data_log_complex.xml)
 
 [navigation_links]

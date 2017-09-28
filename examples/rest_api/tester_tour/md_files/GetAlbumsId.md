@@ -53,11 +53,11 @@ Notes:
 ```xml
 <get_albums_id_test>
   <summary errors='0' failures='0' verdicts='4'/>
-  <test_method name='get_albums_id_test' timestamp='2017-09-28-Thu-15.04.52.009'>
-    <section duration_seconds='1.558' name='With ExampleRestClient'>
+  <test_method name='get_albums_id_test' timestamp='2017-09-28-Thu-15.39.57.759'>
+    <section duration_seconds='1.587' name='With ExampleRestClient'>
       <section name='Test endpoint GET albums/id'>
         <section name='Fetch an album to GET'>
-          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-28-Thu-15.04.52.025' url='https://jsonplaceholder.typicode.com/albums'>
+          <section duration_seconds='0.001' method='GET' name='Rest client' timestamp='2017-09-28-Thu-15.39.57.763' url='https://jsonplaceholder.typicode.com/albums'>
             <parameters/>
           </section>
           <section name='Album fetched'>
@@ -67,8 +67,8 @@ Notes:
           </section>
         </section>
         <section name='GET the album'>
-          <section name='GET album' timestamp='2017-09-28-Thu-15.04.53.495'>
-            <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-28-Thu-15.04.53.495' url='https://jsonplaceholder.typicode.com/albums/1'>
+          <section name='GET album' timestamp='2017-09-28-Thu-15.39.59.254'>
+            <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-28-Thu-15.39.59.255' url='https://jsonplaceholder.typicode.com/albums/1'>
               <parameters/>
             </section>
             <section name='Evaluation'>
