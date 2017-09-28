@@ -10,8 +10,8 @@ This page introduces sections, including nesting, timestamps, and durations.
 
 Notes:
 
-- Use nested sections to structure test steps.
-- (The variables yielded by method <code>prelude</code> are a client and a log.  This test does not use the client, and so uses the variable name <code>_</code> instead of variable <code>client</code>.  This prevents the RubyMine IDE from flagging it as an unused variable during code inspection.)
+- Use nested sections to organize test code.
+- This test does not use the client, and so uses the variable name <code>_</code> instead of variable name <code>client</code>.  This prevents the RubyMine IDE from flagging it as an unused variable during code inspection.)
 
 ##  Test Log
 

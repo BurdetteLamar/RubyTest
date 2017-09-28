@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
 **Prev** [Test for PUT Albums/_id_](./PutAlbumsId.md)
 
-**Next** [Creating a Data Object](./DataNewSimple.md)
+**Next** [More to Come ...](./MoreToCome.md)
 
 
 # Test for POST Albums
@@ -54,11 +54,11 @@ Notes:
 ```xml
 <post_albums_test>
   <summary errors='0' failures='1' verdicts='7'/>
-  <test_method name='post_albums_test' timestamp='2017-09-27-Wed-17.36.16.118'>
-    <section duration_seconds='1.923' name='With ExampleRestClient'>
+  <test_method name='post_albums_test' timestamp='2017-09-28-Thu-14.15.44.407'>
+    <section duration_seconds='1.885' name='With ExampleRestClient'>
       <section name='Test endpoint POST albums'>
         <section name='Album to post'>
-          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-27-Wed-17.36.16.122' url='https://jsonplaceholder.typicode.com/albums'>
+          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-28-Thu-14.15.44.411' url='https://jsonplaceholder.typicode.com/albums'>
             <parameters/>
           </section>
           <data field='id' value='1'/>
@@ -66,8 +66,8 @@ Notes:
           <data field='title' value='My album title'/>
         </section>
         <section name='POST the album'>
-          <section name='POST album' timestamp='2017-09-27-Wed-17.36.17.634'>
-            <section duration_seconds='0.000' method='POST' name='Rest client' timestamp='2017-09-27-Wed-17.36.17.634' url='https://jsonplaceholder.typicode.com/albums'>
+          <section name='POST album' timestamp='2017-09-28-Thu-14.15.45.939'>
+            <section duration_seconds='0.000' method='POST' name='Rest client' timestamp='2017-09-28-Thu-14.15.45.939' url='https://jsonplaceholder.typicode.com/albums'>
               <parameters id='1' title='My album title' userId='1'/>
             </section>
             <section name='Evaluation'>
@@ -83,7 +83,7 @@ Notes:
                 <exp_value>My album title</exp_value>
                 <act_value>My album title</act_value>
               </verdict>
-              <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-27-Wed-17.36.17.882' url='https://jsonplaceholder.typicode.com/albums/1'>
+              <section duration_seconds='0.001' method='GET' name='Rest client' timestamp='2017-09-28-Thu-14.15.46.171' url='https://jsonplaceholder.typicode.com/albums/1'>
                 <parameters/>
               </section>
               <verdict id='Album fetched-id' message='Fetched' method='verdict_assert_equal?' outcome='passed' volatile='false'>
@@ -148,5 +148,5 @@ Notes:
 
 **Prev** [Test for PUT Albums/_id_](./PutAlbumsId.md)
 
-**Next** [Creating a Data Object](./DataNewSimple.md)
+**Next** [More to Come ...](./MoreToCome.md)
 

@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
 **Prev** [Sections and Nesting](./Sections.md)
 
-**Next** [Volatile Return Values](./Volatility.md)
+**Next** [Exceptions, Rescued and Not](./Exceptions.md)
 
 
 # Verdicts
@@ -76,7 +76,7 @@ Notes:
 ```xml
 <verdicts_test>
   <summary errors='0' failures='2' verdicts='5'/>
-  <test_method duration_seconds='0.000' name='verdicts_test' timestamp='2017-09-27-Wed-17.36.00.307'>
+  <test_method duration_seconds='0.005' name='verdicts_test' timestamp='2017-09-28-Thu-14.15.19.565'>
     <section name='With ExampleRestClient'>
       <section name='These verdicts should pass'>
         <section name='An assertion verdict that should pass'>
@@ -151,9 +151,10 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/
 
 Notes:
 
+- Every verdict is fully logged.
 - A failed verdict logs an exception, including the message and backtrace.
 
 **Prev** [Sections and Nesting](./Sections.md)
 
-**Next** [Volatile Return Values](./Volatility.md)
+**Next** [Exceptions, Rescued and Not](./Exceptions.md)
 

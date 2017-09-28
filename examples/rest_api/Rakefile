@@ -47,7 +47,7 @@ task :tester_tour do
   heading_text = <<EOT
 # Tester Tour
 
-The Tester Tour covers only topics of interest to a tester who wants to develop and/or run tests for a REST API.
+The Tester Tour covers only topics that are of interest to a tester who wants to develop and/or run tests for a REST API.
 
 This tester is distinguished from an infrastructure developer, who would want to develop infrastructure that supports testing a REST API.
 
@@ -83,23 +83,39 @@ EOT
   )
   FileUtils.mkdir_p(md_dir_path)
 
+  # To do.
+  names = %w/
+      verdict_return_values
+      data_log_simple
+      data_log_complex
+      data_valid_simple
+      data_valid_complex
+      data_exist
+      data_crud
+      data_convenience
+      helpers
+  /
+  # Done.
   names = %w/
       test
       sections
       verdicts
-      volatility
       exceptions
+      volatility
+      data_new_simple
+      data_new_complex
+      data_equal_simple
+      data_equal_complex
       get_albums
       get_albums_id
       delete_albums_id
       put_albums_id
       post_albums
-      data_new_simple
-      data_new_complex
-      data_equal_simple
-      data_equal_complex
       more_to_come
   /
+  # # In work.
+  # names = %w/
+  # /
 
   titles = []
   names.each do |name|

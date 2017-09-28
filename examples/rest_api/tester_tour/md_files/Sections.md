@@ -49,8 +49,8 @@ end
 
 Notes:
 
-- Use nested sections to structure test steps.
-- (The variables yielded by method <code>prelude</code> are a client and a log.  This test does not use the client, and so uses the variable name <code>_</code> instead of variable <code>client</code>.  This prevents the RubyMine IDE from flagging it as an unused variable during code inspection.)
+- Use nested sections to organize test code.
+- This test does not use the client, and so uses the variable name <code>_</code> instead of variable name <code>client</code>.  This prevents the RubyMine IDE from flagging it as an unused variable during code inspection.)
 
 ##  Test Log
 
@@ -58,17 +58,17 @@ Notes:
 ```xml
 <sections_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='3.028' name='sections_test' timestamp='2017-09-27-Wed-17.35.56.225'>
+  <test_method duration_seconds='3.020' name='sections_test' timestamp='2017-09-28-Thu-14.15.15.358'>
     <section name='With ExampleRestClient'>
       <section name='First outer section'>
         <section name='First inner section'/>
         <section name='Second inner section'/>
       </section>
       <section name='Second outer section'/>
-      <section name='Section with timestamp' timestamp='2017-09-27-Wed-17.35.56.225'/>
-      <section duration_seconds='1.014' name='Section with timestamp'/>
-      <section duration_seconds='1.009' name='Section with timestamp and duration' timestamp='2017-09-27-Wed-17.35.57.238'/>
-      <section duration_seconds='1.005' name='Order does not matter' timestamp='2017-09-27-Wed-17.35.58.247'/>
+      <section name='Section with timestamp' timestamp='2017-09-28-Thu-14.15.15.360'/>
+      <section duration_seconds='1.006' name='Section with timestamp'/>
+      <section duration_seconds='1.000' name='Section with timestamp and duration' timestamp='2017-09-28-Thu-14.15.16.366'/>
+      <section duration_seconds='1.013' name='Order does not matter' timestamp='2017-09-28-Thu-14.15.17.366'/>
     </section>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>

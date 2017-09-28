@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev** [Volatile Return Values](./Volatility.md)
+**Prev** [Verdicts](./Verdicts.md)
 
-**Next** [Test for GET Albums](./GetAlbums.md)
+**Next** [Volatile Return Values](./Volatility.md)
 
 
 # Exceptions, Rescued and Not
@@ -48,8 +48,9 @@ end
 
 Notes:
 
-- The first outer section rescues its exception.  Following code in the _section_ is not reached.
-- The second outer section does not rescue its exception.  Following code in the _test_ is not reached.
+- The first outer section rescues its exception.  The test exits the _section_, and any following code in the _section_ is not reached.
+- The second outer section does not rescue its exception.  The test exits entirely, and any following code in the _test_ is not reached.
+- Any section, including a nested section, may rescue an exception.  (Or not -- it's an independent choice for each section.)
 
 ##  Test Log
 
@@ -57,8 +58,8 @@ Notes:
 ```xml
 <exceptions_test>
   <summary errors='2' failures='1' verdicts='2'/>
-  <test_method name='exceptions_test' timestamp='2017-09-27-Wed-17.36.03.429'>
-    <section duration_seconds='0.003' name='With ExampleRestClient'>
+  <test_method name='exceptions_test' timestamp='2017-09-28-Thu-14.15.20.694'>
+    <section duration_seconds='0.004' name='With ExampleRestClient'>
       <section name='Section rescues exception'>
         <uncaught_exception>
           <verdict_id>Section rescues exception</verdict_id>
@@ -131,7 +132,7 @@ Notes:
 - Each logged exception includes its message and backtrace.
 - The second exception, the one the test didn't rescue, is actually rescued by the log itself, and of course logged.
 
-**Prev** [Volatile Return Values](./Volatility.md)
+**Prev** [Verdicts](./Verdicts.md)
 
-**Next** [Test for GET Albums](./GetAlbums.md)
+**Next** [Volatile Return Values](./Volatility.md)
 

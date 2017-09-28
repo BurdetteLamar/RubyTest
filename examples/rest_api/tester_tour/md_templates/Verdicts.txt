@@ -27,6 +27,7 @@ Notes:
 
 Notes:
 
+- Every verdict is fully logged.
 - A failed verdict logs an exception, including the message and backtrace.
 
 [navigation_links]
