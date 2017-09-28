@@ -34,6 +34,7 @@ end
 
 Notes:
 
+- This test uses an endpoint, and therefore requires the corresponding class.
 - Method <code>GetAlbums.verdict_call_and_verify_success</code>:
   1.  Accesses endpoint GET albums.
   2.  Forms the response payload into new <code>Album</code> objects.
@@ -47,12 +48,12 @@ Notes:
 ```xml
 <get_albums_test>
   <summary errors='0' failures='0' verdicts='7'/>
-  <test_method name='get_albums_test' timestamp='2017-09-28-Thu-14.43.27.952'>
-    <section duration_seconds='1.512' name='With ExampleRestClient'>
+  <test_method name='get_albums_test' timestamp='2017-09-28-Thu-15.04.49.473'>
+    <section duration_seconds='1.481' name='With ExampleRestClient'>
       <section name='Test endpoint GET albums'>
         <section name='GET albums'>
-          <section name='GET albums' timestamp='2017-09-28-Thu-14.43.27.952'>
-            <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-28-Thu-14.43.27.952' url='https://jsonplaceholder.typicode.com/albums'>
+          <section name='GET albums' timestamp='2017-09-28-Thu-15.04.49.473'>
+            <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-28-Thu-15.04.49.473' url='https://jsonplaceholder.typicode.com/albums'>
               <parameters/>
             </section>
             <section name='Evaluation'>

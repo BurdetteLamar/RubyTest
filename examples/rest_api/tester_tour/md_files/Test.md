@@ -28,7 +28,7 @@ end
 
 Notes:
 
-- Test class <code>TestTest</code> derives from class<code>BaseClassForTest</code>.
+- Test class <code>TestTest</code> derives from class<code>BaseClassForTest</code>.  The test therefore requires the base test class.
 - Method name <code>test_test</code> begins with <code>test</code>, which tells the test framework that it is a test method and should be executed at test-time.
 - Inherited method <code>prelude</code> yields:
   - The domain-specific client to be used for testing the REST API.
@@ -40,7 +40,7 @@ Notes:
 ```xml
 <test_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.001' name='test_test' timestamp='2017-09-28-Thu-14.43.13.424'>
+  <test_method duration_seconds='0.000' name='test_test' timestamp='2017-09-28-Thu-15.04.34.886'>
     <section name='With ExampleRestClient'/>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
@@ -57,7 +57,7 @@ Notes:
 - Element <code>summary</code>:  counts of verdicts, failures (failed verdicts), and errors (unexpected exceptions).
 - Element <code>test_method</code>:  logging for test steps and verdicts.  (This test did nothing, so there's not much here.)
 - The last section gives the count of errors (unexpected exceptions).  Its verdict expects the count to be 0.
-- Attribute <code>volatile</code>, seen in each <code>verdict</code> element, has to do with the Changes Report, and is of no present.
+- Attribute <code>volatile</code>, seen in each <code>verdict</code> element, has to do with the Changes Report, and is of no present interest.
 
 **Next** [Sections and Nesting](./Sections.md)
 

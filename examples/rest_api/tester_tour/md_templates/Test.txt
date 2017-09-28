@@ -10,7 +10,7 @@ This page introduces the test class, along with the REST API client and the test
 
 Notes:
 
-- Test class <code>TestTest</code> derives from class<code>BaseClassForTest</code>.
+- Test class <code>TestTest</code> derives from class<code>BaseClassForTest</code>.  The test therefore requires the base test class.
 - Method name <code>test_test</code> begins with <code>test</code>, which tells the test framework that it is a test method and should be executed at test-time.
 - Inherited method <code>prelude</code> yields:
   - The domain-specific client to be used for testing the REST API.
@@ -25,6 +25,6 @@ Notes:
 - Element <code>summary</code>:  counts of verdicts, failures (failed verdicts), and errors (unexpected exceptions).
 - Element <code>test_method</code>:  logging for test steps and verdicts.  (This test did nothing, so there's not much here.)
 - The last section gives the count of errors (unexpected exceptions).  Its verdict expects the count to be 0.
-- Attribute <code>volatile</code>, seen in each <code>verdict</code> element, has to do with the Changes Report, and is of no present.
+- Attribute <code>volatile</code>, seen in each <code>verdict</code> element, has to do with the Changes Report, and is of no present interest.
 
 [navigation_links]

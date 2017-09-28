@@ -10,6 +10,7 @@ This page shows how to test GET Albums.
 
 Notes:
 
+- This test uses an endpoint, and therefore requires the corresponding class.
 - Method <code>GetAlbums.verdict_call_and_verify_success</code>:
   1.  Accesses endpoint GET albums.
   2.  Forms the response payload into new <code>Album</code> objects.

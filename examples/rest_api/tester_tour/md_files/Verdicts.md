@@ -61,8 +61,9 @@ end
 
 Notes:
 
-- Each verdict has:
+- Each call to a verdict method has:
   - A verdict identifier, which must be unique within the test.
+  - Other parameters, as appropriate to the particular method.
   - A message string.
 - Use an assert verdict to express a positive expectation.
 - Use a refute verdict to express a negative expectation.
@@ -75,7 +76,7 @@ Notes:
 ```xml
 <verdicts_test>
   <summary errors='0' failures='2' verdicts='5'/>
-  <test_method duration_seconds='0.005' name='verdicts_test' timestamp='2017-09-28-Thu-14.43.18.525'>
+  <test_method duration_seconds='0.000' name='verdicts_test' timestamp='2017-09-28-Thu-15.04.40.009'>
     <section name='With ExampleRestClient'>
       <section name='These verdicts should pass'>
         <section name='An assertion verdict that should pass'>

@@ -12,8 +12,9 @@ Each verdict method returns a boolean value, and therefore follows the ruby conv
 
 Notes:
 
-- Each verdict has:
+- Each call to a verdict method has:
   - A verdict identifier, which must be unique within the test.
+  - Other parameters, as appropriate to the particular method.
   - A message string.
 - Use an assert verdict to express a positive expectation.
 - Use a refute verdict to express a negative expectation.
