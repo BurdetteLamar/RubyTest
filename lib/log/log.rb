@@ -193,6 +193,11 @@ class Log < BaseClass
     end
     nil
   end
+  Contract String, ARGS => NilClass
+  def comment(text, *args)
+    put_element('comment', text, *args)
+    nil
+  end
 
   Contract Args[Any] => NilClass
   def test_method(*args)
