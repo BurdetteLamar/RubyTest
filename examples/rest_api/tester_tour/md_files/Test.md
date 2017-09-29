@@ -40,7 +40,7 @@ Notes:
 ```xml
 <test_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='test_test' timestamp='2017-09-29-Fri-13.46.34.936'>
+  <test_method duration_seconds='0.002' name='test_test' timestamp='2017-09-29-Fri-16.26.48.459'>
     <section name='With ExampleRestClient'>
       <comment>Test code goes here</comment>
       <comment>Method prelude yields two objects:</comment>
@@ -60,7 +60,8 @@ Notes:
 Notes:
 
 - At the top of the log is a summary of the counts of verdicts, failures (failed verdicts), and errors (unexpected exceptions).
-- The logging for the test steps and verdicts is in element `test_method`, which also gives the test name, timestamp, and duration.
+- Element `test_method` gives the test name, timestamp, and duration.
+- The section named `With ExampleRestClient` contains all logging from the test itself.
 - The last section gives the count of errors (unexpected exceptions).  Its verdict expects that count to be `0`.
 - (Attribute `volatile`, seen in element `verdict`, has to do with the Changes Report, and is of no present interest.)
 

@@ -55,11 +55,11 @@ Notes:
 ```xml
 <data_equal_complex_test>
   <summary errors='0' failures='1' verdicts='31'/>
-  <test_method duration_seconds='1.496' name='data_equal_complex_test' timestamp='2017-09-29-Fri-13.46.55.232'>
+  <test_method duration_seconds='1.521' name='data_equal_complex_test' timestamp='2017-09-29-Fri-16.27.08.917'>
     <section name='With ExampleRestClient'>
-      <section duration_seconds='0.010' method='GET' name='Rest client' timestamp='2017-09-29-Fri-13.46.55.232' url='https://jsonplaceholder.typicode.com/users'>
-        <parameters/>
-      </section>
+      <REST_API duration_seconds='0.000' timestamp='2017-09-29-Fri-16.27.08.927'>
+        <GET url='https://jsonplaceholder.typicode.com/users'/>
+      </REST_API>
       <section name='These are equal'>
         <verdict id='user equal-id' message='Using User.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
           <exp_value>1</exp_value>
@@ -166,11 +166,8 @@ Notes:
             <verdict id='user not equal address geo-lat' message='Using User.verdict_equal?' method='verdict_assert_equal?' outcome='failed' volatile='false'>
               <exp_value>-37.3159</exp_value>
               <act_value>-36.3159</act_value>
-              <exception>
-                <class>Minitest::Assertion</class>
-                <message>Expected: -37.3159 Actual: -36.3159</message>
-                <backtrace>
-                  <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:129:in `block in verdict_equal_recursive?'
+              <backtrace>
+                <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:129:in `block in verdict_equal_recursive?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:118:in `verdict_equal_recursive?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:126:in `block (2 levels) in verdict_equal_recursive?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:124:in `block in verdict_equal_recursive?'
@@ -190,8 +187,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `bl
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:11:in `prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/data_equal_complex_test.rb:8:in `test_data_equal_complex']]>
-                </backtrace>
-              </exception>
+              </backtrace>
             </verdict>
             <verdict id='user not equal address geo-lng' message='Using User.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
               <exp_value>81.1496</exp_value>

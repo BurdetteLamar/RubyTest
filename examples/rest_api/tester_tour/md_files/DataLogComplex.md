@@ -51,13 +51,13 @@ Notes:
 ```xml
 <data_log_complex_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='1.484' name='data_log_complex_test' timestamp='2017-09-29-Fri-13.46.47.876'>
+  <test_method duration_seconds='1.494' name='data_log_complex_test' timestamp='2017-09-29-Fri-16.27.01.568'>
     <section name='With ExampleRestClient'>
       <section name='Fetch and log an instance of User'>
         <section name='Fetch a user'>
-          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-13.46.47.880' url='https://jsonplaceholder.typicode.com/users'>
-            <parameters/>
-          </section>
+          <REST_API duration_seconds='0.000' timestamp='2017-09-29-Fri-16.27.01.572'>
+            <GET url='https://jsonplaceholder.typicode.com/users'/>
+          </REST_API>
         </section>
         <section name='Log fetched user'>
           <data field='id' value='1'/>

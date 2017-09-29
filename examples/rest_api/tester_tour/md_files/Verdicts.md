@@ -22,14 +22,14 @@ class VerdictsTest < BaseClassForTest
       log.section('These verdicts should pass') do
         log.section('An assert verdict that should pass') do
           log.verdict_assert?(
-              verdict_id = 'assertion should pass',
+              verdict_id = 'assert should pass',
               actual = true,
               message = 'True is truthy'
           )
         end
         log.section('A refute verdict that should pass') do
           log.verdict_refute?(
-              verdict_id = 'refutation should pass',
+              verdict_id = 'refute should pass',
               actual = false,
               message = 'False is not truthy'
           )
@@ -38,14 +38,14 @@ class VerdictsTest < BaseClassForTest
       log.section('These verdicts should fail') do
         log.section('An assert verdict that should fail') do
           log.verdict_assert?(
-              verdict_id = 'assertion should fail',
+              verdict_id = 'assert should fail',
               actual = false,
               message = 'False is not truthy'
           )
         end
         log.section('A refute verdict that should fail') do
           log.verdict_refute?(
-              verdict_id = 'refutation should fail',
+              verdict_id = 'refute should fail',
               actual = true,
               message = 'True is truthy'
           )
@@ -59,7 +59,7 @@ end
 
 Notes:
 
-- A verdict method returns a boolean value, and therefore follows the ruby convention of ending the method name with *?*.
+- A verdict method returns a boolean value, and therefore follows the Ruby convention of ending the method name with `?`.
 - A call to a verdict method has:
   - A verdict identifier, which must be unique within the test.
   - Other parameters, as appropriate to the particular method.
@@ -75,29 +75,26 @@ Notes:
 ```xml
 <verdicts_test>
   <summary errors='0' failures='2' verdicts='5'/>
-  <test_method duration_seconds='0.006' name='verdicts_test' timestamp='2017-09-29-Fri-13.46.43.156'>
+  <test_method duration_seconds='0.004' name='verdicts_test' timestamp='2017-09-29-Fri-16.26.56.618'>
     <section name='With ExampleRestClient'>
       <section name='These verdicts should pass'>
         <section name='An assert verdict that should pass'>
-          <verdict id='assertion should pass' message='True is truthy' method='verdict_assert?' outcome='passed' volatile='false'>
+          <verdict id='assert should pass' message='True is truthy' method='verdict_assert?' outcome='passed' volatile='false'>
             <act_value>true</act_value>
           </verdict>
         </section>
         <section name='A refute verdict that should pass'>
-          <verdict id='refutation should pass' message='False is not truthy' method='verdict_refute?' outcome='passed' volatile='false'>
+          <verdict id='refute should pass' message='False is not truthy' method='verdict_refute?' outcome='passed' volatile='false'>
             <act_value>false</act_value>
           </verdict>
         </section>
       </section>
       <section name='These verdicts should fail'>
         <section name='An assert verdict that should fail'>
-          <verdict id='assertion should fail' message='False is not truthy' method='verdict_assert?' outcome='failed' volatile='false'>
+          <verdict id='assert should fail' message='False is not truthy' method='verdict_assert?' outcome='failed' volatile='false'>
             <act_value>false</act_value>
-            <exception>
-              <class>Minitest::Assertion</class>
-              <message>Expected false to be truthy.</message>
-              <backtrace>
-                <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/verdicts_test.rb:26:in `block (3 levels) in test_verdicts'
+            <backtrace>
+              <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/verdicts_test.rb:26:in `block (3 levels) in test_verdicts'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/verdicts_test.rb:25:in `block (2 levels) in test_verdicts'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/verdicts_test.rb:24:in `block in test_verdicts'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
@@ -109,18 +106,14 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `bl
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:11:in `prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/verdicts_test.rb:6:in `test_verdicts']]>
-              </backtrace>
-            </exception>
+            </backtrace>
           </verdict>
         </section>
         <section name='A refute verdict that should fail'>
-          <verdict id='refutation should fail' message='True is truthy' method='verdict_refute?' outcome='failed' volatile='false'>
+          <verdict id='refute should fail' message='True is truthy' method='verdict_refute?' outcome='failed' volatile='false'>
             <act_value>true</act_value>
-            <exception>
-              <class>Minitest::Assertion</class>
-              <message>Expected true to not be truthy.</message>
-              <backtrace>
-                <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/verdicts_test.rb:33:in `block (3 levels) in test_verdicts'
+            <backtrace>
+              <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/verdicts_test.rb:33:in `block (3 levels) in test_verdicts'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/verdicts_test.rb:32:in `block (2 levels) in test_verdicts'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/verdicts_test.rb:24:in `block in test_verdicts'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
@@ -132,8 +125,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `bl
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:11:in `prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/verdicts_test.rb:6:in `test_verdicts']]>
-              </backtrace>
-            </exception>
+            </backtrace>
           </verdict>
         </section>
       </section>

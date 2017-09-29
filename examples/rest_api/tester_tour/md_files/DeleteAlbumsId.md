@@ -52,13 +52,13 @@ Notes:
 ```xml
 <delete_albums_id_test>
   <summary errors='0' failures='1' verdicts='3'/>
-  <test_method name='delete_albums_id_test' timestamp='2017-09-29-Fri-13.47.08.797'>
-    <section duration_seconds='1.894' name='With ExampleRestClient'>
+  <test_method name='delete_albums_id_test' timestamp='2017-09-29-Fri-16.27.16.874'>
+    <section duration_seconds='1.962' name='With ExampleRestClient'>
       <section name='Test endpoint DELETE albums/id'>
         <section name='Fetch an album to DELETE'>
-          <section duration_seconds='0.001' method='GET' name='Rest client' timestamp='2017-09-29-Fri-13.47.08.801' url='https://jsonplaceholder.typicode.com/albums'>
-            <parameters/>
-          </section>
+          <REST_API duration_seconds='0.000' timestamp='2017-09-29-Fri-16.27.16.878'>
+            <GET url='https://jsonplaceholder.typicode.com/albums'/>
+          </REST_API>
           <section name='Album fetched'>
             <data field='id' value='1'/>
             <data field='userId' value='1'/>
@@ -66,24 +66,21 @@ Notes:
           </section>
         </section>
         <section name='DELETE the album'>
-          <section name='DELETE album' timestamp='2017-09-29-Fri-13.47.10.311'>
-            <section duration_seconds='0.000' method='DELETE' name='Rest client' timestamp='2017-09-29-Fri-13.47.10.311' url='https://jsonplaceholder.typicode.com/albums/1'>
-              <parameters/>
-            </section>
+          <section name='DELETE album' timestamp='2017-09-29-Fri-16.27.18.389'>
+            <REST_API duration_seconds='0.000' timestamp='2017-09-29-Fri-16.27.18.389'>
+              <DELETE url='https://jsonplaceholder.typicode.com/albums/1'/>
+            </REST_API>
             <section name='Evaluation'>
               <verdict id='payload nil' message='Payload nil' method='verdict_assert_nil?' outcome='passed' volatile='false'>
                 <act_value>nil</act_value>
               </verdict>
-              <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-13.47.10.615' url='https://jsonplaceholder.typicode.com/albums/1'>
-                <parameters/>
-              </section>
+              <REST_API duration_seconds='0.000' timestamp='2017-09-29-Fri-16.27.18.718'>
+                <GET url='https://jsonplaceholder.typicode.com/albums/1'/>
+              </REST_API>
               <verdict id='DELETE album' message='Album not exist' method='verdict_refute?' outcome='failed' volatile='false'>
                 <act_value>true</act_value>
-                <exception>
-                  <class>Minitest::Assertion</class>
-                  <message>Expected true to not be truthy.</message>
-                  <backtrace>
-                    <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_resource.rb:25:in `verdict_not_exist?'
+                <backtrace>
+                  <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_resource.rb:25:in `verdict_not_exist?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/endpoints/base_class_for_delete_id.rb:21:in `block (2 levels) in verdict_call_and_verify_success'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/endpoints/base_class_for_delete_id.rb:18:in `block in verdict_call_and_verify_success'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/endpoints/base_class_for_delete_id.rb:16:in `verdict_call_and_verify_success'
@@ -100,8 +97,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `bl
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:11:in `prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/delete_albums_id_test.rb:8:in `test_delete_albums_id']]>
-                  </backtrace>
-                </exception>
+                </backtrace>
               </verdict>
             </section>
           </section>

@@ -20,28 +20,28 @@ class SectionsTest < BaseClassForTest
     prelude do |_, log|
       log.section('First outer section') do
         log.section('First inner section') do
-          log.comment('Some test code goes here')
+          log.comment('Some test code can go here')
         end
         log.section('Second inner section') do
-          log.comment('Some test code goes here')
+          log.comment('Some test code can go here')
         end
       end
       log.section('Second outer section') do
-        log.comment('Some test code goes here')
+        log.comment('Some test code can go here')
       end
       log.section('Section with timestamp', :timestamp) do
-        log.comment('Some test code goes here')
+        log.comment('Some test code can go here')
       end
       log.section('Section with timestamp', :duration) do
-        log.comment('Some test code goes here')
+        log.comment('Some test code can go here')
         sleep 1
       end
       log.section('Section with timestamp and duration', :timestamp, :duration) do
-        log.comment('Some test code goes here')
+        log.comment('Some test code can go here')
         sleep 2
       end
       log.section('Order does not matter', :duration, :timestamp) do
-        log.comment('Some test code goes here')
+        log.comment('Some test code can go here')
         sleep 3
       end
     end
@@ -61,30 +61,30 @@ Notes:
 ```xml
 <sections_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='6.020' name='sections_test' timestamp='2017-09-29-Fri-13.46.36.053'>
+  <test_method duration_seconds='6.004' name='sections_test' timestamp='2017-09-29-Fri-16.26.49.531'>
     <section name='With ExampleRestClient'>
       <section name='First outer section'>
         <section name='First inner section'>
-          <comment>Some test code goes here</comment>
+          <comment>Some test code can go here</comment>
         </section>
         <section name='Second inner section'>
-          <comment>Some test code goes here</comment>
+          <comment>Some test code can go here</comment>
         </section>
       </section>
       <section name='Second outer section'>
-        <comment>Some test code goes here</comment>
+        <comment>Some test code can go here</comment>
       </section>
-      <section name='Section with timestamp' timestamp='2017-09-29-Fri-13.46.36.053'>
-        <comment>Some test code goes here</comment>
+      <section name='Section with timestamp' timestamp='2017-09-29-Fri-16.26.49.533'>
+        <comment>Some test code can go here</comment>
       </section>
-      <section duration_seconds='1.009' name='Section with timestamp'>
-        <comment>Some test code goes here</comment>
+      <section duration_seconds='1.000' name='Section with timestamp'>
+        <comment>Some test code can go here</comment>
       </section>
-      <section duration_seconds='2.003' name='Section with timestamp and duration' timestamp='2017-09-29-Fri-13.46.37.062'>
-        <comment>Some test code goes here</comment>
+      <section duration_seconds='2.000' name='Section with timestamp and duration' timestamp='2017-09-29-Fri-16.26.50.534'>
+        <comment>Some test code can go here</comment>
       </section>
-      <section duration_seconds='3.008' name='Order does not matter' timestamp='2017-09-29-Fri-13.46.39.065'>
-        <comment>Some test code goes here</comment>
+      <section duration_seconds='3.001' name='Order does not matter' timestamp='2017-09-29-Fri-16.26.52.535'>
+        <comment>Some test code can go here</comment>
       </section>
     </section>
   </test_method>

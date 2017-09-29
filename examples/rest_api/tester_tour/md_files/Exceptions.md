@@ -58,7 +58,7 @@ Notes:
 ```xml
 <exceptions_test>
   <summary errors='2' failures='1' verdicts='2'/>
-  <test_method name='exceptions_test' timestamp='2017-09-29-Fri-13.46.44.227'>
+  <test_method name='exceptions_test' timestamp='2017-09-29-Fri-16.26.57.685'>
     <section duration_seconds='0.004' name='With ExampleRestClient'>
       <section name='Section rescues exception'>
         <uncaught_exception>
@@ -112,15 +112,11 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/
       <verdict id='error count' message='error count' method='verdict_assert_equal?' outcome='failed' volatile='true'>
         <exp_value>0</exp_value>
         <act_value>2</act_value>
-        <exception>
-          <class>Minitest::Assertion</class>
-          <message>Expected: 0 Actual: 2</message>
-          <backtrace>
-            <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
+        <backtrace>
+          <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:11:in `prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/exceptions_test.rb:6:in `test_exceptions']]>
-          </backtrace>
-        </exception>
+        </backtrace>
       </verdict>
     </section>
   </test_method>

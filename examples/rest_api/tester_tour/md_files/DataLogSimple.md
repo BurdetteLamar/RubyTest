@@ -46,13 +46,13 @@ Notes:
 ```xml
 <data_log_simple_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='1.495' name='data_log_simple_test' timestamp='2017-09-29-Fri-13.46.45.321'>
+  <test_method duration_seconds='1.698' name='data_log_simple_test' timestamp='2017-09-29-Fri-16.26.58.770'>
     <section name='With ExampleRestClient'>
       <section name='Fetch and log an instance of Album'>
         <section name='Fetch an album'>
-          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-13.46.45.325' url='https://jsonplaceholder.typicode.com/albums'>
-            <parameters/>
-          </section>
+          <REST_API duration_seconds='0.000' timestamp='2017-09-29-Fri-16.26.58.774'>
+            <GET url='https://jsonplaceholder.typicode.com/albums'/>
+          </REST_API>
         </section>
         <section name='Log fetched album'>
           <data field='id' value='1'/>
