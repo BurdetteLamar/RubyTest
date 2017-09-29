@@ -10,7 +10,7 @@ This page shows some verdicts.
 
 Notes:
 
-- A verdict method returns a boolean value, and therefore follows the ruby convention of ending the method name with *?*.
+- A verdict method returns a boolean value, and therefore follows the Ruby convention of ending the method name with `?`.
 - A call to a verdict method has:
   - A verdict identifier, which must be unique within the test.
   - Other parameters, as appropriate to the particular method.
