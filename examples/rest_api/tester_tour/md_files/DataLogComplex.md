@@ -50,11 +50,11 @@ Notes:
 ```xml
 <data_log_complex_test>
   <summary errors='1' failures='1' verdicts='1'/>
-  <test_method name='data_log_complex_test' timestamp='2017-09-29-Fri-13.01.06.543'>
+  <test_method name='data_log_complex_test' timestamp='2017-09-29-Fri-13.24.45.409'>
     <section name='With ExampleRestClient'>
-      <section duration_seconds='1.589' name='Fetch and log an instance of User'>
+      <section duration_seconds='1.518' name='Fetch and log an instance of User'>
         <section name='Fetch a user'>
-          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-13.01.06.543' url='https://jsonplaceholder.typicode.com/users'>
+          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-13.24.45.414' url='https://jsonplaceholder.typicode.com/users'>
             <parameters/>
           </section>
         </section>
@@ -64,7 +64,7 @@ Notes:
             <class>NameError</class>
             <message>
               undefined local variable or method `user&apos; for
-              #&lt;DataLogComplexTest:0x3ad4c60&gt;
+              #&lt;DataLogComplexTest:0x3a50b28&gt;
             </message>
             <backtrace>
               <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
