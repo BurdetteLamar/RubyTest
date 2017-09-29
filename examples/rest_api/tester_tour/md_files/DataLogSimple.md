@@ -21,6 +21,7 @@ class DataNewTest < BaseClassForTest
   def test_data_log_simple
     prelude do |client, log|
       log.section('Fetch and log an instance of Album') do
+        album = nil
         log.section('Fetch an album') do
           album = Album.get_first(client)
         end
@@ -44,52 +45,29 @@ Notes:
 <code>test_data_log_simple.xml</code>
 ```xml
 <data_log_simple_test>
-  <summary errors='1' failures='1' verdicts='1'/>
-  <test_method name='data_log_simple_test' timestamp='2017-09-29-Fri-13.24.42.740'>
+  <summary errors='0' failures='0' verdicts='1'/>
+  <test_method duration_seconds='1.495' name='data_log_simple_test' timestamp='2017-09-29-Fri-13.46.45.321'>
     <section name='With ExampleRestClient'>
-      <section duration_seconds='1.560' name='Fetch and log an instance of Album'>
+      <section name='Fetch and log an instance of Album'>
         <section name='Fetch an album'>
-          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-13.24.42.744' url='https://jsonplaceholder.typicode.com/albums'>
+          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-13.46.45.325' url='https://jsonplaceholder.typicode.com/albums'>
             <parameters/>
           </section>
         </section>
         <section name='Log fetched album'>
-          <uncaught_exception>
-            <verdict_id>With ExampleRestClient</verdict_id>
-            <class>NameError</class>
-            <message>
-              undefined local variable or method `album&apos; for
-              #&lt;DataNewTest:0x3b0dab0&gt;
-            </message>
-            <backtrace>
-              <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/example_rest_client.rb:18:in `block in with'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/example_rest_client.rb:14:in `with'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:12:in `block in prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:11:in `prelude']]>
-            </backtrace>
-          </uncaught_exception>
+          <data field='id' value='1'/>
+          <data field='userId' value='1'/>
+          <data field='title' value='quidem molestiae enim'/>
         </section>
-      </section>
-      <section name='Count of errors (unexpected exceptions)'>
-        <verdict id='error count' message='error count' method='verdict_assert_equal?' outcome='failed' volatile='true'>
-          <exp_value>0</exp_value>
-          <act_value>1</act_value>
-          <exception>
-            <class>Minitest::Assertion</class>
-            <message>Expected: 0 Actual: 1</message>
-            <backtrace>
-              <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:11:in `prelude']]>
-            </backtrace>
-          </exception>
-        </verdict>
       </section>
     </section>
   </test_method>
+  <section name='Count of errors (unexpected exceptions)'>
+    <verdict id='error count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
+      <exp_value>0</exp_value>
+      <act_value>0</act_value>
+    </verdict>
+  </section>
 </data_log_simple_test>
 ```
 

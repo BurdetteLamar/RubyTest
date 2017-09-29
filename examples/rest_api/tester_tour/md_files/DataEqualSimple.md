@@ -55,9 +55,9 @@ Notes:
 ```xml
 <data_equal_simple_test>
   <summary errors='0' failures='1' verdicts='7'/>
-  <test_method duration_seconds='1.508' name='data_equal_simple_test' timestamp='2017-09-29-Fri-13.24.50.251'>
+  <test_method duration_seconds='1.500' name='data_equal_simple_test' timestamp='2017-09-29-Fri-13.46.52.669'>
     <section name='With ExampleRestClient'>
-      <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-13.24.50.256' url='https://jsonplaceholder.typicode.com/albums'>
+      <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-13.46.52.679' url='https://jsonplaceholder.typicode.com/albums'>
         <parameters/>
       </section>
       <section name='These are equal'>

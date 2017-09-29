@@ -7,6 +7,7 @@ class DataLogComplexTest < BaseClassForTest
   def test_data_log_complex
     prelude do |client, log|
       log.section('Fetch and log an instance of User') do
+        user = nil
         log.section('Fetch a user') do
           user = User.get_first(client)
         end
