@@ -4,10 +4,10 @@ class NothingTest < BaseClassForTest
 
   def test_test
     prelude do |client, log|
-      # Citing variables <code>client</code> and <code>log</code>
-      # prevents RubyMine code inspection from complaining about unused variables.
-      client.class
-      log.class
+      log.comment('Test code goes here')
+      log.comment('Method prelude yields two objects:')
+      log.comment('1. Instance of %s, for access to the REST API.' % client.class.name)
+      log.comment('2. Instance of %s, for logging the test.' % log.class.name)
     end
   end
 

@@ -4,7 +4,7 @@
 
 This page introduces complex data classes, and shows how to create instances of them.
 
-## Test Source Code
+## Example Test
 
 [file_source](../tests/data_new_complex_test.rb)
 
@@ -14,7 +14,7 @@ Notes:
 - Similarly, the values for <code>:company</code> are formed into an instance of <code>User::Company</code>.
 - There is a further nesting in the values for <code>:address</code>:  it contains multi-valued data for <code>:geo</code>.  These values are formed into an instance of <code>User::Address::Geo</code>.
 
-##  Test Log
+## Log
 
 [file_source](../logs/test_data_new_complex.xml)
 

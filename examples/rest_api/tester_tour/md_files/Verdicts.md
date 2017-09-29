@@ -6,11 +6,9 @@
 
 # Verdicts
 
-## Test Source Code
+## Example Test
 
-This page introduces verdicts.
-
-Each verdict method returns a boolean value, and therefore follows the ruby convention of ending the method name with *?*.
+This page shows some verdicts.
 
 <code>verdicts_test.rb</code>
 ```ruby
@@ -22,14 +20,14 @@ class VerdictsTest < BaseClassForTest
     prelude do |_, log|
       # Using extra variables in these verdicts, to make usage clear.
       log.section('These verdicts should pass') do
-        log.section('An assertion verdict that should pass') do
+        log.section('An assert verdict that should pass') do
           log.verdict_assert?(
               verdict_id = 'assertion should pass',
               actual = true,
               message = 'True is truthy'
           )
         end
-        log.section('A refutation verdict that should pass') do
+        log.section('A refute verdict that should pass') do
           log.verdict_refute?(
               verdict_id = 'refutation should pass',
               actual = false,
@@ -45,7 +43,7 @@ class VerdictsTest < BaseClassForTest
               message = 'False is not truthy'
           )
         end
-        log.section('A refutation verdict that should fail') do
+        log.section('A refute verdict that should fail') do
           log.verdict_refute?(
               verdict_id = 'refutation should fail',
               actual = true,
@@ -61,30 +59,33 @@ end
 
 Notes:
 
-- Each call to a verdict method has:
+- A verdict method returns a boolean value, and therefore follows the ruby convention of ending the method name with *?*.
+- A call to a verdict method has:
   - A verdict identifier, which must be unique within the test.
   - Other parameters, as appropriate to the particular method.
   - A message string.
-- Use an assert verdict to express a positive expectation.
-- Use a refute verdict to express a negative expectation.
+- An assert verdict expects something to be truthy (not <code>false</code> or 'nil').
+- A refute verdict expects something to be untrue (<code>false</code> or 'nil').
+- Express a positive expectation with an assert verdict.
+- Express a negative expectation with a refute verdict.
 - There are many other verdict methods, many of which will be described later in these pages.
 
 
-##  Test Log
+## Log
 
 <code>test_verdicts.xml</code>
 ```xml
 <verdicts_test>
   <summary errors='0' failures='2' verdicts='5'/>
-  <test_method duration_seconds='0.005' name='verdicts_test' timestamp='2017-09-28-Thu-15.43.48.672'>
+  <test_method duration_seconds='0.005' name='verdicts_test' timestamp='2017-09-29-Fri-12.00.40.836'>
     <section name='With ExampleRestClient'>
       <section name='These verdicts should pass'>
-        <section name='An assertion verdict that should pass'>
+        <section name='An assert verdict that should pass'>
           <verdict id='assertion should pass' message='True is truthy' method='verdict_assert?' outcome='passed' volatile='false'>
             <act_value>true</act_value>
           </verdict>
         </section>
-        <section name='A refutation verdict that should pass'>
+        <section name='A refute verdict that should pass'>
           <verdict id='refutation should pass' message='False is not truthy' method='verdict_refute?' outcome='passed' volatile='false'>
             <act_value>false</act_value>
           </verdict>
@@ -114,7 +115,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/
             </exception>
           </verdict>
         </section>
-        <section name='A refutation verdict that should fail'>
+        <section name='A refute verdict that should fail'>
           <verdict id='refutation should fail' message='True is truthy' method='verdict_refute?' outcome='failed' volatile='false'>
             <act_value>true</act_value>
             <exception>

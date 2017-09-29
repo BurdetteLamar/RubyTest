@@ -8,7 +8,7 @@
 
 This page shows how to test POST Albums.
 
-## Test Source Code
+## Example Test
 
 <code>post_albums_test.rb</code>
 ```ruby
@@ -48,17 +48,17 @@ Notes:
   4.  Fetches the album as <code>album_fetched</code>, using the id from <code>album_posted</code>.
   5.  Verifies that <code>album_fetched</code> matches <code>album_posted</code>.
 
-##  Test Log
+## Log
 
 <code>test_post_albums.xml</code>
 ```xml
 <post_albums_test>
   <summary errors='0' failures='1' verdicts='7'/>
-  <test_method name='post_albums_test' timestamp='2017-09-28-Thu-15.44.15.862'>
-    <section duration_seconds='1.887' name='With ExampleRestClient'>
+  <test_method name='post_albums_test' timestamp='2017-09-29-Fri-12.01.07.553'>
+    <section duration_seconds='1.937' name='With ExampleRestClient'>
       <section name='Test endpoint POST albums'>
         <section name='Album to post'>
-          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-28-Thu-15.44.15.865' url='https://jsonplaceholder.typicode.com/albums'>
+          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-12.01.07.557' url='https://jsonplaceholder.typicode.com/albums'>
             <parameters/>
           </section>
           <data field='id' value='1'/>
@@ -66,8 +66,8 @@ Notes:
           <data field='title' value='My album title'/>
         </section>
         <section name='POST the album'>
-          <section name='POST album' timestamp='2017-09-28-Thu-15.44.17.370'>
-            <section duration_seconds='0.000' method='POST' name='Rest client' timestamp='2017-09-28-Thu-15.44.17.370' url='https://jsonplaceholder.typicode.com/albums'>
+          <section name='POST album' timestamp='2017-09-29-Fri-12.01.09.122'>
+            <section duration_seconds='0.000' method='POST' name='Rest client' timestamp='2017-09-29-Fri-12.01.09.122' url='https://jsonplaceholder.typicode.com/albums'>
               <parameters id='1' title='My album title' userId='1'/>
             </section>
             <section name='Evaluation'>
@@ -83,7 +83,7 @@ Notes:
                 <exp_value>My album title</exp_value>
                 <act_value>My album title</act_value>
               </verdict>
-              <section duration_seconds='0.001' method='GET' name='Rest client' timestamp='2017-09-28-Thu-15.44.17.635' url='https://jsonplaceholder.typicode.com/albums/1'>
+              <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-12.01.09.347' url='https://jsonplaceholder.typicode.com/albums/1'>
                 <parameters/>
               </section>
               <verdict id='Album fetched-id' message='Fetched' method='verdict_assert_equal?' outcome='passed' volatile='false'>

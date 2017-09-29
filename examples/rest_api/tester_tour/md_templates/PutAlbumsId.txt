@@ -4,7 +4,7 @@
 
 This page shows how to test PUT Albums/_id_.
 
-## Test Source Code
+## Example Test
 
 [file_source](../tests/put_albums_id_test.rb)
 
@@ -18,7 +18,7 @@ Notes:
   4.  Fetches the updated album <code>album_fetched</code>, using parameters from <code>album_put</code>.
   4.  Verifies that the values in <code>album_put</code> are equal to those in <code>album_fetched</code>.
 
-##  Test Log
+## Log
 
 [file_source](../logs/test_put_albums_id.xml)
 

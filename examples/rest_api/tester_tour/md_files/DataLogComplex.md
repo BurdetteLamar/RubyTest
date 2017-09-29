@@ -8,7 +8,7 @@
 
 This page introduces complex data classes, and shows how to log instances of them.
 
-## Test Source Code
+## Example Test
 
 <code>data_log_complex_test.rb</code>
 ```ruby
@@ -43,17 +43,17 @@ Notes:
 - Similarly, the values for <code>:company</code> are formed into an instance of <code>User::Company</code>.
 - There is a further nesting in the values for <code>:address</code>:  it contains multi-valued data for <code>:geo</code>.  These values are formed into an instance of <code>User::Address::Geo</code>.
 
-##  Test Log
+## Log
 
 <code>test_data_log_complex.xml</code>
 ```xml
 <data_log_complex_test>
   <summary errors='1' failures='1' verdicts='1'/>
-  <test_method name='data_log_complex_test' timestamp='2017-09-28-Thu-15.43.53.816'>
+  <test_method name='data_log_complex_test' timestamp='2017-09-29-Fri-12.00.45.722'>
     <section name='With ExampleRestClient'>
-      <section duration_seconds='1.573' name='Fetch and log an instance of User'>
+      <section duration_seconds='1.543' name='Fetch and log an instance of User'>
         <section name='Fetch a user'>
-          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-28-Thu-15.43.53.821' url='https://jsonplaceholder.typicode.com/users'>
+          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-12.00.45.727' url='https://jsonplaceholder.typicode.com/users'>
             <parameters/>
           </section>
         </section>
@@ -63,7 +63,7 @@ Notes:
             <class>NameError</class>
             <message>
               undefined local variable or method `user&apos; for
-              #&lt;DataLogComplexTest:0x3bae3a0&gt;
+              #&lt;DataLogComplexTest:0x3f701e8&gt;
             </message>
             <backtrace>
               <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'

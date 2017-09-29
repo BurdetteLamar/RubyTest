@@ -8,7 +8,7 @@
 
 This page introduces simple data classes, and shows how to create instances of them.
 
-## Test Source Code
+## Example Test
 
 <code>data_new_simple_test.rb</code>
 ```ruby
@@ -41,13 +41,13 @@ Notes:
 - These values are passed to method <code>Album.new</code> in a hash that gives the names and values.
 - Note that the created album exists only here in the test, and not in the REST API itself.  If it were later created in the API, it would be assigned a non-nil <code>:id</code> value.
 
-##  Test Log
+## Log
 
 <code>test_data_new_simple.xml</code>
 ```xml
 <data_new_simple_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.002' name='data_new_simple_test' timestamp='2017-09-28-Thu-15.43.56.535'>
+  <test_method duration_seconds='0.002' name='data_new_simple_test' timestamp='2017-09-29-Fri-12.00.48.364'>
     <section name='With ExampleRestClient'>
       <section name='Create and log an instance of Album'>
         <section name='Created album'>

@@ -4,7 +4,7 @@
 
 This page shows how to test GET Albums/_id_.
 
-## Test Source Code
+## Example Test
 
 [file_source](../tests/get_albums_id_test.rb)
 
@@ -16,7 +16,7 @@ Notes:
   2.  Forms the response payload into a new <code>Album</code> object, <code>album_fetched</code>.
   3.  Verifies that the values in <code>album_to_get</code> are equal to those in <code>album_fetched</code>.
 
-##  Test Log
+## Log
 
 [file_source](../logs/test_get_albums_id.xml)
 

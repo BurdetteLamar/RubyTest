@@ -6,14 +6,14 @@ class VerdictsTest < BaseClassForTest
     prelude do |_, log|
       # Using extra variables in these verdicts, to make usage clear.
       log.section('These verdicts should pass') do
-        log.section('An assertion verdict that should pass') do
+        log.section('An assert verdict that should pass') do
           log.verdict_assert?(
               verdict_id = 'assertion should pass',
               actual = true,
               message = 'True is truthy'
           )
         end
-        log.section('A refutation verdict that should pass') do
+        log.section('A refute verdict that should pass') do
           log.verdict_refute?(
               verdict_id = 'refutation should pass',
               actual = false,
@@ -29,7 +29,7 @@ class VerdictsTest < BaseClassForTest
               message = 'False is not truthy'
           )
         end
-        log.section('A refutation verdict that should fail') do
+        log.section('A refute verdict that should fail') do
           log.verdict_refute?(
               verdict_id = 'refutation should fail',
               actual = true,

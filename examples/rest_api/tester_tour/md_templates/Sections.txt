@@ -2,23 +2,23 @@
 
 # Sections and Nesting
 
-This page introduces sections, including nesting, timestamps, and durations.
+This page shows test sections, including nesting, timestamps, and durations.
 
-## Test Source Code
+## Example Test
 
 [file_source](../tests/sections_test.rb)
 
 Notes:
 
 - Use nested sections to organize test code.
-- This test does not use the client, and so uses the variable name <code>_</code> instead of variable name <code>client</code>.  This prevents the RubyMine IDE from flagging it as an unused variable during code inspection.
+- This test does not use the client, and so uses the variable name <code>_</code> instead of variable name <code>client</code>.
 
-##  Test Log
+## Log
 
 [file_source](../logs/test_sections.xml)
 
 Notes:
 
-- The sections in the test are propagated to the log, so that both test and log have the same structure.
+- The sections in the test are propagated to the log, so that the log is organized the same way as the test.
 
 [navigation_links]

@@ -6,7 +6,7 @@
 
 # Verifying a Complex Data Object
 
-## Test Source Code
+## Example Test
 
 <code>data_equal_complex_test.rb</code>
 ```ruby
@@ -49,15 +49,15 @@ Notes:
   - The <code>fail if </code> proves that it worked.
   - Method <code>User.verdict_equal?</code> verifies and logs each value in the users.
 
-##  Test Log
+## Log
 
 <code>test_data_equal_complex.xml</code>
 ```xml
 <data_equal_complex_test>
   <summary errors='0' failures='1' verdicts='31'/>
-  <test_method duration_seconds='1.515' name='data_equal_complex_test' timestamp='2017-09-28-Thu-15.44.01.335'>
+  <test_method duration_seconds='1.568' name='data_equal_complex_test' timestamp='2017-09-29-Fri-12.00.53.294'>
     <section name='With ExampleRestClient'>
-      <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-28-Thu-15.44.01.335' url='https://jsonplaceholder.typicode.com/users'>
+      <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-12.00.53.299' url='https://jsonplaceholder.typicode.com/users'>
         <parameters/>
       </section>
       <section name='These are equal'>

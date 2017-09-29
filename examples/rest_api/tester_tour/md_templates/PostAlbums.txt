@@ -4,7 +4,7 @@
 
 This page shows how to test POST Albums.
 
-## Test Source Code
+## Example Test
 
 [file_source](../tests/post_albums_test.rb)
 
@@ -18,7 +18,7 @@ Notes:
   4.  Fetches the album as <code>album_fetched</code>, using the id from <code>album_posted</code>.
   5.  Verifies that <code>album_fetched</code> matches <code>album_posted</code>.
 
-##  Test Log
+## Log
 
 [file_source](../logs/test_post_albums.xml)
 

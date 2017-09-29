@@ -14,7 +14,7 @@ Suppose a request creates an object (say, a new user) whose identifier is a new 
 
 Marking a verdict as <code>volatile</code> handles this case.  For a volatile verdict, the Changes Report will ignore the differing values, which is what's wanted.
 
-## Test Source Code
+## Example Test
 
 [file_source](../tests/volatility_test.rb)
 
@@ -23,7 +23,7 @@ Notes:
 - The first verdict's values are non-volatile, expected to be the same in each test run.  If the value changed from the previous, the Changes Report would mark the verdict as changed.
 - The second verdict's values are volatile, changing with each test run.  The Changes Report will not mark the verdict as changed.
 
-##  Test Log
+## Log
 
 [file_source](../logs/test_volatility.xml)
 

@@ -8,7 +8,7 @@
 
 This page shows how to test GET Albums/_id_.
 
-## Test Source Code
+## Example Test
 
 <code>get_albums_id_test.rb</code>
 ```ruby
@@ -47,17 +47,17 @@ Notes:
   2.  Forms the response payload into a new <code>Album</code> object, <code>album_fetched</code>.
   3.  Verifies that the values in <code>album_to_get</code> are equal to those in <code>album_fetched</code>.
 
-##  Test Log
+## Log
 
 <code>test_get_albums_id.xml</code>
 ```xml
 <get_albums_id_test>
   <summary errors='0' failures='0' verdicts='4'/>
-  <test_method name='get_albums_id_test' timestamp='2017-09-28-Thu-15.44.07.000'>
-    <section duration_seconds='1.651' name='With ExampleRestClient'>
+  <test_method name='get_albums_id_test' timestamp='2017-09-29-Fri-12.00.58.698'>
+    <section duration_seconds='1.659' name='With ExampleRestClient'>
       <section name='Test endpoint GET albums/id'>
         <section name='Fetch an album to GET'>
-          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-28-Thu-15.44.07.004' url='https://jsonplaceholder.typicode.com/albums'>
+          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-12.00.58.702' url='https://jsonplaceholder.typicode.com/albums'>
             <parameters/>
           </section>
           <section name='Album fetched'>
@@ -67,8 +67,8 @@ Notes:
           </section>
         </section>
         <section name='GET the album'>
-          <section name='GET album' timestamp='2017-09-28-Thu-15.44.08.573'>
-            <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-28-Thu-15.44.08.573' url='https://jsonplaceholder.typicode.com/albums/1'>
+          <section name='GET album' timestamp='2017-09-29-Fri-12.01.00.270'>
+            <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-12.01.00.271' url='https://jsonplaceholder.typicode.com/albums/1'>
               <parameters/>
             </section>
             <section name='Evaluation'>

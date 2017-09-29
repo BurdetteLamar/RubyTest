@@ -2,7 +2,7 @@
 
 # Verifying a Simple Data Object
 
-## Test Source Code
+## Example Test
 
 [file_source](../tests/data_equal_simple_test.rb)
 
@@ -20,7 +20,7 @@ Notes:
   - The <code>fail if </code> proves that it worked.
   - Method <code>Album.verdict_equal?</code> verifies and logs each value in the albums.
 
-##  Test Log
+## Log
 
 [file_source](../logs/test_data_equal_simple.xml)
 

@@ -8,7 +8,7 @@
 
 This page shows how to test PUT Albums/_id_.
 
-## Test Source Code
+## Example Test
 
 <code>put_albums_id_test.rb</code>
 ```ruby
@@ -51,17 +51,17 @@ Notes:
   4.  Fetches the updated album <code>album_fetched</code>, using parameters from <code>album_put</code>.
   4.  Verifies that the values in <code>album_put</code> are equal to those in <code>album_fetched</code>.
 
-##  Test Log
+## Log
 
 <code>test_put_albums_id.xml</code>
 ```xml
 <put_albums_id_test>
   <summary errors='0' failures='1' verdicts='7'/>
-  <test_method name='put_albums_id_test' timestamp='2017-09-28-Thu-15.44.12.758'>
-    <section duration_seconds='1.991' name='With ExampleRestClient'>
+  <test_method name='put_albums_id_test' timestamp='2017-09-29-Fri-12.01.04.500'>
+    <section duration_seconds='1.924' name='With ExampleRestClient'>
       <section name='Test endpoint PUT albums/id'>
         <section name='Make a modified album'>
-          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-28-Thu-15.44.12.758' url='https://jsonplaceholder.typicode.com/albums'>
+          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-12.01.04.500' url='https://jsonplaceholder.typicode.com/albums'>
             <parameters/>
           </section>
           <section name='Album to put'>
@@ -71,8 +71,8 @@ Notes:
           </section>
         </section>
         <section name='PUT the album'>
-          <section name='PUT album' timestamp='2017-09-28-Thu-15.44.14.323'>
-            <section duration_seconds='0.000' method='PUT' name='Rest client' timestamp='2017-09-28-Thu-15.44.14.323' url='https://jsonplaceholder.typicode.com/albums/1'>
+          <section name='PUT album' timestamp='2017-09-29-Fri-12.01.06.022'>
+            <section duration_seconds='0.000' method='PUT' name='Rest client' timestamp='2017-09-29-Fri-12.01.06.022' url='https://jsonplaceholder.typicode.com/albums/1'>
               <parameters id='1' title='My new title' userId='1'/>
             </section>
             <section name='Evaluation'>
@@ -88,7 +88,7 @@ Notes:
                 <exp_value>My new title</exp_value>
                 <act_value>My new title</act_value>
               </verdict>
-              <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-28-Thu-15.44.14.624' url='https://jsonplaceholder.typicode.com/albums/1'>
+              <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-12.01.06.284' url='https://jsonplaceholder.typicode.com/albums/1'>
                 <parameters/>
               </section>
               <verdict id='Fetched-id' message='Fetched' method='verdict_assert_equal?' outcome='passed' volatile='false'>

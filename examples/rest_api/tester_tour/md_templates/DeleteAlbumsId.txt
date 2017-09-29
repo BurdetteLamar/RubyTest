@@ -4,7 +4,7 @@
 
 This page shows how to test DELETE Albums/_id_.
 
-## Test Source Code
+## Example Test
 
 [file_source](../tests/delete_albums_id_test.rb)
 
@@ -15,7 +15,7 @@ Notes:
   2.  Verifies that the return had no payload.
   3.  Verifies that the album no longer exists.
 
-##  Test Log
+## Log
 
 [file_source](../logs/test_delete_albums_id.xml)
 

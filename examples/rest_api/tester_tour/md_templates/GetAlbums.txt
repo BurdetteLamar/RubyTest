@@ -4,7 +4,7 @@
 
 This page shows how to test GET Albums.
 
-## Test Source Code
+## Example Test
 
 [file_source](../tests/get_albums_test.rb)
 
@@ -18,7 +18,7 @@ Notes:
   4.  Logs the content of the first album.
   5.  Verifies that each the value in the first album is valid (i.e., has the expected form).
 
-##  Test Log
+## Log
 
 [file_source](../logs/test_get_albums.xml)
 

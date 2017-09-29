@@ -2,7 +2,7 @@
 
 # Verifying a Complex Data Object
 
-## Test Source Code
+## Example Test
 
 [file_source](../tests/data_equal_complex_test.rb)
 
@@ -20,7 +20,7 @@ Notes:
   - The <code>fail if </code> proves that it worked.
   - Method <code>User.verdict_equal?</code> verifies and logs each value in the users.
 
-##  Test Log
+## Log
 
 [file_source](../logs/test_data_equal_complex.xml)
 

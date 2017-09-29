@@ -8,7 +8,7 @@
 
 This page introduces complex data classes, and shows how to create instances of them.
 
-## Test Source Code
+## Example Test
 
 <code>data_new_complex_test.rb</code>
 ```ruby
@@ -58,13 +58,13 @@ Notes:
 - Similarly, the values for <code>:company</code> are formed into an instance of <code>User::Company</code>.
 - There is a further nesting in the values for <code>:address</code>:  it contains multi-valued data for <code>:geo</code>.  These values are formed into an instance of <code>User::Address::Geo</code>.
 
-##  Test Log
+## Log
 
 <code>test_data_new_complex.xml</code>
 ```xml
 <data_new_complex_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.003' name='data_new_complex_test' timestamp='2017-09-28-Thu-15.43.57.671'>
+  <test_method duration_seconds='0.010' name='data_new_complex_test' timestamp='2017-09-29-Fri-12.00.49.457'>
     <section name='With ExampleRestClient'>
       <section name='Create and log an instance of a complex data object'>
         <data field='name' value='Leanne Graham'/>

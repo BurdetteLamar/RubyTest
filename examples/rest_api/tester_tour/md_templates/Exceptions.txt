@@ -4,7 +4,7 @@
 
 This page introduces the handling of unexpected exceptions.
 
-## Test Source Code
+## Example Test
 
 [file_source](../tests/exceptions_test.rb)
 
@@ -14,7 +14,7 @@ Notes:
 - The second outer section does not rescue its exception.  The test exits entirely, and any following code in the _test_ is not reached.
 - Any section, including a nested section, may rescue an exception.  (Or not -- it's an independent choice for each section.)
 
-##  Test Log
+## Log
 
 [file_source](../logs/test_exceptions.xml)
 
