@@ -20,10 +20,12 @@ class BaseClassForData < BaseClass
     nil
   end
 
-  Contract Log => nil
+  Contract Log, Maybe[String] => nil
   # Log recursively, so that nested objects can log themselves.
-  def log(log)
-    log_recursive(self, log)
+  def log(log, section_name = self.class.name)
+    log.section(section_name) do
+      log_recursive(self, log)
+    end
     nil
   end
 
