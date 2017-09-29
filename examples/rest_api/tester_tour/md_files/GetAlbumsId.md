@@ -41,11 +41,11 @@ end
 
 Notes:
 
-- Method <code>Album.get_first</code> is a convenience method that fetches the first album as an <code>Album</code> object.
-- Method <code>GetAlbumsId.verdict_call_and_verify_success</code>:
-  1.  Accesses endpoint GET albums/_id_, using field <code>:id</code> from the given album <code>album_to_get</code>.
-  2.  Forms the response payload into a new <code>Album</code> object, <code>album_fetched</code>.
-  3.  Verifies that the values in <code>album_to_get</code> are equal to those in <code>album_fetched</code>.
+- Method `Album.get_first` is a convenience method that fetches the first album as an `Album` object.
+- Method `GetAlbumsId.verdict_call_and_verify_success`:
+  1.  Accesses endpoint GET albums/_id_, using field `:id` from the given album `album_to_get`.
+  2.  Forms the response payload into a new `Album` object, `album_fetched`.
+  3.  Verifies that the values in `album_to_get` are equal to those in `album_fetched`.
 
 ## Log
 
@@ -53,11 +53,11 @@ Notes:
 ```xml
 <get_albums_id_test>
   <summary errors='0' failures='0' verdicts='4'/>
-  <test_method name='get_albums_id_test' timestamp='2017-09-29-Fri-12.41.41.591'>
-    <section duration_seconds='1.612' name='With ExampleRestClient'>
+  <test_method name='get_albums_id_test' timestamp='2017-09-29-Fri-13.01.19.652'>
+    <section duration_seconds='1.626' name='With ExampleRestClient'>
       <section name='Test endpoint GET albums/id'>
         <section name='Fetch an album to GET'>
-          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-12.41.41.591' url='https://jsonplaceholder.typicode.com/albums'>
+          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-13.01.19.656' url='https://jsonplaceholder.typicode.com/albums'>
             <parameters/>
           </section>
           <section name='Album fetched'>
@@ -67,8 +67,8 @@ Notes:
           </section>
         </section>
         <section name='GET the album'>
-          <section name='GET album' timestamp='2017-09-29-Fri-12.41.43.103'>
-            <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-12.41.43.103' url='https://jsonplaceholder.typicode.com/albums/1'>
+          <section name='GET album' timestamp='2017-09-29-Fri-13.01.21.168'>
+            <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-13.01.21.168' url='https://jsonplaceholder.typicode.com/albums/1'>
               <parameters/>
             </section>
             <section name='Evaluation'>

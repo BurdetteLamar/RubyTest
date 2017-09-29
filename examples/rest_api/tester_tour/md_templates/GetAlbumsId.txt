@@ -10,11 +10,11 @@ This page shows how to test GET Albums/_id_.
 
 Notes:
 
-- Method <code>Album.get_first</code> is a convenience method that fetches the first album as an <code>Album</code> object.
-- Method <code>GetAlbumsId.verdict_call_and_verify_success</code>:
-  1.  Accesses endpoint GET albums/_id_, using field <code>:id</code> from the given album <code>album_to_get</code>.
-  2.  Forms the response payload into a new <code>Album</code> object, <code>album_fetched</code>.
-  3.  Verifies that the values in <code>album_to_get</code> are equal to those in <code>album_fetched</code>.
+- Method `Album.get_first` is a convenience method that fetches the first album as an `Album` object.
+- Method `GetAlbumsId.verdict_call_and_verify_success`:
+  1.  Accesses endpoint GET albums/_id_, using field `:id` from the given album `album_to_get`.
+  2.  Forms the response payload into a new `Album` object, `album_fetched`.
+  3.  Verifies that the values in `album_to_get` are equal to those in `album_fetched`.
 
 ## Log
 

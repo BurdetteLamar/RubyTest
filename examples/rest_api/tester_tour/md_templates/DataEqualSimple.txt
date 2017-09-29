@@ -9,16 +9,16 @@
 Notes:
 
 - The test gets a known Album, then clones it.
-- We know that Album is flat, but it's good practice to use <code>deep_clone</code>, not <code>clone</code> just to be sure.
+- We know that Album is flat, but it's good practice to use `deep_clone`, not `clone` just to be sure.
 - In the first section:
-  - Method <code>Album.equal?</code> returns <code>true</code>, but does no logging.
-  - The <code>fail unless</code> proves that it worked.
-  - Method <code>Album.verdict_equal?</code> verifies and logs each value in the albums.
+  - Method `Album.equal?` returns `true`, but does no logging.
+  - The `fail unless` proves that it worked.
+  - Method `Album.verdict_equal?` verifies and logs each value in the albums.
 - In the second section:
   - One value in the album is modified.
-  - Method <code>Album.equal?</code> returns <code>false</code>, but does no logging.
-  - The <code>fail if </code> proves that it worked.
-  - Method <code>Album.verdict_equal?</code> verifies and logs each value in the albums.
+  - Method `Album.equal?` returns `false`, but does no logging.
+  - The `fail if ` proves that it worked.
+  - Method `Album.verdict_equal?` verifies and logs each value in the albums.
 
 ## Log
 

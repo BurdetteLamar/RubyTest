@@ -12,7 +12,7 @@ This page shows a test class, along with its REST API client and test log.
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
 
-class NothingTest < BaseClassForTest
+class SimpleTest < BaseClassForTest
 
   def test_test
     prelude do |client, log|
@@ -28,7 +28,7 @@ end
 
 Notes:
 
-- The test class derives from the base test class.
+- The test class derives from a base test class.
 - The test method-name begins with `test`, which tells the test framework that it can be executed at test-time.
 - Method `prelude`, inherited from the base class, yields:
   - A domain-specific REST API client.
@@ -40,7 +40,7 @@ Notes:
 ```xml
 <test_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.002' name='test_test' timestamp='2017-09-29-Fri-12.41.19.035'>
+  <test_method duration_seconds='0.000' name='test_test' timestamp='2017-09-29-Fri-13.00.56.561'>
     <section name='With ExampleRestClient'>
       <comment>Test code goes here</comment>
       <comment>Method prelude yields two objects:</comment>
@@ -59,9 +59,9 @@ Notes:
 
 Notes:
 
-- At the top of the log is a summary:  counts of verdicts, failures (failed verdicts), and errors (unexpected exceptions).
+- At the top of the log is a summary of the counts of verdicts, failures (failed verdicts), and errors (unexpected exceptions).
 - The logging for the test steps and verdicts is in element `test_method`, which also gives the test name, timestamp, and duration.
-- The last section gives the count of errors (unexpected exceptions).  Its verdict expects that count to be 0.
+- The last section gives the count of errors (unexpected exceptions).  Its verdict expects that count to be `0`.
 - (Attribute `volatile`, seen in element `verdict`, has to do with the Changes Report, and is of no present interest.)
 
 **Next** [Sections and Nesting](./Sections.md)

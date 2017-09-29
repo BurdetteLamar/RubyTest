@@ -35,9 +35,9 @@ end
 Notes:
 
 - This test uses an endpoint, and therefore requires the corresponding class.
-- Method <code>GetAlbums.verdict_call_and_verify_success</code>:
+- Method `GetAlbums.verdict_call_and_verify_success`:
   1.  Accesses endpoint GET albums.
-  2.  Forms the response payload into new <code>Album</code> objects.
+  2.  Forms the response payload into new `Album` objects.
   3.  Logs the count of returned albums.
   4.  Logs the content of the first album.
   5.  Verifies that each the value in the first album is valid (i.e., has the expected form).
@@ -48,12 +48,12 @@ Notes:
 ```xml
 <get_albums_test>
   <summary errors='0' failures='0' verdicts='7'/>
-  <test_method name='get_albums_test' timestamp='2017-09-29-Fri-12.41.39.020'>
-    <section duration_seconds='1.507' name='With ExampleRestClient'>
+  <test_method name='get_albums_test' timestamp='2017-09-29-Fri-13.01.17.044'>
+    <section duration_seconds='1.506' name='With ExampleRestClient'>
       <section name='Test endpoint GET albums'>
         <section name='GET albums'>
-          <section name='GET albums' timestamp='2017-09-29-Fri-12.41.39.020'>
-            <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-12.41.39.020' url='https://jsonplaceholder.typicode.com/albums'>
+          <section name='GET albums' timestamp='2017-09-29-Fri-13.01.17.044'>
+            <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-13.01.17.044' url='https://jsonplaceholder.typicode.com/albums'>
               <parameters/>
             </section>
             <section name='Evaluation'>
@@ -111,8 +111,8 @@ Notes:
 
 Notes:
 
-- Each <code>section</code> element whose <code>name</code> is <code>Rest client</code> records an interaction with the REST API, including any passed parameters.
-- The <code>section</code> whose <code>name</code> is <code>Evaluation</code> contains verdicts about the returned data.
+- Each `section` element whose `name` is `Rest client` records an interaction with the REST API, including any passed parameters.
+- The `section` whose `name` is `Evaluation` contains verdicts about the returned data.
 
 **Prev** [Verifying a Complex Data Object](./DataEqualComplex.md)
 

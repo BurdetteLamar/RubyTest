@@ -12,7 +12,7 @@ There are cases, though, when this would be inappropriate.
 
 Suppose a request creates an object (say, a new user) whose identifier is a new GUID.  Then the identifier will be different in every test run, and by default the Changes Report would note the change, even though the change is actually expected.
 
-Marking a verdict as <code>volatile</code> handles this case.  For a volatile verdict, the Changes Report will ignore the differing values, which is what's wanted.
+Marking a verdict as `volatile` handles this case.  For a volatile verdict, the Changes Report will ignore the differing values, which is what's wanted.
 
 ## Example Test
 

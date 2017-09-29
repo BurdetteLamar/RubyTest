@@ -38,16 +38,16 @@ end
 Notes:
 
 - The test gets a known User, then clones it.
-- We know that User is complex, so in this it's necessary to use <code>deep_clone</code>, not <code>clone</code>.
+- We know that User is complex, so it's _necessary_ to use `deep_clone`, not `clone`.
 - In the first section:
-  - Method <code>User.equal?</code> returns <code>true</code>, but does no logging.
-  - The <code>fail unless</code> proves that it worked.
-  - Method <code>User.verdict_equal?</code> verifies and logs each value in the users.
+  - Method `User.equal?` returns `true`, but does no logging.
+  - The `fail unless` proves that it worked.
+  - Method `User.verdict_equal?` verifies and logs each value in the users.
 - In the second section:
   - One value in the user is modified.  The changed value is in a nested object.
-  - Method <code>User.equal?</code> returns <code>false</code>, but does no logging.
-  - The <code>fail if </code> proves that it worked.
-  - Method <code>User.verdict_equal?</code> verifies and logs each value in the users.
+  - Method `User.equal?` returns `false`, but does no logging.
+  - The `fail if ` proves that it worked.
+  - Method `User.verdict_equal?` verifies and logs each value in the users.
 
 ## Log
 
@@ -55,9 +55,9 @@ Notes:
 ```xml
 <data_equal_complex_test>
   <summary errors='0' failures='1' verdicts='31'/>
-  <test_method duration_seconds='1.568' name='data_equal_complex_test' timestamp='2017-09-29-Fri-12.41.36.377'>
+  <test_method duration_seconds='1.729' name='data_equal_complex_test' timestamp='2017-09-29-Fri-13.01.14.232'>
     <section name='With ExampleRestClient'>
-      <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-12.41.36.377' url='https://jsonplaceholder.typicode.com/users'>
+      <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-13.01.14.236' url='https://jsonplaceholder.typicode.com/users'>
         <parameters/>
       </section>
       <section name='These are equal'>

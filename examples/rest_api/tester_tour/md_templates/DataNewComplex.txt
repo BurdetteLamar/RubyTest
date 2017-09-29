@@ -10,9 +10,9 @@ This page introduces complex data classes, and shows how to create instances of 
 
 Notes:
 
-- When the <code>User</code> instance is created, the values for <code>:address</code> are formed into an instance of <code>User::Address</code>.
-- Similarly, the values for <code>:company</code> are formed into an instance of <code>User::Company</code>.
-- There is a further nesting in the values for <code>:address</code>:  it contains multi-valued data for <code>:geo</code>.  These values are formed into an instance of <code>User::Address::Geo</code>.
+- When the `User` instance is created, the values for `:address` are formed into an instance of `User::Address`.
+- Similarly, the values for `:company` are formed into an instance of `User::Company`.
+- There is a further nesting in the values for `:address`:  it contains multi-valued data for `:geo`.  These values are formed into an instance of `User::Address::Geo`.
 
 ## Log
 

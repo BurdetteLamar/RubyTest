@@ -43,13 +43,13 @@ end
 
 Notes:
 
-- Method <code>Album.get_first</code> is a convenience method that fetches the first album as an <code>Album</code> object.  It is modified and becomes <album_to_put>.
-- Method <code>PutAlbumsId.verdict_call_and_verify_success</code>:
-  1.  Accesses endpoint PUT albums/_id_, using field <code>:id</code> from <code>album_to_put</code>.
-  2.  Forms the response payload into a new Album object, <code>album_put</code>.
-  3.  Verifies that the values in <code>album_put</code> are equal to those in <code>album_to_put</code>.
-  4.  Fetches the updated album <code>album_fetched</code>, using parameters from <code>album_put</code>.
-  4.  Verifies that the values in <code>album_put</code> are equal to those in <code>album_fetched</code>.
+- Method `Album.get_first` is a convenience method that fetches the first album as an `Album` object.  It is modified and becomes <album_to_put>.
+- Method `PutAlbumsId.verdict_call_and_verify_success`:
+  1.  Accesses endpoint PUT albums/_id_, using field `:id` from `album_to_put`.
+  2.  Forms the response payload into a new Album object, `album_put`.
+  3.  Verifies that the values in `album_put` are equal to those in `album_to_put`.
+  4.  Fetches the updated album `album_fetched`, using parameters from `album_put`.
+  4.  Verifies that the values in `album_put` are equal to those in `album_fetched`.
 
 ## Log
 
@@ -57,11 +57,11 @@ Notes:
 ```xml
 <put_albums_id_test>
   <summary errors='0' failures='1' verdicts='7'/>
-  <test_method name='put_albums_id_test' timestamp='2017-09-29-Fri-12.41.47.545'>
-    <section duration_seconds='2.327' name='With ExampleRestClient'>
+  <test_method name='put_albums_id_test' timestamp='2017-09-29-Fri-13.01.25.553'>
+    <section duration_seconds='1.862' name='With ExampleRestClient'>
       <section name='Test endpoint PUT albums/id'>
         <section name='Make a modified album'>
-          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-12.41.47.545' url='https://jsonplaceholder.typicode.com/albums'>
+          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-13.01.25.553' url='https://jsonplaceholder.typicode.com/albums'>
             <parameters/>
           </section>
           <section name='Album to put'>
@@ -71,8 +71,8 @@ Notes:
           </section>
         </section>
         <section name='PUT the album'>
-          <section name='PUT album' timestamp='2017-09-29-Fri-12.41.49.381'>
-            <section duration_seconds='0.000' method='PUT' name='Rest client' timestamp='2017-09-29-Fri-12.41.49.381' url='https://jsonplaceholder.typicode.com/albums/1'>
+          <section name='PUT album' timestamp='2017-09-29-Fri-13.01.27.093'>
+            <section duration_seconds='0.000' method='PUT' name='Rest client' timestamp='2017-09-29-Fri-13.01.27.094' url='https://jsonplaceholder.typicode.com/albums/1'>
               <parameters id='1' title='My new title' userId='1'/>
             </section>
             <section name='Evaluation'>
@@ -88,7 +88,7 @@ Notes:
                 <exp_value>My new title</exp_value>
                 <act_value>My new title</act_value>
               </verdict>
-              <section duration_seconds='0.010' method='GET' name='Rest client' timestamp='2017-09-29-Fri-12.41.49.671' url='https://jsonplaceholder.typicode.com/albums/1'>
+              <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-13.01.27.254' url='https://jsonplaceholder.typicode.com/albums/1'>
                 <parameters/>
               </section>
               <verdict id='Fetched-id' message='Fetched' method='verdict_assert_equal?' outcome='passed' volatile='false'>

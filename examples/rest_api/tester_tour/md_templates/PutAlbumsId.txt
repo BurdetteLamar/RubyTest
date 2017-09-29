@@ -10,13 +10,13 @@ This page shows how to test PUT Albums/_id_.
 
 Notes:
 
-- Method <code>Album.get_first</code> is a convenience method that fetches the first album as an <code>Album</code> object.  It is modified and becomes <album_to_put>.
-- Method <code>PutAlbumsId.verdict_call_and_verify_success</code>:
-  1.  Accesses endpoint PUT albums/_id_, using field <code>:id</code> from <code>album_to_put</code>.
-  2.  Forms the response payload into a new Album object, <code>album_put</code>.
-  3.  Verifies that the values in <code>album_put</code> are equal to those in <code>album_to_put</code>.
-  4.  Fetches the updated album <code>album_fetched</code>, using parameters from <code>album_put</code>.
-  4.  Verifies that the values in <code>album_put</code> are equal to those in <code>album_fetched</code>.
+- Method `Album.get_first` is a convenience method that fetches the first album as an `Album` object.  It is modified and becomes <album_to_put>.
+- Method `PutAlbumsId.verdict_call_and_verify_success`:
+  1.  Accesses endpoint PUT albums/_id_, using field `:id` from `album_to_put`.
+  2.  Forms the response payload into a new Album object, `album_put`.
+  3.  Verifies that the values in `album_put` are equal to those in `album_to_put`.
+  4.  Fetches the updated album `album_fetched`, using parameters from `album_put`.
+  4.  Verifies that the values in `album_put` are equal to those in `album_fetched`.
 
 ## Log
 

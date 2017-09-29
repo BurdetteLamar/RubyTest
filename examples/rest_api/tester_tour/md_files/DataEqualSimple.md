@@ -38,16 +38,16 @@ end
 Notes:
 
 - The test gets a known Album, then clones it.
-- We know that Album is flat, but it's good practice to use <code>deep_clone</code>, not <code>clone</code> just to be sure.
+- We know that Album is flat, but it's good practice to use `deep_clone`, not `clone` just to be sure.
 - In the first section:
-  - Method <code>Album.equal?</code> returns <code>true</code>, but does no logging.
-  - The <code>fail unless</code> proves that it worked.
-  - Method <code>Album.verdict_equal?</code> verifies and logs each value in the albums.
+  - Method `Album.equal?` returns `true`, but does no logging.
+  - The `fail unless` proves that it worked.
+  - Method `Album.verdict_equal?` verifies and logs each value in the albums.
 - In the second section:
   - One value in the album is modified.
-  - Method <code>Album.equal?</code> returns <code>false</code>, but does no logging.
-  - The <code>fail if </code> proves that it worked.
-  - Method <code>Album.verdict_equal?</code> verifies and logs each value in the albums.
+  - Method `Album.equal?` returns `false`, but does no logging.
+  - The `fail if ` proves that it worked.
+  - Method `Album.verdict_equal?` verifies and logs each value in the albums.
 
 ## Log
 
@@ -55,9 +55,9 @@ Notes:
 ```xml
 <data_equal_simple_test>
   <summary errors='0' failures='1' verdicts='7'/>
-  <test_method duration_seconds='1.500' name='data_equal_simple_test' timestamp='2017-09-29-Fri-12.41.33.794'>
+  <test_method duration_seconds='1.640' name='data_equal_simple_test' timestamp='2017-09-29-Fri-13.01.11.516'>
     <section name='With ExampleRestClient'>
-      <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-12.41.33.798' url='https://jsonplaceholder.typicode.com/albums'>
+      <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-13.01.11.520' url='https://jsonplaceholder.typicode.com/albums'>
         <parameters/>
       </section>
       <section name='These are equal'>

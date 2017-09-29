@@ -10,13 +10,13 @@ This page shows how to test POST Albums.
 
 Notes:
 
-- The test creates a new Album object <code>album_to_post</code>.
-- Method <code>PostAlbums.verdict_call_and_verify_success</code>:
-  1.  Accesses endpoint POST albums, using parameter values from <code>album_to_post</code>.
-  2.  Forms the returned payload into a new Album object, <code>album_posted</code>.
-  3.  Verifies that <code>album_posted</code> matches <code>album_to_post</code>.
-  4.  Fetches the album as <code>album_fetched</code>, using the id from <code>album_posted</code>.
-  5.  Verifies that <code>album_fetched</code> matches <code>album_posted</code>.
+- The test creates a new Album object `album_to_post`.
+- Method `PostAlbums.verdict_call_and_verify_success`:
+  1.  Accesses endpoint POST albums, using parameter values from `album_to_post`.
+  2.  Forms the returned payload into a new Album object, `album_posted`.
+  3.  Verifies that `album_posted` matches `album_to_post`.
+  4.  Fetches the album as `album_fetched`, using the id from `album_posted`.
+  5.  Verifies that `album_fetched` matches `album_posted`.
 
 ## Log
 

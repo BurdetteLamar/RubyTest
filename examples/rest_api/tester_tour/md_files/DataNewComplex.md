@@ -54,9 +54,9 @@ end
 
 Notes:
 
-- When the <code>User</code> instance is created, the values for <code>:address</code> are formed into an instance of <code>User::Address</code>.
-- Similarly, the values for <code>:company</code> are formed into an instance of <code>User::Company</code>.
-- There is a further nesting in the values for <code>:address</code>:  it contains multi-valued data for <code>:geo</code>.  These values are formed into an instance of <code>User::Address::Geo</code>.
+- When the `User` instance is created, the values for `:address` are formed into an instance of `User::Address`.
+- Similarly, the values for `:company` are formed into an instance of `User::Company`.
+- There is a further nesting in the values for `:address`:  it contains multi-valued data for `:geo`.  These values are formed into an instance of `User::Address::Geo`.
 
 ## Log
 
@@ -64,7 +64,7 @@ Notes:
 ```xml
 <data_new_complex_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.003' name='data_new_complex_test' timestamp='2017-09-29-Fri-12.41.32.717'>
+  <test_method duration_seconds='0.000' name='data_new_complex_test' timestamp='2017-09-29-Fri-13.01.10.401'>
     <section name='With ExampleRestClient'>
       <section name='Create and log an instance of a complex data object'>
         <data field='name' value='Leanne Graham'/>

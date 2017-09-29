@@ -1,6 +1,6 @@
 require_relative '../../base_classes/base_class_for_test'
 
-class NothingTest < BaseClassForTest
+class SimpleTest < BaseClassForTest
 
   def test_test
     prelude do |client, log|

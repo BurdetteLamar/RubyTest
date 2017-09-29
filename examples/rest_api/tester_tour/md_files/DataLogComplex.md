@@ -37,11 +37,12 @@ end
 Notes:
 
 - Unlike an album, which has only scalar values, a user has a more complex structure.
-- Some of its values, such as those for <code>:name</code> and <code>:username</code>, are simple scalars.
-- Other values, such as those for <code>:address</code> and <code>:company</code>, are more complex.
-- When the <code>User</code> instance is created, the values for <code>:address</code> are formed into an instance of <code>User::Address</code>.
-- Similarly, the values for <code>:company</code> are formed into an instance of <code>User::Company</code>.
-- There is a further nesting in the values for <code>:address</code>:  it contains multi-valued data for <code>:geo</code>.  These values are formed into an instance of <code>User::Address::Geo</code>.
+- Some of its values, such as those for `:name` and `:username`, are simple scalars.
+- Other values, such as those for `:address` and `:company`, are more complex.
+- When the `User` instance is created, the values for `:address` are formed into an instance of `User::Address`.
+- Similarly, the values for `:company` are formed into an instance of `User::Company`.
+- There is a further nesting in the values for `:address`:  it contains multi-valued data for `:geo`.  These values are formed into an instance of `User::Address::Geo`.
+- Class `User` derives from base classes that provide it with the ability to log itself, as seen here in the call to method `user.log`.
 
 ## Log
 
@@ -49,11 +50,11 @@ Notes:
 ```xml
 <data_log_complex_test>
   <summary errors='1' failures='1' verdicts='1'/>
-  <test_method name='data_log_complex_test' timestamp='2017-09-29-Fri-12.41.29.099'>
+  <test_method name='data_log_complex_test' timestamp='2017-09-29-Fri-13.01.06.543'>
     <section name='With ExampleRestClient'>
-      <section duration_seconds='1.487' name='Fetch and log an instance of User'>
+      <section duration_seconds='1.589' name='Fetch and log an instance of User'>
         <section name='Fetch a user'>
-          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-12.41.29.103' url='https://jsonplaceholder.typicode.com/users'>
+          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-29-Fri-13.01.06.543' url='https://jsonplaceholder.typicode.com/users'>
             <parameters/>
           </section>
         </section>
@@ -63,7 +64,7 @@ Notes:
             <class>NameError</class>
             <message>
               undefined local variable or method `user&apos; for
-              #&lt;DataLogComplexTest:0x3b30bf8&gt;
+              #&lt;DataLogComplexTest:0x3ad4c60&gt;
             </message>
             <backtrace>
               <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'

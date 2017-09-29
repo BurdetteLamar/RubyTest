@@ -6,7 +6,7 @@
 
 This tour documentation is under active development.
 
-Please stay tuned.
+Stay tuned....
 
 **Prev** [Test for POST Albums](./PostAlbums.md)
 
