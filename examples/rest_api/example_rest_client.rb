@@ -68,12 +68,6 @@ class ExampleRestClient < BaseClass
       url += '%s%s=%s' % [char, *pair]
     end
     url = URI.escape(url)
-    @log.put_element('REST_API', :timestamp, :duration) do
-      @log.put_element(rest_method.to_s.upcase, :url => url) do
-        @log.put_element('parameters', parameters) unless parameters.empty?
-      end
-    end
-
     args = Hash.new
     args.store(:method, rest_method)
     args.store(:url, url)
@@ -104,9 +98,15 @@ class ExampleRestClient < BaseClass
       puts "#{try} tries in #{elapsed_time} seconds and #{next_interval} seconds until the next try."
     end
 
-    # noinspection RubyResolve
-    Retriable.retriable on: RestClient::RequestTimeout, tries: 10, base_interval: 1, on_retry: log_retry do
-      response = RestClient::Request.execute(args)
+    response = nil
+    @log.put_element('REST_API', :method => rest_method.to_s.upcase, :url => url) do
+      @log.put_element('parameters', parameters) unless parameters.empty?
+      @log.put_element('execution', :timestamp, :duration) do
+        # noinspection RubyResolve
+        Retriable.retriable on: RestClient::RequestTimeout, tries: 10, base_interval: 1, on_retry: log_retry do
+          response = RestClient::Request.execute(args)
+        end
+      end
     end
     # RubyMine inspection thinks this should have no argument.
     # noinspection RubyArgCount
