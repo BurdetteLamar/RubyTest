@@ -12,7 +12,7 @@ Each following page assumes you've seen all its predecessors, so repetition is m
 
 ## Pages
 
-- [The Simplest Test](./tester_tour/md_files/Test.md)
+- [Simple Test](./tester_tour/md_files/Test.md)
 - [Sections and Nesting](./tester_tour/md_files/Sections.md)
 - [Verdicts](./tester_tour/md_files/Verdicts.md)
 - [Exceptions, Rescued and Not](./tester_tour/md_files/Exceptions.md)

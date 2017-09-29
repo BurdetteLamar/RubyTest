@@ -1,5 +1,5 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev** [The Simplest Test](./Test.md)
+**Prev** [Simple Test](./Test.md)
 
 **Next** [Verdicts](./Verdicts.md)
 
@@ -50,7 +50,7 @@ end
 Notes:
 
 - Use nested sections to organize test code.
-- This test does not use the client, and so uses the variable name <code>_</code> instead of variable name <code>client</code>.
+- (This test does not use the client, and so by Ruby convention uses the variable name `_` instead of variable name `client`.)
 
 ## Log
 
@@ -58,17 +58,17 @@ Notes:
 ```xml
 <sections_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='3.003' name='sections_test' timestamp='2017-09-29-Fri-12.00.36.539'>
+  <test_method duration_seconds='3.003' name='sections_test' timestamp='2017-09-29-Fri-12.41.20.118'>
     <section name='With ExampleRestClient'>
       <section name='First outer section'>
         <section name='First inner section'/>
         <section name='Second inner section'/>
       </section>
       <section name='Second outer section'/>
-      <section name='Section with timestamp' timestamp='2017-09-29-Fri-12.00.36.541'/>
+      <section name='Section with timestamp' timestamp='2017-09-29-Fri-12.41.20.119'/>
       <section duration_seconds='1.000' name='Section with timestamp'/>
-      <section duration_seconds='1.000' name='Section with timestamp and duration' timestamp='2017-09-29-Fri-12.00.37.541'/>
-      <section duration_seconds='1.001' name='Order does not matter' timestamp='2017-09-29-Fri-12.00.38.542'/>
+      <section duration_seconds='1.000' name='Section with timestamp and duration' timestamp='2017-09-29-Fri-12.41.21.120'/>
+      <section duration_seconds='1.000' name='Order does not matter' timestamp='2017-09-29-Fri-12.41.22.121'/>
     </section>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
@@ -84,7 +84,7 @@ Notes:
 
 - The sections in the test are propagated to the log, so that the log is organized the same way as the test.
 
-**Prev** [The Simplest Test](./Test.md)
+**Prev** [Simple Test](./Test.md)
 
 **Next** [Verdicts](./Verdicts.md)
 

@@ -2,7 +2,7 @@
 **Next** [Sections and Nesting](./Sections.md)
 
 
-# The Simplest Test
+# Simple Test
 
 This page shows a test class, along with its REST API client and test log.
 
@@ -29,8 +29,8 @@ end
 Notes:
 
 - The test class derives from the base test class.
-- The test method-name begins with <code>test</code>, which tells the test framework that it can be executed at test-time.
-- Method <code>prelude</code>, inherited from the base class, yields:
+- The test method-name begins with `test`, which tells the test framework that it can be executed at test-time.
+- Method `prelude`, inherited from the base class, yields:
   - A domain-specific REST API client.
   - An open test log.
 
@@ -40,7 +40,7 @@ Notes:
 ```xml
 <test_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='test_test' timestamp='2017-09-29-Fri-12.00.35.425'>
+  <test_method duration_seconds='0.002' name='test_test' timestamp='2017-09-29-Fri-12.41.19.035'>
     <section name='With ExampleRestClient'>
       <comment>Test code goes here</comment>
       <comment>Method prelude yields two objects:</comment>
@@ -60,9 +60,9 @@ Notes:
 Notes:
 
 - At the top of the log is a summary:  counts of verdicts, failures (failed verdicts), and errors (unexpected exceptions).
-- The logging for the test steps and verdicts is in element <code>test_method</code>, which also gives the test name, timestamp, and duration.
+- The logging for the test steps and verdicts is in element `test_method`, which also gives the test name, timestamp, and duration.
 - The last section gives the count of errors (unexpected exceptions).  Its verdict expects that count to be 0.
-- (Attribute <code>volatile</code>, seen in element <code>verdict</code>, has to do with the Changes Report, and is of no present interest.)
+- (Attribute `volatile`, seen in element `verdict`, has to do with the Changes Report, and is of no present interest.)
 
 **Next** [Sections and Nesting](./Sections.md)
 

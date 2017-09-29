@@ -64,10 +64,8 @@ Notes:
   - A verdict identifier, which must be unique within the test.
   - Other parameters, as appropriate to the particular method.
   - A message string.
-- An assert verdict expects something to be truthy (not <code>false</code> or 'nil').
-- A refute verdict expects something to be untrue (<code>false</code> or 'nil').
-- Express a positive expectation with an assert verdict.
-- Express a negative expectation with a refute verdict.
+- An assert verdict expects something to be truthy (not `false` or `nil`).
+- A refute verdict expects something to be `false` or `nil`.
 - There are many other verdict methods, many of which will be described later in these pages.
 
 
@@ -77,7 +75,7 @@ Notes:
 ```xml
 <verdicts_test>
   <summary errors='0' failures='2' verdicts='5'/>
-  <test_method duration_seconds='0.005' name='verdicts_test' timestamp='2017-09-29-Fri-12.00.40.836'>
+  <test_method duration_seconds='0.005' name='verdicts_test' timestamp='2017-09-29-Fri-12.41.24.205'>
     <section name='With ExampleRestClient'>
       <section name='These verdicts should pass'>
         <section name='An assert verdict that should pass'>

@@ -11,7 +11,7 @@ This page shows test sections, including nesting, timestamps, and durations.
 Notes:
 
 - Use nested sections to organize test code.
-- This test does not use the client, and so uses the variable name <code>_</code> instead of variable name <code>client</code>.
+- (This test does not use the client, and so by Ruby convention uses the variable name `_` instead of variable name `client`.)
 
 ## Log
 

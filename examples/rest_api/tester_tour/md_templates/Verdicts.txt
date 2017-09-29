@@ -15,10 +15,8 @@ Notes:
   - A verdict identifier, which must be unique within the test.
   - Other parameters, as appropriate to the particular method.
   - A message string.
-- An assert verdict expects something to be truthy (not <code>false</code> or 'nil').
-- A refute verdict expects something to be untrue (<code>false</code> or 'nil').
-- Express a positive expectation with an assert verdict.
-- Express a negative expectation with a refute verdict.
+- An assert verdict expects something to be truthy (not `false` or `nil`).
+- A refute verdict expects something to be `false` or `nil`.
 - There are many other verdict methods, many of which will be described later in these pages.
 
 
