@@ -68,10 +68,9 @@ class ExampleRestClient < BaseClass
       url += '%s%s=%s' % [char, *pair]
     end
     url = URI.escape(url)
-    # Cannot allow uncaught exception in a log block.
-    @log.section('Rest client', :timestamp, :duration, :method => rest_method.to_s.upcase, :url => url) do
-      unless parameters.nil?
-        @log.put_element('parameters', parameters)
+    @log.put_element('REST_API', :timestamp, :duration) do
+      @log.put_element(rest_method.to_s.upcase, :url => url) do
+        @log.put_element('parameters', parameters) unless parameters.empty?
       end
     end
 
