@@ -25,9 +25,7 @@ class DataNewTest < BaseClassForTest
         log.section('Fetch an album') do
           album = Album.get_first(client)
         end
-        log.section('Log fetched album') do
-          album.log(log)
-        end
+        album.log(log, 'Fetched album')
       end
     end
   end
@@ -46,15 +44,15 @@ Notes:
 ```xml
 <data_log_simple_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='1.698' name='data_log_simple_test' timestamp='2017-09-29-Fri-16.26.58.770'>
+  <test_method duration_seconds='1.588' name='data_log_simple_test' timestamp='2017-09-30-Sat-20.00.48.895'>
     <section name='With ExampleRestClient'>
       <section name='Fetch and log an instance of Album'>
         <section name='Fetch an album'>
-          <REST_API duration_seconds='0.000' timestamp='2017-09-29-Fri-16.26.58.774'>
-            <GET url='https://jsonplaceholder.typicode.com/albums'/>
+          <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
+            <execution duration_seconds='1.568' timestamp='2017-09-30-Sat-20.00.48.905'/>
           </REST_API>
         </section>
-        <section name='Log fetched album'>
+        <section name='Fetched album'>
           <data field='id' value='1'/>
           <data field='userId' value='1'/>
           <data field='title' value='quidem molestiae enim'/>
@@ -70,6 +68,12 @@ Notes:
   </section>
 </data_log_simple_test>
 ```
+
+Notes:
+
+- Element `REST_API` records an interaction with the REST API, showing the HTTP method and url.
+- Its subelement `execution` shows the timestamp and duration for the interaction.
+- The section named `Fetched album` shows the values in the fetched album.
 
 **Prev** [Exceptions, Rescued and Not](./Exceptions.md)
 

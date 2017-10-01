@@ -53,23 +53,25 @@ Notes:
 ```xml
 <get_albums_id_test>
   <summary errors='0' failures='0' verdicts='4'/>
-  <test_method name='get_albums_id_test' timestamp='2017-09-29-Fri-16.27.14.143'>
-    <section duration_seconds='1.620' name='With ExampleRestClient'>
+  <test_method name='get_albums_id_test' timestamp='2017-09-30-Sat-20.01.04.036'>
+    <section duration_seconds='1.721' name='With ExampleRestClient'>
       <section name='Test endpoint GET albums/id'>
         <section name='Fetch an album to GET'>
-          <REST_API duration_seconds='0.001' timestamp='2017-09-29-Fri-16.27.14.146'>
-            <GET url='https://jsonplaceholder.typicode.com/albums'/>
+          <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
+            <execution duration_seconds='1.609' timestamp='2017-09-30-Sat-20.01.04.036'/>
           </REST_API>
           <section name='Album fetched'>
-            <data field='id' value='1'/>
-            <data field='userId' value='1'/>
-            <data field='title' value='quidem molestiae enim'/>
+            <section name='Album'>
+              <data field='id' value='1'/>
+              <data field='userId' value='1'/>
+              <data field='title' value='quidem molestiae enim'/>
+            </section>
           </section>
         </section>
         <section name='GET the album'>
-          <section name='GET album' timestamp='2017-09-29-Fri-16.27.15.690'>
-            <REST_API duration_seconds='0.000' timestamp='2017-09-29-Fri-16.27.15.690'>
-              <GET url='https://jsonplaceholder.typicode.com/albums/1'/>
+          <section name='GET album' timestamp='2017-09-30-Sat-20.01.05.655'>
+            <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums/1'>
+              <execution duration_seconds='0.098' timestamp='2017-09-30-Sat-20.01.05.655'/>
             </REST_API>
             <section name='Evaluation'>
               <verdict id='Album-id' message='Got' method='verdict_assert_equal?' outcome='passed' volatile='false'>

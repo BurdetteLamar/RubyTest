@@ -75,7 +75,7 @@ Notes:
 ```xml
 <verdicts_test>
   <summary errors='0' failures='2' verdicts='5'/>
-  <test_method duration_seconds='0.004' name='verdicts_test' timestamp='2017-09-29-Fri-16.26.56.618'>
+  <test_method duration_seconds='0.000' name='verdicts_test' timestamp='2017-09-30-Sat-20.00.46.774'>
     <section name='With ExampleRestClient'>
       <section name='These verdicts should pass'>
         <section name='An assert verdict that should pass'>
@@ -143,7 +143,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/
 Notes:
 
 - Every verdict is fully logged.
-- A failed verdict logs an exception, including the message and backtrace.
+- A failed verdict logs its backtrace.
 
 **Prev** [Sections and Nesting](./Sections.md)
 

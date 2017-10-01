@@ -11,9 +11,7 @@ class DataLogComplexTest < BaseClassForTest
         log.section('Fetch a user') do
           user = User.get_first(client)
         end
-        log.section('Log fetched user') do
-          user.log(log)
-        end
+        user.log(log, 'Fetched user')
       end
     end
   end

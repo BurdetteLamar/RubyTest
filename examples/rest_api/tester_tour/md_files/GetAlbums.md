@@ -48,20 +48,22 @@ Notes:
 ```xml
 <get_albums_test>
   <summary errors='0' failures='0' verdicts='7'/>
-  <test_method name='get_albums_test' timestamp='2017-09-29-Fri-16.27.11.521'>
-    <section duration_seconds='1.506' name='With ExampleRestClient'>
+  <test_method name='get_albums_test' timestamp='2017-09-30-Sat-20.01.01.477'>
+    <section duration_seconds='1.489' name='With ExampleRestClient'>
       <section name='Test endpoint GET albums'>
         <section name='GET albums'>
-          <section name='GET albums' timestamp='2017-09-29-Fri-16.27.11.521'>
-            <REST_API duration_seconds='0.000' timestamp='2017-09-29-Fri-16.27.11.521'>
-              <GET url='https://jsonplaceholder.typicode.com/albums'/>
+          <section name='GET albums' timestamp='2017-09-30-Sat-20.01.01.477'>
+            <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
+              <execution duration_seconds='1.479' timestamp='2017-09-30-Sat-20.01.01.477'/>
             </REST_API>
             <section name='Evaluation'>
               <data fetched_object_count='100'/>
               <section name='First fetched'>
-                <data field='id' value='1'/>
-                <data field='userId' value='1'/>
-                <data field='title' value='quidem molestiae enim'/>
+                <section name='Album'>
+                  <data field='id' value='1'/>
+                  <data field='userId' value='1'/>
+                  <data field='title' value='quidem molestiae enim'/>
+                </section>
               </section>
               <section name='verdict_assert_integer_positive?'>
                 <verdict id='GET albums - id - integer' message='Album id' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>

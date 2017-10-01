@@ -17,4 +17,10 @@ Notes:
 
 [file_source](../logs/test_data_log_simple.xml)
 
+Notes:
+
+- Element `REST_API` records an interaction with the REST API, showing the HTTP method and url.
+- Its subelement `execution` shows the timestamp and duration for the interaction.
+- The section named `Fetched album` shows the values in the fetched album.
+
 [navigation_links]

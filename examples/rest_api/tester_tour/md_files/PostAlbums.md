@@ -54,23 +54,24 @@ Notes:
 ```xml
 <post_albums_test>
   <summary errors='0' failures='1' verdicts='7'/>
-  <test_method name='post_albums_test' timestamp='2017-09-29-Fri-16.27.22.937'>
-    <section duration_seconds='1.965' name='With ExampleRestClient'>
+  <test_method name='post_albums_test' timestamp='2017-09-30-Sat-20.01.13.160'>
+    <section duration_seconds='1.934' name='With ExampleRestClient'>
       <section name='Test endpoint POST albums'>
         <section name='Album to post'>
-          <REST_API duration_seconds='0.000' timestamp='2017-09-29-Fri-16.27.22.941'>
-            <GET url='https://jsonplaceholder.typicode.com/albums'/>
+          <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
+            <execution duration_seconds='1.502' timestamp='2017-09-30-Sat-20.01.13.163'/>
           </REST_API>
-          <data field='id' value='1'/>
-          <data field='userId' value='1'/>
-          <data field='title' value='My album title'/>
+          <section name='Album'>
+            <data field='id' value='1'/>
+            <data field='userId' value='1'/>
+            <data field='title' value='My album title'/>
+          </section>
         </section>
         <section name='POST the album'>
-          <section name='POST album' timestamp='2017-09-29-Fri-16.27.24.470'>
-            <REST_API duration_seconds='0.000' timestamp='2017-09-29-Fri-16.27.24.471'>
-              <POST url='https://jsonplaceholder.typicode.com/albums'>
-                <parameters id='1' title='My album title' userId='1'/>
-              </POST>
+          <section name='POST album' timestamp='2017-09-30-Sat-20.01.14.676'>
+            <REST_API method='POST' url='https://jsonplaceholder.typicode.com/albums'>
+              <parameters id='1' title='My album title' userId='1'/>
+              <execution duration_seconds='0.251' timestamp='2017-09-30-Sat-20.01.14.676'/>
             </REST_API>
             <section name='Evaluation'>
               <verdict id='Album posted-id' message='Posted' method='verdict_assert_equal?' outcome='passed' volatile='false'>
@@ -85,8 +86,8 @@ Notes:
                 <exp_value>My album title</exp_value>
                 <act_value>My album title</act_value>
               </verdict>
-              <REST_API duration_seconds='0.000' timestamp='2017-09-29-Fri-16.27.24.719'>
-                <GET url='https://jsonplaceholder.typicode.com/albums/1'/>
+              <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums/1'>
+                <execution duration_seconds='0.073' timestamp='2017-09-30-Sat-20.01.14.935'/>
               </REST_API>
               <verdict id='Album fetched-id' message='Fetched' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>1</exp_value>
@@ -100,9 +101,9 @@ Notes:
                 <exp_value>My album title</exp_value>
                 <act_value>quidem molestiae enim</act_value>
                 <backtrace>
-                  <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:129:in `block in verdict_equal_recursive?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:118:in `verdict_equal_recursive?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:44:in `verdict_equal?'
+                  <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:131:in `block in verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:120:in `verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:46:in `verdict_equal?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/endpoints/base_class_for_post.rb:24:in `block (2 levels) in verdict_call_and_verify_success'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/endpoints/base_class_for_post.rb:20:in `block in verdict_call_and_verify_success'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/endpoints/base_class_for_post.rb:18:in `verdict_call_and_verify_success'

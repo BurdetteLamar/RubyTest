@@ -47,12 +47,14 @@ Notes:
 ```xml
 <data_new_simple_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.001' name='data_new_simple_test' timestamp='2017-09-29-Fri-16.27.04.133'>
+  <test_method duration_seconds='0.001' name='data_new_simple_test' timestamp='2017-09-30-Sat-20.00.54.156'>
     <section name='With ExampleRestClient'>
       <section name='Create and log an instance of Album'>
         <section name='Created album'>
-          <data field='userId' value='1'/>
-          <data field='title' value='My album title'/>
+          <section name='Album'>
+            <data field='userId' value='1'/>
+            <data field='title' value='My album title'/>
+          </section>
         </section>
       </section>
     </section>

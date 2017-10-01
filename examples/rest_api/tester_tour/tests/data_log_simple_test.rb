@@ -11,9 +11,7 @@ class DataNewTest < BaseClassForTest
         log.section('Fetch an album') do
           album = Album.get_first(client)
         end
-        log.section('Log fetched album') do
-          album.log(log)
-        end
+        album.log(log, 'Fetched album')
       end
     end
   end

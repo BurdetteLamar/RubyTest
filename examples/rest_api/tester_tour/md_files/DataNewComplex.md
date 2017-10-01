@@ -64,28 +64,36 @@ Notes:
 ```xml
 <data_new_complex_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.003' name='data_new_complex_test' timestamp='2017-09-29-Fri-16.27.05.194'>
+  <test_method duration_seconds='0.004' name='data_new_complex_test' timestamp='2017-09-30-Sat-20.00.55.213'>
     <section name='With ExampleRestClient'>
       <section name='Create and log an instance of a complex data object'>
-        <data field='name' value='Leanne Graham'/>
-        <data field='username' value='Bret'/>
-        <data field='email' value='Sincere@april.biz'/>
-        <section name='Field address is User::Address object'>
-          <data field='street' value='Kulas Light'/>
-          <data field='suite' value='Apt. 556'/>
-          <data field='city' value='Gwenborough'/>
-          <data field='zipcode' value='92998-3874'/>
-          <section name='Field geo is User::Address::Geo object'>
-            <data field='lat' value='-37.3159'/>
-            <data field='lng' value='81.1496'/>
+        <section name='User'>
+          <data field='name' value='Leanne Graham'/>
+          <data field='username' value='Bret'/>
+          <data field='email' value='Sincere@april.biz'/>
+          <section name='Field address is User::Address object'>
+            <section name='User::Address'>
+              <data field='street' value='Kulas Light'/>
+              <data field='suite' value='Apt. 556'/>
+              <data field='city' value='Gwenborough'/>
+              <data field='zipcode' value='92998-3874'/>
+              <section name='Field geo is User::Address::Geo object'>
+                <section name='User::Address::Geo'>
+                  <data field='lat' value='-37.3159'/>
+                  <data field='lng' value='81.1496'/>
+                </section>
+              </section>
+            </section>
           </section>
-        </section>
-        <data field='phone' value='1-770-736-8031 x56442'/>
-        <data field='website' value='hildegard.org'/>
-        <section name='Field company is User::Company object'>
-          <data field='name' value='Romaguera-Crona'/>
-          <data field='catchPhrase' value='Multi-layered client-server neural-net'/>
-          <data field='bs' value='harness real-time e-markets'/>
+          <data field='phone' value='1-770-736-8031 x56442'/>
+          <data field='website' value='hildegard.org'/>
+          <section name='Field company is User::Company object'>
+            <section name='User::Company'>
+              <data field='name' value='Romaguera-Crona'/>
+              <data field='catchPhrase' value='Multi-layered client-server neural-net'/>
+              <data field='bs' value='harness real-time e-markets'/>
+            </section>
+          </section>
         </section>
       </section>
     </section>

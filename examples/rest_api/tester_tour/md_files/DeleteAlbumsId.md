@@ -52,30 +52,32 @@ Notes:
 ```xml
 <delete_albums_id_test>
   <summary errors='0' failures='1' verdicts='3'/>
-  <test_method name='delete_albums_id_test' timestamp='2017-09-29-Fri-16.27.16.874'>
-    <section duration_seconds='1.962' name='With ExampleRestClient'>
+  <test_method name='delete_albums_id_test' timestamp='2017-09-30-Sat-20.01.06.852'>
+    <section duration_seconds='2.112' name='With ExampleRestClient'>
       <section name='Test endpoint DELETE albums/id'>
         <section name='Fetch an album to DELETE'>
-          <REST_API duration_seconds='0.000' timestamp='2017-09-29-Fri-16.27.16.878'>
-            <GET url='https://jsonplaceholder.typicode.com/albums'/>
+          <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
+            <execution duration_seconds='1.487' timestamp='2017-09-30-Sat-20.01.06.856'/>
           </REST_API>
           <section name='Album fetched'>
-            <data field='id' value='1'/>
-            <data field='userId' value='1'/>
-            <data field='title' value='quidem molestiae enim'/>
+            <section name='Album'>
+              <data field='id' value='1'/>
+              <data field='userId' value='1'/>
+              <data field='title' value='quidem molestiae enim'/>
+            </section>
           </section>
         </section>
         <section name='DELETE the album'>
-          <section name='DELETE album' timestamp='2017-09-29-Fri-16.27.18.389'>
-            <REST_API duration_seconds='0.000' timestamp='2017-09-29-Fri-16.27.18.389'>
-              <DELETE url='https://jsonplaceholder.typicode.com/albums/1'/>
+          <section name='DELETE album' timestamp='2017-09-30-Sat-20.01.08.350'>
+            <REST_API method='DELETE' url='https://jsonplaceholder.typicode.com/albums/1'>
+              <execution duration_seconds='0.522' timestamp='2017-09-30-Sat-20.01.08.351'/>
             </REST_API>
             <section name='Evaluation'>
               <verdict id='payload nil' message='Payload nil' method='verdict_assert_nil?' outcome='passed' volatile='false'>
                 <act_value>nil</act_value>
               </verdict>
-              <REST_API duration_seconds='0.000' timestamp='2017-09-29-Fri-16.27.18.718'>
-                <GET url='https://jsonplaceholder.typicode.com/albums/1'/>
+              <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums/1'>
+                <execution duration_seconds='0.084' timestamp='2017-09-30-Sat-20.01.08.879'/>
               </REST_API>
               <verdict id='DELETE album' message='Album not exist' method='verdict_refute?' outcome='failed' volatile='false'>
                 <act_value>true</act_value>
