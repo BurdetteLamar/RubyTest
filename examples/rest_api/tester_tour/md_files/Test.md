@@ -1,5 +1,5 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Next** [Sections and Nesting](./Sections.md)
+**Next Stop** [Sections and Nesting](./Sections.md)
 
 
 # Simple Test
@@ -40,7 +40,7 @@ Notes:
 ```xml
 <test_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.002' name='test_test' timestamp='2017-09-30-Sat-20.00.38.556'>
+  <test_method duration_seconds='0.002' name='test_test' timestamp='2017-10-02-Mon-11.48.52.773'>
     <section name='With ExampleRestClient'>
       <comment>Test code goes here</comment>
       <comment>Method prelude yields two objects:</comment>
@@ -65,5 +65,5 @@ Notes:
 - The last section gives the count of errors (unexpected exceptions).  Its verdict expects that count to be `0`.
 - (Attribute `volatile`, seen in element `verdict`, has to do with the Changes Report, and is of no present interest.)
 
-**Next** [Sections and Nesting](./Sections.md)
+**Next Stop** [Sections and Nesting](./Sections.md)
 

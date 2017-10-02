@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev** [Sections and Nesting](./Sections.md)
+**Prev Stop** [Sections and Nesting](./Sections.md)
 
-**Next** [Exceptions, Rescued and Not](./Exceptions.md)
+**Next Stop** [Exceptions, Rescued and Not](./Exceptions.md)
 
 
 # Verdicts
@@ -75,7 +75,7 @@ Notes:
 ```xml
 <verdicts_test>
   <summary errors='0' failures='2' verdicts='5'/>
-  <test_method duration_seconds='0.000' name='verdicts_test' timestamp='2017-09-30-Sat-20.00.46.774'>
+  <test_method duration_seconds='0.000' name='verdicts_test' timestamp='2017-10-02-Mon-11.49.00.948'>
     <section name='With ExampleRestClient'>
       <section name='These verdicts should pass'>
         <section name='An assert verdict that should pass'>
@@ -145,7 +145,7 @@ Notes:
 - Every verdict is fully logged.
 - A failed verdict logs its backtrace.
 
-**Prev** [Sections and Nesting](./Sections.md)
+**Prev Stop** [Sections and Nesting](./Sections.md)
 
-**Next** [Exceptions, Rescued and Not](./Exceptions.md)
+**Next Stop** [Exceptions, Rescued and Not](./Exceptions.md)
 
