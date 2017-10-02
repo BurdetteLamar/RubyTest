@@ -22,7 +22,7 @@ task :tester_tour do
   def template_file_path_for_name(template_dir_path, name)
     file_basename = format('%s', StringHelper.to_upper_camel_case(name))
     template_file_name = format('%s.txt', file_basename)
-    template_file_path = File.join(
+    File.join(
         template_dir_path,
         template_file_name,
     )
@@ -94,16 +94,16 @@ EOT
   FileUtils.mkdir_p(md_dir_path)
 
   # To do.
-  names = %w/
-      verdict_return_values
-      data_valid_simple
-      data_valid_complex
-      data_exist
-      data_crud
-      data_convenience
-      helpers
-      volatility
-  /
+  # names = %w/
+  #     verdict_return_values
+  #     data_valid_simple
+  #     data_valid_complex
+  #     data_exist
+  #     data_crud
+  #     data_convenience
+  #     helpers
+  #     volatility
+  # /
   # Done.
   names = %w/
       test

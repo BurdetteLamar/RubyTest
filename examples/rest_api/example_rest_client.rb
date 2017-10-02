@@ -61,7 +61,6 @@ class ExampleRestClient < BaseClass
   # Do one of the above.
   Contract Symbol, Array, Hash, Hash => Or[String, Array, Hash]
   def client_method(rest_method, url_elements, query_elements, parameters)
-    response = nil
     url = File.join(@base_url, *url_elements)
     query_elements.to_a.each_with_index do |pair, i|
       char = (i == 0) ? '?' : '&'
