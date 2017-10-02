@@ -500,17 +500,12 @@ class Log < BaseClass
       end
       if exception
         self.counts[:failure] += 1
-        unless exception.class == Minitest::Assertion
-          # Totally unexpected exception.  Log everything.
-          put_element('exception') do
-            put_element('class', exception.class)
-            put_element('message') do
-              cdata(exception.message)
-            end
+        put_element('exception') do
+          put_element('class', exception.class)
+          put_element('message', exception.message)
+          put_element('backtrace') do
+            cdata(filter_backtrace(exception.backtrace))
           end
-        end
-        put_element('backtrace') do
-          cdata(filter_backtrace(exception.backtrace))
         end
       end
     end

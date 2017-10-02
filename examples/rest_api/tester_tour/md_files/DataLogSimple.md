@@ -44,12 +44,12 @@ Notes:
 ```xml
 <data_log_simple_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='2.058' name='data_log_simple_test' timestamp='2017-10-02-Mon-11.49.03.097'>
+  <test_method duration_seconds='1.611' name='data_log_simple_test' timestamp='2017-10-02-Mon-16.25.57.401'>
     <section name='With ExampleRestClient'>
       <section name='Fetch and log an instance of Album'>
         <section name='Fetch an album'>
           <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
-            <execution duration_seconds='2.040' timestamp='2017-10-02-Mon-11.49.03.102'/>
+            <execution duration_seconds='1.587' timestamp='2017-10-02-Mon-16.25.57.411'/>
           </REST_API>
         </section>
         <section name='Fetched album'>

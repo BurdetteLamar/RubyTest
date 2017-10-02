@@ -61,7 +61,7 @@ Notes:
 ```xml
 <sections_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='6.020' name='sections_test' timestamp='2017-10-02-Mon-11.48.53.838'>
+  <test_method duration_seconds='6.006' name='sections_test' timestamp='2017-10-02-Mon-16.25.48.349'>
     <section name='With ExampleRestClient'>
       <section name='First outer section'>
         <section name='First inner section'>
@@ -74,16 +74,16 @@ Notes:
       <section name='Second outer section'>
         <comment>Some test code can go here</comment>
       </section>
-      <section name='Section with timestamp' timestamp='2017-10-02-Mon-11.48.53.840'>
+      <section name='Section with timestamp' timestamp='2017-10-02-Mon-16.25.48.351'>
         <comment>Some test code can go here</comment>
       </section>
       <section duration_seconds='1.000' name='Section with timestamp'>
         <comment>Some test code can go here</comment>
       </section>
-      <section duration_seconds='2.009' name='Section with timestamp and duration' timestamp='2017-10-02-Mon-11.48.54.841'>
+      <section duration_seconds='2.001' name='Section with timestamp and duration' timestamp='2017-10-02-Mon-16.25.49.352'>
         <comment>Some test code can go here</comment>
       </section>
-      <section duration_seconds='3.008' name='Order does not matter' timestamp='2017-10-02-Mon-11.48.56.851'>
+      <section duration_seconds='3.002' name='Order does not matter' timestamp='2017-10-02-Mon-16.25.51.353'>
         <comment>Some test code can go here</comment>
       </section>
     </section>
