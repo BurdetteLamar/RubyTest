@@ -55,10 +55,10 @@ Notes:
 ```xml
 <data_equal_simple_test>
   <summary errors='0' failures='1' verdicts='7'/>
-  <test_method duration_seconds='1.511' name='data_equal_simple_test' timestamp='2017-10-02-Mon-11.49.10.976'>
+  <test_method duration_seconds='1.498' name='data_equal_simple_test' timestamp='2017-10-02-Mon-16.26.04.739'>
     <section name='With ExampleRestClient'>
       <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
-        <execution duration_seconds='1.481' timestamp='2017-10-02-Mon-11.49.10.986'/>
+        <execution duration_seconds='1.473' timestamp='2017-10-02-Mon-16.26.04.744'/>
       </REST_API>
       <section name='These are equal'>
         <verdict id='album equal-id' message='Using Album.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
@@ -78,8 +78,11 @@ Notes:
         <verdict id='album not equal-id' message='Using Album.verdict_equal?' method='verdict_assert_equal?' outcome='failed' volatile='false'>
           <exp_value>1</exp_value>
           <act_value>2</act_value>
-          <backtrace>
-            <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:131:in `block in verdict_equal_recursive?'
+          <exception>
+            <class>Minitest::Assertion</class>
+            <message>Expected: 1 Actual: 2</message>
+            <backtrace>
+              <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:131:in `block in verdict_equal_recursive?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:120:in `verdict_equal_recursive?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:46:in `verdict_equal?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/data_equal_simple_test.rb:18:in `block (2 levels) in test_data_equal_simple'
@@ -93,7 +96,8 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `bl
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:11:in `prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/data_equal_simple_test.rb:8:in `test_data_equal_simple']]>
-          </backtrace>
+            </backtrace>
+          </exception>
         </verdict>
         <verdict id='album not equal-userid' message='Using Album.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
           <exp_value>1</exp_value>

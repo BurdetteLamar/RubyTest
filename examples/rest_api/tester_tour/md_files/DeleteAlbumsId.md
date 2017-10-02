@@ -52,12 +52,12 @@ Notes:
 ```xml
 <delete_albums_id_test>
   <summary errors='0' failures='1' verdicts='3'/>
-  <test_method name='delete_albums_id_test' timestamp='2017-10-02-Mon-11.49.21.695'>
-    <section duration_seconds='2.029' name='With ExampleRestClient'>
+  <test_method name='delete_albums_id_test' timestamp='2017-10-02-Mon-16.26.15.399'>
+    <section duration_seconds='2.160' name='With ExampleRestClient'>
       <section name='Test endpoint DELETE albums/id'>
         <section name='Fetch an album to DELETE'>
           <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
-            <execution duration_seconds='1.489' timestamp='2017-10-02-Mon-11.49.21.699'/>
+            <execution duration_seconds='1.483' timestamp='2017-10-02-Mon-16.26.15.399'/>
           </REST_API>
           <section name='Album fetched'>
             <section name='Album'>
@@ -68,21 +68,24 @@ Notes:
           </section>
         </section>
         <section name='DELETE the album'>
-          <section name='DELETE album' timestamp='2017-10-02-Mon-11.49.23.188'>
+          <section name='DELETE album' timestamp='2017-10-02-Mon-16.26.16.882'>
             <REST_API method='DELETE' url='https://jsonplaceholder.typicode.com/albums/1'>
-              <execution duration_seconds='0.443' timestamp='2017-10-02-Mon-11.49.23.188'/>
+              <execution duration_seconds='0.567' timestamp='2017-10-02-Mon-16.26.16.882'/>
             </REST_API>
             <section name='Evaluation'>
               <verdict id='payload nil' message='Payload nil' method='verdict_assert_nil?' outcome='passed' volatile='false'>
                 <act_value>nil</act_value>
               </verdict>
               <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums/1'>
-                <execution duration_seconds='0.091' timestamp='2017-10-02-Mon-11.49.23.631'/>
+                <execution duration_seconds='0.110' timestamp='2017-10-02-Mon-16.26.17.449'/>
               </REST_API>
               <verdict id='DELETE album' message='Album not exist' method='verdict_refute?' outcome='failed' volatile='false'>
                 <act_value>true</act_value>
-                <backtrace>
-                  <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_resource.rb:25:in `verdict_not_exist?'
+                <exception>
+                  <class>Minitest::Assertion</class>
+                  <message>Expected true to not be truthy.</message>
+                  <backtrace>
+                    <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_resource.rb:25:in `verdict_not_exist?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/endpoints/base_class_for_delete_id.rb:21:in `block (2 levels) in verdict_call_and_verify_success'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/endpoints/base_class_for_delete_id.rb:18:in `block in verdict_call_and_verify_success'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/endpoints/base_class_for_delete_id.rb:16:in `verdict_call_and_verify_success'
@@ -99,7 +102,8 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `bl
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:11:in `prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/delete_albums_id_test.rb:8:in `test_delete_albums_id']]>
-                </backtrace>
+                  </backtrace>
+                </exception>
               </verdict>
             </section>
           </section>

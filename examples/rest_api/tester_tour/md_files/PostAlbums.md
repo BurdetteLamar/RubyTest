@@ -54,12 +54,12 @@ Notes:
 ```xml
 <post_albums_test>
   <summary errors='0' failures='1' verdicts='7'/>
-  <test_method name='post_albums_test' timestamp='2017-10-02-Mon-11.49.28.192'>
-    <section duration_seconds='1.977' name='With ExampleRestClient'>
+  <test_method name='post_albums_test' timestamp='2017-10-02-Mon-16.26.21.649'>
+    <section duration_seconds='1.903' name='With ExampleRestClient'>
       <section name='Test endpoint POST albums'>
         <section name='Album to post'>
           <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
-            <execution duration_seconds='1.515' timestamp='2017-10-02-Mon-11.49.28.192'/>
+            <execution duration_seconds='1.544' timestamp='2017-10-02-Mon-16.26.21.653'/>
           </REST_API>
           <section name='Album'>
             <data field='id' value='1'/>
@@ -68,10 +68,10 @@ Notes:
           </section>
         </section>
         <section name='POST the album'>
-          <section name='POST album' timestamp='2017-10-02-Mon-11.49.29.707'>
+          <section name='POST album' timestamp='2017-10-02-Mon-16.26.23.197'>
             <REST_API method='POST' url='https://jsonplaceholder.typicode.com/albums'>
               <parameters id='1' title='My album title' userId='1'/>
-              <execution duration_seconds='0.302' timestamp='2017-10-02-Mon-11.49.29.707'/>
+              <execution duration_seconds='0.212' timestamp='2017-10-02-Mon-16.26.23.197'/>
             </REST_API>
             <section name='Evaluation'>
               <verdict id='Album posted-id' message='Posted' method='verdict_assert_equal?' outcome='passed' volatile='false'>
@@ -87,7 +87,7 @@ Notes:
                 <act_value>My album title</act_value>
               </verdict>
               <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums/1'>
-                <execution duration_seconds='0.081' timestamp='2017-10-02-Mon-11.49.30.018'/>
+                <execution duration_seconds='0.068' timestamp='2017-10-02-Mon-16.26.23.417'/>
               </REST_API>
               <verdict id='Album fetched-id' message='Fetched' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>1</exp_value>
@@ -100,8 +100,15 @@ Notes:
               <verdict id='Album fetched-title' message='Fetched' method='verdict_assert_equal?' outcome='failed' volatile='false'>
                 <exp_value>My album title</exp_value>
                 <act_value>quidem molestiae enim</act_value>
-                <backtrace>
-                  <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:131:in `block in verdict_equal_recursive?'
+                <exception>
+                  <class>Minitest::Assertion</class>
+                  <message>
+                    --- expected +++ actual @@ -1,2 +1,2 @@ # encoding: UTF-8
+                    -&quot;My album title&quot; +&quot;quidem molestiae
+                    enim&quot;
+                  </message>
+                  <backtrace>
+                    <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:131:in `block in verdict_equal_recursive?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:120:in `verdict_equal_recursive?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:46:in `verdict_equal?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/endpoints/base_class_for_post.rb:24:in `block (2 levels) in verdict_call_and_verify_success'
@@ -120,7 +127,8 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `bl
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:11:in `prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/post_albums_test.rb:8:in `test_post_albums']]>
-                </backtrace>
+                  </backtrace>
+                </exception>
               </verdict>
             </section>
           </section>
