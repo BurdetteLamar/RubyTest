@@ -1,12 +1,12 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev** [Creating a Complex Data Object](./DataNewComplex.md)
+**Prev Stop** [Creating a Complex Data Object](./DataNewComplex.md)
 
-**Next** [Complex Data Object Equality](./DataEqualComplex.md)
+**Next Stop** [Verifying a Complex Data Object](./DataEqualComplex.md)
 
 
-# Simple Data Object Equality
+# Verifying a Simple Data Object
 
-## Test Source Code
+## Example Test
 
 <code>data_equal_simple_test.rb</code>
 ```ruby
@@ -38,28 +38,28 @@ end
 Notes:
 
 - The test gets a known Album, then clones it.
-- We know that Album is flat, but it's good practice to use <code>deep_clone</code>, not <code>clone</code> just to be sure.
+- We know that Album is flat, but it's good practice to use `deep_clone`, not `clone` just to be sure.
 - In the first section:
-  - Method <code>Album.equal?</code> returns <code>true</code>, but does no logging.
-  - The <code>fail unless</code> proves that it worked.
-  - Method <code>Album.verdict_equal?</code> verifies and logs each value in the albums.
+  - Method `Album.equal?` returns `true`, but does no logging.
+  - The `fail unless` proves that it worked.
+  - Method `Album.verdict_equal?` verifies and logs each value in the albums.
 - In the second section:
   - One value in the album is modified.
-  - Method <code>Album.equal?</code> returns <code>false</code>, but does no logging.
-  - The <code>fail if </code> proves that it worked.
-  - Method <code>Album.verdict_equal?</code> verifies and logs each value in the albums.
+  - Method `Album.equal?` returns `false`, but does no logging.
+  - The `fail if ` proves that it worked.
+  - Method `Album.verdict_equal?` verifies and logs each value in the albums.
 
-##  Test Log
+## Log
 
 <code>test_data_equal_simple.xml</code>
 ```xml
 <data_equal_simple_test>
   <summary errors='0' failures='1' verdicts='7'/>
-  <test_method duration_seconds='1.503' name='data_equal_simple_test' timestamp='2017-09-27-Wed-17.36.21.302'>
+  <test_method duration_seconds='1.511' name='data_equal_simple_test' timestamp='2017-10-02-Mon-11.49.10.976'>
     <section name='With ExampleRestClient'>
-      <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-27-Wed-17.36.21.306' url='https://jsonplaceholder.typicode.com/albums'>
-        <parameters/>
-      </section>
+      <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
+        <execution duration_seconds='1.481' timestamp='2017-10-02-Mon-11.49.10.986'/>
+      </REST_API>
       <section name='These are equal'>
         <verdict id='album equal-id' message='Using Album.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
           <exp_value>1</exp_value>
@@ -78,13 +78,10 @@ Notes:
         <verdict id='album not equal-id' message='Using Album.verdict_equal?' method='verdict_assert_equal?' outcome='failed' volatile='false'>
           <exp_value>1</exp_value>
           <act_value>2</act_value>
-          <exception>
-            <class>Minitest::Assertion</class>
-            <message>Expected: 1 Actual: 2</message>
-            <backtrace>
-              <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:129:in `block in verdict_equal_recursive?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:118:in `verdict_equal_recursive?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:44:in `verdict_equal?'
+          <backtrace>
+            <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:131:in `block in verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:120:in `verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:46:in `verdict_equal?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/data_equal_simple_test.rb:18:in `block (2 levels) in test_data_equal_simple'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/data_equal_simple_test.rb:15:in `block in test_data_equal_simple'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
@@ -96,8 +93,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `bl
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:11:in `prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/data_equal_simple_test.rb:8:in `test_data_equal_simple']]>
-            </backtrace>
-          </exception>
+          </backtrace>
         </verdict>
         <verdict id='album not equal-userid' message='Using Album.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
           <exp_value>1</exp_value>
@@ -121,10 +117,11 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/
 
 Notes:
 
+- Each actual value is verified in a separate verdict.  This makes evaluating the test execution unambiguous.
 - In the first section, all verdicts pass.
 - In the second section, one verdict fails.
 
-**Prev** [Creating a Complex Data Object](./DataNewComplex.md)
+**Prev Stop** [Creating a Complex Data Object](./DataNewComplex.md)
 
-**Next** [Complex Data Object Equality](./DataEqualComplex.md)
+**Next Stop** [Verifying a Complex Data Object](./DataEqualComplex.md)
 

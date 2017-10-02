@@ -1,14 +1,14 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev** [Volatile Return Values](./Volatility.md)
+**Prev Stop** [Verdicts](./Verdicts.md)
 
-**Next** [Test for GET Albums](./GetAlbums.md)
+**Next Stop** [Logging a Simple Data Object](./DataLogSimple.md)
 
 
 # Exceptions, Rescued and Not
 
 This page introduces the handling of unexpected exceptions.
 
-## Test Source Code
+## Example Test
 
 <code>exceptions_test.rb</code>
 ```ruby
@@ -48,17 +48,18 @@ end
 
 Notes:
 
-- The first outer section rescues its exception.  Following code in the _section_ is not reached.
-- The second outer section does not rescue its exception.  Following code in the _test_ is not reached.
+- The first outer section rescues its exception.  The test exits the _section_, and any following code in the _section_ is not reached.
+- The second outer section does not rescue its exception.  The test exits entirely, and any following code in the _test_ is not reached.
+- Any section, including a nested section, may rescue an exception.  (Or not -- it's an independent choice for each section.)
 
-##  Test Log
+## Log
 
 <code>test_exceptions.xml</code>
 ```xml
 <exceptions_test>
   <summary errors='2' failures='1' verdicts='2'/>
-  <test_method name='exceptions_test' timestamp='2017-09-27-Wed-17.36.03.429'>
-    <section duration_seconds='0.003' name='With ExampleRestClient'>
+  <test_method name='exceptions_test' timestamp='2017-10-02-Mon-11.49.02.015'>
+    <section duration_seconds='0.004' name='With ExampleRestClient'>
       <section name='Section rescues exception'>
         <uncaught_exception>
           <verdict_id>Section rescues exception</verdict_id>
@@ -111,15 +112,11 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/
       <verdict id='error count' message='error count' method='verdict_assert_equal?' outcome='failed' volatile='true'>
         <exp_value>0</exp_value>
         <act_value>2</act_value>
-        <exception>
-          <class>Minitest::Assertion</class>
-          <message>Expected: 0 Actual: 2</message>
-          <backtrace>
-            <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
+        <backtrace>
+          <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:11:in `prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/exceptions_test.rb:6:in `test_exceptions']]>
-          </backtrace>
-        </exception>
+        </backtrace>
       </verdict>
     </section>
   </test_method>
@@ -131,7 +128,7 @@ Notes:
 - Each logged exception includes its message and backtrace.
 - The second exception, the one the test didn't rescue, is actually rescued by the log itself, and of course logged.
 
-**Prev** [Volatile Return Values](./Volatility.md)
+**Prev Stop** [Verdicts](./Verdicts.md)
 
-**Next** [Test for GET Albums](./GetAlbums.md)
+**Next Stop** [Logging a Simple Data Object](./DataLogSimple.md)
 

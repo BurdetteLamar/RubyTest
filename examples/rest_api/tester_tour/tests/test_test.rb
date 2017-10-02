@@ -1,13 +1,13 @@
 require_relative '../../base_classes/base_class_for_test'
 
-class NothingTest < BaseClassForTest
+class SimpleTest < BaseClassForTest
 
   def test_test
     prelude do |client, log|
-      # Citing client and log prevents RubyMine code inspection
-      # from complaining about unused variables.
-      client.class
-      log.class
+      log.comment('Test code goes here')
+      log.comment('Method prelude yields two objects:')
+      log.comment('1. Instance of %s, for access to the REST API.' % client.class.name)
+      log.comment('2. Instance of %s, for logging the test.' % log.class.name)
     end
   end
 

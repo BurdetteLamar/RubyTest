@@ -1,14 +1,14 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev** [Exceptions, Rescued and Not](./Exceptions.md)
+**Prev Stop** [Verifying a Complex Data Object](./DataEqualComplex.md)
 
-**Next** [Test for GET Albums/_id_](./GetAlbumsId.md)
+**Next Stop** [Test for GET Albums/_id_](./GetAlbumsId.md)
 
 
 # Test for GET Albums
 
 This page shows how to test GET Albums.
 
-## Test Source Code
+## Example Test
 
 <code>get_albums_test.rb</code>
 ```ruby
@@ -34,33 +34,36 @@ end
 
 Notes:
 
-- Method <code>GetAlbums.verdict_call_and_verify_success</code>:
+- This test uses an endpoint, and therefore requires the corresponding class.
+- Method `GetAlbums.verdict_call_and_verify_success`:
   1.  Accesses endpoint GET albums.
-  2.  Forms the response payload into new <code>Album</code> objects.
+  2.  Forms the response payload into new `Album` objects.
   3.  Logs the count of returned albums.
   4.  Logs the content of the first album.
   5.  Verifies that each the value in the first album is valid (i.e., has the expected form).
 
-##  Test Log
+## Log
 
 <code>test_get_albums.xml</code>
 ```xml
 <get_albums_test>
   <summary errors='0' failures='0' verdicts='7'/>
-  <test_method name='get_albums_test' timestamp='2017-09-27-Wed-17.36.04.484'>
-    <section duration_seconds='1.542' name='With ExampleRestClient'>
+  <test_method name='get_albums_test' timestamp='2017-10-02-Mon-11.49.16.228'>
+    <section duration_seconds='1.479' name='With ExampleRestClient'>
       <section name='Test endpoint GET albums'>
         <section name='GET albums'>
-          <section name='GET albums' timestamp='2017-09-27-Wed-17.36.04.485'>
-            <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-27-Wed-17.36.04.486' url='https://jsonplaceholder.typicode.com/albums'>
-              <parameters/>
-            </section>
+          <section name='GET albums' timestamp='2017-10-02-Mon-11.49.16.229'>
+            <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
+              <execution duration_seconds='1.467' timestamp='2017-10-02-Mon-11.49.16.230'/>
+            </REST_API>
             <section name='Evaluation'>
               <data fetched_object_count='100'/>
               <section name='First fetched'>
-                <data field='id' value='1'/>
-                <data field='userId' value='1'/>
-                <data field='title' value='quidem molestiae enim'/>
+                <section name='Album'>
+                  <data field='id' value='1'/>
+                  <data field='userId' value='1'/>
+                  <data field='title' value='quidem molestiae enim'/>
+                </section>
               </section>
               <section name='verdict_assert_integer_positive?'>
                 <verdict id='GET albums - id - integer' message='Album id' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
@@ -110,10 +113,10 @@ Notes:
 
 Notes:
 
-- Each <code>section</code> element whose <code>name</code> is <code>Rest client</code> records an interaction with the REST API, including any passed parameters.
-- The <code>section</code> whose <code>name</code> is <code>Evaluation</code> contains verdicts about the returned data.
+- Each `section` element whose `name` is `Rest client` records an interaction with the REST API, including any passed parameters.
+- The `section` whose `name` is `Evaluation` contains verdicts about the returned data.
 
-**Prev** [Exceptions, Rescued and Not](./Exceptions.md)
+**Prev Stop** [Verifying a Complex Data Object](./DataEqualComplex.md)
 
-**Next** [Test for GET Albums/_id_](./GetAlbumsId.md)
+**Next Stop** [Test for GET Albums/_id_](./GetAlbumsId.md)
 

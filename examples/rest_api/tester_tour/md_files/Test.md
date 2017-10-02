@@ -1,25 +1,25 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Next** [Sections and Nesting](./Sections.md)
+**Next Stop** [Sections and Nesting](./Sections.md)
 
 
-# The Simplest Test
+# Simple Test
 
-This page introduces the test class, along with the REST API client and the test log.
+This page shows a test class, along with its REST API client and test log.
 
-## Test Source Code
+## Example Test
 
 <code>test_test.rb</code>
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
 
-class NothingTest < BaseClassForTest
+class SimpleTest < BaseClassForTest
 
   def test_test
     prelude do |client, log|
-      # Citing client and log prevents RubyMine code inspection
-      # from complaining about unused variables.
-      client.class
-      log.class
+      log.comment('Test code goes here')
+      log.comment('Method prelude yields two objects:')
+      log.comment('1. Instance of %s, for access to the REST API.' % client.class.name)
+      log.comment('2. Instance of %s, for logging the test.' % log.class.name)
     end
   end
 
@@ -28,20 +28,25 @@ end
 
 Notes:
 
-- Test class <code>TestTest</code> derives from class<code>BaseClassForTest</code>.
-- Method name <code>test_test</code> begins with <code>test</code>, which tells the test framework that it is a test method and should be executed at test-time.
-- Inherited method <code>prelude</code> yields:
-  - The domain-specific client to be used for testing the REST API.
-  - The already-open log to be used for documenting the test execution.
+- The test class derives from a base test class.
+- The test method-name begins with `test`, which tells the test framework that it can be executed at test-time.
+- Method `prelude`, inherited from the base class, yields:
+  - A domain-specific REST API client.
+  - An open test log.
 
-##  Test Log
+## Log
 
 <code>test_test.xml</code>
 ```xml
 <test_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='test_test' timestamp='2017-09-27-Wed-17.35.55.158'>
-    <section name='With ExampleRestClient'/>
+  <test_method duration_seconds='0.002' name='test_test' timestamp='2017-10-02-Mon-11.48.52.773'>
+    <section name='With ExampleRestClient'>
+      <comment>Test code goes here</comment>
+      <comment>Method prelude yields two objects:</comment>
+      <comment>1. Instance of ExampleRestClient, for access to the REST API.</comment>
+      <comment>2. Instance of Log, for logging the test.</comment>
+    </section>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
     <verdict id='error count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
@@ -54,9 +59,11 @@ Notes:
 
 Notes:
 
-- Element <code>summary</code>:  counts of verdicts, failures (failed verdicts), and errors (unexpected exceptions).
-- Element <code>test_method</code>:  logging for test steps and verdicts.  (This test did nothing, so there's not much here.)
-- The last section gives the count of errors (unexpected exceptions).  Its verdict expects the count to be 0.
+- At the top of the log is a summary of the counts of verdicts, failures (failed verdicts), and errors (unexpected exceptions).
+- Element `test_method` gives the test name, timestamp, and duration.
+- The section named `With ExampleRestClient` contains all logging from the test itself.
+- The last section gives the count of errors (unexpected exceptions).  Its verdict expects that count to be `0`.
+- (Attribute `volatile`, seen in element `verdict`, has to do with the Changes Report, and is of no present interest.)
 
-**Next** [Sections and Nesting](./Sections.md)
+**Next Stop** [Sections and Nesting](./Sections.md)
 

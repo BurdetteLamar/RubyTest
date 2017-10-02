@@ -1,14 +1,14 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev** [Test for GET Albums](./GetAlbums.md)
+**Prev Stop** [Test for GET Albums](./GetAlbums.md)
 
-**Next** [Test for DELETE Albums/_id_](./DeleteAlbumsId.md)
+**Next Stop** [Test for DELETE Albums/_id_](./DeleteAlbumsId.md)
 
 
 # Test for GET Albums/_id_
 
 This page shows how to test GET Albums/_id_.
 
-## Test Source Code
+## Example Test
 
 <code>get_albums_id_test.rb</code>
 ```ruby
@@ -41,36 +41,38 @@ end
 
 Notes:
 
-- Method <code>Album.get_first</code> is a convenience method that fetches the first album as an <code>Album</code> object.
-- Method <code>GetAlbumsId.verdict_call_and_verify_success</code>:
-  1.  Accesses endpoint GET albums/_id_, using field <code>:id</code> from the given album <code>album_to_get</code>.
-  2.  Forms the response payload into a new <code>Album</code> object, <code>album_fetched</code>.
-  3.  Verifies that the values in <code>album_to_get</code> are equal to those in <code>album_fetched</code>.
+- Method `Album.get_first` is a convenience method that fetches the first album as an `Album` object.
+- Method `GetAlbumsId.verdict_call_and_verify_success`:
+  1.  Accesses endpoint GET albums/_id_, using field `:id` from the given album `album_to_get`.
+  2.  Forms the response payload into a new `Album` object, `album_fetched`.
+  3.  Verifies that the values in `album_to_get` are equal to those in `album_fetched`.
 
-##  Test Log
+## Log
 
 <code>test_get_albums_id.xml</code>
 ```xml
 <get_albums_id_test>
   <summary errors='0' failures='0' verdicts='4'/>
-  <test_method name='get_albums_id_test' timestamp='2017-09-27-Wed-17.36.07.077'>
-    <section duration_seconds='1.599' name='With ExampleRestClient'>
+  <test_method name='get_albums_id_test' timestamp='2017-10-02-Mon-11.49.18.839'>
+    <section duration_seconds='1.766' name='With ExampleRestClient'>
       <section name='Test endpoint GET albums/id'>
         <section name='Fetch an album to GET'>
-          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-27-Wed-17.36.07.081' url='https://jsonplaceholder.typicode.com/albums'>
-            <parameters/>
-          </section>
+          <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
+            <execution duration_seconds='1.486' timestamp='2017-10-02-Mon-11.49.18.843'/>
+          </REST_API>
           <section name='Album fetched'>
-            <data field='id' value='1'/>
-            <data field='userId' value='1'/>
-            <data field='title' value='quidem molestiae enim'/>
+            <section name='Album'>
+              <data field='id' value='1'/>
+              <data field='userId' value='1'/>
+              <data field='title' value='quidem molestiae enim'/>
+            </section>
           </section>
         </section>
         <section name='GET the album'>
-          <section name='GET album' timestamp='2017-09-27-Wed-17.36.08.593'>
-            <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-27-Wed-17.36.08.593' url='https://jsonplaceholder.typicode.com/albums/1'>
-              <parameters/>
-            </section>
+          <section name='GET album' timestamp='2017-10-02-Mon-11.49.20.335'>
+            <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums/1'>
+              <execution duration_seconds='0.269' timestamp='2017-10-02-Mon-11.49.20.336'/>
+            </REST_API>
             <section name='Evaluation'>
               <verdict id='Album-id' message='Got' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>1</exp_value>
@@ -99,7 +101,7 @@ Notes:
 </get_albums_id_test>
 ```
 
-**Prev** [Test for GET Albums](./GetAlbums.md)
+**Prev Stop** [Test for GET Albums](./GetAlbums.md)
 
-**Next** [Test for DELETE Albums/_id_](./DeleteAlbumsId.md)
+**Next Stop** [Test for DELETE Albums/_id_](./DeleteAlbumsId.md)
 

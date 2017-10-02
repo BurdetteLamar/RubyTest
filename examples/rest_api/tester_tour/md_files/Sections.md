@@ -1,14 +1,14 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev** [The Simplest Test](./Test.md)
+**Prev Stop** [Simple Test](./Test.md)
 
-**Next** [Verdicts](./Verdicts.md)
+**Next Stop** [Verdicts](./Verdicts.md)
 
 
 # Sections and Nesting
 
-This page introduces sections, including nesting, timestamps, and durations.
+This page shows test sections, including nesting, timestamps, and durations.
 
-## Test Source Code
+## Example Test
 
 <code>sections_test.rb</code>
 ```ruby
@@ -20,26 +20,29 @@ class SectionsTest < BaseClassForTest
     prelude do |_, log|
       log.section('First outer section') do
         log.section('First inner section') do
-          # Some test code here.
+          log.comment('Some test code can go here')
         end
         log.section('Second inner section') do
-          # Some test code here.
+          log.comment('Some test code can go here')
         end
       end
       log.section('Second outer section') do
-        # Some test code here.
+        log.comment('Some test code can go here')
       end
       log.section('Section with timestamp', :timestamp) do
-        # Some test code here.
+        log.comment('Some test code can go here')
       end
       log.section('Section with timestamp', :duration) do
+        log.comment('Some test code can go here')
         sleep 1
       end
       log.section('Section with timestamp and duration', :timestamp, :duration) do
-        sleep 1
+        log.comment('Some test code can go here')
+        sleep 2
       end
       log.section('Order does not matter', :duration, :timestamp) do
-        sleep 1
+        log.comment('Some test code can go here')
+        sleep 3
       end
     end
   end
@@ -49,26 +52,40 @@ end
 
 Notes:
 
-- Use nested sections to structure test steps.
-- (The variables yielded by method <code>prelude</code> are a client and a log.  This test does not use the client, and so uses the variable name <code>_</code> instead of variable <code>client</code>.  This prevents the RubyMine IDE from flagging it as an unused variable during code inspection.)
+- Use nested sections to organize test code.
+- (This test does not use the client, and so by Ruby convention uses the variable name `_` instead of variable name `client`.)
 
-##  Test Log
+## Log
 
 <code>test_sections.xml</code>
 ```xml
 <sections_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='3.028' name='sections_test' timestamp='2017-09-27-Wed-17.35.56.225'>
+  <test_method duration_seconds='6.020' name='sections_test' timestamp='2017-10-02-Mon-11.48.53.838'>
     <section name='With ExampleRestClient'>
       <section name='First outer section'>
-        <section name='First inner section'/>
-        <section name='Second inner section'/>
+        <section name='First inner section'>
+          <comment>Some test code can go here</comment>
+        </section>
+        <section name='Second inner section'>
+          <comment>Some test code can go here</comment>
+        </section>
       </section>
-      <section name='Second outer section'/>
-      <section name='Section with timestamp' timestamp='2017-09-27-Wed-17.35.56.225'/>
-      <section duration_seconds='1.014' name='Section with timestamp'/>
-      <section duration_seconds='1.009' name='Section with timestamp and duration' timestamp='2017-09-27-Wed-17.35.57.238'/>
-      <section duration_seconds='1.005' name='Order does not matter' timestamp='2017-09-27-Wed-17.35.58.247'/>
+      <section name='Second outer section'>
+        <comment>Some test code can go here</comment>
+      </section>
+      <section name='Section with timestamp' timestamp='2017-10-02-Mon-11.48.53.840'>
+        <comment>Some test code can go here</comment>
+      </section>
+      <section duration_seconds='1.000' name='Section with timestamp'>
+        <comment>Some test code can go here</comment>
+      </section>
+      <section duration_seconds='2.009' name='Section with timestamp and duration' timestamp='2017-10-02-Mon-11.48.54.841'>
+        <comment>Some test code can go here</comment>
+      </section>
+      <section duration_seconds='3.008' name='Order does not matter' timestamp='2017-10-02-Mon-11.48.56.851'>
+        <comment>Some test code can go here</comment>
+      </section>
     </section>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
@@ -82,9 +99,9 @@ Notes:
 
 Notes:
 
-- The sections in the test are propagated to the log, giving it the same structure.
+- The sections in the test are propagated to the log, so that the log is organized the same way as the test.
 
-**Prev** [The Simplest Test](./Test.md)
+**Prev Stop** [Simple Test](./Test.md)
 
-**Next** [Verdicts](./Verdicts.md)
+**Next Stop** [Verdicts](./Verdicts.md)
 

@@ -4,23 +4,18 @@
 
 This page introduces complex data classes, and shows how to create instances of them.
 
-## Test Source Code
+## Example Test
 
 [file_source](../tests/data_new_complex_test.rb)
 
 Notes:
 
-- Unlike an album, which has only scalar values, a user has a more complex structure.
-- Some of its values, such as those for <code>:name</code> and <code>:username</code>, are simple scalars.
-- Other values, such as those for <code>:address</code> and <code>:company</code>, are more complex.
-- When the <code>User</code> instance is created, the values for <code>:address</code> are formed into an instance of <code>User::Address</code>.
-- Similarly, the values for <code>:company</code> are formed into an instance of <code>User::Company</code>.
-- There is a further nesting in the values for <code>:address</code>:  it contains multi-valued data for <code>:geo</code>.  These values are formed into an instance of <code>User::Address::Geo</code>.
+- When the `User` instance is created, the values for `:address` are formed into an instance of `User::Address`.
+- Similarly, the values for `:company` are formed into an instance of `User::Company`.
+- There is a further nesting in the values for `:address`:  it contains multi-valued data for `:geo`.  These values are formed into an instance of `User::Address::Geo`.
 
-##  Test Log
+## Log
 
 [file_source](../logs/test_data_new_complex.xml)
-
-- When the <code>User</code> object logs itself, the nested objects also log themselves.
 
 [navigation_links]

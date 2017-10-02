@@ -4,6 +4,6 @@
 
 This tour documentation is under active development.
 
-Please stay tuned.
+Stay tuned....
 
 [navigation_links]

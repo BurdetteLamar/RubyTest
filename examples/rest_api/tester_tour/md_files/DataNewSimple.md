@@ -1,21 +1,20 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev** [Test for POST Albums](./PostAlbums.md)
+**Prev Stop** [Logging a Complex Data Object](./DataLogComplex.md)
 
-**Next** [Creating a Complex Data Object](./DataNewComplex.md)
+**Next Stop** [Creating a Complex Data Object](./DataNewComplex.md)
 
 
-# Creating a Data Object
+# Creating a Simple Data Object
 
 This page introduces simple data classes, and shows how to create instances of them.
 
-## Test Source Code
+## Example Test
 
 <code>data_new_simple_test.rb</code>
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
 
 require_relative '../../../rest_api/data/album'
-require_relative '../../../rest_api/data/user'
 
 class DataNewTest < BaseClassForTest
 
@@ -39,25 +38,23 @@ end
 
 Notes:
 
-- The JSONPlaceholder REST API has several resources, including the Album resource.  That resource is represented in this test framework by class <code>Album</code>.
-- The Album resource and its corresponding class are flat, each consisting of only three scalar values, seen here in the call to <code>Album.new</code>.
-- These values are passed to method <code>Album.new</code> in a hash that gives the names and values.
-- Note that the created album exists only here in the test, and not in the REST API itself.  If it were created in the API, it would be assigned a non-nil <code>:id</code> value.
-- Class <code>Album</code> derives from base classes that provide it with the ability to log itself, as seen here in the call to method <code>album.log</code>.
-- This is true of all data objects in the framework.
+- These values are passed to method `Album.new` in a hash that gives the names and values.
+- Note that the created album exists only here in the test, and not in the REST API itself.  If it were later created in the API, it would be assigned a non-nil `:id` value.
 
-##  Test Log
+## Log
 
 <code>test_data_new_simple.xml</code>
 ```xml
 <data_new_simple_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.002' name='data_new_simple_test' timestamp='2017-09-27-Wed-17.36.19.166'>
+  <test_method duration_seconds='0.000' name='data_new_simple_test' timestamp='2017-10-02-Mon-11.49.08.823'>
     <section name='With ExampleRestClient'>
       <section name='Create and log an instance of Album'>
         <section name='Created album'>
-          <data field='userId' value='1'/>
-          <data field='title' value='My album title'/>
+          <section name='Album'>
+            <data field='userId' value='1'/>
+            <data field='title' value='My album title'/>
+          </section>
         </section>
       </section>
     </section>
@@ -71,7 +68,7 @@ Notes:
 </data_new_simple_test>
 ```
 
-**Prev** [Test for POST Albums](./PostAlbums.md)
+**Prev Stop** [Logging a Complex Data Object](./DataLogComplex.md)
 
-**Next** [Creating a Complex Data Object](./DataNewComplex.md)
+**Next Stop** [Creating a Complex Data Object](./DataNewComplex.md)
 

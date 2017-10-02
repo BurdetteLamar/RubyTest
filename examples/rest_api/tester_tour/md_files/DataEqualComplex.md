@@ -1,12 +1,12 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev** [Simple Data Object Equality](./DataEqualSimple.md)
+**Prev Stop** [Verifying a Simple Data Object](./DataEqualSimple.md)
 
-**Next** [More to Come ...](./MoreToCome.md)
+**Next Stop** [Test for GET Albums](./GetAlbums.md)
 
 
-# Complex Data Object Equality
+# Verifying a Complex Data Object
 
-## Test Source Code
+## Example Test
 
 <code>data_equal_complex_test.rb</code>
 ```ruby
@@ -38,28 +38,28 @@ end
 Notes:
 
 - The test gets a known User, then clones it.
-- We know that User is complex, so in this it's necessary to use <code>deep_clone</code>, not <code>clone</code>.
+- We know that User is complex, so it's _necessary_ to use `deep_clone`, not `clone`.
 - In the first section:
-  - Method <code>User.equal?</code> returns <code>true</code>, but does no logging.
-  - The <code>fail unless</code> proves that it worked.
-  - Method <code>User.verdict_equal?</code> verifies and logs each value in the users.
+  - Method `User.equal?` returns `true`, but does no logging.
+  - The `fail unless` proves that it worked.
+  - Method `User.verdict_equal?` verifies and logs each value in the users.
 - In the second section:
   - One value in the user is modified.  The changed value is in a nested object.
-  - Method <code>User.equal?</code> returns <code>false</code>, but does no logging.
-  - The <code>fail if </code> proves that it worked.
-  - Method <code>User.verdict_equal?</code> verifies and logs each value in the users.
+  - Method `User.equal?` returns `false`, but does no logging.
+  - The `fail if ` proves that it worked.
+  - Method `User.verdict_equal?` verifies and logs each value in the users.
 
-##  Test Log
+## Log
 
 <code>test_data_equal_complex.xml</code>
 ```xml
 <data_equal_complex_test>
   <summary errors='0' failures='1' verdicts='31'/>
-  <test_method duration_seconds='1.514' name='data_equal_complex_test' timestamp='2017-09-27-Wed-17.36.23.880'>
+  <test_method duration_seconds='1.495' name='data_equal_complex_test' timestamp='2017-10-02-Mon-11.49.13.551'>
     <section name='With ExampleRestClient'>
-      <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-27-Wed-17.36.23.885' url='https://jsonplaceholder.typicode.com/users'>
-        <parameters/>
-      </section>
+      <REST_API method='GET' url='https://jsonplaceholder.typicode.com/users'>
+        <execution duration_seconds='1.475' timestamp='2017-10-02-Mon-11.49.13.551'/>
+      </REST_API>
       <section name='These are equal'>
         <verdict id='user equal-id' message='Using User.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
           <exp_value>1</exp_value>
@@ -166,19 +166,16 @@ Notes:
             <verdict id='user not equal address geo-lat' message='Using User.verdict_equal?' method='verdict_assert_equal?' outcome='failed' volatile='false'>
               <exp_value>-37.3159</exp_value>
               <act_value>-36.3159</act_value>
-              <exception>
-                <class>Minitest::Assertion</class>
-                <message>Expected: -37.3159 Actual: -36.3159</message>
-                <backtrace>
-                  <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:129:in `block in verdict_equal_recursive?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:118:in `verdict_equal_recursive?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:126:in `block (2 levels) in verdict_equal_recursive?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:124:in `block in verdict_equal_recursive?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:118:in `verdict_equal_recursive?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:126:in `block (2 levels) in verdict_equal_recursive?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:124:in `block in verdict_equal_recursive?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:118:in `verdict_equal_recursive?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:44:in `verdict_equal?'
+              <backtrace>
+                <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:131:in `block in verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:120:in `verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:128:in `block (2 levels) in verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:126:in `block in verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:120:in `verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:128:in `block (2 levels) in verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:126:in `block in verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:120:in `verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:46:in `verdict_equal?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/data_equal_complex_test.rb:18:in `block (2 levels) in test_data_equal_complex'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/data_equal_complex_test.rb:15:in `block in test_data_equal_complex'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
@@ -190,8 +187,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `bl
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:11:in `prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/data_equal_complex_test.rb:8:in `test_data_equal_complex']]>
-                </backtrace>
-              </exception>
+              </backtrace>
             </verdict>
             <verdict id='user not equal address geo-lng' message='Using User.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
               <exp_value>81.1496</exp_value>
@@ -233,10 +229,11 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/
 </data_equal_complex_test>
 ```
 
+- Each actual value, even one that's in a nested object, is verified in a separate verdict.  This makes evaluating the test execution unambiguous.
 - In the first section, all verdicts pass.
 - In the second section, one verdict fails.
 
-**Prev** [Simple Data Object Equality](./DataEqualSimple.md)
+**Prev Stop** [Verifying a Simple Data Object](./DataEqualSimple.md)
 
-**Next** [More to Come ...](./MoreToCome.md)
+**Next Stop** [Test for GET Albums](./GetAlbums.md)
 

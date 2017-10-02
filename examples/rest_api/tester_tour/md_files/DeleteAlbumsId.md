@@ -1,14 +1,14 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev** [Test for GET Albums/_id_](./GetAlbumsId.md)
+**Prev Stop** [Test for GET Albums/_id_](./GetAlbumsId.md)
 
-**Next** [Test for PUT Albums/_id_](./PutAlbumsId.md)
+**Next Stop** [Test for PUT Albums/_id_](./PutAlbumsId.md)
 
 
 # Test for DELETE Albums/_id_
 
 This page shows how to test DELETE Albums/_id_.
 
-## Test Source Code
+## Example Test
 
 <code>delete_albums_id_test.rb</code>
 ```ruby
@@ -41,49 +41,48 @@ end
 
 Notes:
 
-- Method <code>DeleteAlbumsId.verdict_call_and_verify_success</code>:
-  1.  Accesses endpoint DELETE albums/_id_, using field <code>:id</code> from the given album <code>album_to_delete</code>.
+- Method `DeleteAlbumsId.verdict_call_and_verify_success`:
+  1.  Accesses endpoint DELETE albums/_id_, using field `:id` from the given album `album_to_delete`.
   2.  Verifies that the return had no payload.
   3.  Verifies that the album no longer exists.
 
-##  Test Log
+## Log
 
 <code>test_delete_albums_id.xml</code>
 ```xml
 <delete_albums_id_test>
   <summary errors='0' failures='1' verdicts='3'/>
-  <test_method name='delete_albums_id_test' timestamp='2017-09-27-Wed-17.36.09.753'>
-    <section duration_seconds='2.322' name='With ExampleRestClient'>
+  <test_method name='delete_albums_id_test' timestamp='2017-10-02-Mon-11.49.21.695'>
+    <section duration_seconds='2.029' name='With ExampleRestClient'>
       <section name='Test endpoint DELETE albums/id'>
         <section name='Fetch an album to DELETE'>
-          <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-27-Wed-17.36.09.757' url='https://jsonplaceholder.typicode.com/albums'>
-            <parameters/>
-          </section>
+          <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
+            <execution duration_seconds='1.489' timestamp='2017-10-02-Mon-11.49.21.699'/>
+          </REST_API>
           <section name='Album fetched'>
-            <data field='id' value='1'/>
-            <data field='userId' value='1'/>
-            <data field='title' value='quidem molestiae enim'/>
+            <section name='Album'>
+              <data field='id' value='1'/>
+              <data field='userId' value='1'/>
+              <data field='title' value='quidem molestiae enim'/>
+            </section>
           </section>
         </section>
         <section name='DELETE the album'>
-          <section name='DELETE album' timestamp='2017-09-27-Wed-17.36.11.243'>
-            <section duration_seconds='0.000' method='DELETE' name='Rest client' timestamp='2017-09-27-Wed-17.36.11.243' url='https://jsonplaceholder.typicode.com/albums/1'>
-              <parameters/>
-            </section>
+          <section name='DELETE album' timestamp='2017-10-02-Mon-11.49.23.188'>
+            <REST_API method='DELETE' url='https://jsonplaceholder.typicode.com/albums/1'>
+              <execution duration_seconds='0.443' timestamp='2017-10-02-Mon-11.49.23.188'/>
+            </REST_API>
             <section name='Evaluation'>
               <verdict id='payload nil' message='Payload nil' method='verdict_assert_nil?' outcome='passed' volatile='false'>
                 <act_value>nil</act_value>
               </verdict>
-              <section duration_seconds='0.000' method='GET' name='Rest client' timestamp='2017-09-27-Wed-17.36.11.967' url='https://jsonplaceholder.typicode.com/albums/1'>
-                <parameters/>
-              </section>
+              <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums/1'>
+                <execution duration_seconds='0.091' timestamp='2017-10-02-Mon-11.49.23.631'/>
+              </REST_API>
               <verdict id='DELETE album' message='Album not exist' method='verdict_refute?' outcome='failed' volatile='false'>
                 <act_value>true</act_value>
-                <exception>
-                  <class>Minitest::Assertion</class>
-                  <message>Expected true to not be truthy.</message>
-                  <backtrace>
-                    <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_resource.rb:25:in `verdict_not_exist?'
+                <backtrace>
+                  <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_resource.rb:25:in `verdict_not_exist?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/endpoints/base_class_for_delete_id.rb:21:in `block (2 levels) in verdict_call_and_verify_success'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/endpoints/base_class_for_delete_id.rb:18:in `block in verdict_call_and_verify_success'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/endpoints/base_class_for_delete_id.rb:16:in `verdict_call_and_verify_success'
@@ -100,8 +99,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `bl
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:11:in `prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/delete_albums_id_test.rb:8:in `test_delete_albums_id']]>
-                  </backtrace>
-                </exception>
+                </backtrace>
               </verdict>
             </section>
           </section>
@@ -122,7 +120,7 @@ Notes:
 
 - The verdict that confirms the deletion fails, because the JSONPlaceholder REST API does not really delete the album.  That is intentional, and is documented at the website.
 
-**Prev** [Test for GET Albums/_id_](./GetAlbumsId.md)
+**Prev Stop** [Test for GET Albums/_id_](./GetAlbumsId.md)
 
-**Next** [Test for PUT Albums/_id_](./PutAlbumsId.md)
+**Next Stop** [Test for PUT Albums/_id_](./PutAlbumsId.md)
 

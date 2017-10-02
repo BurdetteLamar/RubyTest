@@ -1,7 +1,6 @@
 require_relative '../../base_classes/base_class_for_test'
 
 require_relative '../../../rest_api/data/album'
-require_relative '../../../rest_api/data/user'
 
 class DataNewTest < BaseClassForTest
 

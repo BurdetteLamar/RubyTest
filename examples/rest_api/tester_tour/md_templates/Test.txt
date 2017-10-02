@@ -1,29 +1,31 @@
 [navigation_links]
 
-# The Simplest Test
+# Simple Test
 
-This page introduces the test class, along with the REST API client and the test log.
+This page shows a test class, along with its REST API client and test log.
 
-## Test Source Code
+## Example Test
 
 [file_source](../tests/test_test.rb)
 
 Notes:
 
-- Test class <code>TestTest</code> derives from class<code>BaseClassForTest</code>.
-- Method name <code>test_test</code> begins with <code>test</code>, which tells the test framework that it is a test method and should be executed at test-time.
-- Inherited method <code>prelude</code> yields:
-  - The domain-specific client to be used for testing the REST API.
-  - The already-open log to be used for documenting the test execution.
+- The test class derives from a base test class.
+- The test method-name begins with `test`, which tells the test framework that it can be executed at test-time.
+- Method `prelude`, inherited from the base class, yields:
+  - A domain-specific REST API client.
+  - An open test log.
 
-##  Test Log
+## Log
 
 [file_source](../logs/test_test.xml)
 
 Notes:
 
-- Element <code>summary</code>:  counts of verdicts, failures (failed verdicts), and errors (unexpected exceptions).
-- Element <code>test_method</code>:  logging for test steps and verdicts.  (This test did nothing, so there's not much here.)
-- The last section gives the count of errors (unexpected exceptions).  Its verdict expects the count to be 0.
+- At the top of the log is a summary of the counts of verdicts, failures (failed verdicts), and errors (unexpected exceptions).
+- Element `test_method` gives the test name, timestamp, and duration.
+- The section named `With ExampleRestClient` contains all logging from the test itself.
+- The last section gives the count of errors (unexpected exceptions).  Its verdict expects that count to be `0`.
+- (Attribute `volatile`, seen in element `verdict`, has to do with the Changes Report, and is of no present interest.)
 
 [navigation_links]
