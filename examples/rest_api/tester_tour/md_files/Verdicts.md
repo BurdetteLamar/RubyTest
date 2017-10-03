@@ -75,7 +75,7 @@ Notes:
 ```xml
 <verdicts_test>
   <summary errors='0' failures='2' verdicts='5'/>
-  <test_method duration_seconds='0.000' name='verdicts_test' timestamp='2017-10-02-Mon-16.25.55.383'>
+  <test_method duration_seconds='0.006' name='verdicts_test' timestamp='2017-10-03-Tue-12.23.52.791'>
     <section name='With ExampleRestClient'>
       <section name='These verdicts should pass'>
         <section name='An assert verdict that should pass'>

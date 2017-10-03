@@ -22,6 +22,7 @@ Each following page assumes you've seen all its predecessors, so repetition is m
 - [Creating a Complex Data Object](./tester_tour/md_files/DataNewComplex.md)
 - [Verifying a Simple Data Object](./tester_tour/md_files/DataEqualSimple.md)
 - [Verifying a Complex Data Object](./tester_tour/md_files/DataEqualComplex.md)
+- [Validating a Simple Data Object](./tester_tour/md_files/DataValidSimple.md)
 - [Test for GET Albums](./tester_tour/md_files/GetAlbums.md)
 - [Test for GET Albums/_id_](./tester_tour/md_files/GetAlbumsId.md)
 - [Test for DELETE Albums/_id_](./tester_tour/md_files/DeleteAlbumsId.md)

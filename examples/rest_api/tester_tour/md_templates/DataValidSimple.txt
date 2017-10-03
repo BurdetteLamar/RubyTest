@@ -1,0 +1,30 @@
+[navigation_links]
+
+# Validating a Simple Data Object
+
+## Example Test
+
+[file_source](../tests/data_valid_simple_test.rb)
+
+Notes:
+
+- In the first section:
+  - A new album with valid values is instantiated.
+  - The valid values are not in the test itself, but instead come from the data class.
+  - Method `Album.verdict_valid? validates and logs each value in the album.
+- In the second section:
+  - A new album with invalid values is instantiated.
+  - The invalid values are not in the test itself, but instead come from the data class.
+  - Method `Album.verdict_valid? validates and logs each value in the album.
+
+## Log
+
+[file_source](../logs/test_data_valid_simple.xml)
+
+Notes:
+
+- In the first section, all verdicts pass.
+- When a value has multiple validation verdicts (as all of these do), the verdicts are logged into a separate subsection.
+- In the second section, three verdicts fail.
+
+[navigation_links]

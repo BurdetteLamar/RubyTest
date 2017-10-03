@@ -1,5 +1,5 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop** [Verifying a Complex Data Object](./DataEqualComplex.md)
+**Prev Stop** [Validating a Simple Data Object](./DataValidSimple.md)
 
 **Next Stop** [Test for GET Albums/_id_](./GetAlbumsId.md)
 
@@ -48,13 +48,13 @@ Notes:
 ```xml
 <get_albums_test>
   <summary errors='0' failures='0' verdicts='7'/>
-  <test_method name='get_albums_test' timestamp='2017-10-02-Mon-16.26.09.927'>
-    <section duration_seconds='1.516' name='With ExampleRestClient'>
+  <test_method name='get_albums_test' timestamp='2017-10-03-Tue-12.24.08.850'>
+    <section duration_seconds='1.531' name='With ExampleRestClient'>
       <section name='Test endpoint GET albums'>
         <section name='GET albums'>
-          <section name='GET albums' timestamp='2017-10-02-Mon-16.26.09.928'>
+          <section name='GET albums' timestamp='2017-10-03-Tue-12.24.08.850'>
             <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
-              <execution duration_seconds='1.505' timestamp='2017-10-02-Mon-16.26.09.928'/>
+              <execution duration_seconds='1.521' timestamp='2017-10-03-Tue-12.24.08.850'/>
             </REST_API>
             <section name='Evaluation'>
               <data fetched_object_count='100'/>
@@ -66,33 +66,33 @@ Notes:
                 </section>
               </section>
               <section name='verdict_assert_integer_positive?'>
-                <verdict id='GET albums - id - integer' message='Album id' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                <verdict id='GET albums id - integer' message='id positive integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
                   <exp_value>Fixnum</exp_value>
                   <act_value>1</act_value>
                 </verdict>
-                <verdict id='GET albums - id - positive' message='Album id' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+                <verdict id='GET albums id - positive' message='id positive integer' method='verdict_assert_operator?' outcome='passed' volatile='false'>
                   <object_1>1</object_1>
                   <operator>:&gt;</operator>
                   <object_2>0</object_2>
                 </verdict>
               </section>
               <section name='verdict_assert_integer_positive?'>
-                <verdict id='GET albums - user id - integer' message='Album user id' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                <verdict id='GET albums userId - integer' message='userId positive integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
                   <exp_value>Fixnum</exp_value>
                   <act_value>1</act_value>
                 </verdict>
-                <verdict id='GET albums - user id - positive' message='Album user id' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+                <verdict id='GET albums userId - positive' message='userId positive integer' method='verdict_assert_operator?' outcome='passed' volatile='false'>
                   <object_1>1</object_1>
                   <operator>:&gt;</operator>
                   <object_2>0</object_2>
                 </verdict>
               </section>
               <section name='verdict_assert_string_not_empty?'>
-                <verdict id='GET albums - title - string' message='Album title' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                <verdict id='GET albums title - string' message='title nonempty string' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
                   <exp_value>String</exp_value>
                   <act_value>quidem molestiae enim</act_value>
                 </verdict>
-                <verdict id='GET albums - title - not empty' message='Album title' method='verdict_refute_empty?' outcome='passed' volatile='false'>
+                <verdict id='GET albums title - not empty' message='title nonempty string' method='verdict_refute_empty?' outcome='passed' volatile='false'>
                   <act_value>quidem molestiae enim</act_value>
                 </verdict>
               </section>
@@ -116,7 +116,7 @@ Notes:
 - Each `section` element whose `name` is `Rest client` records an interaction with the REST API, including any passed parameters.
 - The `section` whose `name` is `Evaluation` contains verdicts about the returned data.
 
-**Prev Stop** [Verifying a Complex Data Object](./DataEqualComplex.md)
+**Prev Stop** [Validating a Simple Data Object](./DataValidSimple.md)
 
 **Next Stop** [Test for GET Albums/_id_](./GetAlbumsId.md)
 

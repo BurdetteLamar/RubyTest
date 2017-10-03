@@ -57,12 +57,12 @@ Notes:
 ```xml
 <put_albums_id_test>
   <summary errors='0' failures='1' verdicts='7'/>
-  <test_method name='put_albums_id_test' timestamp='2017-10-02-Mon-16.26.18.595'>
-    <section duration_seconds='1.900' name='With ExampleRestClient'>
+  <test_method name='put_albums_id_test' timestamp='2017-10-03-Tue-12.24.17.319'>
+    <section duration_seconds='1.957' name='With ExampleRestClient'>
       <section name='Test endpoint PUT albums/id'>
         <section name='Make a modified album'>
           <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
-            <execution duration_seconds='1.515' timestamp='2017-10-02-Mon-16.26.18.605'/>
+            <execution duration_seconds='1.541' timestamp='2017-10-03-Tue-12.24.17.319'/>
           </REST_API>
           <section name='Album to put'>
             <section name='Album'>
@@ -73,10 +73,10 @@ Notes:
           </section>
         </section>
         <section name='PUT the album'>
-          <section name='PUT album' timestamp='2017-10-02-Mon-16.26.20.120'>
+          <section name='PUT album' timestamp='2017-10-03-Tue-12.24.18.860'>
             <REST_API method='PUT' url='https://jsonplaceholder.typicode.com/albums/1'>
               <parameters id='1' title='My new title' userId='1'/>
-              <execution duration_seconds='0.260' timestamp='2017-10-02-Mon-16.26.20.120'/>
+              <execution duration_seconds='0.241' timestamp='2017-10-03-Tue-12.24.18.860'/>
             </REST_API>
             <section name='Evaluation'>
               <verdict id='Put-id' message='Put' method='verdict_assert_equal?' outcome='passed' volatile='false'>
@@ -92,7 +92,7 @@ Notes:
                 <act_value>My new title</act_value>
               </verdict>
               <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums/1'>
-                <execution duration_seconds='0.062' timestamp='2017-10-02-Mon-16.26.20.385'/>
+                <execution duration_seconds='0.094' timestamp='2017-10-03-Tue-12.24.19.109'/>
               </REST_API>
               <verdict id='Fetched-id' message='Fetched' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>1</exp_value>
@@ -112,9 +112,9 @@ Notes:
                     -&quot;My new title&quot; +&quot;quidem molestiae enim&quot;
                   </message>
                   <backtrace>
-                    <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:131:in `block in verdict_equal_recursive?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:120:in `verdict_equal_recursive?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:46:in `verdict_equal?'
+                    <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:140:in `block in verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:129:in `verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:55:in `verdict_equal?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/endpoints/base_class_for_put_id.rb:25:in `block (2 levels) in verdict_call_and_verify_success'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/endpoints/base_class_for_put_id.rb:21:in `block in verdict_call_and_verify_success'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/endpoints/base_class_for_put_id.rb:19:in `verdict_call_and_verify_success'
