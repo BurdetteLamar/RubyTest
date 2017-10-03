@@ -16,11 +16,24 @@ class Album < BaseClassForResource
     super(FIELDS, values)
   end
 
-  Contract Log, String => Bool
-  def verdict_valid?(log, verdict_id)
-    log.verdict_assert_integer_positive?(verdict_id + ' - id', self.id, 'Album id')
-    log.verdict_assert_integer_positive?(verdict_id + ' - user id', self.userId, 'Album user id')
-    log.verdict_assert_string_not_empty?(verdict_id + ' - title', self.title, 'Album title')
+  Contract Log, String, Symbol => Bool
+  def verdict_field_valid?(log, verdict_id, field)
+    value = self.send(field)
+    case
+      when
+        [
+            :id,
+            :userId,
+        ].include?(field)
+        log.verdict_assert_integer_positive?(verdict_id, value, format('%s positive integer', field))
+      when
+        [
+            :title,
+        ].include?(field)
+        log.verdict_assert_string_not_empty?(verdict_id, value, format('%s nonempty string', field))
+      else
+        ArgumentError.new(field.inspect)
+    end
   end
 
 end
