@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop** [Verifying a Complex Data Object](./DataEqualComplex.md)
+**Prev Stop:** [Verifying a Complex Data Object](./DataEqualComplex.md)
 
-**Next Stop** [Test for GET Albums](./GetAlbums.md)
+**Next Stop:** [Test for GET Albums](./GetAlbums.md)
 
 
 # Validating a Simple Data Object
@@ -57,7 +57,7 @@ Notes:
 ```xml
 <data_valid_simple_test>
   <summary errors='0' failures='3' verdicts='13'/>
-  <test_method duration_seconds='0.012' name='data_valid_simple_test' timestamp='2017-10-03-Tue-12.24.07.745'>
+  <test_method duration_seconds='0.014' name='data_valid_simple_test' timestamp='2017-10-03-Tue-12.29.07.393'>
     <section name='With ExampleRestClient'>
       <section name='This is valid'>
         <section name='verdict_assert_integer_positive?'>
@@ -202,7 +202,7 @@ Notes:
 - When a value has multiple validation verdicts (as all of these do), the verdicts are logged into a separate subsection.
 - In the second section, three verdicts fail.
 
-**Prev Stop** [Verifying a Complex Data Object](./DataEqualComplex.md)
+**Prev Stop:** [Verifying a Complex Data Object](./DataEqualComplex.md)
 
-**Next Stop** [Test for GET Albums](./GetAlbums.md)
+**Next Stop:** [Test for GET Albums](./GetAlbums.md)
 

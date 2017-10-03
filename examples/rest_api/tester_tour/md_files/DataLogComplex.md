@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop** [Logging a Simple Data Object](./DataLogSimple.md)
+**Prev Stop:** [Logging a Simple Data Object](./DataLogSimple.md)
 
-**Next Stop** [Creating a Simple Data Object](./DataNewSimple.md)
+**Next Stop:** [Creating a Simple Data Object](./DataNewSimple.md)
 
 
 # Logging a Complex Data Object
@@ -43,12 +43,12 @@ Notes:
 ```xml
 <data_log_complex_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='1.519' name='data_log_complex_test' timestamp='2017-10-03-Tue-12.23.57.625'>
+  <test_method duration_seconds='1.554' name='data_log_complex_test' timestamp='2017-10-03-Tue-12.28.57.291'>
     <section name='With ExampleRestClient'>
       <section name='Fetch and log an instance of User'>
         <section name='Fetch a user'>
           <REST_API method='GET' url='https://jsonplaceholder.typicode.com/users'>
-            <execution duration_seconds='1.507' timestamp='2017-10-03-Tue-12.23.57.630'/>
+            <execution duration_seconds='1.544' timestamp='2017-10-03-Tue-12.28.57.296'/>
           </REST_API>
         </section>
         <section name='Fetched user'>
@@ -102,7 +102,7 @@ Notes:
 - Similarly, the values for `company` are in an instance of `User::Company`.
 - There is a further nesting in the values for `address`:  it contains multi-valued data for `geo`.  These values are in an instance of `User::Address::Geo`.
 
-**Prev Stop** [Logging a Simple Data Object](./DataLogSimple.md)
+**Prev Stop:** [Logging a Simple Data Object](./DataLogSimple.md)
 
-**Next Stop** [Creating a Simple Data Object](./DataNewSimple.md)
+**Next Stop:** [Creating a Simple Data Object](./DataNewSimple.md)
 

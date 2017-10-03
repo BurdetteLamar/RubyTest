@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop** [Validating a Simple Data Object](./DataValidSimple.md)
+**Prev Stop:** [Validating a Simple Data Object](./DataValidSimple.md)
 
-**Next Stop** [Test for GET Albums/_id_](./GetAlbumsId.md)
+**Next Stop:** [Test for GET Albums/_id_](./GetAlbumsId.md)
 
 
 # Test for GET Albums
@@ -48,13 +48,13 @@ Notes:
 ```xml
 <get_albums_test>
   <summary errors='0' failures='0' verdicts='7'/>
-  <test_method name='get_albums_test' timestamp='2017-10-03-Tue-12.24.08.850'>
-    <section duration_seconds='1.531' name='With ExampleRestClient'>
+  <test_method name='get_albums_test' timestamp='2017-10-03-Tue-12.29.08.528'>
+    <section duration_seconds='1.512' name='With ExampleRestClient'>
       <section name='Test endpoint GET albums'>
         <section name='GET albums'>
-          <section name='GET albums' timestamp='2017-10-03-Tue-12.24.08.850'>
+          <section name='GET albums' timestamp='2017-10-03-Tue-12.29.08.529'>
             <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
-              <execution duration_seconds='1.521' timestamp='2017-10-03-Tue-12.24.08.850'/>
+              <execution duration_seconds='1.501' timestamp='2017-10-03-Tue-12.29.08.530'/>
             </REST_API>
             <section name='Evaluation'>
               <data fetched_object_count='100'/>
@@ -116,7 +116,7 @@ Notes:
 - Each `section` element whose `name` is `Rest client` records an interaction with the REST API, including any passed parameters.
 - The `section` whose `name` is `Evaluation` contains verdicts about the returned data.
 
-**Prev Stop** [Validating a Simple Data Object](./DataValidSimple.md)
+**Prev Stop:** [Validating a Simple Data Object](./DataValidSimple.md)
 
-**Next Stop** [Test for GET Albums/_id_](./GetAlbumsId.md)
+**Next Stop:** [Test for GET Albums/_id_](./GetAlbumsId.md)
 

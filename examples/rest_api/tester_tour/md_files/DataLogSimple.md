@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop** [Exceptions, Rescued and Not](./Exceptions.md)
+**Prev Stop:** [Exceptions, Rescued and Not](./Exceptions.md)
 
-**Next Stop** [Logging a Complex Data Object](./DataLogComplex.md)
+**Next Stop:** [Logging a Complex Data Object](./DataLogComplex.md)
 
 
 # Logging a Simple Data Object
@@ -44,12 +44,12 @@ Notes:
 ```xml
 <data_log_simple_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='1.540' name='data_log_simple_test' timestamp='2017-10-03-Tue-12.23.54.992'>
+  <test_method duration_seconds='1.581' name='data_log_simple_test' timestamp='2017-10-03-Tue-12.28.54.605'>
     <section name='With ExampleRestClient'>
       <section name='Fetch and log an instance of Album'>
         <section name='Fetch an album'>
           <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
-            <execution duration_seconds='1.529' timestamp='2017-10-03-Tue-12.23.54.997'/>
+            <execution duration_seconds='1.576' timestamp='2017-10-03-Tue-12.28.54.610'/>
           </REST_API>
         </section>
         <section name='Fetched album'>
@@ -75,7 +75,7 @@ Notes:
 - Its subelement `execution` shows the timestamp and duration for the interaction.
 - The section named `Fetched album` shows the values in the fetched album.
 
-**Prev Stop** [Exceptions, Rescued and Not](./Exceptions.md)
+**Prev Stop:** [Exceptions, Rescued and Not](./Exceptions.md)
 
-**Next Stop** [Logging a Complex Data Object](./DataLogComplex.md)
+**Next Stop:** [Logging a Complex Data Object](./DataLogComplex.md)
 

@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop** [Creating a Complex Data Object](./DataNewComplex.md)
+**Prev Stop:** [Creating a Complex Data Object](./DataNewComplex.md)
 
-**Next Stop** [Verifying a Complex Data Object](./DataEqualComplex.md)
+**Next Stop:** [Verifying a Complex Data Object](./DataEqualComplex.md)
 
 
 # Verifying a Simple Data Object
@@ -55,10 +55,10 @@ Notes:
 ```xml
 <data_equal_simple_test>
   <summary errors='0' failures='1' verdicts='7'/>
-  <test_method duration_seconds='1.526' name='data_equal_simple_test' timestamp='2017-10-03-Tue-12.24.02.444'>
+  <test_method duration_seconds='1.515' name='data_equal_simple_test' timestamp='2017-10-03-Tue-12.29.02.126'>
     <section name='With ExampleRestClient'>
       <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
-        <execution duration_seconds='1.500' timestamp='2017-10-03-Tue-12.24.02.448'/>
+        <execution duration_seconds='1.501' timestamp='2017-10-03-Tue-12.29.02.130'/>
       </REST_API>
       <section name='These are equal'>
         <verdict id='album equal-id' message='Using Album.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
@@ -125,7 +125,7 @@ Notes:
 - In the first section, all verdicts pass.
 - In the second section, one verdict fails.
 
-**Prev Stop** [Creating a Complex Data Object](./DataNewComplex.md)
+**Prev Stop:** [Creating a Complex Data Object](./DataNewComplex.md)
 
-**Next Stop** [Verifying a Complex Data Object](./DataEqualComplex.md)
+**Next Stop:** [Verifying a Complex Data Object](./DataEqualComplex.md)
 

@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop** [Logging a Complex Data Object](./DataLogComplex.md)
+**Prev Stop:** [Logging a Complex Data Object](./DataLogComplex.md)
 
-**Next Stop** [Creating a Complex Data Object](./DataNewComplex.md)
+**Next Stop:** [Creating a Complex Data Object](./DataNewComplex.md)
 
 
 # Creating a Simple Data Object
@@ -47,7 +47,7 @@ Notes:
 ```xml
 <data_new_simple_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='data_new_simple_test' timestamp='2017-10-03-Tue-12.24.00.244'>
+  <test_method duration_seconds='0.002' name='data_new_simple_test' timestamp='2017-10-03-Tue-12.28.59.936'>
     <section name='With ExampleRestClient'>
       <section name='Create and log an instance of Album'>
         <section name='Created album'>
@@ -68,7 +68,7 @@ Notes:
 </data_new_simple_test>
 ```
 
-**Prev Stop** [Logging a Complex Data Object](./DataLogComplex.md)
+**Prev Stop:** [Logging a Complex Data Object](./DataLogComplex.md)
 
-**Next Stop** [Creating a Complex Data Object](./DataNewComplex.md)
+**Next Stop:** [Creating a Complex Data Object](./DataNewComplex.md)
 

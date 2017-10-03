@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop** [Simple Test](./Test.md)
+**Prev Stop:** [Simple Test](./Test.md)
 
-**Next Stop** [Verdicts](./Verdicts.md)
+**Next Stop:** [Verdicts](./Verdicts.md)
 
 
 # Sections and Nesting
@@ -61,7 +61,7 @@ Notes:
 ```xml
 <sections_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='6.015' name='sections_test' timestamp='2017-10-03-Tue-12.23.45.678'>
+  <test_method duration_seconds='6.004' name='sections_test' timestamp='2017-10-03-Tue-12.28.45.248'>
     <section name='With ExampleRestClient'>
       <section name='First outer section'>
         <section name='First inner section'>
@@ -74,16 +74,16 @@ Notes:
       <section name='Second outer section'>
         <comment>Some test code can go here</comment>
       </section>
-      <section name='Section with timestamp' timestamp='2017-10-03-Tue-12.23.45.680'>
+      <section name='Section with timestamp' timestamp='2017-10-03-Tue-12.28.45.250'>
         <comment>Some test code can go here</comment>
       </section>
       <section duration_seconds='1.000' name='Section with timestamp'>
         <comment>Some test code can go here</comment>
       </section>
-      <section duration_seconds='2.004' name='Section with timestamp and duration' timestamp='2017-10-03-Tue-12.23.46.681'>
+      <section duration_seconds='2.000' name='Section with timestamp and duration' timestamp='2017-10-03-Tue-12.28.46.251'>
         <comment>Some test code can go here</comment>
       </section>
-      <section duration_seconds='3.008' name='Order does not matter' timestamp='2017-10-03-Tue-12.23.48.686'>
+      <section duration_seconds='3.000' name='Order does not matter' timestamp='2017-10-03-Tue-12.28.48.251'>
         <comment>Some test code can go here</comment>
       </section>
     </section>
@@ -101,7 +101,7 @@ Notes:
 
 - The sections in the test are propagated to the log, so that the log is organized the same way as the test.
 
-**Prev Stop** [Simple Test](./Test.md)
+**Prev Stop:** [Simple Test](./Test.md)
 
-**Next Stop** [Verdicts](./Verdicts.md)
+**Next Stop:** [Verdicts](./Verdicts.md)
 

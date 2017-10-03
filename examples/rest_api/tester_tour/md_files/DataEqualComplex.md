@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop** [Verifying a Simple Data Object](./DataEqualSimple.md)
+**Prev Stop:** [Verifying a Simple Data Object](./DataEqualSimple.md)
 
-**Next Stop** [Validating a Simple Data Object](./DataValidSimple.md)
+**Next Stop:** [Validating a Simple Data Object](./DataValidSimple.md)
 
 
 # Verifying a Complex Data Object
@@ -55,10 +55,10 @@ Notes:
 ```xml
 <data_equal_complex_test>
   <summary errors='0' failures='1' verdicts='31'/>
-  <test_method duration_seconds='1.519' name='data_equal_complex_test' timestamp='2017-10-03-Tue-12.24.05.063'>
+  <test_method duration_seconds='1.534' name='data_equal_complex_test' timestamp='2017-10-03-Tue-12.29.04.721'>
     <section name='With ExampleRestClient'>
       <REST_API method='GET' url='https://jsonplaceholder.typicode.com/users'>
-        <execution duration_seconds='1.493' timestamp='2017-10-03-Tue-12.24.05.067'/>
+        <execution duration_seconds='1.504' timestamp='2017-10-03-Tue-12.29.04.731'/>
       </REST_API>
       <section name='These are equal'>
         <verdict id='user equal-id' message='Using User.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
@@ -237,7 +237,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/
 - In the first section, all verdicts pass.
 - In the second section, one verdict fails.
 
-**Prev Stop** [Verifying a Simple Data Object](./DataEqualSimple.md)
+**Prev Stop:** [Verifying a Simple Data Object](./DataEqualSimple.md)
 
-**Next Stop** [Validating a Simple Data Object](./DataValidSimple.md)
+**Next Stop:** [Validating a Simple Data Object](./DataValidSimple.md)
 
