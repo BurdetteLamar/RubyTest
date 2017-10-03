@@ -26,43 +26,43 @@ class Album < BaseClassForResource
   def verdict_field_valid?(log, verdict_id, field)
     value = self.send(field)
     case
-      when
-        [
-            :id,
-            :userId,
-        ].include?(field)
-        log.verdict_assert_integer_positive?(verdict_id, value, format('%s positive integer', field))
-      when
-        [
-            :title,
-        ].include?(field)
-        log.verdict_assert_string_not_empty?(verdict_id, value, format('%s nonempty string', field))
+      when [
+          :id,
+          :userId,
+      ].include?(field)
+        message = format('%s positive integer', field)
+        log.verdict_assert_integer_positive?(verdict_id, value, message)
+      when [
+          :title,
+      ].include?(field)
+        message = format('%s length in range', field)
+        log.verdict_assert_string_length_in_range?(verdict_id, TITLE_LENGTH_RANGE, value, message)
       else
         ArgumentError.new(field.inspect)
     end
   end
 
-  def self.valid_id
+  def self.id_valid
     ID_MIN_VALUE
   end
 
-  def self.invalid_id
+  def self.id_invalid
     ID_MIN_VALUE - 1
   end
 
-  def self.valid_user_id
+  def self.user_id_valid
     USER_ID_MIN_VALUE
   end
 
-  def self.invalid_user_id
+  def self.user_id_invalid
     USER_ID_MIN_VALUE - 1
   end
 
-  def self.valid_title
+  def self.title_valid
     StringHelper.string_of_min_length(TITLE_LENGTH_RANGE)
   end
 
-  def self.invalid_title
+  def self.title_invalid
     StringHelper.string_too_short(TITLE_LENGTH_RANGE)
   end
 

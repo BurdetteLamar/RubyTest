@@ -55,10 +55,10 @@ Notes:
 ```xml
 <data_equal_complex_test>
   <summary errors='0' failures='1' verdicts='31'/>
-  <test_method duration_seconds='1.534' name='data_equal_complex_test' timestamp='2017-10-03-Tue-12.29.04.721'>
+  <test_method duration_seconds='1.541' name='data_equal_complex_test' timestamp='2017-10-03-Tue-17.07.21.517'>
     <section name='With ExampleRestClient'>
       <REST_API method='GET' url='https://jsonplaceholder.typicode.com/users'>
-        <execution duration_seconds='1.504' timestamp='2017-10-03-Tue-12.29.04.731'/>
+        <execution duration_seconds='1.501' timestamp='2017-10-03-Tue-17.07.21.527'/>
       </REST_API>
       <section name='These are equal'>
         <verdict id='user equal-id' message='Using User.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>

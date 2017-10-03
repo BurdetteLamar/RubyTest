@@ -54,12 +54,12 @@ Notes:
 ```xml
 <post_albums_test>
   <summary errors='0' failures='1' verdicts='7'/>
-  <test_method name='post_albums_test' timestamp='2017-10-03-Tue-12.29.20.085'>
-    <section duration_seconds='1.903' name='With ExampleRestClient'>
+  <test_method name='post_albums_test' timestamp='2017-10-03-Tue-17.07.38.910'>
+    <section duration_seconds='1.939' name='With ExampleRestClient'>
       <section name='Test endpoint POST albums'>
         <section name='Album to post'>
           <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
-            <execution duration_seconds='1.498' timestamp='2017-10-03-Tue-12.29.20.089'/>
+            <execution duration_seconds='1.535' timestamp='2017-10-03-Tue-17.07.38.914'/>
           </REST_API>
           <section name='Album'>
             <data field='id' value='1'/>
@@ -68,10 +68,10 @@ Notes:
           </section>
         </section>
         <section name='POST the album'>
-          <section name='POST album' timestamp='2017-10-03-Tue-12.29.21.594'>
+          <section name='POST album' timestamp='2017-10-03-Tue-17.07.40.455'>
             <REST_API method='POST' url='https://jsonplaceholder.typicode.com/albums'>
               <parameters id='1' title='My album title' userId='1'/>
-              <execution duration_seconds='0.216' timestamp='2017-10-03-Tue-12.29.21.594'/>
+              <execution duration_seconds='0.261' timestamp='2017-10-03-Tue-17.07.40.455'/>
             </REST_API>
             <section name='Evaluation'>
               <verdict id='Album posted-id' message='Posted' method='verdict_assert_equal?' outcome='passed' volatile='false'>
@@ -87,7 +87,7 @@ Notes:
                 <act_value>My album title</act_value>
               </verdict>
               <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums/1'>
-                <execution duration_seconds='0.090' timestamp='2017-10-03-Tue-12.29.21.821'/>
+                <execution duration_seconds='0.078' timestamp='2017-10-03-Tue-17.07.40.717'/>
               </REST_API>
               <verdict id='Album fetched-id' message='Fetched' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>1</exp_value>

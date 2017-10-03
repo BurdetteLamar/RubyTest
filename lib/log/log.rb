@@ -11,9 +11,11 @@ require_relative '../helpers/set_helper'
 require_relative '../helpers/test_helper'
 
 require_relative 'constants'
+# When adding a module here, be sure to 'include' below.
 require_relative 'verdict_assertion'
 require_relative 'verdict_boolean'
 require_relative 'verdict_integer'
+require_relative 'verdict_range'
 require_relative 'verdict_string'
 
 ## Class to support XML logging.
@@ -49,6 +51,7 @@ class Log < BaseClass
   include VerdictAssertion
   include VerdictBoolean
   include VerdictInteger
+  include VerdictRange
   include VerdictString
 
   # :stopdoc:

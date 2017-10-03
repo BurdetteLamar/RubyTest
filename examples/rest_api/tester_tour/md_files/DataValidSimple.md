@@ -14,23 +14,19 @@ require_relative '../../base_classes/base_class_for_test'
 
 require_relative '../../../rest_api/data/album'
 
-class DataValidTest < BaseClassForTest
+class DataValidSimpleTest < BaseClassForTest
 
   def test_data_valid_simple
-    prelude do |_, log|
+    prelude do |client, log|
       log.section('This is valid') do
-        album = Album.new(
-            :id => Album.valid_id,
-            :userId => Album.valid_user_id,
-            :title => Album.valid_title,
-        )
+        album = Album.get_first(client)
         album.verdict_valid?(log, 'album valid')
       end
       log.section('This is not valid') do
         album = Album.new(
-            :id => Album.invalid_id,
-            :userId => Album.invalid_user_id,
-            :title => Album.invalid_title,
+            :id => Album.id_invalid,
+            :userId => Album.user_id_invalid,
+            :title => Album.title_invalid,
         )
         album.verdict_valid?(log, 'album not valid')
       end
@@ -56,10 +52,13 @@ Notes:
 <code>test_data_valid_simple.xml</code>
 ```xml
 <data_valid_simple_test>
-  <summary errors='0' failures='3' verdicts='13'/>
-  <test_method duration_seconds='0.014' name='data_valid_simple_test' timestamp='2017-10-03-Tue-12.29.07.393'>
-    <section name='With ExampleRestClient'>
+  <summary errors='1' failures='1' verdicts='7'/>
+  <test_method name='data_valid_simple_test' timestamp='2017-10-03-Tue-17.07.24.173'>
+    <section duration_seconds='1.495' name='With ExampleRestClient'>
       <section name='This is valid'>
+        <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
+          <execution duration_seconds='1.479' timestamp='2017-10-03-Tue-17.07.24.177'/>
+        </REST_API>
         <section name='verdict_assert_integer_positive?'>
           <verdict id='album valid id - integer' message='id positive integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
             <exp_value>Fixnum</exp_value>
@@ -82,35 +81,33 @@ Notes:
             <object_2>0</object_2>
           </verdict>
         </section>
-        <section name='verdict_assert_string_not_empty?'>
-          <verdict id='album valid title - string' message='title nonempty string' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+        <section name='verdict_assert_string_length_in_range?'>
+          <verdict id='album valid title - string' message='title length in range' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
             <exp_value>String</exp_value>
-            <act_value>x</act_value>
+            <act_value>quidem molestiae enim</act_value>
           </verdict>
-          <verdict id='album valid title - not empty' message='title nonempty string' method='verdict_refute_empty?' outcome='passed' volatile='false'>
-            <act_value>x</act_value>
-          </verdict>
+          <section name='Value in range'>
+            <exp_range>1..50</exp_range>
+            <act_value>21</act_value>
+            <verdict id='album valid title - in range' message='title length in range' method='verdict_assert?' outcome='passed' volatile='false'>
+              <act_value>true</act_value>
+            </verdict>
+          </section>
         </section>
-      </section>
-      <section name='This is not valid'>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='album not valid id - integer' message='id positive integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Fixnum</exp_value>
-            <act_value>0</act_value>
-          </verdict>
-          <verdict id='album not valid id - positive' message='id positive integer' method='verdict_assert_operator?' outcome='failed' volatile='false'>
-            <object_1>0</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-            <exception>
-              <class>Minitest::Assertion</class>
-              <message>Expected 0 to be &gt; 0.</message>
-              <backtrace>
-                <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/data/album.rb:34:in `verdict_field_valid?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:36:in `block in verdict_valid?'
+        <uncaught_exception>
+          <verdict_id>With ExampleRestClient</verdict_id>
+          <class>ReturnContractError</class>
+          <message>
+            Contract violation for return value: Expected: Bool, Actual: nil
+            Value guarded in: Album::verdict_field_valid? With Contract: Log,
+            String, Symbol =&gt; Bool At:
+            c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/data/album.rb:26 
+          </message>
+          <backtrace>
+            <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:36:in `block in verdict_valid?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:35:in `verdict_valid?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/data_valid_simple_test.rb:23:in `block (2 levels) in test_data_valid_simple'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/data_valid_simple_test.rb:17:in `block in test_data_valid_simple'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/data_valid_simple_test.rb:11:in `block (2 levels) in test_data_valid_simple'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/data_valid_simple_test.rb:9:in `block in test_data_valid_simple'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/example_rest_client.rb:18:in `block in with'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/example_rest_client.rb:14:in `with'
@@ -120,79 +117,26 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `bl
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:11:in `prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/data_valid_simple_test.rb:8:in `test_data_valid_simple']]>
-              </backtrace>
-            </exception>
-          </verdict>
-        </section>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='album not valid userId - integer' message='userId positive integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Fixnum</exp_value>
-            <act_value>0</act_value>
-          </verdict>
-          <verdict id='album not valid userId - positive' message='userId positive integer' method='verdict_assert_operator?' outcome='failed' volatile='false'>
-            <object_1>0</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-            <exception>
-              <class>Minitest::Assertion</class>
-              <message>Expected 0 to be &gt; 0.</message>
-              <backtrace>
-                <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/data/album.rb:34:in `verdict_field_valid?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:36:in `block in verdict_valid?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:35:in `verdict_valid?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/data_valid_simple_test.rb:23:in `block (2 levels) in test_data_valid_simple'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/data_valid_simple_test.rb:17:in `block in test_data_valid_simple'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/example_rest_client.rb:18:in `block in with'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/example_rest_client.rb:14:in `with'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:12:in `block in prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:11:in `prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/data_valid_simple_test.rb:8:in `test_data_valid_simple']]>
-              </backtrace>
-            </exception>
-          </verdict>
-        </section>
-        <section name='verdict_assert_string_not_empty?'>
-          <verdict id='album not valid title - string' message='title nonempty string' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>String</exp_value>
-            <act_value/>
-          </verdict>
-          <verdict id='album not valid title - not empty' message='title nonempty string' method='verdict_refute_empty?' outcome='failed' volatile='false'>
-            <act_value/>
-            <exception>
-              <class>Minitest::Assertion</class>
-              <message>Expected # encoding: UTF-8 &quot;&quot; to not be empty.</message>
-              <backtrace>
-                <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/data/album.rb:39:in `verdict_field_valid?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:36:in `block in verdict_valid?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:35:in `verdict_valid?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/data_valid_simple_test.rb:23:in `block (2 levels) in test_data_valid_simple'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/data_valid_simple_test.rb:17:in `block in test_data_valid_simple'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/example_rest_client.rb:18:in `block in with'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/example_rest_client.rb:14:in `with'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:12:in `block in prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:11:in `prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/data_valid_simple_test.rb:8:in `test_data_valid_simple']]>
-              </backtrace>
-            </exception>
-          </verdict>
-        </section>
+          </backtrace>
+        </uncaught_exception>
       </section>
     </section>
+    <section name='Count of errors (unexpected exceptions)'>
+      <verdict id='error count' message='error count' method='verdict_assert_equal?' outcome='failed' volatile='true'>
+        <exp_value>0</exp_value>
+        <act_value>1</act_value>
+        <exception>
+          <class>Minitest::Assertion</class>
+          <message>Expected: 0 Actual: 1</message>
+          <backtrace>
+            <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:11:in `prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/data_valid_simple_test.rb:8:in `test_data_valid_simple']]>
+          </backtrace>
+        </exception>
+      </verdict>
+    </section>
   </test_method>
-  <section name='Count of errors (unexpected exceptions)'>
-    <verdict id='error count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
-      <exp_value>0</exp_value>
-      <act_value>0</act_value>
-    </verdict>
-  </section>
 </data_valid_simple_test>
 ```
 
