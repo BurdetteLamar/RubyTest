@@ -28,12 +28,12 @@ class MarkdownHelper < BaseClass
           case
             when line.start_with?(NAVIGATION_LINKS_TAG)
               if prev_file_path
-                prev_link = format('**Prev Stop** [%s](%s)', prev_title, prev_file_path)
+                prev_link = format('**Prev Stop:** [%s](%s)', prev_title, prev_file_path)
                 md_file.puts(prev_link)
                 md_file.puts('')
               end
               if next_file_path
-                next_link = format('**Next Stop** [%s](%s)', next_title, next_file_path)
+                next_link = format('**Next Stop:** [%s](%s)', next_title, next_file_path)
                 md_file.puts(next_link)
                 md_file.puts('')
               end

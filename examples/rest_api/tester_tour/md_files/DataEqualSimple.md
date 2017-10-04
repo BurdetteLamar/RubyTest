@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop** [Creating a Complex Data Object](./DataNewComplex.md)
+**Prev Stop:** [Creating a Complex Data Object](./DataNewComplex.md)
 
-**Next Stop** [Verifying a Complex Data Object](./DataEqualComplex.md)
+**Next Stop:** [Verifying a Complex Data Object](./DataEqualComplex.md)
 
 
 # Verifying a Simple Data Object
@@ -55,10 +55,10 @@ Notes:
 ```xml
 <data_equal_simple_test>
   <summary errors='0' failures='1' verdicts='7'/>
-  <test_method duration_seconds='1.498' name='data_equal_simple_test' timestamp='2017-10-02-Mon-16.26.04.739'>
+  <test_method duration_seconds='1.482' name='data_equal_simple_test' timestamp='2017-10-04-Wed-13.02.06.643'>
     <section name='With ExampleRestClient'>
       <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
-        <execution duration_seconds='1.473' timestamp='2017-10-02-Mon-16.26.04.744'/>
+        <execution duration_seconds='1.482' timestamp='2017-10-04-Wed-13.02.06.643'/>
       </REST_API>
       <section name='These are equal'>
         <verdict id='album equal-id' message='Using Album.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
@@ -82,9 +82,9 @@ Notes:
             <class>Minitest::Assertion</class>
             <message>Expected: 1 Actual: 2</message>
             <backtrace>
-              <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:131:in `block in verdict_equal_recursive?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:120:in `verdict_equal_recursive?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:46:in `verdict_equal?'
+              <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:140:in `block in verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:129:in `verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:55:in `verdict_equal?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/data_equal_simple_test.rb:18:in `block (2 levels) in test_data_equal_simple'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/data_equal_simple_test.rb:15:in `block in test_data_equal_simple'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
@@ -125,7 +125,7 @@ Notes:
 - In the first section, all verdicts pass.
 - In the second section, one verdict fails.
 
-**Prev Stop** [Creating a Complex Data Object](./DataNewComplex.md)
+**Prev Stop:** [Creating a Complex Data Object](./DataNewComplex.md)
 
-**Next Stop** [Verifying a Complex Data Object](./DataEqualComplex.md)
+**Next Stop:** [Verifying a Complex Data Object](./DataEqualComplex.md)
 

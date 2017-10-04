@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop** [Verifying a Simple Data Object](./DataEqualSimple.md)
+**Prev Stop:** [Verifying a Simple Data Object](./DataEqualSimple.md)
 
-**Next Stop** [Test for GET Albums](./GetAlbums.md)
+**Next Stop:** [Validating a Simple Data Object](./DataValidSimple.md)
 
 
 # Verifying a Complex Data Object
@@ -55,10 +55,10 @@ Notes:
 ```xml
 <data_equal_complex_test>
   <summary errors='0' failures='1' verdicts='31'/>
-  <test_method duration_seconds='1.574' name='data_equal_complex_test' timestamp='2017-10-02-Mon-16.26.07.283'>
+  <test_method duration_seconds='1.534' name='data_equal_complex_test' timestamp='2017-10-04-Wed-13.02.09.217'>
     <section name='With ExampleRestClient'>
       <REST_API method='GET' url='https://jsonplaceholder.typicode.com/users'>
-        <execution duration_seconds='1.527' timestamp='2017-10-02-Mon-16.26.07.288'/>
+        <execution duration_seconds='1.503' timestamp='2017-10-04-Wed-13.02.09.217'/>
       </REST_API>
       <section name='These are equal'>
         <verdict id='user equal-id' message='Using User.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
@@ -170,15 +170,15 @@ Notes:
                 <class>Minitest::Assertion</class>
                 <message>Expected: -37.3159 Actual: -36.3159</message>
                 <backtrace>
-                  <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:131:in `block in verdict_equal_recursive?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:120:in `verdict_equal_recursive?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:128:in `block (2 levels) in verdict_equal_recursive?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:126:in `block in verdict_equal_recursive?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:120:in `verdict_equal_recursive?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:128:in `block (2 levels) in verdict_equal_recursive?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:126:in `block in verdict_equal_recursive?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:120:in `verdict_equal_recursive?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:46:in `verdict_equal?'
+                  <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:140:in `block in verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:129:in `verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:137:in `block (2 levels) in verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:135:in `block in verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:129:in `verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:137:in `block (2 levels) in verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:135:in `block in verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:129:in `verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:55:in `verdict_equal?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/data_equal_complex_test.rb:18:in `block (2 levels) in test_data_equal_complex'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/data_equal_complex_test.rb:15:in `block in test_data_equal_complex'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
@@ -237,7 +237,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/
 - In the first section, all verdicts pass.
 - In the second section, one verdict fails.
 
-**Prev Stop** [Verifying a Simple Data Object](./DataEqualSimple.md)
+**Prev Stop:** [Verifying a Simple Data Object](./DataEqualSimple.md)
 
-**Next Stop** [Test for GET Albums](./GetAlbums.md)
+**Next Stop:** [Validating a Simple Data Object](./DataValidSimple.md)
 

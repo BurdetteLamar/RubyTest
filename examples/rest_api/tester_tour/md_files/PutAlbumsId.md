@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop** [Test for DELETE Albums/_id_](./DeleteAlbumsId.md)
+**Prev Stop:** [Test for DELETE Albums/_id_](./DeleteAlbumsId.md)
 
-**Next Stop** [Test for POST Albums](./PostAlbums.md)
+**Next Stop:** [Test for POST Albums](./PostAlbums.md)
 
 
 # Test for PUT Albums/_id_
@@ -57,12 +57,12 @@ Notes:
 ```xml
 <put_albums_id_test>
   <summary errors='0' failures='1' verdicts='7'/>
-  <test_method name='put_albums_id_test' timestamp='2017-10-02-Mon-16.26.18.595'>
-    <section duration_seconds='1.900' name='With ExampleRestClient'>
+  <test_method name='put_albums_id_test' timestamp='2017-10-04-Wed-13.02.23.756'>
+    <section duration_seconds='2.243' name='With ExampleRestClient'>
       <section name='Test endpoint PUT albums/id'>
         <section name='Make a modified album'>
           <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
-            <execution duration_seconds='1.515' timestamp='2017-10-02-Mon-16.26.18.605'/>
+            <execution duration_seconds='1.524' timestamp='2017-10-04-Wed-13.02.23.758'/>
           </REST_API>
           <section name='Album to put'>
             <section name='Album'>
@@ -73,10 +73,10 @@ Notes:
           </section>
         </section>
         <section name='PUT the album'>
-          <section name='PUT album' timestamp='2017-10-02-Mon-16.26.20.120'>
+          <section name='PUT album' timestamp='2017-10-04-Wed-13.02.25.293'>
             <REST_API method='PUT' url='https://jsonplaceholder.typicode.com/albums/1'>
               <parameters id='1' title='My new title' userId='1'/>
-              <execution duration_seconds='0.260' timestamp='2017-10-02-Mon-16.26.20.120'/>
+              <execution duration_seconds='0.528' timestamp='2017-10-04-Wed-13.02.25.294'/>
             </REST_API>
             <section name='Evaluation'>
               <verdict id='Put-id' message='Put' method='verdict_assert_equal?' outcome='passed' volatile='false'>
@@ -92,7 +92,7 @@ Notes:
                 <act_value>My new title</act_value>
               </verdict>
               <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums/1'>
-                <execution duration_seconds='0.062' timestamp='2017-10-02-Mon-16.26.20.385'/>
+                <execution duration_seconds='0.090' timestamp='2017-10-04-Wed-13.02.25.830'/>
               </REST_API>
               <verdict id='Fetched-id' message='Fetched' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>1</exp_value>
@@ -112,9 +112,9 @@ Notes:
                     -&quot;My new title&quot; +&quot;quidem molestiae enim&quot;
                   </message>
                   <backtrace>
-                    <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:131:in `block in verdict_equal_recursive?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:120:in `verdict_equal_recursive?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:46:in `verdict_equal?'
+                    <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:140:in `block in verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:129:in `verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:55:in `verdict_equal?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/endpoints/base_class_for_put_id.rb:25:in `block (2 levels) in verdict_call_and_verify_success'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/endpoints/base_class_for_put_id.rb:21:in `block in verdict_call_and_verify_success'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/base_classes/endpoints/base_class_for_put_id.rb:19:in `verdict_call_and_verify_success'
@@ -150,12 +150,12 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/rest_api/tester_tour/tests/
 ```
 
 - The fetched album does not match the put album, because JSONPlaceholder does not really update the album.  That is intentional, and is documented at the website.
-**Prev Stop** [Test for DELETE Albums/_id_](./DeleteAlbumsId.md)
+**Prev Stop:** [Test for DELETE Albums/_id_](./DeleteAlbumsId.md)
 
-**Next Stop** [Test for POST Albums](./PostAlbums.md)
+**Next Stop:** [Test for POST Albums](./PostAlbums.md)
 
 
-**Prev Stop** [Test for DELETE Albums/_id_](./DeleteAlbumsId.md)
+**Prev Stop:** [Test for DELETE Albums/_id_](./DeleteAlbumsId.md)
 
-**Next Stop** [Test for POST Albums](./PostAlbums.md)
+**Next Stop:** [Test for POST Albums](./PostAlbums.md)
 

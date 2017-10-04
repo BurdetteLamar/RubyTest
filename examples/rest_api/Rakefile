@@ -116,6 +116,7 @@ EOT
       data_new_complex
       data_equal_simple
       data_equal_complex
+      data_valid_simple
       get_albums
       get_albums_id
       delete_albums_id

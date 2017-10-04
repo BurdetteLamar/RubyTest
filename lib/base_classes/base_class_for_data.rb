@@ -29,6 +29,15 @@ class BaseClassForData < BaseClass
     nil
   end
 
+  Contract Log, String => Bool
+  def verdict_valid?(log, verdict_id)
+    valid = true
+    fields.each do |field|
+      verdict_field_valid?(log, format('%s %s', verdict_id, field), field) && valid
+    end
+    valid
+  end
+
   Contract Any, Any, ArrayOf[Symbol] => Bool
   # Compare recursively, so that nested objects are compared.
   def self.equal?(expected_obj, actual_obj, fields_to_ignore = [])

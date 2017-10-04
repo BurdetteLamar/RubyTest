@@ -74,9 +74,9 @@ class ValuesHelperTest < Minitest::Test
 
   end
 
-  def test_strings_in_range
+  def test_strings_in_length_range
 
-    method = :strings_in_range
+    method = :strings_in_length_range
 
     # Good data.
     [
@@ -120,9 +120,9 @@ class ValuesHelperTest < Minitest::Test
 
   end
 
-  def test_strings_not_in_range
+  def test_strings_not_in_length_range
 
-    method = :strings_not_in_range
+    method = :strings_not_in_length_range
 
     # Good data.
     [

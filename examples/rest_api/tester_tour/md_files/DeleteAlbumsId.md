@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop** [Test for GET Albums/_id_](./GetAlbumsId.md)
+**Prev Stop:** [Test for GET Albums/_id_](./GetAlbumsId.md)
 
-**Next Stop** [Test for PUT Albums/_id_](./PutAlbumsId.md)
+**Next Stop:** [Test for PUT Albums/_id_](./PutAlbumsId.md)
 
 
 # Test for DELETE Albums/_id_
@@ -52,12 +52,12 @@ Notes:
 ```xml
 <delete_albums_id_test>
   <summary errors='0' failures='1' verdicts='3'/>
-  <test_method name='delete_albums_id_test' timestamp='2017-10-02-Mon-16.26.15.399'>
-    <section duration_seconds='2.160' name='With ExampleRestClient'>
+  <test_method name='delete_albums_id_test' timestamp='2017-10-04-Wed-13.02.19.755'>
+    <section duration_seconds='2.826' name='With ExampleRestClient'>
       <section name='Test endpoint DELETE albums/id'>
         <section name='Fetch an album to DELETE'>
           <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
-            <execution duration_seconds='1.483' timestamp='2017-10-02-Mon-16.26.15.399'/>
+            <execution duration_seconds='1.516' timestamp='2017-10-04-Wed-13.02.19.758'/>
           </REST_API>
           <section name='Album fetched'>
             <section name='Album'>
@@ -68,16 +68,16 @@ Notes:
           </section>
         </section>
         <section name='DELETE the album'>
-          <section name='DELETE album' timestamp='2017-10-02-Mon-16.26.16.882'>
+          <section name='DELETE album' timestamp='2017-10-04-Wed-13.02.21.275'>
             <REST_API method='DELETE' url='https://jsonplaceholder.typicode.com/albums/1'>
-              <execution duration_seconds='0.567' timestamp='2017-10-02-Mon-16.26.16.882'/>
+              <execution duration_seconds='1.208' timestamp='2017-10-04-Wed-13.02.21.275'/>
             </REST_API>
             <section name='Evaluation'>
               <verdict id='payload nil' message='Payload nil' method='verdict_assert_nil?' outcome='passed' volatile='false'>
                 <act_value>nil</act_value>
               </verdict>
               <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums/1'>
-                <execution duration_seconds='0.110' timestamp='2017-10-02-Mon-16.26.17.449'/>
+                <execution duration_seconds='0.095' timestamp='2017-10-04-Wed-13.02.22.483'/>
               </REST_API>
               <verdict id='DELETE album' message='Album not exist' method='verdict_refute?' outcome='failed' volatile='false'>
                 <act_value>true</act_value>
@@ -124,7 +124,7 @@ Notes:
 
 - The verdict that confirms the deletion fails, because the JSONPlaceholder REST API does not really delete the album.  That is intentional, and is documented at the website.
 
-**Prev Stop** [Test for GET Albums/_id_](./GetAlbumsId.md)
+**Prev Stop:** [Test for GET Albums/_id_](./GetAlbumsId.md)
 
-**Next Stop** [Test for PUT Albums/_id_](./PutAlbumsId.md)
+**Next Stop:** [Test for PUT Albums/_id_](./PutAlbumsId.md)
 

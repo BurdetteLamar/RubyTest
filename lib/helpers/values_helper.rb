@@ -34,7 +34,7 @@ class ValuesHelper < BaseClass
 
   Contract Range, Maybe[String] => HashOf[Symbol, Maybe[String]]
   # Return hash of strings in range.
-  def self.strings_in_range(range, base_string=nil)
+  def self.strings_in_length_range(range, base_string=nil)
     {
         :max_length => StringHelper.string_of_max_length(range, base_string),
         :min_length => StringHelper.string_of_min_length(range, base_string),
@@ -43,7 +43,7 @@ class ValuesHelper < BaseClass
 
   Contract Range, Maybe[String] => HashOf[Symbol, Maybe[String]]
   # Return hash of strings out of range.
-  def self.strings_not_in_range(range, base_string=nil)
+  def self.strings_not_in_length_range(range, base_string=nil)
     values = {
         :too_short => StringHelper.string_too_short(range, base_string),
         :too_long => StringHelper.string_too_long(range, base_string),

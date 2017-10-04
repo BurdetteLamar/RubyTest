@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop** [Verdicts](./Verdicts.md)
+**Prev Stop:** [Verdicts](./Verdicts.md)
 
-**Next Stop** [Logging a Simple Data Object](./DataLogSimple.md)
+**Next Stop:** [Logging a Simple Data Object](./DataLogSimple.md)
 
 
 # Exceptions, Rescued and Not
@@ -58,8 +58,8 @@ Notes:
 ```xml
 <exceptions_test>
   <summary errors='2' failures='1' verdicts='2'/>
-  <test_method name='exceptions_test' timestamp='2017-10-02-Mon-16.25.56.398'>
-    <section duration_seconds='0.010' name='With ExampleRestClient'>
+  <test_method name='exceptions_test' timestamp='2017-10-04-Wed-13.01.52.645'>
+    <section duration_seconds='0.004' name='With ExampleRestClient'>
       <section name='Section rescues exception'>
         <uncaught_exception>
           <verdict_id>Section rescues exception</verdict_id>
@@ -132,7 +132,7 @@ Notes:
 - Each logged exception includes its message and backtrace.
 - The second exception, the one the test didn't rescue, is actually rescued by the log itself, and of course logged.
 
-**Prev Stop** [Verdicts](./Verdicts.md)
+**Prev Stop:** [Verdicts](./Verdicts.md)
 
-**Next Stop** [Logging a Simple Data Object](./DataLogSimple.md)
+**Next Stop:** [Logging a Simple Data Object](./DataLogSimple.md)
 
