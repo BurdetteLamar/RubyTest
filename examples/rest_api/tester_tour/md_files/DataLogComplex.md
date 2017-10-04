@@ -43,12 +43,12 @@ Notes:
 ```xml
 <data_log_complex_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='1.495' name='data_log_complex_test' timestamp='2017-10-03-Tue-17.07.14.060'>
+  <test_method duration_seconds='1.542' name='data_log_complex_test' timestamp='2017-10-04-Wed-12.44.20.832'>
     <section name='With ExampleRestClient'>
       <section name='Fetch and log an instance of User'>
         <section name='Fetch a user'>
           <REST_API method='GET' url='https://jsonplaceholder.typicode.com/users'>
-            <execution duration_seconds='1.485' timestamp='2017-10-03-Tue-17.07.14.062'/>
+            <execution duration_seconds='1.529' timestamp='2017-10-04-Wed-12.44.20.836'/>
           </REST_API>
         </section>
         <section name='Fetched user'>

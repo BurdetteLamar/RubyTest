@@ -40,7 +40,7 @@ Notes:
 ```xml
 <test_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.002' name='test_test' timestamp='2017-10-03-Tue-17.07.00.943'>
+  <test_method duration_seconds='0.002' name='test_test' timestamp='2017-10-04-Wed-12.44.07.634'>
     <section name='With ExampleRestClient'>
       <comment>Test code goes here</comment>
       <comment>Method prelude yields two objects:</comment>

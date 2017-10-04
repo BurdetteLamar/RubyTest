@@ -57,12 +57,12 @@ Notes:
 ```xml
 <put_albums_id_test>
   <summary errors='0' failures='1' verdicts='7'/>
-  <test_method name='put_albums_id_test' timestamp='2017-10-03-Tue-17.07.35.662'>
-    <section duration_seconds='2.063' name='With ExampleRestClient'>
+  <test_method name='put_albums_id_test' timestamp='2017-10-04-Wed-12.44.42.282'>
+    <section duration_seconds='1.895' name='With ExampleRestClient'>
       <section name='Test endpoint PUT albums/id'>
         <section name='Make a modified album'>
           <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
-            <execution duration_seconds='1.637' timestamp='2017-10-03-Tue-17.07.35.663'/>
+            <execution duration_seconds='1.516' timestamp='2017-10-04-Wed-12.44.42.283'/>
           </REST_API>
           <section name='Album to put'>
             <section name='Album'>
@@ -73,10 +73,10 @@ Notes:
           </section>
         </section>
         <section name='PUT the album'>
-          <section name='PUT album' timestamp='2017-10-03-Tue-17.07.37.307'>
+          <section name='PUT album' timestamp='2017-10-04-Wed-12.44.43.806'>
             <REST_API method='PUT' url='https://jsonplaceholder.typicode.com/albums/1'>
               <parameters id='1' title='My new title' userId='1'/>
-              <execution duration_seconds='0.265' timestamp='2017-10-03-Tue-17.07.37.307'/>
+              <execution duration_seconds='0.199' timestamp='2017-10-04-Wed-12.44.43.806'/>
             </REST_API>
             <section name='Evaluation'>
               <verdict id='Put-id' message='Put' method='verdict_assert_equal?' outcome='passed' volatile='false'>
@@ -92,7 +92,7 @@ Notes:
                 <act_value>My new title</act_value>
               </verdict>
               <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums/1'>
-                <execution duration_seconds='0.073' timestamp='2017-10-03-Tue-17.07.37.578'/>
+                <execution duration_seconds='0.085' timestamp='2017-10-04-Wed-12.44.44.014'/>
               </REST_API>
               <verdict id='Fetched-id' message='Fetched' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>1</exp_value>

@@ -55,10 +55,10 @@ Notes:
 ```xml
 <data_equal_simple_test>
   <summary errors='0' failures='1' verdicts='7'/>
-  <test_method duration_seconds='1.522' name='data_equal_simple_test' timestamp='2017-10-03-Tue-17.07.18.869'>
+  <test_method duration_seconds='1.513' name='data_equal_simple_test' timestamp='2017-10-04-Wed-12.44.25.782'>
     <section name='With ExampleRestClient'>
       <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
-        <execution duration_seconds='1.502' timestamp='2017-10-03-Tue-17.07.18.869'/>
+        <execution duration_seconds='1.491' timestamp='2017-10-04-Wed-12.44.25.786'/>
       </REST_API>
       <section name='These are equal'>
         <verdict id='album equal-id' message='Using Album.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
