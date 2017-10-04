@@ -52,12 +52,12 @@ Notes:
 ```xml
 <delete_albums_id_test>
   <summary errors='0' failures='1' verdicts='3'/>
-  <test_method name='delete_albums_id_test' timestamp='2017-10-04-Wed-12.44.39.206'>
-    <section duration_seconds='1.944' name='With ExampleRestClient'>
+  <test_method name='delete_albums_id_test' timestamp='2017-10-04-Wed-13.02.19.755'>
+    <section duration_seconds='2.826' name='With ExampleRestClient'>
       <section name='Test endpoint DELETE albums/id'>
         <section name='Fetch an album to DELETE'>
           <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
-            <execution duration_seconds='1.534' timestamp='2017-10-04-Wed-12.44.39.210'/>
+            <execution duration_seconds='1.516' timestamp='2017-10-04-Wed-13.02.19.758'/>
           </REST_API>
           <section name='Album fetched'>
             <section name='Album'>
@@ -68,16 +68,16 @@ Notes:
           </section>
         </section>
         <section name='DELETE the album'>
-          <section name='DELETE album' timestamp='2017-10-04-Wed-12.44.40.750'>
+          <section name='DELETE album' timestamp='2017-10-04-Wed-13.02.21.275'>
             <REST_API method='DELETE' url='https://jsonplaceholder.typicode.com/albums/1'>
-              <execution duration_seconds='0.303' timestamp='2017-10-04-Wed-12.44.40.750'/>
+              <execution duration_seconds='1.208' timestamp='2017-10-04-Wed-13.02.21.275'/>
             </REST_API>
             <section name='Evaluation'>
               <verdict id='payload nil' message='Payload nil' method='verdict_assert_nil?' outcome='passed' volatile='false'>
                 <act_value>nil</act_value>
               </verdict>
               <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums/1'>
-                <execution duration_seconds='0.088' timestamp='2017-10-04-Wed-12.44.41.059'/>
+                <execution duration_seconds='0.095' timestamp='2017-10-04-Wed-13.02.22.483'/>
               </REST_API>
               <verdict id='DELETE album' message='Album not exist' method='verdict_refute?' outcome='failed' volatile='false'>
                 <act_value>true</act_value>

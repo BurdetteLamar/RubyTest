@@ -4,6 +4,12 @@
 
 ## Example Test
 
+The term _valid_, as used here, is about whether a value is of the correct _form_.  This is as distinguished from the earlier term _equal_, which is about whether the value is _correct_.
+
+For the values of `id` below, for example, the verifications are whether those values are positive integers.
+
+Example of usefulness:  creating a new user returns a `User` object with a new `id` value.  The _value_ of the `id` is unpredictable, but it is still useful to verify that it is a positive integer.
+
 [file_source](../tests/data_valid_simple_test.rb)
 
 Notes:

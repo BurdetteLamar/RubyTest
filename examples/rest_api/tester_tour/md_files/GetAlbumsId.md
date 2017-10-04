@@ -53,12 +53,12 @@ Notes:
 ```xml
 <get_albums_id_test>
   <summary errors='0' failures='0' verdicts='4'/>
-  <test_method name='get_albums_id_test' timestamp='2017-10-04-Wed-12.44.36.418'>
-    <section duration_seconds='1.620' name='With ExampleRestClient'>
+  <test_method name='get_albums_id_test' timestamp='2017-10-04-Wed-13.02.17.040'>
+    <section duration_seconds='1.616' name='With ExampleRestClient'>
       <section name='Test endpoint GET albums/id'>
         <section name='Fetch an album to GET'>
           <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
-            <execution duration_seconds='1.544' timestamp='2017-10-04-Wed-12.44.36.421'/>
+            <execution duration_seconds='1.522' timestamp='2017-10-04-Wed-13.02.17.040'/>
           </REST_API>
           <section name='Album fetched'>
             <section name='Album'>
@@ -69,9 +69,9 @@ Notes:
           </section>
         </section>
         <section name='GET the album'>
-          <section name='GET album' timestamp='2017-10-04-Wed-12.44.37.973'>
+          <section name='GET album' timestamp='2017-10-04-Wed-13.02.18.570'>
             <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums/1'>
-              <execution duration_seconds='0.062' timestamp='2017-10-04-Wed-12.44.37.973'/>
+              <execution duration_seconds='0.083' timestamp='2017-10-04-Wed-13.02.18.570'/>
             </REST_API>
             <section name='Evaluation'>
               <verdict id='Album-id' message='Got' method='verdict_assert_equal?' outcome='passed' volatile='false'>

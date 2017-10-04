@@ -8,6 +8,12 @@
 
 ## Example Test
 
+The term _valid_, as used here, is about whether a value is of the correct _form_.  This is as distinguished from the earlier term _equal_, which is about whether the value is _correct_.
+
+For the values of `id` below, for example, the verifications are whether those values are positive integers.
+
+Example of usefulness:  creating a new user returns a `User` object with a new `id` value.  The _value_ of the `id` is unpredictable, but it is still useful to verify that it is a positive integer.
+
 <code>data_valid_simple_test.rb</code>
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
@@ -53,11 +59,11 @@ Notes:
 ```xml
 <data_valid_simple_test>
   <summary errors='0' failures='3' verdicts='13'/>
-  <test_method duration_seconds='1.526' name='data_valid_simple_test' timestamp='2017-10-04-Wed-12.44.31.070'>
+  <test_method duration_seconds='1.476' name='data_valid_simple_test' timestamp='2017-10-04-Wed-13.02.11.865'>
     <section name='With ExampleRestClient'>
       <section name='This is valid'>
         <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
-          <execution duration_seconds='1.502' timestamp='2017-10-04-Wed-12.44.31.075'/>
+          <execution duration_seconds='1.455' timestamp='2017-10-04-Wed-13.02.11.870'/>
         </REST_API>
         <section name='verdict_assert_integer_positive?'>
           <verdict id='album valid id - integer' message='id positive integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>

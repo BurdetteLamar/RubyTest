@@ -48,13 +48,13 @@ Notes:
 ```xml
 <get_albums_test>
   <summary errors='0' failures='0' verdicts='7'/>
-  <test_method name='get_albums_test' timestamp='2017-10-04-Wed-12.44.33.707'>
-    <section duration_seconds='1.533' name='With ExampleRestClient'>
+  <test_method name='get_albums_test' timestamp='2017-10-04-Wed-13.02.14.498'>
+    <section duration_seconds='1.459' name='With ExampleRestClient'>
       <section name='Test endpoint GET albums'>
         <section name='GET albums'>
-          <section name='GET albums' timestamp='2017-10-04-Wed-12.44.33.708'>
+          <section name='GET albums' timestamp='2017-10-04-Wed-13.02.14.499'>
             <REST_API method='GET' url='https://jsonplaceholder.typicode.com/albums'>
-              <execution duration_seconds='1.514' timestamp='2017-10-04-Wed-12.44.33.708'/>
+              <execution duration_seconds='1.457' timestamp='2017-10-04-Wed-13.02.14.499'/>
             </REST_API>
             <section name='Evaluation'>
               <data fetched_object_count='100'/>
