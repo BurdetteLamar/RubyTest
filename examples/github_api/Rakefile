@@ -1,0 +1,220 @@
+require 'rexml/document'
+include REXML
+
+require_relative '../../lib/helpers/markdown_helper'
+require_relative '../../lib/helpers/string_helper'
+require_relative '../../lib/helpers/test_helper'
+
+desc 'Build Tester Tour'
+task :tester_tour do
+
+  # Make the markdown file path for the given name
+  def md_file_path_for_name(md_dir_path, name)
+    return nil if name.nil?
+    file_basename = format('%s', StringHelper.to_upper_camel_case(name))
+    md_file_name = format('%s.md', file_basename)
+    File.join(
+        md_dir_path,
+        md_file_name,
+    )
+  end
+
+  def template_file_path_for_name(template_dir_path, name)
+    file_basename = format('%s', StringHelper.to_upper_camel_case(name))
+    template_file_name = format('%s.txt', file_basename)
+    File.join(
+        template_dir_path,
+        template_file_name,
+    )
+
+  end
+
+  def title_from_template_file(template_file_path)
+    title = nil
+    title_tag = /^#\s+/
+    File.foreach(template_file_path) do |line|
+      if line.match(title_tag)
+        title = line.sub(title_tag, '').chomp
+        break
+      end
+    end
+    title
+  end
+
+  rakefile_dir_path = File.dirname(__FILE__)
+
+  tour_dir_path = File.join(
+      rakefile_dir_path,
+      'tester_tour',
+  )
+
+  # For the index
+  index_file_path = File.join(
+      rakefile_dir_path,
+      'TesterTour.md'
+  )
+  index_file = File.open(index_file_path, 'w')
+  heading_text = <<EOT
+# Tester Tour
+
+The Tester Tour covers only topics that are of interest to a tester who wants to develop and/or run tests for a REST API.
+
+This tester is distinguished from an infrastructure developer, who would want to develop infrastructure that supports testing a REST API.
+
+The tour shows how to use the example infrastructure to test a REST API.  The target REST API may be seen at:
+
+- [JSONPlaceholder](https://jsonplaceholder.typicode.com)
+
+Each following page assumes you've seen all its predecessors, so repetition is minimal.
+
+## Pages
+
+EOT
+  index_file << heading_text
+
+  test_dir_path = File.join(
+      tour_dir_path,
+      'tests',
+  )
+
+  log_dir_path = TestHelper.create_app_log_dir('github_api')
+  template_dir_path = File.join(
+      tour_dir_path,
+      'md_templates',
+  )
+  conditioned_log_dir_path = File.join(
+      tour_dir_path,
+      'logs',
+  )
+  FileUtils.mkdir_p(conditioned_log_dir_path)
+  md_dir_path = File.join(
+      tour_dir_path,
+      'md_files',
+  )
+  FileUtils.mkdir_p(md_dir_path)
+
+  # To do.
+  # names = %w/
+  #     verdict_return_values
+  #     data_valid_simple
+  #     data_valid_complex
+  #     data_exist
+  #     data_crud
+  #     data_convenience
+  #     helpers
+  #     volatility
+  # data_log_complex
+  # data_new_simple
+  # data_new_complex
+  # data_equal_simple
+  # data_equal_complex
+  # data_valid_simple
+  # get_albums
+  # get_albums_id
+  # delete_albums_id
+  # put_albums_id
+  # post_albums
+  # more_to_come
+  # /
+  # Done.
+  names = %w/
+  /
+  # In work.
+  names = %w/
+    test
+    sections
+    verdicts
+    exceptions
+    data_log_simple
+  /
+
+  titles = []
+  names.each do |name|
+    template_file_path = template_file_path_for_name(template_dir_path, name)
+    title = title_from_template_file(template_file_path)
+    titles.push(title)
+  end
+
+  names.each_with_index do |name, i|
+    test_file_name = format('%s_test.rb', name)
+    test_file_path = File.join(
+         test_dir_path,
+         test_file_name,
+    )
+    if File.exist?(test_file_path)
+      command = format('ruby %s', test_file_path)
+      system(command)
+      # Process the log.
+      log_file_name = format('test_%s.xml', name)
+      log_file_path = File.join(
+          log_dir_path,
+          log_file_name,
+      )
+      conditioned_file_path = File.join(
+          conditioned_log_dir_path,
+          log_file_name,
+      )
+      doc = nil
+      formatter = REXML::Formatters::Pretty.new(2)
+      formatter.compact = true
+      File.open(log_file_path, 'r') do |file|
+        doc = REXML::Document.new(file)
+      end
+      File.open(conditioned_file_path, 'w') do |file|
+        file.puts(formatter.write(doc.root, ''))
+      end
+    end
+
+    md_file_path = md_file_path_for_name(md_dir_path, name)
+    prev_name = i == 0 ? nil : names[i - 1]
+    prev_title = i == 0 ? nil : titles[i - 1]
+    prev_md_file_path = md_file_path_for_name('.', prev_name)
+    next_title = titles[i + 1]
+    next_md_file_path = md_file_path_for_name('.', names[i + 1])
+    template_file_path = template_file_path_for_name(template_dir_path, name)
+    options = {
+        :highlight => true,
+        :prev_file_path => prev_md_file_path,
+        :next_file_path => next_md_file_path,
+        :prev_title => prev_title,
+        :next_title => next_title,
+    }
+    MarkdownHelper.build_file(template_file_path, md_file_path, options)
+    md_file_name = File.basename(md_file_path)
+    relative_link_path = File.join(
+        '.',
+        'tester_tour',
+        'md_files',
+        md_file_name,
+    )
+    title = titles[i]
+    link_item = format('- [%s](%s)', title, relative_link_path)
+    index_file.puts(link_item)
+
+  end
+  index_file.close
+  FileUtils.rm_rf(conditioned_log_dir_path)
+
+end
+
+desc 'Run examples'
+task :examples do
+  rakefile_dir_path = File.dirname(__FILE__)
+  test_dir_path = File.join(
+                          rakefile_dir_path,
+                          'tests',
+  )
+  TestHelper.create_app_log_dir('github_api')
+  %w/
+      issue_labels
+    /.each do |name|
+    test_file_name = format('%s_test.rb', name)
+    test_file_path = File.join(
+        test_dir_path,
+        test_file_name,
+    )
+    command = format('ruby %s', test_file_path)
+    system(command)
+  end
+
+end

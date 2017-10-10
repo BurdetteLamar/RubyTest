@@ -1,0 +1,30 @@
+[navigation_links]
+
+# Test for GET Albums
+
+This page shows how to test GET Albums.
+
+## Example Test
+
+[file_source](../tests/get_albums_test.rb)
+
+Notes:
+
+- This test uses an endpoint, and therefore requires the corresponding class.
+- Method `GetAlbums.verdict_call_and_verify_success`:
+  1.  Accesses endpoint GET albums.
+  2.  Forms the response payload into new `Album` objects.
+  3.  Logs the count of returned albums.
+  4.  Logs the content of the first album.
+  5.  Verifies that each the value in the first album is valid (i.e., has the expected form).
+
+## Log
+
+[file_source](../logs/test_get_albums.xml)
+
+Notes:
+
+- Each `section` element whose `name` is `Rest client` records an interaction with the REST API, including any passed parameters.
+- The `section` whose `name` is `Evaluation` contains verdicts about the returned data.
+
+[navigation_links]

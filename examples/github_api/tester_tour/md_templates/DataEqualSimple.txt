@@ -1,0 +1,33 @@
+[navigation_links]
+
+# Verifying a Simple Data Object
+
+## Example Test
+
+[file_source](../tests/data_equal_simple_test.rb)
+
+Notes:
+
+- The test gets a known Album, then clones it.
+- We know that Album is flat, but it's good practice to use `deep_clone`, not `clone` just to be sure.
+- In the first section:
+  - Method `Album.equal?` returns `true`, but does no logging.
+  - The `fail unless` proves that it worked.
+  - Method `Album.verdict_equal?` verifies and logs each value in the albums.
+- In the second section:
+  - One value in the album is modified.
+  - Method `Album.equal?` returns `false`, but does no logging.
+  - The `fail if ` proves that it worked.
+  - Method `Album.verdict_equal?` verifies and logs each value in the albums.
+
+## Log
+
+[file_source](../logs/test_data_equal_simple.xml)
+
+Notes:
+
+- Each actual value is verified in a separate verdict.  This makes evaluating the test execution unambiguous.
+- In the first section, all verdicts pass.
+- In the second section, one verdict fails.
+
+[navigation_links]

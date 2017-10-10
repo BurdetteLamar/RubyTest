@@ -1,0 +1,21 @@
+[navigation_links]
+
+# Creating a Complex Data Object
+
+This page introduces complex data classes, and shows how to create instances of them.
+
+## Example Test
+
+[file_source](../tests/data_new_complex_test.rb)
+
+Notes:
+
+- When the `User` instance is created, the values for `:address` are formed into an instance of `User::Address`.
+- Similarly, the values for `:company` are formed into an instance of `User::Company`.
+- There is a further nesting in the values for `:address`:  it contains multi-valued data for `:geo`.  These values are formed into an instance of `User::Address::Geo`.
+
+## Log
+
+[file_source](../logs/test_data_new_complex.xml)
+
+[navigation_links]

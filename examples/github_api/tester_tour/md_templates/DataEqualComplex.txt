@@ -1,0 +1,31 @@
+[navigation_links]
+
+# Verifying a Complex Data Object
+
+## Example Test
+
+[file_source](../tests/data_equal_complex_test.rb)
+
+Notes:
+
+- The test gets a known User, then clones it.
+- We know that User is complex, so it's _necessary_ to use `deep_clone`, not `clone`.
+- In the first section:
+  - Method `User.equal?` returns `true`, but does no logging.
+  - The `fail unless` proves that it worked.
+  - Method `User.verdict_equal?` verifies and logs each value in the users.
+- In the second section:
+  - One value in the user is modified.  The changed value is in a nested object.
+  - Method `User.equal?` returns `false`, but does no logging.
+  - The `fail if ` proves that it worked.
+  - Method `User.verdict_equal?` verifies and logs each value in the users.
+
+## Log
+
+[file_source](../logs/test_data_equal_complex.xml)
+
+- Each actual value, even one that's in a nested object, is verified in a separate verdict.  This makes evaluating the test execution unambiguous.
+- In the first section, all verdicts pass.
+- In the second section, one verdict fails.
+
+[navigation_links]
