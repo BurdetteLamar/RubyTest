@@ -40,7 +40,7 @@ Notes:
 ```xml
 <test_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='test_test' timestamp='2017-10-10-Tue-09.37.48.966'>
+  <test_method duration_seconds='0.002' name='test_test' timestamp='2017-10-10-Tue-18.03.33.434'>
     <section name='With GithubClient'>
       <comment>Test code goes here</comment>
       <comment>Method prelude yields two objects:</comment>

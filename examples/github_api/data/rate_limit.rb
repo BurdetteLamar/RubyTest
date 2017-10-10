@@ -24,6 +24,11 @@ class RateLimit < BaseClassForResource
     rate.verdict_valid?(log, verdict_id + ' - rate')
   end
 
+  def self.get(client)
+    require_relative '../endpoints/get_rate_limit'
+    GetRateLimit.call(client)
+  end
+
   class Info < BaseClassForData
 
     FIELDS = Set.new([
@@ -31,6 +36,8 @@ class RateLimit < BaseClassForResource
         :remaining,
         :reset,
                      ])
+
+    attr_accessor *FIELDS
 
     # Constructor.
     Contract Hash => nil
@@ -51,6 +58,7 @@ class RateLimit < BaseClassForResource
     FIELDS = Set.new([
         :core,
         :search,
+        :graphql
                      ])
 
     attr_accessor *FIELDS
@@ -59,8 +67,9 @@ class RateLimit < BaseClassForResource
     Contract Hash => nil
     def initialize(values = {})
       super(FIELDS, values)
-      self.core = Info.new(self.core) unless self.core.nil?
-      self.search = Info.new(self.search) unless self.search.nil?
+      self.core = Core.new(self.core) unless self.core.nil?
+      self.search = Search.new(self.search) unless self.search.nil?
+      self.graphql = Graphql.new(self.graphql) unless self.graphql.nil?
       nil
     end
 
@@ -72,7 +81,8 @@ class RateLimit < BaseClassForResource
 
     attr_accessor \
         :core,
-        :search
+        :search,
+        :graphql
 
   end
 
@@ -81,10 +91,17 @@ class RateLimit < BaseClassForResource
       :rate
 
   class Rate < Info
+  end
+
+  class Core < Info
 
   end
 
-  def get(client)
+  class Search < Info
+
+  end
+
+  class Graphql < Info
 
   end
 

@@ -16,13 +16,13 @@ class GetIssuesNumberLabels < BaseClassForEndpoint
     issue_labels = []
     payload.each do |hash|
       rehash = HashHelper.rehash_to_symbol_keys(hash)
-      obj = ObjectHelper.instantiate_class_for_class_name(IssueLabel.name, rehash)
-      issue_labels.push(obj)
+      issue_label = IssueLabel.new(rehash)
+      issue_labels.push(issue_label)
     end
     [issue_labels, payload]
   end
 
-  Contract GithubClient, Log, String, Maybe[Hash] => ArrayOf[IssueLabel]
+  Contract GithubClient, Log, String, Fixnum, Maybe[Hash] => ArrayOf[IssueLabel]
   def self.verdict_call_and_verify_success(client, log, verdict_id, issue_number, query_elements = {})
     log.section(verdict_id, :rescue, :timestamp, :duration) do
       issue_labels = self.call(client, issue_number, query_elements)

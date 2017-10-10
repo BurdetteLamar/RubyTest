@@ -10,20 +10,44 @@ This page introduces complex data classes, and shows how to log instances of the
 
 Notes:
 
-- Class `User` derives from base classes that provide it with the ability to log itself, as seen here in the call to method `user.log`.
-
+- Class `RateLimit` derives from base classes that provide it with the ability to log itself, as seen here in the call to method `rate_limit.log`.
 ## Log
 
 [file_source](../logs/test_data_log_complex.xml)
 
 Notes:
 
-- Unlike an album, which has only scalar values, a user has a more complex structure.
-- The section named `Fetched user' shows the values in the fetched user.
-- Some of the values, such as those for `name` and `username`, are simple scalars.
-- Other values, such as those for `address` and `company`, are more complex.
-- The values for `address` are in an instance of `User::Address`.
-- Similarly, the values for `company` are in an instance of `User::Company`.
-- There is a further nesting in the values for `address`:  it contains multi-valued data for `geo`.  These values are in an instance of `User::Address::Geo`.
+- The section named `Fetched rate limit` logs the values in the fetched rate limit.
+- Nested data objects are recursively logged.
+- The actual data returned by the client has this structure:
+
+```ruby
+{
+    :resources => {
+        :core => {
+            :limit => 5000,
+            :remaining => 4984,
+            :reset => 1507676679,
+        },
+        :search => {
+            :limit => 30,
+            :remaining => 30,
+            :reset => 1507673695,
+        },
+        :graphql => {
+            :limit => 5000,
+            :remaining => 5000,
+            :reset => 1507677235,
+        }
+    },
+    :rate => {
+        :limit => 5000,
+        :remaining => 4984,
+        :reset => 1507676679,
+    }
+}
+```
+- The test framework automatically forms these nested hashes into nested objects.
+- The nested objects recursively log themselves into nested log sections.
 
 [navigation_links]

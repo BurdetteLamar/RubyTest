@@ -11,9 +11,10 @@ class DataLogComplexTest < BaseClassForTest
         log.section('Fetch rate limit') do
           rate_limit = RateLimit.get(client)
         end
-        rate_limit.log(log, 'Fetched user')
+        rate_limit.log(log, 'Fetched rate limit')
       end
     end
   end
 
 end
+

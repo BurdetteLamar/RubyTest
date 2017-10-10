@@ -103,7 +103,6 @@ EOT
   #     data_convenience
   #     helpers
   #     volatility
-  # data_log_complex
   # data_new_simple
   # data_new_complex
   # data_equal_simple
@@ -126,6 +125,7 @@ EOT
     verdicts
     exceptions
     data_log_simple
+    data_log_complex
   /
 
   titles = []
