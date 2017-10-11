@@ -8,10 +8,10 @@ class DataNewTest < BaseClassForTest
     prelude do |client, log|
       log.section('Fetch and log an instance of IssueLabel') do
         issue_label = nil
-        log.section('Fetch an issuelabel') do
+        log.section('Fetch an issue label') do
           issue_label = IssueLabel.get_first(client, 1)
         end
-        issue_label.log(log, 'Fetched issuelabel')
+        issue_label.log(log, 'Fetched issue label')
       end
     end
   end

@@ -22,10 +22,10 @@ class DataNewTest < BaseClassForTest
     prelude do |client, log|
       log.section('Fetch and log an instance of IssueLabel') do
         issue_label = nil
-        log.section('Fetch an issuelabel') do
+        log.section('Fetch an issue label') do
           issue_label = IssueLabel.get_first(client, 1)
         end
-        issue_label.log(log, 'Fetched issuelabel')
+        issue_label.log(log, 'Fetched issue label')
       end
     end
   end
@@ -44,18 +44,18 @@ Notes:
 ```xml
 <data_log_simple_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='7.810' name='data_log_simple_test' timestamp='2017-10-11-Wed-15.55.57.353'>
+  <test_method duration_seconds='2.210' name='data_log_simple_test' timestamp='2017-10-11-Wed-16.35.22.421'>
     <section name='With GithubClient'>
       <section name='Fetch and log an instance of IssueLabel'>
-        <section name='Fetch an issuelabel'>
+        <section name='Fetch an issue label'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='7.522' timestamp='2017-10-11-Wed-15.55.57.357'/>
+            <execution duration_seconds='1.933' timestamp='2017-10-11-Wed-16.35.22.425'/>
           </GithubClient>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='0.282' timestamp='2017-10-11-Wed-15.56.04.879'/>
+            <execution duration_seconds='0.271' timestamp='2017-10-11-Wed-16.35.24.358'/>
           </GithubClient>
         </section>
-        <section name='Fetched issuelabel'>
+        <section name='Fetched issue label'>
           <data field='id' value='710733210'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/enhancement'/>
           <data field='name' value='enhancement'/>

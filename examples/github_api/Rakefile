@@ -96,22 +96,19 @@ EOT
   # To do.
   # names = %w/
   #     verdict_return_values
-  #     data_valid_simple
   #     data_valid_complex
   #     data_exist
   #     data_crud
   #     data_convenience
   #     helpers
   #     volatility
-  # data_equal_simple
-  # data_equal_complex
   # data_valid_simple
   # get_albums
   # get_albums_id
   # delete_albums_id
   # put_albums_id
   # post_albums
-  # more_to_come
+  # crud
   # /
   # Done.
   names = %w/
@@ -126,6 +123,9 @@ EOT
     data_log_complex
     data_new_simple
     data_new_complex
+    data_equal_simple
+    data_equal_complex
+    more_to_come
   /
 
   titles = []

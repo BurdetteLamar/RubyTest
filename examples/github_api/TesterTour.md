@@ -20,3 +20,6 @@ Each following page assumes you've seen all its predecessors, so repetition is m
 - [Logging a Complex Data Object](./tester_tour/md_files/DataLogComplex.md)
 - [Creating a Simple Data Object](./tester_tour/md_files/DataNewSimple.md)
 - [Creating a Complex Data Object](./tester_tour/md_files/DataNewComplex.md)
+- [Verifying a Simple Data Object](./tester_tour/md_files/DataEqualSimple.md)
+- [Verifying a Complex Data Object](./tester_tour/md_files/DataEqualComplex.md)
+- [More to Come ...](./tester_tour/md_files/MoreToCome.md)

@@ -1,6 +1,8 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
 **Prev Stop:** [Creating a Simple Data Object](./DataNewSimple.md)
 
+**Next Stop:** [Verifying a Simple Data Object](./DataEqualSimple.md)
+
 
 # Creating a Complex Data Object
 
@@ -64,7 +66,7 @@ Notes:
 ```xml
 <data_new_complex_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='data_new_complex_test' timestamp='2017-10-11-Wed-15.56.09.919'>
+  <test_method duration_seconds='0.004' name='data_new_complex_test' timestamp='2017-10-11-Wed-16.35.29.380'>
     <section name='With GithubClient'>
       <section name='Create and log an instance of a complex data object'>
         <section name='RateLimit'>
@@ -114,4 +116,6 @@ Notes:
     - `RateLimit::Rate`
 
 **Prev Stop:** [Creating a Simple Data Object](./DataNewSimple.md)
+
+**Next Stop:** [Verifying a Simple Data Object](./DataEqualSimple.md)
 

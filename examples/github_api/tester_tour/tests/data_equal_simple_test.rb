@@ -1,21 +1,26 @@
 require_relative '../../base_classes/base_class_for_test'
 
-require_relative '../../../rest_api/data/album'
+require_relative '../../data/issue_label'
 
 class DataEqualTest < BaseClassForTest
 
   def test_data_equal_simple
     prelude do |client, log|
-      album_0 = Album.get_first(client)
-      album_1 = Album.deep_clone(album_0)
+      issue_label_0 = nil
+      log.section('Fetch an instance of IssueLabel') do
+        log.section('Fetch an issuelabel') do
+          issue_label_0 = IssueLabel.get_first(client, 1)
+        end
+      end
+      issue_label_1 = IssueLabel.deep_clone(issue_label_0)
       log.section('These are equal') do
-        fail unless Album.equal?(album_0, album_1)
-        Album.verdict_equal?(log, 'album equal', album_0, album_1, 'Using Album.verdict_equal?')
+        fail unless IssueLabel.equal?(issue_label_0, issue_label_1)
+        IssueLabel.verdict_equal?(log, 'issue label equal', issue_label_0, issue_label_1, 'Using IssueLabel.verdict_equal?')
       end
       log.section('These are not equal') do
-        album_1.id += 1
-        fail if Album.equal?(album_0, album_1)
-        Album.verdict_equal?(log, 'album not equal', album_0, album_1, 'Using Album.verdict_equal?')
+        issue_label_1.id += 1
+        fail if IssueLabel.equal?(issue_label_0, issue_label_1)
+        IssueLabel.verdict_equal?(log, 'issue label not equal', issue_label_0, issue_label_1, 'Using IssueLabel.verdict_equal?')
       end
     end
   end
