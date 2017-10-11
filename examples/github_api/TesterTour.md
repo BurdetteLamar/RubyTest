@@ -18,3 +18,5 @@ Each following page assumes you've seen all its predecessors, so repetition is m
 - [Exceptions, Rescued and Not](./tester_tour/md_files/Exceptions.md)
 - [Logging a Simple Data Object](./tester_tour/md_files/DataLogSimple.md)
 - [Logging a Complex Data Object](./tester_tour/md_files/DataLogComplex.md)
+- [Creating a Simple Data Object](./tester_tour/md_files/DataNewSimple.md)
+- [Creating a Complex Data Object](./tester_tour/md_files/DataNewComplex.md)

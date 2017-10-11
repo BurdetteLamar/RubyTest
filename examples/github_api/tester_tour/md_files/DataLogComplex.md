@@ -1,6 +1,8 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
 **Prev Stop:** [Logging a Simple Data Object](./DataLogSimple.md)
 
+**Next Stop:** [Creating a Simple Data Object](./DataNewSimple.md)
+
 
 # Logging a Complex Data Object
 
@@ -41,36 +43,36 @@ Notes:
 ```xml
 <data_log_complex_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='1.676' name='data_log_complex_test' timestamp='2017-10-10-Tue-18.03.46.540'>
+  <test_method duration_seconds='1.684' name='data_log_complex_test' timestamp='2017-10-10-Tue-19.05.27.263'>
     <section name='With GithubClient'>
       <section name='Fetch and log rate limit'>
         <section name='Fetch rate limit'>
           <GithubClient method='GET' url='https://api.github.com/rate_limit'>
-            <execution duration_seconds='1.676' timestamp='2017-10-10-Tue-18.03.46.540'/>
+            <execution duration_seconds='1.679' timestamp='2017-10-10-Tue-19.05.27.263'/>
           </GithubClient>
         </section>
         <section name='Fetched rate limit'>
           <section name='RateLimit::Resources'>
             <section name='RateLimit::Core'>
               <data field='limit' value='5000'/>
-              <data field='remaining' value='4962'/>
-              <data field='reset' value='1507676679'/>
+              <data field='remaining' value='4992'/>
+              <data field='reset' value='1507683075'/>
             </section>
             <section name='RateLimit::Search'>
               <data field='limit' value='30'/>
               <data field='remaining' value='30'/>
-              <data field='reset' value='1507676699'/>
+              <data field='reset' value='1507680400'/>
             </section>
             <section name='RateLimit::Graphql'>
               <data field='limit' value='5000'/>
               <data field='remaining' value='5000'/>
-              <data field='reset' value='1507680239'/>
+              <data field='reset' value='1507683940'/>
             </section>
           </section>
           <section name='RateLimit::Rate'>
             <data field='limit' value='5000'/>
-            <data field='remaining' value='4962'/>
-            <data field='reset' value='1507676679'/>
+            <data field='remaining' value='4992'/>
+            <data field='reset' value='1507683075'/>
           </section>
         </section>
       </section>
@@ -121,4 +123,6 @@ Notes:
 - The nested objects recursively log themselves into nested log sections.
 
 **Prev Stop:** [Logging a Simple Data Object](./DataLogSimple.md)
+
+**Next Stop:** [Creating a Simple Data Object](./DataNewSimple.md)
 

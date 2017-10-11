@@ -10,8 +10,8 @@ This page introduces simple data classes, and shows how to create instances of t
 
 Notes:
 
-- These values are passed to method `Album.new` in a hash that gives the names and values.
-- Note that the created album exists only here in the test, and not in the REST API itself.  If it were later created in the API, it would be assigned a non-nil `:id` value.
+- These values are passed to method `IssueLabel.new` in a hash that gives the names and values.
+- Note that the instantiated `IssueLabel` exists only here in the test, and not in the Github API itself.
 
 ## Log
 

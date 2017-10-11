@@ -58,8 +58,8 @@ Notes:
 ```xml
 <exceptions_test>
   <summary errors='2' failures='1' verdicts='2'/>
-  <test_method name='exceptions_test' timestamp='2017-10-10-Tue-18.03.42.542'>
-    <section duration_seconds='0.004' name='With GithubClient'>
+  <test_method name='exceptions_test' timestamp='2017-10-10-Tue-19.05.23.238'>
+    <section duration_seconds='0.010' name='With GithubClient'>
       <section name='Section rescues exception'>
         <uncaught_exception>
           <verdict_id>Section rescues exception</verdict_id>

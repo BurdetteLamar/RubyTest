@@ -1,36 +1,39 @@
 require_relative '../../base_classes/base_class_for_test'
 
-require_relative '../../../rest_api/data/user'
+require_relative '../../data/rate_limit'
 
 class DataNewComplexTest < BaseClassForTest
 
   def test_data_new_complex
     prelude do |_, log|
       log.section('Create and log an instance of a complex data object') do
-        user = User.new(
-            :id => nil,
-            :name => 'Leanne Graham',
-            :username => 'Bret',
-            :email => 'Sincere@april.biz',
-            :address => {
-                :street => 'Kulas Light',
-                :suite => 'Apt. 556',
-                :city => 'Gwenborough',
-                :zipcode => '92998-3874',
-                :geo => {
-                    :lat => '-37.3159',
-                    :lng => '81.1496',
+        rate_limit = RateLimit.new(
+            {
+                :resources => {
+                    :core => {
+                        :limit => 5000,
+                        :remaining => 4984,
+                        :reset => 1507676679,
+                    },
+                    :search => {
+                        :limit => 30,
+                        :remaining => 30,
+                        :reset => 1507673695,
+                    },
+                    :graphql => {
+                        :limit => 5000,
+                        :remaining => 5000,
+                        :reset => 1507677235,
+                    }
+                },
+                :rate => {
+                    :limit => 5000,
+                    :remaining => 4984,
+                    :reset => 1507676679,
                 }
-            },
-            :phone => '1-770-736-8031 x56442',
-            :website => 'hildegard.org',
-            :company => {
-                :name => 'Romaguera-Crona',
-                :catchPhrase => 'Multi-layered client-server neural-net',
-                :bs => 'harness real-time e-markets',
             }
         )
-        user.log(log)
+        rate_limit.log(log)
       end
     end
   end

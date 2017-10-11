@@ -1,19 +1,21 @@
 require_relative '../../base_classes/base_class_for_test'
 
-require_relative '../../../rest_api/data/album'
+require_relative '../../../github_api/data/issue_label'
 
 class DataNewTest < BaseClassForTest
 
   def test_data_new_simple
     prelude do |_, log|
-      log.section('Create and log an instance of Album') do
-        album = Album.new(
-            :id => nil,
-            :userId => 1,
-            :title => 'My album title',
+      log.section('Instantiate and log an instance of IssueLabel') do
+        issue_label = IssueLabel.new(
+            :id => 710733210,
+            :url => 'https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/enhancement',
+            :name => 'enhancement',
+            :color => '84b6eb',
+            :default => true,
         )
-        log.section('Created album') do
-          album.log(log)
+        log.section('Instantiated issue label') do
+          issue_label.log(log)
         end
       end
     end
