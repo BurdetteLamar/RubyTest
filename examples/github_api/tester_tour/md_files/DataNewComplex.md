@@ -56,6 +56,7 @@ end
 Notes:
 
 - The nested hashes are formed into nested data objects.
+- Note that the instantiated objects exists only here in the test, and not in the Github API itself.
 
 ## Log
 
@@ -63,7 +64,7 @@ Notes:
 ```xml
 <data_new_complex_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.003' name='data_new_complex_test' timestamp='2017-10-10-Tue-19.05.30.963'>
+  <test_method duration_seconds='0.000' name='data_new_complex_test' timestamp='2017-10-11-Wed-15.56.09.919'>
     <section name='With GithubClient'>
       <section name='Create and log an instance of a complex data object'>
         <section name='RateLimit'>
@@ -101,6 +102,16 @@ Notes:
   </section>
 </data_new_complex_test>
 ```
+
+Notes:
+
+- The structure of the logged nested objects:
+  - `RateLimit`
+    - `RateLimit::Resources`
+      - `RateLimit::Core`
+      - `RateLimit::Search`
+      - `RateLimit::Graphql`
+    - `RateLimit::Rate`
 
 **Prev Stop:** [Creating a Simple Data Object](./DataNewSimple.md)
 

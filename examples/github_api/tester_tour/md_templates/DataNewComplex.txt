@@ -17,4 +17,14 @@ Notes:
 
 [file_source](../logs/test_data_new_complex.xml)
 
+Notes:
+
+- The structure of the logged nested objects:
+  - `RateLimit`
+    - `RateLimit::Resources`
+      - `RateLimit::Core`
+      - `RateLimit::Search`
+      - `RateLimit::Graphql`
+    - `RateLimit::Rate`
+
 [navigation_links]
