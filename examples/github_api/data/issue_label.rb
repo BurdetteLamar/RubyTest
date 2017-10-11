@@ -32,14 +32,31 @@ class IssueLabel < BaseClassForResource
         message = format('%s is nonempty string', field)
         log.verdict_assert_string_not_empty?(verdict_id, value, message)
       when :color
-        message = format('%s is hex color')
+        message = format('%s is hex color', field)
         hex_color_regex = /[0-9a-f]{6}/i
         log.verdict_assert_match?(verdict_id, hex_color_regex, value, message)
       when :default
-        message = format('%s is boolean')
-        log.verdict_assert_boolean?(verdict_id, actual, message)
+        message = format('%s is boolean', field)
+        log.verdict_assert_boolean?(verdict_id, value, message)
       else
         ArgumentError.new(field.inspect)
+    end
+  end
+
+  def self.invalid_value_for(field)
+    case field
+      when :id
+        -1
+      when :url
+        'not a url'
+      when :name
+        ''
+      when :color
+        'red'
+      when :default
+        'not a boolean'
+      else
+        raist ArgumentError.new(field)
     end
   end
 

@@ -23,3 +23,4 @@ Each following page assumes you've seen all its predecessors, so repetition is m
 - [Verifying a Simple Data Object](./tester_tour/md_files/DataEqualSimple.md)
 - [Verifying a Complex Data Object](./tester_tour/md_files/DataEqualComplex.md)
 - [More to Come ...](./tester_tour/md_files/MoreToCome.md)
+- [Validating a Simple Data Object](./tester_tour/md_files/DataValidSimple.md)

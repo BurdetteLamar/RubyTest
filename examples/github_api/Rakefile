@@ -102,7 +102,6 @@ EOT
   #     data_convenience
   #     helpers
   #     volatility
-  # data_valid_simple
   # get_albums
   # get_albums_id
   # delete_albums_id
@@ -126,6 +125,7 @@ EOT
     data_equal_simple
     data_equal_complex
     more_to_come
+    data_valid_simple
   /
 
   titles = []
