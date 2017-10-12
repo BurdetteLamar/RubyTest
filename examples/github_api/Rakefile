@@ -116,7 +116,6 @@ EOT
     test
     sections
     verdicts
-    exceptions
     data_log_simple
     data_log_complex
     data_new_simple
@@ -124,6 +123,7 @@ EOT
     data_equal_simple
     data_equal_complex
     data_valid_simple
+    exceptions
     more_to_come
   /
 
