@@ -57,17 +57,17 @@ task :tester_tour do
   heading_text = <<EOT
 # Tester Tour
 
-The Tester Tour covers only topics that are of interest to a tester who wants to develop and/or run tests for a REST API.
+The Tester Tour covers topics that are of interest to a tester who wants to develop and run tests for a REST API.
 
 This tester is distinguished from an infrastructure developer, who would want to develop infrastructure that supports testing a REST API.
 
 The tour shows how to use the example infrastructure to test a REST API.  The target REST API may be seen at:
 
-- [JSONPlaceholder](https://jsonplaceholder.typicode.com)
+- [GitHub REST API](https://developer.github.com/v3/)
 
-Each following page assumes you've seen all its predecessors, so repetition is minimal.
+Each following tour stop assumes you've seen all its predecessors, so repetition is minimal.
 
-## Pages
+## Tour Stops
 
 EOT
   index_file << heading_text
@@ -123,8 +123,8 @@ EOT
     data_new_complex
     data_equal_simple
     data_equal_complex
-    more_to_come
     data_valid_simple
+    more_to_come
   /
 
   titles = []

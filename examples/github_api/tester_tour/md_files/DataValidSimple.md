@@ -1,5 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop:** [More to Come ...](./MoreToCome.md)
+**Prev Stop:** [Verifying a Complex Data Object](./DataEqualComplex.md)
+
+**Next Stop:** [More to Come ...](./MoreToCome.md)
 
 
 # Validating a Simple Data Object
@@ -53,13 +55,13 @@ Notes:
 ```xml
 <data_valid_simple_test>
   <summary errors='0' failures='1' verdicts='15'/>
-  <test_method duration_seconds='1.985' name='data_valid_simple_test' timestamp='2017-10-12-Thu-12.47.44.770'>
+  <test_method duration_seconds='1.985' name='data_valid_simple_test' timestamp='2017-10-12-Thu-13.12.13.474'>
     <section name='With GithubClient'>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='1.700' timestamp='2017-10-12-Thu-12.47.44.774'/>
+        <execution duration_seconds='1.699' timestamp='2017-10-12-Thu-13.12.13.478'/>
       </GithubClient>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='0.258' timestamp='2017-10-12-Thu-12.47.46.477'/>
+        <execution duration_seconds='0.271' timestamp='2017-10-12-Thu-13.12.15.177'/>
       </GithubClient>
       <section name='This is valid'>
         <section name='verdict_assert_integer_positive?'>
@@ -166,5 +168,7 @@ Notes:
 - When a value has multiple validation verdicts (as all of these do), the verdicts are logged into a separate subsection.
 - In the second section, three verdicts fail.
 
-**Prev Stop:** [More to Come ...](./MoreToCome.md)
+**Prev Stop:** [Verifying a Complex Data Object](./DataEqualComplex.md)
+
+**Next Stop:** [More to Come ...](./MoreToCome.md)
 
