@@ -4,8 +4,6 @@
 
 ## Example Test
 
-This page shows some verdicts.
-
 [file_source](../tests/verdicts_test.rb)
 
 Notes:
@@ -17,7 +15,7 @@ Notes:
   - A message string.
 - An assert verdict expects something to be truthy (not `false` or `nil`).
 - A refute verdict expects something to be `false` or `nil`.
-- There are many other verdict methods, many of which will be described later in these pages.
+- There are many other verdict methods, many of which will be described later in this tour.
 
 
 ## Log

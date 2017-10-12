@@ -2,8 +2,6 @@
 
 # Creating a Complex Data Object
 
-This page shows how to create and log an instance of a complex data object.
-
 ## Example Test
 
 [file_source](../tests/data_new_complex_test.rb)

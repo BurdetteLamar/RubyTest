@@ -58,15 +58,17 @@ Notes:
 ```xml
 <exceptions_test>
   <summary errors='2' failures='1' verdicts='2'/>
-  <test_method name='exceptions_test' timestamp='2017-10-12-Thu-15.47.23.537'>
-    <section duration_seconds='0.012' name='With GithubClient'>
+  <test_method name='exceptions_test' timestamp='2017-10-12-Thu-16.17.40.318'>
+    <section duration_seconds='0.000' name='With GithubClient'>
       <section name='Exception rescued'>
         <uncaught_exception>
           <verdict_id>Exception rescued</verdict_id>
           <class>ZeroDivisionError</class>
           <message>divided by 0</message>
           <backtrace>
-            <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/exceptions_test.rb:10:in `/'
+            <![CDATA[
+
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/exceptions_test.rb:10:in `/'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/exceptions_test.rb:10:in `block (2 levels) in test_exceptions'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/exceptions_test.rb:7:in `block in test_exceptions'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
@@ -92,7 +94,9 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
           <class>ZeroDivisionError</class>
           <message>divided by 0</message>
           <backtrace>
-            <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/exceptions_test.rb:21:in `/'
+            <![CDATA[
+
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/exceptions_test.rb:21:in `/'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/exceptions_test.rb:21:in `block (2 levels) in test_exceptions'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/exceptions_test.rb:18:in `block in test_exceptions'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
@@ -116,7 +120,9 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
           <class>Minitest::Assertion</class>
           <message>Expected: 0 Actual: 2</message>
           <backtrace>
-            <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
+            <![CDATA[
+
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:11:in `prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/exceptions_test.rb:6:in `test_exceptions']]>
           </backtrace>

@@ -55,13 +55,13 @@ Notes:
 ```xml
 <data_valid_simple_test>
   <summary errors='0' failures='1' verdicts='15'/>
-  <test_method duration_seconds='2.012' name='data_valid_simple_test' timestamp='2017-10-12-Thu-15.47.20.433'>
+  <test_method duration_seconds='1.997' name='data_valid_simple_test' timestamp='2017-10-12-Thu-16.17.37.306'>
     <section name='With GithubClient'>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='1.717' timestamp='2017-10-12-Thu-15.47.20.437'/>
+        <execution duration_seconds='1.709' timestamp='2017-10-12-Thu-16.17.37.306'/>
       </GithubClient>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='0.277' timestamp='2017-10-12-Thu-15.47.22.158'/>
+        <execution duration_seconds='0.269' timestamp='2017-10-12-Thu-16.17.39.015'/>
       </GithubClient>
       <section name='This is valid'>
         <section name='verdict_assert_integer_positive?'>
@@ -129,7 +129,9 @@ Notes:
             <class>Minitest::Assertion</class>
             <message>Expected /[0-9a-f]{6}/i to match # encoding: UTF-8 &quot;red&quot;.</message>
             <backtrace>
-              <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/data/issue_label.rb:37:in `verdict_field_valid?'
+              <![CDATA[
+
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/data/issue_label.rb:37:in `verdict_field_valid?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:36:in `block in verdict_valid?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:35:in `verdict_valid?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/data_valid_simple_test.rb:15:in `block (2 levels) in test_data_valid_simple'

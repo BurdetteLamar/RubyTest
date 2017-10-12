@@ -2,8 +2,6 @@
 
 # Simple Test
 
-This page shows a test class, along with its GitHub API client and test log.
-
 ## Example Test
 
 [file_source](../tests/test_test.rb)

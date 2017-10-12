@@ -60,15 +60,15 @@ Notes:
 ```xml
 <data_equal_simple_test>
   <summary errors='0' failures='1' verdicts='11'/>
-  <test_method duration_seconds='1.991' name='data_equal_simple_test' timestamp='2017-10-12-Thu-15.47.14.550'>
+  <test_method duration_seconds='1.988' name='data_equal_simple_test' timestamp='2017-10-12-Thu-16.17.31.577'>
     <section name='With GithubClient'>
       <section name='Fetch an instance of IssueLabel'>
         <section name='Fetch an issuelabel'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='1.704' timestamp='2017-10-12-Thu-15.47.14.550'/>
+            <execution duration_seconds='1.705' timestamp='2017-10-12-Thu-16.17.31.581'/>
           </GithubClient>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='0.277' timestamp='2017-10-12-Thu-15.47.16.254'/>
+            <execution duration_seconds='0.264' timestamp='2017-10-12-Thu-16.17.33.287'/>
           </GithubClient>
         </section>
       </section>
@@ -102,7 +102,9 @@ Notes:
             <class>Minitest::Assertion</class>
             <message>Expected: 710733210 Actual: 710733211</message>
             <backtrace>
-              <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:138:in `block in verdict_equal_recursive?'
+              <![CDATA[
+
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:138:in `block in verdict_equal_recursive?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:127:in `verdict_equal_recursive?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:55:in `verdict_equal?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/data_equal_simple_test.rb:23:in `block (2 levels) in test_data_equal_simple'

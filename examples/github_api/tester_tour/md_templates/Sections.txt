@@ -1,8 +1,6 @@
 [navigation_links]
 
-# Sections and Nesting
-
-This page shows test sections, including nesting, timestamps, and durations.
+# Test Sections and Nesting
 
 ## Example Test
 

@@ -2,8 +2,6 @@
 
 # Creating a Simple Data Object
 
-This page introduces simple data classes, and shows how to create instances of them.
-
 ## Example Test
 
 [file_source](../tests/data_new_simple_test.rb)

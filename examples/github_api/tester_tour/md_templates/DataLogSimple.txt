@@ -2,8 +2,6 @@
 
 # Logging a Simple Data Object
 
-This page introduces simple data classes, and shows how to log instances of them.
-
 ## Example Test
 
 [file_source](../tests/data_log_simple_test.rb)

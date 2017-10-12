@@ -2,8 +2,6 @@
 
 # Exceptions, Rescued and Not
 
-This page introduces the handling of unexpected exceptions.
-
 ## Example Test
 
 [file_source](../tests/exceptions_test.rb)
