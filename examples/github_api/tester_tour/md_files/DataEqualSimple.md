@@ -59,32 +59,54 @@ Notes:
 <code>test_data_equal_simple.xml</code>
 ```xml
 <data_equal_simple_test>
-  <summary errors='1' failures='1' verdicts='1'/>
-  <test_method name='data_equal_simple_test' timestamp='2017-10-12-Thu-15.32.37.443'>
+  <summary errors='0' failures='1' verdicts='11'/>
+  <test_method duration_seconds='1.980' name='data_equal_simple_test' timestamp='2017-10-12-Thu-15.42.09.954'>
     <section name='With GithubClient'>
       <section name='Fetch an instance of IssueLabel'>
         <section name='Fetch an issuelabel'>
-          <GithubClient duration_seconds='1.535' method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution timestamp='2017-10-12-Thu-15.32.37.447'>
-              <uncaught_exception>
-                <verdict_id>With GithubClient</verdict_id>
-                <class>RestClient::SSLCertificateNotVerified</class>
-                <http_code>nil</http_code>
-                <http_body>nil</http_body>
-                <message>SSL_connect returned=1 errno=0 state=error: certificate verify failed</message>
-                <backtrace>
-                  <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:117:in `block (3 levels) in client_method'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:115:in `block (2 levels) in client_method'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:113:in `block in client_method'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:111:in `client_method'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:46:in `get'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/endpoints/get_issues_number_labels.rb:15:in `call_and_return_payload'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_endpoint.rb:11:in `call'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/data/issue_label.rb:66:in `get_all'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/data/issue_label.rb:71:in `get_first'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/data_equal_simple_test.rb:12:in `block (3 levels) in test_data_equal_simple'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/data_equal_simple_test.rb:11:in `block (2 levels) in test_data_equal_simple'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/data_equal_simple_test.rb:10:in `block in test_data_equal_simple'
+          <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
+            <execution duration_seconds='1.689' timestamp='2017-10-12-Thu-15.42.09.958'/>
+          </GithubClient>
+          <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
+            <execution duration_seconds='0.275' timestamp='2017-10-12-Thu-15.42.11.649'/>
+          </GithubClient>
+        </section>
+      </section>
+      <section name='These are equal'>
+        <verdict id='issue label equal-id' message='Using IssueLabel.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+          <exp_value>710733210</exp_value>
+          <act_value>710733210</act_value>
+        </verdict>
+        <verdict id='issue label equal-url' message='Using IssueLabel.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+          <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/enhancement</exp_value>
+          <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/enhancement</act_value>
+        </verdict>
+        <verdict id='issue label equal-name' message='Using IssueLabel.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+          <exp_value>enhancement</exp_value>
+          <act_value>enhancement</act_value>
+        </verdict>
+        <verdict id='issue label equal-color' message='Using IssueLabel.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+          <exp_value>84b6eb</exp_value>
+          <act_value>84b6eb</act_value>
+        </verdict>
+        <verdict id='issue label equal-default' message='Using IssueLabel.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+          <exp_value>true</exp_value>
+          <act_value>true</act_value>
+        </verdict>
+      </section>
+      <section name='These are not equal'>
+        <verdict id='issue label not equal-id' message='Using IssueLabel.verdict_equal?' method='verdict_assert_equal?' outcome='failed' volatile='false'>
+          <exp_value>710733210</exp_value>
+          <act_value>710733211</act_value>
+          <exception>
+            <class>Minitest::Assertion</class>
+            <message>Expected: 710733210 Actual: 710733211</message>
+            <backtrace>
+              <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:138:in `block in verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:127:in `verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:55:in `verdict_equal?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/data_equal_simple_test.rb:23:in `block (2 levels) in test_data_equal_simple'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/data_equal_simple_test.rb:20:in `block in test_data_equal_simple'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:18:in `block in with'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:14:in `with'
@@ -94,29 +116,34 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `bl
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:11:in `prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/data_equal_simple_test.rb:8:in `test_data_equal_simple']]>
-                </backtrace>
-              </uncaught_exception>
-            </execution>
-          </GithubClient>
-          <section name='Count of errors (unexpected exceptions)'>
-            <verdict id='error count' message='error count' method='verdict_assert_equal?' outcome='failed' volatile='true'>
-              <exp_value>0</exp_value>
-              <act_value>1</act_value>
-              <exception>
-                <class>Minitest::Assertion</class>
-                <message>Expected: 0 Actual: 1</message>
-                <backtrace>
-                  <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:11:in `prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/data_equal_simple_test.rb:8:in `test_data_equal_simple']]>
-                </backtrace>
-              </exception>
-            </verdict>
-          </section>
-        </section>
+            </backtrace>
+          </exception>
+        </verdict>
+        <verdict id='issue label not equal-url' message='Using IssueLabel.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+          <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/enhancement</exp_value>
+          <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/enhancement</act_value>
+        </verdict>
+        <verdict id='issue label not equal-name' message='Using IssueLabel.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+          <exp_value>enhancement</exp_value>
+          <act_value>enhancement</act_value>
+        </verdict>
+        <verdict id='issue label not equal-color' message='Using IssueLabel.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+          <exp_value>84b6eb</exp_value>
+          <act_value>84b6eb</act_value>
+        </verdict>
+        <verdict id='issue label not equal-default' message='Using IssueLabel.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+          <exp_value>true</exp_value>
+          <act_value>true</act_value>
+        </verdict>
       </section>
     </section>
   </test_method>
+  <section name='Count of errors (unexpected exceptions)'>
+    <verdict id='error count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
+      <exp_value>0</exp_value>
+      <act_value>0</act_value>
+    </verdict>
+  </section>
 </data_equal_simple_test>
 ```
 

@@ -1,6 +1,4 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop:** []()
-
 **Next Stop:** [Sections and Nesting](./Sections.md#sections-and-nesting)
 
 
@@ -42,7 +40,7 @@ Notes:
 ```xml
 <test_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.002' name='test_test' timestamp='2017-10-12-Thu-15.32.21.403'>
+  <test_method duration_seconds='0.002' name='test_test' timestamp='2017-10-12-Thu-15.41.53.141'>
     <section name='With GithubClient'>
       <comment>Test code goes here</comment>
       <comment>Method prelude yields two objects:</comment>
@@ -66,8 +64,6 @@ Notes:
 - The section named `With GitHubClient` contains all logging from the test itself.
 - The last section gives the count of errors (unexpected exceptions).  Its verdict expects that count to be `0`.
 - (Attribute `volatile`, seen in element `verdict`, has to do with the Changes Report, and is of no present interest.)
-
-**Prev Stop:** []()
 
 **Next Stop:** [Sections and Nesting](./Sections.md#sections-and-nesting)
 

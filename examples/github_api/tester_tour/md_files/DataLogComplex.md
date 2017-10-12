@@ -42,58 +42,48 @@ Notes:
 <code>test_data_log_complex.xml</code>
 ```xml
 <data_log_complex_test>
-  <summary errors='1' failures='1' verdicts='1'/>
-  <test_method name='data_log_complex_test' timestamp='2017-10-12-Thu-15.32.32.960'>
+  <summary errors='0' failures='0' verdicts='1'/>
+  <test_method duration_seconds='1.684' name='data_log_complex_test' timestamp='2017-10-12-Thu-15.42.05.136'>
     <section name='With GithubClient'>
       <section name='Fetch and log rate limit'>
         <section name='Fetch rate limit'>
-          <GithubClient duration_seconds='1.449' method='GET' url='https://api.github.com/rate_limit'>
-            <execution timestamp='2017-10-12-Thu-15.32.32.964'>
-              <uncaught_exception>
-                <verdict_id>With GithubClient</verdict_id>
-                <class>RestClient::SSLCertificateNotVerified</class>
-                <http_code>nil</http_code>
-                <http_body>nil</http_body>
-                <message>SSL_connect returned=1 errno=0 state=error: certificate verify failed</message>
-                <backtrace>
-                  <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:117:in `block (3 levels) in client_method'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:115:in `block (2 levels) in client_method'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:113:in `block in client_method'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:111:in `client_method'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:46:in `get'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/endpoints/get_rate_limit.rb:12:in `call_and_return_payload'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_endpoint.rb:11:in `call'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/data/rate_limit.rb:29:in `get'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:18:in `block in with'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:14:in `with'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:12:in `block in prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:11:in `prelude']]>
-                </backtrace>
-              </uncaught_exception>
-            </execution>
+          <GithubClient method='GET' url='https://api.github.com/rate_limit'>
+            <execution duration_seconds='1.675' timestamp='2017-10-12-Thu-15.42.05.140'/>
           </GithubClient>
-          <section name='Count of errors (unexpected exceptions)'>
-            <verdict id='error count' message='error count' method='verdict_assert_equal?' outcome='failed' volatile='true'>
-              <exp_value>0</exp_value>
-              <act_value>1</act_value>
-              <exception>
-                <class>Minitest::Assertion</class>
-                <message>Expected: 0 Actual: 1</message>
-                <backtrace>
-                  <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:11:in `prelude']]>
-                </backtrace>
-              </exception>
-            </verdict>
+        </section>
+        <section name='Fetched rate limit'>
+          <section name='RateLimit::Resources'>
+            <section name='RateLimit::Core'>
+              <data field='limit' value='5000'/>
+              <data field='remaining' value='4967'/>
+              <data field='reset' value='1507842235'/>
+            </section>
+            <section name='RateLimit::Search'>
+              <data field='limit' value='30'/>
+              <data field='remaining' value='30'/>
+              <data field='reset' value='1507841000'/>
+            </section>
+            <section name='RateLimit::Graphql'>
+              <data field='limit' value='5000'/>
+              <data field='remaining' value='5000'/>
+              <data field='reset' value='1507844540'/>
+            </section>
+          </section>
+          <section name='RateLimit::Rate'>
+            <data field='limit' value='5000'/>
+            <data field='remaining' value='4967'/>
+            <data field='reset' value='1507842235'/>
           </section>
         </section>
       </section>
     </section>
   </test_method>
+  <section name='Count of errors (unexpected exceptions)'>
+    <verdict id='error count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
+      <exp_value>0</exp_value>
+      <act_value>0</act_value>
+    </verdict>
+  </section>
 </data_log_complex_test>
 ```
 
