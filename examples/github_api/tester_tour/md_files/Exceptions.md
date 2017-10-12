@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop:** [Verdicts](./Verdicts.md)
+**Prev Stop:** [Validating a Simple Data Object](./DataValidSimple.md)
 
-**Next Stop:** [Logging a Simple Data Object](./DataLogSimple.md)
+**Next Stop:** [More to Come ...](./MoreToCome.md)
 
 
 # Exceptions, Rescued and Not
@@ -58,7 +58,7 @@ Notes:
 ```xml
 <exceptions_test>
   <summary errors='2' failures='1' verdicts='2'/>
-  <test_method name='exceptions_test' timestamp='2017-10-12-Thu-15.03.38.921'>
+  <test_method name='exceptions_test' timestamp='2017-10-12-Thu-15.19.11.422'>
     <section duration_seconds='0.010' name='With GithubClient'>
       <section name='Exception rescued'>
         <uncaught_exception>
@@ -132,7 +132,7 @@ Notes:
 - Each logged exception includes its message and backtrace.
 - The second exception, the one the test didn't rescue, is actually rescued by the log itself, and of course logged.
 
-**Prev Stop:** [Verdicts](./Verdicts.md)
+**Prev Stop:** [Validating a Simple Data Object](./DataValidSimple.md)
 
-**Next Stop:** [Logging a Simple Data Object](./DataLogSimple.md)
+**Next Stop:** [More to Come ...](./MoreToCome.md)
 

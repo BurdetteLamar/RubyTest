@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
 **Prev Stop:** [Sections and Nesting](./Sections.md)
 
-**Next Stop:** [Exceptions, Rescued and Not](./Exceptions.md)
+**Next Stop:** [Logging a Simple Data Object](./DataLogSimple.md)
 
 
 # Verdicts
@@ -75,7 +75,7 @@ Notes:
 ```xml
 <verdicts_test>
   <summary errors='0' failures='2' verdicts='5'/>
-  <test_method duration_seconds='0.010' name='verdicts_test' timestamp='2017-10-12-Thu-15.03.37.924'>
+  <test_method duration_seconds='0.005' name='verdicts_test' timestamp='2017-10-12-Thu-15.18.54.027'>
     <section name='With GithubClient'>
       <section name='These verdicts should pass'>
         <section name='An assert verdict that should pass'>
@@ -155,5 +155,5 @@ Notes:
 
 **Prev Stop:** [Sections and Nesting](./Sections.md)
 
-**Next Stop:** [Exceptions, Rescued and Not](./Exceptions.md)
+**Next Stop:** [Logging a Simple Data Object](./DataLogSimple.md)
 

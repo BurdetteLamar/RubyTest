@@ -180,13 +180,16 @@ EOT
     }
     MarkdownHelper.build_file(template_file_path, md_file_path, options)
     md_file_name = File.basename(md_file_path)
+    title = titles[i]
+    anchor_name = title.gsub(/\s+/, '-').downcase
     relative_link_path = File.join(
         '.',
         'tester_tour',
         'md_files',
         md_file_name,
+        '#%s' % anchor_name,
     )
-    title = titles[i]
+    p relative_link_path
     link_item = format('- [%s](%s)', title, relative_link_path)
     index_file.puts(link_item)
 

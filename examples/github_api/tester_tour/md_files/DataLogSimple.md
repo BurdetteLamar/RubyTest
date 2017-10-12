@@ -1,5 +1,5 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop:** [Exceptions, Rescued and Not](./Exceptions.md)
+**Prev Stop:** [Verdicts](./Verdicts.md)
 
 **Next Stop:** [Logging a Complex Data Object](./DataLogComplex.md)
 
@@ -44,15 +44,15 @@ Notes:
 ```xml
 <data_log_simple_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='1.930' name='data_log_simple_test' timestamp='2017-10-12-Thu-15.03.39.932'>
+  <test_method duration_seconds='1.954' name='data_log_simple_test' timestamp='2017-10-12-Thu-15.18.55.017'>
     <section name='With GithubClient'>
       <section name='Fetch and log an instance of IssueLabel'>
         <section name='Fetch an issue label'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='1.675' timestamp='2017-10-12-Thu-15.03.39.942'/>
+            <execution duration_seconds='1.690' timestamp='2017-10-12-Thu-15.18.55.021'/>
           </GithubClient>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='0.244' timestamp='2017-10-12-Thu-15.03.41.618'/>
+            <execution duration_seconds='0.259' timestamp='2017-10-12-Thu-15.18.56.712'/>
           </GithubClient>
         </section>
         <section name='Fetched issue label'>
@@ -80,7 +80,7 @@ Notes:
 - Its subelement `execution` shows the timestamp and duration for the interaction.
 - The section named `Fetched IssueLabel` shows the values in the fetched issue label.
 
-**Prev Stop:** [Exceptions, Rescued and Not](./Exceptions.md)
+**Prev Stop:** [Verdicts](./Verdicts.md)
 
 **Next Stop:** [Logging a Complex Data Object](./DataLogComplex.md)
 
