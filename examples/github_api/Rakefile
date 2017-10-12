@@ -136,7 +136,7 @@ EOT
 
   def bookmark_for(title)
     return nil if title.nil?
-    anchor_name = title.gsub(/\s+/, '-').downcase
+    anchor_name = title.gsub(/\W+/, '-').downcase
     '#%s' % anchor_name
   end
 

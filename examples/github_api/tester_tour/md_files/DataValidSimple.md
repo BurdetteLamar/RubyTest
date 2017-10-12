@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
 **Prev Stop:** [Verifying a Complex Data Object](./DataEqualComplex.md#verifying-a-complex-data-object)
 
-**Next Stop:** [Exceptions, Rescued and Not](./Exceptions.md#exceptions,-rescued-and-not)
+**Next Stop:** [Exceptions, Rescued and Not](./Exceptions.md#exceptions-rescued-and-not)
 
 
 # Validating a Simple Data Object
@@ -55,13 +55,13 @@ Notes:
 ```xml
 <data_valid_simple_test>
   <summary errors='0' failures='1' verdicts='15'/>
-  <test_method duration_seconds='2.021' name='data_valid_simple_test' timestamp='2017-10-12-Thu-15.42.15.756'>
+  <test_method duration_seconds='2.012' name='data_valid_simple_test' timestamp='2017-10-12-Thu-15.47.20.433'>
     <section name='With GithubClient'>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='1.727' timestamp='2017-10-12-Thu-15.42.15.759'/>
+        <execution duration_seconds='1.717' timestamp='2017-10-12-Thu-15.47.20.437'/>
       </GithubClient>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='0.271' timestamp='2017-10-12-Thu-15.42.17.487'/>
+        <execution duration_seconds='0.277' timestamp='2017-10-12-Thu-15.47.22.158'/>
       </GithubClient>
       <section name='This is valid'>
         <section name='verdict_assert_integer_positive?'>
@@ -170,5 +170,5 @@ Notes:
 
 **Prev Stop:** [Verifying a Complex Data Object](./DataEqualComplex.md#verifying-a-complex-data-object)
 
-**Next Stop:** [Exceptions, Rescued and Not](./Exceptions.md#exceptions,-rescued-and-not)
+**Next Stop:** [Exceptions, Rescued and Not](./Exceptions.md#exceptions-rescued-and-not)
 

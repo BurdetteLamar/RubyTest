@@ -22,5 +22,5 @@ Each following tour stop assumes you've seen all its predecessors, so repetition
 - [Verifying a Simple Data Object](./tester_tour/md_files/DataEqualSimple.md/#verifying-a-simple-data-object)
 - [Verifying a Complex Data Object](./tester_tour/md_files/DataEqualComplex.md/#verifying-a-complex-data-object)
 - [Validating a Simple Data Object](./tester_tour/md_files/DataValidSimple.md/#validating-a-simple-data-object)
-- [Exceptions, Rescued and Not](./tester_tour/md_files/Exceptions.md/#exceptions,-rescued-and-not)
-- [More to Come ...](./tester_tour/md_files/MoreToCome.md/#more-to-come-...)
+- [Exceptions, Rescued and Not](./tester_tour/md_files/Exceptions.md/#exceptions-rescued-and-not)
+- [More to Come ...](./tester_tour/md_files/MoreToCome.md/#more-to-come-)

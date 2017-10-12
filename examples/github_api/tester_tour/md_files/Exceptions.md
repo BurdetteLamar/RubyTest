@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
 **Prev Stop:** [Validating a Simple Data Object](./DataValidSimple.md#validating-a-simple-data-object)
 
-**Next Stop:** [More to Come ...](./MoreToCome.md#more-to-come-...)
+**Next Stop:** [More to Come ...](./MoreToCome.md#more-to-come-)
 
 
 # Exceptions, Rescued and Not
@@ -58,8 +58,8 @@ Notes:
 ```xml
 <exceptions_test>
   <summary errors='2' failures='1' verdicts='2'/>
-  <test_method name='exceptions_test' timestamp='2017-10-12-Thu-15.42.18.816'>
-    <section duration_seconds='0.000' name='With GithubClient'>
+  <test_method name='exceptions_test' timestamp='2017-10-12-Thu-15.47.23.537'>
+    <section duration_seconds='0.012' name='With GithubClient'>
       <section name='Exception rescued'>
         <uncaught_exception>
           <verdict_id>Exception rescued</verdict_id>
@@ -134,5 +134,5 @@ Notes:
 
 **Prev Stop:** [Validating a Simple Data Object](./DataValidSimple.md#validating-a-simple-data-object)
 
-**Next Stop:** [More to Come ...](./MoreToCome.md#more-to-come-...)
+**Next Stop:** [More to Come ...](./MoreToCome.md#more-to-come-)
 
