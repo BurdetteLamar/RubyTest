@@ -40,11 +40,11 @@ end
 
 Notes:
 
-- In the first section:
+- In section `This is valid`:
   - A new album with valid values is instantiated.
   - The valid values are not in the test itself, but instead come from the data class.
   - Method `Album.verdict_valid? validates and logs each value in the album.
-- In the second section:
+- In section `This is not valid`:
   - A new album with invalid values is instantiated.
   - The invalid values are not in the test itself, but instead come from the data class.
   - Method `Album.verdict_valid? validates and logs each value in the album.
@@ -55,13 +55,13 @@ Notes:
 ```xml
 <data_valid_simple_test>
   <summary errors='0' failures='1' verdicts='15'/>
-  <test_method duration_seconds='1.985' name='data_valid_simple_test' timestamp='2017-10-12-Thu-13.12.13.474'>
+  <test_method duration_seconds='1.966' name='data_valid_simple_test' timestamp='2017-10-12-Thu-15.03.53.244'>
     <section name='With GithubClient'>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='1.699' timestamp='2017-10-12-Thu-13.12.13.478'/>
+        <execution duration_seconds='1.671' timestamp='2017-10-12-Thu-15.03.53.248'/>
       </GithubClient>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='0.271' timestamp='2017-10-12-Thu-13.12.15.177'/>
+        <execution duration_seconds='0.268' timestamp='2017-10-12-Thu-15.03.54.923'/>
       </GithubClient>
       <section name='This is valid'>
         <section name='verdict_assert_integer_positive?'>
@@ -164,9 +164,9 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
 
 Notes:
 
-- In the first section, all verdicts pass.
+- In section `This is valid`, all verdicts pass.
 - When a value has multiple validation verdicts (as all of these do), the verdicts are logged into a separate subsection.
-- In the second section, three verdicts fail.
+- In section `This is not valid`, three verdicts fail.
 
 **Prev Stop:** [Verifying a Complex Data Object](./DataEqualComplex.md)
 

@@ -4,7 +4,7 @@ class ExceptionsTest < BaseClassForTest
 
   def test_exceptions
     prelude do |_, log|
-      log.section('Section rescues exception', :rescue) do
+      log.section('Exception rescued', :rescue) do
         numerator = 1
         denominator = 0
         quotient = numerator / denominator
@@ -15,7 +15,7 @@ class ExceptionsTest < BaseClassForTest
       log.section('This section is reached because the above exception was rescued') do
         log.verdict_assert?('reached', true, 'Made it to here')
       end
-      log.section('Section does not rescue exception') do
+      log.section('Exception not rescued') do
         numerator = 1
         denominator = 0
         quotient = numerator / denominator

@@ -18,7 +18,7 @@ class ExceptionsTest < BaseClassForTest
 
   def test_exceptions
     prelude do |_, log|
-      log.section('Section rescues exception', :rescue) do
+      log.section('Exception rescued', :rescue) do
         numerator = 1
         denominator = 0
         quotient = numerator / denominator
@@ -29,7 +29,7 @@ class ExceptionsTest < BaseClassForTest
       log.section('This section is reached because the above exception was rescued') do
         log.verdict_assert?('reached', true, 'Made it to here')
       end
-      log.section('Section does not rescue exception') do
+      log.section('Exception not rescued') do
         numerator = 1
         denominator = 0
         quotient = numerator / denominator
@@ -48,8 +48,8 @@ end
 
 Notes:
 
-- The first outer section rescues its exception.  The test exits the _section_, and any following code in the _section_ is not reached.
-- The second outer section does not rescue its exception.  The test exits entirely, and any following code in the _test_ is not reached.
+- Section `Exception rescued` rescues its exception.  The test exits the _section_, and any following code in the _section_ is not reached.
+- Section 'Exception not rescued` does not rescue its exception.  The test exits entirely, and any following code in the _test_ is not reached.
 - Any section, including a nested section, may rescue an exception.  (Or not -- it's an independent choice for each section.)
 
 ## Log
@@ -58,11 +58,11 @@ Notes:
 ```xml
 <exceptions_test>
   <summary errors='2' failures='1' verdicts='2'/>
-  <test_method name='exceptions_test' timestamp='2017-10-12-Thu-13.11.59.002'>
-    <section duration_seconds='0.004' name='With GithubClient'>
-      <section name='Section rescues exception'>
+  <test_method name='exceptions_test' timestamp='2017-10-12-Thu-15.03.38.921'>
+    <section duration_seconds='0.010' name='With GithubClient'>
+      <section name='Exception rescued'>
         <uncaught_exception>
-          <verdict_id>Section rescues exception</verdict_id>
+          <verdict_id>Exception rescued</verdict_id>
           <class>ZeroDivisionError</class>
           <message>divided by 0</message>
           <backtrace>
@@ -86,7 +86,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
           <act_value>true</act_value>
         </verdict>
       </section>
-      <section name='Section does not rescue exception'>
+      <section name='Exception not rescued'>
         <uncaught_exception>
           <verdict_id>With GithubClient</verdict_id>
           <class>ZeroDivisionError</class>

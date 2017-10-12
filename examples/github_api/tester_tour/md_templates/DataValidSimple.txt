@@ -14,11 +14,11 @@ Example of usefulness:  creating a new user returns a `User` object with a new `
 
 Notes:
 
-- In the first section:
+- In section `This is valid`:
   - A new album with valid values is instantiated.
   - The valid values are not in the test itself, but instead come from the data class.
   - Method `Album.verdict_valid? validates and logs each value in the album.
-- In the second section:
+- In section `This is not valid`:
   - A new album with invalid values is instantiated.
   - The invalid values are not in the test itself, but instead come from the data class.
   - Method `Album.verdict_valid? validates and logs each value in the album.
@@ -29,8 +29,8 @@ Notes:
 
 Notes:
 
-- In the first section, all verdicts pass.
+- In section `This is valid`, all verdicts pass.
 - When a value has multiple validation verdicts (as all of these do), the verdicts are logged into a separate subsection.
-- In the second section, three verdicts fail.
+- In section `This is not valid`, three verdicts fail.
 
 [navigation_links]

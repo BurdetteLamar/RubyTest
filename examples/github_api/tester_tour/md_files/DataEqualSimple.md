@@ -44,11 +44,11 @@ Notes:
 
 - The test gets a known `IssueLabel`, then clones it.
 - We know that `IssueLabel` is flat, but it's good practice to use `deep_clone`, not `clone` just to be sure.
-- In the first section:
+- In section `These are equal`:
   - Method `IssueLabel.equal?` tests equality, but does no logging.
   - The `fail unless` proves that it worked.
   - Method `IssueLabel.verdict_equal?` verifies and logs each value in the issue labels.
-- In the second section:
+- In section `These are not equal`:
   - One value in the issue label is modified.
   - Method `IssueLabel.equal?` tests equality, but does no logging.
   - The `fail if ` proves that it worked.
@@ -60,15 +60,15 @@ Notes:
 ```xml
 <data_equal_simple_test>
   <summary errors='0' failures='1' verdicts='11'/>
-  <test_method duration_seconds='1.995' name='data_equal_simple_test' timestamp='2017-10-12-Thu-13.12.07.716'>
+  <test_method duration_seconds='1.954' name='data_equal_simple_test' timestamp='2017-10-12-Thu-15.03.47.567'>
     <section name='With GithubClient'>
       <section name='Fetch an instance of IssueLabel'>
         <section name='Fetch an issuelabel'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='1.708' timestamp='2017-10-12-Thu-13.12.07.716'/>
+            <execution duration_seconds='1.659' timestamp='2017-10-12-Thu-15.03.47.577'/>
           </GithubClient>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='0.276' timestamp='2017-10-12-Thu-13.12.09.425'/>
+            <execution duration_seconds='0.274' timestamp='2017-10-12-Thu-15.03.49.237'/>
           </GithubClient>
         </section>
       </section>
