@@ -8,20 +8,20 @@ The term _valid_, as used here, is about whether a value is of the correct _form
 
 For the values of `id` below, for example, the verifications are whether those values are positive integers.
 
-Example of usefulness:  creating a new user returns a `User` object with a new `id` value.  The _value_ of the `id` is unpredictable, but it is still useful to verify that it is a positive integer.
+Example of usefulness:  creating a new issue label returns an `IssueLabel` object with a new `id` value.  The _value_ of the `id` is unpredictable, but it is still useful to verify that it is a positive integer.
 
 [file_source](../tests/data_valid_simple_test.rb)
 
 Notes:
 
 - In section `This is valid`:
-  - A new album with valid values is instantiated.
+  - A new `IssueLabel` with valid values is instantiated.
   - The valid values are not in the test itself, but instead come from the data class.
-  - Method `Album.verdict_valid? validates and logs each value in the album.
+  - Method `IssueLabel.verdict_valid? validates and logs each value in the issue label.
 - In section `This is not valid`:
-  - A new album with invalid values is instantiated.
+  - A new `IssueLabel` with invalid values is instantiated.
   - The invalid values are not in the test itself, but instead come from the data class.
-  - Method `Album.verdict_valid? validates and logs each value in the album.
+  - Method `IssueLabel.verdict_valid? validates and logs each value in the issue label.
 
 ## Log
 

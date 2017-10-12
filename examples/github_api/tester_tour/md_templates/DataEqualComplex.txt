@@ -18,7 +18,7 @@ Notes:
   - One value in the issue lable is modified.  The changed value is in a nested object.
   - Method `IssueLabel.equal?` test equality, but does no logging.
   - The `fail if ` proves that it worked.
-  - Method `IssueLabel.verdict_equal?` verifies and logs each value in the users.
+  - Method `IssueLabel.verdict_equal?` verifies and logs each value in the issue labels.
 
 ## Log
 
