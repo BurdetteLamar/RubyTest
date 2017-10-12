@@ -134,6 +134,12 @@ EOT
     titles.push(title)
   end
 
+  def bookmark_for(title)
+    return nil if title.nil?
+    anchor_name = title.gsub(/\s+/, '-').downcase
+    '#%s' % anchor_name
+  end
+
   names.each_with_index do |name, i|
     test_file_name = format('%s_test.rb', name)
     test_file_path = File.join(
@@ -168,28 +174,28 @@ EOT
     prev_name = i == 0 ? nil : names[i - 1]
     prev_title = i == 0 ? nil : titles[i - 1]
     prev_md_file_path = md_file_path_for_name('.', prev_name)
+    prev_md_bookmark_path = format('%s%s', prev_md_file_path, bookmark_for(prev_title))
     next_title = titles[i + 1]
     next_md_file_path = md_file_path_for_name('.', names[i + 1])
+    next_md_bookmark_path = format('%s%s', next_md_file_path, bookmark_for(next_title))
     template_file_path = template_file_path_for_name(template_dir_path, name)
     options = {
         :highlight => true,
-        :prev_file_path => prev_md_file_path,
-        :next_file_path => next_md_file_path,
+        :prev_bookmark_path => prev_md_bookmark_path,
+        :next_bookmark_path => next_md_bookmark_path,
         :prev_title => prev_title,
         :next_title => next_title,
     }
     MarkdownHelper.build_file(template_file_path, md_file_path, options)
     md_file_name = File.basename(md_file_path)
     title = titles[i]
-    anchor_name = title.gsub(/\s+/, '-').downcase
     relative_link_path = File.join(
         '.',
         'tester_tour',
         'md_files',
         md_file_name,
-        '#%s' % anchor_name,
+        bookmark_for(title),
     )
-    p relative_link_path
     link_item = format('- [%s](%s)', title, relative_link_path)
     index_file.puts(link_item)
 

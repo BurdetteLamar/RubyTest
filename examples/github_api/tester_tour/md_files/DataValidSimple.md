@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop:** [Verifying a Complex Data Object](./DataEqualComplex.md)
+**Prev Stop:** [Verifying a Complex Data Object](./DataEqualComplex.md#verifying-a-complex-data-object)
 
-**Next Stop:** [Exceptions, Rescued and Not](./Exceptions.md)
+**Next Stop:** [Exceptions, Rescued and Not](./Exceptions.md#exceptions,-rescued-and-not)
 
 
 # Validating a Simple Data Object
@@ -54,86 +54,28 @@ Notes:
 <code>test_data_valid_simple.xml</code>
 ```xml
 <data_valid_simple_test>
-  <summary errors='0' failures='1' verdicts='15'/>
-  <test_method duration_seconds='1.987' name='data_valid_simple_test' timestamp='2017-10-12-Thu-15.19.08.446'>
+  <summary errors='1' failures='1' verdicts='1'/>
+  <test_method name='data_valid_simple_test' timestamp='2017-10-12-Thu-15.32.42.556'>
     <section name='With GithubClient'>
-      <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='1.705' timestamp='2017-10-12-Thu-15.19.08.450'/>
-      </GithubClient>
-      <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='0.258' timestamp='2017-10-12-Thu-15.19.10.157'/>
-      </GithubClient>
-      <section name='This is valid'>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='issue label valid id - integer' message='id is positive integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Fixnum</exp_value>
-            <act_value>710733210</act_value>
-          </verdict>
-          <verdict id='issue label valid id - positive' message='id is positive integer' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>710733210</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-          </verdict>
-        </section>
-        <verdict id='issue label valid url' message='url starts with' method='verdict_assert_match?' outcome='passed' volatile='false'>
-          <exp_value>/^https:\/\/api.github.com\/repos/</exp_value>
-          <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/enhancement</act_value>
-        </verdict>
-        <section name='verdict_assert_string_not_empty?'>
-          <verdict id='issue label valid name - string' message='name is nonempty string' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>String</exp_value>
-            <act_value>enhancement</act_value>
-          </verdict>
-          <verdict id='issue label valid name - not empty' message='name is nonempty string' method='verdict_refute_empty?' outcome='passed' volatile='false'>
-            <act_value>enhancement</act_value>
-          </verdict>
-        </section>
-        <verdict id='issue label valid color' message='color is hex color' method='verdict_assert_match?' outcome='passed' volatile='false'>
-          <exp_value>/[0-9a-f]{6}/i</exp_value>
-          <act_value>84b6eb</act_value>
-        </verdict>
-        <verdict id='issue label valid default' message='default is boolean' method='verdict_assert_includes?' outcome='passed' volatile='false'>
-          <exp_value>[TrueClass, FalseClass]</exp_value>
-          <act_value>TrueClass</act_value>
-        </verdict>
-      </section>
-      <section name='This is not valid'>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='issue label not valid id - integer' message='id is positive integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Fixnum</exp_value>
-            <act_value>710733210</act_value>
-          </verdict>
-          <verdict id='issue label not valid id - positive' message='id is positive integer' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>710733210</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-          </verdict>
-        </section>
-        <verdict id='issue label not valid url' message='url starts with' method='verdict_assert_match?' outcome='passed' volatile='false'>
-          <exp_value>/^https:\/\/api.github.com\/repos/</exp_value>
-          <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/enhancement</act_value>
-        </verdict>
-        <section name='verdict_assert_string_not_empty?'>
-          <verdict id='issue label not valid name - string' message='name is nonempty string' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>String</exp_value>
-            <act_value>enhancement</act_value>
-          </verdict>
-          <verdict id='issue label not valid name - not empty' message='name is nonempty string' method='verdict_refute_empty?' outcome='passed' volatile='false'>
-            <act_value>enhancement</act_value>
-          </verdict>
-        </section>
-        <verdict id='issue label not valid color' message='color is hex color' method='verdict_assert_match?' outcome='failed' volatile='false'>
-          <exp_value>/[0-9a-f]{6}/i</exp_value>
-          <act_value>red</act_value>
-          <exception>
-            <class>Minitest::Assertion</class>
-            <message>Expected /[0-9a-f]{6}/i to match # encoding: UTF-8 &quot;red&quot;.</message>
+      <GithubClient duration_seconds='1.437' method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
+        <execution timestamp='2017-10-12-Thu-15.32.42.560'>
+          <uncaught_exception>
+            <verdict_id>With GithubClient</verdict_id>
+            <class>RestClient::SSLCertificateNotVerified</class>
+            <http_code>nil</http_code>
+            <http_body>nil</http_body>
+            <message>SSL_connect returned=1 errno=0 state=error: certificate verify failed</message>
             <backtrace>
-              <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/data/issue_label.rb:37:in `verdict_field_valid?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:36:in `block in verdict_valid?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:35:in `verdict_valid?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/data_valid_simple_test.rb:15:in `block (2 levels) in test_data_valid_simple'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/data_valid_simple_test.rb:13:in `block in test_data_valid_simple'
+              <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:117:in `block (3 levels) in client_method'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:115:in `block (2 levels) in client_method'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:113:in `block in client_method'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:111:in `client_method'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:46:in `get'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/endpoints/get_issues_number_labels.rb:15:in `call_and_return_payload'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_endpoint.rb:11:in `call'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/data/issue_label.rb:66:in `get_all'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/data/issue_label.rb:71:in `get_first'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/data_valid_simple_test.rb:9:in `block in test_data_valid_simple'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:18:in `block in with'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:14:in `with'
@@ -144,21 +86,26 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `te
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:11:in `prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/data_valid_simple_test.rb:8:in `test_data_valid_simple']]>
             </backtrace>
+          </uncaught_exception>
+        </execution>
+      </GithubClient>
+      <section name='Count of errors (unexpected exceptions)'>
+        <verdict id='error count' message='error count' method='verdict_assert_equal?' outcome='failed' volatile='true'>
+          <exp_value>0</exp_value>
+          <act_value>1</act_value>
+          <exception>
+            <class>Minitest::Assertion</class>
+            <message>Expected: 0 Actual: 1</message>
+            <backtrace>
+              <![CDATA[c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:11:in `prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/data_valid_simple_test.rb:8:in `test_data_valid_simple']]>
+            </backtrace>
           </exception>
-        </verdict>
-        <verdict id='issue label not valid default' message='default is boolean' method='verdict_assert_includes?' outcome='passed' volatile='false'>
-          <exp_value>[TrueClass, FalseClass]</exp_value>
-          <act_value>TrueClass</act_value>
         </verdict>
       </section>
     </section>
   </test_method>
-  <section name='Count of errors (unexpected exceptions)'>
-    <verdict id='error count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
-      <exp_value>0</exp_value>
-      <act_value>0</act_value>
-    </verdict>
-  </section>
 </data_valid_simple_test>
 ```
 
@@ -168,7 +115,7 @@ Notes:
 - When a value has multiple validation verdicts (as all of these do), the verdicts are logged into a separate subsection.
 - In section `This is not valid`, three verdicts fail.
 
-**Prev Stop:** [Verifying a Complex Data Object](./DataEqualComplex.md)
+**Prev Stop:** [Verifying a Complex Data Object](./DataEqualComplex.md#verifying-a-complex-data-object)
 
-**Next Stop:** [Exceptions, Rescued and Not](./Exceptions.md)
+**Next Stop:** [Exceptions, Rescued and Not](./Exceptions.md#exceptions,-rescued-and-not)
 

@@ -1,5 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Next Stop:** [Sections and Nesting](./Sections.md)
+**Prev Stop:** []()
+
+**Next Stop:** [Sections and Nesting](./Sections.md#sections-and-nesting)
 
 
 # Simple Test
@@ -40,7 +42,7 @@ Notes:
 ```xml
 <test_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.001' name='test_test' timestamp='2017-10-12-Thu-15.18.45.979'>
+  <test_method duration_seconds='0.002' name='test_test' timestamp='2017-10-12-Thu-15.32.21.403'>
     <section name='With GithubClient'>
       <comment>Test code goes here</comment>
       <comment>Method prelude yields two objects:</comment>
@@ -65,5 +67,7 @@ Notes:
 - The last section gives the count of errors (unexpected exceptions).  Its verdict expects that count to be `0`.
 - (Attribute `volatile`, seen in element `verdict`, has to do with the Changes Report, and is of no present interest.)
 
-**Next Stop:** [Sections and Nesting](./Sections.md)
+**Prev Stop:** []()
+
+**Next Stop:** [Sections and Nesting](./Sections.md#sections-and-nesting)
 

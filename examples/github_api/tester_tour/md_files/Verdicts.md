@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop:** [Sections and Nesting](./Sections.md)
+**Prev Stop:** [Sections and Nesting](./Sections.md#sections-and-nesting)
 
-**Next Stop:** [Logging a Simple Data Object](./DataLogSimple.md)
+**Next Stop:** [Logging a Simple Data Object](./DataLogSimple.md#logging-a-simple-data-object)
 
 
 # Verdicts
@@ -75,7 +75,7 @@ Notes:
 ```xml
 <verdicts_test>
   <summary errors='0' failures='2' verdicts='5'/>
-  <test_method duration_seconds='0.005' name='verdicts_test' timestamp='2017-10-12-Thu-15.18.54.027'>
+  <test_method duration_seconds='0.005' name='verdicts_test' timestamp='2017-10-12-Thu-15.32.29.456'>
     <section name='With GithubClient'>
       <section name='These verdicts should pass'>
         <section name='An assert verdict that should pass'>
@@ -153,7 +153,7 @@ Notes:
 - Every verdict is fully logged.
 - A failed verdict logs its backtrace.
 
-**Prev Stop:** [Sections and Nesting](./Sections.md)
+**Prev Stop:** [Sections and Nesting](./Sections.md#sections-and-nesting)
 
-**Next Stop:** [Logging a Simple Data Object](./DataLogSimple.md)
+**Next Stop:** [Logging a Simple Data Object](./DataLogSimple.md#logging-a-simple-data-object)
 
