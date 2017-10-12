@@ -107,7 +107,6 @@ EOT
   # delete_albums_id
   # put_albums_id
   # post_albums
-  # crud
   # /
   # Done.
   names = %w/

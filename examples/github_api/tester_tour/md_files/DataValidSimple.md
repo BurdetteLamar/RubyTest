@@ -53,13 +53,13 @@ Notes:
 ```xml
 <data_valid_simple_test>
   <summary errors='0' failures='1' verdicts='15'/>
-  <test_method duration_seconds='1.985' name='data_valid_simple_test' timestamp='2017-10-11-Wed-18.15.33.549'>
+  <test_method duration_seconds='1.985' name='data_valid_simple_test' timestamp='2017-10-12-Thu-12.47.44.770'>
     <section name='With GithubClient'>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='1.681' timestamp='2017-10-11-Wed-18.15.33.559'/>
+        <execution duration_seconds='1.700' timestamp='2017-10-12-Thu-12.47.44.774'/>
       </GithubClient>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='0.276' timestamp='2017-10-11-Wed-18.15.35.240'/>
+        <execution duration_seconds='0.258' timestamp='2017-10-12-Thu-12.47.46.477'/>
       </GithubClient>
       <section name='This is valid'>
         <section name='verdict_assert_integer_positive?'>
@@ -73,8 +73,9 @@ Notes:
             <object_2>0</object_2>
           </verdict>
         </section>
-        <verdict id='issue label valid url' message='url starts with' method='verdict_assert?' outcome='passed' volatile='false'>
-          <act_value>true</act_value>
+        <verdict id='issue label valid url' message='url starts with' method='verdict_assert_match?' outcome='passed' volatile='false'>
+          <exp_value>/^https:\/\/api.github.com\/repos/</exp_value>
+          <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/enhancement</act_value>
         </verdict>
         <section name='verdict_assert_string_not_empty?'>
           <verdict id='issue label valid name - string' message='name is nonempty string' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
@@ -106,8 +107,9 @@ Notes:
             <object_2>0</object_2>
           </verdict>
         </section>
-        <verdict id='issue label not valid url' message='url starts with' method='verdict_assert?' outcome='passed' volatile='false'>
-          <act_value>true</act_value>
+        <verdict id='issue label not valid url' message='url starts with' method='verdict_assert_match?' outcome='passed' volatile='false'>
+          <exp_value>/^https:\/\/api.github.com\/repos/</exp_value>
+          <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/enhancement</act_value>
         </verdict>
         <section name='verdict_assert_string_not_empty?'>
           <verdict id='issue label not valid name - string' message='name is nonempty string' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>

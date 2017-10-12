@@ -23,7 +23,7 @@ class ExceptionsTest < BaseClassForTest
         denominator = 0
         quotient = numerator / denominator
         log.section('This section is not reached because of the exception') do
-          log.verdict_assert?('first not reached', quotient, 'Did not make it her because exception raised')
+          log.verdict_assert?('first not reached', quotient, 'Did not make it here because exception raised')
         end
       end
       log.section('This section is reached because the above exception was rescued') do
@@ -58,8 +58,8 @@ Notes:
 ```xml
 <exceptions_test>
   <summary errors='2' failures='1' verdicts='2'/>
-  <test_method name='exceptions_test' timestamp='2017-10-11-Wed-18.15.19.168'>
-    <section duration_seconds='0.000' name='With GithubClient'>
+  <test_method name='exceptions_test' timestamp='2017-10-12-Thu-12.47.29.916'>
+    <section duration_seconds='0.010' name='With GithubClient'>
       <section name='Section rescues exception'>
         <uncaught_exception>
           <verdict_id>Section rescues exception</verdict_id>

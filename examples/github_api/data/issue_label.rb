@@ -27,7 +27,7 @@ class IssueLabel < BaseClassForResource
         log.verdict_assert_integer_positive?(verdict_id, value, message)
       when :url
         message = format('%s starts with', field)
-        log.verdict_assert?(verdict_id, value.start_with?('https://api.github.com/repos'), message)
+        log.verdict_assert_match?(verdict_id, %r|^https://api.github.com/repos|, value, message)
       when :name
         message = format('%s is nonempty string', field)
         log.verdict_assert_string_not_empty?(verdict_id, value, message)

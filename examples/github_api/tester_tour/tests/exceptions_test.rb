@@ -9,7 +9,7 @@ class ExceptionsTest < BaseClassForTest
         denominator = 0
         quotient = numerator / denominator
         log.section('This section is not reached because of the exception') do
-          log.verdict_assert?('first not reached', quotient, 'Did not make it her because exception raised')
+          log.verdict_assert?('first not reached', quotient, 'Did not make it here because exception raised')
         end
       end
       log.section('This section is reached because the above exception was rescued') do
