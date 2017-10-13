@@ -9,6 +9,8 @@
 Notes:
 
 - Use nested sections to organize test code.
+- Use optional argument `:timestamp` to add a timestamp to the logged section.
+- Use optional argument `:duration` to add an execution duration to the logged section.
 - (This test does not use the client, and so by Ruby convention uses the variable name `_` instead of variable name `client`.)
 
 ## Log

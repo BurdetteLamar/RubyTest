@@ -103,11 +103,6 @@ EOT
   #     helpers
   #     volatility
   # crud test
-  # get_albums
-  # get_albums_id
-  # delete_albums_id
-  # put_albums_id
-  # post_albums
   # /
   # Done.
   names = %w/
@@ -117,6 +112,8 @@ EOT
     test
     sections
     verdicts
+    rescued_exception
+    unrescued_exception
     data_log_simple
     data_log_complex
     data_new_simple
@@ -124,8 +121,6 @@ EOT
     data_equal_simple
     data_equal_complex
     data_valid_simple
-    rescued_exception
-    unrescued_exception
     more_to_come
   /
 
