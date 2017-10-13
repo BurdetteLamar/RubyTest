@@ -6,13 +6,11 @@
 
 # Validating a Simple Data Object
 
-## Example Test
-
 The term _valid_, as used here, is about whether a value is of the correct _form_.  This is as distinguished from the earlier term _equal_, which is about whether the value is _correct_.
 
-For the values of `id` below, for example, the verifications are whether those values are positive integers.
+Example of usefulness:  creating a new issue label returns an `IssueLabel` object with a new `id` value.  The _value_ of the `id` is unpredictable, but it is still useful to verify that it is a positive integer.
 
-Example of usefulness:  creating a new user returns a `User` object with a new `id` value.  The _value_ of the `id` is unpredictable, but it is still useful to verify that it is a positive integer.
+## Example Test
 
 <code>data_valid_simple_test.rb</code>
 ```ruby
@@ -40,14 +38,14 @@ end
 
 Notes:
 
+- Use method `verdict_valid?` to verify that a data object's data are valid.
 - In section `This is valid`:
-  - A new album with valid values is instantiated.
-  - The valid values are not in the test itself, but instead come from the data class.
-  - Method `Album.verdict_valid? validates and logs each value in the album.
+  - A new `IssueLabel` with valid values is instantiated.
+  - Method `IssueLabel.verdict_valid? validates and logs each value in the issue label.
 - In section `This is not valid`:
-  - A new album with invalid values is instantiated.
-  - The invalid values are not in the test itself, but instead come from the data class.
-  - Method `Album.verdict_valid? validates and logs each value in the album.
+  - A new `IssueLabel` with invalid values is instantiated.
+  - Method `IssueLabel.verdict_valid? validates and logs each value in the issue label.
+  - The invalid value is not in the test itself, but instead comes from the data class.
 
 ## Log
 
@@ -55,13 +53,13 @@ Notes:
 ```xml
 <data_valid_simple_test>
   <summary errors='0' failures='1' verdicts='15'/>
-  <test_method duration_seconds='1.997' name='data_valid_simple_test' timestamp='2017-10-12-Thu-16.17.37.306'>
+  <test_method duration_seconds='2.042' name='data_valid_simple_test' timestamp='2017-10-13-Fri-15.42.35.660'>
     <section name='With GithubClient'>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='1.709' timestamp='2017-10-12-Thu-16.17.37.306'/>
+        <execution duration_seconds='1.743' timestamp='2017-10-13-Fri-15.42.35.664'/>
       </GithubClient>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='0.269' timestamp='2017-10-12-Thu-16.17.39.015'/>
+        <execution duration_seconds='0.276' timestamp='2017-10-13-Fri-15.42.37.407'/>
       </GithubClient>
       <section name='This is valid'>
         <section name='verdict_assert_integer_positive?'>

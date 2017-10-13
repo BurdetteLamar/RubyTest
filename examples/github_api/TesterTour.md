@@ -13,7 +13,7 @@ Each following tour stop assumes you've seen all its predecessors, so repetition
 ## Tour Stops
 
 - [Simple Test](./tester_tour/md_files/Test.md/#simple-test)
-- [Sections and Nesting](./tester_tour/md_files/Sections.md/#sections-and-nesting)
+- [Test Sections and Nesting](./tester_tour/md_files/Sections.md/#test-sections-and-nesting)
 - [Verdicts](./tester_tour/md_files/Verdicts.md/#verdicts)
 - [Logging a Simple Data Object](./tester_tour/md_files/DataLogSimple.md/#logging-a-simple-data-object)
 - [Logging a Complex Data Object](./tester_tour/md_files/DataLogComplex.md/#logging-a-complex-data-object)

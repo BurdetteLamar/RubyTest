@@ -8,9 +8,10 @@
 
 Notes:
 
-- The test class derives from a base test class.
-- The test method-name begins with `test`, which tells the test framework that it can be executed at test-time.
-- Method `prelude`, inherited from the base class, yields:
+- Create a new test class by deriving from `BaseClassForTest`.
+- Choose a test method-name that begins with `test`, which tells the test framework that it can be executed at test-time.
+- Call method `prelude`, inherited from the base class.
+- Use the yielded values for your test.
   - A domain-specific GitHub API client.
   - An open test log.
 

@@ -6,8 +6,6 @@
 
 # Creating a Simple Data Object
 
-This page introduces simple data classes, and shows how to create instances of them.
-
 ## Example Test
 
 <code>data_new_simple_test.rb</code>
@@ -40,8 +38,9 @@ end
 
 Notes:
 
-- These values are passed to method `IssueLabel.new` in a hash that gives the names and values.
-- Note that the instantiated `IssueLabel` exists only here in the test, and not in the Github API itself.
+- Create a new data object by calling method `new` on the data class.
+- Pass the initial values in a hash of name/value pairs.
+- (Note that the instantiated `IssueLabel` exists only here in the test, and not in the Github API itself.)
 
 ## Log
 
@@ -49,7 +48,7 @@ Notes:
 ```xml
 <data_new_simple_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.002' name='data_new_simple_test' timestamp='2017-10-12-Thu-16.17.29.500'>
+  <test_method duration_seconds='0.016' name='data_new_simple_test' timestamp='2017-10-13-Fri-15.42.27.861'>
     <section name='With GithubClient'>
       <section name='Instantiate and log an instance of IssueLabel'>
         <section name='Instantiated issue label'>

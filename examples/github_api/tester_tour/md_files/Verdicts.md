@@ -1,5 +1,5 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop:** [Sections and Nesting](./Sections.md#sections-and-nesting)
+**Prev Stop:** [Test Sections and Nesting](./Sections.md#test-sections-and-nesting)
 
 **Next Stop:** [Logging a Simple Data Object](./DataLogSimple.md#logging-a-simple-data-object)
 
@@ -7,8 +7,6 @@
 # Verdicts
 
 ## Example Test
-
-This page shows some verdicts.
 
 <code>verdicts_test.rb</code>
 ```ruby
@@ -59,14 +57,15 @@ end
 
 Notes:
 
-- A verdict method returns a boolean value, and therefore follows the Ruby convention of ending the method name with `?`.
-- A call to a verdict method has:
+- Use `verdict` methods for verifications.
+- Your call to a verdict method will have:
   - A verdict identifier, which must be unique within the test.
   - Other parameters, as appropriate to the particular method.
   - A message string.
-- An assert verdict expects something to be truthy (not `false` or `nil`).
-- A refute verdict expects something to be `false` or `nil`.
-- There are many other verdict methods, many of which will be described later in these pages.
+- An `assert` verdict expects something to be truthy (not `false` or `nil`).
+- A `refute` verdict expects something to be `false` or `nil`.
+- There are many other verdict methods, some of which will be described later in this tour.
+- A verdict method returns a boolean value, and therefore follows the Ruby convention of ending the method name with `?`.
 
 
 ## Log
@@ -75,7 +74,7 @@ Notes:
 ```xml
 <verdicts_test>
   <summary errors='0' failures='2' verdicts='5'/>
-  <test_method duration_seconds='0.010' name='verdicts_test' timestamp='2017-10-12-Thu-16.17.16.191'>
+  <test_method duration_seconds='0.000' name='verdicts_test' timestamp='2017-10-13-Fri-15.42.20.892'>
     <section name='With GithubClient'>
       <section name='These verdicts should pass'>
         <section name='An assert verdict that should pass'>
@@ -157,7 +156,7 @@ Notes:
 - Every verdict is fully logged.
 - A failed verdict logs its backtrace.
 
-**Prev Stop:** [Sections and Nesting](./Sections.md#sections-and-nesting)
+**Prev Stop:** [Test Sections and Nesting](./Sections.md#test-sections-and-nesting)
 
 **Next Stop:** [Logging a Simple Data Object](./DataLogSimple.md#logging-a-simple-data-object)
 

@@ -6,8 +6,6 @@
 
 # Exceptions, Rescued and Not
 
-This page introduces the handling of unexpected exceptions.
-
 ## Example Test
 
 <code>exceptions_test.rb</code>
@@ -58,8 +56,8 @@ Notes:
 ```xml
 <exceptions_test>
   <summary errors='2' failures='1' verdicts='2'/>
-  <test_method name='exceptions_test' timestamp='2017-10-12-Thu-16.17.40.318'>
-    <section duration_seconds='0.000' name='With GithubClient'>
+  <test_method name='exceptions_test' timestamp='2017-10-13-Fri-15.42.38.793'>
+    <section duration_seconds='0.004' name='With GithubClient'>
       <section name='Exception rescued'>
         <uncaught_exception>
           <verdict_id>Exception rescued</verdict_id>

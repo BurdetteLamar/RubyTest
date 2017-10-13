@@ -6,8 +6,6 @@
 
 # Logging a Simple Data Object
 
-This page introduces simple data classes, and shows how to log instances of them.
-
 ## Example Test
 
 <code>data_log_simple_test.rb</code>
@@ -35,8 +33,7 @@ end
 
 Notes:
 
-- The GitHub API has numerous resources, including the issue-label resource.
-- Class `IssueLabel` derives from base classes that provide it with the ability to log itself, as seen here in the call to method `issue_label.log`.
+- Log a data object by calling its `log` method.
 
 ## Log
 
@@ -44,15 +41,15 @@ Notes:
 ```xml
 <data_log_simple_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='8.560' name='data_log_simple_test' timestamp='2017-10-12-Thu-16.17.17.197'>
+  <test_method duration_seconds='2.037' name='data_log_simple_test' timestamp='2017-10-13-Fri-15.42.22.045'>
     <section name='With GithubClient'>
       <section name='Fetch and log an instance of IssueLabel'>
         <section name='Fetch an issue label'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='8.271' timestamp='2017-10-12-Thu-16.17.17.201'/>
+            <execution duration_seconds='1.728' timestamp='2017-10-13-Fri-15.42.22.068'/>
           </GithubClient>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='0.284' timestamp='2017-10-12-Thu-16.17.25.474'/>
+            <execution duration_seconds='0.284' timestamp='2017-10-13-Fri-15.42.23.796'/>
           </GithubClient>
         </section>
         <section name='Fetched issue label'>

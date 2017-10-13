@@ -8,8 +8,7 @@
 
 Notes:
 
-- The GitHub API has numerous resources, including the issue-label resource.
-- Class `IssueLabel` derives from base classes that provide it with the ability to log itself, as seen here in the call to method `issue_label.log`.
+- Log a data object by calling its `log` method.
 
 ## Log
 

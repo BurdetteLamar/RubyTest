@@ -8,6 +8,7 @@
 
 Notes:
 
+- Create a new data object by calling method `new` on the data class.
 - The nested hashes are formed into nested data objects.
 - Note that the instantiated objects exists only here in the test, and not in the Github API itself.
 

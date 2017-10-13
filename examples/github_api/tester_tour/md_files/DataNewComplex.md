@@ -6,8 +6,6 @@
 
 # Creating a Complex Data Object
 
-This page shows how to create and log an instance of a complex data object.
-
 ## Example Test
 
 <code>data_new_complex_test.rb</code>
@@ -57,6 +55,8 @@ end
 
 Notes:
 
+- Create a new data object by calling method `new` on the data class.
+
 - The nested hashes are formed into nested data objects.
 - Note that the instantiated objects exists only here in the test, and not in the Github API itself.
 
@@ -66,7 +66,7 @@ Notes:
 ```xml
 <data_new_complex_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.003' name='data_new_complex_test' timestamp='2017-10-12-Thu-16.17.30.545'>
+  <test_method duration_seconds='0.016' name='data_new_complex_test' timestamp='2017-10-13-Fri-15.42.28.897'>
     <section name='With GithubClient'>
       <section name='Create and log an instance of a complex data object'>
         <section name='RateLimit'>

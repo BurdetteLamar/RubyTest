@@ -8,7 +8,8 @@
 
 Notes:
 
-- Class `RateLimit` derives from base classes that provide it with the ability to log itself, as seen here in the call to method `rate_limit.log`.
+- Log a data object  by calling its `log` method.
+
 ## Log
 
 [file_source](../logs/test_data_log_complex.xml)

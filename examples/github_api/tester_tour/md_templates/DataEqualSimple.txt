@@ -8,6 +8,8 @@
 
 Notes:
 
+- Use method `equal?` to test data object equality, without logging.
+- Use method `verdict_equal?` to test object equality, including logging.
 - The test gets a known `IssueLabel`, then clones it.
 - We know that `IssueLabel` is flat, but it's good practice to use `deep_clone`, not `clone` just to be sure.
 - In section `These are equal`:

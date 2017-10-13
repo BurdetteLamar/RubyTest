@@ -42,6 +42,8 @@ end
 
 Notes:
 
+- Use method `equal?` to test data object equality, without logging.
+- Use method `verdict_equal?` to test object equality, including logging.
 - The test gets a known `IssueLabel`, then clones it.
 - We know that `IssueLabel` is flat, but it's good practice to use `deep_clone`, not `clone` just to be sure.
 - In section `These are equal`:
@@ -60,15 +62,15 @@ Notes:
 ```xml
 <data_equal_simple_test>
   <summary errors='0' failures='1' verdicts='11'/>
-  <test_method duration_seconds='1.988' name='data_equal_simple_test' timestamp='2017-10-12-Thu-16.17.31.577'>
+  <test_method duration_seconds='1.968' name='data_equal_simple_test' timestamp='2017-10-13-Fri-15.42.29.902'>
     <section name='With GithubClient'>
       <section name='Fetch an instance of IssueLabel'>
         <section name='Fetch an issuelabel'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='1.705' timestamp='2017-10-12-Thu-16.17.31.581'/>
+            <execution duration_seconds='1.708' timestamp='2017-10-13-Fri-15.42.29.902'/>
           </GithubClient>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='0.264' timestamp='2017-10-12-Thu-16.17.33.287'/>
+            <execution duration_seconds='0.260' timestamp='2017-10-13-Fri-15.42.31.609'/>
           </GithubClient>
         </section>
       </section>

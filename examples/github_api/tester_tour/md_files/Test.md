@@ -1,10 +1,8 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Next Stop:** [Sections and Nesting](./Sections.md#sections-and-nesting)
+**Next Stop:** [Test Sections and Nesting](./Sections.md#test-sections-and-nesting)
 
 
 # Simple Test
-
-This page shows a test class, along with its GitHub API client and test log.
 
 ## Example Test
 
@@ -28,9 +26,10 @@ end
 
 Notes:
 
-- The test class derives from a base test class.
-- The test method-name begins with `test`, which tells the test framework that it can be executed at test-time.
-- Method `prelude`, inherited from the base class, yields:
+- Create a new test class by deriving from `BaseClassForTest`.
+- Choose a test method-name that begins with `test`, which tells the test framework that it can be executed at test-time.
+- Call method `prelude`, inherited from the base class.
+- Use the yielded values for your test.
   - A domain-specific GitHub API client.
   - An open test log.
 
@@ -40,7 +39,7 @@ Notes:
 ```xml
 <test_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.002' name='test_test' timestamp='2017-10-12-Thu-16.17.08.174'>
+  <test_method duration_seconds='0.004' name='test_test' timestamp='2017-10-13-Fri-15.42.12.543'>
     <section name='With GithubClient'>
       <comment>Test code goes here</comment>
       <comment>Method prelude yields two objects:</comment>
@@ -65,5 +64,5 @@ Notes:
 - The last section gives the count of errors (unexpected exceptions).  Its verdict expects that count to be `0`.
 - (Attribute `volatile`, seen in element `verdict`, has to do with the Changes Report, and is of no present interest.)
 
-**Next Stop:** [Sections and Nesting](./Sections.md#sections-and-nesting)
+**Next Stop:** [Test Sections and Nesting](./Sections.md#test-sections-and-nesting)
 

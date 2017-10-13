@@ -4,9 +4,7 @@
 **Next Stop:** [Verdicts](./Verdicts.md#verdicts)
 
 
-# Sections and Nesting
-
-This page shows test sections, including nesting, timestamps, and durations.
+# Test Sections and Nesting
 
 ## Example Test
 
@@ -61,7 +59,7 @@ Notes:
 ```xml
 <sections_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='6.022' name='sections_test' timestamp='2017-10-12-Thu-16.17.09.160'>
+  <test_method duration_seconds='6.041' name='sections_test' timestamp='2017-10-13-Fri-15.42.13.736'>
     <section name='With GithubClient'>
       <section name='First outer section'>
         <section name='First inner section'>
@@ -74,16 +72,16 @@ Notes:
       <section name='Second outer section'>
         <comment>Some test code can go here</comment>
       </section>
-      <section name='Section with timestamp' timestamp='2017-10-12-Thu-16.17.09.160'>
+      <section name='Section with timestamp' timestamp='2017-10-13-Fri-15.42.13.752'>
         <comment>Some test code can go here</comment>
       </section>
-      <section duration_seconds='1.005' name='Section with timestamp'>
+      <section duration_seconds='1.009' name='Section with timestamp'>
         <comment>Some test code can go here</comment>
       </section>
-      <section duration_seconds='2.008' name='Section with timestamp and duration' timestamp='2017-10-12-Thu-16.17.10.165'>
+      <section duration_seconds='2.015' name='Section with timestamp and duration' timestamp='2017-10-13-Fri-15.42.14.761'>
         <comment>Some test code can go here</comment>
       </section>
-      <section duration_seconds='3.009' name='Order does not matter' timestamp='2017-10-12-Thu-16.17.12.173'>
+      <section duration_seconds='3.000' name='Order does not matter' timestamp='2017-10-13-Fri-15.42.16.776'>
         <comment>Some test code can go here</comment>
       </section>
     </section>

@@ -8,8 +8,9 @@
 
 Notes:
 
-- These values are passed to method `IssueLabel.new` in a hash that gives the names and values.
-- Note that the instantiated `IssueLabel` exists only here in the test, and not in the Github API itself.
+- Create a new data object by calling method `new` on the data class.
+- Pass the initial values in a hash of name/value pairs.
+- (Note that the instantiated `IssueLabel` exists only here in the test, and not in the Github API itself.)
 
 ## Log
 

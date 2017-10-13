@@ -6,8 +6,6 @@
 
 # Logging a Complex Data Object
 
-This page introduces complex data classes, and shows how to log instances of them.
-
 ## Example Test
 
 <code>data_log_complex_test.rb</code>
@@ -36,43 +34,44 @@ end
 
 Notes:
 
-- Class `RateLimit` derives from base classes that provide it with the ability to log itself, as seen here in the call to method `rate_limit.log`.
+- Log a data object  by calling its `log` method.
+
 ## Log
 
 <code>test_data_log_complex.xml</code>
 ```xml
 <data_log_complex_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='1.689' name='data_log_complex_test' timestamp='2017-10-12-Thu-16.17.26.788'>
+  <test_method duration_seconds='1.692' name='data_log_complex_test' timestamp='2017-10-13-Fri-15.42.25.164'>
     <section name='With GithubClient'>
       <section name='Fetch and log rate limit'>
         <section name='Fetch rate limit'>
           <GithubClient method='GET' url='https://api.github.com/rate_limit'>
-            <execution duration_seconds='1.687' timestamp='2017-10-12-Thu-16.17.26.788'/>
+            <execution duration_seconds='1.678' timestamp='2017-10-13-Fri-15.42.25.178'/>
           </GithubClient>
         </section>
         <section name='Fetched rate limit'>
           <section name='RateLimit::Resources'>
             <section name='RateLimit::Core'>
               <data field='limit' value='5000'/>
-              <data field='remaining' value='4992'/>
-              <data field='reset' value='1507846413'/>
+              <data field='remaining' value='4998'/>
+              <data field='reset' value='1507930958'/>
             </section>
             <section name='RateLimit::Search'>
               <data field='limit' value='30'/>
               <data field='remaining' value='30'/>
-              <data field='reset' value='1507843121'/>
+              <data field='reset' value='1507927421'/>
             </section>
             <section name='RateLimit::Graphql'>
               <data field='limit' value='5000'/>
               <data field='remaining' value='5000'/>
-              <data field='reset' value='1507846661'/>
+              <data field='reset' value='1507930961'/>
             </section>
           </section>
           <section name='RateLimit::Rate'>
             <data field='limit' value='5000'/>
-            <data field='remaining' value='4992'/>
-            <data field='reset' value='1507846413'/>
+            <data field='remaining' value='4998'/>
+            <data field='reset' value='1507930958'/>
           </section>
         </section>
       </section>
