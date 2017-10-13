@@ -584,7 +584,7 @@ class Log < BaseClass
   Contract ArrayOf[String], Maybe[ArrayOf[String]] => String
   # Filters lines that are from ruby or log, to make the backtrace more readable.
   def filter_backtrace(lines)
-    filtered = ["\n"]
+    filtered = ['']
     lines.each do |line|
       unless line.match(self.backtrace_filter)
         filtered.push(line)
