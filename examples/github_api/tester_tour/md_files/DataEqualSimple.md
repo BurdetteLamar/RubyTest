@@ -62,15 +62,15 @@ Notes:
 ```xml
 <data_equal_simple_test>
   <summary errors='0' failures='1' verdicts='11'/>
-  <test_method duration_seconds='1.968' name='data_equal_simple_test' timestamp='2017-10-13-Fri-15.42.29.902'>
+  <test_method duration_seconds='2.015' name='data_equal_simple_test' timestamp='2017-10-13-Fri-15.53.47.834'>
     <section name='With GithubClient'>
       <section name='Fetch an instance of IssueLabel'>
         <section name='Fetch an issuelabel'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='1.708' timestamp='2017-10-13-Fri-15.42.29.902'/>
+            <execution duration_seconds='1.703' timestamp='2017-10-13-Fri-15.53.47.839'/>
           </GithubClient>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='0.260' timestamp='2017-10-13-Fri-15.42.31.609'/>
+            <execution duration_seconds='0.295' timestamp='2017-10-13-Fri-15.53.49.543'/>
           </GithubClient>
         </section>
       </section>
@@ -105,7 +105,6 @@ Notes:
             <message>Expected: 710733210 Actual: 710733211</message>
             <backtrace>
               <![CDATA[
-
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:138:in `block in verdict_equal_recursive?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:127:in `verdict_equal_recursive?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:55:in `verdict_equal?'

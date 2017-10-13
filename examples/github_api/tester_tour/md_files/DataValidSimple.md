@@ -53,13 +53,13 @@ Notes:
 ```xml
 <data_valid_simple_test>
   <summary errors='0' failures='1' verdicts='15'/>
-  <test_method duration_seconds='2.042' name='data_valid_simple_test' timestamp='2017-10-13-Fri-15.42.35.660'>
+  <test_method duration_seconds='1.987' name='data_valid_simple_test' timestamp='2017-10-13-Fri-15.53.53.668'>
     <section name='With GithubClient'>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='1.743' timestamp='2017-10-13-Fri-15.42.35.664'/>
+        <execution duration_seconds='1.690' timestamp='2017-10-13-Fri-15.53.53.671'/>
       </GithubClient>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='0.276' timestamp='2017-10-13-Fri-15.42.37.407'/>
+        <execution duration_seconds='0.278' timestamp='2017-10-13-Fri-15.53.55.361'/>
       </GithubClient>
       <section name='This is valid'>
         <section name='verdict_assert_integer_positive?'>
@@ -128,7 +128,6 @@ Notes:
             <message>Expected /[0-9a-f]{6}/i to match # encoding: UTF-8 &quot;red&quot;.</message>
             <backtrace>
               <![CDATA[
-
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/data/issue_label.rb:37:in `verdict_field_valid?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:36:in `block in verdict_valid?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:35:in `verdict_valid?'

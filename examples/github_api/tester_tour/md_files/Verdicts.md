@@ -58,7 +58,7 @@ end
 Notes:
 
 - Use `verdict` methods for verifications.
-- Your call to a verdict method will have:
+- A call to a verdict method will have:
   - A verdict identifier, which must be unique within the test.
   - Other parameters, as appropriate to the particular method.
   - A message string.
@@ -74,7 +74,7 @@ Notes:
 ```xml
 <verdicts_test>
   <summary errors='0' failures='2' verdicts='5'/>
-  <test_method duration_seconds='0.000' name='verdicts_test' timestamp='2017-10-13-Fri-15.42.20.892'>
+  <test_method duration_seconds='0.000' name='verdicts_test' timestamp='2017-10-13-Fri-15.53.39.036'>
     <section name='With GithubClient'>
       <section name='These verdicts should pass'>
         <section name='An assert verdict that should pass'>
@@ -97,7 +97,6 @@ Notes:
               <message>Expected false to be truthy.</message>
               <backtrace>
                 <![CDATA[
-
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:26:in `block (3 levels) in test_verdicts'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:25:in `block (2 levels) in test_verdicts'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:24:in `block in test_verdicts'
@@ -122,7 +121,6 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
               <message>Expected true to not be truthy.</message>
               <backtrace>
                 <![CDATA[
-
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:33:in `block (3 levels) in test_verdicts'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:32:in `block (2 levels) in test_verdicts'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:24:in `block in test_verdicts'

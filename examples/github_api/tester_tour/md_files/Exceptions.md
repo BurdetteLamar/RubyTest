@@ -56,8 +56,8 @@ Notes:
 ```xml
 <exceptions_test>
   <summary errors='2' failures='1' verdicts='2'/>
-  <test_method name='exceptions_test' timestamp='2017-10-13-Fri-15.42.38.793'>
-    <section duration_seconds='0.004' name='With GithubClient'>
+  <test_method name='exceptions_test' timestamp='2017-10-13-Fri-15.53.56.679'>
+    <section duration_seconds='0.000' name='With GithubClient'>
       <section name='Exception rescued'>
         <uncaught_exception>
           <verdict_id>Exception rescued</verdict_id>
@@ -65,7 +65,6 @@ Notes:
           <message>divided by 0</message>
           <backtrace>
             <![CDATA[
-
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/exceptions_test.rb:10:in `/'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/exceptions_test.rb:10:in `block (2 levels) in test_exceptions'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/exceptions_test.rb:7:in `block in test_exceptions'
@@ -93,7 +92,6 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
           <message>divided by 0</message>
           <backtrace>
             <![CDATA[
-
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/exceptions_test.rb:21:in `/'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/exceptions_test.rb:21:in `block (2 levels) in test_exceptions'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/exceptions_test.rb:18:in `block in test_exceptions'
@@ -119,7 +117,6 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
           <message>Expected: 0 Actual: 2</message>
           <backtrace>
             <![CDATA[
-
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:11:in `prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/exceptions_test.rb:6:in `test_exceptions']]>
