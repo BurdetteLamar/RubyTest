@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
 **Prev Stop:** [Test Sections and Nesting](./Sections.md#test-sections-and-nesting)
 
-**Next Stop:** [Logging a Simple Data Object](./DataLogSimple.md#logging-a-simple-data-object)
+**Next Stop:** [Rescued Exception](./RescuedException.md#rescued-exception)
 
 
 # Verdicts
@@ -74,7 +74,7 @@ Notes:
 ```xml
 <verdicts_test>
   <summary errors='0' failures='2' verdicts='5'/>
-  <test_method duration_seconds='0.000' name='verdicts_test' timestamp='2017-10-13-Fri-15.53.39.036'>
+  <test_method duration_seconds='0.016' name='verdicts_test' timestamp='2017-10-13-Fri-16.26.43.605'>
     <section name='With GithubClient'>
       <section name='These verdicts should pass'>
         <section name='An assert verdict that should pass'>
@@ -156,5 +156,5 @@ Notes:
 
 **Prev Stop:** [Test Sections and Nesting](./Sections.md#test-sections-and-nesting)
 
-**Next Stop:** [Logging a Simple Data Object](./DataLogSimple.md#logging-a-simple-data-object)
+**Next Stop:** [Rescued Exception](./RescuedException.md#rescued-exception)
 

@@ -1,0 +1,21 @@
+[navigation_links]
+
+# Unrescued Exception
+
+## Example Test
+
+[file_source](../tests/unrescued_exception_test.rb)
+
+Notes:
+
+- Section `Exception not rescued` does not rescue its exception.  The test exits entirely, and any following code in the test is not reached.
+
+## Log
+
+[file_source](../logs/test_unrescued_exception.xml)
+
+Notes:
+
+- The unrescued exception is actually rescued by the log itself, and of course logged.
+
+[navigation_links]

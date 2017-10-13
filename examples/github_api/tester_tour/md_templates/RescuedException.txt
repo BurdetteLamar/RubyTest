@@ -1,0 +1,26 @@
+[navigation_links]
+
+# Rescued Exception
+
+## Example Test
+
+[file_source](../tests/rescued_exception_test.rb)
+
+Notes:
+
+- Use option `:rescue` in a `log.section` that should rescue an exception.
+- Section `Exception rescued` rescues its exception.  The test exits the _section_, and any following code _in that section_ is not reached.
+- Execution continues at the code following the rescued section.
+- Any section, including a nested section, may rescue an exception.  (Or not -- it's an independent choice for each section.)
+
+## Log
+
+[file_source](../logs/test_rescued_exception.xml)
+
+Notes:
+
+- The logged exception includes its message and backtrace.
+- The last section in the log, named `Count of errors (unexpected exceptions)` has a verdict that expects that count to be 0.
+- Because of the exception, that count is 1, and the verdict fails.
+
+[navigation_links]
