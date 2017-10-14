@@ -115,12 +115,12 @@ EOT
     rescued_exception
     unrescued_exception
     data_log_simple
-    data_log_complex
     data_new_simple
-    data_new_complex
     data_equal_simple
-    data_equal_complex
     data_valid_simple
+    data_log_complex
+    data_new_complex
+    data_equal_complex
     data_valid_complex
     more_to_come
   /
