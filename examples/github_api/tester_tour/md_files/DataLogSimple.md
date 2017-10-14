@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
 **Prev Stop:** [Unrescued Exception](./UnrescuedException.md#unrescued-exception)
 
-**Next Stop:** [Logging a Complex Data Object](./DataLogComplex.md#logging-a-complex-data-object)
+**Next Stop:** [Creating a Simple Data Object](./DataNewSimple.md#creating-a-simple-data-object)
 
 
 # Logging a Simple Data Object
@@ -41,15 +41,15 @@ Notes:
 ```xml
 <data_log_simple_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='1.995' name='data_log_simple_test' timestamp='2017-10-14-Sat-10.56.29.377'>
+  <test_method duration_seconds='1.955' name='data_log_simple_test' timestamp='2017-10-14-Sat-12.18.10.259'>
     <section name='With GithubClient'>
       <section name='Fetch and log an instance of IssueLabel'>
         <section name='Fetch an issue label'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='1.681' timestamp='2017-10-14-Sat-10.56.29.392'/>
+            <execution duration_seconds='1.669' timestamp='2017-10-14-Sat-12.18.10.275'/>
           </GithubClient>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='0.297' timestamp='2017-10-14-Sat-10.56.31.074'/>
+            <execution duration_seconds='0.270' timestamp='2017-10-14-Sat-12.18.11.944'/>
           </GithubClient>
         </section>
         <section name='Fetched issue label'>
@@ -79,5 +79,5 @@ Notes:
 
 **Prev Stop:** [Unrescued Exception](./UnrescuedException.md#unrescued-exception)
 
-**Next Stop:** [Logging a Complex Data Object](./DataLogComplex.md#logging-a-complex-data-object)
+**Next Stop:** [Creating a Simple Data Object](./DataNewSimple.md#creating-a-simple-data-object)
 

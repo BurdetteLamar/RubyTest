@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop:** [Logging a Simple Data Object](./DataLogSimple.md#logging-a-simple-data-object)
+**Prev Stop:** [Validating a Simple Data Object](./DataValidSimple.md#validating-a-simple-data-object)
 
-**Next Stop:** [Creating a Simple Data Object](./DataNewSimple.md#creating-a-simple-data-object)
+**Next Stop:** [Creating a Complex Data Object](./DataNewComplex.md#creating-a-complex-data-object)
 
 
 # Logging a Complex Data Object
@@ -42,36 +42,36 @@ Notes:
 ```xml
 <data_log_complex_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='1.656' name='data_log_complex_test' timestamp='2017-10-14-Sat-10.56.32.399'>
+  <test_method duration_seconds='1.671' name='data_log_complex_test' timestamp='2017-10-14-Sat-12.18.20.253'>
     <section name='With GithubClient'>
       <section name='Fetch and log rate limit'>
         <section name='Fetch rate limit'>
           <GithubClient method='GET' url='https://api.github.com/rate_limit'>
-            <execution duration_seconds='1.654' timestamp='2017-10-14-Sat-10.56.32.399'/>
+            <execution duration_seconds='1.662' timestamp='2017-10-14-Sat-12.18.20.257'/>
           </GithubClient>
         </section>
         <section name='Fetched rate limit'>
           <section name='RateLimit::Resources'>
             <section name='RateLimit::Core_'>
               <data field='limit' value='5000'/>
-              <data field='remaining' value='4968'/>
-              <data field='reset' value='1507999225'/>
+              <data field='remaining' value='4994'/>
+              <data field='reset' value='1508005107'/>
             </section>
             <section name='RateLimit::Search'>
               <data field='limit' value='30'/>
               <data field='remaining' value='30'/>
-              <data field='reset' value='1507996668'/>
+              <data field='reset' value='1508001577'/>
             </section>
             <section name='RateLimit::Graphql'>
               <data field='limit' value='5000'/>
               <data field='remaining' value='5000'/>
-              <data field='reset' value='1508000208'/>
+              <data field='reset' value='1508005117'/>
             </section>
           </section>
           <section name='RateLimit::Rate'>
             <data field='limit' value='5000'/>
-            <data field='remaining' value='4968'/>
-            <data field='reset' value='1507999225'/>
+            <data field='remaining' value='4994'/>
+            <data field='reset' value='1508005107'/>
           </section>
         </section>
       </section>
@@ -98,7 +98,7 @@ Notes:
       - `RateLimit::Graphql`
     - `RateLimit::Rate`
 
-**Prev Stop:** [Logging a Simple Data Object](./DataLogSimple.md#logging-a-simple-data-object)
+**Prev Stop:** [Validating a Simple Data Object](./DataValidSimple.md#validating-a-simple-data-object)
 
-**Next Stop:** [Creating a Simple Data Object](./DataNewSimple.md#creating-a-simple-data-object)
+**Next Stop:** [Creating a Complex Data Object](./DataNewComplex.md#creating-a-complex-data-object)
 

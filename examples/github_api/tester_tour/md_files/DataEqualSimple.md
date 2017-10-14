@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop:** [Creating a Complex Data Object](./DataNewComplex.md#creating-a-complex-data-object)
+**Prev Stop:** [Creating a Simple Data Object](./DataNewSimple.md#creating-a-simple-data-object)
 
-**Next Stop:** [Verifying a Complex Data Object](./DataEqualComplex.md#verifying-a-complex-data-object)
+**Next Stop:** [Validating a Simple Data Object](./DataValidSimple.md#validating-a-simple-data-object)
 
 
 # Verifying a Simple Data Object
@@ -62,15 +62,15 @@ Notes:
 ```xml
 <data_equal_simple_test>
   <summary errors='0' failures='1' verdicts='11'/>
-  <test_method duration_seconds='1.960' name='data_equal_simple_test' timestamp='2017-10-14-Sat-10.56.37.119'>
+  <test_method duration_seconds='1.995' name='data_equal_simple_test' timestamp='2017-10-14-Sat-12.18.14.197'>
     <section name='With GithubClient'>
       <section name='Fetch an instance of IssueLabel'>
         <section name='Fetch an issuelabel'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='1.684' timestamp='2017-10-14-Sat-10.56.37.123'/>
+            <execution duration_seconds='1.687' timestamp='2017-10-14-Sat-12.18.14.201'/>
           </GithubClient>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='0.264' timestamp='2017-10-14-Sat-10.56.38.806'/>
+            <execution duration_seconds='0.291' timestamp='2017-10-14-Sat-12.18.15.888'/>
           </GithubClient>
         </section>
       </section>
@@ -156,7 +156,7 @@ Notes:
 - In section `These are equal`, all verdicts pass.
 - In section `These are not equal`, one verdict fails.
 
-**Prev Stop:** [Creating a Complex Data Object](./DataNewComplex.md#creating-a-complex-data-object)
+**Prev Stop:** [Creating a Simple Data Object](./DataNewSimple.md#creating-a-simple-data-object)
 
-**Next Stop:** [Verifying a Complex Data Object](./DataEqualComplex.md#verifying-a-complex-data-object)
+**Next Stop:** [Validating a Simple Data Object](./DataValidSimple.md#validating-a-simple-data-object)
 

@@ -43,8 +43,8 @@ Notes:
 ```xml
 <unrescued_exception_test>
   <summary errors='1' failures='1' verdicts='1'/>
-  <test_method name='unrescued_exception_test' timestamp='2017-10-14-Sat-10.56.28.360'>
-    <section duration_seconds='0.000' name='With GithubClient'>
+  <test_method name='unrescued_exception_test' timestamp='2017-10-14-Sat-12.18.09.282'>
+    <section duration_seconds='0.003' name='With GithubClient'>
       <section name='Unrescued exeption'>
         <uncaught_exception>
           <verdict_id>With GithubClient</verdict_id>

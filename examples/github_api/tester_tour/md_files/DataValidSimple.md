@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop:** [Verifying a Complex Data Object](./DataEqualComplex.md#verifying-a-complex-data-object)
+**Prev Stop:** [Verifying a Simple Data Object](./DataEqualSimple.md#verifying-a-simple-data-object)
 
-**Next Stop:** [Validating a Complex Data Object](./DataValidComplex.md#validating-a-complex-data-object)
+**Next Stop:** [Logging a Complex Data Object](./DataLogComplex.md#logging-a-complex-data-object)
 
 
 # Validating a Simple Data Object
@@ -53,13 +53,13 @@ Notes:
 ```xml
 <data_valid_simple_test>
   <summary errors='0' failures='1' verdicts='15'/>
-  <test_method duration_seconds='1.957' name='data_valid_simple_test' timestamp='2017-10-14-Sat-10.56.42.844'>
+  <test_method duration_seconds='1.987' name='data_valid_simple_test' timestamp='2017-10-14-Sat-12.18.17.242'>
     <section name='With GithubClient'>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='1.670' timestamp='2017-10-14-Sat-10.56.42.844'/>
+        <execution duration_seconds='1.691' timestamp='2017-10-14-Sat-12.18.17.246'/>
       </GithubClient>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='0.276' timestamp='2017-10-14-Sat-10.56.44.514'/>
+        <execution duration_seconds='0.273' timestamp='2017-10-14-Sat-12.18.18.937'/>
       </GithubClient>
       <section name='This is valid'>
         <section name='verdict_assert_integer_positive?'>
@@ -167,7 +167,7 @@ Notes:
 - When a value has multiple validation verdicts (as all of these do), the verdicts are logged into a separate subsection.
 - In section `This is not valid`, three verdicts fail.
 
-**Prev Stop:** [Verifying a Complex Data Object](./DataEqualComplex.md#verifying-a-complex-data-object)
+**Prev Stop:** [Verifying a Simple Data Object](./DataEqualSimple.md#verifying-a-simple-data-object)
 
-**Next Stop:** [Validating a Complex Data Object](./DataValidComplex.md#validating-a-complex-data-object)
+**Next Stop:** [Logging a Complex Data Object](./DataLogComplex.md#logging-a-complex-data-object)
 
