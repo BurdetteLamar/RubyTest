@@ -34,7 +34,7 @@ end
 
 Notes:
 
-- Log a data object  by calling its `log` method.
+- Log a data object by calling its `log` method.
 
 ## Log
 
@@ -42,36 +42,36 @@ Notes:
 ```xml
 <data_log_complex_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='1.661' name='data_log_complex_test' timestamp='2017-10-13-Fri-16.26.56.240'>
+  <test_method duration_seconds='1.656' name='data_log_complex_test' timestamp='2017-10-14-Sat-10.56.32.399'>
     <section name='With GithubClient'>
       <section name='Fetch and log rate limit'>
         <section name='Fetch rate limit'>
           <GithubClient method='GET' url='https://api.github.com/rate_limit'>
-            <execution duration_seconds='1.658' timestamp='2017-10-13-Fri-16.26.56.243'/>
+            <execution duration_seconds='1.654' timestamp='2017-10-14-Sat-10.56.32.399'/>
           </GithubClient>
         </section>
         <section name='Fetched rate limit'>
           <section name='RateLimit::Resources'>
-            <section name='RateLimit::Core'>
+            <section name='RateLimit::Core_'>
               <data field='limit' value='5000'/>
-              <data field='remaining' value='4980'/>
-              <data field='reset' value='1507930958'/>
+              <data field='remaining' value='4968'/>
+              <data field='reset' value='1507999225'/>
             </section>
             <section name='RateLimit::Search'>
               <data field='limit' value='30'/>
               <data field='remaining' value='30'/>
-              <data field='reset' value='1507930092'/>
+              <data field='reset' value='1507996668'/>
             </section>
             <section name='RateLimit::Graphql'>
               <data field='limit' value='5000'/>
               <data field='remaining' value='5000'/>
-              <data field='reset' value='1507933632'/>
+              <data field='reset' value='1508000208'/>
             </section>
           </section>
           <section name='RateLimit::Rate'>
             <data field='limit' value='5000'/>
-            <data field='remaining' value='4980'/>
-            <data field='reset' value='1507930958'/>
+            <data field='remaining' value='4968'/>
+            <data field='reset' value='1507999225'/>
           </section>
         </section>
       </section>
@@ -89,37 +89,14 @@ Notes:
 Notes:
 
 - The section named `Fetched rate limit` logs the values in the fetched rate limit.
-- Nested data objects are recursively logged.
-- The actual data returned by the client has this structure:
-
-```ruby
-{
-    :resources => {
-        :core => {
-            :limit => 5000,
-            :remaining => 4984,
-            :reset => 1507676679,
-        },
-        :search => {
-            :limit => 30,
-            :remaining => 30,
-            :reset => 1507673695,
-        },
-        :graphql => {
-            :limit => 5000,
-            :remaining => 5000,
-            :reset => 1507677235,
-        }
-    },
-    :rate => {
-        :limit => 5000,
-        :remaining => 4984,
-        :reset => 1507676679,
-    }
-}
-```
-- The test framework automatically forms these nested hashes into nested objects.
 - The nested objects recursively log themselves into nested log sections.
+- The structure of the logged nested objects:
+  - `RateLimit`
+    - `RateLimit::Resources`
+      - `RateLimit::Core`
+      - `RateLimit::Search`
+      - `RateLimit::Graphql`
+    - `RateLimit::Rate`
 
 **Prev Stop:** [Logging a Simple Data Object](./DataLogSimple.md#logging-a-simple-data-object)
 

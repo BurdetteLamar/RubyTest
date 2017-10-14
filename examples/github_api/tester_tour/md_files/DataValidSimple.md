@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
 **Prev Stop:** [Verifying a Complex Data Object](./DataEqualComplex.md#verifying-a-complex-data-object)
 
-**Next Stop:** [More to Come ...](./MoreToCome.md#more-to-come-)
+**Next Stop:** [Validating a Complex Data Object](./DataValidComplex.md#validating-a-complex-data-object)
 
 
 # Validating a Simple Data Object
@@ -53,18 +53,18 @@ Notes:
 ```xml
 <data_valid_simple_test>
   <summary errors='0' failures='1' verdicts='15'/>
-  <test_method duration_seconds='1.976' name='data_valid_simple_test' timestamp='2017-10-13-Fri-16.27.06.701'>
+  <test_method duration_seconds='1.957' name='data_valid_simple_test' timestamp='2017-10-14-Sat-10.56.42.844'>
     <section name='With GithubClient'>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='1.687' timestamp='2017-10-13-Fri-16.27.06.701'/>
+        <execution duration_seconds='1.670' timestamp='2017-10-14-Sat-10.56.42.844'/>
       </GithubClient>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='0.266' timestamp='2017-10-13-Fri-16.27.08.391'/>
+        <execution duration_seconds='0.276' timestamp='2017-10-14-Sat-10.56.44.514'/>
       </GithubClient>
       <section name='This is valid'>
         <section name='verdict_assert_integer_positive?'>
           <verdict id='issue label valid id - integer' message='id is positive integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Fixnum</exp_value>
+            <exp_value>Integer</exp_value>
             <act_value>710733210</act_value>
           </verdict>
           <verdict id='issue label valid id - positive' message='id is positive integer' method='verdict_assert_operator?' outcome='passed' volatile='false'>
@@ -98,7 +98,7 @@ Notes:
       <section name='This is not valid'>
         <section name='verdict_assert_integer_positive?'>
           <verdict id='issue label not valid id - integer' message='id is positive integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Fixnum</exp_value>
+            <exp_value>Integer</exp_value>
             <act_value>710733210</act_value>
           </verdict>
           <verdict id='issue label not valid id - positive' message='id is positive integer' method='verdict_assert_operator?' outcome='passed' volatile='false'>
@@ -169,5 +169,5 @@ Notes:
 
 **Prev Stop:** [Verifying a Complex Data Object](./DataEqualComplex.md#verifying-a-complex-data-object)
 
-**Next Stop:** [More to Come ...](./MoreToCome.md#more-to-come-)
+**Next Stop:** [Validating a Complex Data Object](./DataValidComplex.md#validating-a-complex-data-object)
 

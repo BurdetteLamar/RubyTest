@@ -121,6 +121,7 @@ EOT
     data_equal_simple
     data_equal_complex
     data_valid_simple
+    data_valid_complex
     more_to_come
   /
 

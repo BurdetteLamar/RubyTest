@@ -8,7 +8,7 @@
 
 Notes:
 
-- Log a data object  by calling its `log` method.
+- Log a data object by calling its `log` method.
 
 ## Log
 
@@ -17,36 +17,13 @@ Notes:
 Notes:
 
 - The section named `Fetched rate limit` logs the values in the fetched rate limit.
-- Nested data objects are recursively logged.
-- The actual data returned by the client has this structure:
-
-```ruby
-{
-    :resources => {
-        :core => {
-            :limit => 5000,
-            :remaining => 4984,
-            :reset => 1507676679,
-        },
-        :search => {
-            :limit => 30,
-            :remaining => 30,
-            :reset => 1507673695,
-        },
-        :graphql => {
-            :limit => 5000,
-            :remaining => 5000,
-            :reset => 1507677235,
-        }
-    },
-    :rate => {
-        :limit => 5000,
-        :remaining => 4984,
-        :reset => 1507676679,
-    }
-}
-```
-- The test framework automatically forms these nested hashes into nested objects.
 - The nested objects recursively log themselves into nested log sections.
+- The structure of the logged nested objects:
+  - `RateLimit`
+    - `RateLimit::Resources`
+      - `RateLimit::Core`
+      - `RateLimit::Search`
+      - `RateLimit::Graphql`
+    - `RateLimit::Rate`
 
 [navigation_links]

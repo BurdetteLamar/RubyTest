@@ -51,6 +51,16 @@ class RateLimit < BaseClassForResource
       message = format('%s is positive integer', field)
       log.verdict_assert_integer_positive?(verdict_id, value, message)
     end
+
+    Contract Symbol => Any
+    def self.invalid_value_for(field)
+      0
+    end
+
+    attr_accessor \
+        :limit,
+        :remaining,
+        :reset
   end
 
   class Resources < BaseClassForData
@@ -67,16 +77,17 @@ class RateLimit < BaseClassForResource
     Contract Hash => nil
     def initialize(values = {})
       super(FIELDS, values)
-      self.core = Core.new(self.core) unless self.core.nil?
+      self.core = Core_.new(self.core) unless self.core.nil?
       self.search = Search.new(self.search) unless self.search.nil?
       self.graphql = Graphql.new(self.graphql) unless self.graphql.nil?
       nil
     end
 
     Contract Log, String => Bool
-    def verdict_field_valid?(log, verdict_id, field)
-      value = self.send(field)
-      value.verdict_valid?(log, format('%s - %s', verdict_id, field))
+    def verdict_valid?(log, verdict_id)
+      core.verdict_valid?(log, verdict_id + ' - core')
+      search.verdict_valid?(log, verdict_id + ' - search')
+      graphql.verdict_valid?(log, verdict_id + ' - graphql')
     end
 
     attr_accessor \
@@ -93,16 +104,14 @@ class RateLimit < BaseClassForResource
   class Rate < Info
   end
 
-  class Core < Info
-
+  # Class name Core would conflict with Contracts::Core.
+  class Core_ < Info
   end
 
   class Search < Info
-
   end
 
   class Graphql < Info
-
   end
 
 end

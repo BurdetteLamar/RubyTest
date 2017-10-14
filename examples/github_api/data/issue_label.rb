@@ -56,7 +56,7 @@ class IssueLabel < BaseClassForResource
       when :default
         'not a boolean'
       else
-        raist ArgumentError.new(field)
+        raise ArgumentError.new(field)
     end
   end
 

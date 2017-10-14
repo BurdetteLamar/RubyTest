@@ -24,4 +24,5 @@ Each following tour stop assumes you've seen all its predecessors, so repetition
 - [Verifying a Simple Data Object](./tester_tour/md_files/DataEqualSimple.md/#verifying-a-simple-data-object)
 - [Verifying a Complex Data Object](./tester_tour/md_files/DataEqualComplex.md/#verifying-a-complex-data-object)
 - [Validating a Simple Data Object](./tester_tour/md_files/DataValidSimple.md/#validating-a-simple-data-object)
+- [Validating a Complex Data Object](./tester_tour/md_files/DataValidComplex.md/#validating-a-complex-data-object)
 - [More to Come ...](./tester_tour/md_files/MoreToCome.md/#more-to-come-)

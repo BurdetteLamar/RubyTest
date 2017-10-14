@@ -1,0 +1,30 @@
+[navigation_links]
+
+# Validating a Complex Data Object
+
+## Example Test
+
+[file_source](../tests/data_valid_complex_test.rb)
+
+Notes:
+
+- Use method `verdict_valid?` to verify that a data object's data are valid.
+- In section `This is valid`:
+  - A new `RateLimit` with valid values is instantiated.
+  - Method `RateLimit.verdict_valid? validates and logs each value in the rate limit.
+- In section `This is not valid`:
+  - A new `RateLimit` with invalid values is instantiated.
+  - Method `RateLimit.verdict_valid? validates and logs each value in the rate limit.
+  - The invalid value is not in the test itself, but instead comes from the data class.
+
+## Log
+
+[file_source](../logs/test_data_valid_complex.xml)
+
+Notes:
+
+- In section `This is valid`, all verdicts pass.
+- When a value has multiple validation verdicts (as all of these do), the verdicts are logged into a separate subsection.
+- In section `This is not valid`, three verdicts fail.
+
+[navigation_links]
