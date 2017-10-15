@@ -2,9 +2,9 @@ require_relative '../../base_classes/base_class_for_test'
 
 require_relative '../../data/rate_limit'
 
-class DataEqualTest < BaseClassForTest
+class NestedDataEqualTest < BaseClassForTest
 
-  def test_data_equal_complex
+  def test_nested_data_equal
     prelude do |client, log|
       rate_limit_0 = RateLimit.get(client)
       rate_limit_1 = RateLimit.deep_clone(rate_limit_0)

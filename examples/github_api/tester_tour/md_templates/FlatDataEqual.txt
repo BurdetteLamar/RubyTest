@@ -1,10 +1,10 @@
 [navigation_links]
 
-# Verifying a Simple Data Object
+# Verifying a Data Object
 
 ## Example Test
 
-[file_source](../tests/data_equal_simple_test.rb)
+[file_source](../tests/flat_data_equal_test.rb)
 
 Notes:
 
@@ -24,7 +24,7 @@ Notes:
 
 ## Log
 
-[file_source](../logs/test_data_equal_simple.xml)
+[file_source](../logs/test_flat_data_equal.xml)
 
 Notes:
 

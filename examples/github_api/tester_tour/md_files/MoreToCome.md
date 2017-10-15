@@ -1,5 +1,5 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop:** [Validating a Complex Data Object](./DataValidComplex.md#validating-a-complex-data-object)
+**Prev Stop:** [Validating Nested Data Objects](./NestedDataValid.md#validating-nested-data-objects)
 
 
 # More to Come ...
@@ -8,5 +8,5 @@ This tour documentation is under active development.
 
 Stay tuned....
 
-**Prev Stop:** [Validating a Complex Data Object](./DataValidComplex.md#validating-a-complex-data-object)
+**Prev Stop:** [Validating Nested Data Objects](./NestedDataValid.md#validating-nested-data-objects)
 

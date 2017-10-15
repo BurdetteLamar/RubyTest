@@ -1,5 +1,5 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop:** [Simple Test](./Test.md#simple-test)
+**Prev Stop:** [First Test](./First.md#first-test)
 
 **Next Stop:** [Verdicts](./Verdicts.md#verdicts)
 
@@ -61,7 +61,7 @@ Notes:
 ```xml
 <sections_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='6.007' name='sections_test' timestamp='2017-10-15-Sun-16.20.48.884'>
+  <test_method duration_seconds='6.010' name='sections_test' timestamp='2017-10-15-Sun-18.11.09.191'>
     <section name='With GithubClient'>
       <section name='First outer section'>
         <section name='First inner section'>
@@ -74,16 +74,16 @@ Notes:
       <section name='Second outer section'>
         <comment>Some test code can go here</comment>
       </section>
-      <section name='Section with timestamp' timestamp='2017-10-15-Sun-16.20.48.886'>
+      <section name='Section with timestamp' timestamp='2017-10-15-Sun-18.11.09.191'>
         <comment>Some test code can go here</comment>
       </section>
-      <section duration_seconds='1.001' name='Section with timestamp'>
+      <section duration_seconds='1.008' name='Section with timestamp'>
         <comment>Some test code can go here</comment>
       </section>
-      <section duration_seconds='2.002' name='Section with timestamp and duration' timestamp='2017-10-15-Sun-16.20.49.888'>
+      <section duration_seconds='2.000' name='Section with timestamp and duration' timestamp='2017-10-15-Sun-18.11.10.200'>
         <comment>Some test code can go here</comment>
       </section>
-      <section duration_seconds='3.001' name='Order does not matter' timestamp='2017-10-15-Sun-16.20.51.890'>
+      <section duration_seconds='3.000' name='Order does not matter' timestamp='2017-10-15-Sun-18.11.12.200'>
         <comment>Some test code can go here</comment>
       </section>
     </section>
@@ -101,7 +101,7 @@ Notes:
 
 - The sections in the test are propagated to the log, so that the log is organized the same way as the test.
 
-**Prev Stop:** [Simple Test](./Test.md#simple-test)
+**Prev Stop:** [First Test](./First.md#first-test)
 
 **Next Stop:** [Verdicts](./Verdicts.md#verdicts)
 

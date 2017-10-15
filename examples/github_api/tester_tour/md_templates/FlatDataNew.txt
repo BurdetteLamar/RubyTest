@@ -1,10 +1,10 @@
 [navigation_links]
 
-# Creating a Simple Data Object
+# Creating a Data Object
 
 ## Example Test
 
-[file_source](../tests/data_new_simple_test.rb)
+[file_source](../tests/flat_data_new_test.rb)
 
 Notes:
 
@@ -14,6 +14,6 @@ Notes:
 
 ## Log
 
-[file_source](../logs/test_data_new_simple.xml)
+[file_source](../logs/test_flat_data_new.xml)
 
 [navigation_links]

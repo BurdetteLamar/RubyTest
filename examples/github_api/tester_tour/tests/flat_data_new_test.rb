@@ -2,9 +2,9 @@ require_relative '../../base_classes/base_class_for_test'
 
 require_relative '../../../github_api/data/issue_label'
 
-class DataNewTest < BaseClassForTest
+class FlatDataNewTest < BaseClassForTest
 
-  def test_data_new_simple
+  def test_flat_data_new
     prelude do |_, log|
       log.section('Instantiate and log an instance of IssueLabel') do
         issue_label = IssueLabel.new(

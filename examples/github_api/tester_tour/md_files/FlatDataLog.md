@@ -1,22 +1,22 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
 **Prev Stop:** [Unrescued Exception](./UnrescuedException.md#unrescued-exception)
 
-**Next Stop:** [Creating a Simple Data Object](./DataNewSimple.md#creating-a-simple-data-object)
+**Next Stop:** [Creating a Data Object](./FlatDataNew.md#creating-a-data-object)
 
 
-# Logging a Simple Data Object
+# Logging a Data Object
 
 ## Example Test
 
-<code>data_log_simple_test.rb</code>
+<code>flat_data_log_test.rb</code>
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
 
 require_relative '../../data/issue_label'
 
-class DataNewTest < BaseClassForTest
+class FlatDataLogTest < BaseClassForTest
 
-  def test_data_log_simple
+  def test_flat_data_log
     prelude do |client, log|
       log.section('Fetch and log an instance of IssueLabel') do
         issue_label = nil
@@ -37,19 +37,19 @@ Notes:
 
 ## Log
 
-<code>test_data_log_simple.xml</code>
+<code>test_flat_data_log.xml</code>
 ```xml
-<data_log_simple_test>
+<flat_data_log_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='2.268' name='data_log_simple_test' timestamp='2017-10-15-Sun-16.20.59.361'>
+  <test_method duration_seconds='1.978' name='flat_data_log_test' timestamp='2017-10-15-Sun-18.11.19.332'>
     <section name='With GithubClient'>
       <section name='Fetch and log an instance of IssueLabel'>
         <section name='Fetch an issue label'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='1.967' timestamp='2017-10-15-Sun-16.20.59.402'/>
+            <execution duration_seconds='1.714' timestamp='2017-10-15-Sun-18.11.19.332'/>
           </GithubClient>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='0.260' timestamp='2017-10-15-Sun-16.21.01.369'/>
+            <execution duration_seconds='0.262' timestamp='2017-10-15-Sun-18.11.21.046'/>
           </GithubClient>
         </section>
         <section name='Fetched issue label'>
@@ -68,7 +68,7 @@ Notes:
       <act_value>0</act_value>
     </verdict>
   </section>
-</data_log_simple_test>
+</flat_data_log_test>
 ```
 
 Notes:
@@ -79,5 +79,5 @@ Notes:
 
 **Prev Stop:** [Unrescued Exception](./UnrescuedException.md#unrescued-exception)
 
-**Next Stop:** [Creating a Simple Data Object](./DataNewSimple.md#creating-a-simple-data-object)
+**Next Stop:** [Creating a Data Object](./FlatDataNew.md#creating-a-data-object)
 

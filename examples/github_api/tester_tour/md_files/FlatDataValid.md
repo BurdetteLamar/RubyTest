@@ -1,10 +1,10 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop:** [Verifying a Simple Data Object](./DataEqualSimple.md#verifying-a-simple-data-object)
+**Prev Stop:** [Verifying a Data Object](./FlatDataEqual.md#verifying-a-data-object)
 
-**Next Stop:** [Logging a Complex Data Object](./DataLogComplex.md#logging-a-complex-data-object)
+**Next Stop:** [Logging Nested Data Objects](./NestedDataLog.md#logging-nested-data-objects)
 
 
-# Validating a Simple Data Object
+# Validating a Data Object
 
 The term _valid_, as used here, is about whether a value is of the correct _form_.  This is as distinguished from the earlier term _equal_, which is about whether the value is _correct_.
 
@@ -12,15 +12,15 @@ Example of usefulness:  creating a new issue label returns an `IssueLabel` objec
 
 ## Example Test
 
-<code>data_valid_simple_test.rb</code>
+<code>flat_data_valid_test.rb</code>
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
 
 require_relative '../../data/issue_label'
 
-class DataValidSimpleTest < BaseClassForTest
+class FlatDataValidTest < BaseClassForTest
 
-  def test_data_valid_simple
+  def test_flat_data_valid
     prelude do |client, log|
       issue_label = IssueLabel.get_first(client, 1)
       log.section('This is valid') do
@@ -49,17 +49,17 @@ Notes:
 
 ## Log
 
-<code>test_data_valid_simple.xml</code>
+<code>test_flat_data_valid.xml</code>
 ```xml
-<data_valid_simple_test>
+<flat_data_valid_test>
   <summary errors='0' failures='1' verdicts='15'/>
-  <test_method duration_seconds='1.978' name='data_valid_simple_test' timestamp='2017-10-15-Sun-16.21.06.778'>
+  <test_method duration_seconds='2.211' name='flat_data_valid_test' timestamp='2017-10-15-Sun-18.11.26.390'>
     <section name='With GithubClient'>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='1.677' timestamp='2017-10-15-Sun-16.21.06.782'/>
+        <execution duration_seconds='1.710' timestamp='2017-10-15-Sun-18.11.26.394'/>
       </GithubClient>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='0.289' timestamp='2017-10-15-Sun-16.21.08.459'/>
+        <execution duration_seconds='0.497' timestamp='2017-10-15-Sun-18.11.28.105'/>
       </GithubClient>
       <section name='This is valid'>
         <section name='verdict_assert_integer_positive?'>
@@ -131,8 +131,8 @@ Notes:
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/data/issue_label.rb:37:in `verdict_field_valid?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:36:in `block in verdict_valid?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:35:in `verdict_valid?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/data_valid_simple_test.rb:15:in `block (2 levels) in test_data_valid_simple'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/data_valid_simple_test.rb:13:in `block in test_data_valid_simple'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/flat_data_valid_test.rb:15:in `block (2 levels) in test_flat_data_valid'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/flat_data_valid_test.rb:13:in `block in test_flat_data_valid'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:18:in `block in with'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:14:in `with'
@@ -141,7 +141,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `bl
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:11:in `prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/data_valid_simple_test.rb:8:in `test_data_valid_simple']]>
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/flat_data_valid_test.rb:8:in `test_flat_data_valid']]>
             </backtrace>
           </exception>
         </verdict>
@@ -158,7 +158,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
       <act_value>0</act_value>
     </verdict>
   </section>
-</data_valid_simple_test>
+</flat_data_valid_test>
 ```
 
 Notes:
@@ -167,7 +167,7 @@ Notes:
 - When a value has multiple validation verdicts (as all of these do), the verdicts are logged into a separate subsection.
 - In section `This is not valid`, three verdicts fail.
 
-**Prev Stop:** [Verifying a Simple Data Object](./DataEqualSimple.md#verifying-a-simple-data-object)
+**Prev Stop:** [Verifying a Data Object](./FlatDataEqual.md#verifying-a-data-object)
 
-**Next Stop:** [Logging a Complex Data Object](./DataLogComplex.md#logging-a-complex-data-object)
+**Next Stop:** [Logging Nested Data Objects](./NestedDataLog.md#logging-nested-data-objects)
 

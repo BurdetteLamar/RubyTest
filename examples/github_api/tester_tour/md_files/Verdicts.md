@@ -74,7 +74,7 @@ Notes:
 ```xml
 <verdicts_test>
   <summary errors='0' failures='2' verdicts='5'/>
-  <test_method duration_seconds='0.005' name='verdicts_test' timestamp='2017-10-15-Sun-16.20.56.024'>
+  <test_method duration_seconds='0.005' name='verdicts_test' timestamp='2017-10-15-Sun-18.11.16.217'>
     <section name='With GithubClient'>
       <section name='These verdicts should pass'>
         <section name='An assert verdict that should pass'>

@@ -2,17 +2,17 @@
 **Next Stop:** [Test Sections and Nesting](./Sections.md#test-sections-and-nesting)
 
 
-# Simple Test
+# First Test
 
 ## Example Test
 
-<code>test_test.rb</code>
+<code>first_test.rb</code>
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
 
-class SimpleTest < BaseClassForTest
+class FirstTest < BaseClassForTest
 
-  def test_test
+  def test_first
     prelude do |client, log|
       log.comment('Test code goes here')
       log.comment('Method prelude yields two objects:')
@@ -35,11 +35,11 @@ Notes:
 
 ## Log
 
-<code>test_test.xml</code>
+<code>test_first.xml</code>
 ```xml
-<test_test>
+<first_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.003' name='test_test' timestamp='2017-10-15-Sun-16.20.47.778'>
+  <test_method duration_seconds='0.002' name='first_test' timestamp='2017-10-15-Sun-18.11.08.152'>
     <section name='With GithubClient'>
       <comment>Test code goes here</comment>
       <comment>Method prelude yields two objects:</comment>
@@ -53,7 +53,7 @@ Notes:
       <act_value>0</act_value>
     </verdict>
   </section>
-</test_test>
+</first_test>
 ```
 
 Notes:

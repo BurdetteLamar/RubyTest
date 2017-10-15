@@ -2,9 +2,9 @@ require_relative '../../base_classes/base_class_for_test'
 
 require_relative '../../data/issue_label'
 
-class DataNewTest < BaseClassForTest
+class FlatDataLogTest < BaseClassForTest
 
-  def test_data_log_simple
+  def test_flat_data_log
     prelude do |client, log|
       log.section('Fetch and log an instance of IssueLabel') do
         issue_label = nil

@@ -1,22 +1,22 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop:** [Verifying a Complex Data Object](./DataEqualComplex.md#verifying-a-complex-data-object)
+**Prev Stop:** [Verifying Nested Data Objects](./NestedDataEqual.md#verifying-nested-data-objects)
 
 **Next Stop:** [More to Come ...](./MoreToCome.md#more-to-come-)
 
 
-# Validating a Complex Data Object
+# Validating Nested Data Objects
 
 ## Example Test
 
-<code>data_valid_complex_test.rb</code>
+<code>nested_data_valid_test.rb</code>
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
 
 require_relative '../../data/rate_limit'
 
-class DataValidComplexTest < BaseClassForTest
+class NestedDataValidTest < BaseClassForTest
 
-  def test_data_valid_complex
+  def test_nested_data_valid
     prelude do |client, log|
       rate_limit = RateLimit.get(client)
       log.section('This is valid') do
@@ -45,14 +45,14 @@ Notes:
 
 ## Log
 
-<code>test_data_valid_complex.xml</code>
+<code>test_nested_data_valid.xml</code>
 ```xml
-<data_valid_complex_test>
+<nested_data_valid_test>
   <summary errors='0' failures='1' verdicts='49'/>
-  <test_method duration_seconds='1.709' name='data_valid_complex_test' timestamp='2017-10-15-Sun-16.21.16.265'>
+  <test_method duration_seconds='1.732' name='nested_data_valid_test' timestamp='2017-10-15-Sun-18.11.36.200'>
     <section name='With GithubClient'>
       <GithubClient method='GET' url='https://api.github.com/rate_limit'>
-        <execution duration_seconds='1.657' timestamp='2017-10-15-Sun-16.21.16.269'/>
+        <execution duration_seconds='1.695' timestamp='2017-10-15-Sun-18.11.36.200'/>
       </GithubClient>
       <section name='This is valid'>
         <section name='verdict_assert_integer_positive?'>
@@ -80,10 +80,10 @@ Notes:
         <section name='verdict_assert_integer_positive?'>
           <verdict id='rate limit valid - resources - core reset - integer' message='reset is positive integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
             <exp_value>Integer</exp_value>
-            <act_value>1508106078</act_value>
+            <act_value>1508112698</act_value>
           </verdict>
           <verdict id='rate limit valid - resources - core reset - positive' message='reset is positive integer' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>1508106078</object_1>
+            <object_1>1508112698</object_1>
             <operator>:&gt;</operator>
             <object_2>0</object_2>
           </verdict>
@@ -113,10 +113,10 @@ Notes:
         <section name='verdict_assert_integer_positive?'>
           <verdict id='rate limit valid - resources - search reset - integer' message='reset is positive integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
             <exp_value>Integer</exp_value>
-            <act_value>1508102555</act_value>
+            <act_value>1508109175</act_value>
           </verdict>
           <verdict id='rate limit valid - resources - search reset - positive' message='reset is positive integer' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>1508102555</object_1>
+            <object_1>1508109175</object_1>
             <operator>:&gt;</operator>
             <object_2>0</object_2>
           </verdict>
@@ -146,10 +146,10 @@ Notes:
         <section name='verdict_assert_integer_positive?'>
           <verdict id='rate limit valid - resources - graphql reset - integer' message='reset is positive integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
             <exp_value>Integer</exp_value>
-            <act_value>1508106095</act_value>
+            <act_value>1508112715</act_value>
           </verdict>
           <verdict id='rate limit valid - resources - graphql reset - positive' message='reset is positive integer' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>1508106095</object_1>
+            <object_1>1508112715</object_1>
             <operator>:&gt;</operator>
             <object_2>0</object_2>
           </verdict>
@@ -179,10 +179,10 @@ Notes:
         <section name='verdict_assert_integer_positive?'>
           <verdict id='rate limit valid - rate reset - integer' message='reset is positive integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
             <exp_value>Integer</exp_value>
-            <act_value>1508106078</act_value>
+            <act_value>1508112698</act_value>
           </verdict>
           <verdict id='rate limit valid - rate reset - positive' message='reset is positive integer' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>1508106078</object_1>
+            <object_1>1508112698</object_1>
             <operator>:&gt;</operator>
             <object_2>0</object_2>
           </verdict>
@@ -230,8 +230,8 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:35:in `verdict_valid?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/data/rate_limit.rb:92:in `verdict_valid?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/data/rate_limit.rb:23:in `verdict_valid?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/data_valid_complex_test.rb:15:in `block (2 levels) in test_data_valid_complex'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/data_valid_complex_test.rb:13:in `block in test_data_valid_complex'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/nested_data_valid_test.rb:15:in `block (2 levels) in test_nested_data_valid'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/nested_data_valid_test.rb:13:in `block in test_nested_data_valid'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:18:in `block in with'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:14:in `with'
@@ -240,7 +240,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `bl
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:11:in `prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/data_valid_complex_test.rb:8:in `test_data_valid_complex']]>
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/nested_data_valid_test.rb:8:in `test_nested_data_valid']]>
               </backtrace>
             </exception>
           </verdict>
@@ -270,10 +270,10 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
         <section name='verdict_assert_integer_positive?'>
           <verdict id='rate limit not valid - resources - search reset - integer' message='reset is positive integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
             <exp_value>Integer</exp_value>
-            <act_value>1508102555</act_value>
+            <act_value>1508109175</act_value>
           </verdict>
           <verdict id='rate limit not valid - resources - search reset - positive' message='reset is positive integer' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>1508102555</object_1>
+            <object_1>1508109175</object_1>
             <operator>:&gt;</operator>
             <object_2>0</object_2>
           </verdict>
@@ -303,10 +303,10 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
         <section name='verdict_assert_integer_positive?'>
           <verdict id='rate limit not valid - resources - graphql reset - integer' message='reset is positive integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
             <exp_value>Integer</exp_value>
-            <act_value>1508106095</act_value>
+            <act_value>1508112715</act_value>
           </verdict>
           <verdict id='rate limit not valid - resources - graphql reset - positive' message='reset is positive integer' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>1508106095</object_1>
+            <object_1>1508112715</object_1>
             <operator>:&gt;</operator>
             <object_2>0</object_2>
           </verdict>
@@ -336,10 +336,10 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
         <section name='verdict_assert_integer_positive?'>
           <verdict id='rate limit not valid - rate reset - integer' message='reset is positive integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
             <exp_value>Integer</exp_value>
-            <act_value>1508106078</act_value>
+            <act_value>1508112698</act_value>
           </verdict>
           <verdict id='rate limit not valid - rate reset - positive' message='reset is positive integer' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>1508106078</object_1>
+            <object_1>1508112698</object_1>
             <operator>:&gt;</operator>
             <object_2>0</object_2>
           </verdict>
@@ -353,7 +353,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
       <act_value>0</act_value>
     </verdict>
   </section>
-</data_valid_complex_test>
+</nested_data_valid_test>
 ```
 
 Notes:
@@ -362,7 +362,7 @@ Notes:
 - When a value has multiple validation verdicts (as all of these do), the verdicts are logged into a separate subsection.
 - In section `This is not valid`, three verdicts fail.
 
-**Prev Stop:** [Verifying a Complex Data Object](./DataEqualComplex.md#verifying-a-complex-data-object)
+**Prev Stop:** [Verifying Nested Data Objects](./NestedDataEqual.md#verifying-nested-data-objects)
 
 **Next Stop:** [More to Come ...](./MoreToCome.md#more-to-come-)
 

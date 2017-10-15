@@ -1,22 +1,22 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop:** [Creating a Complex Data Object](./DataNewComplex.md#creating-a-complex-data-object)
+**Prev Stop:** [Creating Nested Data Objects](./NestedDataNew.md#creating-nested-data-objects)
 
-**Next Stop:** [Validating a Complex Data Object](./DataValidComplex.md#validating-a-complex-data-object)
+**Next Stop:** [Validating Nested Data Objects](./NestedDataValid.md#validating-nested-data-objects)
 
 
-# Verifying a Complex Data Object
+# Verifying Nested Data Objects
 
 ## Example Test
 
-<code>data_equal_complex_test.rb</code>
+<code>nested_data_equal_test.rb</code>
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
 
 require_relative '../../data/rate_limit'
 
-class DataEqualTest < BaseClassForTest
+class NestedDataEqualTest < BaseClassForTest
 
-  def test_data_equal_complex
+  def test_nested_data_equal
     prelude do |client, log|
       rate_limit_0 = RateLimit.get(client)
       rate_limit_1 = RateLimit.deep_clone(rate_limit_0)
@@ -53,14 +53,14 @@ Notes:
 
 ## Log
 
-<code>test_data_equal_complex.xml</code>
+<code>test_nested_data_equal.xml</code>
 ```xml
-<data_equal_complex_test>
+<nested_data_equal_test>
   <summary errors='0' failures='1' verdicts='25'/>
-  <test_method duration_seconds='1.710' name='data_equal_complex_test' timestamp='2017-10-15-Sun-16.21.13.522'>
+  <test_method duration_seconds='1.682' name='nested_data_equal_test' timestamp='2017-10-15-Sun-18.11.33.458'>
     <section name='With GithubClient'>
       <GithubClient method='GET' url='https://api.github.com/rate_limit'>
-        <execution duration_seconds='1.678' timestamp='2017-10-15-Sun-16.21.13.522'/>
+        <execution duration_seconds='1.662' timestamp='2017-10-15-Sun-18.11.33.462'/>
       </GithubClient>
       <section name='These are equal'>
         <section name='RateLimit::Resources'>
@@ -74,8 +74,8 @@ Notes:
               <act_value>4994</act_value>
             </verdict>
             <verdict id='rate limits equal resources core-reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>1508106078</exp_value>
-              <act_value>1508106078</act_value>
+              <exp_value>1508112698</exp_value>
+              <act_value>1508112698</act_value>
             </verdict>
           </section>
           <section name='RateLimit::Search'>
@@ -88,8 +88,8 @@ Notes:
               <act_value>30</act_value>
             </verdict>
             <verdict id='rate limits equal resources search-reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>1508102552</exp_value>
-              <act_value>1508102552</act_value>
+              <exp_value>1508109172</exp_value>
+              <act_value>1508109172</act_value>
             </verdict>
           </section>
           <section name='RateLimit::Graphql'>
@@ -102,8 +102,8 @@ Notes:
               <act_value>5000</act_value>
             </verdict>
             <verdict id='rate limits equal resources graphql-reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>1508106092</exp_value>
-              <act_value>1508106092</act_value>
+              <exp_value>1508112712</exp_value>
+              <act_value>1508112712</act_value>
             </verdict>
           </section>
         </section>
@@ -117,8 +117,8 @@ Notes:
             <act_value>4994</act_value>
           </verdict>
           <verdict id='rate limits equal rate-reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-            <exp_value>1508106078</exp_value>
-            <act_value>1508106078</act_value>
+            <exp_value>1508112698</exp_value>
+            <act_value>1508112698</act_value>
           </verdict>
         </section>
       </section>
@@ -142,8 +142,8 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:133:in `block in verdict_equal_recursive?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:127:in `verdict_equal_recursive?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:55:in `verdict_equal?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/data_equal_complex_test.rb:18:in `block (2 levels) in test_data_equal_complex'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/data_equal_complex_test.rb:15:in `block in test_data_equal_complex'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/nested_data_equal_test.rb:18:in `block (2 levels) in test_nested_data_equal'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/nested_data_equal_test.rb:15:in `block in test_nested_data_equal'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:18:in `block in with'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:14:in `with'
@@ -152,7 +152,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `bl
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:11:in `prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/data_equal_complex_test.rb:8:in `test_data_equal_complex']]>
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/nested_data_equal_test.rb:8:in `test_nested_data_equal']]>
                 </backtrace>
               </exception>
             </verdict>
@@ -161,8 +161,8 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
               <act_value>4994</act_value>
             </verdict>
             <verdict id='rate limits not equal resources core-reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>1508106078</exp_value>
-              <act_value>1508106078</act_value>
+              <exp_value>1508112698</exp_value>
+              <act_value>1508112698</act_value>
             </verdict>
           </section>
           <section name='RateLimit::Search'>
@@ -175,8 +175,8 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
               <act_value>30</act_value>
             </verdict>
             <verdict id='rate limits not equal resources search-reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>1508102552</exp_value>
-              <act_value>1508102552</act_value>
+              <exp_value>1508109172</exp_value>
+              <act_value>1508109172</act_value>
             </verdict>
           </section>
           <section name='RateLimit::Graphql'>
@@ -189,8 +189,8 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
               <act_value>5000</act_value>
             </verdict>
             <verdict id='rate limits not equal resources graphql-reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>1508106092</exp_value>
-              <act_value>1508106092</act_value>
+              <exp_value>1508112712</exp_value>
+              <act_value>1508112712</act_value>
             </verdict>
           </section>
         </section>
@@ -204,8 +204,8 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
             <act_value>4994</act_value>
           </verdict>
           <verdict id='rate limits not equal rate-reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-            <exp_value>1508106078</exp_value>
-            <act_value>1508106078</act_value>
+            <exp_value>1508112698</exp_value>
+            <act_value>1508112698</act_value>
           </verdict>
         </section>
       </section>
@@ -217,14 +217,14 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
       <act_value>0</act_value>
     </verdict>
   </section>
-</data_equal_complex_test>
+</nested_data_equal_test>
 ```
 
 - Each actual value, even one that's in a nested object, is verified in a separate verdict.
 - In section `These are equal`, all verdicts pass.
 - In section `These are not equal`, one (deeply nested) verdict fails.
 
-**Prev Stop:** [Creating a Complex Data Object](./DataNewComplex.md#creating-a-complex-data-object)
+**Prev Stop:** [Creating Nested Data Objects](./NestedDataNew.md#creating-nested-data-objects)
 
-**Next Stop:** [Validating a Complex Data Object](./DataValidComplex.md#validating-a-complex-data-object)
+**Next Stop:** [Validating Nested Data Objects](./NestedDataValid.md#validating-nested-data-objects)
 

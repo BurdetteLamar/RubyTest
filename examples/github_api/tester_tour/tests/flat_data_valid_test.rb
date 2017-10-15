@@ -2,9 +2,9 @@ require_relative '../../base_classes/base_class_for_test'
 
 require_relative '../../data/issue_label'
 
-class DataValidSimpleTest < BaseClassForTest
+class FlatDataValidTest < BaseClassForTest
 
-  def test_data_valid_simple
+  def test_flat_data_valid
     prelude do |client, log|
       issue_label = IssueLabel.get_first(client, 1)
       log.section('This is valid') do

@@ -2,9 +2,9 @@ require_relative '../../base_classes/base_class_for_test'
 
 require_relative '../../data/rate_limit'
 
-class DataLogComplexTest < BaseClassForTest
+class NestedDataLogTest < BaseClassForTest
 
-  def test_data_log_complex
+  def test_nested_data_log
     prelude do |client, log|
       log.section('Fetch and log rate limit') do
         rate_limit = nil

@@ -1,10 +1,10 @@
 [navigation_links]
 
-# Logging a Complex Data Object
+# Logging Nested Data Objects
 
 ## Example Test
 
-[file_source](../tests/data_log_complex_test.rb)
+[file_source](../tests/flat_data_log_test.rb)
 
 Notes:
 
@@ -12,7 +12,7 @@ Notes:
 
 ## Log
 
-[file_source](../logs/test_data_log_complex.xml)
+[file_source](../logs/test_nested_data_log.xml)
 
 Notes:
 

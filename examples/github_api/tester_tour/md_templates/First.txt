@@ -1,10 +1,10 @@
 [navigation_links]
 
-# Simple Test
+# First Test
 
 ## Example Test
 
-[file_source](../tests/test_test.rb)
+[file_source](../tests/first_test.rb)
 
 Notes:
 
@@ -17,7 +17,7 @@ Notes:
 
 ## Log
 
-[file_source](../logs/test_test.xml)
+[file_source](../logs/test_first.xml)
 
 Notes:
 

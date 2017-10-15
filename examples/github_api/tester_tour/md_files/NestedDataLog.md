@@ -1,35 +1,34 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop:** [Validating a Simple Data Object](./DataValidSimple.md#validating-a-simple-data-object)
+**Prev Stop:** [Validating a Data Object](./FlatDataValid.md#validating-a-data-object)
 
-**Next Stop:** [Creating a Complex Data Object](./DataNewComplex.md#creating-a-complex-data-object)
+**Next Stop:** [Creating Nested Data Objects](./NestedDataNew.md#creating-nested-data-objects)
 
 
-# Logging a Complex Data Object
+# Logging Nested Data Objects
 
 ## Example Test
 
-<code>data_log_complex_test.rb</code>
+<code>flat_data_log_test.rb</code>
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
 
-require_relative '../../data/rate_limit'
+require_relative '../../data/issue_label'
 
-class DataLogComplexTest < BaseClassForTest
+class FlatDataLogTest < BaseClassForTest
 
-  def test_data_log_complex
+  def test_flat_data_log
     prelude do |client, log|
-      log.section('Fetch and log rate limit') do
-        rate_limit = nil
-        log.section('Fetch rate limit') do
-          rate_limit = RateLimit.get(client)
+      log.section('Fetch and log an instance of IssueLabel') do
+        issue_label = nil
+        log.section('Fetch an issue label') do
+          issue_label = IssueLabel.get_first(client, 1)
         end
-        rate_limit.log(log, 'Fetched rate limit')
+        issue_label.log(log, 'Fetched issue label')
       end
     end
   end
 
 end
-
 ```
 
 Notes:
@@ -38,16 +37,16 @@ Notes:
 
 ## Log
 
-<code>test_data_log_complex.xml</code>
+<code>test_nested_data_log.xml</code>
 ```xml
-<data_log_complex_test>
+<nested_data_log_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='1.683' name='data_log_complex_test' timestamp='2017-10-15-Sun-16.21.09.798'>
+  <test_method duration_seconds='1.683' name='nested_data_log_test' timestamp='2017-10-15-Sun-18.11.29.688'>
     <section name='With GithubClient'>
       <section name='Fetch and log rate limit'>
         <section name='Fetch rate limit'>
           <GithubClient method='GET' url='https://api.github.com/rate_limit'>
-            <execution duration_seconds='1.651' timestamp='2017-10-15-Sun-16.21.09.830'/>
+            <execution duration_seconds='1.681' timestamp='2017-10-15-Sun-18.11.29.688'/>
           </GithubClient>
         </section>
         <section name='Fetched rate limit'>
@@ -55,23 +54,23 @@ Notes:
             <section name='RateLimit::Core_'>
               <data field='limit' value='5000'/>
               <data field='remaining' value='4994'/>
-              <data field='reset' value='1508106078'/>
+              <data field='reset' value='1508112698'/>
             </section>
             <section name='RateLimit::Search'>
               <data field='limit' value='30'/>
               <data field='remaining' value='30'/>
-              <data field='reset' value='1508102548'/>
+              <data field='reset' value='1508109168'/>
             </section>
             <section name='RateLimit::Graphql'>
               <data field='limit' value='5000'/>
               <data field='remaining' value='5000'/>
-              <data field='reset' value='1508106088'/>
+              <data field='reset' value='1508112708'/>
             </section>
           </section>
           <section name='RateLimit::Rate'>
             <data field='limit' value='5000'/>
             <data field='remaining' value='4994'/>
-            <data field='reset' value='1508106078'/>
+            <data field='reset' value='1508112698'/>
           </section>
         </section>
       </section>
@@ -83,7 +82,7 @@ Notes:
       <act_value>0</act_value>
     </verdict>
   </section>
-</data_log_complex_test>
+</nested_data_log_test>
 ```
 
 Notes:
@@ -98,7 +97,7 @@ Notes:
       - `RateLimit::Graphql`
     - `RateLimit::Rate`
 
-**Prev Stop:** [Validating a Simple Data Object](./DataValidSimple.md#validating-a-simple-data-object)
+**Prev Stop:** [Validating a Data Object](./FlatDataValid.md#validating-a-data-object)
 
-**Next Stop:** [Creating a Complex Data Object](./DataNewComplex.md#creating-a-complex-data-object)
+**Next Stop:** [Creating Nested Data Objects](./NestedDataNew.md#creating-nested-data-objects)
 

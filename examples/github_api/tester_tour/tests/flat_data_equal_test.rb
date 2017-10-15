@@ -2,9 +2,9 @@ require_relative '../../base_classes/base_class_for_test'
 
 require_relative '../../data/issue_label'
 
-class DataEqualTest < BaseClassForTest
+class FlatDataEqualTest < BaseClassForTest
 
-  def test_data_equal_simple
+  def test_flat_data_equal
     prelude do |client, log|
       issue_label_0 = nil
       log.section('Fetch an instance of IssueLabel') do

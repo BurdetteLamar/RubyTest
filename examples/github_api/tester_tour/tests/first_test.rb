@@ -1,8 +1,8 @@
 require_relative '../../base_classes/base_class_for_test'
 
-class SimpleTest < BaseClassForTest
+class FirstTest < BaseClassForTest
 
-  def test_test
+  def test_first
     prelude do |client, log|
       log.comment('Test code goes here')
       log.comment('Method prelude yields two objects:')

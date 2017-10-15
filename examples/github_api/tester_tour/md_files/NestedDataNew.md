@@ -1,22 +1,22 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop:** [Logging a Complex Data Object](./DataLogComplex.md#logging-a-complex-data-object)
+**Prev Stop:** [Logging Nested Data Objects](./NestedDataLog.md#logging-nested-data-objects)
 
-**Next Stop:** [Verifying a Complex Data Object](./DataEqualComplex.md#verifying-a-complex-data-object)
+**Next Stop:** [Verifying Nested Data Objects](./NestedDataEqual.md#verifying-nested-data-objects)
 
 
-# Creating a Complex Data Object
+# Creating Nested Data Objects
 
 ## Example Test
 
-<code>data_new_complex_test.rb</code>
+<code>nested_data_new_test.rb</code>
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
 
 require_relative '../../data/rate_limit'
 
-class DataNewComplexTest < BaseClassForTest
+class NestedDataNewTest < BaseClassForTest
 
-  def test_data_new_complex
+  def test_nested_data_new
     prelude do |_, log|
       log.section('Create and log an instance of a complex data object') do
         rate_limit = RateLimit.new(
@@ -61,11 +61,11 @@ Notes:
 
 ## Log
 
-<code>test_data_new_complex.xml</code>
+<code>test_nested_data_new.xml</code>
 ```xml
-<data_new_complex_test>
+<nested_data_new_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='data_new_complex_test' timestamp='2017-10-15-Sun-16.21.12.489'>
+  <test_method duration_seconds='0.004' name='nested_data_new_test' timestamp='2017-10-15-Sun-18.11.32.416'>
     <section name='With GithubClient'>
       <section name='Create and log an instance of a complex data object'>
         <section name='RateLimit'>
@@ -101,10 +101,10 @@ Notes:
       <act_value>0</act_value>
     </verdict>
   </section>
-</data_new_complex_test>
+</nested_data_new_test>
 ```
 
-**Prev Stop:** [Logging a Complex Data Object](./DataLogComplex.md#logging-a-complex-data-object)
+**Prev Stop:** [Logging Nested Data Objects](./NestedDataLog.md#logging-nested-data-objects)
 
-**Next Stop:** [Verifying a Complex Data Object](./DataEqualComplex.md#verifying-a-complex-data-object)
+**Next Stop:** [Verifying Nested Data Objects](./NestedDataEqual.md#verifying-nested-data-objects)
 

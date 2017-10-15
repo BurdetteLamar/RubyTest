@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
 **Prev Stop:** [Rescued Exception](./RescuedException.md#rescued-exception)
 
-**Next Stop:** [Logging a Simple Data Object](./DataLogSimple.md#logging-a-simple-data-object)
+**Next Stop:** [Logging a Data Object](./FlatDataLog.md#logging-a-data-object)
 
 
 # Unrescued Exception
@@ -43,8 +43,8 @@ Notes:
 ```xml
 <unrescued_exception_test>
   <summary errors='1' failures='1' verdicts='1'/>
-  <test_method name='unrescued_exception_test' timestamp='2017-10-15-Sun-16.20.58.301'>
-    <section duration_seconds='0.000' name='With GithubClient'>
+  <test_method name='unrescued_exception_test' timestamp='2017-10-15-Sun-18.11.18.273'>
+    <section duration_seconds='0.003' name='With GithubClient'>
       <section name='Unrescued exception'>
         <uncaught_exception>
           <verdict_id>With GithubClient</verdict_id>
@@ -94,5 +94,5 @@ Notes:
 
 **Prev Stop:** [Rescued Exception](./RescuedException.md#rescued-exception)
 
-**Next Stop:** [Logging a Simple Data Object](./DataLogSimple.md#logging-a-simple-data-object)
+**Next Stop:** [Logging a Data Object](./FlatDataLog.md#logging-a-data-object)
 

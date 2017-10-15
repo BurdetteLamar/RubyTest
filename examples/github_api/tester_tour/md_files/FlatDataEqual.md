@@ -1,22 +1,22 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop:** [Creating a Simple Data Object](./DataNewSimple.md#creating-a-simple-data-object)
+**Prev Stop:** [Creating a Data Object](./FlatDataNew.md#creating-a-data-object)
 
-**Next Stop:** [Validating a Simple Data Object](./DataValidSimple.md#validating-a-simple-data-object)
+**Next Stop:** [Validating a Data Object](./FlatDataValid.md#validating-a-data-object)
 
 
-# Verifying a Simple Data Object
+# Verifying a Data Object
 
 ## Example Test
 
-<code>data_equal_simple_test.rb</code>
+<code>flat_data_equal_test.rb</code>
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
 
 require_relative '../../data/issue_label'
 
-class DataEqualTest < BaseClassForTest
+class FlatDataEqualTest < BaseClassForTest
 
-  def test_data_equal_simple
+  def test_flat_data_equal
     prelude do |client, log|
       issue_label_0 = nil
       log.section('Fetch an instance of IssueLabel') do
@@ -58,19 +58,19 @@ Notes:
 
 ## Log
 
-<code>test_data_equal_simple.xml</code>
+<code>test_flat_data_equal.xml</code>
 ```xml
-<data_equal_simple_test>
+<flat_data_equal_test>
   <summary errors='0' failures='1' verdicts='11'/>
-  <test_method duration_seconds='2.005' name='data_equal_simple_test' timestamp='2017-10-15-Sun-16.21.03.730'>
+  <test_method duration_seconds='1.987' name='flat_data_equal_test' timestamp='2017-10-15-Sun-18.11.23.370'>
     <section name='With GithubClient'>
       <section name='Fetch an instance of IssueLabel'>
         <section name='Fetch an issue label'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='1.711' timestamp='2017-10-15-Sun-16.21.03.730'/>
+            <execution duration_seconds='1.699' timestamp='2017-10-15-Sun-18.11.23.374'/>
           </GithubClient>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='0.294' timestamp='2017-10-15-Sun-16.21.05.442'/>
+            <execution duration_seconds='0.275' timestamp='2017-10-15-Sun-18.11.25.073'/>
           </GithubClient>
         </section>
       </section>
@@ -108,8 +108,8 @@ Notes:
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:138:in `block in verdict_equal_recursive?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:127:in `verdict_equal_recursive?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:55:in `verdict_equal?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/data_equal_simple_test.rb:23:in `block (2 levels) in test_data_equal_simple'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/data_equal_simple_test.rb:20:in `block in test_data_equal_simple'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/flat_data_equal_test.rb:23:in `block (2 levels) in test_flat_data_equal'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/flat_data_equal_test.rb:20:in `block in test_flat_data_equal'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:18:in `block in with'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:14:in `with'
@@ -118,7 +118,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `bl
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:11:in `prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/data_equal_simple_test.rb:8:in `test_data_equal_simple']]>
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/flat_data_equal_test.rb:8:in `test_flat_data_equal']]>
             </backtrace>
           </exception>
         </verdict>
@@ -147,7 +147,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
       <act_value>0</act_value>
     </verdict>
   </section>
-</data_equal_simple_test>
+</flat_data_equal_test>
 ```
 
 Notes:
@@ -156,7 +156,7 @@ Notes:
 - In section `These are equal`, all verdicts pass.
 - In section `These are not equal`, one verdict fails.
 
-**Prev Stop:** [Creating a Simple Data Object](./DataNewSimple.md#creating-a-simple-data-object)
+**Prev Stop:** [Creating a Data Object](./FlatDataNew.md#creating-a-data-object)
 
-**Next Stop:** [Validating a Simple Data Object](./DataValidSimple.md#validating-a-simple-data-object)
+**Next Stop:** [Validating a Data Object](./FlatDataValid.md#validating-a-data-object)
 

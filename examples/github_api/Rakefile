@@ -107,19 +107,19 @@ EOT
   # Done.
   # In work.
   names = %w/
-    test
+    first
     sections
     verdicts
     rescued_exception
     unrescued_exception
-    data_log_simple
-    data_new_simple
-    data_equal_simple
-    data_valid_simple
-    data_log_complex
-    data_new_complex
-    data_equal_complex
-    data_valid_complex
+    flat_data_log
+    flat_data_new
+    flat_data_equal
+    flat_data_valid
+    nested_data_log
+    nested_data_new
+    nested_data_equal
+    nested_data_valid
     more_to_come
   /
 
