@@ -4,7 +4,7 @@ class UnrescuedExceptionTest < BaseClassForTest
 
   def test_unrescued_exception
     prelude do |_, log|
-      log.section('Unrescued exeption') do
+      log.section('Unrescued exception') do
         numerator = 1
         denominator = 0
         quotient = numerator / denominator

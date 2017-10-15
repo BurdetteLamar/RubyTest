@@ -105,8 +105,6 @@ EOT
   # crud test
   # /
   # Done.
-  names = %w/
-  /
   # In work.
   names = %w/
     test

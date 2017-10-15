@@ -73,4 +73,8 @@ class IssueLabel < BaseClassForResource
     self.get_all(client, issue_number).first
   end
 
+  # This is harmlessly redundant, but helps RubyMine code inspection.
+  attr_accessor \
+    :color
+
 end

@@ -16,7 +16,7 @@ class UnrescuedExceptionTest < BaseClassForTest
 
   def test_unrescued_exception
     prelude do |_, log|
-      log.section('Unrescued exeption') do
+      log.section('Unrescued exception') do
         numerator = 1
         denominator = 0
         quotient = numerator / denominator
@@ -43,9 +43,9 @@ Notes:
 ```xml
 <unrescued_exception_test>
   <summary errors='1' failures='1' verdicts='1'/>
-  <test_method name='unrescued_exception_test' timestamp='2017-10-14-Sat-12.18.09.282'>
-    <section duration_seconds='0.003' name='With GithubClient'>
-      <section name='Unrescued exeption'>
+  <test_method name='unrescued_exception_test' timestamp='2017-10-15-Sun-16.20.58.301'>
+    <section duration_seconds='0.000' name='With GithubClient'>
+      <section name='Unrescued exception'>
         <uncaught_exception>
           <verdict_id>With GithubClient</verdict_id>
           <class>ZeroDivisionError</class>
@@ -90,7 +90,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
 
 Notes:
 
-- The unrescued exception is actually rescued by the log itself, and of course logged.
+- The unrescued exception actually is rescued after all, by the log itself.  And of course it's logged.
 
 **Prev Stop:** [Rescued Exception](./RescuedException.md#rescued-exception)
 

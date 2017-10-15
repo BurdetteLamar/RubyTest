@@ -54,9 +54,13 @@ class RateLimit < BaseClassForResource
 
     Contract Symbol => Any
     def self.invalid_value_for(field)
+      # Have to cite the parameter to avoid RubyMine code inspection complaint.
+      field
+      # For all fields.
       0
     end
 
+    # This is harmlessly redundant, but helps RubyMine code inspection.
     attr_accessor \
         :limit,
         :remaining,
@@ -90,6 +94,7 @@ class RateLimit < BaseClassForResource
       graphql.verdict_valid?(log, verdict_id + ' - graphql')
     end
 
+    # This is harmlessly redundant, but helps RubyMine code inspection.
     attr_accessor \
         :core,
         :search,
@@ -97,6 +102,7 @@ class RateLimit < BaseClassForResource
 
   end
 
+  # This is harmlessly redundant, but helps RubyMine code inspection.
   attr_accessor \
       :resources,
       :rate

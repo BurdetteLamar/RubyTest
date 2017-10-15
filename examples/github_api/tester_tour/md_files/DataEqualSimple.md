@@ -20,7 +20,7 @@ class DataEqualTest < BaseClassForTest
     prelude do |client, log|
       issue_label_0 = nil
       log.section('Fetch an instance of IssueLabel') do
-        log.section('Fetch an issuelabel') do
+        log.section('Fetch an issue label') do
           issue_label_0 = IssueLabel.get_first(client, 1)
         end
       end
@@ -62,15 +62,15 @@ Notes:
 ```xml
 <data_equal_simple_test>
   <summary errors='0' failures='1' verdicts='11'/>
-  <test_method duration_seconds='1.995' name='data_equal_simple_test' timestamp='2017-10-14-Sat-12.18.14.197'>
+  <test_method duration_seconds='2.005' name='data_equal_simple_test' timestamp='2017-10-15-Sun-16.21.03.730'>
     <section name='With GithubClient'>
       <section name='Fetch an instance of IssueLabel'>
-        <section name='Fetch an issuelabel'>
+        <section name='Fetch an issue label'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='1.687' timestamp='2017-10-14-Sat-12.18.14.201'/>
+            <execution duration_seconds='1.711' timestamp='2017-10-15-Sun-16.21.03.730'/>
           </GithubClient>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='0.291' timestamp='2017-10-14-Sat-12.18.15.888'/>
+            <execution duration_seconds='0.294' timestamp='2017-10-15-Sun-16.21.05.442'/>
           </GithubClient>
         </section>
       </section>

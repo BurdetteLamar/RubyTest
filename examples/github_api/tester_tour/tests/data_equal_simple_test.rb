@@ -8,7 +8,7 @@ class DataEqualTest < BaseClassForTest
     prelude do |client, log|
       issue_label_0 = nil
       log.section('Fetch an instance of IssueLabel') do
-        log.section('Fetch an issuelabel') do
+        log.section('Fetch an issue label') do
           issue_label_0 = IssueLabel.get_first(client, 1)
         end
       end

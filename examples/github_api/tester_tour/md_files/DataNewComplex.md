@@ -65,7 +65,7 @@ Notes:
 ```xml
 <data_new_complex_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='data_new_complex_test' timestamp='2017-10-14-Sat-12.18.22.923'>
+  <test_method duration_seconds='0.000' name='data_new_complex_test' timestamp='2017-10-15-Sun-16.21.12.489'>
     <section name='With GithubClient'>
       <section name='Create and log an instance of a complex data object'>
         <section name='RateLimit'>

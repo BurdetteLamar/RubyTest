@@ -17,7 +17,7 @@ Notes:
   - The `fail unless` proves that it worked.
   - Method `IssueLabel.verdict_equal?` verifies and logs each value in the issue labels.
 - In section `These are not equal`:
-  - One value in the issue lable is modified.  The changed value is in a nested object.
+  - One value in the issue label is modified.  The changed value is in a nested object.
   - Method `IssueLabel.equal?` test equality, but does no logging.
   - The `fail if ` proves that it worked.
   - Method `IssueLabel.verdict_equal?` verifies and logs each value in the issue labels.

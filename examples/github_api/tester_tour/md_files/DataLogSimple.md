@@ -41,15 +41,15 @@ Notes:
 ```xml
 <data_log_simple_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='1.955' name='data_log_simple_test' timestamp='2017-10-14-Sat-12.18.10.259'>
+  <test_method duration_seconds='2.268' name='data_log_simple_test' timestamp='2017-10-15-Sun-16.20.59.361'>
     <section name='With GithubClient'>
       <section name='Fetch and log an instance of IssueLabel'>
         <section name='Fetch an issue label'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='1.669' timestamp='2017-10-14-Sat-12.18.10.275'/>
+            <execution duration_seconds='1.967' timestamp='2017-10-15-Sun-16.20.59.402'/>
           </GithubClient>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='0.270' timestamp='2017-10-14-Sat-12.18.11.944'/>
+            <execution duration_seconds='0.260' timestamp='2017-10-15-Sun-16.21.01.369'/>
           </GithubClient>
         </section>
         <section name='Fetched issue label'>

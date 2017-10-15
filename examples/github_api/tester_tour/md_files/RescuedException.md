@@ -35,7 +35,7 @@ end
 
 Notes:
 
-- Use option `:rescue` in a `log.section` that should rescue an exception.
+- Use optional argument `:rescue` in a `log.section` that should rescue an exception.
 - Section `Exception rescued` rescues its exception.  The test exits the _section_, and any following code _in that section_ is not reached.
 - Execution continues at the code following the rescued section.
 - Any section, including a nested section, may rescue an exception.  (Or not -- it's an independent choice for each section.)
@@ -46,7 +46,7 @@ Notes:
 ```xml
 <rescued_exception_test>
   <summary errors='1' failures='1' verdicts='2'/>
-  <test_method duration_seconds='0.016' name='rescued_exception_test' timestamp='2017-10-14-Sat-12.18.08.267'>
+  <test_method duration_seconds='0.003' name='rescued_exception_test' timestamp='2017-10-15-Sun-16.20.57.096'>
     <section name='With GithubClient'>
       <section name='Rescued exception'>
         <uncaught_exception>
