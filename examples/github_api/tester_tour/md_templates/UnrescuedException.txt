@@ -16,6 +16,6 @@ Notes:
 
 Notes:
 
-- The unrescued exception is actually rescued by the log itself, and of course logged.
+- The unrescued exception actually is rescued after all, by the log itself.  And of course it's logged.
 
 [navigation_links]

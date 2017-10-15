@@ -8,7 +8,7 @@
 
 Notes:
 
-- Use option `:rescue` in a `log.section` that should rescue an exception.
+- Use optional argument `:rescue` in a `log.section` that should rescue an exception.
 - Section `Exception rescued` rescues its exception.  The test exits the _section_, and any following code _in that section_ is not reached.
 - Execution continues at the code following the rescued section.
 - Any section, including a nested section, may rescue an exception.  (Or not -- it's an independent choice for each section.)
