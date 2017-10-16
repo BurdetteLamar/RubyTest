@@ -8,7 +8,7 @@
 
 Notes:
 
-- Use method `verdict_valid?` to verify that a data object's data are valid.
+- Use method `verdict_valid?` to verify that a nested data object's values are valid.
 - In section `This is valid`:
   - A new `RateLimit` with valid values is instantiated.
   - Method `RateLimit.verdict_valid? validates and logs each value in the rate limit.
