@@ -14,7 +14,7 @@ Now we begin to look at the handling of objects in class `RateLimit`, some of wh
 
 ## Example Test
 
-[file_source](../tests/flat_data_log_test.rb)
+[file_source](../tests/nested_data_log_test.rb)
 
 Notes:
 

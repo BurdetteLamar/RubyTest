@@ -113,7 +113,6 @@ class GithubClient < BaseClass
       @log.put_element('execution', :timestamp, :duration) do
         # noinspection RubyResolve
         Retriable.retriable on: RestClient::RequestTimeout, tries: 10, base_interval: 1, on_retry: log_retry do
-          p args
           response = RestClient::Request.execute(args)
         end
       end

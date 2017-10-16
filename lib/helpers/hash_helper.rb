@@ -35,8 +35,12 @@ class HashHelper < BaseClass
   def self.rehash_to_symbol_keys(hash)
     rehash = {}
     hash.each_pair do |k, v|
+      if v.respond_to?(:each_pair)
+        v = self.rehash_to_symbol_keys(v)
+      end
       rehash.store(k.to_sym, v)
     end
+    rehash
   end
 
 end

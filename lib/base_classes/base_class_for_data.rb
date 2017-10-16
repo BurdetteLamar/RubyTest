@@ -7,7 +7,7 @@ class BaseClassForData < BaseClass
   attr_accessor :fields
 
   # A derived class can call this method to initialize fields.
-  Contract Set, Hash => nil
+  Contract Set, Any => nil
   def initialize(fields, values)
     self.fields = fields
     case
@@ -18,6 +18,12 @@ class BaseClassForData < BaseClass
         raise ArgumentError.new(values.inspect)
     end
     nil
+  end
+
+  def new_unless_already(klass, values)
+    return nil if values.nil?
+    return values if values.kind_of?(BaseClassForData)
+    klass.new(values)
   end
 
   Contract Log, Maybe[String] => nil
@@ -169,7 +175,7 @@ class BaseClassForData < BaseClass
       return obj.clone
     end
     # Ok, we need to make the deep clone.
-    clone = ObjectHelper.instantiate_class_for_class_name(obj.class.name)
+    clone = ObjectHelper.instantiate_class_for_class_name(obj.class.name, obj.to_hash)
     case
       when obj.kind_of?(BaseClassForData)
         obj.fields.each do |field|

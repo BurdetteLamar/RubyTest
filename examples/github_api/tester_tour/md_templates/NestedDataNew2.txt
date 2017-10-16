@@ -1,0 +1,23 @@
+[navigation_links]
+
+# Creating Nested Data Objects, Part 2
+
+In the previous stop, we saw how to create nested data objects using nested hashes.  That is, none of the nested objects existed prior to the single call to `new`.
+
+Here we see how to create nested data objects using already-existing data objects.
+
+## Example Test
+
+[file_source](../tests/nested_data_new_2_test.rb)
+
+Notes:
+
+- Create data objects individually by calling their `new` method.
+- Instead of passing hashes as arguments, pass already-existing data objects.
+- Note that the instantiated objects exists only here in the test, and not in the Github API itself.
+
+## Log
+
+[file_source](../logs/test_nested_data_new_2.xml)
+
+[navigation_links]
