@@ -6,6 +6,16 @@
 
 # Logging Nested Data Objects
 
+Up to now, the data objects seen have been instances of class `IssueLabel`.
+
+These objects are 'flat' in the sense that the values they store are all scalars:
+
+- Integers.
+- Strings.
+- Booleans.
+
+Now we begin to look at the handling of objects in class `RateLimit`, some of whose values are _not_ scalars, but are actually instances of other data objects.  In other words, they're nested data objects.
+
 ## Example Test
 
 <code>flat_data_log_test.rb</code>
@@ -33,7 +43,7 @@ end
 
 Notes:
 
-- Log a data object by calling its `log` method.
+- Log nested data objects by calling the `log` method.
 
 ## Log
 
@@ -41,12 +51,12 @@ Notes:
 ```xml
 <nested_data_log_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='1.683' name='nested_data_log_test' timestamp='2017-10-15-Sun-18.11.29.688'>
+  <test_method duration_seconds='1.656' name='nested_data_log_test' timestamp='2017-10-16-Mon-05.21.14.485'>
     <section name='With GithubClient'>
       <section name='Fetch and log rate limit'>
         <section name='Fetch rate limit'>
           <GithubClient method='GET' url='https://api.github.com/rate_limit'>
-            <execution duration_seconds='1.681' timestamp='2017-10-15-Sun-18.11.29.688'/>
+            <execution duration_seconds='1.648' timestamp='2017-10-16-Mon-05.21.14.493'/>
           </GithubClient>
         </section>
         <section name='Fetched rate limit'>
@@ -54,23 +64,23 @@ Notes:
             <section name='RateLimit::Core_'>
               <data field='limit' value='5000'/>
               <data field='remaining' value='4994'/>
-              <data field='reset' value='1508112698'/>
+              <data field='reset' value='1508152882'/>
             </section>
             <section name='RateLimit::Search'>
               <data field='limit' value='30'/>
               <data field='remaining' value='30'/>
-              <data field='reset' value='1508109168'/>
+              <data field='reset' value='1508149353'/>
             </section>
             <section name='RateLimit::Graphql'>
               <data field='limit' value='5000'/>
               <data field='remaining' value='5000'/>
-              <data field='reset' value='1508112708'/>
+              <data field='reset' value='1508152893'/>
             </section>
           </section>
           <section name='RateLimit::Rate'>
             <data field='limit' value='5000'/>
             <data field='remaining' value='4994'/>
-            <data field='reset' value='1508112698'/>
+            <data field='reset' value='1508152882'/>
           </section>
         </section>
       </section>

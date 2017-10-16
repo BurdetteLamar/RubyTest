@@ -55,7 +55,7 @@ end
 
 Notes:
 
-- Create a new data object by calling method `new` on the data class.
+- Create a new nested data object by calling method `new` on the data class.
 - The nested hashes are formed into nested data objects.
 - Note that the instantiated objects exists only here in the test, and not in the Github API itself.
 
@@ -65,7 +65,7 @@ Notes:
 ```xml
 <nested_data_new_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.004' name='nested_data_new_test' timestamp='2017-10-15-Sun-18.11.32.416'>
+  <test_method duration_seconds='0.000' name='nested_data_new_test' timestamp='2017-10-16-Mon-05.21.17.250'>
     <section name='With GithubClient'>
       <section name='Create and log an instance of a complex data object'>
         <section name='RateLimit'>
