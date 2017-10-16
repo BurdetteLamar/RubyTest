@@ -6,7 +6,7 @@ class NestedDataNewTest < BaseClassForTest
 
   def test_nested_data_new
     prelude do |_, log|
-      log.section('Create and log an instance of a complex data object') do
+      log.section('Create and log nested data objects') do
         rate_limit = RateLimit.new(
             {
                 :resources => {

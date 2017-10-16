@@ -18,7 +18,7 @@ class NestedDataNewTest < BaseClassForTest
 
   def test_nested_data_new
     prelude do |_, log|
-      log.section('Create and log an instance of a complex data object') do
+      log.section('Create and log nested data objects') do
         rate_limit = RateLimit.new(
             {
                 :resources => {
@@ -65,9 +65,9 @@ Notes:
 ```xml
 <nested_data_new_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='nested_data_new_test' timestamp='2017-10-16-Mon-05.21.17.250'>
+  <test_method duration_seconds='0.003' name='nested_data_new_test' timestamp='2017-10-16-Mon-07.37.22.049'>
     <section name='With GithubClient'>
-      <section name='Create and log an instance of a complex data object'>
+      <section name='Create and log nested data objects'>
         <section name='RateLimit'>
           <section name='RateLimit::Resources'>
             <section name='RateLimit::Core_'>

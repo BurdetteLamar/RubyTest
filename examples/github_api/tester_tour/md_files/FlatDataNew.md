@@ -48,7 +48,7 @@ Notes:
 ```xml
 <flat_data_new_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='flat_data_new_test' timestamp='2017-10-16-Mon-05.21.07.112'>
+  <test_method duration_seconds='0.002' name='flat_data_new_test' timestamp='2017-10-16-Mon-07.37.12.417'>
     <section name='With GithubClient'>
       <section name='Instantiate and log an instance of IssueLabel'>
         <section name='Instantiated issue label'>
