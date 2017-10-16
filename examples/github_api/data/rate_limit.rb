@@ -13,8 +13,8 @@ class RateLimit < BaseClassForResource
   Contract Hash => nil
   def initialize(values = {})
     super(FIELDS, values)
-    self.resources = Resources.new(self.resources) unless self.resources.nil?
-    self.rate = Rate.new(self.rate) unless self.rate.nil?
+    self.resources = new_unless_already(Resources, values.fetch(:resources))
+    self.rate = new_unless_already(Rate, values.fetch(:rate))
     nil
   end
 
@@ -40,7 +40,7 @@ class RateLimit < BaseClassForResource
     attr_accessor *FIELDS
 
     # Constructor.
-    Contract Hash => nil
+    Contract Any => nil
     def initialize(values = {})
       super(FIELDS, values)
     end
@@ -78,12 +78,12 @@ class RateLimit < BaseClassForResource
     attr_accessor *FIELDS
 
     # Constructor.
-    Contract Hash => nil
+    Contract Any => nil
     def initialize(values = {})
       super(FIELDS, values)
-      self.core = Core_.new(self.core) unless self.core.nil?
-      self.search = Search.new(self.search) unless self.search.nil?
-      self.graphql = Graphql.new(self.graphql) unless self.graphql.nil?
+      self.core = new_unless_already(Core_, values.fetch(:core))
+      self.search = new_unless_already(Search, values.fetch(:search))
+      self.graphql = new_unless_already(Graphql, values.fetch(:graphql))
       nil
     end
 

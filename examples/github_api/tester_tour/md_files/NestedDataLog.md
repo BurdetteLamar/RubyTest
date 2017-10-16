@@ -18,27 +18,28 @@ Now we begin to look at the handling of objects in class `RateLimit`, some of wh
 
 ## Example Test
 
-<code>flat_data_log_test.rb</code>
+<code>nested_data_log_test.rb</code>
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
 
-require_relative '../../data/issue_label'
+require_relative '../../data/rate_limit'
 
-class FlatDataLogTest < BaseClassForTest
+class NestedDataLogTest < BaseClassForTest
 
-  def test_flat_data_log
+  def test_nested_data_log
     prelude do |client, log|
-      log.section('Fetch and log an instance of IssueLabel') do
-        issue_label = nil
-        log.section('Fetch an issue label') do
-          issue_label = IssueLabel.get_first(client, 1)
+      log.section('Fetch and log rate limit') do
+        rate_limit = nil
+        log.section('Fetch rate limit') do
+          rate_limit = RateLimit.get(client)
         end
-        issue_label.log(log, 'Fetched issue label')
+        rate_limit.log(log, 'Fetched rate limit')
       end
     end
   end
 
 end
+
 ```
 
 Notes:
@@ -51,12 +52,12 @@ Notes:
 ```xml
 <nested_data_log_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='1.635' name='nested_data_log_test' timestamp='2017-10-16-Mon-07.37.19.416'>
+  <test_method duration_seconds='1.698' name='nested_data_log_test' timestamp='2017-10-16-Mon-16.19.31.987'>
     <section name='With GithubClient'>
       <section name='Fetch and log rate limit'>
         <section name='Fetch rate limit'>
           <GithubClient method='GET' url='https://api.github.com/rate_limit'>
-            <execution duration_seconds='1.630' timestamp='2017-10-16-Mon-07.37.19.416'/>
+            <execution duration_seconds='1.682' timestamp='2017-10-16-Mon-16.19.32.002'/>
           </GithubClient>
         </section>
         <section name='Fetched rate limit'>
@@ -64,23 +65,23 @@ Notes:
             <section name='RateLimit::Core_'>
               <data field='limit' value='5000'/>
               <data field='remaining' value='4988'/>
-              <data field='reset' value='1508160573'/>
+              <data field='reset' value='1508192275'/>
             </section>
             <section name='RateLimit::Search'>
               <data field='limit' value='30'/>
               <data field='remaining' value='30'/>
-              <data field='reset' value='1508157519'/>
+              <data field='reset' value='1508188833'/>
             </section>
             <section name='RateLimit::Graphql'>
               <data field='limit' value='5000'/>
               <data field='remaining' value='5000'/>
-              <data field='reset' value='1508161059'/>
+              <data field='reset' value='1508192373'/>
             </section>
           </section>
           <section name='RateLimit::Rate'>
             <data field='limit' value='5000'/>
             <data field='remaining' value='4988'/>
-            <data field='reset' value='1508160573'/>
+            <data field='reset' value='1508192275'/>
           </section>
         </section>
       </section>
