@@ -1,0 +1,19 @@
+[navigation_links]
+
+# Creating Nested Data Objects
+
+## Example Test
+
+[file_source](../tests/nested_data_new_test.rb)
+
+Notes:
+
+- Create a new nested data object by calling method `new` on the data class.
+- The nested hashes are formed into nested data objects.
+- Note that the instantiated objects exists only here in the test, and not in the Github API itself.
+
+## Log
+
+[file_source](../logs/test_nested_data_new.xml)
+
+[navigation_links]

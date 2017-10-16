@@ -1,0 +1,31 @@
+[navigation_links]
+
+# Verdicts
+
+## Example Test
+
+[file_source](../tests/verdicts_test.rb)
+
+Notes:
+
+- Use `verdict` methods for verifications.
+- A call to a verdict method will have:
+  - A verdict identifier, which must be unique within the test.
+  - Other parameters, as appropriate to the particular method.
+  - A message string.
+- An `assert` verdict expects something to be truthy (not `false` or `nil`).
+- A `refute` verdict expects something to be `false` or `nil`.
+- There are many other verdict methods, some of which will be described later in this tour.
+- A verdict method returns a boolean value, and therefore follows the Ruby convention of ending the method name with `?`.
+
+
+## Log
+
+[file_source](../logs/test_verdicts.xml)
+
+Notes:
+
+- Every verdict is fully logged.
+- A failed verdict logs its backtrace.
+
+[navigation_links]

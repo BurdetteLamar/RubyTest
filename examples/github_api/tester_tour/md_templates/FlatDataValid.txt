@@ -1,0 +1,34 @@
+[navigation_links]
+
+# Validating a Data Object
+
+The term _valid_, as used here, is about whether a value is of the correct _form_.  This is as distinguished from the earlier term _equal_, which is about whether the value is _correct_.
+
+Example of usefulness:  creating a new issue label returns an `IssueLabel` object with a new `id` value.  The _value_ of the `id` is unpredictable, but it is still useful to verify that it is a positive integer.
+
+## Example Test
+
+[file_source](../tests/flat_data_valid_test.rb)
+
+Notes:
+
+- Use method `verdict_valid?` to verify that a data object's data are valid.
+- In section `This is valid`:
+  - A new `IssueLabel` with valid values is instantiated.
+  - Method `IssueLabel.verdict_valid? validates and logs each value in the issue label.
+- In section `This is not valid`:
+  - A new `IssueLabel` with invalid values is instantiated.
+  - Method `IssueLabel.verdict_valid? validates and logs each value in the issue label.
+  - The invalid value is not in the test itself, but instead comes from the data class.
+
+## Log
+
+[file_source](../logs/test_flat_data_valid.xml)
+
+Notes:
+
+- In section `This is valid`, all verdicts pass.
+- When a value has multiple validation verdicts (as all of these do), the verdicts are logged into a separate subsection.
+- In section `This is not valid`, three verdicts fail.
+
+[navigation_links]

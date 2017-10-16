@@ -88,9 +88,7 @@ class BaseClassForData < BaseClass
       case
         when value.respond_to?(:log)
           # This value is an object that can log itself.
-          log.section(format('Field %s is %s object', key, value.class)) do
-            value.log(log)
-          end
+          value.log(log)
         when value.respond_to?(:each)
           # Log each element.
           log.section(key.to_s) do

@@ -9,6 +9,9 @@
      - [Examples](./examples/Examples.md)
      - changes_report/
        - [Changes Report](./examples/changes_report/ChangesReport.md)
+     - github_api/
+       - [REST API Test Example](./examples/github_api/RestAPI.md)
+       - [Tester Tour](./examples/github_api/TesterTour.md)
      - log/
        - [Log Examples](./examples/log/Log.md)
      - rest_api/

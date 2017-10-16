@@ -1,0 +1,39 @@
+[navigation_links]
+
+# Logging Nested Data Objects
+
+Up to now, the data objects seen have been instances of class `IssueLabel`.
+
+These objects are 'flat' in the sense that the values they store are all scalars:
+
+- Integers.
+- Strings.
+- Booleans.
+
+Now we begin to look at the handling of objects in class `RateLimit`, some of whose values are _not_ scalars, but are actually instances of other data objects.  In other words, they're nested data objects.
+
+## Example Test
+
+[file_source](../tests/flat_data_log_test.rb)
+
+Notes:
+
+- Log nested data objects by calling the `log` method.
+
+## Log
+
+[file_source](../logs/test_nested_data_log.xml)
+
+Notes:
+
+- The section named `Fetched rate limit` logs the values in the fetched rate limit.
+- The nested objects recursively log themselves into nested log sections.
+- The structure of the logged nested objects:
+  - `RateLimit`
+    - `RateLimit::Resources`
+      - `RateLimit::Core`
+      - `RateLimit::Search`
+      - `RateLimit::Graphql`
+    - `RateLimit::Rate`
+
+[navigation_links]
