@@ -210,6 +210,10 @@ class Log < BaseClass
     nil
   end
 
+  def self.verdict_id(*args)
+    args.join(' ')
+  end
+
   require_relative '../base_classes/base_class_for_data'
   class Verdict < BaseClassForData
 
