@@ -42,32 +42,32 @@ class GithubClient < BaseClass
 
   # Get.
   Contract Array, Maybe[Hash] => Or[Array, Hash]
-  def get(url_elements, query_elements = {})
+  def get(url_elements, query_elements)
     client_method(__method__, url_elements, query_elements, parameters = {})
   end
 
   # Post.
-  Contract Array, Hash => Hash
-  def post(url_elements, parameters)
-    client_method(__method__, url_elements, query_elements = {}, parameters)
+  Contract Array, Hash, Hash => Hash
+  def post(url_elements, query_elements, parameters)
+    client_method(__method__, url_elements, query_elements, parameters)
   end
 
-  # Put.
-  Contract Array, Hash => Hash
-  def put(url_elements, parameters)
-    client_method(__method__, url_elements, query_elements = {}, parameters)
+  # Patch.
+  Contract Array, Hash, Hash => Hash
+  def patch(url_elements, query_elements, parameters)
+    client_method(__method__, url_elements, query_elements, parameters)
   end
 
   # Delete.
-  Contract Array => Hash
-  def delete(url_elements)
-    client_method(__method__, url_elements, query_elements = {}, parameters = {})
+  Contract Array, Hash => nil
+  def delete(url_elements, query_elements)
+    client_method(__method__, url_elements, query_elements, parameters = {})
   end
 
   private
 
   # Do one of the above.
-  Contract Symbol, Array, Hash, Hash => Or[String, Array, Hash]
+  Contract Symbol, Array, Hash, Hash => Or[String, Array, Hash, nil]
   def client_method(rest_method, url_elements, query_elements, parameters)
     url = File.join(@base_url, *url_elements)
     query_elements.to_a.each_with_index do |pair, i|
@@ -87,7 +87,7 @@ class GithubClient < BaseClass
       ].include?(rest_method)
       when [
           :post,
-          :put
+          :patch
       ].include?(rest_method)
         headers = {
             :content_type => 'application/json',
@@ -101,6 +101,8 @@ class GithubClient < BaseClass
     end
 
     args.store(:timeout, 60)
+    require_relative '../../lib/helpers/debug_helper'
+    DebugHelper.puts_hash(args)
 
     log_retry = Proc.new do |exception, try, elapsed_time, next_interval|
       puts "#{exception.class}: '#{exception.message}'"
@@ -119,6 +121,7 @@ class GithubClient < BaseClass
     end
     # RubyMine inspection thinks this should have no argument.
     # noinspection RubyArgCount
+    return nil if response.size == 0
     parser = JSON::Ext::Parser.new(response)
     parser.parse
   end

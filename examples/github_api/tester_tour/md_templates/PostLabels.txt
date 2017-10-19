@@ -1,0 +1,33 @@
+[navigation_links]
+
+# GetLabels Test
+
+## Example Test
+
+[file_source](../tests/post_labels_test.rb)
+
+Notes:
+
+- This test accesses endpoint `POST /labels`, which creates a label.
+- The test creates a `Label
+- Class `PostLabels` encapsulates the endpoint.
+- Its method `verdict_call_and_verify_success`:
+  - Accepts the client, the log, a verdict id, and the label to be created.
+  - Accesses the endpoint.
+  - Forms the returned data into a `Label` object.
+  - Performs verifications on the label object.
+  - Returns the label object.
+
+## Log
+
+[file_source](../logs/test_post_labels.xml)
+
+Notes:
+
+- Section `GethubClient` shows the endpoint access.
+- Section `Info` shows:
+  - The count of labels.
+  - The first label.
+- Section 'Evaluation' shows validations for the first label.
+
+[navigation_links]
