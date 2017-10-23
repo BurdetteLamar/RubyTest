@@ -6,10 +6,10 @@ A key concept in the framework is the _data object_.
 
 The main GitHub API data objects seen here will be:
 
-- `Label`.
-- `RateLimit`.
+- `Label`
+- `RateLimit`
 
-A data object has _fields_, such as"
+A data object has _fields_, such as:
 
 - `:name`
 - `:id`
