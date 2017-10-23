@@ -2,9 +2,9 @@
 
 # Overview
 
-The example tests here show how to test the GitHub REST API using the example test framework.
+This tour shows how to use the `RubyTest` framework for testing the GitHub REST API.
 
-This GitHub REST API framework is layered onto the underlying RubyTest core framework, and implements:
+This domain-specific GitHub REST API framework is layered onto the underlying RubyTest core framework, and implements:
 
 - A domain-specific API client.
 - Nested test sections that product corresponding nested log sections.

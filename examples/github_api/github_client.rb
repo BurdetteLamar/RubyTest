@@ -6,7 +6,9 @@ require 'uri'
 require_relative '../../lib/base_classes/base_class'
 
 class GithubClient < BaseClass
-  
+
+  attr_accessor :log
+
   # Instantiate a client for the caller's block.
   Contract Log, String, String, String, Proc => nil
   def self.with(log, repo_username, repo_password, repo_name)
@@ -29,7 +31,7 @@ class GithubClient < BaseClass
     @repo_name = repo_name
     @base_url = 'https://api.github.com'
     @uri = URI.parse(@base_url)
-    @log = log
+    self.log = log
   end
 
   def repo_url_elements
@@ -110,18 +112,26 @@ class GithubClient < BaseClass
     end
 
     response = nil
-    @log.put_element(self.class.name, :method => rest_method.to_s.upcase, :url => url) do
-      @log.put_element('parameters', parameters) unless parameters.empty?
-      @log.put_element('execution', :timestamp, :duration) do
-        # noinspection RubyResolve
-        Retriable.retriable on: RestClient::RequestTimeout, tries: 10, base_interval: 1, on_retry: log_retry do
-          response = RestClient::Request.execute(args)
+    # Cannot allow an uncaught exception in a log section; would not close section properly.
+    exception = nil
+    log.put_element(self.class.name, :method => rest_method.to_s.upcase, :url => url) do
+      log.put_element('parameters', parameters) unless parameters.empty?
+      log.put_element('execution', :timestamp, :duration) do
+        begin
+          # noinspection RubyResolve
+          Retriable.retriable on: RestClient::RequestTimeout, tries: 10, base_interval: 1, on_retry: log_retry do
+            response = RestClient::Request.execute(args)
+          end
+        rescue => x
+          exception = x
         end
       end
     end
+    # Now we're outside the log block.
+    raise exception if exception
+    return nil if response.size == 0
     # RubyMine inspection thinks this should have no argument.
     # noinspection RubyArgCount
-    return nil if response.size == 0
     parser = JSON::Ext::Parser.new(response)
     parser.parse
   end

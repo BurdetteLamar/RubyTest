@@ -20,8 +20,9 @@ class PostLabels < BaseClassForEndpoint
     [label_created, payload]
   end
 
-  Contract GithubClient, Log, String, Label, Maybe[Hash] => Label
-  def self.verdict_call_and_verify_success(client, log, verdict_id, label_to_create, query_elements = {})
+  Contract GithubClient, String, Label, Maybe[Hash] => Label
+  def self.verdict_call_and_verify_success(client, verdict_id, label_to_create, query_elements = {})
+    log = client.log
     log.section(verdict_id, :rescue, :timestamp, :duration) do
       label_created = self.call(client, label_to_create, query_elements)
       log.section('Evaluation') do

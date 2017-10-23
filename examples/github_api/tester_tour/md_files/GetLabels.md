@@ -1,8 +1,12 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
+**Prev Stop:** [Endpoint Tests](./EndpointTests.md#endpoint-tests)
+
 **Next Stop:** [PostLabels Test](./PostLabels.md#postlabels-test)
 
 
 # GetLabels Test
+
+This is a test for endpoint `GET /labels`, which returns all labels.
 
 ## Example Test
 
@@ -19,7 +23,7 @@ class LabelBasicsTest < BaseClassForTest
     prelude do |client, log|
 
       log.section('Test GetLabels') do
-        GetLabels.verdict_call_and_verify_success(client, log, 'Get labels')
+        GetLabels.verdict_call_and_verify_success(client, 'Get labels')
       end
 
     end
@@ -31,10 +35,9 @@ end
 
 Notes:
 
-- This test accesses endpoint `GET /labels`, which returns all labels.
-- Class `GetLabels` encapsulates the endpoint.
-- Its method `verdict_call_and_verify_success`:
-  - Accepts the client, the log, and a verdict id.
+- Class `GetLabels` encapsulates endpoint `GET /labels`.
+- Method `GetLabels.verdict_call_and_verify_success`:
+  - Accepts the client and a verdict id.
   - Accesses the endpoint.
   - Forms the returned data into an array of `Label` objects.
   - Performs verifications on those objects.
@@ -46,12 +49,12 @@ Notes:
 ```xml
 <get_labels_test>
   <summary errors='0' failures='0' verdicts='8'/>
-  <test_method name='get_labels_test' timestamp='2017-10-22-Sun-18.09.50.855'>
-    <section duration_seconds='1.862' name='With GithubClient'>
+  <test_method name='get_labels_test' timestamp='2017-10-23-Mon-11.46.38.134'>
+    <section duration_seconds='1.750' name='With GithubClient'>
       <section name='Test GetLabels'>
-        <section name='Get labels' timestamp='2017-10-22-Sun-18.09.50.855'>
+        <section name='Get labels' timestamp='2017-10-23-Mon-11.46.38.135'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-            <execution duration_seconds='1.862' timestamp='2017-10-22-Sun-18.09.50.855'/>
+            <execution duration_seconds='1.747' timestamp='2017-10-23-Mon-11.46.38.137'/>
           </GithubClient>
           <section name='Info'>
             <data fetched_labels_count='8'/>
@@ -114,11 +117,13 @@ Notes:
 
 Notes:
 
-- Section `GethubClient` shows the endpoint access.
-- Section `Info` shows:
+- Section `GithubClient` shows the endpoint access.
+- We don't know what labels to expect, so section `Info` just shows:
   - The count of labels.
   - The first label.
 - Section 'Evaluation' shows validations for the first label.
+
+**Prev Stop:** [Endpoint Tests](./EndpointTests.md#endpoint-tests)
 
 **Next Stop:** [PostLabels Test](./PostLabels.md#postlabels-test)
 
