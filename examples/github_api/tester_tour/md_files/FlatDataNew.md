@@ -14,22 +14,22 @@ A data object's `new` method takes a hash of name/value pairs that initialize it
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
 
-require_relative '../../../github_api/data/issue_label'
+require_relative '../../../github_api/data/label'
 
 class FlatDataNewTest < BaseClassForTest
 
   def test_flat_data_new
     prelude do |_, log|
-      log.section('Instantiate and log an instance of IssueLabel') do
-        issue_label = IssueLabel.new(
+      log.section('Instantiate and log an instance of Label') do
+        label = Label.new(
             :id => 710733210,
             :url => 'https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/enhancement',
             :name => 'enhancement',
             :color => '84b6eb',
             :default => true,
         )
-        log.section('Instantiated issue label') do
-          issue_label.log(log)
+        log.section('Instantiated label') do
+          label.log(log)
         end
       end
     end
@@ -50,11 +50,11 @@ Notes:
 ```xml
 <flat_data_new_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.002' name='flat_data_new_test' timestamp='2017-10-23-Mon-11.46.20.013'>
+  <test_method duration_seconds='0.000' name='flat_data_new_test' timestamp='2017-10-23-Mon-14.01.09.275'>
     <section name='With GithubClient'>
-      <section name='Instantiate and log an instance of IssueLabel'>
-        <section name='Instantiated issue label'>
-          <section name='IssueLabel'>
+      <section name='Instantiate and log an instance of Label'>
+        <section name='Instantiated label'>
+          <section name='Label'>
             <data field='id' value='710733210'/>
             <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/enhancement'/>
             <data field='name' value='enhancement'/>

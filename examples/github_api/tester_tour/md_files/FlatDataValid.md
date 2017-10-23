@@ -18,19 +18,19 @@ Example of usefulness:  creating a new label returns an `Label` object with a ne
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
 
-require_relative '../../data/issue_label'
+require_relative '../../data/label'
 
 class FlatDataValidTest < BaseClassForTest
 
   def test_flat_data_valid
     prelude do |client, log|
-      issue_label = IssueLabel.get_first(client, 1)
+      label = Label.get_first(client)
       log.section('This is valid') do
-        issue_label.verdict_valid?(log, 'issue label valid')
+        label.verdict_valid?(log, 'label valid')
       end
       log.section('This is not valid') do
-        issue_label.color = IssueLabel.invalid_value_for(:color)
-        issue_label.verdict_valid?(log, 'issue label not valid')
+        label.color = Label.invalid_value_for(:color)
+        label.verdict_valid?(log, 'label not valid')
       end
     end
   end
@@ -55,74 +55,71 @@ Notes:
 ```xml
 <flat_data_valid_test>
   <summary errors='0' failures='1' verdicts='15'/>
-  <test_method duration_seconds='2.147' name='flat_data_valid_test' timestamp='2017-10-23-Mon-11.46.24.285'>
+  <test_method duration_seconds='1.861' name='flat_data_valid_test' timestamp='2017-10-23-Mon-14.01.13.227'>
     <section name='With GithubClient'>
-      <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='1.754' timestamp='2017-10-23-Mon-11.46.24.285'/>
-      </GithubClient>
-      <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='0.372' timestamp='2017-10-23-Mon-11.46.26.043'/>
+      <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
+        <execution duration_seconds='1.851' timestamp='2017-10-23-Mon-14.01.13.227'/>
       </GithubClient>
       <section name='This is valid'>
         <section name='verdict_assert_integer_positive?'>
-          <verdict id='issue label valid id - integer' message='id is positive integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+          <verdict id='label valid id - integer' message='id is positive integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
             <exp_value>Integer</exp_value>
-            <act_value>710733210</act_value>
+            <act_value>710733208</act_value>
           </verdict>
-          <verdict id='issue label valid id - positive' message='id is positive integer' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>710733210</object_1>
+          <verdict id='label valid id - positive' message='id is positive integer' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+            <object_1>710733208</object_1>
             <operator>:&gt;</operator>
             <object_2>0</object_2>
           </verdict>
         </section>
-        <verdict id='issue label valid url' message='url starts with' method='verdict_assert_match?' outcome='passed' volatile='false'>
+        <verdict id='label valid url' message='url starts with' method='verdict_assert_match?' outcome='passed' volatile='false'>
           <exp_value>/^https:\/\/api.github.com\/repos/</exp_value>
-          <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/enhancement</act_value>
+          <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/bug</act_value>
         </verdict>
         <section name='verdict_assert_string_not_empty?'>
-          <verdict id='issue label valid name - string' message='name is nonempty string' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+          <verdict id='label valid name - string' message='name is nonempty string' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
             <exp_value>String</exp_value>
-            <act_value>enhancement</act_value>
+            <act_value>bug</act_value>
           </verdict>
-          <verdict id='issue label valid name - not empty' message='name is nonempty string' method='verdict_refute_empty?' outcome='passed' volatile='false'>
-            <act_value>enhancement</act_value>
+          <verdict id='label valid name - not empty' message='name is nonempty string' method='verdict_refute_empty?' outcome='passed' volatile='false'>
+            <act_value>bug</act_value>
           </verdict>
         </section>
-        <verdict id='issue label valid color' message='color is hex color' method='verdict_assert_match?' outcome='passed' volatile='false'>
+        <verdict id='label valid color' message='color is hex color' method='verdict_assert_match?' outcome='passed' volatile='false'>
           <exp_value>/[0-9a-f]{6}/i</exp_value>
-          <act_value>84b6eb</act_value>
+          <act_value>ee0701</act_value>
         </verdict>
-        <verdict id='issue label valid default' message='default is boolean' method='verdict_assert_includes?' outcome='passed' volatile='false'>
+        <verdict id='label valid default' message='default is boolean' method='verdict_assert_includes?' outcome='passed' volatile='false'>
           <exp_value>[TrueClass, FalseClass]</exp_value>
           <act_value>TrueClass</act_value>
         </verdict>
       </section>
       <section name='This is not valid'>
         <section name='verdict_assert_integer_positive?'>
-          <verdict id='issue label not valid id - integer' message='id is positive integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+          <verdict id='label not valid id - integer' message='id is positive integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
             <exp_value>Integer</exp_value>
-            <act_value>710733210</act_value>
+            <act_value>710733208</act_value>
           </verdict>
-          <verdict id='issue label not valid id - positive' message='id is positive integer' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>710733210</object_1>
+          <verdict id='label not valid id - positive' message='id is positive integer' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+            <object_1>710733208</object_1>
             <operator>:&gt;</operator>
             <object_2>0</object_2>
           </verdict>
         </section>
-        <verdict id='issue label not valid url' message='url starts with' method='verdict_assert_match?' outcome='passed' volatile='false'>
+        <verdict id='label not valid url' message='url starts with' method='verdict_assert_match?' outcome='passed' volatile='false'>
           <exp_value>/^https:\/\/api.github.com\/repos/</exp_value>
-          <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/enhancement</act_value>
+          <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/bug</act_value>
         </verdict>
         <section name='verdict_assert_string_not_empty?'>
-          <verdict id='issue label not valid name - string' message='name is nonempty string' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+          <verdict id='label not valid name - string' message='name is nonempty string' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
             <exp_value>String</exp_value>
-            <act_value>enhancement</act_value>
+            <act_value>bug</act_value>
           </verdict>
-          <verdict id='issue label not valid name - not empty' message='name is nonempty string' method='verdict_refute_empty?' outcome='passed' volatile='false'>
-            <act_value>enhancement</act_value>
+          <verdict id='label not valid name - not empty' message='name is nonempty string' method='verdict_refute_empty?' outcome='passed' volatile='false'>
+            <act_value>bug</act_value>
           </verdict>
         </section>
-        <verdict id='issue label not valid color' message='color is hex color' method='verdict_assert_match?' outcome='failed' volatile='false'>
+        <verdict id='label not valid color' message='color is hex color' method='verdict_assert_match?' outcome='failed' volatile='false'>
           <exp_value>/[0-9a-f]{6}/i</exp_value>
           <act_value>red</act_value>
           <exception>
@@ -130,7 +127,7 @@ Notes:
             <message>Expected /[0-9a-f]{6}/i to match # encoding: UTF-8 &quot;red&quot;.</message>
             <backtrace>
               <![CDATA[
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/data/issue_label.rb:37:in `verdict_field_valid?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/data/label.rb:37:in `verdict_field_valid?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:43:in `block in verdict_valid?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:41:in `verdict_valid?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/flat_data_valid_test.rb:15:in `block (2 levels) in test_flat_data_valid'
@@ -147,7 +144,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
             </backtrace>
           </exception>
         </verdict>
-        <verdict id='issue label not valid default' message='default is boolean' method='verdict_assert_includes?' outcome='passed' volatile='false'>
+        <verdict id='label not valid default' message='default is boolean' method='verdict_assert_includes?' outcome='passed' volatile='false'>
           <exp_value>[TrueClass, FalseClass]</exp_value>
           <act_value>TrueClass</act_value>
         </verdict>

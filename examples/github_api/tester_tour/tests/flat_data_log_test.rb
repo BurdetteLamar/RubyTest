@@ -1,17 +1,17 @@
 require_relative '../../base_classes/base_class_for_test'
 
-require_relative '../../data/issue_label'
+require_relative '../../data/label'
 
 class FlatDataLogTest < BaseClassForTest
 
   def test_flat_data_log
     prelude do |client, log|
-      log.section('Fetch and log an instance of IssueLabel') do
-        issue_label = nil
-        log.section('Fetch an issue label') do
-          issue_label = IssueLabel.get_first(client, 1)
+      log.section('Fetch and log an instance of Label') do
+        label = nil
+        log.section('Fetch an label') do
+          label = Label.get_first(client)
         end
-        issue_label.log(log, 'Fetched issue label')
+        label.log(log, 'Fetched label')
       end
     end
   end

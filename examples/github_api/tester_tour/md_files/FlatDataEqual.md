@@ -17,27 +17,27 @@ A data class has methods for:
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
 
-require_relative '../../data/issue_label'
+require_relative '../../data/label'
 
 class FlatDataEqualTest < BaseClassForTest
 
   def test_flat_data_equal
     prelude do |client, log|
-      issue_label_0 = nil
-      log.section('Fetch an instance of IssueLabel') do
-        log.section('Fetch an issue label') do
-          issue_label_0 = IssueLabel.get_first(client, 1)
+      label_0 = nil
+      log.section('Fetch an instance of Label') do
+        log.section('Fetch an label') do
+          label_0 = Label.get_first(client)
         end
       end
-      issue_label_1 = IssueLabel.deep_clone(issue_label_0)
+      label_1 = Label.deep_clone(label_0)
       log.section('These are equal') do
-        fail unless IssueLabel.equal?(issue_label_0, issue_label_1)
-        IssueLabel.verdict_equal?(log, 'issue label equal', issue_label_0, issue_label_1, 'Using IssueLabel.verdict_equal?')
+        fail unless Label.equal?(label_0, label_1)
+        Label.verdict_equal?(log, 'label equal', label_0, label_1, 'Using Label.verdict_equal?')
       end
       log.section('These are not equal') do
-        issue_label_1.id += 1
-        fail if IssueLabel.equal?(issue_label_0, issue_label_1)
-        IssueLabel.verdict_equal?(log, 'issue label not equal', issue_label_0, issue_label_1, 'Using IssueLabel.verdict_equal?')
+        label_1.id += 1
+        fail if Label.equal?(label_0, label_1)
+        Label.verdict_equal?(log, 'label not equal', label_0, label_1, 'Using Label.verdict_equal?')
       end
     end
   end
@@ -67,47 +67,44 @@ Notes:
 ```xml
 <flat_data_equal_test>
   <summary errors='0' failures='1' verdicts='11'/>
-  <test_method duration_seconds='2.163' name='flat_data_equal_test' timestamp='2017-10-23-Mon-11.46.21.046'>
+  <test_method duration_seconds='1.774' name='flat_data_equal_test' timestamp='2017-10-23-Mon-14.01.10.357'>
     <section name='With GithubClient'>
-      <section name='Fetch an instance of IssueLabel'>
-        <section name='Fetch an issue label'>
-          <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='1.775' timestamp='2017-10-23-Mon-11.46.21.046'/>
-          </GithubClient>
-          <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='0.385' timestamp='2017-10-23-Mon-11.46.22.824'/>
+      <section name='Fetch an instance of Label'>
+        <section name='Fetch an label'>
+          <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
+            <execution duration_seconds='1.755' timestamp='2017-10-23-Mon-14.01.10.362'/>
           </GithubClient>
         </section>
       </section>
       <section name='These are equal'>
-        <verdict id='issue label equal-id' message='Using IssueLabel.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>710733210</exp_value>
-          <act_value>710733210</act_value>
+        <verdict id='label equal-id' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+          <exp_value>710733208</exp_value>
+          <act_value>710733208</act_value>
         </verdict>
-        <verdict id='issue label equal-url' message='Using IssueLabel.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/enhancement</exp_value>
-          <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/enhancement</act_value>
+        <verdict id='label equal-url' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+          <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/bug</exp_value>
+          <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/bug</act_value>
         </verdict>
-        <verdict id='issue label equal-name' message='Using IssueLabel.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>enhancement</exp_value>
-          <act_value>enhancement</act_value>
+        <verdict id='label equal-name' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+          <exp_value>bug</exp_value>
+          <act_value>bug</act_value>
         </verdict>
-        <verdict id='issue label equal-color' message='Using IssueLabel.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>84b6eb</exp_value>
-          <act_value>84b6eb</act_value>
+        <verdict id='label equal-color' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+          <exp_value>ee0701</exp_value>
+          <act_value>ee0701</act_value>
         </verdict>
-        <verdict id='issue label equal-default' message='Using IssueLabel.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+        <verdict id='label equal-default' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
           <exp_value>true</exp_value>
           <act_value>true</act_value>
         </verdict>
       </section>
       <section name='These are not equal'>
-        <verdict id='issue label not equal-id' message='Using IssueLabel.verdict_equal?' method='verdict_assert_equal?' outcome='failed' volatile='false'>
-          <exp_value>710733210</exp_value>
-          <act_value>710733211</act_value>
+        <verdict id='label not equal-id' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='failed' volatile='false'>
+          <exp_value>710733208</exp_value>
+          <act_value>710733209</act_value>
           <exception>
             <class>Minitest::Assertion</class>
-            <message>Expected: 710733210 Actual: 710733211</message>
+            <message>Expected: 710733208 Actual: 710733209</message>
             <backtrace>
               <![CDATA[
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:145:in `block in verdict_equal_recursive?'
@@ -127,19 +124,19 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
             </backtrace>
           </exception>
         </verdict>
-        <verdict id='issue label not equal-url' message='Using IssueLabel.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/enhancement</exp_value>
-          <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/enhancement</act_value>
+        <verdict id='label not equal-url' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+          <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/bug</exp_value>
+          <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/bug</act_value>
         </verdict>
-        <verdict id='issue label not equal-name' message='Using IssueLabel.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>enhancement</exp_value>
-          <act_value>enhancement</act_value>
+        <verdict id='label not equal-name' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+          <exp_value>bug</exp_value>
+          <act_value>bug</act_value>
         </verdict>
-        <verdict id='issue label not equal-color' message='Using IssueLabel.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>84b6eb</exp_value>
-          <act_value>84b6eb</act_value>
+        <verdict id='label not equal-color' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+          <exp_value>ee0701</exp_value>
+          <act_value>ee0701</act_value>
         </verdict>
-        <verdict id='issue label not equal-default' message='Using IssueLabel.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+        <verdict id='label not equal-default' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
           <exp_value>true</exp_value>
           <act_value>true</act_value>
         </verdict>

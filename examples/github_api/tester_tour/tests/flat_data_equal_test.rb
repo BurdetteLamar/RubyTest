@@ -1,26 +1,26 @@
 require_relative '../../base_classes/base_class_for_test'
 
-require_relative '../../data/issue_label'
+require_relative '../../data/label'
 
 class FlatDataEqualTest < BaseClassForTest
 
   def test_flat_data_equal
     prelude do |client, log|
-      issue_label_0 = nil
-      log.section('Fetch an instance of IssueLabel') do
-        log.section('Fetch an issue label') do
-          issue_label_0 = IssueLabel.get_first(client, 1)
+      label_0 = nil
+      log.section('Fetch an instance of Label') do
+        log.section('Fetch an label') do
+          label_0 = Label.get_first(client)
         end
       end
-      issue_label_1 = IssueLabel.deep_clone(issue_label_0)
+      label_1 = Label.deep_clone(label_0)
       log.section('These are equal') do
-        fail unless IssueLabel.equal?(issue_label_0, issue_label_1)
-        IssueLabel.verdict_equal?(log, 'issue label equal', issue_label_0, issue_label_1, 'Using IssueLabel.verdict_equal?')
+        fail unless Label.equal?(label_0, label_1)
+        Label.verdict_equal?(log, 'label equal', label_0, label_1, 'Using Label.verdict_equal?')
       end
       log.section('These are not equal') do
-        issue_label_1.id += 1
-        fail if IssueLabel.equal?(issue_label_0, issue_label_1)
-        IssueLabel.verdict_equal?(log, 'issue label not equal', issue_label_0, issue_label_1, 'Using IssueLabel.verdict_equal?')
+        label_1.id += 1
+        fail if Label.equal?(label_0, label_1)
+        Label.verdict_equal?(log, 'label not equal', label_0, label_1, 'Using Label.verdict_equal?')
       end
     end
   end

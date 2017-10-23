@@ -14,18 +14,18 @@ A data object can log itself.
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
 
-require_relative '../../data/issue_label'
+require_relative '../../data/label'
 
 class FlatDataLogTest < BaseClassForTest
 
   def test_flat_data_log
     prelude do |client, log|
-      log.section('Fetch and log an instance of IssueLabel') do
-        issue_label = nil
-        log.section('Fetch an issue label') do
-          issue_label = IssueLabel.get_first(client, 1)
+      log.section('Fetch and log an instance of Label') do
+        label = nil
+        log.section('Fetch an label') do
+          label = Label.get_first(client)
         end
-        issue_label.log(log, 'Fetched issue label')
+        label.log(log, 'Fetched label')
       end
     end
   end
@@ -43,22 +43,19 @@ Notes:
 ```xml
 <flat_data_log_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='2.164' name='flat_data_log_test' timestamp='2017-10-23-Mon-11.46.16.779'>
+  <test_method duration_seconds='1.807' name='flat_data_log_test' timestamp='2017-10-23-Mon-14.01.06.400'>
     <section name='With GithubClient'>
-      <section name='Fetch and log an instance of IssueLabel'>
-        <section name='Fetch an issue label'>
-          <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='1.794' timestamp='2017-10-23-Mon-11.46.16.784'/>
-          </GithubClient>
-          <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='0.363' timestamp='2017-10-23-Mon-11.46.18.578'/>
+      <section name='Fetch and log an instance of Label'>
+        <section name='Fetch an label'>
+          <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
+            <execution duration_seconds='1.801' timestamp='2017-10-23-Mon-14.01.06.405'/>
           </GithubClient>
         </section>
-        <section name='Fetched issue label'>
-          <data field='id' value='710733210'/>
-          <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/enhancement'/>
-          <data field='name' value='enhancement'/>
-          <data field='color' value='84b6eb'/>
+        <section name='Fetched label'>
+          <data field='id' value='710733208'/>
+          <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/bug'/>
+          <data field='name' value='bug'/>
+          <data field='color' value='ee0701'/>
           <data field='default' value='true'/>
         </section>
       </section>
