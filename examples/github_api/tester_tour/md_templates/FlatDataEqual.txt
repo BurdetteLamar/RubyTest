@@ -2,6 +2,11 @@
 
 # Verifying a Data Object
 
+A data class has methods for:
+
+- Testing for object equality (without logging).
+- Verifying object equality (with logging).
+
 ## Example Test
 
 [file_source](../tests/flat_data_equal_test.rb)

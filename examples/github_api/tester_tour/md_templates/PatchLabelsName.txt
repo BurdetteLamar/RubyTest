@@ -1,0 +1,30 @@
+[navigation_links]
+
+# PatchLabelsName Test
+
+## Example Test
+
+[file_source](../tests/patch_labels_name_test.rb)
+
+Notes:
+
+- This test accesses endpoint `PATCH /labels/:name`, which updates a label.
+- Class `PatchLabelsName` encapsulates the endpoint.
+- Its method `verdict_call_and_verify_success`:
+  - Accepts the client, the log, a verdict id, and the label to be patched.
+  - Accesses the endpoint.
+  - Forms the returned data into a `Label` object.
+  - Performs verifications on the label object.
+  - Returns the label object.
+
+## Log
+
+[file_source](../logs/test_patch_labels_name.xml)
+
+Notes:
+
+- Section `GethubClient` shows the endpoint access.
+- In section `Evaluation`:
+  - Section `Returned label valid` validates the returned label.
+  - Section `Label updated` verifies that the label was updated.
+[navigation_links]

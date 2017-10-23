@@ -6,6 +6,8 @@
 
 # Creating Nested Data Objects, Part 2
 
+Nested data objects may be created using already-existing data objects.
+
 In the previous stop, we saw how to create nested data objects using nested hashes.  That is, none of the nested objects existed prior to the single call to `new`.
 
 Here we see how to create nested data objects using already-existing data objects.
@@ -74,7 +76,7 @@ Notes:
 ```xml
 <nested_data_new_2_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.003' name='nested_data_new_2_test' timestamp='2017-10-21-Sat-18.21.48.360'>
+  <test_method duration_seconds='0.000' name='nested_data_new_2_test' timestamp='2017-10-23-Mon-05.00.40.611'>
     <section name='With GithubClient'>
       <section name='Create and log nested data objects'>
         <section name='RateLimit'>

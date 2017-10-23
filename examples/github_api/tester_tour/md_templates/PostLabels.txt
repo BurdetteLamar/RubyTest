@@ -1,6 +1,6 @@
 [navigation_links]
 
-# GetLabels Test
+# PostLabels Test
 
 ## Example Test
 
@@ -9,7 +9,6 @@
 Notes:
 
 - This test accesses endpoint `POST /labels`, which creates a label.
-- The test creates a `Label
 - Class `PostLabels` encapsulates the endpoint.
 - Its method `verdict_call_and_verify_success`:
   - Accepts the client, the log, a verdict id, and the label to be created.
@@ -25,9 +24,9 @@ Notes:
 Notes:
 
 - Section `GethubClient` shows the endpoint access.
-- Section `Info` shows:
-  - The count of labels.
-  - The first label.
-- Section 'Evaluation' shows validations for the first label.
+- In section `Evaluation`:
+  - Section `Returned label correct` verifies the created label.
+  - Section `Returned label valid` validates the created label.
+  - Section `Label exists` verifies that the label actually exists.
 
 [navigation_links]

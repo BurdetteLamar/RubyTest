@@ -2,6 +2,8 @@
 
 # Creating a Data Object
 
+A data object's `new` method takes a hash of name/value pairs that initialize its fields.
+
 ## Example Test
 
 [file_source](../tests/flat_data_new_test.rb)

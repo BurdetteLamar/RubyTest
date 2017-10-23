@@ -1,10 +1,12 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
 **Prev Stop:** [Rescued Exception](./RescuedException.md#rescued-exception)
 
-**Next Stop:** [Logging a Data Object](./FlatDataLog.md#logging-a-data-object)
+**Next Stop:** [Data Objects](./DataObjects.md#data-objects)
 
 
 # Unrescued Exception
+
+For an exception that is not rescued via `:rescue`, the log itself acts, by rescuing and logging the exception and its details.
 
 ## Example Test
 
@@ -43,8 +45,8 @@ Notes:
 ```xml
 <unrescued_exception_test>
   <summary errors='1' failures='1' verdicts='1'/>
-  <test_method name='unrescued_exception_test' timestamp='2017-10-21-Sat-18.21.32.578'>
-    <section duration_seconds='0.000' name='With GithubClient'>
+  <test_method name='unrescued_exception_test' timestamp='2017-10-23-Mon-05.00.24.540'>
+    <section duration_seconds='0.002' name='With GithubClient'>
       <section name='Unrescued exception'>
         <uncaught_exception>
           <verdict_id>With GithubClient</verdict_id>
@@ -94,5 +96,5 @@ Notes:
 
 **Prev Stop:** [Rescued Exception](./RescuedException.md#rescued-exception)
 
-**Next Stop:** [Logging a Data Object](./FlatDataLog.md#logging-a-data-object)
+**Next Stop:** [Data Objects](./DataObjects.md#data-objects)
 

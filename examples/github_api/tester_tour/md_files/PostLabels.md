@@ -1,6 +1,10 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
+**Prev Stop:** [GetLabels Test](./GetLabels.md#getlabels-test)
 
-# GetLabels Test
+**Next Stop:** [PatchLabelsName Test](./PatchLabelsName.md#patchlabelsname-test)
+
+
+# PostLabels Test
 
 ## Example Test
 
@@ -41,7 +45,6 @@ end
 Notes:
 
 - This test accesses endpoint `POST /labels`, which creates a label.
-- The test creates a `Label
 - Class `PostLabels` encapsulates the endpoint.
 - Its method `verdict_call_and_verify_success`:
   - Accepts the client, the log, a verdict id, and the label to be created.
@@ -56,18 +59,18 @@ Notes:
 ```xml
 <post_labels_test>
   <summary errors='0' failures='0' verdicts='11'/>
-  <test_method name='post_labels_test' timestamp='2017-10-21-Sat-18.17.30.845'>
+  <test_method name='post_labels_test' timestamp='2017-10-22-Sun-18.09.53.793'>
     <section name='With GithubClient'>
       <section name='Test PostLabels'>
-        <GithubClient duration_seconds='3.354' method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-          <execution timestamp='2017-10-21-Sat-18.17.30.861'>
-            <section name='create label' timestamp='2017-10-21-Sat-18.17.32.733'>
+        <GithubClient duration_seconds='3.260' method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
+          <execution timestamp='2017-10-22-Sun-18.09.53.809'>
+            <section name='create label' timestamp='2017-10-22-Sun-18.09.55.546'>
               <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
                 <parameters color='000000' name='test_label'/>
-                <execution duration_seconds='0.343' timestamp='2017-10-21-Sat-18.17.32.748'/>
+                <execution duration_seconds='0.411' timestamp='2017-10-22-Sun-18.09.55.551'/>
               </GithubClient>
               <section name='Evaluation'>
-                <section name='Created label correct'>
+                <section name='Returned label correct'>
                   <verdict id='create label name' message='Label name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                     <exp_value>test_label</exp_value>
                     <act_value>test_label</act_value>
@@ -77,14 +80,14 @@ Notes:
                     <act_value>000000</act_value>
                   </verdict>
                 </section>
-                <section name='Created label valid'>
+                <section name='Returned label valid'>
                   <section name='verdict_assert_integer_positive?'>
                     <verdict id='create label valid id - integer' message='id is positive integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
                       <exp_value>Integer</exp_value>
-                      <act_value>726970670</act_value>
+                      <act_value>727672147</act_value>
                     </verdict>
                     <verdict id='create label valid id - positive' message='id is positive integer' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-                      <object_1>726970670</object_1>
+                      <object_1>727672147</object_1>
                       <operator>:&gt;</operator>
                       <object_2>0</object_2>
                     </verdict>
@@ -111,9 +114,9 @@ Notes:
                     <act_value>FalseClass</act_value>
                   </verdict>
                 </section>
-                <section name='Created label exists'>
+                <section name='Label created'>
                   <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-                    <execution duration_seconds='0.343' timestamp='2017-10-21-Sat-18.17.33.107'/>
+                    <execution duration_seconds='0.341' timestamp='2017-10-22-Sun-18.09.55.978'/>
                   </GithubClient>
                   <verdict id='create label exists' message='Label exists' method='verdict_assert?' outcome='passed' volatile='false'>
                     <act_value>true</act_value>
@@ -121,10 +124,10 @@ Notes:
                 </section>
               </section>
               <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-                <execution duration_seconds='0.359' timestamp='2017-10-21-Sat-18.17.33.450'/>
+                <execution duration_seconds='0.354' timestamp='2017-10-22-Sun-18.09.56.318'/>
               </GithubClient>
               <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-                <execution duration_seconds='0.374' timestamp='2017-10-21-Sat-18.17.33.825'/>
+                <execution duration_seconds='0.369' timestamp='2017-10-22-Sun-18.09.56.684'/>
               </GithubClient>
             </section>
           </execution>
@@ -144,8 +147,12 @@ Notes:
 Notes:
 
 - Section `GethubClient` shows the endpoint access.
-- Section `Info` shows:
-  - The count of labels.
-  - The first label.
-- Section 'Evaluation' shows validations for the first label.
+- In section `Evaluation`:
+  - Section `Created label correct` verifies the created label.
+  - Section `Created label valid` validates the created label.
+  - Section `Created label exists` verifies that the label actually exists.
+
+**Prev Stop:** [GetLabels Test](./GetLabels.md#getlabels-test)
+
+**Next Stop:** [PatchLabelsName Test](./PatchLabelsName.md#patchlabelsname-test)
 

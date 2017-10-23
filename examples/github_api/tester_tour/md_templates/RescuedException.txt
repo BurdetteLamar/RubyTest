@@ -2,6 +2,10 @@
 
 # Rescued Exception
 
+A test (actually, each test section) determines what happens when an unexpected exception is raised.
+
+It does so by making selected sections 'rescuable'.
+
 ## Example Test
 
 [file_source](../tests/rescued_exception_test.rb)

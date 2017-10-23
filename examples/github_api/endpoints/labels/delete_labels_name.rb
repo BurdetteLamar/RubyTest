@@ -20,10 +20,14 @@ class DeleteLabelsName < BaseClassForEndpoint
     log.section(verdict_id, :rescue, :timestamp, :duration) do
       payload = self.call(client, label_to_delete, query_elements)
       log.section('Evaluation') do
-        v_id = Log.verdict_id(verdict_id, 'payload nil')
-        log.verdict_assert_nil?(v_id, payload, 'Payload nil')
-        v_id = Log.verdict_id(verdict_id, 'label deleted')
-        Label.verdict_not_exist?(client, log, v_id, label_to_delete)
+        log.section('Payload empty') do
+          v_id = Log.verdict_id(verdict_id, 'payload nil')
+          log.verdict_assert_nil?(v_id, payload, 'Payload nil')
+        end
+        log.section('Label deleted') do
+          v_id = Log.verdict_id(verdict_id, 'label deleted')
+          Label.verdict_not_exist?(client, log, v_id, label_to_delete)
+        end
       end
       return payload
     end

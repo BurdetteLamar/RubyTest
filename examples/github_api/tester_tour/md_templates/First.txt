@@ -2,6 +2,11 @@
 
 # First Test
 
+The test framework sets up for the test by delivering objects the test will need:
+
+- A domain-specific GitHub API client.
+- An open test log.
+
 ## Example Test
 
 [file_source](../tests/first_test.rb)
@@ -13,7 +18,7 @@ Notes:
 - Call method `prelude`, inherited from the base class.
 - Use the yielded values for your test.
   - A domain-specific GitHub API client.
-  - An open test log.
+  - An open test log.  When the test exits the `prelude` block, the log builds its summaries, closes itself, and writes itself as XML.
 
 ## Log
 

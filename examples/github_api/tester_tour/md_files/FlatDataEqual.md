@@ -6,6 +6,11 @@
 
 # Verifying a Data Object
 
+A data class has methods for:
+
+- Testing for object equality (without logging).
+- Verifying object equality (with logging).
+
 ## Example Test
 
 <code>flat_data_equal_test.rb</code>
@@ -62,15 +67,15 @@ Notes:
 ```xml
 <flat_data_equal_test>
   <summary errors='0' failures='1' verdicts='11'/>
-  <test_method duration_seconds='2.161' name='flat_data_equal_test' timestamp='2017-10-21-Sat-18.21.38.021'>
+  <test_method duration_seconds='2.152' name='flat_data_equal_test' timestamp='2017-10-23-Mon-05.00.30.112'>
     <section name='With GithubClient'>
       <section name='Fetch an instance of IssueLabel'>
         <section name='Fetch an issue label'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='1.791' timestamp='2017-10-21-Sat-18.21.38.026'/>
+            <execution duration_seconds='1.772' timestamp='2017-10-23-Mon-05.00.30.118'/>
           </GithubClient>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='0.362' timestamp='2017-10-21-Sat-18.21.39.821'/>
+            <execution duration_seconds='0.362' timestamp='2017-10-23-Mon-05.00.31.890'/>
           </GithubClient>
         </section>
       </section>

@@ -2,6 +2,8 @@
 
 # Creating Nested Data Objects, Part 2
 
+Nested data objects may be created using already-existing data objects.
+
 In the previous stop, we saw how to create nested data objects using nested hashes.  That is, none of the nested objects existed prior to the single call to `new`.
 
 Here we see how to create nested data objects using already-existing data objects.

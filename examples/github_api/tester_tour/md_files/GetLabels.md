@@ -1,4 +1,6 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
+**Next Stop:** [PostLabels Test](./PostLabels.md#postlabels-test)
+
 
 # GetLabels Test
 
@@ -29,7 +31,7 @@ end
 
 Notes:
 
-- This test accesses endpoint `GET /labels`, which returns all labels for the project.
+- This test accesses endpoint `GET /labels`, which returns all labels.
 - Class `GetLabels` encapsulates the endpoint.
 - Its method `verdict_call_and_verify_success`:
   - Accepts the client, the log, and a verdict id.
@@ -44,12 +46,12 @@ Notes:
 ```xml
 <get_labels_test>
   <summary errors='0' failures='0' verdicts='8'/>
-  <test_method name='get_labels_test' timestamp='2017-10-17-Tue-16.25.52.851'>
-    <section duration_seconds='1.683' name='With GithubClient'>
+  <test_method name='get_labels_test' timestamp='2017-10-22-Sun-18.09.50.855'>
+    <section duration_seconds='1.862' name='With GithubClient'>
       <section name='Test GetLabels'>
-        <section name='Get labels' timestamp='2017-10-17-Tue-16.25.52.866'>
+        <section name='Get labels' timestamp='2017-10-22-Sun-18.09.50.855'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-            <execution duration_seconds='1.656' timestamp='2017-10-17-Tue-16.25.52.866'/>
+            <execution duration_seconds='1.862' timestamp='2017-10-22-Sun-18.09.50.855'/>
           </GithubClient>
           <section name='Info'>
             <data fetched_labels_count='8'/>
@@ -62,7 +64,7 @@ Notes:
             </section>
           </section>
           <section name='Evaluation'>
-            <section name='Validation'>
+            <section name='Returned label valid'>
               <section name='verdict_assert_integer_positive?'>
                 <verdict id='Get labels valid id - integer' message='id is positive integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
                   <exp_value>Integer</exp_value>
@@ -117,4 +119,6 @@ Notes:
   - The count of labels.
   - The first label.
 - Section 'Evaluation' shows validations for the first label.
+
+**Next Stop:** [PostLabels Test](./PostLabels.md#postlabels-test)
 

@@ -106,11 +106,13 @@ EOT
   # Done.
   # In work.
   names = %w/
+    overview
     first
     sections
     verdicts
     rescued_exception
     unrescued_exception
+    data_objects
     flat_data_log
     flat_data_new
     flat_data_equal
@@ -122,7 +124,13 @@ EOT
     nested_data_valid
     more_to_come
   /
-  # names = %w/post_labels/
+#   names = %w/
+#   get_labels
+#   post_labels
+#   patch_labels_name
+#   get_labels_name
+#   delete_labels_name
+# /
 
   titles = []
   names.each do |name|

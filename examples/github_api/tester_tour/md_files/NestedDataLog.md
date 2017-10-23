@@ -6,7 +6,9 @@
 
 # Logging Nested Data Objects
 
-Up to now, the data objects seen have been instances of class `IssueLabel`.
+Nested data objects can log themselves recursively.
+
+Up to now, the data objects seen have been instances of class `Label`.
 
 These objects are 'flat' in the sense that the values they store are all scalars:
 
@@ -14,7 +16,7 @@ These objects are 'flat' in the sense that the values they store are all scalars
 - Strings.
 - Booleans.
 
-Now we begin to look at the handling of objects in class `RateLimit`, some of whose values are _not_ scalars, but are actually instances of other data objects.  In other words, they're nested data objects.
+Now we begin to look at the handling of objects in class `RateLimit`, some of whose values are _not_ scalars, but are actually _instances of other data objects_.  In other words, they're nested data objects.
 
 ## Example Test
 
@@ -52,36 +54,36 @@ Notes:
 ```xml
 <nested_data_log_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='1.764' name='nested_data_log_test' timestamp='2017-10-21-Sat-18.21.44.478'>
+  <test_method duration_seconds='1.791' name='nested_data_log_test' timestamp='2017-10-23-Mon-05.00.36.714'>
     <section name='With GithubClient'>
       <section name='Fetch and log rate limit'>
         <section name='Fetch rate limit'>
           <GithubClient method='GET' url='https://api.github.com/rate_limit'>
-            <execution duration_seconds='1.737' timestamp='2017-10-21-Sat-18.21.44.505'/>
+            <execution duration_seconds='1.786' timestamp='2017-10-23-Mon-05.00.36.719'/>
           </GithubClient>
         </section>
         <section name='Fetched rate limit'>
           <section name='RateLimit::Resources'>
             <section name='RateLimit::Core_'>
               <data field='limit' value='5000'/>
-              <data field='remaining' value='4989'/>
-              <data field='reset' value='1508631457'/>
+              <data field='remaining' value='4994'/>
+              <data field='reset' value='1508756426'/>
             </section>
             <section name='RateLimit::Search'>
               <data field='limit' value='30'/>
               <data field='remaining' value='30'/>
-              <data field='reset' value='1508628170'/>
+              <data field='reset' value='1508752897'/>
             </section>
             <section name='RateLimit::Graphql'>
               <data field='limit' value='5000'/>
               <data field='remaining' value='5000'/>
-              <data field='reset' value='1508631710'/>
+              <data field='reset' value='1508756437'/>
             </section>
           </section>
           <section name='RateLimit::Rate'>
             <data field='limit' value='5000'/>
-            <data field='remaining' value='4989'/>
-            <data field='reset' value='1508631457'/>
+            <data field='remaining' value='4994'/>
+            <data field='reset' value='1508756426'/>
           </section>
         </section>
       </section>

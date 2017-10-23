@@ -2,6 +2,8 @@
 
 # Logging a Data Object
 
+A data object can log itself.
+
 ## Example Test
 
 [file_source](../tests/flat_data_log_test.rb)

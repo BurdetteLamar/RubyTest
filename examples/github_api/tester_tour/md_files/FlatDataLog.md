@@ -1,10 +1,12 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop:** [Unrescued Exception](./UnrescuedException.md#unrescued-exception)
+**Prev Stop:** [Data Objects](./DataObjects.md#data-objects)
 
 **Next Stop:** [Creating a Data Object](./FlatDataNew.md#creating-a-data-object)
 
 
 # Logging a Data Object
+
+A data object can log itself.
 
 ## Example Test
 
@@ -41,15 +43,15 @@ Notes:
 ```xml
 <flat_data_log_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='2.203' name='flat_data_log_test' timestamp='2017-10-21-Sat-18.21.33.687'>
+  <test_method duration_seconds='2.405' name='flat_data_log_test' timestamp='2017-10-23-Mon-05.00.25.615'>
     <section name='With GithubClient'>
       <section name='Fetch and log an instance of IssueLabel'>
         <section name='Fetch an issue label'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='1.814' timestamp='2017-10-21-Sat-18.21.33.715'/>
+            <execution duration_seconds='2.047' timestamp='2017-10-23-Mon-05.00.25.620'/>
           </GithubClient>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='0.349' timestamp='2017-10-21-Sat-18.21.35.540'/>
+            <execution duration_seconds='0.351' timestamp='2017-10-23-Mon-05.00.27.668'/>
           </GithubClient>
         </section>
         <section name='Fetched issue label'>
@@ -77,7 +79,7 @@ Notes:
 - Its subelement `execution` shows the timestamp and duration for the interaction.
 - The section named `Fetched IssueLabel` shows the values in the fetched issue label.
 
-**Prev Stop:** [Unrescued Exception](./UnrescuedException.md#unrescued-exception)
+**Prev Stop:** [Data Objects](./DataObjects.md#data-objects)
 
 **Next Stop:** [Creating a Data Object](./FlatDataNew.md#creating-a-data-object)
 

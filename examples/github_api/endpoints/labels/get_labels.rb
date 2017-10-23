@@ -30,7 +30,7 @@ class GetLabels < BaseClassForEndpoint
         label.log(log, 'First label fetched')
       end
       log.section('Evaluation') do
-        log.section('Validation') do
+        log.section('Returned label valid') do
           v_id = Log.verdict_id(verdict_id, 'valid')
           label.verdict_valid?(log, v_id)
         end

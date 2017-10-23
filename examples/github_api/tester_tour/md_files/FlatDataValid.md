@@ -6,9 +6,11 @@
 
 # Validating a Data Object
 
+A data object can validate itself.
+
 The term _valid_, as used here, is about whether a value is of the correct _form_.  This is as distinguished from the earlier term _equal_, which is about whether the value is _correct_.
 
-Example of usefulness:  creating a new issue label returns an `IssueLabel` object with a new `id` value.  The _value_ of the `id` is unpredictable, but it is still useful to verify that it is a positive integer.
+Example of usefulness:  creating a new label returns an `Label` object with a new `:id` value.  The _value_ of the `id` is unpredictable, but it is still useful to verify that it is a positive integer, as required.
 
 ## Example Test
 
@@ -53,13 +55,13 @@ Notes:
 ```xml
 <flat_data_valid_test>
   <summary errors='0' failures='1' verdicts='15'/>
-  <test_method duration_seconds='2.109' name='flat_data_valid_test' timestamp='2017-10-21-Sat-18.21.41.278'>
+  <test_method duration_seconds='2.299' name='flat_data_valid_test' timestamp='2017-10-23-Mon-05.00.33.332'>
     <section name='With GithubClient'>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='1.747' timestamp='2017-10-21-Sat-18.21.41.283'/>
+        <execution duration_seconds='1.790' timestamp='2017-10-23-Mon-05.00.33.332'/>
       </GithubClient>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='0.340' timestamp='2017-10-21-Sat-18.21.43.029'/>
+        <execution duration_seconds='0.489' timestamp='2017-10-23-Mon-05.00.35.125'/>
       </GithubClient>
       <section name='This is valid'>
         <section name='verdict_assert_integer_positive?'>

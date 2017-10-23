@@ -2,6 +2,8 @@
 
 # Creating Nested Data Objects
 
+Nested data objects may be created 'from scratch'.  That is, all of the nested objects are initialized at once, from simple nested hashes.
+
 ## Example Test
 
 [file_source](../tests/nested_data_new_test.rb)
