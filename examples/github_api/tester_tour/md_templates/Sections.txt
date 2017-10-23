@@ -2,6 +2,10 @@
 
 # Test Sections and Nesting
 
+A test and its log have many duties, but one of the first is their duty to tell a story.
+
+Reading the test code or the log, you should be able to understand how the test is organized, and what it's trying to do.  Nested sections help with that.
+
 ## Example Test
 
 [file_source](../tests/sections_test.rb)

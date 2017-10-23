@@ -6,6 +6,8 @@
 
 # Creating a Data Object
 
+A data object's `new` method takes a hash of name/value pairs that initialize its fields.
+
 ## Example Test
 
 <code>flat_data_new_test.rb</code>
@@ -48,7 +50,7 @@ Notes:
 ```xml
 <flat_data_new_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='flat_data_new_test' timestamp='2017-10-16-Mon-16.19.24.959'>
+  <test_method duration_seconds='0.000' name='flat_data_new_test' timestamp='2017-10-23-Mon-05.13.25.191'>
     <section name='With GithubClient'>
       <section name='Instantiate and log an instance of IssueLabel'>
         <section name='Instantiated issue label'>

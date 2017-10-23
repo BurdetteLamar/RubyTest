@@ -2,6 +2,8 @@
 
 # Verifying Nested Data Objects
 
+Nested data objects can be verified recursively.
+
 ## Example Test
 
 [file_source](../tests/nested_data_equal_test.rb)

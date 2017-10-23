@@ -2,6 +2,8 @@
 
 # Unrescued Exception
 
+For an exception that is not rescued via `:rescue`, the log itself acts, by rescuing and logging the exception and its details.
+
 ## Example Test
 
 [file_source](../tests/unrescued_exception_test.rb)

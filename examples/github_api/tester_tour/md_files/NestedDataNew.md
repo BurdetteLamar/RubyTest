@@ -6,6 +6,8 @@
 
 # Creating Nested Data Objects
 
+Nested data objects may be created 'from scratch'.  That is, all of the nested objects are initialized at once, from simple nested hashes.
+
 ## Example Test
 
 <code>nested_data_new_test.rb</code>
@@ -65,7 +67,7 @@ Notes:
 ```xml
 <nested_data_new_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.019' name='nested_data_new_test' timestamp='2017-10-16-Mon-16.19.34.706'>
+  <test_method duration_seconds='0.016' name='nested_data_new_test' timestamp='2017-10-23-Mon-05.13.35.400'>
     <section name='With GithubClient'>
       <section name='Create and log nested data objects'>
         <section name='RateLimit'>

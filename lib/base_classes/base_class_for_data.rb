@@ -39,7 +39,8 @@ class BaseClassForData < BaseClass
   def verdict_valid?(log, verdict_id)
     valid = true
     fields.each do |field|
-      verdict_field_valid?(log, format('%s %s', verdict_id, field), field) && valid
+      v_id = format('%s %s', verdict_id, field)
+      verdict_field_valid?(log, v_id, field) && valid
     end
     valid
   end

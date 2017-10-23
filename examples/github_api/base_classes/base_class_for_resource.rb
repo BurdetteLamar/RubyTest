@@ -10,7 +10,7 @@ class BaseClassForResource < BaseClassForData
     begin
       self.read(client, object)
       return true
-    rescue GithubClient::NotFound
+    rescue
       return false
     end
   end
@@ -25,59 +25,20 @@ class BaseClassForResource < BaseClassForData
     log.vr?(verdict_id, self.exist?(client, object), self.name + ' not exist')
   end
 
-  # Convenience CRUD (create, read, update, delete), etc.
-  # Caller should not have to know how to do the CRUD.
+  Contract GithubClient, self => Bool
+  def self.delete_if_exist?(client, object)
+    if self.exist?(client, object)
+      self.delete(client, object)
+      return true
+    end
+    false
+  end
 
-  # Contract GithubClient, self => self
-  # def self.create(client, object)
-  #   token = self.name.downcase
-  #   require_relative '../endpoints/%ss/post_%ss' % [token, token]
-  #   endpoint_class_name = 'Post%ss' % self.name
-  #   klass = ObjectHelper.get_class_for_class_name(endpoint_class_name)
-  #   klass.call(client, object)
-  # end
-  #
-  # Contract GithubClient, self => self
-  # def self.read(client, object)
-  #   token = self.name.downcase
-  #   require_relative '../endpoints/%ss/get_%ss_id' % [token, token]
-  #   endpoint_class_name = 'Get%ssId' % self.name
-  #   klass = ObjectHelper.get_class_for_class_name(endpoint_class_name)
-  #   klass.call(client, object)
-  # end
-  #
-  # Contract GithubClient, self => self
-  # def self.update(client, object)
-  #   token = self.name.downcase
-  #   require_relative '../endpoints/%ss/put_%ss_id' % [token, token]
-  #   endpoint_class_name = 'Put%ssId' % self.name
-  #   klass = ObjectHelper.get_class_for_class_name(endpoint_class_name)
-  #   klass.call(client, object)
-  # end
-  #
-  # Contract GithubClient, self => nil
-  # def self.delete(client, object)
-  #   token = self.name.downcase
-  #   require_relative '../endpoints/%ss/delete_%ss_id' % [token, token]
-  #   endpoint_class_name = 'Delete%ssId' % self.name
-  #   klass = ObjectHelper.get_class_for_class_name(endpoint_class_name)
-  #   klass.call(client, object)
-  # end
-  #
-  # Contract GithubClient => Maybe[ArrayOf[self]]
-  # def self.get_all(client)
-  #   token = self.name.downcase
-  #   require_relative '../endpoints/%ss/get_%ss' % [token, token]
-  #   endpoint_class_name = 'Get%ss' % self.name
-  #   klass = ObjectHelper.get_class_for_class_name(endpoint_class_name)
-  #   klass.call(client)
-  # end
-
-  # Contract GithubClient => self
-  # def self.get_first(client)
-  #   all = self.get_all(client)
-  #   raise RuntimeError.new('No %s available' % self.name) unless all.size > 0
-  #   all.first
-  # end
+  Contract GithubClient => self
+  def self.get_first(client)
+    all = self.get_all(client)
+    raise RuntimeError.new('No %s available' % self.name) unless all.size > 0
+    all.first
+  end
 
 end

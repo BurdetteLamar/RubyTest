@@ -6,9 +6,11 @@
 
 # Validating a Data Object
 
+A data object can validate itself.
+
 The term _valid_, as used here, is about whether a value is of the correct _form_.  This is as distinguished from the earlier term _equal_, which is about whether the value is _correct_.
 
-Example of usefulness:  creating a new issue label returns an `IssueLabel` object with a new `id` value.  The _value_ of the `id` is unpredictable, but it is still useful to verify that it is a positive integer.
+Example of usefulness:  creating a new label returns an `Label` object with a new `:id` value.  The _value_ of the `id` is unpredictable, but it is still useful to verify that it is a positive integer, as required.
 
 ## Example Test
 
@@ -53,13 +55,13 @@ Notes:
 ```xml
 <flat_data_valid_test>
   <summary errors='0' failures='1' verdicts='15'/>
-  <test_method duration_seconds='1.945' name='flat_data_valid_test' timestamp='2017-10-16-Mon-16.19.29.002'>
+  <test_method duration_seconds='2.113' name='flat_data_valid_test' timestamp='2017-10-23-Mon-05.13.29.425'>
     <section name='With GithubClient'>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='1.654' timestamp='2017-10-16-Mon-16.19.29.006'/>
+        <execution duration_seconds='1.737' timestamp='2017-10-23-Mon-05.13.29.430'/>
       </GithubClient>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='0.270' timestamp='2017-10-16-Mon-16.19.30.661'/>
+        <execution duration_seconds='0.351' timestamp='2017-10-23-Mon-05.13.31.170'/>
       </GithubClient>
       <section name='This is valid'>
         <section name='verdict_assert_integer_positive?'>
@@ -129,7 +131,7 @@ Notes:
             <backtrace>
               <![CDATA[
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/data/issue_label.rb:37:in `verdict_field_valid?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:42:in `block in verdict_valid?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:43:in `block in verdict_valid?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:41:in `verdict_valid?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/flat_data_valid_test.rb:15:in `block (2 levels) in test_flat_data_valid'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/flat_data_valid_test.rb:13:in `block in test_flat_data_valid'

@@ -2,7 +2,9 @@
 
 # Logging Nested Data Objects
 
-Up to now, the data objects seen have been instances of class `IssueLabel`.
+Nested data objects can log themselves recursively.
+
+Up to now, the data objects seen have been instances of class `Label`.
 
 These objects are 'flat' in the sense that the values they store are all scalars:
 
@@ -10,7 +12,7 @@ These objects are 'flat' in the sense that the values they store are all scalars
 - Strings.
 - Booleans.
 
-Now we begin to look at the handling of objects in class `RateLimit`, some of whose values are _not_ scalars, but are actually instances of other data objects.  In other words, they're nested data objects.
+Now we begin to look at the handling of objects in class `RateLimit`, some of whose values are _not_ scalars, but are actually _other data objects_.  In other words, they're nested data objects.
 
 ## Example Test
 

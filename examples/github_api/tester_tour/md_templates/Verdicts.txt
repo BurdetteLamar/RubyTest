@@ -2,6 +2,10 @@
 
 # Verdicts
 
+Verifications are the heart of a test -- indeed, its purpose.
+
+The framework offers robust support for logging verifications, via its `verdict` methods.
+
 ## Example Test
 
 [file_source](../tests/verdicts_test.rb)

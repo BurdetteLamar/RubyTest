@@ -6,6 +6,10 @@
 
 # Verdicts
 
+Verifications are the heart of a test -- indeed, its purpose.
+
+The framework offers robust support for logging verifications, via its `verdict` methods.
+
 ## Example Test
 
 <code>verdicts_test.rb</code>
@@ -74,7 +78,7 @@ Notes:
 ```xml
 <verdicts_test>
   <summary errors='0' failures='2' verdicts='5'/>
-  <test_method duration_seconds='0.016' name='verdicts_test' timestamp='2017-10-16-Mon-16.19.18.783'>
+  <test_method duration_seconds='0.005' name='verdicts_test' timestamp='2017-10-23-Mon-05.13.18.768'>
     <section name='With GithubClient'>
       <section name='These verdicts should pass'>
         <section name='An assert verdict that should pass'>

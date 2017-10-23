@@ -12,11 +12,13 @@ Each following tour stop assumes you've seen all its predecessors, so repetition
 
 ## Tour Stops
 
+- [Overview](./tester_tour/md_files/Overview.md/#overview)
 - [First Test](./tester_tour/md_files/First.md/#first-test)
 - [Test Sections and Nesting](./tester_tour/md_files/Sections.md/#test-sections-and-nesting)
 - [Verdicts](./tester_tour/md_files/Verdicts.md/#verdicts)
 - [Rescued Exception](./tester_tour/md_files/RescuedException.md/#rescued-exception)
 - [Unrescued Exception](./tester_tour/md_files/UnrescuedException.md/#unrescued-exception)
+- [Data Objects](./tester_tour/md_files/DataObjects.md/#data-objects)
 - [Logging a Data Object](./tester_tour/md_files/FlatDataLog.md/#logging-a-data-object)
 - [Creating a Data Object](./tester_tour/md_files/FlatDataNew.md/#creating-a-data-object)
 - [Verifying a Data Object](./tester_tour/md_files/FlatDataEqual.md/#verifying-a-data-object)
