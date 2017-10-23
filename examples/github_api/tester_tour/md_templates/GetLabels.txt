@@ -2,15 +2,16 @@
 
 # GetLabels Test
 
+This is a test for endpoint `GET /labels`, which returns all labels.
+
 ## Example Test
 
 [file_source](../tests/get_labels_test.rb)
 
 Notes:
 
-- This test accesses endpoint `GET /labels`, which returns all labels.
-- Class `GetLabels` encapsulates the endpoint.
-- Its method `verdict_call_and_verify_success`:
+- Class `GetLabels` encapsulates endpoint `GET /labels`.
+- Method `GetLabels.verdict_call_and_verify_success`:
   - Accepts the client, the log, and a verdict id.
   - Accesses the endpoint.
   - Forms the returned data into an array of `Label` objects.
@@ -24,7 +25,7 @@ Notes:
 Notes:
 
 - Section `GethubClient` shows the endpoint access.
-- Section `Info` shows:
+- We don't know what labels to expect, so section `Info` just shows:
   - The count of labels.
   - The first label.
 - Section 'Evaluation' shows validations for the first label.

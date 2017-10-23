@@ -8,19 +8,19 @@ class PostLabelsTest < BaseClassForTest
 
     prelude do |client, log|
 
-      label_created = nil
+      label_to_create = Label.new(
+          :id => nil,
+          :url => nil,
+          :name => 'test_label',
+          :color => '000000',
+          :default => false,
+      )
       log.section('Test PostLabels') do
-        label_to_create = Label.new(
-            :id => nil,
-            :url => nil,
-            :name => 'test_label',
-            :color => '000000',
-            :default => false,
-        )
         Label.delete_if_exist?(client, label_to_create)
         label_created = PostLabels.verdict_call_and_verify_success(client, log, 'create label', label_to_create)
-        Label.delete_if_exist?(client, label_created)
-
+      end
+      log.section('Clean up') do
+        Label.delete_if_exist?(client, label_to_create)
       end
 
     end

@@ -29,10 +29,6 @@ class PatchLabelsName < BaseClassForEndpoint
           v_id = Log.verdict_id(verdict_id, 'updated label')
           Label.verdict_equal?(log, v_id, label_to_update, label_updated, 'Updated label correct')
         end
-        log.section('Returned label valid') do
-          v_id = Log.verdict_id(verdict_id, 'returned label')
-          label_updated.verdict_valid?(log, v_id)
-        end
         log.section('Label updated') do
           fetched_label = Label.read(client, label_to_update)
           v_id = Log.verdict_id(verdict_id, 'fetched label')
