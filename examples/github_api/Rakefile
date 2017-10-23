@@ -220,7 +220,6 @@ task :examples do
   )
   TestHelper.create_app_log_dir('github_api')
   %w/
-      issue_labels
     /.each do |name|
     test_file_name = format('%s_test.rb', name)
     test_file_path = File.join(
