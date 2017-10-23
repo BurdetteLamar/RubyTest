@@ -22,7 +22,7 @@ class GetLabelsNameTest < BaseClassForTest
           label_to_fetch = Label.create(client, label_to_create)
         end
         log.section('Test fetching the created label') do
-          GetLabelsName.verdict_call_and_verify_success(client, log, 'fetch label', label_to_fetch)
+          GetLabelsName.verdict_call_and_verify_success(client, 'fetch label', label_to_fetch)
         end
         log.section('Clean up') do
           Label.delete_if_exist?(client, label_to_fetch)

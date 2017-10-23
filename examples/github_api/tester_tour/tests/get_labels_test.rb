@@ -9,7 +9,7 @@ class LabelBasicsTest < BaseClassForTest
     prelude do |client, log|
 
       log.section('Test GetLabels') do
-        GetLabels.verdict_call_and_verify_success(client, log, 'Get labels')
+        GetLabels.verdict_call_and_verify_success(client, 'Get labels')
       end
 
     end

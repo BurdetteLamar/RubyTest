@@ -12,7 +12,7 @@ Notes:
 
 - Class `PatchLabelsName` encapsulates the endpoint.
 - Its method `verdict_call_and_verify_success`:
-  - Accepts the client, the log, a verdict id, and the label to be patched.
+  - Accepts the client, a verdict id, and the label to be patched.
   - Accesses the endpoint.
   - Forms the returned data into a `Label` object.
   - Performs verifications on the label object.

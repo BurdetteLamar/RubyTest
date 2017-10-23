@@ -23,7 +23,7 @@ class LabelBasicsTest < BaseClassForTest
     prelude do |client, log|
 
       log.section('Test GetLabels') do
-        GetLabels.verdict_call_and_verify_success(client, log, 'Get labels')
+        GetLabels.verdict_call_and_verify_success(client, 'Get labels')
       end
 
     end
@@ -37,7 +37,7 @@ Notes:
 
 - Class `GetLabels` encapsulates endpoint `GET /labels`.
 - Method `GetLabels.verdict_call_and_verify_success`:
-  - Accepts the client, the log, and a verdict id.
+  - Accepts the client and a verdict id.
   - Accesses the endpoint.
   - Forms the returned data into an array of `Label` objects.
   - Performs verifications on those objects.
@@ -49,12 +49,12 @@ Notes:
 ```xml
 <get_labels_test>
   <summary errors='0' failures='0' verdicts='8'/>
-  <test_method name='get_labels_test' timestamp='2017-10-23-Mon-11.34.09.312'>
-    <section duration_seconds='1.972' name='With GithubClient'>
+  <test_method name='get_labels_test' timestamp='2017-10-23-Mon-11.46.38.134'>
+    <section duration_seconds='1.750' name='With GithubClient'>
       <section name='Test GetLabels'>
-        <section name='Get labels' timestamp='2017-10-23-Mon-11.34.09.312'>
+        <section name='Get labels' timestamp='2017-10-23-Mon-11.46.38.135'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-            <execution duration_seconds='1.956' timestamp='2017-10-23-Mon-11.34.09.327'/>
+            <execution duration_seconds='1.747' timestamp='2017-10-23-Mon-11.46.38.137'/>
           </GithubClient>
           <section name='Info'>
             <data fetched_labels_count='8'/>

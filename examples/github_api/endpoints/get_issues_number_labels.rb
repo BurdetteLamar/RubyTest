@@ -22,8 +22,9 @@ class GetIssuesNumberLabels < BaseClassForEndpoint
     [issue_labels, payload]
   end
 
-  Contract GithubClient, Log, String, Fixnum, Maybe[Hash] => ArrayOf[IssueLabel]
-  def self.verdict_call_and_verify_success(client, log, verdict_id, issue_number, query_elements = {})
+  Contract GithubClient, String, Fixnum, Maybe[Hash] => ArrayOf[IssueLabel]
+  def self.verdict_call_and_verify_success(client, verdict_id, issue_number, query_elements = {})
+    log = client.log
     log.section(verdict_id, :rescue, :timestamp, :duration) do
       issue_labels = self.call(client, issue_number, query_elements)
       log.section('Evaluation') do

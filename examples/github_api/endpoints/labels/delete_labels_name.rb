@@ -15,8 +15,9 @@ class DeleteLabelsName < BaseClassForEndpoint
     [payload, payload]
   end
 
-  Contract GithubClient, Log, String, Label, Maybe[Hash] => nil
-  def self.verdict_call_and_verify_success(client, log, verdict_id, label_to_delete, query_elements = {})
+  Contract GithubClient, String, Label, Maybe[Hash] => nil
+  def self.verdict_call_and_verify_success(client, verdict_id, label_to_delete, query_elements = {})
+    log = client.log
     log.section(verdict_id, :rescue, :timestamp, :duration) do
       payload = self.call(client, label_to_delete, query_elements)
       log.section('Evaluation') do

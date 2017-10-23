@@ -15,7 +15,7 @@ Notes:
 - Test uses the data-object method `Label.create` to create the label.
 - Class `DeleteLabelsName` encapsulates the endpoint.
 - Its method `verdict_call_and_verify_success`:
-  - Accepts the client, the log, a verdict id, and the label to be deleted.
+  - Accepts the client, a verdict id, and the label to be deleted.
   - Accesses the endpoint.
   - Verifies that the response is empty.
   - Verifies that the label no longer exists.

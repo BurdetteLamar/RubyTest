@@ -13,7 +13,7 @@ Notes:
 - The test calls method `Label.delete_if_exist?` before the creation, to avoid collision with an existing label.
 - Class `PostLabels` encapsulates endpoint `POST /labels`.
 - Its method `PostLabels.verdict_call_and_verify_success`:
-  - Accepts the client, the log, a verdict id, and the label to be created.
+  - Accepts the client, a verdict id, and the label to be created.
   - Accesses the endpoint.
   - Forms the returned data into a `Label` object.
   - Performs verifications on the label object.

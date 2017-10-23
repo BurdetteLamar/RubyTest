@@ -23,7 +23,7 @@ class DeleteLabelsNameTest < BaseClassForTest
           label_to_delete = Label.create(client, label_to_create)
         end
         log.section('Test deleting the created label') do
-          DeleteLabelsName.verdict_call_and_verify_success(client, log, 'delete label', label_to_delete)
+          DeleteLabelsName.verdict_call_and_verify_success(client, 'delete label', label_to_delete)
         end
         log.section('Clean up') do
           Label.delete_if_exist?(client, label_to_create)

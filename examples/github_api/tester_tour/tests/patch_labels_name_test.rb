@@ -19,7 +19,7 @@ class PatchLabelsNameTest < BaseClassForTest
         Label.delete_if_exist?(client, label_to_create)
         label_to_patch = Label.create(client, label_to_create)
         label_to_patch.color = 'ffffff'
-        PatchLabelsName.verdict_call_and_verify_success(client, log, 'patch label', label_to_patch)
+        PatchLabelsName.verdict_call_and_verify_success(client, 'patch label', label_to_patch)
         Label.delete_if_exist?(client, label_to_patch)
       end
 

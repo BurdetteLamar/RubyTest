@@ -12,7 +12,7 @@ Notes:
 
 - Class `GetLabels` encapsulates endpoint `GET /labels`.
 - Method `GetLabels.verdict_call_and_verify_success`:
-  - Accepts the client, the log, and a verdict id.
+  - Accepts the client and a verdict id.
   - Accesses the endpoint.
   - Forms the returned data into an array of `Label` objects.
   - Performs verifications on those objects.

@@ -36,7 +36,7 @@ class GetLabelsNameTest < BaseClassForTest
           label_to_fetch = Label.create(client, label_to_create)
         end
         log.section('Test fetching the created label') do
-          GetLabelsName.verdict_call_and_verify_success(client, log, 'fetch label', label_to_fetch)
+          GetLabelsName.verdict_call_and_verify_success(client, 'fetch label', label_to_fetch)
         end
         log.section('Clean up') do
           Label.delete_if_exist?(client, label_to_fetch)
@@ -57,7 +57,7 @@ Notes:
 - Test uses the data-object method `Label.create` to create the label.
 - Class `GetLabelsName` encapsulates the endpoint.
 - Its method `verdict_call_and_verify_success`:
-  - Accepts the client, the log, a verdict id, and the label to be fetched.
+  - Accepts the client, a verdict id, and the label to be fetched.
   - Accesses the endpoint.
   - Forms the returned data into a `Label` object.
   - Performs verifications on the label object.
@@ -69,22 +69,22 @@ Notes:
 ```xml
 <get_labels_name_test>
   <summary errors='0' failures='0' verdicts='9'/>
-  <test_method name='get_labels_name_test' timestamp='2017-10-23-Mon-11.34.16.820'>
-    <section duration_seconds='3.216' name='With GithubClient'>
+  <test_method name='get_labels_name_test' timestamp='2017-10-23-Mon-11.46.45.299'>
+    <section duration_seconds='3.287' name='With GithubClient'>
       <section name='Test GetLabelsName'>
         <section name='Create the label to be fetched'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-            <execution duration_seconds='1.773' timestamp='2017-10-23-Mon-11.34.16.820'/>
+            <execution duration_seconds='1.757' timestamp='2017-10-23-Mon-11.46.45.302'/>
           </GithubClient>
           <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
             <parameters color='000000' name='test_label'/>
-            <execution duration_seconds='0.386' timestamp='2017-10-23-Mon-11.34.18.600'/>
+            <execution duration_seconds='0.362' timestamp='2017-10-23-Mon-11.46.47.066'/>
           </GithubClient>
         </section>
         <section name='Test fetching the created label'>
-          <section name='fetch label' timestamp='2017-10-23-Mon-11.34.18.986'>
+          <section name='fetch label' timestamp='2017-10-23-Mon-11.46.47.428'>
             <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-              <execution duration_seconds='0.341' timestamp='2017-10-23-Mon-11.34.18.986'/>
+              <execution duration_seconds='0.472' timestamp='2017-10-23-Mon-11.46.47.431'/>
             </GithubClient>
             <section name='Evaluation'>
               <verdict id='fetch label name' message='Label name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
@@ -94,10 +94,10 @@ Notes:
               <section name='verdict_assert_integer_positive?'>
                 <verdict id='fetch label valid id - integer' message='id is positive integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
                   <exp_value>Integer</exp_value>
-                  <act_value>728472380</act_value>
+                  <act_value>728484222</act_value>
                 </verdict>
                 <verdict id='fetch label valid id - positive' message='id is positive integer' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-                  <object_1>728472380</object_1>
+                  <object_1>728484222</object_1>
                   <operator>:&gt;</operator>
                   <object_2>0</object_2>
                 </verdict>
@@ -127,10 +127,10 @@ Notes:
           </section>
           <section name='Clean up'>
             <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-              <execution duration_seconds='0.349' timestamp='2017-10-23-Mon-11.34.19.327'/>
+              <execution duration_seconds='0.319' timestamp='2017-10-23-Mon-11.46.47.916'/>
             </GithubClient>
             <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-              <execution duration_seconds='0.353' timestamp='2017-10-23-Mon-11.34.19.682'/>
+              <execution duration_seconds='0.345' timestamp='2017-10-23-Mon-11.46.48.242'/>
             </GithubClient>
           </section>
         </section>
