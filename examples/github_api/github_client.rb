@@ -122,7 +122,8 @@ class GithubClient < BaseClass
           Retriable.retriable on: RestClient::RequestTimeout, tries: 10, base_interval: 1, on_retry: log_retry do
             response = RestClient::Request.execute(args)
           end
-        rescue => exception
+        rescue => x
+          exception = x
         end
       end
     end

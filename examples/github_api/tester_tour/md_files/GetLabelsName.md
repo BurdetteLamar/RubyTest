@@ -36,7 +36,7 @@ class GetLabelsNameTest < BaseClassForTest
           label_to_fetch = Label.create(client, label_to_create)
         end
         log.section('Test fetching the created label') do
-          label_fetched = GetLabelsName.verdict_call_and_verify_success(client, log, 'fetch label', label_to_fetch)
+          GetLabelsName.verdict_call_and_verify_success(client, log, 'fetch label', label_to_fetch)
         end
         log.section('Clean up') do
           Label.delete_if_exist?(client, label_to_fetch)
@@ -69,22 +69,22 @@ Notes:
 ```xml
 <get_labels_name_test>
   <summary errors='0' failures='0' verdicts='9'/>
-  <test_method name='get_labels_name_test' timestamp='2017-10-23-Mon-10.01.15.920'>
-    <section duration_seconds='3.839' name='With GithubClient'>
+  <test_method name='get_labels_name_test' timestamp='2017-10-23-Mon-11.34.16.820'>
+    <section duration_seconds='3.216' name='With GithubClient'>
       <section name='Test GetLabelsName'>
         <section name='Create the label to be fetched'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-            <execution duration_seconds='1.826' timestamp='2017-10-23-Mon-10.01.15.920'/>
+            <execution duration_seconds='1.773' timestamp='2017-10-23-Mon-11.34.16.820'/>
           </GithubClient>
           <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
             <parameters color='000000' name='test_label'/>
-            <execution duration_seconds='0.339' timestamp='2017-10-23-Mon-10.01.17.753'/>
+            <execution duration_seconds='0.386' timestamp='2017-10-23-Mon-11.34.18.600'/>
           </GithubClient>
         </section>
         <section name='Test fetching the created label'>
-          <section name='fetch label' timestamp='2017-10-23-Mon-10.01.18.094'>
+          <section name='fetch label' timestamp='2017-10-23-Mon-11.34.18.986'>
             <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-              <execution duration_seconds='0.934' timestamp='2017-10-23-Mon-10.01.18.097'/>
+              <execution duration_seconds='0.341' timestamp='2017-10-23-Mon-11.34.18.986'/>
             </GithubClient>
             <section name='Evaluation'>
               <verdict id='fetch label name' message='Label name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
@@ -94,10 +94,10 @@ Notes:
               <section name='verdict_assert_integer_positive?'>
                 <verdict id='fetch label valid id - integer' message='id is positive integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
                   <exp_value>Integer</exp_value>
-                  <act_value>728380886</act_value>
+                  <act_value>728472380</act_value>
                 </verdict>
                 <verdict id='fetch label valid id - positive' message='id is positive integer' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-                  <object_1>728380886</object_1>
+                  <object_1>728472380</object_1>
                   <operator>:&gt;</operator>
                   <object_2>0</object_2>
                 </verdict>
@@ -127,10 +127,10 @@ Notes:
           </section>
           <section name='Clean up'>
             <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-              <execution duration_seconds='0.373' timestamp='2017-10-23-Mon-10.01.19.031'/>
+              <execution duration_seconds='0.349' timestamp='2017-10-23-Mon-11.34.19.327'/>
             </GithubClient>
             <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-              <execution duration_seconds='0.356' timestamp='2017-10-23-Mon-10.01.19.404'/>
+              <execution duration_seconds='0.353' timestamp='2017-10-23-Mon-11.34.19.682'/>
             </GithubClient>
           </section>
         </section>
@@ -148,7 +148,7 @@ Notes:
 
 Notes:
 
-- Section `GethubClient` shows the endpoint access.
+- Section `GithubClient` shows the endpoint access.
 - Section `Evaluation` verifies the returned label.
 
 **Prev Stop:** [PostLabels Test](./PostLabels.md#postlabels-test)

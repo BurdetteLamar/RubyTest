@@ -59,10 +59,10 @@ Notes:
 ```xml
 <nested_data_equal_test>
   <summary errors='0' failures='1' verdicts='25'/>
-  <test_method duration_seconds='1.796' name='nested_data_equal_test' timestamp='2017-10-23-Mon-10.01.01.561'>
+  <test_method duration_seconds='1.831' name='nested_data_equal_test' timestamp='2017-10-23-Mon-11.34.03.562'>
     <section name='With GithubClient'>
       <GithubClient method='GET' url='https://api.github.com/rate_limit'>
-        <execution duration_seconds='1.760' timestamp='2017-10-23-Mon-10.01.01.566'/>
+        <execution duration_seconds='1.796' timestamp='2017-10-23-Mon-11.34.03.568'/>
       </GithubClient>
       <section name='These are equal'>
         <section name='RateLimit::Resources'>
@@ -72,12 +72,12 @@ Notes:
               <act_value>5000</act_value>
             </verdict>
             <verdict id='rate limits equal resources core-remaining' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>4906</exp_value>
-              <act_value>4906</act_value>
+              <exp_value>4994</exp_value>
+              <act_value>4994</act_value>
             </verdict>
             <verdict id='rate limits equal resources core-reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>1508773091</exp_value>
-              <act_value>1508773091</act_value>
+              <exp_value>1508780028</exp_value>
+              <act_value>1508780028</act_value>
             </verdict>
           </section>
           <section name='RateLimit::Search'>
@@ -90,8 +90,8 @@ Notes:
               <act_value>30</act_value>
             </verdict>
             <verdict id='rate limits equal resources search-reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>1508770922</exp_value>
-              <act_value>1508770922</act_value>
+              <exp_value>1508776504</exp_value>
+              <act_value>1508776504</act_value>
             </verdict>
           </section>
           <section name='RateLimit::Graphql'>
@@ -104,8 +104,8 @@ Notes:
               <act_value>5000</act_value>
             </verdict>
             <verdict id='rate limits equal resources graphql-reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>1508774462</exp_value>
-              <act_value>1508774462</act_value>
+              <exp_value>1508780044</exp_value>
+              <act_value>1508780044</act_value>
             </verdict>
           </section>
         </section>
@@ -115,12 +115,12 @@ Notes:
             <act_value>5000</act_value>
           </verdict>
           <verdict id='rate limits equal rate-remaining' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-            <exp_value>4906</exp_value>
-            <act_value>4906</act_value>
+            <exp_value>4994</exp_value>
+            <act_value>4994</act_value>
           </verdict>
           <verdict id='rate limits equal rate-reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-            <exp_value>1508773091</exp_value>
-            <act_value>1508773091</act_value>
+            <exp_value>1508780028</exp_value>
+            <act_value>1508780028</act_value>
           </verdict>
         </section>
       </section>
@@ -159,12 +159,12 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
               </exception>
             </verdict>
             <verdict id='rate limits not equal resources core-remaining' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>4906</exp_value>
-              <act_value>4906</act_value>
+              <exp_value>4994</exp_value>
+              <act_value>4994</act_value>
             </verdict>
             <verdict id='rate limits not equal resources core-reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>1508773091</exp_value>
-              <act_value>1508773091</act_value>
+              <exp_value>1508780028</exp_value>
+              <act_value>1508780028</act_value>
             </verdict>
           </section>
           <section name='RateLimit::Search'>
@@ -177,8 +177,8 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
               <act_value>30</act_value>
             </verdict>
             <verdict id='rate limits not equal resources search-reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>1508770922</exp_value>
-              <act_value>1508770922</act_value>
+              <exp_value>1508776504</exp_value>
+              <act_value>1508776504</act_value>
             </verdict>
           </section>
           <section name='RateLimit::Graphql'>
@@ -191,8 +191,8 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
               <act_value>5000</act_value>
             </verdict>
             <verdict id='rate limits not equal resources graphql-reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>1508774462</exp_value>
-              <act_value>1508774462</act_value>
+              <exp_value>1508780044</exp_value>
+              <act_value>1508780044</act_value>
             </verdict>
           </section>
         </section>
@@ -202,12 +202,12 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
             <act_value>5000</act_value>
           </verdict>
           <verdict id='rate limits not equal rate-remaining' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-            <exp_value>4906</exp_value>
-            <act_value>4906</act_value>
+            <exp_value>4994</exp_value>
+            <act_value>4994</act_value>
           </verdict>
           <verdict id='rate limits not equal rate-reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-            <exp_value>1508773091</exp_value>
-            <act_value>1508773091</act_value>
+            <exp_value>1508780028</exp_value>
+            <act_value>1508780028</act_value>
           </verdict>
         </section>
       </section>

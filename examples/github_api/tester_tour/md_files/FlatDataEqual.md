@@ -67,15 +67,15 @@ Notes:
 ```xml
 <flat_data_equal_test>
   <summary errors='0' failures='1' verdicts='11'/>
-  <test_method duration_seconds='2.110' name='flat_data_equal_test' timestamp='2017-10-23-Mon-10.00.49.926'>
+  <test_method duration_seconds='2.182' name='flat_data_equal_test' timestamp='2017-10-23-Mon-11.33.52.068'>
     <section name='With GithubClient'>
       <section name='Fetch an instance of IssueLabel'>
         <section name='Fetch an issue label'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='1.748' timestamp='2017-10-23-Mon-10.00.49.931'/>
+            <execution duration_seconds='1.794' timestamp='2017-10-23-Mon-11.33.52.068'/>
           </GithubClient>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-            <execution duration_seconds='0.356' timestamp='2017-10-23-Mon-10.00.51.679'/>
+            <execution duration_seconds='0.372' timestamp='2017-10-23-Mon-11.33.53.866'/>
           </GithubClient>
         </section>
       </section>

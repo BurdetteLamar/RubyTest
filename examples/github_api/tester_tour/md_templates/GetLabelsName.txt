@@ -27,7 +27,7 @@ Notes:
 
 Notes:
 
-- Section `GethubClient` shows the endpoint access.
+- Section `GithubClient` shows the endpoint access.
 - Section `Evaluation` verifies the returned label.
 
 [navigation_links]

@@ -49,12 +49,12 @@ Notes:
 ```xml
 <get_labels_test>
   <summary errors='0' failures='0' verdicts='8'/>
-  <test_method name='get_labels_test' timestamp='2017-10-23-Mon-10.01.07.377'>
-    <section duration_seconds='2.183' name='With GithubClient'>
+  <test_method name='get_labels_test' timestamp='2017-10-23-Mon-11.34.09.312'>
+    <section duration_seconds='1.972' name='With GithubClient'>
       <section name='Test GetLabels'>
-        <section name='Get labels' timestamp='2017-10-23-Mon-10.01.07.377'>
+        <section name='Get labels' timestamp='2017-10-23-Mon-11.34.09.312'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-            <execution duration_seconds='2.174' timestamp='2017-10-23-Mon-10.01.07.377'/>
+            <execution duration_seconds='1.956' timestamp='2017-10-23-Mon-11.34.09.327'/>
           </GithubClient>
           <section name='Info'>
             <data fetched_labels_count='8'/>
@@ -117,7 +117,7 @@ Notes:
 
 Notes:
 
-- Section `GethubClient` shows the endpoint access.
+- Section `GithubClient` shows the endpoint access.
 - We don't know what labels to expect, so section `Info` just shows:
   - The count of labels.
   - The first label.
