@@ -2,7 +2,7 @@
 
 # Verifying Nested Data Objects
 
-Nested data objects can verify themselves recursively.
+Nested data objects can be verified recursively.
 
 ## Example Test
 

@@ -2,7 +2,7 @@
 
 # Validating Nested Data Objects
 
-Nested data objects can validate themselves recursively.
+Nested data objects can be validated recursively.
 
 ## Example Test
 
