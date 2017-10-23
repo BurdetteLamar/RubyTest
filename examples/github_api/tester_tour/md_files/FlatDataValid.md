@@ -55,13 +55,13 @@ Notes:
 ```xml
 <flat_data_valid_test>
   <summary errors='0' failures='1' verdicts='15'/>
-  <test_method duration_seconds='2.299' name='flat_data_valid_test' timestamp='2017-10-23-Mon-05.00.33.332'>
+  <test_method duration_seconds='2.269' name='flat_data_valid_test' timestamp='2017-10-23-Mon-05.10.12.255'>
     <section name='With GithubClient'>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='1.790' timestamp='2017-10-23-Mon-05.00.33.332'/>
+        <execution duration_seconds='1.783' timestamp='2017-10-23-Mon-05.10.12.256'/>
       </GithubClient>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/issues/1/labels'>
-        <execution duration_seconds='0.489' timestamp='2017-10-23-Mon-05.00.35.125'/>
+        <execution duration_seconds='0.467' timestamp='2017-10-23-Mon-05.10.14.041'/>
       </GithubClient>
       <section name='This is valid'>
         <section name='verdict_assert_integer_positive?'>
