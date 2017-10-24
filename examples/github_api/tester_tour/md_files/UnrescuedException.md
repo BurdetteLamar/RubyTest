@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
 **Prev Stop:** [Rescued Exception](./RescuedException.md#rescued-exception)
 
-**Next Stop:** [Data Objects](./DataObjects.md#data-objects)
+**Next Stop:** [The Data Object](./DataObjects.md#the-data-object)
 
 
 # Unrescued Exception
@@ -45,7 +45,7 @@ Notes:
 ```xml
 <unrescued_exception_test>
   <summary errors='1' failures='1' verdicts='1'/>
-  <test_method name='unrescued_exception_test' timestamp='2017-10-23-Mon-14.01.05.320'>
+  <test_method name='unrescued_exception_test' timestamp='2017-10-24-Tue-11.33.46.808'>
     <section duration_seconds='0.002' name='With GithubClient'>
       <section name='Unrescued exception'>
         <uncaught_exception>
@@ -96,5 +96,5 @@ Notes:
 
 **Prev Stop:** [Rescued Exception](./RescuedException.md#rescued-exception)
 
-**Next Stop:** [Data Objects](./DataObjects.md#data-objects)
+**Next Stop:** [The Data Object](./DataObjects.md#the-data-object)
 

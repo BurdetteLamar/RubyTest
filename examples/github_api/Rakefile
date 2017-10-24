@@ -8,10 +8,10 @@ require_relative '../../lib/helpers/test_helper'
 desc 'Build Tester Tour'
 task :tester_tour do
 
-  # Make the markdown file path for the given name
-  def md_file_path_for_name(md_dir_path, name)
-    return nil if name.nil?
-    file_basename = format('%s', StringHelper.to_upper_camel_case(name))
+  # Make the markdown file path for the given page_name
+  def md_file_path_for_name(md_dir_path, page_name)
+    return nil if page_name.nil?
+    file_basename = format('%s', StringHelper.to_upper_camel_case(page_name))
     md_file_name = format('%s.md', file_basename)
     File.join(
         md_dir_path,
@@ -19,8 +19,8 @@ task :tester_tour do
     )
   end
 
-  def template_file_path_for_name(template_dir_path, name)
-    file_basename = format('%s', StringHelper.to_upper_camel_case(name))
+  def template_file_path_for_name(template_dir_path, page_name)
+    file_basename = format('%s', StringHelper.to_upper_camel_case(page_name))
     template_file_name = format('%s.txt', file_basename)
     File.join(
         template_dir_path,
@@ -105,39 +105,53 @@ EOT
   # /
   # Done.
   # In work.
-  names = %w/
-    overview
-    first
-    sections
-    verdicts
-    rescued_exception
-    unrescued_exception
-    data_objects
-    flat_data_log
-    flat_data_new
-    flat_data_equal
-    flat_data_valid
-    nested_data_log
-    nested_data_new
-    nested_data_new_2
-    nested_data_equal
-    nested_data_valid
-    endpoint_tests
-    get_labels
-    post_labels
-    get_labels_name
-    patch_labels_name
-    delete_labels_name
-    more_to_come
-  /
-  # names = %w/
-  # /
+  page_names_by_section = {
+      :getting_started => %w/
+          overview
+          first
+      /,
+      :logging => %w/
+          sections
+          verdicts
+          rescued_exception
+          unrescued_exception
+      /,
+      :data_objects => %w/
+          data_objects
+          flat_data_log
+          flat_data_new
+          flat_data_equal
+          flat_data_valid
+      /,
+      :nested_data_objects => %w/
+          nested_data_log
+          nested_data_new
+          nested_data_new_2
+          nested_data_equal
+          nested_data_valid
+      /,
+      :endpoints => %w/
+          endpoint_tests
+          get_labels
+          post_labels
+          get_labels_name
+          patch_labels_name
+          delete_labels_name
+      /,
+      :next => %w/
+          more_to_come
+      /
+      }
 
   titles = []
-  names.each do |name|
-    template_file_path = template_file_path_for_name(template_dir_path, name)
-    title = title_from_template_file(template_file_path)
-    titles.push(title)
+  all_page_names = []
+  page_names_by_section.each_pair do |section, section_page_names|
+    section_page_names.each do |page_name|
+      all_page_names.push(page_name)
+      template_file_path = template_file_path_for_name(template_dir_path, page_name)
+      title = title_from_template_file(template_file_path)
+      titles.push(title)
+    end
   end
 
   def bookmark_for(title)
@@ -146,65 +160,70 @@ EOT
     '#%s' % anchor_name
   end
 
-  names.each_with_index do |name, i|
-    test_file_name = format('%s_test.rb', name)
-    test_file_path = File.join(
-         test_dir_path,
-         test_file_name,
-    )
-    if File.exist?(test_file_path)
-      command = format('ruby %s', test_file_path)
-      system(command)
-      # Process the log.
-      log_file_name = format('test_%s.xml', name)
-      log_file_path = File.join(
-          log_dir_path,
-          log_file_name,
+  i = 0 # Page number.
+  page_names_by_section.each_pair do |section, section_page_names|
+    section_title = StringHelper.to_title(section.to_s)
+    index_file.puts('### %s' % section_title)
+    section_page_names.each do |page_name|
+      test_file_name = format('%s_test.rb', page_name)
+      test_file_path = File.join(
+           test_dir_path,
+           test_file_name,
       )
-      conditioned_file_path = File.join(
-          conditioned_log_dir_path,
-          log_file_name,
+      if File.exist?(test_file_path)
+        command = format('ruby %s', test_file_path)
+        system(command)
+        # Process the log.
+        log_file_name = format('test_%s.xml', page_name)
+        log_file_path = File.join(
+            log_dir_path,
+            log_file_name,
+        )
+        conditioned_file_path = File.join(
+            conditioned_log_dir_path,
+            log_file_name,
+        )
+        doc = nil
+        formatter = REXML::Formatters::Pretty.new(2)
+        formatter.compact = true
+        File.open(log_file_path, 'r') do |file|
+          doc = REXML::Document.new(file)
+        end
+        File.open(conditioned_file_path, 'w') do |file|
+          file.puts(formatter.write(doc.root, ''))
+        end
+      end
+
+      md_file_path = md_file_path_for_name(md_dir_path, page_name)
+      prev_name = i == 0 ? nil : all_page_names[i - 1]
+      prev_title = i == 0 ? nil : titles[i - 1]
+      prev_md_file_path = md_file_path_for_name('.', prev_name)
+      prev_md_bookmark_path = format('%s%s', prev_md_file_path, bookmark_for(prev_title))
+      next_title = titles[i + 1]
+      next_md_file_path = md_file_path_for_name('.', all_page_names[i + 1])
+      next_md_bookmark_path = format('%s%s', next_md_file_path, bookmark_for(next_title))
+      template_file_path = template_file_path_for_name(template_dir_path, page_name)
+      options = {
+          :highlight => true,
+          :prev_bookmark_path => prev_md_bookmark_path,
+          :next_bookmark_path => next_md_bookmark_path,
+          :prev_title => prev_title,
+          :next_title => next_title,
+      }
+      MarkdownHelper.build_file(template_file_path, md_file_path, options)
+      md_file_name = File.basename(md_file_path)
+      title = titles[i]
+      relative_link_path = File.join(
+          '.',
+          'tester_tour',
+          'md_files',
+          md_file_name,
+          bookmark_for(title),
       )
-      doc = nil
-      formatter = REXML::Formatters::Pretty.new(2)
-      formatter.compact = true
-      File.open(log_file_path, 'r') do |file|
-        doc = REXML::Document.new(file)
-      end
-      File.open(conditioned_file_path, 'w') do |file|
-        file.puts(formatter.write(doc.root, ''))
-      end
+      link_item = format('- [%s](%s)', title, relative_link_path)
+      index_file.puts(link_item)
+      i += 1
     end
-
-    md_file_path = md_file_path_for_name(md_dir_path, name)
-    prev_name = i == 0 ? nil : names[i - 1]
-    prev_title = i == 0 ? nil : titles[i - 1]
-    prev_md_file_path = md_file_path_for_name('.', prev_name)
-    prev_md_bookmark_path = format('%s%s', prev_md_file_path, bookmark_for(prev_title))
-    next_title = titles[i + 1]
-    next_md_file_path = md_file_path_for_name('.', names[i + 1])
-    next_md_bookmark_path = format('%s%s', next_md_file_path, bookmark_for(next_title))
-    template_file_path = template_file_path_for_name(template_dir_path, name)
-    options = {
-        :highlight => true,
-        :prev_bookmark_path => prev_md_bookmark_path,
-        :next_bookmark_path => next_md_bookmark_path,
-        :prev_title => prev_title,
-        :next_title => next_title,
-    }
-    MarkdownHelper.build_file(template_file_path, md_file_path, options)
-    md_file_name = File.basename(md_file_path)
-    title = titles[i]
-    relative_link_path = File.join(
-        '.',
-        'tester_tour',
-        'md_files',
-        md_file_name,
-        bookmark_for(title),
-    )
-    link_item = format('- [%s](%s)', title, relative_link_path)
-    index_file.puts(link_item)
-
   end
   index_file.close
   FileUtils.rm_rf(conditioned_log_dir_path)
