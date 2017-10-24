@@ -1,5 +1,5 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop:** [Data Objects](./DataObjects.md#data-objects)
+**Prev Stop:** [The Data Object](./DataObjects.md#the-data-object)
 
 **Next Stop:** [Creating a Data Object](./FlatDataNew.md#creating-a-data-object)
 
@@ -43,12 +43,12 @@ Notes:
 ```xml
 <flat_data_log_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='1.807' name='flat_data_log_test' timestamp='2017-10-23-Mon-14.01.06.400'>
+  <test_method duration_seconds='1.798' name='flat_data_log_test' timestamp='2017-10-24-Tue-11.33.47.907'>
     <section name='With GithubClient'>
       <section name='Fetch and log an instance of Label'>
         <section name='Fetch an label'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-            <execution duration_seconds='1.801' timestamp='2017-10-23-Mon-14.01.06.405'/>
+            <execution duration_seconds='1.793' timestamp='2017-10-24-Tue-11.33.47.912'/>
           </GithubClient>
         </section>
         <section name='Fetched label'>
@@ -76,7 +76,7 @@ Notes:
 - Its subelement `execution` shows the timestamp and duration for the interaction.
 - The section named `Fetched IssueLabel` shows the values in the fetched issue label.
 
-**Prev Stop:** [Data Objects](./DataObjects.md#data-objects)
+**Prev Stop:** [The Data Object](./DataObjects.md#the-data-object)
 
 **Next Stop:** [Creating a Data Object](./FlatDataNew.md#creating-a-data-object)
 

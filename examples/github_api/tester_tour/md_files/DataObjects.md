@@ -4,11 +4,13 @@
 **Next Stop:** [Logging a Data Object](./FlatDataLog.md#logging-a-data-object)
 
 
-# Data Objects
+# The Data Object
 
-A key concept in the framework is the _data object_.
+A key concept in this framework is the _data object_.
 
-The main GitHub API data objects seen here will be:
+In these examples, a data object corresponds to a GitHub API _resource_.
+
+The main data objects seen here will be:
 
 - `Label`
 - `RateLimit`

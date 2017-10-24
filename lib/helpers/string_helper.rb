@@ -67,10 +67,21 @@ class StringHelper < BaseClass
   # Return the upper camel case version of a snake case string.
   def self.to_upper_camel_case(snake_case)
     upper_camel_words = []
-    snake_case.split('_').each do |w|
-      upper_camel_words.push(w.capitalize)
+    snake_case.split('_').each do |word|
+      upper_camel_words.push(word.capitalize)
     end
     upper_camel_words.join('')
+  end
+
+  Contract String => String
+  def self.to_title(s)
+    small_words = %w{a an and the or for of nor}
+    title_words = []
+    s.split('_').each do |word|
+      word.capitalize! unless small_words.include?(word)
+      title_words.push(word)
+    end
+    title_words.join(' ').capitalize
   end
 
 end
