@@ -86,13 +86,13 @@ class Label < BaseClassForResource
     DeleteLabelsName.call(client, label)
   end
 
+  # Convenience.
+
   Contract GithubClient => ArrayOf[Label ]
   def self.get_all(client)
     require_relative '../endpoints/labels/get_labels'
     GetLabels.call(client)
   end
-
-  # Convenience.
 
   # This is harmlessly redundant, but helps RubyMine code inspection.
   attr_accessor \

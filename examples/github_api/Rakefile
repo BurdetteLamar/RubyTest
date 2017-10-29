@@ -59,8 +59,6 @@ task :tester_tour do
 
 The Tester Tour covers topics that are of interest to a tester who wants to develop and run tests for a REST API.
 
-This tester is distinguished from an infrastructure developer, who would want to develop infrastructure that supports testing a REST API.
-
 The tour shows how to use the example infrastructure to test a REST API.  The target REST API may be seen at:
 
 - [GitHub REST API](https://developer.github.com/v3/)
@@ -95,7 +93,8 @@ EOT
 
   # To do.
   # names = %w/
-  #     verdict_return_values
+  # verdict methods
+  #     verdict_return_values and chaining
   #     data_exist
   #     data_crud
   #     data_convenience (get_all, get_first)
@@ -131,6 +130,7 @@ EOT
           nested_data_valid
       /,
       :endpoints => %w/
+          endpoint_objects
           endpoint_tests
           get_labels
           post_labels
@@ -145,7 +145,7 @@ EOT
 
   titles = []
   all_page_names = []
-  page_names_by_section.each_pair do |section, section_page_names|
+  page_names_by_section.each_pair do |_, section_page_names|
     section_page_names.each do |page_name|
       all_page_names.push(page_name)
       template_file_path = template_file_path_for_name(template_dir_path, page_name)

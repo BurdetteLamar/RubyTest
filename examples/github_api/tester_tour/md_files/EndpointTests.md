@@ -1,5 +1,5 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop:** [Validating Nested Data Objects](./NestedDataValid.md#validating-nested-data-objects)
+**Prev Stop:** [Endpoint Objects](./EndpointObjects.md#endpoint-objects)
 
 **Next Stop:** [GetLabels Test](./GetLabels.md#getlabels-test)
 
@@ -16,11 +16,7 @@ These endpoints will be:
 - `PATCH /labels/:name` - Update a label.
 - `DELETE /labels/:name` - Delete a label.
 
-Each of these endpoints is represented by an 'endpoint object' that corresponds precisely to the famed 'page object' used for testing web applications.
-
-Each endpoint object has class method `verdict_call_and_verify_success` that does the work of interacting with the API and evaluating the response.
-
-**Prev Stop:** [Validating Nested Data Objects](./NestedDataValid.md#validating-nested-data-objects)
+**Prev Stop:** [Endpoint Objects](./EndpointObjects.md#endpoint-objects)
 
 **Next Stop:** [GetLabels Test](./GetLabels.md#getlabels-test)
 
