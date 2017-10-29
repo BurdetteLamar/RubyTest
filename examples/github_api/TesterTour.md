@@ -2,8 +2,6 @@
 
 The Tester Tour covers topics that are of interest to a tester who wants to develop and run tests for a REST API.
 
-This tester is distinguished from an infrastructure developer, who would want to develop infrastructure that supports testing a REST API.
-
 The tour shows how to use the example infrastructure to test a REST API.  The target REST API may be seen at:
 
 - [GitHub REST API](https://developer.github.com/v3/)
@@ -12,7 +10,7 @@ Each following tour stop assumes you've seen all its predecessors, so repetition
 
 ## Tour Stops
 
-### Getting Started
+### Getting started
 - [Overview](./tester_tour/md_files/Overview.md/#overview)
 - [First Test](./tester_tour/md_files/First.md/#first-test)
 ### Logging
@@ -20,19 +18,20 @@ Each following tour stop assumes you've seen all its predecessors, so repetition
 - [Verdicts](./tester_tour/md_files/Verdicts.md/#verdicts)
 - [Rescued Exception](./tester_tour/md_files/RescuedException.md/#rescued-exception)
 - [Unrescued Exception](./tester_tour/md_files/UnrescuedException.md/#unrescued-exception)
-### Data Objects
+### Data objects
 - [The Data Object](./tester_tour/md_files/DataObjects.md/#the-data-object)
 - [Logging a Data Object](./tester_tour/md_files/FlatDataLog.md/#logging-a-data-object)
 - [Creating a Data Object](./tester_tour/md_files/FlatDataNew.md/#creating-a-data-object)
 - [Verifying a Data Object](./tester_tour/md_files/FlatDataEqual.md/#verifying-a-data-object)
 - [Validating a Data Object](./tester_tour/md_files/FlatDataValid.md/#validating-a-data-object)
-### Nested Data Objects
+### Nested data objects
 - [Logging Nested Data Objects](./tester_tour/md_files/NestedDataLog.md/#logging-nested-data-objects)
 - [Creating Nested Data Objects](./tester_tour/md_files/NestedDataNew.md/#creating-nested-data-objects)
 - [Creating Nested Data Objects, Part 2](./tester_tour/md_files/NestedDataNew2.md/#creating-nested-data-objects-part-2)
 - [Verifying Nested Data Objects](./tester_tour/md_files/NestedDataEqual.md/#verifying-nested-data-objects)
 - [Validating Nested Data Objects](./tester_tour/md_files/NestedDataValid.md/#validating-nested-data-objects)
 ### Endpoints
+- [Endpoint Objects](./tester_tour/md_files/EndpointObjects.md/#endpoint-objects)
 - [Endpoint Tests](./tester_tour/md_files/EndpointTests.md/#endpoint-tests)
 - [GetLabels Test](./tester_tour/md_files/GetLabels.md/#getlabels-test)
 - [PostLabels Test](./tester_tour/md_files/PostLabels.md/#postlabels-test)
