@@ -121,7 +121,7 @@ class LogTest < MiniTest::Test
 
   end
 
-  Contract HashOf[Symbol, Any], Proc => nil
+  Contract HashOf[Symbol, Any] => nil
   # Tests for (most) all verdict methods.
   def verdict_common_test(hash)
 
@@ -285,9 +285,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
     # Use object/nil.
     passing_arguments = {
@@ -300,9 +298,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
   end
 
@@ -321,9 +317,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
     # Use nil/object.
     passing_arguments = {
@@ -336,9 +330,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
   end
 
@@ -356,9 +348,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
     verdict_id = :no_empty_method_fails
     file_path = create_temp_log(self) do |log|
@@ -393,9 +383,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
     verdict_id = :no_empty_method_fails
     file_path = create_temp_log(self) do |log|
@@ -432,9 +420,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
     verdict_id = :hash_passes
     file_path = create_temp_log(self) do |log|
@@ -549,9 +535,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
   end
 
@@ -573,9 +557,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
   end
 
@@ -597,9 +579,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
   end
 
@@ -621,9 +601,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
   end
 
@@ -645,9 +623,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
   end
 
@@ -667,9 +643,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
   end
 
@@ -689,9 +663,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
   end
 
@@ -711,9 +683,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
   end
 
@@ -733,9 +703,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
   end
 
@@ -755,9 +723,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
   end
 
@@ -777,9 +743,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
   end
 
@@ -799,9 +763,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
   end
 
@@ -821,9 +783,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
   end
 
@@ -841,9 +801,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
   end
 
@@ -861,9 +819,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
   end
 
@@ -885,9 +841,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
   end
 
@@ -909,9 +863,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
   end
 
@@ -989,9 +941,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
   end
 
@@ -1011,9 +961,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
   end
 
@@ -1087,9 +1035,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
   end
 
@@ -1109,9 +1055,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
   end
 
@@ -1131,9 +1075,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
   end
 
@@ -1153,9 +1095,7 @@ class LogTest < MiniTest::Test
         :method => method,
         :passing_arguments => passing_arguments,
         :failing_arguments => failing_arguments,
-    ) do |log, v_id, args|
-      log.send(method, v_id, *passing_arguments.values, v_id)
-    end
+    ) 
 
   end
 
