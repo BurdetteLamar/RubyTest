@@ -127,13 +127,25 @@ class ExampleTest < Minitest::Test
 
   def test_changes
 
+    # Remove verdict_paths.txt, so we get a clean comparison of prev and curr.
+    curr_dir_path = TestHelper.get_app_log_dir_path('changes_report', back = 0)
+    verdict_paths_file_path = File.join(
+        File.dirname(curr_dir_path),
+        'verdict_paths.txt',
+    )
+    File.delete(verdict_paths_file_path)
+
     # Need to preserve verdict id and message from prev to curr.
     @verdict_ids = {}
     @messages = {}
 
+    # Create logs for prev.
     create_logs(prev = true)
+
     # Make sure the timestamp-based directory names will be different.
     sleep 2
+
+    # Create logs for curr.
     create_logs(prev = false)
 
   end

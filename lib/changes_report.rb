@@ -307,13 +307,24 @@ EOT
 
     # Summary and section for each status.
     status_sections = {}
+    explanation_texts = {
+        :new_blocked => 'previously passed or failed; now blocked.',
+        :old_blocked => 'previously blocked; still blocked.',
+        :new_passed => 'previously failed or blocked; now passed.',
+        :old_passed => 'previously passed; still passed in exactly the same way.',
+        :changed_passed => 'previously passed; still passed, but with some sort of difference.',
+        :new_failed => 'previously passed or blocked; now failed.',
+        :old_failed => 'previously failed; still failed in exactly the same way.',
+        :changed_failed => 'previously failed; still failed, but with some sort of difference.',
+    }
     VerdictPair::STATUS_SYMBOLS.each do |status|
       # Changes for this status.
       changes = changes_by_status[status]
       # count and text for link and section title.
       count = changes.size
       # Text for link and subsection title
-      title_text = '%s (%d)' % [self.title_from_symbol(status), count]
+      explanation_text = explanation_texts[status]
+      title_text = '%s (%d): %s' % [self.title_from_symbol(status), count, explanation_text]
       link_text = self.title_from_symbol(status)
       _class = VerdictPair.ele_class_for_status_symbol(status)
       # Add row to summary table and link it to the section.

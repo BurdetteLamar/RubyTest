@@ -7,6 +7,7 @@ namespace :examples do
   task :all do
     rakefile_dir_path = File.dirname(__FILE__)
     %w/
+      changes_report
       log
       rest_api
     /.each do |examples_dir_name|
