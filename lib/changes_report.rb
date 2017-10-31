@@ -271,7 +271,7 @@ EOT
     .bad { color: rgb(156,0,6); background-color: rgb(255,199,206) }
     .data { font-family: Courier New, monospace }
     .data_centered { text-align: center; font-family: Courier New, monospace }
-    .data_changed { font-family: Courier New, monospace; font-weight: bold }
+    .data_changed { font-family: Courier New, monospace; font-weight: bold; font-style: italic }
 EOT
     style_ele << ChangesReport.cell_data(styles)
     body_ele = html_ele.add_element('body')
