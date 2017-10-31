@@ -36,7 +36,7 @@ class ChangesReport < BaseClass
           # Prev nil, curr non-nil.
           self.status = {
               :passed => :new_passed,
-              :failed => :new_passed,
+              :failed => :new_failed,
               :blocked => :new_blocked,
           }[curr.outcome.to_sym]
         end
@@ -66,6 +66,8 @@ class ChangesReport < BaseClass
                             if curr.volatile
                               # The change is ok.
                               :old_passed
+                            elsif Log::Verdict.equal_except_for_exception?(prev, curr)
+                              :old_failed
                             else
                               {
                                   :passed => :changed_passed,
