@@ -286,6 +286,17 @@ class Log < BaseClass
       super(expected_obj, actual_obj, fields_to_ignore = [:file_path])
     end
 
+    def self.equal_except_for_exception?(expected_verdict, actual_verdict)
+      FIELDS.each do |field|
+        next if field == :exception
+        next if field == :file_path
+        exp_value = expected_verdict.send(field)
+        act_value = actual_verdict.send(field)
+        return false unless exp_value == act_value
+      end
+      true
+    end
+
     def path
       test_name = File.basename(file_path, '.xml')
       File.join(test_name, id)

@@ -43,6 +43,7 @@ class ExampleTest < Minitest::Test
               :old_blocked => [block_values, block_values],
               :new_blocked => [pass_values, block_values],
           }
+          p args_for_status[:old_failed]
           i = @prev ? 0 : 1
           args_for_status.each_pair do |status, args_pair|
             args = args_pair[i]
@@ -127,13 +128,35 @@ class ExampleTest < Minitest::Test
 
   def test_changes
 
+    # Remove verdict_paths.txt, so we get a clean comparison of prev and curr.
+    curr_dir_path = TestHelper.get_app_log_dir_path('changes_report', back = 0)
+    verdict_paths_file_path = File.join(
+        File.dirname(curr_dir_path),
+        'verdict_paths.txt',
+    )
+    # Make sure we get a clean verdicts list.
+    File.delete(verdict_paths_file_path)
+    # Put in some verdicts that will be 'old blocked'.
+    File.open(verdict_paths_file_path, 'w') do |file|
+      lorem = LoremHelper::Lorem.new
+      (0..9).each do
+        verdict_id = lorem.words(3)
+        verdict_path = format('log/%s', verdict_id)
+        file.puts(verdict_path)
+      end
+    end
+
     # Need to preserve verdict id and message from prev to curr.
     @verdict_ids = {}
     @messages = {}
 
+    # Create logs for prev.
     create_logs(prev = true)
+
     # Make sure the timestamp-based directory names will be different.
     sleep 2
+
+    # Create logs for curr.
     create_logs(prev = false)
 
   end

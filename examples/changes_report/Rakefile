@@ -2,31 +2,32 @@ require_relative '../../lib/changes_report'
 
 rakefile_dir_path = File.dirname(__FILE__)
 
-namespace :create do
-
-  desc 'Create logs'
-  task :logs do
-    test_file_path = File.join(
-        rakefile_dir_path,
-        'example_test.rb',
-    )
-    command = format('ruby %s', test_file_path)
-    system(command)
-  end
-
-  desc 'Create Changes Report'
-  task :changes_report do
-    exe_file_path = File.absolute_path(File.join(
-                            rakefile_dir_path,
-                            '..',
-                            '..',
-                            'lib',
-                            'changes_report.rb'
-    ))
-    command = format('ruby -r %s -e "ChangesReport.create_report \'changes_report\'', exe_file_path)
-    system(command)
-  end
-
+task :examples do
+  test_file_path = File.join(
+      rakefile_dir_path,
+      'example_test.rb',
+  )
+  command = format('ruby %s', test_file_path)
+  system(command)
+  exe_file_path = File.absolute_path(File.join(
+                          rakefile_dir_path,
+                          '..',
+                          '..',
+                          'lib',
+                          'changes_report.rb'
+  ))
+  command = format('ruby -r %s -e "ChangesReport.create_report \'changes_report\'', exe_file_path)
+  system(command)
+  changes_report_dir_path = TestHelper.get_app_log_dir_path('changes_report', back = 0)
+  changes_report_file_path = File.join(
+                                     changes_report_dir_path,
+                                     'ChangesReport.html',
+  )
+  example_report_file_path = File.join(
+                                     rakefile_dir_path,
+                                     'ChangesReport.html',
+  )
+  FileUtils.copy(changes_report_file_path, example_report_file_path)
 end
 
 
