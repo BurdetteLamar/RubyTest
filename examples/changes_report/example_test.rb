@@ -43,7 +43,6 @@ class ExampleTest < Minitest::Test
               :old_blocked => [block_values, block_values],
               :new_blocked => [pass_values, block_values],
           }
-          p args_for_status[:old_failed]
           i = @prev ? 0 : 1
           args_for_status.each_pair do |status, args_pair|
             args = args_pair[i]
