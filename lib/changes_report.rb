@@ -143,13 +143,15 @@ class ChangesReport < BaseClass
         # Add column header.
         tr_head_ele << th_head_ele = Element.new('th')
         th_head_ele << ChangesReport.cell_data(ChangesReport.title_from_symbol(method))
+        td_class = value_curr == value_prev ? 'data' : 'data_changed'
         # Add value for prev.
         tr_prev_ele << td_prev_ele = Element.new('td')
-        td_prev_ele.add_attribute('class', classes_prev)
+        td_prev_ele.add_attribute('class', format('%s %s', classes_prev, td_class))
+        p format('%s %s', classes_prev, td_class)
         td_prev_ele << ChangesReport.cell_data(value_prev)
         # Add value_for_curr.
         tr_curr_ele << td_curr_ele = Element.new('td')
-        td_curr_ele.add_attribute('class', classes_curr)
+        td_curr_ele.add_attribute('class', format('%s %s', classes_curr, td_class))
         td_curr_ele << ChangesReport.cell_data(value_curr)
       end
       table_ele
@@ -270,6 +272,7 @@ EOT
     .bad { color: rgb(156,0,6); background-color: rgb(255,199,206) }
     .data { font-family: Courier New, monospace }
     .data_centered { text-align: center; font-family: Courier New, monospace }
+    .data_changed { font-family: Courier New, monospace; font-weight: bold }
 EOT
     style_ele << ChangesReport.cell_data(styles)
     body_ele = html_ele.add_element('body')
@@ -326,9 +329,9 @@ EOT
       explanation_text = explanation_texts[status]
       title_text = '%s (%d): %s' % [self.title_from_symbol(status), count, explanation_text]
       link_text = self.title_from_symbol(status)
-      _class = VerdictPair.ele_class_for_status_symbol(status)
+      tr_class = VerdictPair.ele_class_for_status_symbol(status)
       # Add row to summary table and link it to the section.
-      tr_ele = summary_table_ele.add_element('tr', {'class' => _class})
+      tr_ele = summary_table_ele.add_element('tr', {'class' => tr_class})
       td_ele = tr_ele.add_element('td', {'align' => 'right'})
       td_ele << ChangesReport.cell_data(count)
       td_ele = tr_ele.add_element('td')
@@ -352,7 +355,7 @@ EOT
       changes.each do |change|
         verdict_path, verdict_pair = change
         # Entry in the summary table for this status.
-        tr_ele = table_ele.add_element('tr', {'class' => _class})
+        tr_ele = table_ele.add_element('tr', {'class' => tr_class})
         td_ele = tr_ele.add_element('td')
         if status == :old_blocked
           # Just put in the verdict path (there's no data to link to).
