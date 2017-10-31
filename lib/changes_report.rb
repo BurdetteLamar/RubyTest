@@ -147,7 +147,6 @@ class ChangesReport < BaseClass
         # Add value for prev.
         tr_prev_ele << td_prev_ele = Element.new('td')
         td_prev_ele.add_attribute('class', format('%s %s', classes_prev, td_class))
-        p format('%s %s', classes_prev, td_class)
         td_prev_ele << ChangesReport.cell_data(value_prev)
         # Add value_for_curr.
         tr_curr_ele << td_curr_ele = Element.new('td')
