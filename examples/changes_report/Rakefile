@@ -18,6 +18,16 @@ task :examples do
   ))
   command = format('ruby -r %s -e "ChangesReport.create_report \'changes_report\'', exe_file_path)
   system(command)
+  changes_report_dir_path = TestHelper.get_app_log_dir_path('changes_report', back = 0)
+  changes_report_file_path = File.join(
+                                     changes_report_dir_path,
+                                     'ChangesReport.html',
+  )
+  example_report_file_path = File.join(
+                                     rakefile_dir_path,
+                                     'ChangesReport.html',
+  )
+  FileUtils.copy(changes_report_file_path, example_report_file_path)
 end
 
 
