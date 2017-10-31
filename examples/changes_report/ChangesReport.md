@@ -73,4 +73,4 @@ The ability to safely ignore these saved us *hours* each day.
 
 ## Example Changes Report
 
-[Changes Report](https://rawgit.com/BurdetteLamar/RubyTest/changes_report/examples/changes_report/ChangesReport.html)
+[Changes Report](https://htmlpreview.github.io/?https://github.com/BurdetteLamar/RubyTest/changes_report/examples/changes_report/ChangesReport.html)
