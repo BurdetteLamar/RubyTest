@@ -73,4 +73,5 @@ The ability to safely ignore these saved us *hours* each day.
 
 ## Example Changes Report
 
-[Changes Report](https://htmlpreview.github.io/?https://github.com/BurdetteLamar/RubyTest/changes_report/examples/changes_report/ChangesReport.html)
+- [In branch master](https://htmlpreview.github.io/?https://github.com/BurdetteLamar/RubyTest/master/examples/changes_report/ChangesReport.html)
+- [In branch changes_report](https://htmlpreview.github.io/?https://github.com/BurdetteLamar/RubyTest/changes_report/examples/changes_report/ChangesReport.html)
