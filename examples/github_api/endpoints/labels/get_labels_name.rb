@@ -24,7 +24,7 @@ class GetLabelsName < BaseClassForEndpoint
       label_fetched = self.call(client, label_to_fetch, query_elements)
       log.section('Evaluation') do
         v_id = Log.verdict_id(verdict_id, 'name')
-        log.verdict_assert_equal?(v_id, label_to_fetch.name, label_fetched.name, 'Label name')
+        log.verdict_assert_equal?(v_id, label_to_fetch.name, label_fetched.name, message: 'Label name')
         v_id = Log.verdict_id(verdict_id, 'valid')
         label_fetched.verdict_valid?(log, v_id)
       end

@@ -26,14 +26,14 @@ class VerdictsTest < BaseClassForTest
           log.verdict_assert?(
               verdict_id = 'assert should pass',
               actual = true,
-              message = 'True is truthy'
+              message: 'True is truthy'
           )
         end
         log.section('A refute verdict that should pass') do
           log.verdict_refute?(
               verdict_id = 'refute should pass',
               actual = false,
-              message = 'False is not truthy'
+              message: 'False is not truthy'
           )
         end
       end
@@ -42,14 +42,14 @@ class VerdictsTest < BaseClassForTest
           log.verdict_assert?(
               verdict_id = 'assert should fail',
               actual = false,
-              message = 'False is not truthy'
+              message: 'False is not truthy'
           )
         end
         log.section('A refute verdict that should fail') do
           log.verdict_refute?(
               verdict_id = 'refute should fail',
               actual = true,
-              message = 'True is truthy'
+              message: 'True is truthy'
           )
         end
       end
@@ -78,7 +78,7 @@ Notes:
 ```xml
 <verdicts_test>
   <summary errors='0' failures='2' verdicts='5'/>
-  <test_method duration_seconds='0.010' name='verdicts_test' timestamp='2017-10-29-Sun-05.56.21.865'>
+  <test_method duration_seconds='0.000' name='verdicts_test' timestamp='2017-11-01-Wed-13.18.02.065'>
     <section name='With GithubClient'>
       <section name='These verdicts should pass'>
         <section name='An assert verdict that should pass'>

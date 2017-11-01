@@ -17,12 +17,14 @@ class BaseClassForResource < BaseClassForData
 
   Contract GithubClient, Log, String, self => Bool
   def self.verdict_exist?(client, log, verdict_id, object)
-    log.va?(verdict_id, self.exist?(client, object), self.name + ' exists')
+    message = self.name + ' exists'
+    log.va?(verdict_id, self.exist?(client, object), message: message)
   end
 
   Contract GithubClient, Log, String, self => Bool
   def self.verdict_not_exist?(client, log, verdict_id, object)
-    log.vr?(verdict_id, self.exist?(client, object), self.name + ' not exist')
+    message = self.name + ' not exist'
+    log.vr?(verdict_id, self.exist?(client, object), message: message)
   end
 
   Contract GithubClient, self => Bool

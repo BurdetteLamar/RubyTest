@@ -17,12 +17,12 @@ class BaseClassForResource < BaseClassForData
 
   Contract ExampleRestClient, Log, String, self => Bool
   def self.verdict_exist?(client, log, verdict_id, object)
-    log.va?(verdict_id, self.exist?(client, object), self.name + ' exists')
+    log.va?(verdict_id, self.exist?(client, object), message: self.name + ' exists')
   end
 
   Contract ExampleRestClient, Log, String, self => Bool
   def self.verdict_not_exist?(client, log, verdict_id, object)
-    log.vr?(verdict_id, self.exist?(client, object), self.name + ' not exist')
+    log.vr?(verdict_id, self.exist?(client, object), message: self.name + ' not exist')
   end
 
   # Convenience CRUD (create, read, update, delete), etc.

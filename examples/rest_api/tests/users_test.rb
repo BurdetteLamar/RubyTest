@@ -41,7 +41,7 @@ class UsersTest < BaseClassForTest
           }
           expected_users = all_users.select { |p| p.name == user.name }
           actual_users = GetUsers.call(client, query_elements)
-          if log.verdict_assert_equal?('count for simple query', expected_users.size, actual_users.size, 'Count')
+          if log.verdict_assert_equal?('count for simple query', expected_users.size, actual_users.size, message: 'Count')
             (0...expected_users.size).each do |i|
               expected_user = expected_users[i]
               actual_user = actual_users[i]
@@ -58,7 +58,7 @@ class UsersTest < BaseClassForTest
           }
           expected_users = all_users.select { |p| (p.name == user.name) && (p.phone == user.phone) }
           actual_users = GetUsers.call(client, query_elements)
-          if log.verdict_assert_equal?('count for complex query', expected_users.size, actual_users.size, 'Count')
+          if log.verdict_assert_equal?('count for complex query', expected_users.size, actual_users.size, message: 'Count')
             (0...expected_users.size).each do |i|
               expected_user = expected_users[i]
               actual_user = actual_users[i]

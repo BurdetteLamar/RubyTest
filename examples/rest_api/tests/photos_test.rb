@@ -41,7 +41,7 @@ class PhotosTest < BaseClassForTest
           }
           expected_photos = all_photos.select { |p| p.albumId == photo.albumId }
           actual_photos = GetPhotos.call(client, query_elements)
-          if log.verdict_assert_equal?('count for simple query', expected_photos.size, actual_photos.size, 'Count')
+          if log.verdict_assert_equal?('count for simple query', expected_photos.size, actual_photos.size, message: 'Count')
             (0...expected_photos.size).each do |i|
               expected_photo = expected_photos[i]
               actual_photo = actual_photos[i]
@@ -58,7 +58,7 @@ class PhotosTest < BaseClassForTest
           }
           expected_photos = all_photos.select { |p| (p.albumId == photo.albumId) && (p.title == photo.title) }
           actual_photos = GetPhotos.call(client, query_elements)
-          if log.verdict_assert_equal?('count for complex query', expected_photos.size, actual_photos.size, 'Count')
+          if log.verdict_assert_equal?('count for complex query', expected_photos.size, actual_photos.size, message: 'Count')
             (0...expected_photos.size).each do |i|
               expected_photo = expected_photos[i]
               actual_photo = actual_photos[i]

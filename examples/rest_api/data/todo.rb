@@ -20,10 +20,10 @@ class Todo < BaseClassForResource
 
   Contract Log, String => Bool
   def verdict_valid?(log, verdict_id)
-    log.verdict_assert_integer_positive?(verdict_id + ' - user id', self.userId, 'Todo user id')
-    log.verdict_assert_integer_positive?(verdict_id + ' - id', self.id, 'Todo id')
-    log.verdict_assert_string_not_empty?(verdict_id + ' - title', self.title, 'Todo title')
-    log.verdict_assert_boolean?(verdict_id + ' - completed', self.completed, 'Todo completed')
+    log.verdict_assert_integer_positive?(verdict_id + ' - user id', self.userId, message: 'Todo user id')
+    log.verdict_assert_integer_positive?(verdict_id + ' - id', self.id, message: 'Todo id')
+    log.verdict_assert_string_not_empty?(verdict_id + ' - title', self.title, message: 'Todo title')
+    log.verdict_assert_boolean?(verdict_id + ' - completed', self.completed, message: 'Todo completed')
   end
 
   # This is redundant, but it helps RubyMine code inspection.

@@ -41,7 +41,7 @@ class TodosTest < BaseClassForTest
           }
           expected_todos = all_todos.select { |p| p.userId == todo.userId }
           actual_todos = GetTodos.call(client, query_elements)
-          if log.verdict_assert_equal?('count for simple query', expected_todos.size, actual_todos.size, 'Count')
+          if log.verdict_assert_equal?('count for simple query', expected_todos.size, actual_todos.size, message: 'Count')
             (0...expected_todos.size).each do |i|
               expected_todo = expected_todos[i]
               actual_todo = actual_todos[i]
@@ -58,7 +58,7 @@ class TodosTest < BaseClassForTest
           }
           expected_todos = all_todos.select { |p| (p.userId == todo.userId) && (p.title == todo.title) }
           actual_todos = GetTodos.call(client, query_elements)
-          if log.verdict_assert_equal?('count for complex query', expected_todos.size, actual_todos.size, 'Count')
+          if log.verdict_assert_equal?('count for complex query', expected_todos.size, actual_todos.size, message: 'Count')
             (0...expected_todos.size).each do |i|
               expected_todo = expected_todos[i]
               actual_todo = actual_todos[i]

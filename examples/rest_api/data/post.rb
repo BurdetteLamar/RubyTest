@@ -19,10 +19,10 @@ class Post < BaseClassForResource
 
   Contract Log, String => Bool
   def verdict_valid?(log, verdict_id)
-    log.verdict_assert_integer_positive?(verdict_id + ' - id', self.id, 'Post id')
-    log.verdict_assert_integer_positive?(verdict_id + ' - user id', self.userId, 'Post user id')
-    log.verdict_assert_string_not_empty?(verdict_id + ' - title', self.title, 'Post title')
-    log.verdict_assert_string_not_empty?(verdict_id + ' - body', self.body, 'Post body')
+    log.verdict_assert_integer_positive?(verdict_id + ' - id', self.id, message: 'Post id')
+    log.verdict_assert_integer_positive?(verdict_id + ' - user id', self.userId, message: 'Post user id')
+    log.verdict_assert_string_not_empty?(verdict_id + ' - title', self.title, message: 'Post title')
+    log.verdict_assert_string_not_empty?(verdict_id + ' - body', self.body, message: 'Post body')
   end
 
   # This is redundant, but it helps RubyMine code inspection.

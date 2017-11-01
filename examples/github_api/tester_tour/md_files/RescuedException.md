@@ -25,11 +25,11 @@ class RescuedExceptionTest < BaseClassForTest
         denominator = 0
         quotient = numerator / denominator
         log.section('This section is not reached because of the exception') do
-          log.verdict_assert?('first not reached', quotient, 'Did not make it here because exception raised')
+          log.verdict_assert?('first not reached', quotient, message: 'Did not make it here because exception raised')
         end
       end
       log.section('This section is reached because the above exception was rescued') do
-        log.verdict_assert?('reached', true, 'Made it to here')
+        log.verdict_assert?('reached', true, message: 'Made it to here')
       end
     end
   end
@@ -50,7 +50,7 @@ Notes:
 ```xml
 <rescued_exception_test>
   <summary errors='1' failures='1' verdicts='2'/>
-  <test_method duration_seconds='0.010' name='rescued_exception_test' timestamp='2017-10-29-Sun-05.56.22.985'>
+  <test_method duration_seconds='0.000' name='rescued_exception_test' timestamp='2017-11-01-Wed-13.18.03.100'>
     <section name='With GithubClient'>
       <section name='Rescued exception'>
         <uncaught_exception>

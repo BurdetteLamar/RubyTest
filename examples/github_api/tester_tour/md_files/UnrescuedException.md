@@ -23,11 +23,11 @@ class UnrescuedExceptionTest < BaseClassForTest
         denominator = 0
         quotient = numerator / denominator
         log.section('This section is not reached because of the exception') do
-          log.verdict_assert?('second not reached', quotient, 'Did not make it here because exception raised')
+          log.verdict_assert?('second not reached', quotient, message: 'Did not make it here because exception raised')
         end
       end
       log.section('This section is not reached because of the unrescued exception') do
-        log.verdict_assert?('third not reached', true, 'Did not make it here because exception raised')
+        log.verdict_assert?('third not reached', true, message: 'Did not make it here because exception raised')
       end
     end
   end
@@ -45,7 +45,7 @@ Notes:
 ```xml
 <unrescued_exception_test>
   <summary errors='1' failures='1' verdicts='1'/>
-  <test_method name='unrescued_exception_test' timestamp='2017-10-29-Sun-05.56.24.077'>
+  <test_method name='unrescued_exception_test' timestamp='2017-11-01-Wed-13.18.04.141'>
     <section duration_seconds='0.002' name='With GithubClient'>
       <section name='Unrescued exception'>
         <uncaught_exception>

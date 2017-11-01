@@ -49,12 +49,12 @@ Notes:
 ```xml
 <get_labels_test>
   <summary errors='0' failures='0' verdicts='8'/>
-  <test_method name='get_labels_test' timestamp='2017-10-29-Sun-05.56.46.231'>
-    <section duration_seconds='1.731' name='With GithubClient'>
+  <test_method name='get_labels_test' timestamp='2017-11-01-Wed-13.18.25.457'>
+    <section duration_seconds='1.818' name='With GithubClient'>
       <section name='Test GetLabels'>
-        <section name='Get labels' timestamp='2017-10-29-Sun-05.56.46.232'>
+        <section name='Get labels' timestamp='2017-11-01-Wed-13.18.25.458'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-            <execution duration_seconds='1.725' timestamp='2017-10-29-Sun-05.56.46.234'/>
+            <execution duration_seconds='1.815' timestamp='2017-11-01-Wed-13.18.25.460'/>
           </GithubClient>
           <section name='Info'>
             <data fetched_labels_count='8'/>
