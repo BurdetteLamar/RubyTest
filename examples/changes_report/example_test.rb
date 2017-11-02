@@ -140,6 +140,7 @@ class ExampleTest < Minitest::Test
     # Put in some verdicts that will be 'old blocked'.
     File.open(verdict_paths_file_path, 'w') do |file|
       lorem = LoremHelper::Lorem.new
+      srand(1)
       (0..9).each do
         verdict_id = lorem.words(3)
         verdict_path = format('log/%s', verdict_id)
