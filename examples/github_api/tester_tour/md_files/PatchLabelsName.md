@@ -60,51 +60,51 @@ Notes:
 ```xml
 <patch_labels_name_test>
   <summary errors='0' failures='0' verdicts='11'/>
-  <test_method name='patch_labels_name_test' timestamp='2017-10-29-Sun-05.56.57.782'>
-    <section duration_seconds='3.607' name='With GithubClient'>
+  <test_method name='patch_labels_name_test' timestamp='2017-11-01-Wed-13.18.36.878'>
+    <section duration_seconds='3.597' name='With GithubClient'>
       <section name='Test PatchLabelsName'>
         <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-          <execution duration_seconds='1.762' timestamp='2017-10-29-Sun-05.56.57.782'/>
+          <execution duration_seconds='1.826' timestamp='2017-11-01-Wed-13.18.36.878'/>
         </GithubClient>
         <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
           <parameters color='000000' name='test_label'/>
-          <execution duration_seconds='0.349' timestamp='2017-10-29-Sun-05.56.59.548'/>
+          <execution duration_seconds='0.340' timestamp='2017-11-01-Wed-13.18.38.712'/>
         </GithubClient>
-        <section name='patch label' timestamp='2017-10-29-Sun-05.56.59.898'>
+        <section name='patch label' timestamp='2017-11-01-Wed-13.18.39.052'>
           <GithubClient method='PATCH' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
             <parameters color='ffffff'/>
-            <execution duration_seconds='0.333' timestamp='2017-10-29-Sun-05.56.59.901'/>
+            <execution duration_seconds='0.372' timestamp='2017-11-01-Wed-13.18.39.052'/>
           </GithubClient>
           <section name='Evaluation'>
             <section name='Returned label correct'>
-              <verdict id='patch label updated label-id' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                <exp_value>734249580</exp_value>
-                <act_value>734249580</act_value>
+              <verdict id='patch label {:message=&gt;&quot;updated label&quot;}-id' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                <exp_value>737797453</exp_value>
+                <act_value>737797453</act_value>
               </verdict>
-              <verdict id='patch label updated label-url' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+              <verdict id='patch label {:message=&gt;&quot;updated label&quot;}-url' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label</exp_value>
                 <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label</act_value>
               </verdict>
-              <verdict id='patch label updated label-name' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+              <verdict id='patch label {:message=&gt;&quot;updated label&quot;}-name' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>test_label</exp_value>
                 <act_value>test_label</act_value>
               </verdict>
-              <verdict id='patch label updated label-color' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+              <verdict id='patch label {:message=&gt;&quot;updated label&quot;}-color' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>ffffff</exp_value>
                 <act_value>ffffff</act_value>
               </verdict>
-              <verdict id='patch label updated label-default' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+              <verdict id='patch label {:message=&gt;&quot;updated label&quot;}-default' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>false</exp_value>
                 <act_value>false</act_value>
               </verdict>
             </section>
             <section name='Label updated'>
               <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-                <execution duration_seconds='0.342' timestamp='2017-10-29-Sun-05.57.00.234'/>
+                <execution duration_seconds='0.340' timestamp='2017-11-01-Wed-13.18.39.424'/>
               </GithubClient>
               <verdict id='patch label fetched label-id' message='Fetched label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                <exp_value>734249580</exp_value>
-                <act_value>734249580</act_value>
+                <exp_value>737797453</exp_value>
+                <act_value>737797453</act_value>
               </verdict>
               <verdict id='patch label fetched label-url' message='Fetched label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label</exp_value>
@@ -125,10 +125,10 @@ Notes:
             </section>
           </section>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-            <execution duration_seconds='0.329' timestamp='2017-10-29-Sun-05.57.00.582'/>
+            <execution duration_seconds='0.376' timestamp='2017-11-01-Wed-13.18.39.772'/>
           </GithubClient>
           <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-            <execution duration_seconds='0.473' timestamp='2017-10-29-Sun-05.57.00.915'/>
+            <execution duration_seconds='0.327' timestamp='2017-11-01-Wed-13.18.40.149'/>
           </GithubClient>
         </section>
       </section>

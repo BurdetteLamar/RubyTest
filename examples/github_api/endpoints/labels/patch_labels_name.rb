@@ -27,7 +27,7 @@ class PatchLabelsName < BaseClassForEndpoint
       label_updated = self.call(client, label_to_update, query_elements)
       log.section('Evaluation') do
         log.section('Returned label correct') do
-          v_id = Log.verdict_id(verdict_id, 'updated label')
+          v_id = Log.verdict_id(verdict_id, message: 'updated label')
           Label.verdict_equal?(log, v_id, label_to_update, label_updated, 'Updated label correct')
         end
         log.section('Label updated') do

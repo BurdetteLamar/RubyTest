@@ -31,12 +31,12 @@ class Album < BaseClassForResource
           :userId,
       ].include?(field)
         message = format('%s positive integer', field)
-        log.verdict_assert_integer_positive?(verdict_id, value, message)
+        log.verdict_assert_integer_positive?(verdict_id, value, message: message)
       when [
           :title,
       ].include?(field)
         message = format('%s length in range', field)
-        log.verdict_assert_string_length_in_range?(verdict_id, TITLE_LENGTH_RANGE, value, message)
+        log.verdict_assert_string_length_in_range?(verdict_id, TITLE_LENGTH_RANGE, value, message: message)
       else
         ArgumentError.new(field.inspect)
     end

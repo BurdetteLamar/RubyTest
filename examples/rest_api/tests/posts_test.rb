@@ -41,7 +41,7 @@ class PostsTest < BaseClassForTest
           }
           expected_posts = all_posts.select { |p| p.userId == post.userId }
           actual_posts = GetPosts.call(client, query_elements)
-          if log.verdict_assert_equal?('count for simple query', expected_posts.size, actual_posts.size, 'Count')
+          if log.verdict_assert_equal?('count for simple query', expected_posts.size, actual_posts.size, message: 'Count')
             (0...expected_posts.size).each do |i|
               expected_post = expected_posts[i]
               actual_post = actual_posts[i]
@@ -58,7 +58,7 @@ class PostsTest < BaseClassForTest
           }
           expected_posts = all_posts.select { |p| (p.userId == post.userId) && (p.title == post.title) }
           actual_posts = GetPosts.call(client, query_elements)
-          if log.verdict_assert_equal?('count for complex query', expected_posts.size, actual_posts.size, 'Count')
+          if log.verdict_assert_equal?('count for complex query', expected_posts.size, actual_posts.size, message: 'Count')
             (0...expected_posts.size).each do |i|
               expected_post = expected_posts[i]
               actual_post = actual_posts[i]

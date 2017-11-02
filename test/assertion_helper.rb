@@ -16,7 +16,7 @@ class AssertionHelper
     rescue => y
       x = y
     end
-    test.assert_nil(x, message)
+    test.assert_nil(x, message: message)
   end
 
   Contract Minitest::Test, Any, String, Proc => Bool

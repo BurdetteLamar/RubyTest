@@ -423,7 +423,7 @@ class Log < BaseClass
     # Take a verdict here, so that an error will cause a :failed in the log.
     # The count is volatile, so it's not an error to differ from previous.
     section('Count of errors (unexpected exceptions)') do
-      verdict_assert_equal?('error count', 0, self.counts[:error], 'error count', volatile = true)
+      verdict_assert_equal?('error count', 0, self.counts[:error], message: 'error count', volatile: true)
     end
 
     # Close the text log.

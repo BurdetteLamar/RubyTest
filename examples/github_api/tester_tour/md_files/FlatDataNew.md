@@ -50,7 +50,7 @@ Notes:
 ```xml
 <flat_data_new_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='flat_data_new_test' timestamp='2017-10-29-Sun-05.56.28.469'>
+  <test_method duration_seconds='0.000' name='flat_data_new_test' timestamp='2017-11-01-Wed-13.18.08.157'>
     <section name='With GithubClient'>
       <section name='Instantiate and log an instance of Label'>
         <section name='Instantiated label'>

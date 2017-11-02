@@ -15,7 +15,6 @@
        - [Log Examples](./examples/log/Log.md)
      - rest_api/
        - [REST API Test Example](./examples/rest_api/RestAPI.md)
-       - [Tester Tour](./examples/rest_api/TesterTour.md)
    - lib/
      - [Lib](./lib/Lib.md)
      - base_classes/

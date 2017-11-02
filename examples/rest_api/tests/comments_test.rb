@@ -41,7 +41,7 @@ class CommentsTest < BaseClassForTest
           }
           expected_comments = all_comments.select { |p| p.postId == comment.postId }
           actual_comments = GetComments.call(client, query_elements)
-          if log.verdict_assert_equal?('count for simple query', expected_comments.size, actual_comments.size, 'Count')
+          if log.verdict_assert_equal?('count for simple query', expected_comments.size, actual_comments.size, message: 'Count')
             (0...expected_comments.size).each do |i|
               expected_comment = expected_comments[i]
               actual_comment = actual_comments[i]
@@ -58,7 +58,7 @@ class CommentsTest < BaseClassForTest
           }
           expected_comments = all_comments.select { |p| (p.postId == comment.postId) && (p.name == comment.name) }
           actual_comments = GetComments.call(client, query_elements)
-          if log.verdict_assert_equal?('count for complex query', expected_comments.size, actual_comments.size, 'Count')
+          if log.verdict_assert_equal?('count for complex query', expected_comments.size, actual_comments.size, message: 'Count')
             (0...expected_comments.size).each do |i|
               expected_comment = expected_comments[i]
               actual_comment = actual_comments[i]

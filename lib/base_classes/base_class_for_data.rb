@@ -61,7 +61,7 @@ class BaseClassForData < BaseClass
     if expected_obj.kind_of?(BaseClassForData)
       self.verdict_equal_recursive?(log, verdict_id, expected_obj, actual_obj, message)
     else
-      log.verdict_assert_equal?(verdict_id, expected_obj, actual_obj, message)
+      log.verdict_assert_equal?(verdict_id, expected_obj, actual_obj, message: message)
     end
   end
 
@@ -142,7 +142,7 @@ class BaseClassForData < BaseClass
           self.verdict_equal_recursive?(log, v_id, expected_value, actual_value, message)
         end
       else
-        verdict = log.verdict_assert_equal?('%s-%s' % [verdict_id, field.downcase], expected_value, actual_value, message) && verdict
+        verdict = log.verdict_assert_equal?('%s-%s' % [verdict_id, field.downcase], expected_value, actual_value, message: message) && verdict
       end
     end
     verdict

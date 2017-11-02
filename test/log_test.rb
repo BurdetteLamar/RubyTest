@@ -136,7 +136,7 @@ class LogTest < MiniTest::Test
     verdict_id = :passes
     file_path = create_temp_log(self) do |log|
       message = format('Method=%s; verdict_id=%s; data=%s', method, verdict_id, passing_arguments.inspect)
-      assert(log.send(method, verdict_id, *passing_arguments.values, verdict_id), message)
+      assert(log.send(method, verdict_id, *passing_arguments.values, message: verdict_id), message)
     end
     checker = Checker.new(self, file_path)
     checker.assert_verdict_count(1)
@@ -154,7 +154,7 @@ class LogTest < MiniTest::Test
     verdict_id = :fails
     file_path = create_temp_log(self) do |log|
       message = format('Method=%s; verdict_id=%s; data=s', method, verdict_id, passing_arguments.inspect)
-      assert(!log.send(method, verdict_id, *failing_arguments.values, verdict_id), message)
+      assert(!log.send(method, verdict_id, *failing_arguments.values, message: verdict_id), message)
     end
     checker = Checker.new(self, file_path)
     checker.assert_verdict_count(1)
@@ -172,7 +172,7 @@ class LogTest < MiniTest::Test
     verdict_id = :contract_violation_for_verdict_id
     create_temp_log(self) do |log|
       assert_raises(ParamContractError, 'verdict id') do
-        log.send(method, nil, *passing_arguments.values, verdict_id)
+        log.send(method, nil, *passing_arguments.values, message: verdict_id)
       end
     end
 
@@ -180,7 +180,7 @@ class LogTest < MiniTest::Test
     verdict_id = :contract_violation_for_message
     create_temp_log(self) do |log|
       assert_raises(ParamContractError, 'message') do
-        log.send(method, verdict_id, *passing_arguments.values, nil)
+        log.send(method, verdict_id, *passing_arguments.values)
       end
     end
 
@@ -188,7 +188,7 @@ class LogTest < MiniTest::Test
     verdict_id = :contract_violation_for_volatile
     create_temp_log(self) do |log|
       assert_raises(ParamContractError, 'volatile') do
-        log.send(method, verdict_id, *passing_arguments.values, verdict_id, 0)
+        log.send(method, verdict_id, *passing_arguments.values, message: verdict_id, volatile: 0)
       end
     end
 
@@ -201,7 +201,7 @@ class LogTest < MiniTest::Test
       verdict_id = format('contract_violation_for_%s', name).to_sym
       create_temp_log(self) do |log|
         assert_raises(ParamContractError, name) do
-          log.send(method, *violating_values, verdict_id, message)
+          log.send(method, *violating_values, verdict_id, message: message)
         end
       end
     end
@@ -352,7 +352,7 @@ class LogTest < MiniTest::Test
 
     verdict_id = :no_empty_method_fails
     file_path = create_temp_log(self) do |log|
-      verdict = log.send(method, verdict_id, 0, verdict_id)
+      verdict = log.send(method, verdict_id, 0, message: verdict_id)
       assert(!verdict, verdict_id)
     end
     checker = Checker.new(self, file_path)
@@ -387,7 +387,7 @@ class LogTest < MiniTest::Test
 
     verdict_id = :no_empty_method_fails
     file_path = create_temp_log(self) do |log|
-      verdict = log.send(method, verdict_id, 0, verdict_id)
+      verdict = log.send(method, verdict_id, 0, message: verdict_id)
       assert(!verdict, verdict_id)
     end
     checker = Checker.new(self, file_path)
@@ -424,7 +424,7 @@ class LogTest < MiniTest::Test
 
     verdict_id = :hash_passes
     file_path = create_temp_log(self) do |log|
-      assert(log.send(method, verdict_id, {:a => 0}, {:a => 0}, verdict_id), verdict_id)
+      assert(log.send(method, verdict_id, {:a => 0}, {:a => 0}, message: verdict_id), verdict_id)
     end
     checker = Checker.new(self, file_path)
     checker.assert_verdict_count(1)
@@ -440,7 +440,7 @@ class LogTest < MiniTest::Test
 
     verdict_id = :set_passes
     file_path = create_temp_log(self) do |log|
-      assert(log.send(method, verdict_id, Set.new([:a, :b]), Set.new([:b, :a]), verdict_id), verdict_id)
+      assert(log.send(method, verdict_id, Set.new([:a, :b]), Set.new([:b, :a]), message: verdict_id), verdict_id)
     end
     checker = Checker.new(self, file_path)
     checker.assert_verdict_count(1)
@@ -460,7 +460,7 @@ class LogTest < MiniTest::Test
       assert(!log.send(method, verdict_id,
                        {:a => 0, :c => 2, :d => 3},
                        {:b => 1, :c => 3, :d => 3},
-                       verdict_id
+                       message: verdict_id
              ), verdict_id)
     end
     checker = Checker.new(self, file_path)
@@ -484,7 +484,7 @@ class LogTest < MiniTest::Test
       assert(!log.send(method, verdict_id,
                        Set.new([:a, :b]),
                        Set.new([:a, :c]),
-                       verdict_id
+                       message: verdict_id
              ), verdict_id)
     end
     checker = Checker.new(self, file_path)
@@ -503,7 +503,7 @@ class LogTest < MiniTest::Test
 
     verdict_id = :different_types
     file_path = create_temp_log(self) do |log|
-      assert(!log.send(method, verdict_id, 0, 'a', verdict_id), verdict_id)
+      assert(!log.send(method, verdict_id, 0, 'a', message: verdict_id), verdict_id)
     end
     checker = Checker.new(self, file_path)
     checker.assert_verdict_count(1)
@@ -882,11 +882,11 @@ class LogTest < MiniTest::Test
     verdict_id = :passes
     file_path = create_temp_log(self) do |log|
       message = format('Method=%s; verdict_id=%s; data=%s', method, verdict_id, passing_arguments.inspect)
-      verdict = log.send(method, verdict_id, *passing_arguments.values, verdict_id, volatile = false) do
+      verdict = log.send(method, verdict_id, *passing_arguments.values, message: verdict_id, volatile: false) do
         $stdout.print(passing_arguments[:stdout])
         $stderr.print(passing_arguments[:stderr])
       end
-      assert(verdict, message)
+      assert(verdict, message: message)
     end
     checker = Checker.new(self, file_path)
     checker.assert_verdict_count(1)
@@ -903,11 +903,11 @@ class LogTest < MiniTest::Test
     verdict_id = :fails
     file_path = create_temp_log(self) do |log|
       message = format('Method=%s; verdict_id=%s; data=%s', method, verdict_id, passing_arguments.inspect)
-      verdict = log.send(method, verdict_id, *passing_arguments.values, verdict_id, volatile = false) do
+      verdict = log.send(method, verdict_id, *passing_arguments.values, message: verdict_id, volatile: false) do
         $stdout.print(failing_arguments[:stdout])
         $stderr.print(failing_arguments[:stderr])
       end
-      assert(!verdict, message)
+      assert(!verdict, message: message)
     end
     checker = Checker.new(self, file_path)
     checker.assert_verdict_count(1)
@@ -978,10 +978,10 @@ class LogTest < MiniTest::Test
     verdict_id = :passes
     file_path = create_temp_log(self) do |log|
       message = format('Method=%s; verdict_id=%s; data=%s', method, verdict_id, passing_arguments.inspect)
-      verdict = log.send(method, verdict_id, *passing_arguments.values, verdict_id, volatile = false) do
+      verdict = log.send(method, verdict_id, *passing_arguments.values, message: verdict_id, volatile: false) do
         raise passing_arguments[:passes].new('Boo!')
       end
-      assert(verdict, message)
+      assert(verdict, message: message)
     end
     checker = Checker.new(self, file_path)
     checker.assert_verdict_count(1)
@@ -998,10 +998,10 @@ class LogTest < MiniTest::Test
     verdict_id = :fails
     file_path = create_temp_log(self) do |log|
       message = format('Method=%s; verdict_id=%s; data=%s', method, verdict_id, passing_arguments.inspect)
-      verdict = log.send(method, verdict_id, *passing_arguments.values, verdict_id, volatile = false) do
+      verdict = log.send(method, verdict_id, *passing_arguments.values, message: verdict_id, volatile: false) do
         raise failing_arguments[:fails].new('Boo!')
       end
-      assert(!verdict, message)
+      assert(!verdict, message: message)
     end
     checker = Checker.new(self, file_path)
     checker.assert_verdict_count(1)
@@ -1110,9 +1110,9 @@ class LogTest < MiniTest::Test
     verdict_id = :passes
     file_path = create_temp_log(self) do |log|
       message = format('Method=%s; verdict_id=%s', method, verdict_id)
-      verdict = log.send(method, verdict_id, verdict_id, volatile = false) do
+      verdict = log.send(method, verdict_id, message: verdict_id, volatile: false) do
       end
-      assert(verdict, message)
+      assert(verdict, message: message)
     end
     checker = Checker.new(self, file_path)
     checker.assert_verdict_count(1)
@@ -1129,11 +1129,11 @@ class LogTest < MiniTest::Test
     verdict_id = :fails
     file_path = create_temp_log(self) do |log|
       message = format('Method=%s; verdict_id=%s', method, verdict_id)
-      verdict = log.send(method, verdict_id, verdict_id, volatile = false) do
+      verdict = log.send(method, verdict_id, message: verdict_id, volatile: false) do
         $stdout.print('Boo!')
         $stderr.print('Boo!')
       end
-      assert(!verdict, message)
+      assert(!verdict, message: message)
     end
     checker = Checker.new(self, file_path)
     checker.assert_verdict_count(1)
@@ -1164,10 +1164,10 @@ class LogTest < MiniTest::Test
     verdict_id = :passes
     file_path = create_temp_log(self) do |log|
       message = format('Method=%s; verdict_id=%s; data=%s', method, verdict_id, passing_arguments.inspect)
-      verdict = log.send(method, verdict_id, *passing_arguments.values, verdict_id, volatile = false) do
+      verdict = log.send(method, verdict_id, *passing_arguments.values, message: verdict_id, volatile: false) do
         throw passing_arguments[:passes]
       end
-      assert(verdict, message)
+      assert(verdict, message: message)
     end
     checker = Checker.new(self, file_path)
     checker.assert_verdict_count(1)
@@ -1184,10 +1184,10 @@ class LogTest < MiniTest::Test
     verdict_id = :fails
     file_path = create_temp_log(self) do |log|
       message = format('Method=%s; verdict_id=%s; data=%s', method, verdict_id, passing_arguments.inspect)
-      verdict = log.send(method, verdict_id, *passing_arguments.values, verdict_id, volatile = false) do
+      verdict = log.send(method, verdict_id, *passing_arguments.values, message: verdict_id, volatile: false) do
         throw failing_arguments[:fails]
       end
-      assert(!verdict, message)
+      assert(!verdict, message: message)
     end
     checker = Checker.new(self, file_path)
     checker.assert_verdict_count(1)

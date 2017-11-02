@@ -41,7 +41,7 @@ class AlbumsTest < BaseClassForTest
           }
           expected_albums = all_albums.select { |p| p.userId == album.userId }
           actual_albums = GetAlbums.call(client, query_elements)
-          if log.verdict_assert_equal?('count for simple query', expected_albums.size, actual_albums.size, 'Count')
+          if log.verdict_assert_equal?('count for simple query', expected_albums.size, actual_albums.size, message: 'Count')
             (0...expected_albums.size).each do |i|
               expected_album = expected_albums[i]
               actual_album = actual_albums[i]
@@ -58,7 +58,7 @@ class AlbumsTest < BaseClassForTest
           }
           expected_albums = all_albums.select { |p| (p.userId == album.userId) && (p.title == album.title) }
           actual_albums = GetAlbums.call(client, query_elements)
-          if log.verdict_assert_equal?('count for complex query', expected_albums.size, actual_albums.size, 'Count')
+          if log.verdict_assert_equal?('count for complex query', expected_albums.size, actual_albums.size, message: 'Count')
             (0...expected_albums.size).each do |i|
               expected_album = expected_albums[i]
               actual_album = actual_albums[i]

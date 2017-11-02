@@ -59,7 +59,7 @@ class ExampleTest < Minitest::Test
             end
             # For debugging;  tells what we're trying to do.
             # message = key.inspect
-            @log.send(method, verdict_id, *args, message)
+            @log.send(method, verdict_id, *args, message: message)
           end
         end
 

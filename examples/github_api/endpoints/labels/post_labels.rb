@@ -28,9 +28,9 @@ class PostLabels < BaseClassForEndpoint
       log.section('Evaluation') do
         log.section('Returned label correct') do
           v_id = Log.verdict_id(verdict_id, 'name')
-          log.verdict_assert_equal?(v_id, label_to_create.name, label_created.name, 'Label name')
+          log.verdict_assert_equal?(v_id, label_to_create.name, label_created.name, message: 'Label name')
           v_id = Log.verdict_id(verdict_id, 'color')
-          log.verdict_assert_equal?(v_id, label_to_create.color, label_created.color, 'Label color')
+          log.verdict_assert_equal?(v_id, label_to_create.color, label_created.color, message: 'Label color')
         end
         log.section('Returned label valid') do
           v_id = Log.verdict_id(verdict_id, 'valid')
