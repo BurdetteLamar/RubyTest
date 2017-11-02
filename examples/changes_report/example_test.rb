@@ -11,6 +11,8 @@ class ExampleTest < Minitest::Test
     @prev = prev
 
     @lorem = LoremHelper::Lorem.new
+    # Use the same lorem data on each run.
+    srand(0)
 
     log_dir_path = TestHelper.create_app_log_dir('changes_report')
     log_file_path = File.join(
