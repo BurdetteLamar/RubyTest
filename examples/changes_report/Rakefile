@@ -2,32 +2,35 @@ require_relative '../../lib/changes_report'
 
 rakefile_dir_path = File.dirname(__FILE__)
 
-task :examples do
-  test_file_path = File.join(
-      rakefile_dir_path,
-      'example_test.rb',
-  )
-  command = format('ruby %s', test_file_path)
-  system(command)
-  exe_file_path = File.absolute_path(File.join(
-                          rakefile_dir_path,
-                          '..',
-                          '..',
-                          'lib',
-                          'changes_report.rb'
-  ))
-  command = format('ruby -r %s -e "ChangesReport.create_report \'changes_report\'', exe_file_path)
-  system(command)
-  changes_report_dir_path = TestHelper.get_app_log_dir_path('changes_report', back = 0)
-  changes_report_file_path = File.join(
-                                     changes_report_dir_path,
-                                     'ChangesReport.html',
-  )
-  example_report_file_path = File.join(
-                                     rakefile_dir_path,
-                                     'ChangesReport.html',
-  )
-  FileUtils.copy(changes_report_file_path, example_report_file_path)
+namespace :create do
+
+  desc 'Create changes report'
+  task :changes_report do
+    test_file_path = File.join(
+        rakefile_dir_path,
+        'example_test.rb',
+    )
+    command = format('ruby %s', test_file_path)
+    system(command)
+    exe_file_path = File.absolute_path(File.join(
+                            rakefile_dir_path,
+                            '..',
+                            '..',
+                            'lib',
+                            'changes_report.rb'
+    ))
+    command = format('ruby -r %s -e "ChangesReport.create_report \'changes_report\'', exe_file_path)
+    system(command)
+    # And copy into our source tree.
+    log_dir_path = TestHelper.get_app_log_dir_path('changes_report', back = 0)
+    report_file_name = 'ChangesReport.html'
+    report_file_path = File.join(
+                               log_dir_path,
+                               report_file_name
+    )
+    FileUtils.copy(report_file_path, rakefile_dir_path)
+  end
+
 end
 
 
