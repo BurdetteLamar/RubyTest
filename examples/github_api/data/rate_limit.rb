@@ -48,8 +48,7 @@ class RateLimit < BaseClassForResource
     Contract Log, String, Symbol => Bool
     def verdict_field_valid?(log, verdict_id, field)
       value = self.send(field)
-      message = format('%s is positive integer', field)
-      log.verdict_assert_integer_positive?(verdict_id, value, message: message)
+      log.verdict_assert_integer_positive?(verdict_id, value)
     end
 
     Contract Symbol => Any

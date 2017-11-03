@@ -23,21 +23,16 @@ class Label < BaseClassForResource
     value = self.send(field)
     case field
       when :id
-        message = format('%s is positive integer', field)
-        log.verdict_assert_integer_positive?(verdict_id, value, message: message)
+        log.verdict_assert_integer_positive?(verdict_id, value)
       when :url
-        message = format('%s starts with', field)
-        log.verdict_assert_match?(verdict_id, %r|^https://api.github.com/repos|, value, message: message)
+        log.verdict_assert_match?(verdict_id, %r|^https://api.github.com/repos|, value)
       when :name
-        message = format('%s is nonempty string', field)
-        log.verdict_assert_string_not_empty?(verdict_id, value, message: message)
+        log.verdict_assert_string_not_empty?(verdict_id, value)
       when :color
-        message = format('%s is hex color', field)
         hex_color_regex = /[0-9a-f]{6}/i
-        log.verdict_assert_match?(verdict_id, hex_color_regex, value, message: message)
+        log.verdict_assert_match?(verdict_id, hex_color_regex, value)
       when :default
-        message = format('%s is boolean', field)
-        log.verdict_assert_boolean?(verdict_id, value, message: message)
+        log.verdict_assert_boolean?(verdict_id, value)
       else
         ArgumentError.new(field.inspect)
     end

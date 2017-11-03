@@ -272,7 +272,6 @@ EOT
     .neutral { color: rgb(156,101,0); background-color: rgb(255,236,156) }
     .bad { color: rgb(156,0,6); background-color: rgb(255,199,206) }
     .data { font-family: Courier New, monospace }
-    .data_centered { text-align: center; font-family: Courier New, monospace }
     .data_changed { font-family: Courier New, monospace; font-weight: bold; font-style: italic }
 EOT
     style_ele << ChangesReport.cell_data(styles)

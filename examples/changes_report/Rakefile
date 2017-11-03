@@ -13,12 +13,12 @@ namespace :create do
     command = format('ruby %s', test_file_path)
     system(command)
     exe_file_path = File.absolute_path(File.join(
-                            rakefile_dir_path,
-                            '..',
-                            '..',
-                            'lib',
-                            'changes_report.rb'
-    ))
+                                           rakefile_dir_path,
+                                           '..',
+                                           '..',
+                                           'lib',
+                                           'changes_report.rb'
+                                       ))
     command = format('ruby -r %s -e "ChangesReport.create_report \'changes_report\'', exe_file_path)
     system(command)
     # And copy into our source tree.
@@ -32,5 +32,3 @@ namespace :create do
   end
 
 end
-
-

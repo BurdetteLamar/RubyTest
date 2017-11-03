@@ -16,7 +16,7 @@ class BaseClassForDeleteId < BaseClassForEndpoint
     log.section(verdict_id, :rescue, :timestamp, :duration) do
       payload = self.call(client, object_to_delete)
       log.section('Evaluation') do
-        log.verdict_assert_nil?('payload nil', payload, message: 'Payload nil')
+        log.verdict_assert_nil?('payload nil', payload)
         klass = ObjectHelper.get_class_for_class_name(data_class_name)
         klass.verdict_not_exist?(client, log, verdict_id, object_to_delete)
       end

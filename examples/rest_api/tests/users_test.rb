@@ -41,11 +41,11 @@ class UsersTest < BaseClassForTest
           }
           expected_users = all_users.select { |p| p.name == user.name }
           actual_users = GetUsers.call(client, query_elements)
-          if log.verdict_assert_equal?('count for simple query', expected_users.size, actual_users.size, message: 'Count')
+          if log.verdict_assert_equal?('count for simple query', expected_users.size, actual_users.size)
             (0...expected_users.size).each do |i|
               expected_user = expected_users[i]
               actual_user = actual_users[i]
-              User.verdict_equal?(log, 'with simple query %d' % i, expected_user, actual_user, 'User %d' % i)
+              User.verdict_equal?(log, 'with simple query %d' % i, expected_user, actual_user)
             end
           end
         end
