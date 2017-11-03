@@ -25,8 +25,8 @@ namespace :create do
     log_dir_path = TestHelper.get_app_log_dir_path('changes_report', back = 0)
     report_file_name = 'ChangesReport.html'
     report_file_path = File.join(
-        log_dir_path,
-        report_file_name
+                               log_dir_path,
+                               report_file_name
     )
     FileUtils.copy(report_file_path, rakefile_dir_path)
   end

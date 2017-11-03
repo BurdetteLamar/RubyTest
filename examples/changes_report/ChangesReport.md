@@ -70,3 +70,7 @@ The Changes Report is a huge time-saver.
 In one test environment I worked on, there were thousands of verdicts, including hundreds that were **Old Blocked**, **Old Failed**.
 
 The ability to safely ignore these saved us *hours* each day.
+
+## Example Changes Report
+
+- [In branch master](https://htmlpreview.github.io/?https://github.com/BurdetteLamar/RubyTest/master/examples/changes_report/ChangesReport.html)
