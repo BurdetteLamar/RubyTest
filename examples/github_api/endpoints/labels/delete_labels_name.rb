@@ -23,7 +23,7 @@ class DeleteLabelsName < BaseClassForEndpoint
       log.section('Evaluation') do
         log.section('Response empty') do
           v_id = Log.verdict_id(verdict_id, 'payload nil')
-          log.verdict_assert_nil?(v_id, payload, message: 'Payload nil')
+          log.verdict_assert_nil?(v_id, payload)
         end
         log.section('Label deleted') do
           v_id = Log.verdict_id(verdict_id, 'label deleted')

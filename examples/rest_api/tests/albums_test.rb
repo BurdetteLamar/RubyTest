@@ -41,7 +41,7 @@ class AlbumsTest < BaseClassForTest
           }
           expected_albums = all_albums.select { |p| p.userId == album.userId }
           actual_albums = GetAlbums.call(client, query_elements)
-          if log.verdict_assert_equal?('count for simple query', expected_albums.size, actual_albums.size, message: 'Count')
+          if log.verdict_assert_equal?('count for simple query', expected_albums.size, actual_albums.size)
             (0...expected_albums.size).each do |i|
               expected_album = expected_albums[i]
               actual_album = actual_albums[i]
@@ -62,7 +62,7 @@ class AlbumsTest < BaseClassForTest
             (0...expected_albums.size).each do |i|
               expected_album = expected_albums[i]
               actual_album = actual_albums[i]
-              Album.verdict_equal?(log, 'with complex query %d' % i, expected_album, actual_album, 'Album %d' % i)
+              Album.verdict_equal?(log, 'with complex query %d' % i, expected_album, actual_album)
             end
           end
         end
