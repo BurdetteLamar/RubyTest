@@ -179,13 +179,13 @@ class LogExamples < MiniTest::Test
       log.section('Use verdict_assert?') do
         log.verdict_assert?(:passing_verdict_assert, actual = true)
         log.verdict_assert?(:failing_verdict_assert, actual = false)
-        log.verdict_assert?(:volatile_verdict_assert, actual = true, volatile = true)
+        log.verdict_assert?(:volatile_verdict_assert, actual = true, volatile: true)
       end
 
       log.section('Use alias va?') do
         log.va?(:passing_va, actual = true)
         log.va?(:failing_va, actual = false)
-        log.va?(:volatile_va, actual = true, 'Volatile va?')
+        log.va?(:volatile_va, actual = true)
       end
 
     end
@@ -494,11 +494,11 @@ class LogExamples < MiniTest::Test
       end
 
       log.section('Use va_output?') do
-        log.va_output?(:passing_va_output, 'stdout', 'stderr', 'Passing va_output?') do
+        log.va_output?(:passing_va_output, 'stdout', 'stderr') do
           $stdout.print('stdout')
           $stderr.print('stderr')
         end
-        log.va_output?(:failing_va_output, 'stdout', 'stderr', 'Failing va_output?') do
+        log.va_output?(:failing_va_output, 'stdout', 'stderr') do
           $stdout.print('not stdout')
           $stderr.print('not stderr')
         end
@@ -553,10 +553,10 @@ class LogExamples < MiniTest::Test
       end
 
       log.section('Use va_raises?') do
-        log.va_raises?(:passing_va_raises, RuntimeError, 'Passing va_raises?') do
+        log.va_raises?(:passing_va_raises, RuntimeError) do
           raise RuntimeError.new('Boo!')
         end
-        log.va_raises?(:failing_va_raises, RuntimeError, 'Failing va_raises?') do
+        log.va_raises?(:failing_va_raises, RuntimeError) do
           # Nothing.
         end
       end
@@ -672,10 +672,10 @@ class LogExamples < MiniTest::Test
       end
 
       log.section('Use va_throws?') do
-        log.va_throws?(:passing_va_throws, Exception, 'Passing va_throws?') do
+        log.va_throws?(:passing_va_throws, Exception) do
           throw Exception
         end
-        log.va_throws?(:failing_va_throws, Exception, 'Failing va_throws?') do
+        log.va_throws?(:failing_va_throws, Exception) do
           # Nothing.
         end
       end
@@ -697,7 +697,7 @@ class LogExamples < MiniTest::Test
       log.section('Use verdict_refute?') do
         log.verdict_refute?(:passing_verdict_refute, actual = true)
         log.verdict_refute?(:failing_verdict_refute, actual = false)
-        log.verdict_refute?(:volatile_verdict_refute, actual = true, volatile = true)
+        log.verdict_refute?(:volatile_verdict_refute, actual = true, volatile: true)
       end
 
       log.section('Use alias vr?') do

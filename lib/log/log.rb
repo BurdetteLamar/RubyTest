@@ -510,8 +510,8 @@ class Log < BaseClass
         :outcome => outcome,
         :id => verdict_id,
         :volatile => volatile,
-        :message => message,
     }
+    element_attributes.store(:message, message) unless message.nil?
     put_element('verdict', element_attributes, *args) do
       args_hash.each_pair do |k, v|
         put_element(k.to_s, v)
