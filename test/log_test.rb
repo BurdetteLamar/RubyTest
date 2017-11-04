@@ -203,10 +203,10 @@ class LogTest < MiniTest::Test
     checker.assert_exception_count(0)
 
     # Test contract for verdict id.
-    verdict_id = :contract_violation_for_verdict_id
+    verdict_id = nil
     create_temp_log(self) do |log|
       assert_raises(ParamContractError, 'verdict id') do
-        log.send(method, nil, *passing_arguments.values)
+        log.send(method, verdict_id, *passing_arguments.values)
       end
     end
 
