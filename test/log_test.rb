@@ -166,6 +166,42 @@ class LogTest < MiniTest::Test
     checker.assert_verdict_attributes(verdict_id, attributes)
     checker.assert_exception_count(1)
 
+    # Test with message.
+    verdict_id = :message
+    verdict_message = format('Message for method=%s; verdict_id=%s', method, verdict_id)
+    file_path = create_temp_log(self) do |log|
+      assert_message = format('Method=%s; verdict_id=%s; data=%s', method, verdict_id, passing_arguments.inspect)
+      assert(log.send(method, verdict_id, *passing_arguments.values, message: verdict_message), assert_message)
+    end
+    checker = Checker.new(self, file_path)
+    checker.assert_verdict_count(1)
+    attributes = {
+        :id => verdict_id,
+        :method => method,
+        :outcome => 'passed',
+        :message => verdict_message,
+        :volatile => false,
+    }
+    checker.assert_verdict_attributes(verdict_id, attributes)
+    checker.assert_exception_count(0)
+
+    # Test with volatile.
+    verdict_id = :message
+    file_path = create_temp_log(self) do |log|
+      assert_message = format('Method=%s; verdict_id=%s; data=%s', method, verdict_id, passing_arguments.inspect)
+      assert(log.send(method, verdict_id, *passing_arguments.values, volatile: true), assert_message)
+    end
+    checker = Checker.new(self, file_path)
+    checker.assert_verdict_count(1)
+    attributes = {
+        :id => verdict_id,
+        :method => method,
+        :outcome => 'passed',
+        :volatile => true,
+    }
+    checker.assert_verdict_attributes(verdict_id, attributes)
+    checker.assert_exception_count(0)
+
     # Test contract for verdict id.
     verdict_id = :contract_violation_for_verdict_id
     create_temp_log(self) do |log|
