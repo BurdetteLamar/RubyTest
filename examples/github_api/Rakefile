@@ -229,24 +229,3 @@ EOT
   FileUtils.rm_rf(conditioned_log_dir_path)
 
 end
-
-desc 'Run examples'
-task :examples do
-  rakefile_dir_path = File.dirname(__FILE__)
-  test_dir_path = File.join(
-                          rakefile_dir_path,
-                          'tests',
-  )
-  TestHelper.create_app_log_dir('github_api')
-  %w/
-    /.each do |name|
-    test_file_name = format('%s_test.rb', name)
-    test_file_path = File.join(
-        test_dir_path,
-        test_file_name,
-    )
-    command = format('ruby %s', test_file_path)
-    system(command)
-  end
-
-end
