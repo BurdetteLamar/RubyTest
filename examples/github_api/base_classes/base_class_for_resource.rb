@@ -15,13 +15,13 @@ class BaseClassForResource < BaseClassForData
     end
   end
 
-  Contract GithubClient, Log, String, self => Bool
+  Contract GithubClient, Log, VERDICT_ID, self => Bool
   def self.verdict_exist?(client, log, verdict_id, object)
     message = self.name + ' exists'
     log.va?(verdict_id, self.exist?(client, object), message: message)
   end
 
-  Contract GithubClient, Log, String, self => Bool
+  Contract GithubClient, Log, VERDICT_ID, self => Bool
   def self.verdict_not_exist?(client, log, verdict_id, object)
     message = self.name + ' not exist'
     log.vr?(verdict_id, self.exist?(client, object), message: message)

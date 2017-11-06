@@ -9,11 +9,11 @@ class RescuedExceptionTest < BaseClassForTest
         denominator = 0
         quotient = numerator / denominator
         log.section('This section is not reached because of the exception') do
-          log.verdict_assert?('first not reached', quotient, message: 'Did not make it here because exception raised')
+          log.verdict_assert?(:not_reached, quotient)
         end
       end
       log.section('This section is reached because the above exception was rescued') do
-        log.verdict_assert?('reached', true, message: 'Made it to here')
+        log.verdict_assert?(:reached, true)
       end
     end
   end

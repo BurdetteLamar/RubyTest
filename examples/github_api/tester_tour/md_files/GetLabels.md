@@ -23,7 +23,7 @@ class LabelBasicsTest < BaseClassForTest
     prelude do |client, log|
 
       log.section('Test GetLabels') do
-        GetLabels.verdict_call_and_verify_success(client, 'Get labels')
+        GetLabels.verdict_call_and_verify_success(client, :get_labels)
       end
 
     end
@@ -49,12 +49,12 @@ Notes:
 ```xml
 <get_labels_test>
   <summary errors='0' failures='0' verdicts='8'/>
-  <test_method name='get_labels_test' timestamp='2017-11-01-Wed-13.18.25.457'>
-    <section duration_seconds='1.818' name='With GithubClient'>
+  <test_method name='get_labels_test' timestamp='2017-11-06-Mon-09.35.19.197'>
+    <section duration_seconds='2.334' name='With GithubClient'>
       <section name='Test GetLabels'>
-        <section name='Get labels' timestamp='2017-11-01-Wed-13.18.25.458'>
+        <section name='get_labels' timestamp='2017-11-06-Mon-09.35.19.199'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-            <execution duration_seconds='1.815' timestamp='2017-11-01-Wed-13.18.25.460'/>
+            <execution duration_seconds='2.331' timestamp='2017-11-06-Mon-09.35.19.201'/>
           </GithubClient>
           <section name='Info'>
             <data fetched_labels_count='8'/>
@@ -69,34 +69,34 @@ Notes:
           <section name='Evaluation'>
             <section name='Returned label valid'>
               <section name='verdict_assert_integer_positive?'>
-                <verdict id='Get labels valid id - integer' message='id is positive integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                <verdict id='get_labels:valid:id:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
                   <exp_value>Integer</exp_value>
                   <act_value>710733208</act_value>
                 </verdict>
-                <verdict id='Get labels valid id - positive' message='id is positive integer' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+                <verdict id='get_labels:valid:id:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
                   <object_1>710733208</object_1>
                   <operator>:&gt;</operator>
                   <object_2>0</object_2>
                 </verdict>
               </section>
-              <verdict id='Get labels valid url' message='url starts with' method='verdict_assert_match?' outcome='passed' volatile='false'>
+              <verdict id='get_labels:valid:url' method='verdict_assert_match?' outcome='passed' volatile='false'>
                 <exp_value>/^https:\/\/api.github.com\/repos/</exp_value>
                 <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/bug</act_value>
               </verdict>
               <section name='verdict_assert_string_not_empty?'>
-                <verdict id='Get labels valid name - string' message='name is nonempty string' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                <verdict id='get_labels:valid:name:string' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
                   <exp_value>String</exp_value>
                   <act_value>bug</act_value>
                 </verdict>
-                <verdict id='Get labels valid name - not empty' message='name is nonempty string' method='verdict_refute_empty?' outcome='passed' volatile='false'>
+                <verdict id='get_labels:valid:name:not_empty' method='verdict_refute_empty?' outcome='passed' volatile='false'>
                   <act_value>bug</act_value>
                 </verdict>
               </section>
-              <verdict id='Get labels valid color' message='color is hex color' method='verdict_assert_match?' outcome='passed' volatile='false'>
+              <verdict id='get_labels:valid:color' method='verdict_assert_match?' outcome='passed' volatile='false'>
                 <exp_value>/[0-9a-f]{6}/i</exp_value>
                 <act_value>ee0701</act_value>
               </verdict>
-              <verdict id='Get labels valid default' message='default is boolean' method='verdict_assert_includes?' outcome='passed' volatile='false'>
+              <verdict id='get_labels:valid:default' method='verdict_assert_includes?' outcome='passed' volatile='false'>
                 <exp_value>[TrueClass, FalseClass]</exp_value>
                 <act_value>TrueClass</act_value>
               </verdict>
@@ -106,7 +106,7 @@ Notes:
       </section>
     </section>
     <section name='Count of errors (unexpected exceptions)'>
-      <verdict id='error count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
+      <verdict id='error_count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
         <exp_value>0</exp_value>
         <act_value>0</act_value>
       </verdict>

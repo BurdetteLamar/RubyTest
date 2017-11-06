@@ -18,10 +18,10 @@ class RateLimit < BaseClassForResource
     nil
   end
 
-  Contract Log, String => Bool
+  Contract Log, VERDICT_ID => Bool
   def verdict_valid?(log, verdict_id)
-    resources.verdict_valid?(log, verdict_id + ' - resources')
-    rate.verdict_valid?(log, verdict_id + ' - rate')
+    resources.verdict_valid?(log, [verdict_id, :resources])
+    rate.verdict_valid?(log, [verdict_id, :rate])
   end
 
   def self.get(client)
@@ -45,7 +45,7 @@ class RateLimit < BaseClassForResource
       super(FIELDS, values)
     end
 
-    Contract Log, String, Symbol => Bool
+    Contract Log, VERDICT_ID, Symbol => Bool
     def verdict_field_valid?(log, verdict_id, field)
       value = self.send(field)
       log.verdict_assert_integer_positive?(verdict_id, value)
@@ -86,11 +86,11 @@ class RateLimit < BaseClassForResource
       nil
     end
 
-    Contract Log, String => Bool
+    Contract Log, VERDICT_ID => Bool
     def verdict_valid?(log, verdict_id)
-      core.verdict_valid?(log, verdict_id + ' - core')
-      search.verdict_valid?(log, verdict_id + ' - search')
-      graphql.verdict_valid?(log, verdict_id + ' - graphql')
+      core.verdict_valid?(log, [verdict_id, :core])
+      search.verdict_valid?(log, [verdict_id, :search])
+      graphql.verdict_valid?(log, [verdict_id, :graphql])
     end
 
     # This is harmlessly redundant, but helps RubyMine code inspection.

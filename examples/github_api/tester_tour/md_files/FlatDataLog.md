@@ -43,12 +43,12 @@ Notes:
 ```xml
 <flat_data_log_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='1.912' name='flat_data_log_test' timestamp='2017-11-01-Wed-13.18.05.200'>
+  <test_method duration_seconds='1.937' name='flat_data_log_test' timestamp='2017-11-06-Mon-09.34.58.034'>
     <section name='With GithubClient'>
       <section name='Fetch and log an instance of Label'>
         <section name='Fetch an label'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-            <execution duration_seconds='1.904' timestamp='2017-11-01-Wed-13.18.05.206'/>
+            <execution duration_seconds='1.930' timestamp='2017-11-06-Mon-09.34.58.039'/>
           </GithubClient>
         </section>
         <section name='Fetched label'>
@@ -62,7 +62,7 @@ Notes:
     </section>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
-    <verdict id='error count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
+    <verdict id='error_count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
       <exp_value>0</exp_value>
       <act_value>0</act_value>
     </verdict>

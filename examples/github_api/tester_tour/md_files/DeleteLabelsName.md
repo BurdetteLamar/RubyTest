@@ -37,7 +37,7 @@ class DeleteLabelsNameTest < BaseClassForTest
           label_to_delete = Label.create(client, label_to_create)
         end
         log.section('Test deleting the created label') do
-          DeleteLabelsName.verdict_call_and_verify_success(client, 'delete label', label_to_delete)
+          DeleteLabelsName.verdict_call_and_verify_success(client, :delete_label, label_to_delete)
         end
         log.section('Clean up') do
           Label.delete_if_exist?(client, label_to_create)
@@ -69,34 +69,34 @@ Notes:
 ```xml
 <delete_labels_name_test>
   <summary errors='0' failures='0' verdicts='3'/>
-  <test_method name='delete_labels_name_test' timestamp='2017-11-01-Wed-13.18.41.513'>
-    <section duration_seconds='3.237' name='With GithubClient'>
+  <test_method name='delete_labels_name_test' timestamp='2017-11-06-Mon-09.35.37.121'>
+    <section duration_seconds='3.642' name='With GithubClient'>
       <section name='Test DeleteLabelsName'>
         <section name='Create the label to be deleted'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-            <execution duration_seconds='1.786' timestamp='2017-11-01-Wed-13.18.41.529'/>
+            <execution duration_seconds='1.762' timestamp='2017-11-06-Mon-09.35.37.121'/>
           </GithubClient>
           <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
             <parameters color='000000' name='test_label'/>
-            <execution duration_seconds='0.330' timestamp='2017-11-01-Wed-13.18.43.322'/>
+            <execution duration_seconds='0.509' timestamp='2017-11-06-Mon-09.35.38.887'/>
           </GithubClient>
         </section>
         <section name='Test deleting the created label'>
-          <section name='delete label' timestamp='2017-11-01-Wed-13.18.43.652'>
+          <section name='delete_label' timestamp='2017-11-06-Mon-09.35.39.399'>
             <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-              <execution duration_seconds='0.403' timestamp='2017-11-01-Wed-13.18.43.652'/>
+              <execution duration_seconds='0.353' timestamp='2017-11-06-Mon-09.35.39.402'/>
             </GithubClient>
             <section name='Evaluation'>
               <section name='Response empty'>
-                <verdict id='delete label payload nil' message='Payload nil' method='verdict_assert_nil?' outcome='passed' volatile='false'>
+                <verdict id='delete_label:payload_nil' method='verdict_assert_nil?' outcome='passed' volatile='false'>
                   <act_value>nil</act_value>
                 </verdict>
               </section>
               <section name='Label deleted'>
                 <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-                  <execution duration_seconds='0.334' timestamp='2017-11-01-Wed-13.18.44.055'/>
+                  <execution duration_seconds='0.650' timestamp='2017-11-06-Mon-09.35.39.755'/>
                 </GithubClient>
-                <verdict id='delete label label deleted' message='Label not exist' method='verdict_refute?' outcome='passed' volatile='false'>
+                <verdict id='delete_label:label_deleted' message='Label not exist' method='verdict_refute?' outcome='passed' volatile='false'>
                   <act_value>false</act_value>
                 </verdict>
               </section>
@@ -104,14 +104,14 @@ Notes:
           </section>
           <section name='Clean up'>
             <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-              <execution duration_seconds='0.356' timestamp='2017-11-01-Wed-13.18.44.393'/>
+              <execution duration_seconds='0.354' timestamp='2017-11-06-Mon-09.35.40.409'/>
             </GithubClient>
           </section>
         </section>
       </section>
     </section>
     <section name='Count of errors (unexpected exceptions)'>
-      <verdict id='error count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
+      <verdict id='error_count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
         <exp_value>0</exp_value>
         <act_value>0</act_value>
       </verdict>

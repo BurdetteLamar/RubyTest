@@ -9,7 +9,7 @@ class PutCommentsId < BaseClassForPutId
     super
   end
 
-  Contract ExampleRestClient, Log, String, Comment => Comment
+  Contract ExampleRestClient, Log, VERDICT_ID, Comment => Comment
   def self.verdict_call_and_verify_success(client, log, verdict_id, comment_to_put)
     super
   end

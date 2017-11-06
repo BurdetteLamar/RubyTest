@@ -6,6 +6,14 @@ require_relative '../../lib/lorem_helper'
 
 class ExampleTest < Minitest::Test
 
+  def lorem_verdict_id(lorem)
+    lorem.words(3).gsub(' ', '_').to_sym
+  end
+
+  def lorem_message(lorem)
+    lorem.words(4).capitalize + '.'
+  end
+
   def create_logs(prev)
 
     @prev = prev
@@ -54,9 +62,9 @@ class ExampleTest < Minitest::Test
               verdict_id = @verdict_ids.fetch(key)
               message = @messages.fetch(key)
             else
-              verdict_id = @lorem.words(3)
+              verdict_id = lorem_verdict_id(@lorem)
               @verdict_ids.store(key, verdict_id)
-              message = @lorem.sentence(4)
+              message = lorem_message(@lorem)
               @messages.store(key, message)
             end
             # For debugging;  tells what we're trying to do.
@@ -142,7 +150,7 @@ class ExampleTest < Minitest::Test
       lorem = LoremHelper::Lorem.new
       srand(1)
       (0..9).each do
-        verdict_id = lorem.words(3)
+        verdict_id = lorem_verdict_id(lorem)
         verdict_path = format('log/%s', verdict_id)
         file.puts(verdict_path)
       end

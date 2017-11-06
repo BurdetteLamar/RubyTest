@@ -25,11 +25,11 @@ class RescuedExceptionTest < BaseClassForTest
         denominator = 0
         quotient = numerator / denominator
         log.section('This section is not reached because of the exception') do
-          log.verdict_assert?('first not reached', quotient, message: 'Did not make it here because exception raised')
+          log.verdict_assert?(:not_reached, quotient)
         end
       end
       log.section('This section is reached because the above exception was rescued') do
-        log.verdict_assert?('reached', true, message: 'Made it to here')
+        log.verdict_assert?(:reached, true)
       end
     end
   end
@@ -50,7 +50,7 @@ Notes:
 ```xml
 <rescued_exception_test>
   <summary errors='1' failures='1' verdicts='2'/>
-  <test_method duration_seconds='0.000' name='rescued_exception_test' timestamp='2017-11-01-Wed-13.18.03.100'>
+  <test_method duration_seconds='0.003' name='rescued_exception_test' timestamp='2017-11-06-Mon-09.34.55.856'>
     <section name='With GithubClient'>
       <section name='Rescued exception'>
         <uncaught_exception>
@@ -62,10 +62,10 @@ Notes:
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/rescued_exception_test.rb:10:in `/'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/rescued_exception_test.rb:10:in `block (2 levels) in test_rescued_exception'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/rescued_exception_test.rb:7:in `block in test_rescued_exception'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:20:in `block in with'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:16:in `with'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:12:in `block in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:19:in `block in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
@@ -75,14 +75,14 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
         </uncaught_exception>
       </section>
       <section name='This section is reached because the above exception was rescued'>
-        <verdict id='reached' message='Made it to here' method='verdict_assert?' outcome='passed' volatile='false'>
+        <verdict id='reached' method='verdict_assert?' outcome='passed' volatile='false'>
           <act_value>true</act_value>
         </verdict>
       </section>
     </section>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
-    <verdict id='error count' message='error count' method='verdict_assert_equal?' outcome='failed' volatile='true'>
+    <verdict id='error_count' message='error count' method='verdict_assert_equal?' outcome='failed' volatile='true'>
       <exp_value>0</exp_value>
       <act_value>1</act_value>
       <exception>

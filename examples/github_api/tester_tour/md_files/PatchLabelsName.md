@@ -31,7 +31,7 @@ class PatchLabelsNameTest < BaseClassForTest
         Label.delete_if_exist?(client, label_to_create)
         label_to_patch = Label.create(client, label_to_create)
         label_to_patch.color = 'ffffff'
-        PatchLabelsName.verdict_call_and_verify_success(client, 'patch label', label_to_patch)
+        PatchLabelsName.verdict_call_and_verify_success(client, :patch_label, label_to_patch)
         Label.delete_if_exist?(client, label_to_patch)
       end
 
@@ -60,81 +60,81 @@ Notes:
 ```xml
 <patch_labels_name_test>
   <summary errors='0' failures='0' verdicts='11'/>
-  <test_method name='patch_labels_name_test' timestamp='2017-11-01-Wed-13.18.36.878'>
-    <section duration_seconds='3.597' name='With GithubClient'>
+  <test_method name='patch_labels_name_test' timestamp='2017-11-06-Mon-09.35.31.977'>
+    <section duration_seconds='4.061' name='With GithubClient'>
       <section name='Test PatchLabelsName'>
         <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-          <execution duration_seconds='1.826' timestamp='2017-11-01-Wed-13.18.36.878'/>
+          <execution duration_seconds='1.813' timestamp='2017-11-06-Mon-09.35.31.977'/>
         </GithubClient>
         <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
           <parameters color='000000' name='test_label'/>
-          <execution duration_seconds='0.340' timestamp='2017-11-01-Wed-13.18.38.712'/>
+          <execution duration_seconds='0.353' timestamp='2017-11-06-Mon-09.35.33.797'/>
         </GithubClient>
-        <section name='patch label' timestamp='2017-11-01-Wed-13.18.39.052'>
+        <section name='patch_label' timestamp='2017-11-06-Mon-09.35.34.150'>
           <GithubClient method='PATCH' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
             <parameters color='ffffff'/>
-            <execution duration_seconds='0.372' timestamp='2017-11-01-Wed-13.18.39.052'/>
+            <execution duration_seconds='0.765' timestamp='2017-11-06-Mon-09.35.34.150'/>
           </GithubClient>
           <section name='Evaluation'>
             <section name='Returned label correct'>
-              <verdict id='patch label {:message=&gt;&quot;updated label&quot;}-id' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                <exp_value>737797453</exp_value>
-                <act_value>737797453</act_value>
+              <verdict id='patch_label:updated_label:id' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                <exp_value>742200638</exp_value>
+                <act_value>742200638</act_value>
               </verdict>
-              <verdict id='patch label {:message=&gt;&quot;updated label&quot;}-url' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+              <verdict id='patch_label:updated_label:url' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label</exp_value>
                 <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label</act_value>
               </verdict>
-              <verdict id='patch label {:message=&gt;&quot;updated label&quot;}-name' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+              <verdict id='patch_label:updated_label:name' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>test_label</exp_value>
                 <act_value>test_label</act_value>
               </verdict>
-              <verdict id='patch label {:message=&gt;&quot;updated label&quot;}-color' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+              <verdict id='patch_label:updated_label:color' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>ffffff</exp_value>
                 <act_value>ffffff</act_value>
               </verdict>
-              <verdict id='patch label {:message=&gt;&quot;updated label&quot;}-default' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+              <verdict id='patch_label:updated_label:default' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>false</exp_value>
                 <act_value>false</act_value>
               </verdict>
             </section>
             <section name='Label updated'>
               <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-                <execution duration_seconds='0.340' timestamp='2017-11-01-Wed-13.18.39.424'/>
+                <execution duration_seconds='0.359' timestamp='2017-11-06-Mon-09.35.34.923'/>
               </GithubClient>
-              <verdict id='patch label fetched label-id' message='Fetched label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                <exp_value>737797453</exp_value>
-                <act_value>737797453</act_value>
+              <verdict id='patch_label:fetched_label:id' message='Fetched label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                <exp_value>742200638</exp_value>
+                <act_value>742200638</act_value>
               </verdict>
-              <verdict id='patch label fetched label-url' message='Fetched label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+              <verdict id='patch_label:fetched_label:url' message='Fetched label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label</exp_value>
                 <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label</act_value>
               </verdict>
-              <verdict id='patch label fetched label-name' message='Fetched label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+              <verdict id='patch_label:fetched_label:name' message='Fetched label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>test_label</exp_value>
                 <act_value>test_label</act_value>
               </verdict>
-              <verdict id='patch label fetched label-color' message='Fetched label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+              <verdict id='patch_label:fetched_label:color' message='Fetched label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>ffffff</exp_value>
                 <act_value>ffffff</act_value>
               </verdict>
-              <verdict id='patch label fetched label-default' message='Fetched label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+              <verdict id='patch_label:fetched_label:default' message='Fetched label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>false</exp_value>
                 <act_value>false</act_value>
               </verdict>
             </section>
           </section>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-            <execution duration_seconds='0.376' timestamp='2017-11-01-Wed-13.18.39.772'/>
+            <execution duration_seconds='0.363' timestamp='2017-11-06-Mon-09.35.35.287'/>
           </GithubClient>
           <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-            <execution duration_seconds='0.327' timestamp='2017-11-01-Wed-13.18.40.149'/>
+            <execution duration_seconds='0.387' timestamp='2017-11-06-Mon-09.35.35.650'/>
           </GithubClient>
         </section>
       </section>
     </section>
     <section name='Count of errors (unexpected exceptions)'>
-      <verdict id='error count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
+      <verdict id='error_count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
         <exp_value>0</exp_value>
         <act_value>0</act_value>
       </verdict>

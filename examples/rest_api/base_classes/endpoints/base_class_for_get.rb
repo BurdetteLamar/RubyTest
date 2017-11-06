@@ -17,7 +17,7 @@ class BaseClassForGet < BaseClassForEndpoint
   end
 
   def self.verdict_call_and_verify_success(client, log, verdict_id, query_elements)
-    log.section(verdict_id, :rescue, :timestamp, :duration) do
+    log.section(verdict_id.to_s, :rescue, :timestamp, :duration) do
       objects = self.call(client, query_elements)
       log.section('Evaluation') do
         object = objects.first
@@ -25,7 +25,8 @@ class BaseClassForGet < BaseClassForEndpoint
         log.section('First fetched') do
           object.log(log)
         end
-        object.verdict_valid?(log, verdict_id)
+        v_id = [verdict_id, :valid]
+        object.verdict_valid?(log, v_id)
       end
       return objects
     end

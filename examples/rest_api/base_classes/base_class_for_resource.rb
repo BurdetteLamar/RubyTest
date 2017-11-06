@@ -15,12 +15,12 @@ class BaseClassForResource < BaseClassForData
     end
   end
 
-  Contract ExampleRestClient, Log, String, self => Bool
+  Contract ExampleRestClient, Log, VERDICT_ID, self => Bool
   def self.verdict_exist?(client, log, verdict_id, object)
     log.va?(verdict_id, self.exist?(client, object), message: self.name + ' exists')
   end
 
-  Contract ExampleRestClient, Log, String, self => Bool
+  Contract ExampleRestClient, Log, VERDICT_ID, self => Bool
   def self.verdict_not_exist?(client, log, verdict_id, object)
     log.vr?(verdict_id, self.exist?(client, object), message: self.name + ' not exist')
   end

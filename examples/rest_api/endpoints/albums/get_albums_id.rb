@@ -9,7 +9,7 @@ class GetAlbumsId < BaseClassForGetId
     super
   end
 
-  Contract ExampleRestClient, Log, String, Album => Album
+  Contract ExampleRestClient, Log, VERDICT_ID, Album => Album
   def self.verdict_call_and_verify_success(client, log, verdict_id, album)
     super
   end

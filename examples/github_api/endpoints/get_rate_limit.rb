@@ -15,10 +15,10 @@ class GetRateLimit < BaseClassForEndpoint
     [rate_limit, payload]
   end
 
-  Contract GithubClient, String, Maybe[Hash] => RateLimit
+  Contract GithubClient, VERDICT_ID, Maybe[Hash] => RateLimit
   def self.verdict_call_and_verify_success(client, verdict_id, query_elements = {})
     log = client.log
-    log.section(verdict_id, :rescue, :timestamp, :duration) do
+    log.section(verdict_id.to_s, :rescue, :timestamp, :duration) do
       rate_limit = self.call(client, query_elements)
       log.section('Evaluation') do
         rate_limit.log(log)

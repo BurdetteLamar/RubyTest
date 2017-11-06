@@ -17,7 +17,7 @@ class UsersTest < BaseClassForTest
           user_to_delete = User.get_first(client)
         end
         log.section('Delete the user') do
-          DeleteUsersId.verdict_call_and_verify_success(client, log, 'delete user', user_to_delete)
+          DeleteUsersId.verdict_call_and_verify_success(client, log, :delete_user, user_to_delete)
         end
       end
     end
@@ -31,7 +31,7 @@ class UsersTest < BaseClassForTest
         all_users = nil
 
         log.section('GetUsers with no query') do
-          all_users = GetUsers.verdict_call_and_verify_success(client, log, 'with no query')
+          all_users = GetUsers.verdict_call_and_verify_success(client, log, :no_query)
         end
 
         log.section('GetUsers with simple query') do
@@ -41,11 +41,12 @@ class UsersTest < BaseClassForTest
           }
           expected_users = all_users.select { |p| p.name == user.name }
           actual_users = GetUsers.call(client, query_elements)
-          if log.verdict_assert_equal?('count for simple query', expected_users.size, actual_users.size)
+          if log.verdict_assert_equal?(:count_for_simple_query, expected_users.size, actual_users.size)
             (0...expected_users.size).each do |i|
               expected_user = expected_users[i]
               actual_user = actual_users[i]
-              User.verdict_equal?(log, 'with simple query %d' % i, expected_user, actual_user)
+              v_id = format('with_simple_query_%d', i).to_sym
+              User.verdict_equal?(log, v_id, expected_user, actual_user)
             end
           end
         end
@@ -58,11 +59,12 @@ class UsersTest < BaseClassForTest
           }
           expected_users = all_users.select { |p| (p.name == user.name) && (p.phone == user.phone) }
           actual_users = GetUsers.call(client, query_elements)
-          if log.verdict_assert_equal?('count for complex query', expected_users.size, actual_users.size, message: 'Count')
+          if log.verdict_assert_equal?(:count_for_complex_query, expected_users.size, actual_users.size)
             (0...expected_users.size).each do |i|
               expected_user = expected_users[i]
               actual_user = actual_users[i]
-              User.verdict_equal?(log, 'with complex query %d' % i, expected_user, actual_user, 'User %d' % i)
+              v_id = format('with_complex_query_%d', i).to_sym
+              User.verdict_equal?(log, v_id, expected_user, actual_user, 'User %d' % i)
             end
           end
         end
@@ -83,7 +85,7 @@ class UsersTest < BaseClassForTest
           user_to_fetch = User.get_first(client)
         end
         log.section('Fetch the user') do
-          GetUsersId.verdict_call_and_verify_success(client, log, 'get user', user_to_fetch)
+          GetUsersId.verdict_call_and_verify_success(client, log, :get_user, user_to_fetch)
         end
       end
     end
@@ -95,7 +97,7 @@ class UsersTest < BaseClassForTest
     prelude do |client, log|
       log.section('Test PostUsers') do
         user_to_create = User.new(
-            :id => 1,
+            :id => nil,
             :name => 'New name',
             :username => 'NewUsername',
             :email => 'New@Email.com',
@@ -117,7 +119,7 @@ class UsersTest < BaseClassForTest
                 :bs => 'New BS'
             }
         )
-        PostUsers.verdict_call_and_verify_success(client, log, 'user to create', user_to_create)
+        PostUsers.verdict_call_and_verify_success(client, log, :user_to_create, user_to_create)
       end
     end
 
@@ -153,7 +155,7 @@ class UsersTest < BaseClassForTest
               }
           )
           user_to_update.name = 'New name'
-          PutUsersId.verdict_call_and_verify_success(client, log, 'User to update', user_to_update)
+          PutUsersId.verdict_call_and_verify_success(client, log, :user_to_update, user_to_update)
         end
       end
 

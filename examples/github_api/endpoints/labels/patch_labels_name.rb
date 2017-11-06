@@ -20,19 +20,19 @@ class PatchLabelsName < BaseClassForEndpoint
     [label_updated, payload]
   end
 
-  Contract GithubClient, String, Label, Maybe[Hash] => Label
+  Contract GithubClient, VERDICT_ID, Label, Maybe[Hash] => Label
   def self.verdict_call_and_verify_success(client, verdict_id, label_to_update, query_elements = {})
     log = client.log
-    log.section(verdict_id, :rescue, :timestamp, :duration) do
+    log.section(verdict_id.to_s, :rescue, :timestamp, :duration) do
       label_updated = self.call(client, label_to_update, query_elements)
       log.section('Evaluation') do
         log.section('Returned label correct') do
-          v_id = Log.verdict_id(verdict_id, message: 'updated label')
+          v_id = [verdict_id, :updated_label]
           Label.verdict_equal?(log, v_id, label_to_update, label_updated, 'Updated label correct')
         end
         log.section('Label updated') do
           fetched_label = Label.read(client, label_to_update)
-          v_id = Log.verdict_id(verdict_id, 'fetched label')
+          v_id = [verdict_id, :fetched_label]
           Label.verdict_equal?(log, v_id, label_to_update, fetched_label, 'Fetched label correct')
         end
       end

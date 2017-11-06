@@ -24,14 +24,14 @@ class VerdictsTest < BaseClassForTest
       log.section('These verdicts should pass') do
         log.section('An assert verdict that should pass') do
           log.verdict_assert?(
-              verdict_id = 'assert should pass',
+              verdict_id = :assert_should_pass,
               actual = true,
               message: 'True is truthy'
           )
         end
         log.section('A refute verdict that should pass') do
           log.verdict_refute?(
-              verdict_id = 'refute should pass',
+              verdict_id = :refute_should_pass,
               actual = false,
               message: 'False is not truthy'
           )
@@ -40,14 +40,14 @@ class VerdictsTest < BaseClassForTest
       log.section('These verdicts should fail') do
         log.section('An assert verdict that should fail') do
           log.verdict_assert?(
-              verdict_id = 'assert should fail',
+              verdict_id = :assert_should_fail,
               actual = false,
               message: 'False is not truthy'
           )
         end
         log.section('A refute verdict that should fail') do
           log.verdict_refute?(
-              verdict_id = 'refute should fail',
+              verdict_id = :refute_should_fail,
               actual = true,
               message: 'True is truthy'
           )
@@ -78,23 +78,23 @@ Notes:
 ```xml
 <verdicts_test>
   <summary errors='0' failures='2' verdicts='5'/>
-  <test_method duration_seconds='0.000' name='verdicts_test' timestamp='2017-11-01-Wed-13.18.02.065'>
+  <test_method duration_seconds='0.005' name='verdicts_test' timestamp='2017-11-06-Mon-09.34.54.807'>
     <section name='With GithubClient'>
       <section name='These verdicts should pass'>
         <section name='An assert verdict that should pass'>
-          <verdict id='assert should pass' message='True is truthy' method='verdict_assert?' outcome='passed' volatile='false'>
+          <verdict id='assert_should_pass' message='True is truthy' method='verdict_assert?' outcome='passed' volatile='false'>
             <act_value>true</act_value>
           </verdict>
         </section>
         <section name='A refute verdict that should pass'>
-          <verdict id='refute should pass' message='False is not truthy' method='verdict_refute?' outcome='passed' volatile='false'>
+          <verdict id='refute_should_pass' message='False is not truthy' method='verdict_refute?' outcome='passed' volatile='false'>
             <act_value>false</act_value>
           </verdict>
         </section>
       </section>
       <section name='These verdicts should fail'>
         <section name='An assert verdict that should fail'>
-          <verdict id='assert should fail' message='False is not truthy' method='verdict_assert?' outcome='failed' volatile='false'>
+          <verdict id='assert_should_fail' message='False is not truthy' method='verdict_assert?' outcome='failed' volatile='false'>
             <act_value>false</act_value>
             <exception>
               <class>Minitest::Assertion</class>
@@ -104,10 +104,10 @@ Notes:
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:26:in `block (3 levels) in test_verdicts'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:25:in `block (2 levels) in test_verdicts'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:24:in `block in test_verdicts'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:20:in `block in with'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:16:in `with'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:12:in `block in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:19:in `block in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
@@ -118,7 +118,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
           </verdict>
         </section>
         <section name='A refute verdict that should fail'>
-          <verdict id='refute should fail' message='True is truthy' method='verdict_refute?' outcome='failed' volatile='false'>
+          <verdict id='refute_should_fail' message='True is truthy' method='verdict_refute?' outcome='failed' volatile='false'>
             <act_value>true</act_value>
             <exception>
               <class>Minitest::Assertion</class>
@@ -128,10 +128,10 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:33:in `block (3 levels) in test_verdicts'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:32:in `block (2 levels) in test_verdicts'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:24:in `block in test_verdicts'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:20:in `block in with'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:16:in `with'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:12:in `block in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:19:in `block in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
@@ -145,7 +145,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
     </section>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
-    <verdict id='error count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
+    <verdict id='error_count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
       <exp_value>0</exp_value>
       <act_value>0</act_value>
     </verdict>

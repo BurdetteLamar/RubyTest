@@ -9,7 +9,7 @@ class GetTodos < BaseClassForGet
     super
   end
 
-  Contract ExampleRestClient, Log, String, Maybe[Hash] => ArrayOf[Todo]
+  Contract ExampleRestClient, Log, VERDICT_ID, Maybe[Hash] => ArrayOf[Todo]
   def self.verdict_call_and_verify_success(client, log, verdict_id, query_elements = {})
     super
   end

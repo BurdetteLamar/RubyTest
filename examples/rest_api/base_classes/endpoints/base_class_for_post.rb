@@ -7,6 +7,7 @@ class BaseClassForPost < BaseClassForEndpoint
         url_element.downcase,
     ]
     parameters = object_to_create.to_hash
+    parameters.delete(:id)
     payload = client.post(url_elements, parameters)
     rehash = HashHelper.rehash_to_symbol_keys(payload)
     object_posted = ObjectHelper.instantiate_class_for_class_name(data_class_name, rehash)
@@ -14,14 +15,21 @@ class BaseClassForPost < BaseClassForEndpoint
   end
 
   def self.verdict_call_and_verify_success(client, log, verdict_id, object_to_post)
-    # Some verdicts should fail, because JSONplaceholder will not actually create the instance.
-    log.section(verdict_id, :rescue, :timestamp, :duration) do
-      object_posted = self.call(client, object_to_post)
+    log.section(verdict_id.to_s, :rescue, :timestamp, :duration) do
+      object_posted = nil
+      log.section('Post') do
+        object_to_post.log(log)
+        object_posted = self.call(client, object_to_post)
+      end
       log.section('Evaluation') do
         klass = ObjectHelper.get_class_for_class_name(data_class_name)
-        klass.verdict_equal?(log, data_class_name + ' posted', object_to_post, object_posted, 'Posted')
-        object_fetched = klass.read(client, object_posted)
-        klass.verdict_equal?(log, data_class_name + ' fetched', object_posted, object_fetched, 'Fetched')
+        v_id = [verdict_id, data_class_name.to_sym, :posted]
+        klass.verdict_equal?(log, v_id, object_to_post, object_posted)
+        # The JSONPlaceholder does not actually modify itself,
+        # and so the following verdict would fail.
+        # object_fetched = klass.read(client, object_posted)
+        # v_id = [verdict_id, data_class_name.to_sym, :fetched]
+        # klass.verdict_equal?(log, v_id, object_posted, object_fetched)
       end
       return object_posted
     end

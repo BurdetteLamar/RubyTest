@@ -9,7 +9,7 @@ class DeleteUsersId < BaseClassForDeleteId
     super
   end
 
-  Contract ExampleRestClient, Log, String, User => nil
+  Contract ExampleRestClient, Log, VERDICT_ID, User => nil
   def self.verdict_call_and_verify_success(client, log, verdict_id, user)
     super
   end

@@ -9,7 +9,7 @@ class GetUsers < BaseClassForGet
     super
   end
 
-  Contract ExampleRestClient, Log, String, Maybe[Hash] => ArrayOf[User]
+  Contract ExampleRestClient, Log, VERDICT_ID, Maybe[Hash] => ArrayOf[User]
   def self.verdict_call_and_verify_success(client, log, verdict_id, query_elements = {})
     super
   end

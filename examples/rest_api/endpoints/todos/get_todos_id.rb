@@ -9,7 +9,7 @@ class GetTodosId < BaseClassForGetId
     super
   end
 
-  Contract ExampleRestClient, Log, String, Todo => Todo
+  Contract ExampleRestClient, Log, VERDICT_ID, Todo => Todo
   def self.verdict_call_and_verify_success(client, log, verdict_id, todo)
     super
   end
