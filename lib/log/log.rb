@@ -210,10 +210,6 @@ class Log < BaseClass
     nil
   end
 
-  def self.verdict_id(*args)
-    args.join(' ')
-  end
-
   require_relative '../base_classes/base_class_for_data'
   class Verdict < BaseClassForData
 
@@ -423,7 +419,7 @@ class Log < BaseClass
     # Take a verdict here, so that an error will cause a :failed in the log.
     # The count is volatile, so it's not an error to differ from previous.
     section('Count of errors (unexpected exceptions)') do
-      verdict_assert_equal?('error count', 0, self.counts[:error], message: 'error count', volatile: true)
+      verdict_assert_equal?(:error_count, 0, self.counts[:error], message: 'error count', volatile: true)
     end
 
     # Close the text log.
@@ -495,20 +491,29 @@ class Log < BaseClass
     nil
   end
 
+  Contract VERDICT_ID => String
+  def flatten_verdict_id(verdict_id)
+    return verdict_id.to_s if verdict_id.instance_of?(Symbol)
+    symbols = verdict_id.flatten
+    strings = symbols.collect { |sym| sym.to_s}
+    strings.join(':')
+  end
+
   Contract Symbol, VERDICT_ID, VERDICT_VOLATILE, VERDICT_MESSAGE, HashOf[Symbol, Any], ARGS => Bool
   def _get_verdict?(verdict_method, verdict_id, volatile, message, args_hash, *args)
     assertion_method = assertion_method_for(verdict_method)
+    flattened_verdict_id = flatten_verdict_id(verdict_id)
     if block_given?
-      outcome, exception = get_assertion_outcome(verdict_id, assertion_method, *args_hash.values) do
+      outcome, exception = get_assertion_outcome(flattened_verdict_id, assertion_method, *args_hash.values) do
         yield
       end
     else
-      outcome, exception = get_assertion_outcome(verdict_id, assertion_method, *args_hash.values)
+      outcome, exception = get_assertion_outcome(flattened_verdict_id, assertion_method, *args_hash.values)
     end
     element_attributes = {
         :method => verdict_method,
         :outcome => outcome,
-        :id => verdict_id,
+        :id => flattened_verdict_id,
         :volatile => volatile,
     }
     element_attributes.store(:message, message) unless message.nil?
@@ -553,7 +558,7 @@ class Log < BaseClass
     nil
   end
 
-  Contract VERDICT_ID => nil
+  Contract String => nil
   def validate_verdict_id(verdict_id)
     self.verdict_ids ||= Set.new
     if self.verdict_ids.include?(verdict_id)
@@ -564,7 +569,7 @@ class Log < BaseClass
     nil
   end
 
-  Contract VERDICT_ID, Symbol, ARGS,  Maybe[Proc] => [Symbol, Maybe[Exception]]
+  Contract String, Symbol, ARGS,  Maybe[Proc] => [Symbol, Maybe[Exception]]
   def get_assertion_outcome(verdict_id, assertion_method, *assertion_args)
     validate_verdict_id(verdict_id)
     self.counts[:verdict] += 1

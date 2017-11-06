@@ -16,13 +16,17 @@ class BaseClassForPutId < BaseClassForEndpoint
 
   def self.verdict_call_and_verify_success(client, log, verdict_id, object_to_put)
     # Some verdicts should fail, because JSONplaceholder will not actually update the instance.
-    log.section(verdict_id, :rescue, :timestamp, :duration) do
+    log.section(verdict_id.to_s, :rescue, :timestamp, :duration) do
       object_put = self.call(client, object_to_put)
       log.section('Evaluation') do
         klass = ObjectHelper.get_class_for_class_name(data_class_name)
-        klass.verdict_equal?(log, 'Put', object_to_put, object_put, 'Put')
-        object_fetched = klass.read(client, object_to_put)
-        klass.verdict_equal?(log, 'Fetched', object_to_put, object_fetched, 'Fetched')
+        v_id = [verdict_id, data_class_name.to_sym, :put]
+        klass.verdict_equal?(log, v_id, object_to_put, object_put)
+        # The JSONPlaceholder does not actually modify itself,
+        # and so the following verdict would fail.
+        # object_fetched = klass.read(client, object_to_put)
+        # v_id = [verdict_id, data_class_name.to_sym, :fetched]
+        # klass.verdict_equal?(log, v_id, object_to_put, object_fetched)
       end
       return object_put
     end

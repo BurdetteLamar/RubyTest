@@ -23,11 +23,11 @@ class UnrescuedExceptionTest < BaseClassForTest
         denominator = 0
         quotient = numerator / denominator
         log.section('This section is not reached because of the exception') do
-          log.verdict_assert?('second not reached', quotient, message: 'Did not make it here because exception raised')
+          log.verdict_assert?(:not_reached_in_section, quotient)
         end
       end
       log.section('This section is not reached because of the unrescued exception') do
-        log.verdict_assert?('third not reached', true, message: 'Did not make it here because exception raised')
+        log.verdict_assert?(:not_reached_in_test, true)
       end
     end
   end
@@ -45,7 +45,7 @@ Notes:
 ```xml
 <unrescued_exception_test>
   <summary errors='1' failures='1' verdicts='1'/>
-  <test_method name='unrescued_exception_test' timestamp='2017-11-01-Wed-13.18.04.141'>
+  <test_method name='unrescued_exception_test' timestamp='2017-11-06-Mon-09.34.56.965'>
     <section duration_seconds='0.002' name='With GithubClient'>
       <section name='Unrescued exception'>
         <uncaught_exception>
@@ -57,10 +57,10 @@ Notes:
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/unrescued_exception_test.rb:10:in `/'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/unrescued_exception_test.rb:10:in `block (2 levels) in test_unrescued_exception'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/unrescued_exception_test.rb:7:in `block in test_unrescued_exception'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:13:in `block (2 levels) in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:20:in `block in with'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:16:in `with'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:12:in `block in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:19:in `block in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
@@ -71,7 +71,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
       </section>
     </section>
     <section name='Count of errors (unexpected exceptions)'>
-      <verdict id='error count' message='error count' method='verdict_assert_equal?' outcome='failed' volatile='true'>
+      <verdict id='error_count' message='error count' method='verdict_assert_equal?' outcome='failed' volatile='true'>
         <exp_value>0</exp_value>
         <act_value>1</act_value>
         <exception>

@@ -9,7 +9,7 @@ class PostPhotos < BaseClassForPost
     super
   end
 
-  Contract ExampleRestClient, Log, String, Photo => Photo
+  Contract ExampleRestClient, Log, VERDICT_ID, Photo => Photo
   def self.verdict_call_and_verify_success(client, log, verdict_id, photo)
     super
   end

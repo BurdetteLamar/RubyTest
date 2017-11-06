@@ -9,7 +9,7 @@ class GetPosts < BaseClassForGet
     super
   end
 
-  Contract ExampleRestClient, Log, String, Maybe[Hash] => ArrayOf[Post]
+  Contract ExampleRestClient, Log, VERDICT_ID, Maybe[Hash] => ArrayOf[Post]
   def self.verdict_call_and_verify_success(client, log, verdict_id, query_elements = {})
     super
   end

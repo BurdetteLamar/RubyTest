@@ -17,7 +17,7 @@ class TodosTest < BaseClassForTest
           todo_to_delete = Todo.get_first(client)
         end
         log.section('Delete the todo') do
-          DeleteTodosId.verdict_call_and_verify_success(client, log, 'delete todo', todo_to_delete)
+          DeleteTodosId.verdict_call_and_verify_success(client, log, :delete_todo, todo_to_delete)
         end
       end
     end
@@ -31,7 +31,7 @@ class TodosTest < BaseClassForTest
         all_todos = nil
 
         log.section('GetTodos with no query') do
-          all_todos = GetTodos.verdict_call_and_verify_success(client, log, 'with no query')
+          all_todos = GetTodos.verdict_call_and_verify_success(client, log, :no_query)
         end
 
         log.section('GetTodos with simple query') do
@@ -41,11 +41,12 @@ class TodosTest < BaseClassForTest
           }
           expected_todos = all_todos.select { |p| p.userId == todo.userId }
           actual_todos = GetTodos.call(client, query_elements)
-          if log.verdict_assert_equal?('count for simple query', expected_todos.size, actual_todos.size)
+          if log.verdict_assert_equal?(:count_for_simple_query, expected_todos.size, actual_todos.size)
             (0...expected_todos.size).each do |i|
               expected_todo = expected_todos[i]
               actual_todo = actual_todos[i]
-              Todo.verdict_equal?(log, 'with simple query %d' % i, expected_todo, actual_todo)
+              v_id = format('with_simple_query_%d', i).to_sym
+              Todo.verdict_equal?(log, v_id, expected_todo, actual_todo)
             end
           end
         end
@@ -58,11 +59,12 @@ class TodosTest < BaseClassForTest
           }
           expected_todos = all_todos.select { |p| (p.userId == todo.userId) && (p.title == todo.title) }
           actual_todos = GetTodos.call(client, query_elements)
-          if log.verdict_assert_equal?('count for complex query', expected_todos.size, actual_todos.size, message: 'Count')
+          if log.verdict_assert_equal?(:count_for_complex_query, expected_todos.size, actual_todos.size)
             (0...expected_todos.size).each do |i|
               expected_todo = expected_todos[i]
               actual_todo = actual_todos[i]
-              Todo.verdict_equal?(log, 'with complex query %d' % i, expected_todo, actual_todo, 'Todo %d' % i)
+              v_id = format('with_complex_query_%d', i).to_sym
+              Todo.verdict_equal?(log, v_id, expected_todo, actual_todo)
             end
           end
         end
@@ -83,7 +85,7 @@ class TodosTest < BaseClassForTest
           todo_to_fetch = Todo.get_first(client)
         end
         log.section('Fetch the todo') do
-          GetTodosId.verdict_call_and_verify_success(client, log, 'get todo', todo_to_fetch)
+          GetTodosId.verdict_call_and_verify_success(client, log, :get_todo, todo_to_fetch)
         end
       end
     end
@@ -96,11 +98,11 @@ class TodosTest < BaseClassForTest
       log.section('Test PostTodos') do
         todo_to_create = Todo.new(
             :userId => 1,
-            :id => 1,
+            :id => nil,
             :title => 'New title',
             :completed => false,
         )
-        PostTodos.verdict_call_and_verify_success(client, log, 'todo to create', todo_to_create)
+        PostTodos.verdict_call_and_verify_success(client, log, :todo_to_create, todo_to_create)
       end
     end
 
@@ -118,7 +120,7 @@ class TodosTest < BaseClassForTest
         log.section('Put the modifications') do
           todo_to_update.title = 'New title'
           todo_to_update.completed = true
-          PutTodosId.verdict_call_and_verify_success(client, log, 'Todo to update', todo_to_update)
+          PutTodosId.verdict_call_and_verify_success(client, log, :todo_to_update, todo_to_update)
         end
       end
 

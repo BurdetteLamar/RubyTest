@@ -12,13 +12,16 @@ class BaseClassForDeleteId < BaseClassForEndpoint
   end
 
   def self.verdict_call_and_verify_success(client, log, verdict_id, object_to_delete)
-    # Some verdicts should fail, because JSONplaceholder will not actually delete the instance.
-    log.section(verdict_id, :rescue, :timestamp, :duration) do
+    log.section(verdict_id.to_s, :rescue, :timestamp, :duration) do
       payload = self.call(client, object_to_delete)
       log.section('Evaluation') do
-        log.verdict_assert_nil?('payload nil', payload)
-        klass = ObjectHelper.get_class_for_class_name(data_class_name)
-        klass.verdict_not_exist?(client, log, verdict_id, object_to_delete)
+        v_id = [verdict_id, :payload_nil]
+        log.verdict_assert_nil?(v_id, payload)
+        # The JSONPlaceholder does not actually modify itself,
+        # and so the following verdict would fail.
+        # klass = ObjectHelper.get_class_for_class_name(data_class_name)
+        # v_id = [verdict_id, :not_exist]
+        # klass.verdict_not_exist?(client, log, v_id, object_to_delete)
       end
       return payload
     end

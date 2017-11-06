@@ -31,7 +31,7 @@ class PostLabelsTest < BaseClassForTest
       )
       log.section('Test PostLabels') do
         Label.delete_if_exist?(client, label_to_create)
-        PostLabels.verdict_call_and_verify_success(client, 'create label', label_to_create)
+        PostLabels.verdict_call_and_verify_success(client, :post_label, label_to_create)
       end
       log.section('Clean up') do
         Label.delete_if_exist?(client, label_to_create)
@@ -62,67 +62,67 @@ Notes:
 ```xml
 <post_labels_test>
   <summary errors='0' failures='0' verdicts='11'/>
-  <test_method name='post_labels_test' timestamp='2017-11-01-Wed-13.18.28.345'>
-    <section duration_seconds='3.170' name='With GithubClient'>
+  <test_method name='post_labels_test' timestamp='2017-11-06-Mon-09.35.22.626'>
+    <section duration_seconds='3.825' name='With GithubClient'>
       <section name='Test PostLabels'>
         <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-          <execution duration_seconds='1.755' timestamp='2017-11-01-Wed-13.18.28.345'/>
+          <execution duration_seconds='1.916' timestamp='2017-11-06-Mon-09.35.22.631'/>
         </GithubClient>
-        <section name='create label' timestamp='2017-11-01-Wed-13.18.30.100'>
+        <section name='post_label' timestamp='2017-11-06-Mon-09.35.24.548'>
           <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
             <parameters color='000000' name='test_label'/>
-            <execution duration_seconds='0.337' timestamp='2017-11-01-Wed-13.18.30.104'/>
+            <execution duration_seconds='0.370' timestamp='2017-11-06-Mon-09.35.24.552'/>
           </GithubClient>
           <section name='Evaluation'>
             <section name='Returned label correct'>
-              <verdict id='create label name' message='Label name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+              <verdict id='post_label:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>test_label</exp_value>
                 <act_value>test_label</act_value>
               </verdict>
-              <verdict id='create label color' message='Label color' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+              <verdict id='post_label:color' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>000000</exp_value>
                 <act_value>000000</act_value>
               </verdict>
             </section>
             <section name='Returned label valid'>
               <section name='verdict_assert_integer_positive?'>
-                <verdict id='create label valid id - integer' message='id is positive integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                <verdict id='post_label:valid:id:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
                   <exp_value>Integer</exp_value>
-                  <act_value>737797315</act_value>
+                  <act_value>742200515</act_value>
                 </verdict>
-                <verdict id='create label valid id - positive' message='id is positive integer' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-                  <object_1>737797315</object_1>
+                <verdict id='post_label:valid:id:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+                  <object_1>742200515</object_1>
                   <operator>:&gt;</operator>
                   <object_2>0</object_2>
                 </verdict>
               </section>
-              <verdict id='create label valid url' message='url starts with' method='verdict_assert_match?' outcome='passed' volatile='false'>
+              <verdict id='post_label:valid:url' method='verdict_assert_match?' outcome='passed' volatile='false'>
                 <exp_value>/^https:\/\/api.github.com\/repos/</exp_value>
                 <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label</act_value>
               </verdict>
               <section name='verdict_assert_string_not_empty?'>
-                <verdict id='create label valid name - string' message='name is nonempty string' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                <verdict id='post_label:valid:name:string' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
                   <exp_value>String</exp_value>
                   <act_value>test_label</act_value>
                 </verdict>
-                <verdict id='create label valid name - not empty' message='name is nonempty string' method='verdict_refute_empty?' outcome='passed' volatile='false'>
+                <verdict id='post_label:valid:name:not_empty' method='verdict_refute_empty?' outcome='passed' volatile='false'>
                   <act_value>test_label</act_value>
                 </verdict>
               </section>
-              <verdict id='create label valid color' message='color is hex color' method='verdict_assert_match?' outcome='passed' volatile='false'>
+              <verdict id='post_label:valid:color' method='verdict_assert_match?' outcome='passed' volatile='false'>
                 <exp_value>/[0-9a-f]{6}/i</exp_value>
                 <act_value>000000</act_value>
               </verdict>
-              <verdict id='create label valid default' message='default is boolean' method='verdict_assert_includes?' outcome='passed' volatile='false'>
+              <verdict id='post_label:valid:default' method='verdict_assert_includes?' outcome='passed' volatile='false'>
                 <exp_value>[TrueClass, FalseClass]</exp_value>
                 <act_value>FalseClass</act_value>
               </verdict>
             </section>
             <section name='Label created'>
               <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-                <execution duration_seconds='0.325' timestamp='2017-11-01-Wed-13.18.30.458'/>
+                <execution duration_seconds='0.377' timestamp='2017-11-06-Mon-09.35.24.935'/>
               </GithubClient>
-              <verdict id='create label exists' message='Label exists' method='verdict_assert?' outcome='passed' volatile='false'>
+              <verdict id='post_label:exists' message='Label exists' method='verdict_assert?' outcome='passed' volatile='false'>
                 <act_value>true</act_value>
               </verdict>
             </section>
@@ -130,16 +130,16 @@ Notes:
         </section>
         <section name='Clean up'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-            <execution duration_seconds='0.369' timestamp='2017-11-01-Wed-13.18.30.783'/>
+            <execution duration_seconds='0.747' timestamp='2017-11-06-Mon-09.35.25.317'/>
           </GithubClient>
           <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-            <execution duration_seconds='0.355' timestamp='2017-11-01-Wed-13.18.31.159'/>
+            <execution duration_seconds='0.387' timestamp='2017-11-06-Mon-09.35.26.063'/>
           </GithubClient>
         </section>
       </section>
     </section>
     <section name='Count of errors (unexpected exceptions)'>
-      <verdict id='error count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
+      <verdict id='error_count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
         <exp_value>0</exp_value>
         <act_value>0</act_value>
       </verdict>

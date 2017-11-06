@@ -8,11 +8,11 @@ class NestedDataValidTest < BaseClassForTest
     prelude do |client, log|
       rate_limit = RateLimit.get(client)
       log.section('This is valid') do
-        rate_limit.verdict_valid?(log, 'rate limit valid')
+        rate_limit.verdict_valid?(log, :rate_limit_valid)
       end
       log.section('This is not valid') do
         rate_limit.resources.core.reset = RateLimit::Core_.invalid_value_for(:reset)
-        rate_limit.verdict_valid?(log, 'rate limit not valid')
+        rate_limit.verdict_valid?(log, :rate_limit_not_valid)
       end
     end
   end

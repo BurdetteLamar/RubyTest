@@ -54,43 +54,43 @@ Notes:
 ```xml
 <nested_data_log_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='1.747' name='nested_data_log_test' timestamp='2017-11-01-Wed-13.18.14.872'>
+  <test_method duration_seconds='1.861' name='nested_data_log_test' timestamp='2017-11-06-Mon-09.35.08.177'>
     <section name='With GithubClient'>
       <section name='Fetch and log rate limit'>
         <section name='Fetch rate limit'>
           <GithubClient method='GET' url='https://api.github.com/rate_limit'>
-            <execution duration_seconds='1.742' timestamp='2017-11-01-Wed-13.18.14.878'/>
+            <execution duration_seconds='1.854' timestamp='2017-11-06-Mon-09.35.08.182'/>
           </GithubClient>
         </section>
         <section name='Fetched rate limit'>
           <section name='RateLimit::Resources'>
             <section name='RateLimit::Core_'>
               <data field='limit' value='5000'/>
-              <data field='remaining' value='4673'/>
-              <data field='reset' value='1509560350'/>
+              <data field='remaining' value='4972'/>
+              <data field='reset' value='1509986021'/>
             </section>
             <section name='RateLimit::Search'>
               <data field='limit' value='30'/>
               <data field='remaining' value='30'/>
-              <data field='reset' value='1509560359'/>
+              <data field='reset' value='1509982580'/>
             </section>
             <section name='RateLimit::Graphql'>
               <data field='limit' value='5000'/>
               <data field='remaining' value='5000'/>
-              <data field='reset' value='1509563899'/>
+              <data field='reset' value='1509986120'/>
             </section>
           </section>
           <section name='RateLimit::Rate'>
             <data field='limit' value='5000'/>
-            <data field='remaining' value='4673'/>
-            <data field='reset' value='1509560350'/>
+            <data field='remaining' value='4972'/>
+            <data field='reset' value='1509986021'/>
           </section>
         </section>
       </section>
     </section>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
-    <verdict id='error count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
+    <verdict id='error_count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
       <exp_value>0</exp_value>
       <act_value>0</act_value>
     </verdict>

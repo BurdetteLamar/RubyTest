@@ -20,10 +20,10 @@ class GetLabels < BaseClassForEndpoint
     [labels, payload]
   end
 
-  Contract GithubClient, String, Maybe[Hash] => ArrayOf[Label]
+  Contract GithubClient, VERDICT_ID, Maybe[Hash] => ArrayOf[Label]
   def self.verdict_call_and_verify_success(client, verdict_id, query_elements = {})
     log = client.log
-    log.section(verdict_id, :rescue, :timestamp, :duration) do
+    log.section(verdict_id.to_s, :rescue, :timestamp, :duration) do
       labels = self.call(client, query_elements)
       label = labels.first
       log.section('Info') do
@@ -32,7 +32,7 @@ class GetLabels < BaseClassForEndpoint
       end
       log.section('Evaluation') do
         log.section('Returned label valid') do
-          v_id = Log.verdict_id(verdict_id, 'valid')
+          v_id = [verdict_id, :valid]
           label.verdict_valid?(log, v_id)
         end
       end

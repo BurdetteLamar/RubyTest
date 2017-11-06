@@ -17,7 +17,7 @@ class AlbumsTest < BaseClassForTest
           album_to_delete = Album.get_first(client)
         end
         log.section('Delete the album') do
-          DeleteAlbumsId.verdict_call_and_verify_success(client, log, 'delete album', album_to_delete)
+          DeleteAlbumsId.verdict_call_and_verify_success(client, log, :delete_album, album_to_delete)
         end
       end
     end
@@ -31,7 +31,7 @@ class AlbumsTest < BaseClassForTest
 
         all_albums = nil
         log.section('GetAlbums with no query') do
-          all_albums = GetAlbums.verdict_call_and_verify_success(client, log, 'with no query')
+          all_albums = GetAlbums.verdict_call_and_verify_success(client, log, :no_query)
         end
 
         log.section('GetAlbums with simple query') do
@@ -41,11 +41,12 @@ class AlbumsTest < BaseClassForTest
           }
           expected_albums = all_albums.select { |p| p.userId == album.userId }
           actual_albums = GetAlbums.call(client, query_elements)
-          if log.verdict_assert_equal?('count for simple query', expected_albums.size, actual_albums.size)
+          if log.verdict_assert_equal?(:count_for_simple_query, expected_albums.size, actual_albums.size)
             (0...expected_albums.size).each do |i|
               expected_album = expected_albums[i]
               actual_album = actual_albums[i]
-              Album.verdict_equal?(log, 'with simple query %d' % i, expected_album, actual_album, 'Album %d' % i)
+              v_id = format('with simple query %d', i).to_sym
+              Album.verdict_equal?(log, v_id, expected_album, actual_album)
             end
           end
         end
@@ -58,11 +59,12 @@ class AlbumsTest < BaseClassForTest
           }
           expected_albums = all_albums.select { |p| (p.userId == album.userId) && (p.title == album.title) }
           actual_albums = GetAlbums.call(client, query_elements)
-          if log.verdict_assert_equal?('count for complex query', expected_albums.size, actual_albums.size, message: 'Count')
+          if log.verdict_assert_equal?(:count_for_complex_query, expected_albums.size, actual_albums.size)
             (0...expected_albums.size).each do |i|
               expected_album = expected_albums[i]
               actual_album = actual_albums[i]
-              Album.verdict_equal?(log, 'with complex query %d' % i, expected_album, actual_album)
+              v_id = format('with_complex_query_%d', i).to_sym
+              Album.verdict_equal?(log, v_id, expected_album, actual_album)
             end
           end
         end
@@ -82,7 +84,7 @@ class AlbumsTest < BaseClassForTest
           album_to_fetch = Album.get_first(client)
         end
         log.section('Fetch the album') do
-          GetAlbumsId.verdict_call_and_verify_success(client, log, 'get album', album_to_fetch)
+          GetAlbumsId.verdict_call_and_verify_success(client, log, :get_album, album_to_fetch)
         end
       end
     end
@@ -94,11 +96,11 @@ class AlbumsTest < BaseClassForTest
     prelude do |client, log|
       log.section('Test AlbumAlbums') do
         album_to_create = Album.new(
-            :id => 1,
+            :id => nil,
             :userId => 1,
             :title => 'My Album',
         )
-        PostAlbums.verdict_call_and_verify_success(client, log, 'album to create', album_to_create)
+        PostAlbums.verdict_call_and_verify_success(client, log, :album_to_create, album_to_create)
       end
     end
 
@@ -115,7 +117,7 @@ class AlbumsTest < BaseClassForTest
         end
         log.section('Put the modifications') do
           album_to_update.title = 'New Title'
-          PutAlbumsId.verdict_call_and_verify_success(client, log, 'Album to update', album_to_update)
+          PutAlbumsId.verdict_call_and_verify_success(client, log, :album_to_update, album_to_update)
         end
       end
 

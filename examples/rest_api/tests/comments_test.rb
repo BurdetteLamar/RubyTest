@@ -17,7 +17,7 @@ class CommentsTest < BaseClassForTest
           comment_to_delete = Comment.get_first(client)
         end
         log.section('Delete the comment') do
-          DeleteCommentsId.verdict_call_and_verify_success(client, log, 'delete comment', comment_to_delete)
+          DeleteCommentsId.verdict_call_and_verify_success(client, log, :delete_comment, comment_to_delete)
         end
       end
     end
@@ -31,7 +31,7 @@ class CommentsTest < BaseClassForTest
         all_comments = nil
 
         log.section('GetComments with no query') do
-          all_comments = GetComments.verdict_call_and_verify_success(client, log, 'with no query')
+          all_comments = GetComments.verdict_call_and_verify_success(client, log, :no_query)
         end
 
         log.section('GetComments with simple query') do
@@ -41,11 +41,12 @@ class CommentsTest < BaseClassForTest
           }
           expected_comments = all_comments.select { |p| p.postId == comment.postId }
           actual_comments = GetComments.call(client, query_elements)
-          if log.verdict_assert_equal?('count for simple query', expected_comments.size, actual_comments.size, message: 'Count')
+          if log.verdict_assert_equal?(:count_for_simple_query, expected_comments.size, actual_comments.size)
             (0...expected_comments.size).each do |i|
               expected_comment = expected_comments[i]
               actual_comment = actual_comments[i]
-              Comment.verdict_equal?(log, 'with simple query %d' % i, expected_comment, actual_comment, 'Comment %d' % i)
+              v_id = format('with simple query %d', i).to_sym
+              Comment.verdict_equal?(log, v_id, expected_comment, actual_comment)
             end
           end
         end
@@ -58,11 +59,12 @@ class CommentsTest < BaseClassForTest
           }
           expected_comments = all_comments.select { |p| (p.postId == comment.postId) && (p.name == comment.name) }
           actual_comments = GetComments.call(client, query_elements)
-          if log.verdict_assert_equal?('count for complex query', expected_comments.size, actual_comments.size, message: 'Count')
+          if log.verdict_assert_equal?(:count_for_complex_query, expected_comments.size, actual_comments.size)
             (0...expected_comments.size).each do |i|
               expected_comment = expected_comments[i]
               actual_comment = actual_comments[i]
-              Comment.verdict_equal?(log, 'with complex query %d' % i, expected_comment, actual_comment, 'Comment %d' % i)
+              v_id = format('with_complex_query_%d', i).to_sym
+              Comment.verdict_equal?(log, v_id, expected_comment, actual_comment)
             end
           end
         end
@@ -82,7 +84,7 @@ class CommentsTest < BaseClassForTest
           comment_to_fetch = Comment.get_first(client)
         end
         log.section('Fetch the comment') do
-          GetCommentsId.verdict_call_and_verify_success(client, log, 'get comment', comment_to_fetch)
+          GetCommentsId.verdict_call_and_verify_success(client, log, :get_comment, comment_to_fetch)
         end
       end
     end
@@ -95,12 +97,12 @@ class CommentsTest < BaseClassForTest
       log.section('Test PostComments') do
         comment_to_create = Comment.new(
             :postId => 1,
-            :id => 1,
+            :id => nil,
             :name => 'NewName',
             :email => 'New@Email.com',
             :body => 'New body',
         )
-        PostComments.verdict_call_and_verify_success(client, log, 'comment to create', comment_to_create)
+        PostComments.verdict_call_and_verify_success(client, log, :comment_to_create, comment_to_create)
       end
     end
 
@@ -119,7 +121,7 @@ class CommentsTest < BaseClassForTest
           comment_to_update.name = 'NewName'
           comment_to_update.email = 'New@Email.com'
           comment_to_update.body = 'New body'
-          PutCommentsId.verdict_call_and_verify_success(client, log, 'Comment to update', comment_to_update)
+          PutCommentsId.verdict_call_and_verify_success(client, log, :comment_to_update, comment_to_update)
         end
       end
 

@@ -8,11 +8,11 @@ class FlatDataValidTest < BaseClassForTest
     prelude do |client, log|
       label = Label.get_first(client)
       log.section('This is valid') do
-        label.verdict_valid?(log, 'label valid')
+        label.verdict_valid?(log, :label_valid)
       end
       log.section('This is not valid') do
         label.color = Label.invalid_value_for(:color)
-        label.verdict_valid?(log, 'label not valid')
+        label.verdict_valid?(log, :label_not_valid)
       end
     end
   end

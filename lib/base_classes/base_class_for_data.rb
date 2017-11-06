@@ -35,11 +35,11 @@ class BaseClassForData < BaseClass
     nil
   end
 
-  Contract Log, String => Bool
+  Contract Log, VERDICT_ID => Bool
   def verdict_valid?(log, verdict_id)
     valid = true
     fields.each do |field|
-      v_id = format('%s %s', verdict_id, field)
+      v_id = [verdict_id, field]
       verdict_field_valid?(log, v_id, field) && valid
     end
     valid
@@ -55,7 +55,7 @@ class BaseClassForData < BaseClass
     end
   end
 
-  Contract Log, String, Any, Any, Maybe[String] => Bool
+  Contract Log, VERDICT_ID, Any, Any, Maybe[String] => Bool
   # Verify recursively, so that nested objects can verify themselves.
   def self.verdict_equal?(log, verdict_id, expected_obj, actual_obj, message = nil)
     if expected_obj.kind_of?(BaseClassForData)
@@ -138,11 +138,12 @@ class BaseClassForData < BaseClass
       actual_value = actual_obj.send(field)
       if expected_value.kind_of?(BaseClassForData)
         log.section(expected_value.class.name) do
-          v_id = format('%s %s', verdict_id, field)
+          v_id = [verdict_id, field]
           self.verdict_equal_recursive?(log, v_id, expected_value, actual_value, message)
         end
       else
-        verdict = log.verdict_assert_equal?('%s-%s' % [verdict_id, field.downcase], expected_value, actual_value, message: message) && verdict
+        v_id = [verdict_id, field]
+        verdict = log.verdict_assert_equal?(v_id, expected_value, actual_value, message: message) && verdict
       end
     end
     verdict

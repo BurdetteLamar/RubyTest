@@ -17,7 +17,7 @@ class PostsTest < BaseClassForTest
           post_to_delete = Post.get_first(client)
         end
         log.section('Delete the post') do
-          DeletePostsId.verdict_call_and_verify_success(client, log, 'delete post', post_to_delete)
+          DeletePostsId.verdict_call_and_verify_success(client, log, :delete_post, post_to_delete)
         end
       end
     end
@@ -31,7 +31,7 @@ class PostsTest < BaseClassForTest
         all_posts = nil
 
         log.section('GetPosts with no query') do
-          all_posts = GetPosts.verdict_call_and_verify_success(client, log, 'with no query')
+          all_posts = GetPosts.verdict_call_and_verify_success(client, log, :no_query)
         end
 
         log.section('GetPosts with simple query') do
@@ -41,11 +41,12 @@ class PostsTest < BaseClassForTest
           }
           expected_posts = all_posts.select { |p| p.userId == post.userId }
           actual_posts = GetPosts.call(client, query_elements)
-          if log.verdict_assert_equal?('count for simple query', expected_posts.size, actual_posts.size, message: 'Count')
+          if log.verdict_assert_equal?(:count_for_simple_query, expected_posts.size, actual_posts.size, message: 'Count')
             (0...expected_posts.size).each do |i|
               expected_post = expected_posts[i]
               actual_post = actual_posts[i]
-              Post.verdict_equal?(log, 'with simple query %d' % i, expected_post, actual_post, 'Post %d' % i)
+              v_id = format('with_simple_query_%d', i).to_sym
+              Post.verdict_equal?(log, v_id, expected_post, actual_post)
             end
           end
         end
@@ -58,11 +59,12 @@ class PostsTest < BaseClassForTest
           }
           expected_posts = all_posts.select { |p| (p.userId == post.userId) && (p.title == post.title) }
           actual_posts = GetPosts.call(client, query_elements)
-          if log.verdict_assert_equal?('count for complex query', expected_posts.size, actual_posts.size, message: 'Count')
+          if log.verdict_assert_equal?(:count_for_complex_query, expected_posts.size, actual_posts.size)
             (0...expected_posts.size).each do |i|
               expected_post = expected_posts[i]
               actual_post = actual_posts[i]
-              Post.verdict_equal?(log, 'with complex query %d' % i, expected_post, actual_post, 'Post %d' % i)
+              v_id = format('with_complex_query_%d', i).to_sym
+              Post.verdict_equal?(log, v_id, expected_post, actual_post)
             end
           end
         end
@@ -82,7 +84,7 @@ class PostsTest < BaseClassForTest
           post_to_fetch = Post.get_first(client)
         end
         log.section('Fetch the post') do
-          GetPostsId.verdict_call_and_verify_success(client, log, 'get post', post_to_fetch)
+          GetPostsId.verdict_call_and_verify_success(client, log, :get_post, post_to_fetch)
         end
       end
     end
@@ -94,12 +96,12 @@ class PostsTest < BaseClassForTest
     prelude do |client, log|
       log.section('Test PostPosts') do
         post_to_create = Post.new(
-            :id => 1,
+            :id => nil,
             :userId => 1,
             :title => 'New title',
             :body => 'New body',
         )
-        PostPosts.verdict_call_and_verify_success(client, log, 'post to create', post_to_create)
+        PostPosts.verdict_call_and_verify_success(client, log, :post_to_create, post_to_create)
       end
     end
 
@@ -117,7 +119,7 @@ class PostsTest < BaseClassForTest
         log.section('Put the modifications') do
           post_to_update.title = 'New title'
           post_to_update.body = 'New body'
-          PutPostsId.verdict_call_and_verify_success(client, log, 'Post to update', post_to_update)
+          PutPostsId.verdict_call_and_verify_success(client, log, :post_to_update, post_to_update)
         end
       end
 

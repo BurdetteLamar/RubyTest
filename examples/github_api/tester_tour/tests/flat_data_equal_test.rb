@@ -15,12 +15,12 @@ class FlatDataEqualTest < BaseClassForTest
       label_1 = Label.deep_clone(label_0)
       log.section('These are equal') do
         fail unless Label.equal?(label_0, label_1)
-        Label.verdict_equal?(log, 'label equal', label_0, label_1, 'Using Label.verdict_equal?')
+        Label.verdict_equal?(log, :label_equal, label_0, label_1, 'Using Label.verdict_equal?')
       end
       log.section('These are not equal') do
         label_1.id += 1
         fail if Label.equal?(label_0, label_1)
-        Label.verdict_equal?(log, 'label not equal', label_0, label_1, 'Using Label.verdict_equal?')
+        Label.verdict_equal?(log, :label_not_equal, label_0, label_1, 'Using Label.verdict_equal?')
       end
     end
   end

@@ -22,7 +22,7 @@ class Album < BaseClassForResource
     super(FIELDS, values)
   end
 
-  Contract Log, String, Symbol => Bool
+  Contract Log, VERDICT_ID, Symbol => Bool
   def verdict_field_valid?(log, verdict_id, field)
     value = self.send(field)
     case
