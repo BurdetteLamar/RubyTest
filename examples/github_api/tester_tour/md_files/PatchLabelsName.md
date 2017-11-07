@@ -60,26 +60,26 @@ Notes:
 ```xml
 <patch_labels_name_test>
   <summary errors='0' failures='0' verdicts='11'/>
-  <test_method name='patch_labels_name_test' timestamp='2017-11-07-Tue-10.47.55.422'>
-    <section duration_seconds='6.375' name='With GithubClient'>
+  <test_method name='patch_labels_name_test' timestamp='2017-11-07-Tue-11.22.10.913'>
+    <section duration_seconds='6.875' name='With GithubClient'>
       <section name='Test PatchLabelsName'>
         <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-          <execution duration_seconds='3.469' timestamp='2017-11-07-Tue-10.47.55.422'/>
+          <execution duration_seconds='4.281' timestamp='2017-11-07-Tue-11.22.10.929'/>
         </GithubClient>
         <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
           <parameters color='000000' name='test_label'/>
-          <execution duration_seconds='0.516' timestamp='2017-11-07-Tue-10.47.58.891'/>
+          <execution duration_seconds='0.766' timestamp='2017-11-07-Tue-11.22.15.210'/>
         </GithubClient>
-        <section name='patch_label' timestamp='2017-11-07-Tue-10.47.59.406'>
+        <section name='patch_label' timestamp='2017-11-07-Tue-11.22.15.976'>
           <GithubClient method='PATCH' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
             <parameters color='ffffff'/>
-            <execution duration_seconds='0.438' timestamp='2017-11-07-Tue-10.47.59.406'/>
+            <execution duration_seconds='0.656' timestamp='2017-11-07-Tue-11.22.15.976'/>
           </GithubClient>
           <section name='Evaluation'>
             <section name='Returned label correct'>
               <verdict id='patch_label:updated_label:id' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                <exp_value>743407604</exp_value>
-                <act_value>743407604</act_value>
+                <exp_value>743438020</exp_value>
+                <act_value>743438020</act_value>
               </verdict>
               <verdict id='patch_label:updated_label:url' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label</exp_value>
@@ -100,11 +100,11 @@ Notes:
             </section>
             <section name='Label updated'>
               <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-                <execution duration_seconds='0.438' timestamp='2017-11-07-Tue-10.47.59.844'/>
+                <execution duration_seconds='0.391' timestamp='2017-11-07-Tue-11.22.16.632'/>
               </GithubClient>
               <verdict id='patch_label:fetched_label:id' message='Fetched label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                <exp_value>743407604</exp_value>
-                <act_value>743407604</act_value>
+                <exp_value>743438020</exp_value>
+                <act_value>743438020</act_value>
               </verdict>
               <verdict id='patch_label:fetched_label:url' message='Fetched label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label</exp_value>
@@ -125,10 +125,10 @@ Notes:
             </section>
           </section>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-            <execution duration_seconds='0.859' timestamp='2017-11-07-Tue-10.48.00.281'/>
+            <execution duration_seconds='0.359' timestamp='2017-11-07-Tue-11.22.17.023'/>
           </GithubClient>
           <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-            <execution duration_seconds='0.656' timestamp='2017-11-07-Tue-10.48.01.141'/>
+            <execution duration_seconds='0.406' timestamp='2017-11-07-Tue-11.22.17.382'/>
           </GithubClient>
         </section>
       </section>
