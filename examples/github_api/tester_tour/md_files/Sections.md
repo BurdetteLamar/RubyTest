@@ -65,7 +65,7 @@ Notes:
 ```xml
 <sections_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='6.007' name='sections_test' timestamp='2017-11-06-Mon-09.34.47.760'>
+  <test_method duration_seconds='6.047' name='sections_test' timestamp='2017-11-07-Tue-11.21.08.209'>
     <section name='With GithubClient'>
       <section name='First outer section'>
         <section name='First inner section'>
@@ -78,16 +78,16 @@ Notes:
       <section name='Second outer section'>
         <comment>Some test code can go here</comment>
       </section>
-      <section name='Section with timestamp' timestamp='2017-11-06-Mon-09.34.47.763'>
+      <section name='Section with timestamp' timestamp='2017-11-07-Tue-11.21.08.209'>
         <comment>Some test code can go here</comment>
       </section>
-      <section duration_seconds='1.000' name='Section with timestamp'>
+      <section duration_seconds='1.016' name='Section with timestamp'>
         <comment>Some test code can go here</comment>
       </section>
-      <section duration_seconds='2.001' name='Section with timestamp and duration' timestamp='2017-11-06-Mon-09.34.48.763'>
+      <section duration_seconds='2.016' name='Section with timestamp and duration' timestamp='2017-11-07-Tue-11.21.09.225'>
         <comment>Some test code can go here</comment>
       </section>
-      <section duration_seconds='3.002' name='Order does not matter' timestamp='2017-11-06-Mon-09.34.50.764'>
+      <section duration_seconds='3.016' name='Order does not matter' timestamp='2017-11-07-Tue-11.21.11.240'>
         <comment>Some test code can go here</comment>
       </section>
     </section>

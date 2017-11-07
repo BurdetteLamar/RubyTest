@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
 **Prev Stop:** [PatchLabelsName Test](./PatchLabelsName.md#patchlabelsname-test)
 
-**Next Stop:** [More to Come ...](./MoreToCome.md#more-to-come-)
+**Next Stop:** [Data Object CRUD](./Crud.md#data-object-crud)
 
 
 # DeleteLabelsName Test
@@ -69,22 +69,22 @@ Notes:
 ```xml
 <delete_labels_name_test>
   <summary errors='0' failures='0' verdicts='3'/>
-  <test_method name='delete_labels_name_test' timestamp='2017-11-06-Mon-09.35.37.121'>
-    <section duration_seconds='3.642' name='With GithubClient'>
+  <test_method name='delete_labels_name_test' timestamp='2017-11-07-Tue-11.22.18.820'>
+    <section duration_seconds='5.219' name='With GithubClient'>
       <section name='Test DeleteLabelsName'>
         <section name='Create the label to be deleted'>
-          <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-            <execution duration_seconds='1.762' timestamp='2017-11-06-Mon-09.35.37.121'/>
+          <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
+            <execution duration_seconds='3.610' timestamp='2017-11-07-Tue-11.22.18.835'/>
           </GithubClient>
-          <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
+          <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
             <parameters color='000000' name='test_label'/>
-            <execution duration_seconds='0.509' timestamp='2017-11-06-Mon-09.35.38.887'/>
+            <execution duration_seconds='0.406' timestamp='2017-11-07-Tue-11.22.22.445'/>
           </GithubClient>
         </section>
         <section name='Test deleting the created label'>
-          <section name='delete_label' timestamp='2017-11-06-Mon-09.35.39.399'>
-            <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-              <execution duration_seconds='0.353' timestamp='2017-11-06-Mon-09.35.39.402'/>
+          <section name='delete_label' timestamp='2017-11-07-Tue-11.22.22.851'>
+            <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
+              <execution duration_seconds='0.422' timestamp='2017-11-07-Tue-11.22.22.851'/>
             </GithubClient>
             <section name='Evaluation'>
               <section name='Response empty'>
@@ -93,8 +93,8 @@ Notes:
                 </verdict>
               </section>
               <section name='Label deleted'>
-                <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-                  <execution duration_seconds='0.650' timestamp='2017-11-06-Mon-09.35.39.755'/>
+                <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
+                  <execution duration_seconds='0.391' timestamp='2017-11-07-Tue-11.22.23.273'/>
                 </GithubClient>
                 <verdict id='delete_label:label_deleted' message='Label not exist' method='verdict_refute?' outcome='passed' volatile='false'>
                   <act_value>false</act_value>
@@ -103,8 +103,8 @@ Notes:
             </section>
           </section>
           <section name='Clean up'>
-            <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-              <execution duration_seconds='0.354' timestamp='2017-11-06-Mon-09.35.40.409'/>
+            <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
+              <execution duration_seconds='0.375' timestamp='2017-11-07-Tue-11.22.23.664'/>
             </GithubClient>
           </section>
         </section>
@@ -128,5 +128,5 @@ Notes:
   - Section `Label deleted` verifies that the label no longer exists.
 **Prev Stop:** [PatchLabelsName Test](./PatchLabelsName.md#patchlabelsname-test)
 
-**Next Stop:** [More to Come ...](./MoreToCome.md#more-to-come-)
+**Next Stop:** [Data Object CRUD](./Crud.md#data-object-crud)
 

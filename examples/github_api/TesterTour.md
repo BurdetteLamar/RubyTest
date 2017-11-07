@@ -38,5 +38,7 @@ Each following tour stop assumes you've seen all its predecessors, so repetition
 - [GetLabelsName Test](./tester_tour/md_files/GetLabelsName.md/#getlabelsname-test)
 - [PatchLabelsName Test](./tester_tour/md_files/PatchLabelsName.md/#patchlabelsname-test)
 - [DeleteLabelsName Test](./tester_tour/md_files/DeleteLabelsName.md/#deletelabelsname-test)
+### Data Object Methods
+- [Data Object CRUD](./tester_tour/md_files/Crud.md/#data-object-crud)
 ### Next
 - [More to Come ...](./tester_tour/md_files/MoreToCome.md/#more-to-come-)

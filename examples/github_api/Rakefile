@@ -138,9 +138,12 @@ EOT
           patch_labels_name
           delete_labels_name
       /,
+      :data_object_methods => %w/
+          crud
+      /,
       :next => %w/
           more_to_come
-      /
+      /,
       }
 
   titles = []
