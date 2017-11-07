@@ -50,7 +50,7 @@ Notes:
 ```xml
 <rescued_exception_test>
   <summary errors='1' failures='1' verdicts='2'/>
-  <test_method duration_seconds='0.003' name='rescued_exception_test' timestamp='2017-11-06-Mon-09.34.55.856'>
+  <test_method duration_seconds='0.016' name='rescued_exception_test' timestamp='2017-11-07-Tue-10.47.05.854'>
     <section name='With GithubClient'>
       <section name='Rescued exception'>
         <uncaught_exception>
@@ -59,18 +59,18 @@ Notes:
           <message>divided by 0</message>
           <backtrace>
             <![CDATA[
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/rescued_exception_test.rb:10:in `/'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/rescued_exception_test.rb:10:in `block (2 levels) in test_rescued_exception'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/rescued_exception_test.rb:7:in `block in test_rescued_exception'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:20:in `block in with'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:16:in `with'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:19:in `block in prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:11:in `prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/rescued_exception_test.rb:6:in `test_rescued_exception']]>
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/rescued_exception_test.rb:10:in `/'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/rescued_exception_test.rb:10:in `block (2 levels) in test_rescued_exception'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/rescued_exception_test.rb:7:in `block in test_rescued_exception'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:20:in `block in with'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:16:in `with'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:19:in `block in prelude'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:11:in `prelude'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/rescued_exception_test.rb:6:in `test_rescued_exception']]>
           </backtrace>
         </uncaught_exception>
       </section>
@@ -90,9 +90,9 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
         <message>Expected: 0 Actual: 1</message>
         <backtrace>
           <![CDATA[
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:11:in `prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/rescued_exception_test.rb:6:in `test_rescued_exception']]>
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:11:in `prelude'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/rescued_exception_test.rb:6:in `test_rescued_exception']]>
         </backtrace>
       </exception>
     </verdict>

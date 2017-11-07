@@ -78,7 +78,7 @@ Notes:
 ```xml
 <verdicts_test>
   <summary errors='0' failures='2' verdicts='5'/>
-  <test_method duration_seconds='0.005' name='verdicts_test' timestamp='2017-11-06-Mon-09.34.54.807'>
+  <test_method duration_seconds='0.000' name='verdicts_test' timestamp='2017-11-07-Tue-10.47.04.838'>
     <section name='With GithubClient'>
       <section name='These verdicts should pass'>
         <section name='An assert verdict that should pass'>
@@ -101,18 +101,18 @@ Notes:
               <message>Expected false to be truthy.</message>
               <backtrace>
                 <![CDATA[
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:26:in `block (3 levels) in test_verdicts'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:25:in `block (2 levels) in test_verdicts'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:24:in `block in test_verdicts'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:20:in `block in with'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:16:in `with'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:19:in `block in prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:11:in `prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:6:in `test_verdicts']]>
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:26:in `block (3 levels) in test_verdicts'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:25:in `block (2 levels) in test_verdicts'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:24:in `block in test_verdicts'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:20:in `block in with'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:16:in `with'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:19:in `block in prelude'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:11:in `prelude'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:6:in `test_verdicts']]>
               </backtrace>
             </exception>
           </verdict>
@@ -125,18 +125,18 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
               <message>Expected true to not be truthy.</message>
               <backtrace>
                 <![CDATA[
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:33:in `block (3 levels) in test_verdicts'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:32:in `block (2 levels) in test_verdicts'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:24:in `block in test_verdicts'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:20:in `block in with'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:16:in `with'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:19:in `block in prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:11:in `prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:6:in `test_verdicts']]>
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:33:in `block (3 levels) in test_verdicts'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:32:in `block (2 levels) in test_verdicts'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:24:in `block in test_verdicts'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:20:in `block in with'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:16:in `with'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:19:in `block in prelude'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:11:in `prelude'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:6:in `test_verdicts']]>
               </backtrace>
             </exception>
           </verdict>

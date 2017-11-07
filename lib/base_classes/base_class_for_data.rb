@@ -149,11 +149,8 @@ class BaseClassForData < BaseClass
     verdict
   end
 
-  # This is an instance method, to allow a data object to call conveniently
-  # (and omit the argument).
-  # The optional argument can be used to specify the source as something other than self.
   Contract Any => Any
-  def self.deep_clone(obj = self)
+  def self.deep_clone(obj)
     # If obj is a scalar that cannot clone, return obj.
     # The expression obj.respond_to?(:clone) is not a reliable test for clonability,
     # because every object has :clone (but some raise an error if it's called).

@@ -1,0 +1,26 @@
+[navigation_links]
+
+# CRUD Test
+
+So far, most of the interactions with the API have been for the purpose of explicitly testing an endpoint.
+
+Many times, though, we'll want to _make use of_ an endpoint without _sctually testing it_.
+
+A data class can help with this by providing CRUD methods (create, read, update, delete) that simply perform the desired actions, without testing or logging.
+
+The <code>Label</code> class we've been working with does that.
+
+## Example Test
+
+[file_source](../tests/crud_test.rb)
+
+Notes:
+
+- Here we create, read, update, and delete a <code>Label</code> object, using the CRUD methods (instead of accessing endpoints directly).
+- Before creating, we delete the label, if it exists.
+
+## Log
+
+[file_source](../logs/test_crud.xml)
+
+[navigation_links]
