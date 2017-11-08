@@ -38,6 +38,7 @@ class Label < BaseClassForResource
     end
   end
 
+  Contract Symbol => Any
   def self.invalid_value_for(field)
     case field
       when :id

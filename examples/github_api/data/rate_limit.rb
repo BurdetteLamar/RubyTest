@@ -18,12 +18,32 @@ class RateLimit < BaseClassForResource
     nil
   end
 
-  Contract Log, VERDICT_ID => Bool
-  def verdict_valid?(log, verdict_id)
-    resources.verdict_valid?(log, [verdict_id, :resources])
-    rate.verdict_valid?(log, [verdict_id, :rate])
+  Contract Log, VERDICT_ID, Symbol => Bool
+  def verdict_field_valid?(log, verdict_id, field)
+    value = self.send(field)
+    case field
+      when :rate
+        rate.verdict_valid?(log, [verdict_id, :rate])
+      when :resources
+        resources.verdict_valid?(log, [verdict_id, :resources])
+      else
+        ArgumentError.new(field.inspect)
+    end
   end
 
+  Contract Symbol => Any
+  def self.invalid_value_for(field)
+    case
+      when :rate
+        'not Rate object'
+      when :resources
+        'not Resources object'
+      else
+        ArgumentError.new(field.inspect)
+    end
+  end
+
+  Contract GithubClient => self
   def self.get(client)
     require_relative '../endpoints/get_rate_limit'
     GetRateLimit.call(client)
@@ -86,11 +106,32 @@ class RateLimit < BaseClassForResource
       nil
     end
 
-    Contract Log, VERDICT_ID => Bool
-    def verdict_valid?(log, verdict_id)
-      core.verdict_valid?(log, [verdict_id, :core])
-      search.verdict_valid?(log, [verdict_id, :search])
-      graphql.verdict_valid?(log, [verdict_id, :graphql])
+    Contract Log, VERDICT_ID, Symbol => Bool
+    def verdict_field_valid?(log, verdict_id, field)
+      case field
+        when :core
+          core.verdict_valid?(log, [verdict_id, :core])
+        when :search
+          search.verdict_valid?(log, [verdict_id, :search])
+        when :graphql
+          graphql.verdict_valid?(log, [verdict_id, :graphql])
+        else
+          ArgumentError.new(field.inspect)
+      end
+    end
+
+    Contract Symbol => Any
+    def self.invalid_value_for(field)
+      case
+        when :core
+          'not Core object'
+        when :search
+          'not Search object'
+        when :graphql
+          'not Graphql object'
+        else
+          ArgumentError.new(field.inspect)
+      end
     end
 
     # This is harmlessly redundant, but helps RubyMine code inspection.
