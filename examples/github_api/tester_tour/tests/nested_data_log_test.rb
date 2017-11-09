@@ -6,7 +6,7 @@ class NestedDataLogTest < BaseClassForTest
 
   def test_nested_data_log
     prelude do |client, log|
-      log.section('Fetch and log rate limit') do
+      log.section('Fetch and log a rate limit') do
         rate_limit = nil
         log.section('Fetch rate limit') do
           rate_limit = RateLimit.get(client)

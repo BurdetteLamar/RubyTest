@@ -22,7 +22,7 @@ class FlatDataLogTest < BaseClassForTest
     prelude do |client, log|
       log.section('Fetch and log an instance of Label') do
         label = nil
-        log.section('Fetch an label') do
+        log.section('Fetch a label') do
           label = Label.get_first(client)
         end
         label.log(log, 'Fetched label')
@@ -43,12 +43,12 @@ Notes:
 ```xml
 <flat_data_log_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='3.735' name='flat_data_log_test' timestamp='2017-11-08-Wed-15.46.12.925'>
+  <test_method duration_seconds='3.453' name='flat_data_log_test' timestamp='2017-11-09-Thu-12.09.59.189'>
     <section name='With GithubClient'>
       <section name='Fetch and log an instance of Label'>
-        <section name='Fetch an label'>
+        <section name='Fetch a label'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
-            <execution duration_seconds='3.735' timestamp='2017-11-08-Wed-15.46.12.925'/>
+            <execution duration_seconds='3.438' timestamp='2017-11-09-Thu-12.09.59.205'/>
           </GithubClient>
         </section>
         <section name='Fetched label'>
