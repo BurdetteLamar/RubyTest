@@ -50,7 +50,7 @@ Notes:
 ```xml
 <rescued_exception_test>
   <summary errors='1' failures='1' verdicts='2'/>
-  <test_method duration_seconds='0.000' name='rescued_exception_test' timestamp='2017-11-09-Thu-12.09.57.298'>
+  <test_method duration_seconds='0.000' name='rescued_exception_test' timestamp='2017-11-09-Thu-12.30.52.760'>
     <section name='With GithubClient'>
       <section name='Rescued exception'>
         <uncaught_exception>
@@ -82,7 +82,7 @@ C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
     </section>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
-    <verdict id='error_count' message='error count' method='verdict_assert_equal?' outcome='failed' volatile='true'>
+    <verdict id='error_count' method='verdict_assert_equal?' outcome='failed' volatile='true'>
       <exp_value>0</exp_value>
       <act_value>1</act_value>
       <exception>

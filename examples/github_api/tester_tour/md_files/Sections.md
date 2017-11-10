@@ -65,7 +65,7 @@ Notes:
 ```xml
 <sections_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='6.032' name='sections_test' timestamp='2017-11-09-Thu-12.09.49.361'>
+  <test_method duration_seconds='6.047' name='sections_test' timestamp='2017-11-09-Thu-12.30.44.744'>
     <section name='With GithubClient'>
       <section name='First outer section'>
         <section name='First inner section'>
@@ -78,22 +78,22 @@ Notes:
       <section name='Second outer section'>
         <comment>Some test code can go here</comment>
       </section>
-      <section name='Section with timestamp' timestamp='2017-11-09-Thu-12.09.49.361'>
+      <section name='Section with timestamp' timestamp='2017-11-09-Thu-12.30.44.760'>
         <comment>Some test code can go here</comment>
       </section>
       <section duration_seconds='1.016' name='Section with timestamp'>
         <comment>Some test code can go here</comment>
       </section>
-      <section duration_seconds='2.000' name='Section with timestamp and duration' timestamp='2017-11-09-Thu-12.09.50.376'>
+      <section duration_seconds='2.000' name='Section with timestamp and duration' timestamp='2017-11-09-Thu-12.30.45.775'>
         <comment>Some test code can go here</comment>
       </section>
-      <section duration_seconds='3.016' name='Order does not matter' timestamp='2017-11-09-Thu-12.09.52.376'>
+      <section duration_seconds='3.016' name='Order does not matter' timestamp='2017-11-09-Thu-12.30.47.775'>
         <comment>Some test code can go here</comment>
       </section>
     </section>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
-    <verdict id='error_count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
+    <verdict id='error_count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
       <exp_value>0</exp_value>
       <act_value>0</act_value>
     </verdict>

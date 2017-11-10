@@ -51,10 +51,10 @@ Notes:
 ```xml
 <nested_data_valid_test>
   <summary errors='0' failures='1' verdicts='49'/>
-  <test_method duration_seconds='3.469' name='nested_data_valid_test' timestamp='2017-11-09-Thu-12.10.24.161'>
+  <test_method duration_seconds='3.438' name='nested_data_valid_test' timestamp='2017-11-09-Thu-12.31.19.440'>
     <section name='With GithubClient'>
       <GithubClient method='GET' url='https://api.github.com/rate_limit'>
-        <execution duration_seconds='3.438' timestamp='2017-11-09-Thu-12.10.24.161'/>
+        <execution duration_seconds='3.406' timestamp='2017-11-09-Thu-12.31.19.440'/>
       </GithubClient>
       <section name='This is valid'>
         <section name='verdict_assert_integer_positive?'>
@@ -71,10 +71,10 @@ Notes:
         <section name='verdict_assert_integer_positive?'>
           <verdict id='rate_limit_valid:resources:resources:core:core:remaining:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
             <exp_value>Integer</exp_value>
-            <act_value>4937</act_value>
+            <act_value>4846</act_value>
           </verdict>
           <verdict id='rate_limit_valid:resources:resources:core:core:remaining:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>4937</object_1>
+            <object_1>4846</object_1>
             <operator>:&gt;</operator>
             <object_2>0</object_2>
           </verdict>
@@ -115,10 +115,10 @@ Notes:
         <section name='verdict_assert_integer_positive?'>
           <verdict id='rate_limit_valid:resources:resources:search:search:reset:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
             <exp_value>Integer</exp_value>
-            <act_value>1510251088</act_value>
+            <act_value>1510252343</act_value>
           </verdict>
           <verdict id='rate_limit_valid:resources:resources:search:search:reset:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>1510251088</object_1>
+            <object_1>1510252343</object_1>
             <operator>:&gt;</operator>
             <object_2>0</object_2>
           </verdict>
@@ -148,10 +148,10 @@ Notes:
         <section name='verdict_assert_integer_positive?'>
           <verdict id='rate_limit_valid:resources:resources:graphql:graphql:reset:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
             <exp_value>Integer</exp_value>
-            <act_value>1510254628</act_value>
+            <act_value>1510255883</act_value>
           </verdict>
           <verdict id='rate_limit_valid:resources:resources:graphql:graphql:reset:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>1510254628</object_1>
+            <object_1>1510255883</object_1>
             <operator>:&gt;</operator>
             <object_2>0</object_2>
           </verdict>
@@ -170,10 +170,10 @@ Notes:
         <section name='verdict_assert_integer_positive?'>
           <verdict id='rate_limit_valid:rate:rate:remaining:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
             <exp_value>Integer</exp_value>
-            <act_value>4937</act_value>
+            <act_value>4846</act_value>
           </verdict>
           <verdict id='rate_limit_valid:rate:rate:remaining:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>4937</object_1>
+            <object_1>4846</object_1>
             <operator>:&gt;</operator>
             <object_2>0</object_2>
           </verdict>
@@ -205,10 +205,10 @@ Notes:
         <section name='verdict_assert_integer_positive?'>
           <verdict id='rate_limit_not_valid:resources:resources:core:core:remaining:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
             <exp_value>Integer</exp_value>
-            <act_value>4937</act_value>
+            <act_value>4846</act_value>
           </verdict>
           <verdict id='rate_limit_not_valid:resources:resources:core:core:remaining:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>4937</object_1>
+            <object_1>4846</object_1>
             <operator>:&gt;</operator>
             <object_2>0</object_2>
           </verdict>
@@ -276,10 +276,10 @@ C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
         <section name='verdict_assert_integer_positive?'>
           <verdict id='rate_limit_not_valid:resources:resources:search:search:reset:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
             <exp_value>Integer</exp_value>
-            <act_value>1510251088</act_value>
+            <act_value>1510252343</act_value>
           </verdict>
           <verdict id='rate_limit_not_valid:resources:resources:search:search:reset:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>1510251088</object_1>
+            <object_1>1510252343</object_1>
             <operator>:&gt;</operator>
             <object_2>0</object_2>
           </verdict>
@@ -309,10 +309,10 @@ C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
         <section name='verdict_assert_integer_positive?'>
           <verdict id='rate_limit_not_valid:resources:resources:graphql:graphql:reset:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
             <exp_value>Integer</exp_value>
-            <act_value>1510254628</act_value>
+            <act_value>1510255883</act_value>
           </verdict>
           <verdict id='rate_limit_not_valid:resources:resources:graphql:graphql:reset:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>1510254628</object_1>
+            <object_1>1510255883</object_1>
             <operator>:&gt;</operator>
             <object_2>0</object_2>
           </verdict>
@@ -331,10 +331,10 @@ C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
         <section name='verdict_assert_integer_positive?'>
           <verdict id='rate_limit_not_valid:rate:rate:remaining:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
             <exp_value>Integer</exp_value>
-            <act_value>4937</act_value>
+            <act_value>4846</act_value>
           </verdict>
           <verdict id='rate_limit_not_valid:rate:rate:remaining:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>4937</object_1>
+            <object_1>4846</object_1>
             <operator>:&gt;</operator>
             <object_2>0</object_2>
           </verdict>
@@ -354,7 +354,7 @@ C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
     </section>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
-    <verdict id='error_count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
+    <verdict id='error_count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
       <exp_value>0</exp_value>
       <act_value>0</act_value>
     </verdict>

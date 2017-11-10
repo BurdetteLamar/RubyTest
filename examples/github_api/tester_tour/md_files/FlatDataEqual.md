@@ -67,12 +67,12 @@ Notes:
 ```xml
 <flat_data_equal_test>
   <summary errors='0' failures='1' verdicts='11'/>
-  <test_method duration_seconds='3.422' name='flat_data_equal_test' timestamp='2017-11-09-Thu-12.10.04.549'>
+  <test_method duration_seconds='3.382' name='flat_data_equal_test' timestamp='2017-11-09-Thu-12.31.00.057'>
     <section name='With GithubClient'>
       <section name='Fetch an instance of Label'>
         <section name='Fetch an label'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
-            <execution duration_seconds='3.391' timestamp='2017-11-09-Thu-12.10.04.564'/>
+            <execution duration_seconds='3.366' timestamp='2017-11-09-Thu-12.31.00.057'/>
           </GithubClient>
         </section>
       </section>
@@ -144,7 +144,7 @@ C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
     </section>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
-    <verdict id='error_count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
+    <verdict id='error_count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
       <exp_value>0</exp_value>
       <act_value>0</act_value>
     </verdict>

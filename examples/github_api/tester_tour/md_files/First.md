@@ -46,7 +46,7 @@ Notes:
 ```xml
 <first_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='first_test' timestamp='2017-11-09-Thu-12.09.48.407'>
+  <test_method duration_seconds='0.000' name='first_test' timestamp='2017-11-09-Thu-12.30.43.806'>
     <section name='With GithubClient'>
       <comment>Test code goes here</comment>
       <comment>Method prelude yields two objects:</comment>
@@ -55,7 +55,7 @@ Notes:
     </section>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
-    <verdict id='error_count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
+    <verdict id='error_count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
       <exp_value>0</exp_value>
       <act_value>0</act_value>
     </verdict>

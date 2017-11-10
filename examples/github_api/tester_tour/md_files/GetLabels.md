@@ -49,12 +49,12 @@ Notes:
 ```xml
 <get_labels_test>
   <summary errors='0' failures='0' verdicts='8'/>
-  <test_method name='get_labels_test' timestamp='2017-11-09-Thu-12.10.28.692'>
-    <section duration_seconds='3.453' name='With GithubClient'>
+  <test_method name='get_labels_test' timestamp='2017-11-09-Thu-12.31.23.878'>
+    <section duration_seconds='3.438' name='With GithubClient'>
       <section name='Test GetLabels'>
-        <section name='get_labels' timestamp='2017-11-09-Thu-12.10.28.692'>
+        <section name='get_labels' timestamp='2017-11-09-Thu-12.31.23.878'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
-            <execution duration_seconds='3.453' timestamp='2017-11-09-Thu-12.10.28.692'/>
+            <execution duration_seconds='3.438' timestamp='2017-11-09-Thu-12.31.23.878'/>
           </GithubClient>
           <section name='Info'>
             <data fetched_labels_count='7'/>
@@ -106,7 +106,7 @@ Notes:
       </section>
     </section>
     <section name='Count of errors (unexpected exceptions)'>
-      <verdict id='error_count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
+      <verdict id='error_count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
         <exp_value>0</exp_value>
         <act_value>0</act_value>
       </verdict>
