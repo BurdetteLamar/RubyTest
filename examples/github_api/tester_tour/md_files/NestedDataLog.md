@@ -30,7 +30,7 @@ class NestedDataLogTest < BaseClassForTest
 
   def test_nested_data_log
     prelude do |client, log|
-      log.section('Fetch and log rate limit') do
+      log.section('Fetch and log a rate limit') do
         rate_limit = nil
         log.section('Fetch rate limit') do
           rate_limit = RateLimit.get(client)
@@ -54,43 +54,43 @@ Notes:
 ```xml
 <nested_data_log_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='3.938' name='nested_data_log_test' timestamp='2017-11-07-Tue-11.21.32.525'>
+  <test_method duration_seconds='3.391' name='nested_data_log_test' timestamp='2017-11-09-Thu-12.31.08.783'>
     <section name='With GithubClient'>
-      <section name='Fetch and log rate limit'>
+      <section name='Fetch and log a rate limit'>
         <section name='Fetch rate limit'>
           <GithubClient method='GET' url='https://api.github.com/rate_limit'>
-            <execution duration_seconds='3.922' timestamp='2017-11-07-Tue-11.21.32.525'/>
+            <execution duration_seconds='3.391' timestamp='2017-11-09-Thu-12.31.08.783'/>
           </GithubClient>
         </section>
         <section name='Fetched rate limit'>
           <section name='RateLimit::Resources'>
             <section name='RateLimit::Core_'>
               <data field='limit' value='5000'/>
-              <data field='remaining' value='4966'/>
-              <data field='reset' value='1510076832'/>
+              <data field='remaining' value='4846'/>
+              <data field='reset' value='1510254137'/>
             </section>
             <section name='RateLimit::Search'>
               <data field='limit' value='30'/>
               <data field='remaining' value='30'/>
-              <data field='reset' value='1510075357'/>
+              <data field='reset' value='1510252333'/>
             </section>
             <section name='RateLimit::Graphql'>
               <data field='limit' value='5000'/>
               <data field='remaining' value='5000'/>
-              <data field='reset' value='1510078897'/>
+              <data field='reset' value='1510255873'/>
             </section>
           </section>
           <section name='RateLimit::Rate'>
             <data field='limit' value='5000'/>
-            <data field='remaining' value='4966'/>
-            <data field='reset' value='1510076832'/>
+            <data field='remaining' value='4846'/>
+            <data field='reset' value='1510254137'/>
           </section>
         </section>
       </section>
     </section>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
-    <verdict id='error_count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
+    <verdict id='error_count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
       <exp_value>0</exp_value>
       <act_value>0</act_value>
     </verdict>

@@ -26,14 +26,12 @@ class VerdictsTest < BaseClassForTest
           log.verdict_assert?(
               verdict_id = :assert_should_pass,
               actual = true,
-              message: 'True is truthy'
           )
         end
         log.section('A refute verdict that should pass') do
           log.verdict_refute?(
               verdict_id = :refute_should_pass,
               actual = false,
-              message: 'False is not truthy'
           )
         end
       end
@@ -42,14 +40,12 @@ class VerdictsTest < BaseClassForTest
           log.verdict_assert?(
               verdict_id = :assert_should_fail,
               actual = false,
-              message: 'False is not truthy'
           )
         end
         log.section('A refute verdict that should fail') do
           log.verdict_refute?(
               verdict_id = :refute_should_fail,
               actual = true,
-              message: 'True is truthy'
           )
         end
       end
@@ -78,32 +74,32 @@ Notes:
 ```xml
 <verdicts_test>
   <summary errors='0' failures='2' verdicts='5'/>
-  <test_method duration_seconds='0.000' name='verdicts_test' timestamp='2017-11-07-Tue-11.21.15.209'>
+  <test_method duration_seconds='0.000' name='verdicts_test' timestamp='2017-11-09-Thu-12.30.51.744'>
     <section name='With GithubClient'>
       <section name='These verdicts should pass'>
         <section name='An assert verdict that should pass'>
-          <verdict id='assert_should_pass' message='True is truthy' method='verdict_assert?' outcome='passed' volatile='false'>
+          <verdict id='assert_should_pass' method='verdict_assert?' outcome='passed' volatile='false'>
             <act_value>true</act_value>
           </verdict>
         </section>
         <section name='A refute verdict that should pass'>
-          <verdict id='refute_should_pass' message='False is not truthy' method='verdict_refute?' outcome='passed' volatile='false'>
+          <verdict id='refute_should_pass' method='verdict_refute?' outcome='passed' volatile='false'>
             <act_value>false</act_value>
           </verdict>
         </section>
       </section>
       <section name='These verdicts should fail'>
         <section name='An assert verdict that should fail'>
-          <verdict id='assert_should_fail' message='False is not truthy' method='verdict_assert?' outcome='failed' volatile='false'>
+          <verdict id='assert_should_fail' method='verdict_assert?' outcome='failed' volatile='false'>
             <act_value>false</act_value>
             <exception>
               <class>Minitest::Assertion</class>
               <message>Expected false to be truthy.</message>
               <backtrace>
                 <![CDATA[
-C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:26:in `block (3 levels) in test_verdicts'
-C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:25:in `block (2 levels) in test_verdicts'
-C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:24:in `block in test_verdicts'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:24:in `block (3 levels) in test_verdicts'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:23:in `block (2 levels) in test_verdicts'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:22:in `block in test_verdicts'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:20:in `block in with'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:16:in `with'
@@ -118,16 +114,16 @@ C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
           </verdict>
         </section>
         <section name='A refute verdict that should fail'>
-          <verdict id='refute_should_fail' message='True is truthy' method='verdict_refute?' outcome='failed' volatile='false'>
+          <verdict id='refute_should_fail' method='verdict_refute?' outcome='failed' volatile='false'>
             <act_value>true</act_value>
             <exception>
               <class>Minitest::Assertion</class>
               <message>Expected true to not be truthy.</message>
               <backtrace>
                 <![CDATA[
-C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:33:in `block (3 levels) in test_verdicts'
-C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:32:in `block (2 levels) in test_verdicts'
-C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:24:in `block in test_verdicts'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:30:in `block (3 levels) in test_verdicts'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:29:in `block (2 levels) in test_verdicts'
+C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/verdicts_test.rb:22:in `block in test_verdicts'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:20:in `block in with'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/github_client.rb:16:in `with'
@@ -145,7 +141,7 @@ C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
     </section>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
-    <verdict id='error_count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
+    <verdict id='error_count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
       <exp_value>0</exp_value>
       <act_value>0</act_value>
     </verdict>

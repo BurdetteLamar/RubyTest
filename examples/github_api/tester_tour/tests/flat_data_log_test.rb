@@ -8,7 +8,7 @@ class FlatDataLogTest < BaseClassForTest
     prelude do |client, log|
       log.section('Fetch and log an instance of Label') do
         label = nil
-        log.section('Fetch an label') do
+        log.section('Fetch a label') do
           label = Label.get_first(client)
         end
         label.log(log, 'Fetched label')

@@ -76,7 +76,7 @@ Notes:
 ```xml
 <nested_data_new_2_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='nested_data_new_2_test' timestamp='2017-11-07-Tue-11.21.38.884'>
+  <test_method duration_seconds='0.000' name='nested_data_new_2_test' timestamp='2017-11-09-Thu-12.31.14.096'>
     <section name='With GithubClient'>
       <section name='Create and log nested data objects'>
         <section name='RateLimit'>
@@ -107,7 +107,7 @@ Notes:
     </section>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
-    <verdict id='error_count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
+    <verdict id='error_count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
       <exp_value>0</exp_value>
       <act_value>0</act_value>
     </verdict>

@@ -18,7 +18,7 @@ class FlatDataEqualTest < BaseClassForTest
         Label.verdict_equal?(log, :label_equal, label_0, label_1, 'Using Label.verdict_equal?')
       end
       log.section('These are not equal') do
-        label_1.id += 1
+        label_1.id = Label.invalid_value_for(:id)
         fail if Label.equal?(label_0, label_1)
         Label.verdict_equal?(log, :label_not_equal, label_0, label_1, 'Using Label.verdict_equal?')
       end

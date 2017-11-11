@@ -35,7 +35,7 @@ class FlatDataEqualTest < BaseClassForTest
         Label.verdict_equal?(log, :label_equal, label_0, label_1, 'Using Label.verdict_equal?')
       end
       log.section('These are not equal') do
-        label_1.id += 1
+        label_1.id = Label.invalid_value_for(:id)
         fail if Label.equal?(label_0, label_1)
         Label.verdict_equal?(log, :label_not_equal, label_0, label_1, 'Using Label.verdict_equal?')
       end
@@ -67,12 +67,12 @@ Notes:
 ```xml
 <flat_data_equal_test>
   <summary errors='0' failures='1' verdicts='11'/>
-  <test_method duration_seconds='3.471' name='flat_data_equal_test' timestamp='2017-11-07-Tue-11.21.23.553'>
+  <test_method duration_seconds='3.382' name='flat_data_equal_test' timestamp='2017-11-09-Thu-12.31.00.057'>
     <section name='With GithubClient'>
       <section name='Fetch an instance of Label'>
         <section name='Fetch an label'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
-            <execution duration_seconds='3.455' timestamp='2017-11-07-Tue-11.21.23.553'/>
+            <execution duration_seconds='3.366' timestamp='2017-11-09-Thu-12.31.00.057'/>
           </GithubClient>
         </section>
       </section>
@@ -101,10 +101,10 @@ Notes:
       <section name='These are not equal'>
         <verdict id='label_not_equal:id' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='failed' volatile='false'>
           <exp_value>562043326</exp_value>
-          <act_value>562043327</act_value>
+          <act_value>-1</act_value>
           <exception>
             <class>Minitest::Assertion</class>
-            <message>Expected: 562043326 Actual: 562043327</message>
+            <message>Expected: 562043326 Actual: -1</message>
             <backtrace>
               <![CDATA[
 C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:146:in `block in verdict_equal_recursive?'
@@ -144,7 +144,7 @@ C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
     </section>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
-    <verdict id='error_count' message='error count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
+    <verdict id='error_count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
       <exp_value>0</exp_value>
       <act_value>0</act_value>
     </verdict>
