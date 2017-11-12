@@ -2,13 +2,15 @@
 
 # Data Object CRUD
 
-So far, most of the interactions with the API have been for the purpose of explicitly testing an endpoint.
+So far, most of the interactions with the API have been via the actual endpoint classes.
 
-Many times, though, we'll want to _make use of_ an endpoint without _sctually testing it_.
+Many times, though, we'll want to access the API in a more convenient way, without our having to know details about the endpoints.
 
-A data class can help with this by providing CRUD methods (create, read, update, delete) that simply perform the desired actions, without testing or logging.
+(Having to know the endpoint class name and call paramemters would not be burdensome for an API that's reliably consistent.  Testers:  when's the last time you saw an API that's reliably consistent?)
 
-The <code>Label</code> class we've been working with does that.
+A data class can help with this by providing CRUD methods (Create, Read, Update, Delete) that perform the desired actions.
+
+The <code>Label</code> class we've been working with does just that.
 
 ## Example Test
 
@@ -17,6 +19,7 @@ The <code>Label</code> class we've been working with does that.
 Notes:
 
 - Here we create, read, update, and delete a <code>Label</code> object, using the CRUD methods (instead of accessing endpoints directly).
+- The conditional passages show how we would do these both without and with the CRUD methods.
 - Before creating, we delete the label, if it exists.
 
 ## Log

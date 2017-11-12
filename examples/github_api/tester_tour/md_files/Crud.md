@@ -6,13 +6,15 @@
 
 # Data Object CRUD
 
-So far, most of the interactions with the API have been for the purpose of explicitly testing an endpoint.
+So far, most of the interactions with the API have been via the actual endpoint classes.
 
-Many times, though, we'll want to _make use of_ an endpoint without _sctually testing it_.
+Many times, though, we'll want to access the API in a more convenient way, without our having to know details about the endpoints.
 
-A data class can help with this by providing CRUD methods (create, read, update, delete) that simply perform the desired actions, without testing or logging.
+(Having to know the endpoint class name and call paramemters would not be burdensome for an API that's reliably consistent.  Testers:  when's the last time you saw an API that's reliably consistent?)
 
-The <code>Label</code> class we've been working with does that.
+A data class can help with this by providing CRUD methods (Create, Read, Update, Delete) that perform the desired actions.
+
+The <code>Label</code> class we've been working with does just that.
 
 ## Example Test
 
@@ -43,14 +45,28 @@ class CrudTest < BaseClassForTest
           deleted = Label.delete_if_exist?(client, label_to_create)
           log.comment(format('Deleted?  %s.', deleted ? 'Yes' : 'No'))
         end
-        label_created = Label.create(client, label_to_create)
+        if ENV['NO_CRUD']
+          # Here's how we create a label via the endpoint.
+          require_relative '../../endpoints/labels/post_labels'
+          label_created = PostLabels.call(client, label_to_create)
+        else
+          # And here's how via the CRUD method.
+          label_created = Label.create(client, label_to_create)
+        end
         label_created.log(log, 'Label created')
       end
 
       log.section('Read') do
         label_to_read = label_created
         label_to_read.log(log, 'Log to read')
-        label_read = Label.read(client, label_to_read)
+        if ENV['NO_CRUD']
+          # Here's how we read a label via the endpoint.
+          require_relative '../../endpoints/labels/get_labels_name'
+          label_read = GetLabelsName.call(client, label_to_read)
+        else
+          # And here's how via the CRUD method.
+          label_read = Label.read(client, label_to_read)
+        end
         label_read.log(log, 'Label read')
       end
 
@@ -58,13 +74,27 @@ class CrudTest < BaseClassForTest
         label_to_update = label_read
         label_to_update.color = 'ffffff'
         label_to_update.log(log, 'Label to update')
-        label_updated = Label.update(client, label_read)
+        if ENV['NO_CRUD']
+          # Here's how we update a label via the endpoint.
+          require_relative '../../endpoints/labels/patch_labels_name'
+          label_updated = PatchLabelsName.call(client, label_to_update)
+        else
+          # And here's how via the CRUD method.
+          label_updated = Label.update(client, label_to_update)
+        end
         label_updated.log(log, 'Label updated')
       end
 
       log.section('Delete') do
         label_to_delete = label_updated
-        Label.delete(client, label_to_delete)
+        if ENV['NO_CRUD']
+          # Here's how we delete a label via the endpoint.
+          require_relative '../../endpoints/labels/delete_labels_name'
+          DeleteLabelsName.call(client, label_to_delete)
+        else
+          # And here's how via the CRUD method.
+          Label.delete(client, label_to_delete)
+        end
       end
 
     end
@@ -77,6 +107,7 @@ end
 Notes:
 
 - Here we create, read, update, and delete a <code>Label</code> object, using the CRUD methods (instead of accessing endpoints directly).
+- The conditional passages show how we would do these both without and with the CRUD methods.
 - Before creating, we delete the label, if it exists.
 
 ## Log
@@ -85,7 +116,7 @@ Notes:
 ```xml
 <crud_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='4.985' name='crud_test' timestamp='2017-11-09-Thu-12.31.52.473'>
+  <test_method duration_seconds='4.938' name='crud_test' timestamp='2017-11-12-Sun-08.02.15.371'>
     <section name='With GithubClient'>
       <section name='Create'>
         <section name='Label to create'>
@@ -95,16 +126,16 @@ Notes:
         </section>
         <section name='Delete if exists, to avoid collision'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
-            <execution duration_seconds='3.375' timestamp='2017-11-09-Thu-12.31.52.488'/>
+            <execution duration_seconds='3.422' timestamp='2017-11-12-Sun-08.02.15.371'/>
           </GithubClient>
           <comment>Deleted? No.</comment>
         </section>
         <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
           <parameters color='000000' name='label name'/>
-          <execution duration_seconds='0.391' timestamp='2017-11-09-Thu-12.31.55.863'/>
+          <execution duration_seconds='0.406' timestamp='2017-11-12-Sun-08.02.18.793'/>
         </GithubClient>
         <section name='Label created'>
-          <data field='id' value='745725476'/>
+          <data field='id' value='748036890'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'/>
           <data field='name' value='label name'/>
           <data field='color' value='000000'/>
@@ -113,17 +144,17 @@ Notes:
       </section>
       <section name='Read'>
         <section name='Log to read'>
-          <data field='id' value='745725476'/>
+          <data field='id' value='748036890'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'/>
           <data field='name' value='label name'/>
           <data field='color' value='000000'/>
           <data field='default' value='false'/>
         </section>
         <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
-          <execution duration_seconds='0.375' timestamp='2017-11-09-Thu-12.31.56.254'/>
+          <execution duration_seconds='0.375' timestamp='2017-11-12-Sun-08.02.19.199'/>
         </GithubClient>
         <section name='Label read'>
-          <data field='id' value='745725476'/>
+          <data field='id' value='748036890'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'/>
           <data field='name' value='label name'/>
           <data field='color' value='000000'/>
@@ -132,7 +163,7 @@ Notes:
       </section>
       <section name='Update'>
         <section name='Label to update'>
-          <data field='id' value='745725476'/>
+          <data field='id' value='748036890'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'/>
           <data field='name' value='label name'/>
           <data field='color' value='ffffff'/>
@@ -140,10 +171,10 @@ Notes:
         </section>
         <GithubClient method='PATCH' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
           <parameters color='ffffff'/>
-          <execution duration_seconds='0.422' timestamp='2017-11-09-Thu-12.31.56.629'/>
+          <execution duration_seconds='0.359' timestamp='2017-11-12-Sun-08.02.19.574'/>
         </GithubClient>
         <section name='Label updated'>
-          <data field='id' value='745725476'/>
+          <data field='id' value='748036890'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'/>
           <data field='name' value='label name'/>
           <data field='color' value='ffffff'/>
@@ -152,7 +183,7 @@ Notes:
       </section>
       <section name='Delete'>
         <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
-          <execution duration_seconds='0.406' timestamp='2017-11-09-Thu-12.31.57.051'/>
+          <execution duration_seconds='0.375' timestamp='2017-11-12-Sun-08.02.19.934'/>
         </GithubClient>
       </section>
     </section>
