@@ -380,6 +380,15 @@ class Log < BaseClass
     verdicts_by_path
   end
 
+  def assert_counts(verdict:, failure:, error:)
+    expected_counts = {
+        :verdict => verdict,
+        :failure => failure,
+        :error => error
+    }
+    assert_equal(expected_counts.inspect, self.counts.inspect, 'Counts')
+  end
+
   private
 
   Contract MiniTest::Test, Maybe[Hash], Maybe[Bool] => nil

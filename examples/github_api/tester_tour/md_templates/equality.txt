@@ -1,0 +1,20 @@
+[navigation_links]
+
+# Equality
+
+A data class may offer convenience methods for determing and verifying equality.
+
+## Example Test
+
+[file_source](../tests/equality_test.rb)
+
+Notes:
+
+- Method <code>Label.equal?</code> determines whether two objects are equal.
+- Method <code>Label.verdict_equak></code> verifies (with logging) that two objects are equal.
+
+## Log
+
+[file_source](../logs/test_equality.xml)
+
+[navigation_links]

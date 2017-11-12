@@ -140,6 +140,8 @@ EOT
       /,
       :data_object_methods => %w/
           crud
+          getters
+          equality
       /,
       :next => %w/
           more_to_come

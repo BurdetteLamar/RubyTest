@@ -21,10 +21,15 @@ class FirstTest < BaseClassForTest
 
   def test_first
     prelude do |client, log|
+
       log.comment('Test code goes here')
+
       log.comment('Method prelude yields two objects:')
       log.comment('1. Instance of %s, for access to the GitHub API.' % client.class.name)
       log.comment('2. Instance of %s, for logging the test.' % log.class.name)
+
+      log.assert_counts(verdict: 0, failure: 0, error: 0)
+
     end
   end
 
@@ -40,13 +45,15 @@ Notes:
   - A domain-specific GitHub API client.
   - An open test log.  When the test exits the `prelude` block, the log builds its summaries, closes itself, and writes itself as XML.
 
+- A word about the final method called, <code>log.assert_counts</code>.  These pages are assembled from text, code, and logs that are rebuilt frequently.  That is, the test code is executed, and the code and fresh log are patched into a text template.  We would want to know if the counts of verdicts, failures, and errors are not as expected, which would indicate that something is different, and likely wrong.  Therefore we assert the expected counts at the end of each test.
+
 ## Log
 
 <code>test_first.xml</code>
 ```xml
 <first_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='first_test' timestamp='2017-11-12-Sun-08.01.06.672'>
+  <test_method duration_seconds='0.000' name='first_test' timestamp='2017-11-12-Sun-09.43.29.144'>
     <section name='With GithubClient'>
       <comment>Test code goes here</comment>
       <comment>Method prelude yields two objects:</comment>
