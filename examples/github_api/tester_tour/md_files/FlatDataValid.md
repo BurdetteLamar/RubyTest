@@ -55,10 +55,10 @@ Notes:
 ```xml
 <flat_data_valid_test>
   <summary errors='0' failures='1' verdicts='15'/>
-  <test_method duration_seconds='3.438' name='flat_data_valid_test' timestamp='2017-11-12-Sun-09.43.50.461'>
+  <test_method duration_seconds='3.516' name='flat_data_valid_test' timestamp='2017-11-12-Sun-09.53.12.637'>
     <section name='With GithubClient'>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
-        <execution duration_seconds='3.422' timestamp='2017-11-12-Sun-09.43.50.461'/>
+        <execution duration_seconds='3.500' timestamp='2017-11-12-Sun-09.53.12.637'/>
       </GithubClient>
       <section name='This is valid'>
         <section name='verdict_assert_integer_positive?'>
