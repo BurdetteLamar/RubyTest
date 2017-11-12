@@ -50,7 +50,7 @@ Notes:
 ```xml
 <rescued_exception_test>
   <summary errors='1' failures='1' verdicts='2'/>
-  <test_method duration_seconds='0.000' name='rescued_exception_test' timestamp='2017-11-09-Thu-12.30.52.760'>
+  <test_method duration_seconds='0.000' name='rescued_exception_test' timestamp='2017-11-12-Sun-08.01.15.547'>
     <section name='With GithubClient'>
       <section name='Rescued exception'>
         <uncaught_exception>
