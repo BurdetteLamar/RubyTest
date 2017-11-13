@@ -69,22 +69,22 @@ Notes:
 ```xml
 <get_labels_name_test>
   <summary errors='0' failures='0' verdicts='9'/>
-  <test_method name='get_labels_name_test' timestamp='2017-11-12-Sun-09.53.42.973'>
-    <section duration_seconds='5.074' name='With GithubClient'>
+  <test_method name='get_labels_name_test' timestamp='2017-11-13-Mon-11.05.30.507'>
+    <section duration_seconds='4.953' name='With GithubClient'>
       <section name='Test GetLabelsName'>
         <section name='Create the label to be fetched'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-            <execution duration_seconds='3.433' timestamp='2017-11-12-Sun-09.53.42.973'/>
+            <execution duration_seconds='3.375' timestamp='2017-11-13-Mon-11.05.30.507'/>
           </GithubClient>
           <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
             <parameters color='000000' name='test_label'/>
-            <execution duration_seconds='0.422' timestamp='2017-11-12-Sun-09.53.46.406'/>
+            <execution duration_seconds='0.359' timestamp='2017-11-13-Mon-11.05.33.882'/>
           </GithubClient>
         </section>
         <section name='Test fetching the created label'>
-          <section name='get_label' timestamp='2017-11-12-Sun-09.53.46.827'>
+          <section name='get_label' timestamp='2017-11-13-Mon-11.05.34.241'>
             <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-              <execution duration_seconds='0.406' timestamp='2017-11-12-Sun-09.53.46.827'/>
+              <execution duration_seconds='0.344' timestamp='2017-11-13-Mon-11.05.34.241'/>
             </GithubClient>
             <section name='Evaluation'>
               <verdict id='get_label:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
@@ -94,10 +94,10 @@ Notes:
               <section name='verdict_assert_integer_positive?'>
                 <verdict id='get_label:valid:id:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
                   <exp_value>Integer</exp_value>
-                  <act_value>748106555</act_value>
+                  <act_value>749158719</act_value>
                 </verdict>
                 <verdict id='get_label:valid:id:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-                  <object_1>748106555</object_1>
+                  <object_1>749158719</object_1>
                   <operator>:&gt;</operator>
                   <object_2>0</object_2>
                 </verdict>
@@ -127,10 +127,10 @@ Notes:
           </section>
           <section name='Clean up'>
             <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-              <execution duration_seconds='0.422' timestamp='2017-11-12-Sun-09.53.47.234'/>
+              <execution duration_seconds='0.375' timestamp='2017-11-13-Mon-11.05.34.585'/>
             </GithubClient>
             <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-              <execution duration_seconds='0.391' timestamp='2017-11-12-Sun-09.53.47.656'/>
+              <execution duration_seconds='0.500' timestamp='2017-11-13-Mon-11.05.34.960'/>
             </GithubClient>
           </section>
         </section>

@@ -380,13 +380,15 @@ class Log < BaseClass
     verdicts_by_path
   end
 
-  def assert_counts(verdict:, failure:, error:)
-    expected_counts = {
-        :verdict => verdict,
-        :failure => failure,
-        :error => error
-    }
-    assert_equal(expected_counts.inspect, self.counts.inspect, 'Counts')
+  Contract String => HashOf[Symbol, Integer]
+  def self.get_counts_from_file(file_path)
+    doc = Nokogiri::XML(File.open(file_path))
+    xml_summary = doc.xpath('//summary').first
+    summary_hash = {}
+    xml_summary.attributes.each_pair do |name, value|
+      summary_hash.store(name.to_sym, Integer(value.value))
+    end
+    summary_hash
   end
 
   private

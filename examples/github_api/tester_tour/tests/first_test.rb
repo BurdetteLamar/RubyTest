@@ -11,8 +11,6 @@ class FirstTest < BaseClassForTest
       log.comment('1. Instance of %s, for access to the GitHub API.' % client.class.name)
       log.comment('2. Instance of %s, for logging the test.' % log.class.name)
 
-      log.assert_counts(verdict: 0, failure: 0, error: 0)
-
     end
   end
 

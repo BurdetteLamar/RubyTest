@@ -49,12 +49,12 @@ Notes:
 ```xml
 <get_labels_test>
   <summary errors='0' failures='0' verdicts='8'/>
-  <test_method name='get_labels_test' timestamp='2017-11-12-Sun-09.53.32.501'>
-    <section duration_seconds='3.406' name='With GithubClient'>
+  <test_method name='get_labels_test' timestamp='2017-11-13-Mon-11.05.20.334'>
+    <section duration_seconds='3.375' name='With GithubClient'>
       <section name='Test GetLabels'>
-        <section name='get_labels' timestamp='2017-11-12-Sun-09.53.32.501'>
+        <section name='get_labels' timestamp='2017-11-13-Mon-11.05.20.350'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
-            <execution duration_seconds='3.406' timestamp='2017-11-12-Sun-09.53.32.501'/>
+            <execution duration_seconds='3.375' timestamp='2017-11-13-Mon-11.05.20.350'/>
           </GithubClient>
           <section name='Info'>
             <data fetched_labels_count='7'/>

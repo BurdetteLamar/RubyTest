@@ -13,6 +13,4 @@ This domain-specific GitHub REST API framework is layered onto the underlying Ru
 - Data objects, derived from robust base classes.
 - (More to come).
 
-A word about the final method called in each test, <code>log.assert_counts</code>.  These pages are assembled from text, code, and logs that are rebuilt frequently.  That is, each test is re-executed, and the code and refreshed log are patched into a text template.  We would want to know if the counts of verdicts, failures, and errors are not as expected, which would indicate that something is different, and likely wrong.  Therefore we assert the expected counts at the end of each test.
-
 [navigation_links]
