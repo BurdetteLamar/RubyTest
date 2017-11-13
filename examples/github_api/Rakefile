@@ -140,6 +140,8 @@ EOT
       /,
       :data_object_methods => %w/
           crud
+          getters
+          equality
       /,
       :next => %w/
           more_to_come
@@ -182,6 +184,9 @@ EOT
             log_dir_path,
             log_file_name,
         )
+        expected_error_count = page_name.match('exception') ? 1 : 0
+        counts = Log.get_counts_from_file(log_file_path)
+        raise RuntimeError.new(counts.inspect) if counts[:errors] != expected_error_count
         conditioned_file_path = File.join(
             conditioned_log_dir_path,
             log_file_name,

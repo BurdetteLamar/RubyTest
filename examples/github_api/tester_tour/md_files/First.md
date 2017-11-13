@@ -21,10 +21,13 @@ class FirstTest < BaseClassForTest
 
   def test_first
     prelude do |client, log|
+
       log.comment('Test code goes here')
+
       log.comment('Method prelude yields two objects:')
       log.comment('1. Instance of %s, for access to the GitHub API.' % client.class.name)
       log.comment('2. Instance of %s, for logging the test.' % log.class.name)
+
     end
   end
 
@@ -46,7 +49,7 @@ Notes:
 ```xml
 <first_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='first_test' timestamp='2017-11-12-Sun-08.01.06.672'>
+  <test_method duration_seconds='0.000' name='first_test' timestamp='2017-11-13-Mon-11.04.39.146'>
     <section name='With GithubClient'>
       <comment>Test code goes here</comment>
       <comment>Method prelude yields two objects:</comment>
