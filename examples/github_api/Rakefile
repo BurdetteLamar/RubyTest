@@ -142,6 +142,7 @@ EOT
           crud
           getters
           equality
+          validity
       /,
       :next => %w/
           more_to_come

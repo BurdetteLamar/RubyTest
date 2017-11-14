@@ -26,6 +26,7 @@ Each data class derives from base classes that provide for:
 - Self-logging.
 - Verdicts:  automatically-logged verifications.
 - Automatically-logged self-validation.
+- Determining and verifying resource existence.
 
 **Prev Stop:** [Unrescued Exception](./UnrescuedException.md#unrescued-exception)
 

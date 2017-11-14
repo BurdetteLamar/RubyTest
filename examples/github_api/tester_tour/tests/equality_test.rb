@@ -22,8 +22,6 @@ class EqualityTest < BaseClassForTest
         Label.verdict_equal?(log, :equal, label_0, label_1)
       end
 
-      p log.counts
-
     end
 
   end

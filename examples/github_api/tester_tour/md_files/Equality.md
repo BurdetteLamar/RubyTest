@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
 **Prev Stop:** [Getters](./Getters.md#getters)
 
-**Next Stop:** [More to Come ...](./MoreToCome.md#more-to-come-)
+**Next Stop:** [Validity](./Validity.md#validity)
 
 
 # Equality
@@ -36,8 +36,6 @@ class EqualityTest < BaseClassForTest
         Label.verdict_equal?(log, :equal, label_0, label_1)
       end
 
-      p log.counts
-
     end
 
   end
@@ -47,8 +45,8 @@ end
 
 Notes:
 
-- Method <code>Label.equal?</code> determines whether two objects are equal.
-- Method <code>Label.verdict_equak></code> verifies (with logging) that two objects are equal.
+- Method <code>Label.equal?</code> determines whether two <code>Label</code> objects are equal.
+- Method <code>Label.verdict_equal?></code> verifies (with logging) that two <code>Label</code> objects are equal.
 
 ## Log
 
@@ -56,10 +54,10 @@ Notes:
 ```xml
 <equality_test>
   <summary errors='0' failures='4' verdicts='6'/>
-  <test_method duration_seconds='3.672' name='equality_test' timestamp='2017-11-14-Tue-11.56.39.870'>
+  <test_method duration_seconds='3.641' name='equality_test' timestamp='2017-11-14-Tue-12.41.07.692'>
     <section name='With GithubClient'>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
-        <execution duration_seconds='3.500' timestamp='2017-11-14-Tue-11.56.39.870'/>
+        <execution duration_seconds='3.485' timestamp='2017-11-14-Tue-12.41.07.692'/>
       </GithubClient>
       <section name='Determine whether two labels are equal'>
         <comment>Equal? false</comment>
@@ -192,5 +190,5 @@ C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
 
 **Prev Stop:** [Getters](./Getters.md#getters)
 
-**Next Stop:** [More to Come ...](./MoreToCome.md#more-to-come-)
+**Next Stop:** [Validity](./Validity.md#validity)
 

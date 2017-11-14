@@ -10,8 +10,8 @@ A data class may offer convenience methods for determing and verifying equality.
 
 Notes:
 
-- Method <code>Label.equal?</code> determines whether two objects are equal.
-- Method <code>Label.verdict_equak></code> verifies (with logging) that two objects are equal.
+- Method <code>Label.equal?</code> determines whether two <code>Label</code> objects are equal.
+- Method <code>Label.verdict_equal?></code> verifies (with logging) that two <code>Label</code> objects are equal.
 
 ## Log
 
