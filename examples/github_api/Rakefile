@@ -175,6 +175,7 @@ EOT
            test_dir_path,
            test_file_name,
       )
+      counts = nil
       if File.exist?(test_file_path)
         command = format('ruby %s', test_file_path)
         system(command)
@@ -184,9 +185,7 @@ EOT
             log_dir_path,
             log_file_name,
         )
-        expected_error_count = page_name.match('exception') ? 1 : 0
         counts = Log.get_counts_from_file(log_file_path)
-        raise RuntimeError.new(counts.inspect) if counts[:errors] != expected_error_count
         conditioned_file_path = File.join(
             conditioned_log_dir_path,
             log_file_name,
@@ -230,6 +229,10 @@ EOT
       )
       link_item = format('- [%s](%s)', title, relative_link_path)
       index_file.puts(link_item)
+      if counts
+        expected_error_count = page_name.match('exception') ? 1 : 0
+        raise RuntimeError.new(counts.inspect) if counts[:errors] != expected_error_count
+      end
       i += 1
     end
   end
