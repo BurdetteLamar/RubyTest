@@ -20,7 +20,7 @@ class CrudTest < BaseClassForTest
         )
         label_to_create.log(log, 'Label to create')
         log.section('Delete if exists, to avoid collision') do
-          deleted = Label.delete_if_exist?(client, label_to_create)
+          deleted = label_to_create.delete_if_exist?(client)
           log.comment(format('Deleted?  %s.', deleted ? 'Yes' : 'No'))
         end
         if ENV['NO_CRUD']
@@ -29,7 +29,7 @@ class CrudTest < BaseClassForTest
           label_created = PostLabels.call(client, label_to_create)
         else
           # And here's how via the CRUD method.
-          label_created = Label.create(client, label_to_create)
+          label_created = label_to_create.create(client)
         end
         label_created.log(log, 'Label created')
       end
@@ -43,7 +43,7 @@ class CrudTest < BaseClassForTest
           label_read = GetLabelsName.call(client, label_to_read)
         else
           # And here's how via the CRUD method.
-          label_read = Label.read(client, label_to_read)
+          label_read = label_to_read.read(client)
         end
         label_read.log(log, 'Label read')
       end
@@ -58,7 +58,7 @@ class CrudTest < BaseClassForTest
           label_updated = PatchLabelsName.call(client, label_to_update)
         else
           # And here's how via the CRUD method.
-          label_updated = Label.update(client, label_to_update)
+          label_updated = label_to_update.update(client)
         end
         label_updated.log(log, 'Label updated')
       end
@@ -71,7 +71,7 @@ class CrudTest < BaseClassForTest
           DeleteLabelsName.call(client, label_to_delete)
         else
           # And here's how via the CRUD method.
-          Label.delete(client, label_to_delete)
+          label_to_delete.delete(client)
         end
       end
 

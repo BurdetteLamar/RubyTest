@@ -27,7 +27,7 @@ class DeleteLabelsName < BaseClassForEndpoint
         end
         log.section('Label deleted') do
           v_id = [verdict_id, :label_deleted]
-          Label.verdict_not_exist?(client, log, v_id, label_to_delete)
+          label_to_delete.verdict_not_exist?(client, log, v_id)
         end
       end
       return payload

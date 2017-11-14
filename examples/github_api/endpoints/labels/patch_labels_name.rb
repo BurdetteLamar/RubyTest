@@ -31,7 +31,7 @@ class PatchLabelsName < BaseClassForEndpoint
           Label.verdict_equal?(log, v_id, label_to_update, label_updated, 'Updated label correct')
         end
         log.section('Label updated') do
-          fetched_label = Label.read(client, label_to_update)
+          fetched_label = label_updated.read(client,)
           v_id = [verdict_id, :fetched_label]
           Label.verdict_equal?(log, v_id, label_to_update, fetched_label, 'Fetched label correct')
         end
