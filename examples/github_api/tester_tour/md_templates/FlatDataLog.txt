@@ -20,6 +20,6 @@ Notes:
 
 - Element `GithubClient` records an interaction with the GitHub API, showing the HTTP method and url.
 - Its subelement `execution` shows the timestamp and duration for the interaction.
-- The section named `Fetched IssueLabel` shows the values in the fetched issue label.
+- The section named `Fetched Label` shows the values in the fetched rate limit.
 
 [navigation_links]

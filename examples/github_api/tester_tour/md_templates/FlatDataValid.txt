@@ -16,17 +16,17 @@ Notes:
 
 - Use method `verdict_valid?` to verify that a data object's data are valid.
 - In section `This is valid`:
-  - A new `IssueLabel` with valid values is instantiated.
-  - Method `IssueLabel.verdict_valid? validates and logs each value in the issue label.
+  - A new `Label` with valid values is instantiated.
+  - Method `Label.verdict_valid? validates and logs each value in the rate limit.
 - In section `This is not valid`:
-  - A new `IssueLabel` with invalid values is instantiated.
-  - Method `IssueLabel.verdict_valid? validates and logs each value in the issue label.
+  - A new `Label` with invalid values is instantiated.
+  - Method `Label.verdict_valid? validates and logs each value in the rate limit.
   - The invalid value is not in the test itself, but instead comes from the data class.
 
 ## Log
 
 [file_source](../logs/test_flat_data_valid.xml)
-
+s
 Notes:
 
 - In section `This is valid`, all verdicts pass.

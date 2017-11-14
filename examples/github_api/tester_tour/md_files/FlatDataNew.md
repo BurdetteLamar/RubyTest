@@ -42,7 +42,7 @@ Notes:
 
 - Create a new data object by calling method `new` on the data class.
 - Pass the initial values in a hash of name/value pairs.
-- (Note that the instantiated `IssueLabel` exists only here in the test, and not in the Github API itself.)
+- (Note that the instantiated `Label` exists only here in the test, and not in the Github API itself.)
 
 ## Log
 
@@ -50,7 +50,7 @@ Notes:
 ```xml
 <flat_data_new_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='flat_data_new_test' timestamp='2017-11-13-Mon-11.04.54.850'>
+  <test_method duration_seconds='0.000' name='flat_data_new_test' timestamp='2017-11-14-Tue-03.14.39.958'>
     <section name='With GithubClient'>
       <section name='Instantiate and log an instance of Label'>
         <section name='Instantiated label'>

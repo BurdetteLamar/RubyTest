@@ -49,17 +49,17 @@ Notes:
 
 - Use method `equal?` to test data object equality, without logging.
 - Use method `verdict_equal?` to test object equality, including logging.
-- The test gets a known `IssueLabel`, then clones it.
-- We know that `IssueLabel` is flat, but it's good practice to use `deep_clone`, not `clone` just to be sure.
+- The test gets a known `Label`, then clones it.
+- We know that `Label` is flat, but it's good practice to use `deep_clone`, not `clone` just to be sure.
 - In section `These are equal`:
-  - Method `IssueLabel.equal?` tests equality, but does no logging.
+  - Method `Label.equal?` tests equality, but does no logging.
   - The `fail unless` proves that it worked.
-  - Method `IssueLabel.verdict_equal?` verifies and logs each value in the issue labels.
+  - Method `Label.verdict_equal?` verifies and logs each value in the rate limit.
 - In section `These are not equal`:
-  - One value in the issue label is modified.
-  - Method `IssueLabel.equal?` tests equality, but does no logging.
+  - One value in the rate limit is modified.
+  - Method `Label.equal?` tests equality, but does no logging.
   - The `fail if ` proves that it worked.
-  - Method `IssueLabel.verdict_equal?` verifies and logs each value in the issue labels.
+  - Method `Label.verdict_equal?` verifies and logs each value in the rate limit.
 
 ## Log
 
@@ -67,12 +67,12 @@ Notes:
 ```xml
 <flat_data_equal_test>
   <summary errors='0' failures='1' verdicts='11'/>
-  <test_method duration_seconds='3.444' name='flat_data_equal_test' timestamp='2017-11-13-Mon-11.04.55.913'>
+  <test_method duration_seconds='3.360' name='flat_data_equal_test' timestamp='2017-11-14-Tue-03.14.40.927'>
     <section name='With GithubClient'>
       <section name='Fetch an instance of Label'>
         <section name='Fetch an label'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
-            <execution duration_seconds='3.413' timestamp='2017-11-13-Mon-11.04.55.928'/>
+            <execution duration_seconds='3.344' timestamp='2017-11-14-Tue-03.14.40.927'/>
           </GithubClient>
         </section>
       </section>

@@ -43,12 +43,12 @@ Notes:
 ```xml
 <flat_data_log_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='3.360' name='flat_data_log_test' timestamp='2017-11-13-Mon-11.04.50.506'>
+  <test_method duration_seconds='4.031' name='flat_data_log_test' timestamp='2017-11-14-Tue-03.14.34.926'>
     <section name='With GithubClient'>
       <section name='Fetch and log an instance of Label'>
         <section name='Fetch a label'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
-            <execution duration_seconds='3.344' timestamp='2017-11-13-Mon-11.04.50.522'/>
+            <execution duration_seconds='4.031' timestamp='2017-11-14-Tue-03.14.34.926'/>
           </GithubClient>
         </section>
         <section name='Fetched label'>
@@ -74,7 +74,7 @@ Notes:
 
 - Element `GithubClient` records an interaction with the GitHub API, showing the HTTP method and url.
 - Its subelement `execution` shows the timestamp and duration for the interaction.
-- The section named `Fetched IssueLabel` shows the values in the fetched issue label.
+- The section named `Fetched Label` shows the values in the fetched rate limit.
 
 **Prev Stop:** [The Data Object](./DataObjects.md#the-data-object)
 

@@ -56,10 +56,10 @@ Notes:
 ```xml
 <equality_test>
   <summary errors='0' failures='4' verdicts='6'/>
-  <test_method duration_seconds='3.592' name='equality_test' timestamp='2017-11-13-Mon-11.05.59.274'>
+  <test_method duration_seconds='3.500' name='equality_test' timestamp='2017-11-14-Tue-03.15.44.381'>
     <section name='With GithubClient'>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
-        <execution duration_seconds='3.500' timestamp='2017-11-13-Mon-11.05.59.274'/>
+        <execution duration_seconds='3.344' timestamp='2017-11-14-Tue-03.15.44.396'/>
       </GithubClient>
       <section name='Determine whether two labels are equal'>
         <comment>Equal? false</comment>
