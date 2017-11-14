@@ -16,11 +16,11 @@ class PostLabelsTest < BaseClassForTest
           :default => false,
       )
       log.section('Test PostLabels') do
-        Label.delete_if_exist?(client, label_to_create)
+        label_to_create.delete_if_exist?(client)
         PostLabels.verdict_call_and_verify_success(client, :post_label, label_to_create)
       end
       log.section('Clean up') do
-        Label.delete_if_exist?(client, label_to_create)
+        label_to_create.delete_if_exist?(client)
       end
 
     end

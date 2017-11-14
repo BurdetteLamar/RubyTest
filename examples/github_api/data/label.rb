@@ -58,28 +58,28 @@ class Label < BaseClassForResource
 
   # CRUD.
 
-  Contract GithubClient, Label => Label
-  def self.create(client, label)
+  Contract GithubClient => Label
+  def create(client)
     require_relative '../endpoints/labels/post_labels'
-    PostLabels.call(client, label)
+    PostLabels.call(client, self)
   end
 
-  Contract GithubClient, Label => Label
-  def self.read(client, label)
+  Contract GithubClient => Label
+  def read(client)
     require_relative '../endpoints/labels/get_labels_name'
-    GetLabelsName.call(client, label)
+    GetLabelsName.call(client, self)
   end
 
-  Contract GithubClient, Label => Label
-  def self.update(client, label)
+  Contract GithubClient => Label
+  def update(client)
     require_relative '../endpoints/labels/patch_labels_name'
-    PatchLabelsName.call(client, label)
+    PatchLabelsName.call(client, self)
   end
 
-  Contract GithubClient, Label => nil
-  def self.delete(client, label)
+  Contract GithubClient => nil
+  def delete(client)
     require_relative '../endpoints/labels/delete_labels_name'
-    DeleteLabelsName.call(client, label)
+    DeleteLabelsName.call(client, self)
   end
 
   # Convenience.

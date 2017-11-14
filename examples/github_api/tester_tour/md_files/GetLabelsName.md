@@ -32,14 +32,14 @@ class GetLabelsNameTest < BaseClassForTest
               :color => '000000',
               :default => false,
           )
-          Label.delete_if_exist?(client, label_to_create)
-          label_to_fetch = Label.create(client, label_to_create)
+          label_to_create.delete_if_exist?(client)
+          label_to_fetch = label_to_create.create(client)
         end
         log.section('Test fetching the created label') do
           GetLabelsName.verdict_call_and_verify_success(client, :get_label, label_to_fetch)
         end
         log.section('Clean up') do
-          Label.delete_if_exist?(client, label_to_fetch)
+          label_to_fetch.delete_if_exist?(client)
         end
       end
 
@@ -53,8 +53,8 @@ end
 Notes:
 
 - The test creates the label that it will fetch.
-- It uses method `Label.delete_if_exist?` before and after, to avoid collisions and to clean up.
-- Test uses the data-object method `Label.create` to create the label.
+- It uses method `Label#delete_if_exist?` before and after, to avoid collisions and to clean up.
+- Test uses the data-object method `Label#create` to create the label.
 - Class `GetLabelsName` encapsulates the endpoint.
 - Its method `verdict_call_and_verify_success`:
   - Accepts the client, a verdict id, and the label to be fetched.
@@ -69,22 +69,22 @@ Notes:
 ```xml
 <get_labels_name_test>
   <summary errors='0' failures='0' verdicts='9'/>
-  <test_method name='get_labels_name_test' timestamp='2017-11-14-Tue-03.15.15.645'>
-    <section duration_seconds='4.875' name='With GithubClient'>
+  <test_method name='get_labels_name_test' timestamp='2017-11-14-Tue-12.40.38.655'>
+    <section duration_seconds='5.000' name='With GithubClient'>
       <section name='Test GetLabelsName'>
         <section name='Create the label to be fetched'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-            <execution duration_seconds='3.391' timestamp='2017-11-14-Tue-03.15.15.645'/>
+            <execution duration_seconds='3.453' timestamp='2017-11-14-Tue-12.40.38.655'/>
           </GithubClient>
           <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
             <parameters color='000000' name='test_label'/>
-            <execution duration_seconds='0.359' timestamp='2017-11-14-Tue-03.15.19.036'/>
+            <execution duration_seconds='0.438' timestamp='2017-11-14-Tue-12.40.42.109'/>
           </GithubClient>
         </section>
         <section name='Test fetching the created label'>
-          <section name='get_label' timestamp='2017-11-14-Tue-03.15.19.395'>
+          <section name='get_label' timestamp='2017-11-14-Tue-12.40.42.546'>
             <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-              <execution duration_seconds='0.359' timestamp='2017-11-14-Tue-03.15.19.395'/>
+              <execution duration_seconds='0.344' timestamp='2017-11-14-Tue-12.40.42.546'/>
             </GithubClient>
             <section name='Evaluation'>
               <verdict id='get_label:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
@@ -94,10 +94,10 @@ Notes:
               <section name='verdict_assert_integer_positive?'>
                 <verdict id='get_label:valid:id:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
                   <exp_value>Integer</exp_value>
-                  <act_value>749890474</act_value>
+                  <act_value>750392636</act_value>
                 </verdict>
                 <verdict id='get_label:valid:id:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-                  <object_1>749890474</object_1>
+                  <object_1>750392636</object_1>
                   <operator>:&gt;</operator>
                   <object_2>0</object_2>
                 </verdict>
@@ -127,10 +127,10 @@ Notes:
           </section>
           <section name='Clean up'>
             <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-              <execution duration_seconds='0.391' timestamp='2017-11-14-Tue-03.15.19.754'/>
+              <execution duration_seconds='0.391' timestamp='2017-11-14-Tue-12.40.42.890'/>
             </GithubClient>
             <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-              <execution duration_seconds='0.375' timestamp='2017-11-14-Tue-03.15.20.145'/>
+              <execution duration_seconds='0.375' timestamp='2017-11-14-Tue-12.40.43.281'/>
             </GithubClient>
           </section>
         </section>

@@ -1,0 +1,19 @@
+[navigation_links]
+
+# Validity
+
+A data class may offer convenience methods for determing and verifying validity.
+
+## Example Test
+
+[file_source](../tests/validity_test.rb)
+
+Notes:
+
+- Method <code>Label.verdict_valild?></code> verifies (with logging) that a <code>Label</code> is valid.
+
+## Log
+
+[file_source](../logs/test_validity.xml)
+
+[navigation_links]

@@ -33,14 +33,14 @@ class DeleteLabelsNameTest < BaseClassForTest
               :color => '000000',
               :default => false,
           )
-          Label.delete_if_exist?(client, label_to_create)
-          label_to_delete = Label.create(client, label_to_create)
+          label_to_create.delete_if_exist?(client)
+          label_to_delete = label_to_create.create(client)
         end
         log.section('Test deleting the created label') do
           DeleteLabelsName.verdict_call_and_verify_success(client, :delete_label, label_to_delete)
         end
         log.section('Clean up') do
-          Label.delete_if_exist?(client, label_to_create)
+          label_to_create.delete_if_exist?(client)
         end
       end
 
@@ -54,8 +54,8 @@ end
 Notes:
 
 - The test creates the label that it will delete.
-- It uses method `Label.delete_if_exist?` before and after, to avoid collisions and to clean up.
-- Test uses the data-object method `Label.create` to create the label.
+- It uses method `Label#delete_if_exist?` before and after, to avoid collisions and to clean up.
+- Test uses the data-object method `Label#create` to create the label.
 - Class `DeleteLabelsName` encapsulates the endpoint.
 - Its method `verdict_call_and_verify_success`:
   - Accepts the client, a verdict id, and the label to be deleted.
@@ -69,22 +69,22 @@ Notes:
 ```xml
 <delete_labels_name_test>
   <summary errors='0' failures='0' verdicts='3'/>
-  <test_method name='delete_labels_name_test' timestamp='2017-11-14-Tue-03.15.27.786'>
-    <section duration_seconds='4.953' name='With GithubClient'>
+  <test_method name='delete_labels_name_test' timestamp='2017-11-14-Tue-12.40.50.984'>
+    <section duration_seconds='4.828' name='With GithubClient'>
       <section name='Test DeleteLabelsName'>
         <section name='Create the label to be deleted'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-            <execution duration_seconds='3.453' timestamp='2017-11-14-Tue-03.15.27.786'/>
+            <execution duration_seconds='3.360' timestamp='2017-11-14-Tue-12.40.50.984'/>
           </GithubClient>
           <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
             <parameters color='000000' name='test_label'/>
-            <execution duration_seconds='0.375' timestamp='2017-11-14-Tue-03.15.31.239'/>
+            <execution duration_seconds='0.359' timestamp='2017-11-14-Tue-12.40.54.344'/>
           </GithubClient>
         </section>
         <section name='Test deleting the created label'>
-          <section name='delete_label' timestamp='2017-11-14-Tue-03.15.31.614'>
+          <section name='delete_label' timestamp='2017-11-14-Tue-12.40.54.703'>
             <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-              <execution duration_seconds='0.375' timestamp='2017-11-14-Tue-03.15.31.614'/>
+              <execution duration_seconds='0.375' timestamp='2017-11-14-Tue-12.40.54.703'/>
             </GithubClient>
             <section name='Evaluation'>
               <section name='Response empty'>
@@ -94,7 +94,7 @@ Notes:
               </section>
               <section name='Label deleted'>
                 <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-                  <execution duration_seconds='0.375' timestamp='2017-11-14-Tue-03.15.31.989'/>
+                  <execution duration_seconds='0.375' timestamp='2017-11-14-Tue-12.40.55.078'/>
                 </GithubClient>
                 <verdict id='delete_label:label_deleted' method='verdict_refute?' outcome='passed' volatile='false'>
                   <act_value>false</act_value>
@@ -104,7 +104,7 @@ Notes:
           </section>
           <section name='Clean up'>
             <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-              <execution duration_seconds='0.375' timestamp='2017-11-14-Tue-03.15.32.364'/>
+              <execution duration_seconds='0.359' timestamp='2017-11-14-Tue-12.40.55.453'/>
             </GithubClient>
           </section>
         </section>

@@ -16,11 +16,11 @@ class PatchLabelsNameTest < BaseClassForTest
             :color => '000000',
             :default => false,
         )
-        Label.delete_if_exist?(client, label_to_create)
-        label_to_patch = Label.create(client, label_to_create)
+        label_to_create.delete_if_exist?(client)
+        label_to_patch = label_to_create.create(client)
         label_to_patch.color = 'ffffff'
         PatchLabelsName.verdict_call_and_verify_success(client, :patch_label, label_to_patch)
-        Label.delete_if_exist?(client, label_to_patch)
+        label_to_patch.delete_if_exist?(client)
       end
 
     end

@@ -42,5 +42,6 @@ Each following tour stop assumes you've seen all its predecessors, so repetition
 - [CRUD](./tester_tour/md_files/Crud.md/#crud)
 - [Getters](./tester_tour/md_files/Getters.md/#getters)
 - [Equality](./tester_tour/md_files/Equality.md/#equality)
+- [Validity](./tester_tour/md_files/Validity.md/#validity)
 ### Next
 - [More to Come ...](./tester_tour/md_files/MoreToCome.md/#more-to-come-)

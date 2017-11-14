@@ -3,32 +3,32 @@ require_relative '../../../lib/helpers/object_helper'
 
 class BaseClassForResource < BaseClassForData
 
-  Contract GithubClient, self => Bool
+  Contract GithubClient => Bool
   # RubyMine cannot find RestClient::NotFound
   # noinspection RubyResolve
-  def self.exist?(client, object)
+  def exist?(client)
     begin
-      self.read(client, object)
+      read(client)
       return true
     rescue
       return false
     end
   end
 
-  Contract GithubClient, Log, VERDICT_ID, self => Bool
-  def self.verdict_exist?(client, log, verdict_id, object)
-    log.va?(verdict_id, self.exist?(client, object))
+  Contract GithubClient, Log, VERDICT_ID => Bool
+  def verdict_exist?(client, log, verdict_id)
+    log.va?(verdict_id, exist?(client))
   end
 
-  Contract GithubClient, Log, VERDICT_ID, self => Bool
-  def self.verdict_not_exist?(client, log, verdict_id, object)
-    log.vr?(verdict_id, self.exist?(client, object))
+  Contract GithubClient, Log, VERDICT_ID => Bool
+  def verdict_not_exist?(client, log, verdict_id)
+    log.vr?(verdict_id, exist?(client))
   end
 
-  Contract GithubClient, self => Bool
-  def self.delete_if_exist?(client, object)
-    if self.exist?(client, object)
-      self.delete(client, object)
+  Contract GithubClient => Bool
+  def delete_if_exist?(client)
+    if exist?(client)
+      delete(client)
       return true
     end
     false
