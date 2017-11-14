@@ -12,17 +12,17 @@ Notes:
 
 - Use method `equal?` to test nested data object equality, without logging.
 - Use method `verdict_equal?` to test nested object equality, including logging.
-- The test gets a known `IssueLabel`, then clones it.
-- We know that `IssueLabel` has nested data objects, so it's _necessary_ to use `deep_clone`, not `clone`.
+- The test gets a known `RateLimit`, then clones it.
+- We know that `RateLimit` has nested data objects, so it's _necessary_ to use `deep_clone`, not `clone`.
 - In section `These are equal`:
-  - Method `IssueLabel.equal?` tests equality, but does no logging.
+  - Method `RateLimit.equal?` tests equality, but does no logging.
   - The `fail unless` proves that it worked.
-  - Method `IssueLabel.verdict_equal?` verifies and logs each value in the issue labels.
+  - Method `RateLimit.verdict_equal?` verifies and logs each value in the rate limit.
 - In section `These are not equal`:
-  - One value in the issue label is modified.  The changed value is in a nested object.
-  - Method `IssueLabel.equal?` test equality, but does no logging.
+  - One value in the rate limit is modified.  The changed value is in a nested object.
+  - Method `RateLimit.equal?` test equality, but does no logging.
   - The `fail if ` proves that it worked.
-  - Method `IssueLabel.verdict_equal?` verifies and logs each value in the issue labels.
+  - Method `RateLimit.verdict_equal?` verifies and logs each value in the rate limit.
 
 ## Log
 

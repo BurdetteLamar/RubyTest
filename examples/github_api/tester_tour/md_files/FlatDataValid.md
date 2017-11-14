@@ -42,11 +42,11 @@ Notes:
 
 - Use method `verdict_valid?` to verify that a data object's data are valid.
 - In section `This is valid`:
-  - A new `IssueLabel` with valid values is instantiated.
-  - Method `IssueLabel.verdict_valid? validates and logs each value in the issue label.
+  - A new `Label` with valid values is instantiated.
+  - Method `Label.verdict_valid? validates and logs each value in the rate limit.
 - In section `This is not valid`:
-  - A new `IssueLabel` with invalid values is instantiated.
-  - Method `IssueLabel.verdict_valid? validates and logs each value in the issue label.
+  - A new `Label` with invalid values is instantiated.
+  - Method `Label.verdict_valid? validates and logs each value in the rate limit.
   - The invalid value is not in the test itself, but instead comes from the data class.
 
 ## Log
@@ -55,10 +55,10 @@ Notes:
 ```xml
 <flat_data_valid_test>
   <summary errors='0' failures='1' verdicts='15'/>
-  <test_method duration_seconds='3.360' name='flat_data_valid_test' timestamp='2017-11-13-Mon-11.05.00.529'>
+  <test_method duration_seconds='3.328' name='flat_data_valid_test' timestamp='2017-11-14-Tue-03.14.45.534'>
     <section name='With GithubClient'>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
-        <execution duration_seconds='3.344' timestamp='2017-11-13-Mon-11.05.00.529'/>
+        <execution duration_seconds='3.313' timestamp='2017-11-14-Tue-03.14.45.534'/>
       </GithubClient>
       <section name='This is valid'>
         <section name='verdict_assert_integer_positive?'>
@@ -159,7 +159,7 @@ C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/test
   </section>
 </flat_data_valid_test>
 ```
-
+s
 Notes:
 
 - In section `This is valid`, all verdicts pass.

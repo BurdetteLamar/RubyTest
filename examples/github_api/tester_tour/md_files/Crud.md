@@ -116,7 +116,7 @@ Notes:
 ```xml
 <crud_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='4.860' name='crud_test' timestamp='2017-11-13-Mon-11.05.48.555'>
+  <test_method duration_seconds='4.938' name='crud_test' timestamp='2017-11-14-Tue-03.15.33.724'>
     <section name='With GithubClient'>
       <section name='Create'>
         <section name='Label to create'>
@@ -126,16 +126,16 @@ Notes:
         </section>
         <section name='Delete if exists, to avoid collision'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
-            <execution duration_seconds='3.344' timestamp='2017-11-13-Mon-11.05.48.555'/>
+            <execution duration_seconds='3.438' timestamp='2017-11-14-Tue-03.15.33.739'/>
           </GithubClient>
           <comment>Deleted? No.</comment>
         </section>
         <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
           <parameters color='000000' name='label name'/>
-          <execution duration_seconds='0.391' timestamp='2017-11-13-Mon-11.05.51.898'/>
+          <execution duration_seconds='0.344' timestamp='2017-11-14-Tue-03.15.37.177'/>
         </GithubClient>
         <section name='Label created'>
-          <data field='id' value='749158978'/>
+          <data field='id' value='749890744'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'/>
           <data field='name' value='label name'/>
           <data field='color' value='000000'/>
@@ -144,17 +144,17 @@ Notes:
       </section>
       <section name='Read'>
         <section name='Log to read'>
-          <data field='id' value='749158978'/>
+          <data field='id' value='749890744'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'/>
           <data field='name' value='label name'/>
           <data field='color' value='000000'/>
           <data field='default' value='false'/>
         </section>
         <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
-          <execution duration_seconds='0.359' timestamp='2017-11-13-Mon-11.05.52.289'/>
+          <execution duration_seconds='0.375' timestamp='2017-11-14-Tue-03.15.37.521'/>
         </GithubClient>
         <section name='Label read'>
-          <data field='id' value='749158978'/>
+          <data field='id' value='749890744'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'/>
           <data field='name' value='label name'/>
           <data field='color' value='000000'/>
@@ -163,7 +163,7 @@ Notes:
       </section>
       <section name='Update'>
         <section name='Label to update'>
-          <data field='id' value='749158978'/>
+          <data field='id' value='749890744'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'/>
           <data field='name' value='label name'/>
           <data field='color' value='ffffff'/>
@@ -171,10 +171,10 @@ Notes:
         </section>
         <GithubClient method='PATCH' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
           <parameters color='ffffff'/>
-          <execution duration_seconds='0.391' timestamp='2017-11-13-Mon-11.05.52.648'/>
+          <execution duration_seconds='0.391' timestamp='2017-11-14-Tue-03.15.37.896'/>
         </GithubClient>
         <section name='Label updated'>
-          <data field='id' value='749158978'/>
+          <data field='id' value='749890744'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'/>
           <data field='name' value='label name'/>
           <data field='color' value='ffffff'/>
@@ -183,7 +183,7 @@ Notes:
       </section>
       <section name='Delete'>
         <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
-          <execution duration_seconds='0.375' timestamp='2017-11-13-Mon-11.05.53.039'/>
+          <execution duration_seconds='0.375' timestamp='2017-11-14-Tue-03.15.38.287'/>
         </GithubClient>
       </section>
     </section>
