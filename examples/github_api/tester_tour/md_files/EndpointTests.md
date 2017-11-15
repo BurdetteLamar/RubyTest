@@ -11,10 +11,10 @@ The next few stops will show how to test some GitHub REST API endpoints.
 These endpoints will be:
 
 - `GET /labels` - Get all labels.
-- `GET /labels/:name` - Get a label.
 - `POST /labels` - Create a label.
-- `PATCH /labels/:name` - Update a label.
-- `DELETE /labels/:name` - Delete a label.
+- `GET /labels/:name` - Get a label by name.
+- `PATCH /labels/:name` - Update a label by name.
+- `DELETE /labels/:name` - Delete a label by namd.
 
 **Prev Stop:** [Endpoint Objects](./EndpointObjects.md#endpoint-objects)
 

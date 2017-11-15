@@ -1,5 +1,5 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop:** [Validating Nested Data Objects](./NestedDataValid.md#validating-nested-data-objects)
+**Prev Stop:** [Existence Methods](./Existence.md#existence-methods)
 
 **Next Stop:** [Endpoint Tests](./EndpointTests.md#endpoint-tests)
 
@@ -24,7 +24,7 @@ Examples:
 
 Each of these methods defines what _success_ means (encapsulation!), and each performs and logs the actual verifications.
 
-**Prev Stop:** [Validating Nested Data Objects](./NestedDataValid.md#validating-nested-data-objects)
+**Prev Stop:** [Existence Methods](./Existence.md#existence-methods)
 
 **Next Stop:** [Endpoint Tests](./EndpointTests.md#endpoint-tests)
 

@@ -16,14 +16,16 @@ class BaseClassForResource < BaseClassForData
   end
 
   Contract GithubClient, Log, VERDICT_ID => Bool
-  def verdict_exist?(client, log, verdict_id)
+  def verdict_assert_exist?(client, log, verdict_id)
     log.va?(verdict_id, exist?(client))
   end
+  alias va_exist? verdict_assert_exist?
 
   Contract GithubClient, Log, VERDICT_ID => Bool
-  def verdict_not_exist?(client, log, verdict_id)
+  def verdict_refute_exist?(client, log, verdict_id)
     log.vr?(verdict_id, exist?(client))
   end
+  alias vr_exist? verdict_refute_exist?
 
   Contract GithubClient => Bool
   def delete_if_exist?(client)

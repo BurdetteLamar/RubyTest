@@ -30,6 +30,11 @@ Each following tour stop assumes you've seen all its predecessors, so repetition
 - [Creating Nested Data Objects, Part 2](./tester_tour/md_files/NestedDataNew2.md/#creating-nested-data-objects-part-2)
 - [Verifying Nested Data Objects](./tester_tour/md_files/NestedDataEqual.md/#verifying-nested-data-objects)
 - [Validating Nested Data Objects](./tester_tour/md_files/NestedDataValid.md/#validating-nested-data-objects)
+### Resources
+- [Resource Methods](./tester_tour/md_files/ResourceMethods.md/#resource-methods)
+- [CRUD](./tester_tour/md_files/Crud.md/#crud)
+- [Getters](./tester_tour/md_files/Getters.md/#getters)
+- [Existence Methods](./tester_tour/md_files/Existence.md/#existence-methods)
 ### Endpoints
 - [Endpoint Objects](./tester_tour/md_files/EndpointObjects.md/#endpoint-objects)
 - [Endpoint Tests](./tester_tour/md_files/EndpointTests.md/#endpoint-tests)
@@ -38,10 +43,5 @@ Each following tour stop assumes you've seen all its predecessors, so repetition
 - [GetLabelsName Test](./tester_tour/md_files/GetLabelsName.md/#getlabelsname-test)
 - [PatchLabelsName Test](./tester_tour/md_files/PatchLabelsName.md/#patchlabelsname-test)
 - [DeleteLabelsName Test](./tester_tour/md_files/DeleteLabelsName.md/#deletelabelsname-test)
-### Data Object Methods
-- [CRUD](./tester_tour/md_files/Crud.md/#crud)
-- [Getters](./tester_tour/md_files/Getters.md/#getters)
-- [Equality](./tester_tour/md_files/Equality.md/#equality)
-- [Validity](./tester_tour/md_files/Validity.md/#validity)
 ### Next
 - [More to Come ...](./tester_tour/md_files/MoreToCome.md/#more-to-come-)

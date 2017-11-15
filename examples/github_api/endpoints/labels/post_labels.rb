@@ -38,7 +38,7 @@ class PostLabels < BaseClassForEndpoint
         end
         log.section('Label created') do
           v_id = [verdict_id, :exists]
-          label_created.verdict_exist?(client, log, v_id)
+          label_created.verdict_assert_exist?(client, log, v_id)
         end
       end
       return label_created

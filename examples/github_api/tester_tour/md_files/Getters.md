@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
 **Prev Stop:** [CRUD](./Crud.md#crud)
 
-**Next Stop:** [Equality](./Equality.md#equality)
+**Next Stop:** [Existence Methods](./Existence.md#existence-methods)
 
 
 # Getters
@@ -52,11 +52,11 @@ Notes:
 ```xml
 <getters_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='3.844' name='getters_test' timestamp='2017-11-14-Tue-12.41.02.770'>
+  <test_method duration_seconds='4.096' name='getters_test' timestamp='2017-11-15-Wed-14.42.30.926'>
     <section name='With GithubClient'>
       <section name='Get the first label'>
         <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
-          <execution duration_seconds='3.469' timestamp='2017-11-14-Tue-12.41.02.770'/>
+          <execution duration_seconds='3.721' timestamp='2017-11-15-Wed-14.42.30.926'/>
         </GithubClient>
         <section name='Label'>
           <data field='id' value='562043326'/>
@@ -68,7 +68,7 @@ Notes:
       </section>
       <section name='Get all labels'>
         <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
-          <execution duration_seconds='0.375' timestamp='2017-11-14-Tue-12.41.06.239'/>
+          <execution duration_seconds='0.375' timestamp='2017-11-15-Wed-14.42.34.646'/>
         </GithubClient>
         <section name='Label'>
           <data field='id' value='562043326'/>
@@ -133,5 +133,5 @@ Notes:
 
 **Prev Stop:** [CRUD](./Crud.md#crud)
 
-**Next Stop:** [Equality](./Equality.md#equality)
+**Next Stop:** [Existence Methods](./Existence.md#existence-methods)
 

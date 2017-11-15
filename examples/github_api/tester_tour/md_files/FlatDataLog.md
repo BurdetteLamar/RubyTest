@@ -43,12 +43,12 @@ Notes:
 ```xml
 <flat_data_log_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='3.426' name='flat_data_log_test' timestamp='2017-11-14-Tue-12.39.58.311'>
+  <test_method duration_seconds='3.735' name='flat_data_log_test' timestamp='2017-11-15-Wed-14.41.53.388'>
     <section name='With GithubClient'>
       <section name='Fetch and log an instance of Label'>
         <section name='Fetch a label'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
-            <execution duration_seconds='3.410' timestamp='2017-11-14-Tue-12.39.58.326'/>
+            <execution duration_seconds='3.719' timestamp='2017-11-15-Wed-14.41.53.403'/>
           </GithubClient>
         </section>
         <section name='Fetched label'>
