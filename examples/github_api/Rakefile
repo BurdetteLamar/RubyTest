@@ -129,6 +129,12 @@ EOT
           nested_data_equal
           nested_data_valid
       /,
+      :resources => %w/
+          resource_methods
+          crud
+          getters
+          existence
+      /,
       :endpoints => %w/
           endpoint_objects
           endpoint_tests
@@ -137,12 +143,6 @@ EOT
           get_labels_name
           patch_labels_name
           delete_labels_name
-      /,
-      :data_object_methods => %w/
-          crud
-          getters
-          equality
-          validity
       /,
       :next => %w/
           more_to_come

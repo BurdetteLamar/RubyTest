@@ -2,16 +2,13 @@
 
 # CRUD
 
-So far, most of the interactions with the API have been via the actual endpoint classes.
+Methods:
 
-Many times, though, we'll want to access the API in a more convenient way, without our having to know details about the endpoints.
-
-(Having to know the endpoint class name and call paramemters would not be burdensome for an API that's reliably consistent.  Testers:  when's the last time you saw an API that's reliably consistent?)
-
-A data class can help with this by providing CRUD methods (Create, Read, Update, Delete) that perform the desired actions.
-
-The <code>Label</code> class we've been working with does just that.
-
+- `obj#create`
+- `obj#read`
+- `obj#update`
+- `obj#delete`
+s
 ## Example Test
 
 [file_source](../tests/crud_test.rb)

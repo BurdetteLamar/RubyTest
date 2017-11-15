@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
 **Prev Stop:** [PatchLabelsName Test](./PatchLabelsName.md#patchlabelsname-test)
 
-**Next Stop:** [CRUD](./Crud.md#crud)
+**Next Stop:** [More to Come ...](./MoreToCome.md#more-to-come-)
 
 
 # DeleteLabelsName Test
@@ -69,22 +69,22 @@ Notes:
 ```xml
 <delete_labels_name_test>
   <summary errors='0' failures='0' verdicts='3'/>
-  <test_method name='delete_labels_name_test' timestamp='2017-11-14-Tue-12.40.50.984'>
-    <section duration_seconds='4.828' name='With GithubClient'>
+  <test_method name='delete_labels_name_test' timestamp='2017-11-15-Wed-15.12.43.689'>
+    <section duration_seconds='4.813' name='With GithubClient'>
       <section name='Test DeleteLabelsName'>
         <section name='Create the label to be deleted'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-            <execution duration_seconds='3.360' timestamp='2017-11-14-Tue-12.40.50.984'/>
+            <execution duration_seconds='3.360' timestamp='2017-11-15-Wed-15.12.43.705'/>
           </GithubClient>
           <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
             <parameters color='000000' name='test_label'/>
-            <execution duration_seconds='0.359' timestamp='2017-11-14-Tue-12.40.54.344'/>
+            <execution duration_seconds='0.375' timestamp='2017-11-15-Wed-15.12.47.064'/>
           </GithubClient>
         </section>
         <section name='Test deleting the created label'>
-          <section name='delete_label' timestamp='2017-11-14-Tue-12.40.54.703'>
+          <section name='delete_label' timestamp='2017-11-15-Wed-15.12.47.439'>
             <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-              <execution duration_seconds='0.375' timestamp='2017-11-14-Tue-12.40.54.703'/>
+              <execution duration_seconds='0.359' timestamp='2017-11-15-Wed-15.12.47.439'/>
             </GithubClient>
             <section name='Evaluation'>
               <section name='Response empty'>
@@ -94,7 +94,7 @@ Notes:
               </section>
               <section name='Label deleted'>
                 <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-                  <execution duration_seconds='0.375' timestamp='2017-11-14-Tue-12.40.55.078'/>
+                  <execution duration_seconds='0.359' timestamp='2017-11-15-Wed-15.12.47.799'/>
                 </GithubClient>
                 <verdict id='delete_label:label_deleted' method='verdict_refute?' outcome='passed' volatile='false'>
                   <act_value>false</act_value>
@@ -104,7 +104,7 @@ Notes:
           </section>
           <section name='Clean up'>
             <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-              <execution duration_seconds='0.359' timestamp='2017-11-14-Tue-12.40.55.453'/>
+              <execution duration_seconds='0.344' timestamp='2017-11-15-Wed-15.12.48.158'/>
             </GithubClient>
           </section>
         </section>
@@ -128,5 +128,5 @@ Notes:
   - Section `Label deleted` verifies that the label no longer exists.
 **Prev Stop:** [PatchLabelsName Test](./PatchLabelsName.md#patchlabelsname-test)
 
-**Next Stop:** [CRUD](./Crud.md#crud)
+**Next Stop:** [More to Come ...](./MoreToCome.md#more-to-come-)
 
