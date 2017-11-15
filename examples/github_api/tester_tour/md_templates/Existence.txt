@@ -10,7 +10,7 @@ Notes:
 
 - `Label#exist?(client)` determines whether the label exists in the resource.
 - `Label#verdict_assert_exist?(client, log, verdict_id)` logs a verdict asserting the label's existence.
-- `Label#verdict_refyte_exist?(client, log, verdict_id)` logs a verdict refuting the label's existence.
+- `Label#verdict_refute_exist?(client, log, verdict_id)` logs a verdict refuting the label's existence.
 - `Label#delete_if_exist?(client)` deletes the label if it exists.
 
 [file_source](../logs/test_existence.xml)
