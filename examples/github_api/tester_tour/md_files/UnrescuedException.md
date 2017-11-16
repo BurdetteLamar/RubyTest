@@ -45,7 +45,7 @@ Notes:
 ```xml
 <unrescued_exception_test>
   <summary errors='1' failures='1' verdicts='1'/>
-  <test_method name='unrescued_exception_test' timestamp='2017-11-15-Wed-15.11.32.924'>
+  <test_method name='unrescued_exception_test' timestamp='2017-11-16-Thu-07.27.43.564'>
     <section duration_seconds='0.000' name='With GithubClient'>
       <section name='Unrescued exception'>
         <uncaught_exception>
