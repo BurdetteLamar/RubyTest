@@ -32,7 +32,8 @@ class ExistenceTest < BaseClassForTest
 
       log.section('Delete if exist') do
         deleted = existing_label.delete_if_exist?(client)
-        commenet = format('Label deleted? %s', deleted)
+        comment = format('Label deleted? %s', deleted)
+        log.comment(comment)
       end
 
       log.section('Refute existence in verdict') do

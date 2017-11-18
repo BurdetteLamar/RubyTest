@@ -1,17 +1,49 @@
 require_relative '../../base_classes/base_class_for_test'
 
+require_relative '../../data/label'
+
 class FirstTest < BaseClassForTest
 
   def test_first
+
     prelude do |client, log|
 
-      log.comment('Test code goes here')
+      label_to_create = Label.new(
+          :id => nil,
+          :url => nil,
+          :name => 'label name',
+          :color => '000000',
+          :default => false,
+      )
+      label_created = nil
 
-      log.comment('Method prelude yields two objects:')
-      log.comment('1. Instance of %s, for access to the GitHub API.' % client.class.name)
-      log.comment('2. Instance of %s, for logging the test.' % log.class.name)
+      log.section('Create') do
+        label_returned = label_to_create.create!(client)
+        Label.verdict_equal?(log, :create_return_correct, label_to_create, label_returned)
+        label_returned.verdict_read_and_verify?(client, log, :created_correctly)
+        label_created = label_returned
+      end
+
+      log.section('Read') do
+        label_returned = label_created.read(client)
+        Label.verdict_equal?(log, :read_correctly, label_created, label_returned)
+      end
+
+      log.section('Update') do
+        label_created.color = 'ffffff'
+        label_returned = label_created.update(client)
+        Label.verdict_equal?(log, :update_return_correct, label_created, label_returned)
+        label_returned.verdict_read_and_verify?(client, log, :updated_correctly)
+      end
+
+      log.section('Delete') do
+        label_returned = label_created.delete(client)
+        log.verdict_assert_nil?(:delete_return_correct, label_returned)
+        label_created.verdict_refute_exist?(client, log, :deleted_correctly)
+      end
 
     end
+
   end
 
 end

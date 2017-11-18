@@ -12,6 +12,7 @@ Each following tour stop assumes you've seen all its predecessors, so repetition
 
 ### Getting Started
 - [Overview](./tester_tour/md_files/Overview.md/#overview)
+- [Meet the Client and Log](./tester_tour/md_files/Meet.md/#meet-the-client-and-log)
 - [First Test](./tester_tour/md_files/First.md/#first-test)
 ### Logging
 - [Test Sections and Nesting](./tester_tour/md_files/Sections.md/#test-sections-and-nesting)

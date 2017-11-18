@@ -14,7 +14,7 @@ These endpoints will be:
 - `POST /labels` - Create a label.
 - `GET /labels/:name` - Get a label by name.
 - `PATCH /labels/:name` - Update a label by name.
-- `DELETE /labels/:name` - Delete a label by namd.
+- `DELETE /labels/:name` - Delete a label by name.
 
 **Prev Stop:** [Endpoint Objects](./EndpointObjects.md#endpoint-objects)
 
