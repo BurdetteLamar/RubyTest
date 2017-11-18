@@ -67,12 +67,12 @@ Notes:
 ```xml
 <flat_data_equal_test>
   <summary errors='0' failures='1' verdicts='11'/>
-  <test_method duration_seconds='3.299' name='flat_data_equal_test' timestamp='2017-11-18-Sat-08.54.02.473'>
+  <test_method duration_seconds='3.344' name='flat_data_equal_test' timestamp='2017-11-18-Sat-11.22.31.213'>
     <section name='With GithubClient'>
       <section name='Fetch an instance of Label'>
         <section name='Fetch an label'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
-            <execution duration_seconds='3.284' timestamp='2017-11-18-Sat-08.54.02.473'/>
+            <execution duration_seconds='3.328' timestamp='2017-11-18-Sat-11.22.31.213'/>
           </GithubClient>
         </section>
       </section>

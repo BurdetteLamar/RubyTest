@@ -15,10 +15,23 @@ Notes:
   - `label_created`, which will have the data for the created label, including new values for `:id` and `:url`.
 - In section `Create`:
   - Instead of method `create`, we use method `create!`, which first deletes the label if it exists.
-  - Symbols `:label_created` and `:label_exists` are _verdict identifiers_.  A verdict identifier appears in each verict method call.
+  - Symbols `:create_return_correct` and `:created_correctly` are _verdict identifiers_.  A verdict identifier appears in each verict method call.
   - Method `Label.verdict_equal?` verifies that the returned label data is correct.
-  - Method `label_created.verdict_assert_exist?` verifies that the label now actually exists in Github.
+  - Method `label_returned.verdict_read_and_verify?` verifies that the label was correctly created in GitHub.
+  - Variable `label_created` saves the label data for use in the following sections.
+- Inn section `Read`:
+  - Method `Label.verdict_equal?` verifies that the returned label data is correct.
+- Inn section `Update`:
+  - Method `Label.verdict_equal?` verifies that the returned label data is correct.
+  - Method `label_returned.verdict_read_and_verify?` verifies that the label was correctly updated in GitHub.
 - In section `Delete`:
-  - Method `label_created.verdict_refute_exist?` verifies that the label no longer exists in Github.
+  - Method `log.verdict_assert_nil?` verifies that the return value is `nil`.
+  - Method `label_created.verdict_refute_exist?` verifies that the label was deleted in GitHub.
+
+## Log
+
+You're welcome to review this log, but the smaller logs in other tour stops will introduce log features step by step.
+
+[file_source](../logs/test_first.xml)
 
 [navigation_links]

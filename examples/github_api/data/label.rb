@@ -64,11 +64,6 @@ class Label < BaseClassForResource
     PostLabels.call(client, self)
   end
 
-  def create!(client)
-    delete_if_exist?(client)
-    create(client)
-  end
-
   Contract GithubClient => Label
   def read(client)
     require_relative '../endpoints/labels/get_labels_name'
@@ -88,6 +83,18 @@ class Label < BaseClassForResource
   end
 
   # Convenience.
+
+  Contract GithubClient => self
+  def create!(client)
+    delete_if_exist?(client)
+    create(client)
+  end
+
+  Contract GithubClient, Log, VERDICT_ID => Bool
+  def verdict_read_and_verify?(client, log, verdict_id)
+    label_read = read(client)
+    Label.verdict_equal?(log, verdict_id, self, label_read)
+  end
 
   Contract GithubClient => ArrayOf[Label ]
   def self.get_all(client)
