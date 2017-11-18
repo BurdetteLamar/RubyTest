@@ -59,91 +59,94 @@ Notes:
 ```xml
 <nested_data_equal_test>
   <summary errors='0' failures='1' verdicts='25'/>
-  <test_method duration_seconds='3.344' name='nested_data_equal_test' timestamp='2017-11-18-Sat-11.22.46.737'>
+  <test_method name='nested_data_equal_test' timestamp='2017-11-18-Sat-12.40.23.179'>
     <section name='With GithubClient'>
       <GithubClient method='GET' url='https://api.github.com/rate_limit'>
-        <execution duration_seconds='3.297' timestamp='2017-11-18-Sat-11.22.46.737'/>
+        <execution duration_seconds='3.360' timestamp='2017-11-18-Sat-12.40.23.195'/>
       </GithubClient>
-      <section name='These are equal'>
-        <section name='RateLimit::Resources'>
-          <section name='RateLimit::Core_'>
-            <verdict id='rate_limits_equal:resources:core:limit' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>5000</exp_value>
-              <act_value>5000</act_value>
-            </verdict>
-            <verdict id='rate_limits_equal:resources:core:remaining' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>4845</exp_value>
-              <act_value>4845</act_value>
-            </verdict>
-            <verdict id='rate_limits_equal:resources:core:reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>1511027803</exp_value>
-              <act_value>1511027803</act_value>
-            </verdict>
+      <section duration_seconds='3.406' name='These are equal'>
+        <section name='RateLimit verdict_equal? rate_limits_equal'>
+          <section name='RateLimit verdict_equal_recursive? rate_limits_equal'>
+            <section name='RateLimit verdict_equal_recursive? [:rate_limits_equal, :resources]'>
+              <verdict id='rate_limits_equal:resources:core:limit' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                <exp_value>5000</exp_value>
+                <act_value>5000</act_value>
+              </verdict>
+              <verdict id='rate_limits_equal:resources:core:remaining' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                <exp_value>4844</exp_value>
+                <act_value>4844</act_value>
+              </verdict>
+              <verdict id='rate_limits_equal:resources:core:reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                <exp_value>1511031606</exp_value>
+                <act_value>1511031606</act_value>
+              </verdict>
+            </section>
+            <section name='RateLimit verdict_equal_recursive? [:rate_limits_equal, :resources]'>
+              <verdict id='rate_limits_equal:resources:search:limit' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                <exp_value>30</exp_value>
+                <act_value>30</act_value>
+              </verdict>
+              <verdict id='rate_limits_equal:resources:search:remaining' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                <exp_value>30</exp_value>
+                <act_value>30</act_value>
+              </verdict>
+              <verdict id='rate_limits_equal:resources:search:reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                <exp_value>1511030485</exp_value>
+                <act_value>1511030485</act_value>
+              </verdict>
+            </section>
+            <section name='RateLimit verdict_equal_recursive? [:rate_limits_equal, :resources]'>
+              <verdict id='rate_limits_equal:resources:graphql:limit' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                <exp_value>5000</exp_value>
+                <act_value>5000</act_value>
+              </verdict>
+              <verdict id='rate_limits_equal:resources:graphql:remaining' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                <exp_value>5000</exp_value>
+                <act_value>5000</act_value>
+              </verdict>
+              <verdict id='rate_limits_equal:resources:graphql:reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                <exp_value>1511034025</exp_value>
+                <act_value>1511034025</act_value>
+              </verdict>
+            </section>
           </section>
-          <section name='RateLimit::Search'>
-            <verdict id='rate_limits_equal:resources:search:limit' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>30</exp_value>
-              <act_value>30</act_value>
-            </verdict>
-            <verdict id='rate_limits_equal:resources:search:remaining' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>30</exp_value>
-              <act_value>30</act_value>
-            </verdict>
-            <verdict id='rate_limits_equal:resources:search:reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>1511025829</exp_value>
-              <act_value>1511025829</act_value>
-            </verdict>
-          </section>
-          <section name='RateLimit::Graphql'>
-            <verdict id='rate_limits_equal:resources:graphql:limit' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+          <section name='RateLimit verdict_equal_recursive? rate_limits_equal'>
+            <verdict id='rate_limits_equal:rate:limit' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
               <exp_value>5000</exp_value>
               <act_value>5000</act_value>
             </verdict>
-            <verdict id='rate_limits_equal:resources:graphql:remaining' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>5000</exp_value>
-              <act_value>5000</act_value>
+            <verdict id='rate_limits_equal:rate:remaining' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+              <exp_value>4844</exp_value>
+              <act_value>4844</act_value>
             </verdict>
-            <verdict id='rate_limits_equal:resources:graphql:reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>1511029369</exp_value>
-              <act_value>1511029369</act_value>
+            <verdict id='rate_limits_equal:rate:reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+              <exp_value>1511031606</exp_value>
+              <act_value>1511031606</act_value>
             </verdict>
           </section>
         </section>
-        <section name='RateLimit::Rate'>
-          <verdict id='rate_limits_equal:rate:limit' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-            <exp_value>5000</exp_value>
-            <act_value>5000</act_value>
-          </verdict>
-          <verdict id='rate_limits_equal:rate:remaining' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-            <exp_value>4845</exp_value>
-            <act_value>4845</act_value>
-          </verdict>
-          <verdict id='rate_limits_equal:rate:reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-            <exp_value>1511027803</exp_value>
-            <act_value>1511027803</act_value>
-          </verdict>
-        </section>
-      </section>
-      <section name='These are not equal'>
-        <section name='RateLimit::Resources'>
-          <section name='RateLimit::Core_'>
-            <verdict id='rate_limits_not_equal:resources:core:limit' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='failed' volatile='false'>
-              <exp_value>5000</exp_value>
-              <act_value>0</act_value>
-              <exception>
-                <class>Minitest::Assertion</class>
-                <message>Expected: 5000 Actual: 0</message>
-                <backtrace>
-                  <![CDATA[
-C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:146:in `block in verdict_equal_recursive?'
-C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:134:in `verdict_equal_recursive?'
-C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:142:in `block (2 levels) in verdict_equal_recursive?'
-C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:140:in `block in verdict_equal_recursive?'
-C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:134:in `verdict_equal_recursive?'
-C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:142:in `block (2 levels) in verdict_equal_recursive?'
-C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:140:in `block in verdict_equal_recursive?'
-C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:134:in `verdict_equal_recursive?'
-C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:62:in `verdict_equal?'
+        <section name='These are not equal'>
+          <section name='RateLimit verdict_equal? rate_limits_not_equal'>
+            <section name='RateLimit verdict_equal_recursive? rate_limits_not_equal'>
+              <section name='RateLimit verdict_equal_recursive? [:rate_limits_not_equal, :resources]'>
+                <verdict id='rate_limits_not_equal:resources:core:limit' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='failed' volatile='false'>
+                  <exp_value>5000</exp_value>
+                  <act_value>0</act_value>
+                  <exception>
+                    <class>Minitest::Assertion</class>
+                    <message>Expected: 5000 Actual: 0</message>
+                    <backtrace>
+                      <![CDATA[
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:153:in `block in verdict_equal_recursive?'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:140:in `verdict_equal_recursive?'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:149:in `block (2 levels) in verdict_equal_recursive?'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:147:in `block in verdict_equal_recursive?'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:140:in `verdict_equal_recursive?'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:149:in `block (2 levels) in verdict_equal_recursive?'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:147:in `block in verdict_equal_recursive?'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:140:in `verdict_equal_recursive?'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:67:in `block in verdict_equal?'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:66:in `verdict_equal?'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/nested_data_equal_test.rb:18:in `block (2 levels) in test_nested_data_equal'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/nested_data_equal_test.rb:15:in `block in test_nested_data_equal'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
@@ -155,70 +158,72 @@ C:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `bl
 C:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:11:in `prelude'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/nested_data_equal_test.rb:8:in `test_nested_data_equal']]>
-                </backtrace>
-              </exception>
-            </verdict>
-            <verdict id='rate_limits_not_equal:resources:core:remaining' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>4845</exp_value>
-              <act_value>4845</act_value>
-            </verdict>
-            <verdict id='rate_limits_not_equal:resources:core:reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>1511027803</exp_value>
-              <act_value>1511027803</act_value>
-            </verdict>
-          </section>
-          <section name='RateLimit::Search'>
-            <verdict id='rate_limits_not_equal:resources:search:limit' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>30</exp_value>
-              <act_value>30</act_value>
-            </verdict>
-            <verdict id='rate_limits_not_equal:resources:search:remaining' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>30</exp_value>
-              <act_value>30</act_value>
-            </verdict>
-            <verdict id='rate_limits_not_equal:resources:search:reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>1511025829</exp_value>
-              <act_value>1511025829</act_value>
-            </verdict>
-          </section>
-          <section name='RateLimit::Graphql'>
-            <verdict id='rate_limits_not_equal:resources:graphql:limit' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>5000</exp_value>
-              <act_value>5000</act_value>
-            </verdict>
-            <verdict id='rate_limits_not_equal:resources:graphql:remaining' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>5000</exp_value>
-              <act_value>5000</act_value>
-            </verdict>
-            <verdict id='rate_limits_not_equal:resources:graphql:reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>1511029369</exp_value>
-              <act_value>1511029369</act_value>
-            </verdict>
+                    </backtrace>
+                  </exception>
+                </verdict>
+                <verdict id='rate_limits_not_equal:resources:core:remaining' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                  <exp_value>4844</exp_value>
+                  <act_value>4844</act_value>
+                </verdict>
+                <verdict id='rate_limits_not_equal:resources:core:reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                  <exp_value>1511031606</exp_value>
+                  <act_value>1511031606</act_value>
+                </verdict>
+              </section>
+              <section name='RateLimit verdict_equal_recursive? [:rate_limits_not_equal, :resources]'>
+                <verdict id='rate_limits_not_equal:resources:search:limit' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                  <exp_value>30</exp_value>
+                  <act_value>30</act_value>
+                </verdict>
+                <verdict id='rate_limits_not_equal:resources:search:remaining' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                  <exp_value>30</exp_value>
+                  <act_value>30</act_value>
+                </verdict>
+                <verdict id='rate_limits_not_equal:resources:search:reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                  <exp_value>1511030485</exp_value>
+                  <act_value>1511030485</act_value>
+                </verdict>
+              </section>
+              <section name='RateLimit verdict_equal_recursive? [:rate_limits_not_equal, :resources]'>
+                <verdict id='rate_limits_not_equal:resources:graphql:limit' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                  <exp_value>5000</exp_value>
+                  <act_value>5000</act_value>
+                </verdict>
+                <verdict id='rate_limits_not_equal:resources:graphql:remaining' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                  <exp_value>5000</exp_value>
+                  <act_value>5000</act_value>
+                </verdict>
+                <verdict id='rate_limits_not_equal:resources:graphql:reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                  <exp_value>1511034025</exp_value>
+                  <act_value>1511034025</act_value>
+                </verdict>
+              </section>
+            </section>
+            <section name='RateLimit verdict_equal_recursive? rate_limits_not_equal'>
+              <verdict id='rate_limits_not_equal:rate:limit' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                <exp_value>5000</exp_value>
+                <act_value>5000</act_value>
+              </verdict>
+              <verdict id='rate_limits_not_equal:rate:remaining' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                <exp_value>4844</exp_value>
+                <act_value>4844</act_value>
+              </verdict>
+              <verdict id='rate_limits_not_equal:rate:reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                <exp_value>1511031606</exp_value>
+                <act_value>1511031606</act_value>
+              </verdict>
+            </section>
           </section>
         </section>
-        <section name='RateLimit::Rate'>
-          <verdict id='rate_limits_not_equal:rate:limit' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-            <exp_value>5000</exp_value>
-            <act_value>5000</act_value>
-          </verdict>
-          <verdict id='rate_limits_not_equal:rate:remaining' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-            <exp_value>4845</exp_value>
-            <act_value>4845</act_value>
-          </verdict>
-          <verdict id='rate_limits_not_equal:rate:reset' message='Using RateLimit.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-            <exp_value>1511027803</exp_value>
-            <act_value>1511027803</act_value>
-          </verdict>
-        </section>
+      </section>
+      <section name='Count of errors (unexpected exceptions)'>
+        <verdict id='error_count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
+          <exp_value>0</exp_value>
+          <act_value>0</act_value>
+        </verdict>
       </section>
     </section>
   </test_method>
-  <section name='Count of errors (unexpected exceptions)'>
-    <verdict id='error_count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
-      <exp_value>0</exp_value>
-      <act_value>0</act_value>
-    </verdict>
-  </section>
 </nested_data_equal_test>
 ```
 

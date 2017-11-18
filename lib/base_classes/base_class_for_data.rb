@@ -38,9 +38,12 @@ class BaseClassForData < BaseClass
   Contract Log, VERDICT_ID => Bool
   def verdict_valid?(log, verdict_id)
     valid = true
-    fields.each do |field|
-      v_id = [verdict_id, field]
-      verdict_field_valid?(log, v_id, field) && valid
+    section_name = format('%s %s %s', self.class.name, __method__, verdict_id)
+    log.section(section_name) do
+      fields.each do |field|
+        v_id = [verdict_id, field]
+        verdict_field_valid?(log, v_id, field) && valid
+      end
     end
     valid
   end
@@ -59,7 +62,10 @@ class BaseClassForData < BaseClass
   # Verify recursively, so that nested objects can verify themselves.
   def self.verdict_equal?(log, verdict_id, expected_obj, actual_obj, message = nil)
     if expected_obj.kind_of?(BaseClassForData)
-      self.verdict_equal_recursive?(log, verdict_id, expected_obj, actual_obj, message)
+      section_name = format('%s %s %s', self.name, __method__, verdict_id)
+      log.section(section_name) do
+        return self.verdict_equal_recursive?(log, verdict_id, expected_obj, actual_obj, message)
+      end
     else
       log.verdict_assert_equal?(verdict_id, expected_obj, actual_obj, message: message)
     end
@@ -137,7 +143,8 @@ class BaseClassForData < BaseClass
       next if expected_value.nil?
       actual_value = actual_obj.send(field)
       if expected_value.kind_of?(BaseClassForData)
-        log.section(expected_value.class.name) do
+        section_name = format('%s %s %s', self.name, __method__, verdict_id)
+        log.section(section_name) do
           v_id = [verdict_id, field]
           self.verdict_equal_recursive?(log, v_id, expected_value, actual_value, message)
         end

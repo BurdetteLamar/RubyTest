@@ -67,49 +67,52 @@ Notes:
 ```xml
 <flat_data_equal_test>
   <summary errors='0' failures='1' verdicts='11'/>
-  <test_method duration_seconds='3.344' name='flat_data_equal_test' timestamp='2017-11-18-Sat-11.22.31.213'>
+  <test_method name='flat_data_equal_test' timestamp='2017-11-18-Sat-12.40.07.920'>
     <section name='With GithubClient'>
       <section name='Fetch an instance of Label'>
         <section name='Fetch an label'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
-            <execution duration_seconds='3.328' timestamp='2017-11-18-Sat-11.22.31.213'/>
+            <execution duration_seconds='3.337' timestamp='2017-11-18-Sat-12.40.07.935'/>
           </GithubClient>
         </section>
       </section>
-      <section name='These are equal'>
-        <verdict id='label_equal:id' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>562043326</exp_value>
-          <act_value>562043326</act_value>
-        </verdict>
-        <verdict id='label_equal:url' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/bug</exp_value>
-          <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/bug</act_value>
-        </verdict>
-        <verdict id='label_equal:name' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>bug</exp_value>
-          <act_value>bug</act_value>
-        </verdict>
-        <verdict id='label_equal:color' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>ee0701</exp_value>
-          <act_value>ee0701</act_value>
-        </verdict>
-        <verdict id='label_equal:default' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>true</exp_value>
-          <act_value>true</act_value>
-        </verdict>
-      </section>
-      <section name='These are not equal'>
-        <verdict id='label_not_equal:id' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='failed' volatile='false'>
-          <exp_value>562043326</exp_value>
-          <act_value>-1</act_value>
-          <exception>
-            <class>Minitest::Assertion</class>
-            <message>Expected: 562043326 Actual: -1</message>
-            <backtrace>
-              <![CDATA[
-C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:146:in `block in verdict_equal_recursive?'
-C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:134:in `verdict_equal_recursive?'
-C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:62:in `verdict_equal?'
+      <section duration_seconds='3.368' name='These are equal'>
+        <section name='Label verdict_equal? label_equal'>
+          <verdict id='label_equal:id' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+            <exp_value>562043326</exp_value>
+            <act_value>562043326</act_value>
+          </verdict>
+          <verdict id='label_equal:url' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+            <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/bug</exp_value>
+            <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/bug</act_value>
+          </verdict>
+          <verdict id='label_equal:name' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+            <exp_value>bug</exp_value>
+            <act_value>bug</act_value>
+          </verdict>
+          <verdict id='label_equal:color' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+            <exp_value>ee0701</exp_value>
+            <act_value>ee0701</act_value>
+          </verdict>
+          <verdict id='label_equal:default' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+            <exp_value>true</exp_value>
+            <act_value>true</act_value>
+          </verdict>
+        </section>
+        <section name='These are not equal'>
+          <section name='Label verdict_equal? label_not_equal'>
+            <verdict id='label_not_equal:id' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='failed' volatile='false'>
+              <exp_value>562043326</exp_value>
+              <act_value>-1</act_value>
+              <exception>
+                <class>Minitest::Assertion</class>
+                <message>Expected: 562043326 Actual: -1</message>
+                <backtrace>
+                  <![CDATA[
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:153:in `block in verdict_equal_recursive?'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:140:in `verdict_equal_recursive?'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:67:in `block in verdict_equal?'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:66:in `verdict_equal?'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/flat_data_equal_test.rb:23:in `block (2 levels) in test_flat_data_equal'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/flat_data_equal_test.rb:20:in `block in test_flat_data_equal'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
@@ -121,34 +124,36 @@ C:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `bl
 C:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:11:in `prelude'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/flat_data_equal_test.rb:8:in `test_flat_data_equal']]>
-            </backtrace>
-          </exception>
-        </verdict>
-        <verdict id='label_not_equal:url' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/bug</exp_value>
-          <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/bug</act_value>
-        </verdict>
-        <verdict id='label_not_equal:name' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>bug</exp_value>
-          <act_value>bug</act_value>
-        </verdict>
-        <verdict id='label_not_equal:color' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>ee0701</exp_value>
-          <act_value>ee0701</act_value>
-        </verdict>
-        <verdict id='label_not_equal:default' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>true</exp_value>
-          <act_value>true</act_value>
+                </backtrace>
+              </exception>
+            </verdict>
+            <verdict id='label_not_equal:url' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+              <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/bug</exp_value>
+              <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/bug</act_value>
+            </verdict>
+            <verdict id='label_not_equal:name' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+              <exp_value>bug</exp_value>
+              <act_value>bug</act_value>
+            </verdict>
+            <verdict id='label_not_equal:color' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+              <exp_value>ee0701</exp_value>
+              <act_value>ee0701</act_value>
+            </verdict>
+            <verdict id='label_not_equal:default' message='Using Label.verdict_equal?' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+              <exp_value>true</exp_value>
+              <act_value>true</act_value>
+            </verdict>
+          </section>
+        </section>
+      </section>
+      <section name='Count of errors (unexpected exceptions)'>
+        <verdict id='error_count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
+          <exp_value>0</exp_value>
+          <act_value>0</act_value>
         </verdict>
       </section>
     </section>
   </test_method>
-  <section name='Count of errors (unexpected exceptions)'>
-    <verdict id='error_count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
-      <exp_value>0</exp_value>
-      <act_value>0</act_value>
-    </verdict>
-  </section>
 </flat_data_equal_test>
 ```
 
