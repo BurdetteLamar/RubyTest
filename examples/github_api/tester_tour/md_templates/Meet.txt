@@ -1,6 +1,6 @@
 [navigation_links]
 
-# First Test
+# Meet the Client and Log
 
 The test framework sets up for the test by delivering objects the test will need:
 
@@ -9,7 +9,7 @@ The test framework sets up for the test by delivering objects the test will need
 
 ## Example Test
 
-[file_source](../tests/first_test.rb)
+[file_source](../tests/meet_test.rb)
 
 Notes:
 
@@ -22,7 +22,7 @@ Notes:
 
 ## Log
 
-[file_source](../logs/test_first.xml)
+[file_source](../logs/test_meet.xml)
 
 Notes:
 

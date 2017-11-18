@@ -64,6 +64,11 @@ class Label < BaseClassForResource
     PostLabels.call(client, self)
   end
 
+  def create!(client)
+    delete_if_exist?(client)
+    create(client)
+  end
+
   Contract GithubClient => Label
   def read(client)
     require_relative '../endpoints/labels/get_labels_name'

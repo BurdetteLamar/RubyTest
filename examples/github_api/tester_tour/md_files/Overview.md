@@ -1,5 +1,5 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Next Stop:** [First Test](./First.md#first-test)
+**Next Stop:** [Meet the Client and Log](./Meet.md#meet-the-client-and-log)
 
 
 # Overview
@@ -15,5 +15,5 @@ This domain-specific GitHub REST API framework is layered onto the underlying Ru
 - Data objects, derived from robust base classes.
 - (More to come).
 
-**Next Stop:** [First Test](./First.md#first-test)
+**Next Stop:** [Meet the Client and Log](./Meet.md#meet-the-client-and-log)
 

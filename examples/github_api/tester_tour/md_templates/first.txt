@@ -1,0 +1,24 @@
+[navigation_links]
+
+# First Test
+
+Here's a simple first test, one that tests CRUD methods (create, read, update, delete) to operate on `Label` objects.
+
+## Example Test
+
+[file_source](../tests/first_test.rb)
+
+Notes:
+
+- The test first defines variables:
+  - `label_to_create`, which has data for creating a label.
+  - `label_created`, which will have the data for the created label, including new values for `:id` and `:url`.
+- In section `Create`:
+  - Instead of method `create`, we use method `create!`, which first deletes the label if it exists.
+  - Symbols `:label_created` and `:label_exists` are _verdict identifiers_.  A verdict identifier appears in each verict method call.
+  - Method `Label.verdict_equal?` verifies that the returned label data is correct.
+  - Method `label_created.verdict_assert_exist?` verifies that the label now actually exists in Github.
+- In section `Delete`:
+  - Method `label_created.verdict_refute_exist?` verifies that the label no longer exists in Github.
+
+[navigation_links]

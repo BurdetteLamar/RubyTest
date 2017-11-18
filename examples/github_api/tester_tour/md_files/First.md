@@ -1,15 +1,12 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop:** [Overview](./Overview.md#overview)
+**Prev Stop:** [Meet the Client and Log](./Meet.md#meet-the-client-and-log)
 
 **Next Stop:** [Test Sections and Nesting](./Sections.md#test-sections-and-nesting)
 
 
 # First Test
 
-The test framework sets up for the test by delivering objects the test will need:
-
-- A domain-specific GitHub API client.
-- An open test log.
+Here's a simple first test, one that tests CRUD methods (create, read, update, delete) to operate on `Label` objects.
 
 ## Example Test
 
@@ -17,18 +14,47 @@ The test framework sets up for the test by delivering objects the test will need
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
 
+require_relative '../../data/label'
+
 class FirstTest < BaseClassForTest
 
   def test_first
+
     prelude do |client, log|
 
-      log.comment('Test code goes here')
+      label_to_create = Label.new(
+          :id => nil,
+          :url => nil,
+          :name => 'label name',
+          :color => '000000',
+          :default => false,
+      )
+      label_created = nil
 
-      log.comment('Method prelude yields two objects:')
-      log.comment('1. Instance of %s, for access to the GitHub API.' % client.class.name)
-      log.comment('2. Instance of %s, for logging the test.' % log.class.name)
+      log.section('Create') do
+        label_created = label_to_create.create!(client)
+        Label.verdict_equal?(log, :label_created, label_to_create, label_created)
+        label_created.verdict_assert_exist?(client, log, :label_exists)
+      end
+
+      log.section('Read') do
+        label_read = label_created.read(client)
+        Label.verdict_equal?(log, :label_read, label_created, label_read)
+      end
+
+      log.section('Update') do
+        label_created.color = 'ffffff'
+        label_updated = label_created.update(client)
+        Label.verdict_equal?(log, :label_updated, label_created, label_updated)
+      end
+
+      log.section('Delete') do
+        label_created.delete(client)
+        label_created.verdict_refute_exist?(client, log, :label_not_exist)
+      end
 
     end
+
   end
 
 end
@@ -36,45 +62,18 @@ end
 
 Notes:
 
-- Create a new test class by deriving from `BaseClassForTest`.
-- Choose a test method-name that begins with `test`, which tells the test framework that it can be executed at test-time.
-- Call method `prelude`, inherited from the base class.
-- Use the yielded values for your test.
-  - A domain-specific GitHub API client.
-  - An open test log.  When the test exits the `prelude` block, the log builds its summaries, closes itself, and writes itself as XML.
+- The test first defines variables:
+  - `label_to_create`, which has data for creating a label.
+  - `label_created`, which will have the data for the created label, including new values for `:id` and `:url`.
+- In section `Create`:
+  - Instead of method `create`, we use method `create!`, which first deletes the label if it exists.
+  - Symbols `:label_created` and `:label_exists` are _verdict identifiers_.  A verdict identifier appears in each verict method call.
+  - Method `Label.verdict_equal?` verifies that the returned label data is correct.
+  - Method `label_created.verdict_assert_exist?` verifies that the label now actually exists in Github.
+- In section `Delete`:
+  - Method `label_created.verdict_refute_exist?` verifies that the label no longer exists in Github.
 
-## Log
-
-<code>test_first.xml</code>
-```xml
-<first_test>
-  <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='first_test' timestamp='2017-11-16-Thu-07.27.33.532'>
-    <section name='With GithubClient'>
-      <comment>Test code goes here</comment>
-      <comment>Method prelude yields two objects:</comment>
-      <comment>1. Instance of GithubClient, for access to the GitHub API.</comment>
-      <comment>2. Instance of Log, for logging the test.</comment>
-    </section>
-  </test_method>
-  <section name='Count of errors (unexpected exceptions)'>
-    <verdict id='error_count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
-      <exp_value>0</exp_value>
-      <act_value>0</act_value>
-    </verdict>
-  </section>
-</first_test>
-```
-
-Notes:
-
-- At the top of the log is a summary of the counts of verdicts, failures (failed verdicts), and errors (unexpected exceptions).
-- Element `test_method` gives the test name, timestamp, and duration.
-- The section named `With GitHubClient` contains all logging from the test itself.
-- The last section gives the count of errors (unexpected exceptions).  Its verdict expects that count to be 0.
-- (Attribute `volatile`, seen in element `verdict`, has to do with the Changes Report, and is of no present interest.)
-
-**Prev Stop:** [Overview](./Overview.md#overview)
+**Prev Stop:** [Meet the Client and Log](./Meet.md#meet-the-client-and-log)
 
 **Next Stop:** [Test Sections and Nesting](./Sections.md#test-sections-and-nesting)
 

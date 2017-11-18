@@ -107,6 +107,7 @@ EOT
   page_names_by_section = {
       :getting_started => %w/
           overview
+          meet
           first
       /,
       :logging => %w/
