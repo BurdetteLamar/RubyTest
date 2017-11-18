@@ -62,16 +62,16 @@ Notes:
 ```xml
 <post_labels_test>
   <summary errors='0' failures='0' verdicts='11'/>
-  <test_method name='post_labels_test' timestamp='2017-11-18-Sat-12.40.53.462'>
-    <section duration_seconds='4.766' name='With GithubClient'>
+  <test_method name='post_labels_test' timestamp='2017-11-18-Sat-13.25.21.167'>
+    <section duration_seconds='4.828' name='With GithubClient'>
       <section name='Test PostLabels'>
         <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-          <execution duration_seconds='3.344' timestamp='2017-11-18-Sat-12.40.53.477'/>
+          <execution duration_seconds='3.375' timestamp='2017-11-18-Sat-13.25.21.167'/>
         </GithubClient>
-        <section name='post_label' timestamp='2017-11-18-Sat-12.40.56.821'>
+        <section name='post_label' timestamp='2017-11-18-Sat-13.25.24.542'>
           <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
             <parameters color='000000' name='test_label'/>
-            <execution duration_seconds='0.344' timestamp='2017-11-18-Sat-12.40.56.821'/>
+            <execution duration_seconds='0.359' timestamp='2017-11-18-Sat-13.25.24.542'/>
           </GithubClient>
           <section name='Evaluation'>
             <section name='Returned label correct'>
@@ -85,14 +85,14 @@ Notes:
               </verdict>
             </section>
             <section name='Returned label valid'>
-              <section name='Label verdict_valid? [:post_label, :valid]'>
+              <section class='Label' method='verdict_valid?' name='valid'>
                 <section name='verdict_assert_integer_positive?'>
                   <verdict id='post_label:valid:id:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
                     <exp_value>Integer</exp_value>
-                    <act_value>754420549</act_value>
+                    <act_value>754443753</act_value>
                   </verdict>
                   <verdict id='post_label:valid:id:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-                    <object_1>754420549</object_1>
+                    <object_1>754443753</object_1>
                     <operator>:&gt;</operator>
                     <object_2>0</object_2>
                   </verdict>
@@ -122,7 +122,7 @@ Notes:
             </section>
             <section name='Label created'>
               <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-                <execution duration_seconds='0.359' timestamp='2017-11-18-Sat-12.40.57.165'/>
+                <execution duration_seconds='0.344' timestamp='2017-11-18-Sat-13.25.24.901'/>
               </GithubClient>
               <verdict id='post_label:exists' method='verdict_assert?' outcome='passed' volatile='false'>
                 <act_value>true</act_value>
@@ -132,10 +132,10 @@ Notes:
         </section>
         <section name='Clean up'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-            <execution duration_seconds='0.359' timestamp='2017-11-18-Sat-12.40.57.524'/>
+            <execution duration_seconds='0.375' timestamp='2017-11-18-Sat-13.25.25.245'/>
           </GithubClient>
           <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-            <execution duration_seconds='0.344' timestamp='2017-11-18-Sat-12.40.57.884'/>
+            <execution duration_seconds='0.375' timestamp='2017-11-18-Sat-13.25.25.620'/>
           </GithubClient>
         </section>
       </section>

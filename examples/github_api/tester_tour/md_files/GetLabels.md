@@ -49,12 +49,12 @@ Notes:
 ```xml
 <get_labels_test>
   <summary errors='0' failures='0' verdicts='8'/>
-  <test_method name='get_labels_test' timestamp='2017-11-18-Sat-12.40.49.102'>
-    <section duration_seconds='3.391' name='With GithubClient'>
+  <test_method name='get_labels_test' timestamp='2017-11-18-Sat-13.25.16.838'>
+    <section duration_seconds='3.328' name='With GithubClient'>
       <section name='Test GetLabels'>
-        <section name='get_labels' timestamp='2017-11-18-Sat-12.40.49.102'>
+        <section name='get_labels' timestamp='2017-11-18-Sat-13.25.16.838'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
-            <execution duration_seconds='3.391' timestamp='2017-11-18-Sat-12.40.49.102'/>
+            <execution duration_seconds='3.328' timestamp='2017-11-18-Sat-13.25.16.838'/>
           </GithubClient>
           <section name='Info'>
             <data fetched_labels_count='7'/>
@@ -68,7 +68,7 @@ Notes:
           </section>
           <section name='Evaluation'>
             <section name='Returned label valid'>
-              <section name='Label verdict_valid? [:get_labels, :valid]'>
+              <section class='Label' method='verdict_valid?' name='valid'>
                 <section name='verdict_assert_integer_positive?'>
                   <verdict id='get_labels:valid:id:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
                     <exp_value>Integer</exp_value>

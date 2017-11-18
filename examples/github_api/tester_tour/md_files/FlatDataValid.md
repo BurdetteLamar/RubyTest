@@ -55,13 +55,13 @@ Notes:
 ```xml
 <flat_data_valid_test>
   <summary errors='0' failures='1' verdicts='15'/>
-  <test_method duration_seconds='3.375' name='flat_data_valid_test' timestamp='2017-11-18-Sat-12.40.12.382'>
+  <test_method duration_seconds='3.391' name='flat_data_valid_test' timestamp='2017-11-18-Sat-13.24.39.891'>
     <section name='With GithubClient'>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
-        <execution duration_seconds='3.360' timestamp='2017-11-18-Sat-12.40.12.382'/>
+        <execution duration_seconds='3.360' timestamp='2017-11-18-Sat-13.24.39.907'/>
       </GithubClient>
       <section name='This is valid'>
-        <section name='Label verdict_valid? label_valid'>
+        <section class='Label' method='verdict_valid?' name='label_valid'>
           <section name='verdict_assert_integer_positive?'>
             <verdict id='label_valid:id:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
               <exp_value>Integer</exp_value>
@@ -97,7 +97,7 @@ Notes:
         </section>
       </section>
       <section name='This is not valid'>
-        <section name='Label verdict_valid? label_not_valid'>
+        <section class='Label' method='verdict_valid?' name='label_not_valid'>
           <section name='verdict_assert_integer_positive?'>
             <verdict id='label_not_valid:id:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
               <exp_value>Integer</exp_value>
@@ -131,9 +131,9 @@ Notes:
               <backtrace>
                 <![CDATA[
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/data/label.rb:33:in `verdict_field_valid?'
-C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:45:in `block (2 levels) in verdict_valid?'
-C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:43:in `block in verdict_valid?'
-C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:42:in `verdict_valid?'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:48:in `block (2 levels) in verdict_valid?'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:46:in `block in verdict_valid?'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:45:in `verdict_valid?'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/flat_data_valid_test.rb:15:in `block (2 levels) in test_flat_data_valid'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/flat_data_valid_test.rb:13:in `block in test_flat_data_valid'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
