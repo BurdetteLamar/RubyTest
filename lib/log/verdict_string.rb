@@ -26,5 +26,6 @@ module VerdictString
     end
     passed
   end
+  alias va_string_length_in_range? verdict_assert_string_length_in_range?
 
 end
