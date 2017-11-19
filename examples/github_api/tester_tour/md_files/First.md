@@ -91,148 +91,158 @@ You're welcome to review this log, but the smaller logs in other tour stops will
 ```xml
 <first_test>
   <summary errors='0' failures='0' verdicts='26'/>
-  <test_method duration_seconds='6.037' name='first_test' timestamp='2017-11-18-Sat-11.22.08.223'>
+  <test_method name='first_test' timestamp='2017-11-18-Sat-13.24.13.179'>
     <section name='With GithubClient'>
       <section name='Create'>
         <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
-          <execution duration_seconds='3.422' timestamp='2017-11-18-Sat-11.22.08.238'/>
+          <execution duration_seconds='3.485' timestamp='2017-11-18-Sat-13.24.13.179'/>
         </GithubClient>
         <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
           <parameters color='000000' name='label name'/>
-          <execution duration_seconds='0.391' timestamp='2017-11-18-Sat-11.22.11.661'/>
+          <execution duration_seconds='0.391' timestamp='2017-11-18-Sat-13.24.16.663'/>
         </GithubClient>
-        <verdict id='create_return_correct:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>label name</exp_value>
-          <act_value>label name</act_value>
-        </verdict>
-        <verdict id='create_return_correct:color' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>000000</exp_value>
-          <act_value>000000</act_value>
-        </verdict>
-        <verdict id='create_return_correct:default' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>false</exp_value>
-          <act_value>false</act_value>
-        </verdict>
-        <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
-          <execution duration_seconds='0.344' timestamp='2017-11-18-Sat-11.22.12.051'/>
-        </GithubClient>
-        <verdict id='created_correctly:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>754376914</exp_value>
-          <act_value>754376914</act_value>
-        </verdict>
-        <verdict id='created_correctly:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</exp_value>
-          <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</act_value>
-        </verdict>
-        <verdict id='created_correctly:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>label name</exp_value>
-          <act_value>label name</act_value>
-        </verdict>
-        <verdict id='created_correctly:color' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>000000</exp_value>
-          <act_value>000000</act_value>
-        </verdict>
-        <verdict id='created_correctly:default' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>false</exp_value>
-          <act_value>false</act_value>
-        </verdict>
-      </section>
-      <section name='Read'>
-        <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
-          <execution duration_seconds='0.391' timestamp='2017-11-18-Sat-11.22.12.395'/>
-        </GithubClient>
-        <verdict id='read_correctly:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>754376914</exp_value>
-          <act_value>754376914</act_value>
-        </verdict>
-        <verdict id='read_correctly:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</exp_value>
-          <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</act_value>
-        </verdict>
-        <verdict id='read_correctly:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>label name</exp_value>
-          <act_value>label name</act_value>
-        </verdict>
-        <verdict id='read_correctly:color' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>000000</exp_value>
-          <act_value>000000</act_value>
-        </verdict>
-        <verdict id='read_correctly:default' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>false</exp_value>
-          <act_value>false</act_value>
-        </verdict>
-      </section>
-      <section name='Update'>
-        <GithubClient method='PATCH' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
-          <parameters color='ffffff'/>
-          <execution duration_seconds='0.375' timestamp='2017-11-18-Sat-11.22.12.786'/>
-        </GithubClient>
-        <verdict id='update_return_correct:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>754376914</exp_value>
-          <act_value>754376914</act_value>
-        </verdict>
-        <verdict id='update_return_correct:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</exp_value>
-          <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</act_value>
-        </verdict>
-        <verdict id='update_return_correct:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>label name</exp_value>
-          <act_value>label name</act_value>
-        </verdict>
-        <verdict id='update_return_correct:color' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>ffffff</exp_value>
-          <act_value>ffffff</act_value>
-        </verdict>
-        <verdict id='update_return_correct:default' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>false</exp_value>
-          <act_value>false</act_value>
-        </verdict>
-        <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
-          <execution duration_seconds='0.375' timestamp='2017-11-18-Sat-11.22.13.161'/>
-        </GithubClient>
-        <verdict id='updated_correctly:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>754376914</exp_value>
-          <act_value>754376914</act_value>
-        </verdict>
-        <verdict id='updated_correctly:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</exp_value>
-          <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</act_value>
-        </verdict>
-        <verdict id='updated_correctly:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>label name</exp_value>
-          <act_value>label name</act_value>
-        </verdict>
-        <verdict id='updated_correctly:color' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>ffffff</exp_value>
-          <act_value>ffffff</act_value>
-        </verdict>
-        <verdict id='updated_correctly:default' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-          <exp_value>false</exp_value>
-          <act_value>false</act_value>
-        </verdict>
-      </section>
-      <section name='Delete'>
-        <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
-          <execution duration_seconds='0.375' timestamp='2017-11-18-Sat-11.22.13.536'/>
-        </GithubClient>
-        <verdict id='delete_return_correct' method='verdict_assert_nil?' outcome='passed' volatile='false'>
-          <act_value>nil</act_value>
-        </verdict>
-        <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
-          <execution duration_seconds='0.349' timestamp='2017-11-18-Sat-11.22.13.911'/>
-        </GithubClient>
-        <verdict id='deleted_correctly' method='verdict_refute?' outcome='passed' volatile='false'>
-          <act_value>false</act_value>
-        </verdict>
+        <section class='Label' method='verdict_equal?' name='create_return_correct'>
+          <verdict id='create_return_correct:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+            <exp_value>label name</exp_value>
+            <act_value>label name</act_value>
+          </verdict>
+          <verdict id='create_return_correct:color' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+            <exp_value>000000</exp_value>
+            <act_value>000000</act_value>
+          </verdict>
+          <verdict id='create_return_correct:default' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+            <exp_value>false</exp_value>
+            <act_value>false</act_value>
+          </verdict>
+          <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
+            <execution duration_seconds='0.438' timestamp='2017-11-18-Sat-13.24.17.054'/>
+          </GithubClient>
+          <section class='Label' method='verdict_equal?' name='created_correctly'>
+            <verdict id='created_correctly:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+              <exp_value>754443171</exp_value>
+              <act_value>754443171</act_value>
+            </verdict>
+            <verdict id='created_correctly:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+              <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</exp_value>
+              <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</act_value>
+            </verdict>
+            <verdict id='created_correctly:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+              <exp_value>label name</exp_value>
+              <act_value>label name</act_value>
+            </verdict>
+            <verdict id='created_correctly:color' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+              <exp_value>000000</exp_value>
+              <act_value>000000</act_value>
+            </verdict>
+            <verdict id='created_correctly:default' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+              <exp_value>false</exp_value>
+              <act_value>false</act_value>
+            </verdict>
+          </section>
+          <section name='Read'>
+            <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
+              <execution duration_seconds='0.375' timestamp='2017-11-18-Sat-13.24.17.492'/>
+            </GithubClient>
+            <section class='Label' method='verdict_equal?' name='read_correctly'>
+              <verdict id='read_correctly:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                <exp_value>754443171</exp_value>
+                <act_value>754443171</act_value>
+              </verdict>
+              <verdict id='read_correctly:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</exp_value>
+                <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</act_value>
+              </verdict>
+              <verdict id='read_correctly:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                <exp_value>label name</exp_value>
+                <act_value>label name</act_value>
+              </verdict>
+              <verdict id='read_correctly:color' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                <exp_value>000000</exp_value>
+                <act_value>000000</act_value>
+              </verdict>
+              <verdict id='read_correctly:default' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                <exp_value>false</exp_value>
+                <act_value>false</act_value>
+              </verdict>
+            </section>
+            <section duration_seconds='6.203' name='Update'>
+              <GithubClient method='PATCH' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
+                <parameters color='ffffff'/>
+                <execution duration_seconds='0.406' timestamp='2017-11-18-Sat-13.24.17.867'/>
+              </GithubClient>
+              <section class='Label' method='verdict_equal?' name='update_return_correct'>
+                <verdict id='update_return_correct:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                  <exp_value>754443171</exp_value>
+                  <act_value>754443171</act_value>
+                </verdict>
+                <verdict id='update_return_correct:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                  <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</exp_value>
+                  <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</act_value>
+                </verdict>
+                <verdict id='update_return_correct:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                  <exp_value>label name</exp_value>
+                  <act_value>label name</act_value>
+                </verdict>
+                <verdict id='update_return_correct:color' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                  <exp_value>ffffff</exp_value>
+                  <act_value>ffffff</act_value>
+                </verdict>
+                <verdict id='update_return_correct:default' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                  <exp_value>false</exp_value>
+                  <act_value>false</act_value>
+                </verdict>
+                <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
+                  <execution duration_seconds='0.375' timestamp='2017-11-18-Sat-13.24.18.273'/>
+                </GithubClient>
+                <section class='Label' method='verdict_equal?' name='updated_correctly'>
+                  <verdict id='updated_correctly:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                    <exp_value>754443171</exp_value>
+                    <act_value>754443171</act_value>
+                  </verdict>
+                  <verdict id='updated_correctly:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                    <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</exp_value>
+                    <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</act_value>
+                  </verdict>
+                  <verdict id='updated_correctly:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                    <exp_value>label name</exp_value>
+                    <act_value>label name</act_value>
+                  </verdict>
+                  <verdict id='updated_correctly:color' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                    <exp_value>ffffff</exp_value>
+                    <act_value>ffffff</act_value>
+                  </verdict>
+                  <verdict id='updated_correctly:default' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                    <exp_value>false</exp_value>
+                    <act_value>false</act_value>
+                  </verdict>
+                </section>
+                <section name='Delete'>
+                  <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
+                    <execution duration_seconds='0.359' timestamp='2017-11-18-Sat-13.24.18.648'/>
+                  </GithubClient>
+                  <verdict id='delete_return_correct' method='verdict_assert_nil?' outcome='passed' volatile='false'>
+                    <act_value>nil</act_value>
+                  </verdict>
+                  <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
+                    <execution duration_seconds='0.375' timestamp='2017-11-18-Sat-13.24.19.007'/>
+                  </GithubClient>
+                  <verdict id='deleted_correctly' method='verdict_refute?' outcome='passed' volatile='false'>
+                    <act_value>false</act_value>
+                  </verdict>
+                </section>
+              </section>
+            </section>
+            <section name='Count of errors (unexpected exceptions)'>
+              <verdict id='error_count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
+                <exp_value>0</exp_value>
+                <act_value>0</act_value>
+              </verdict>
+            </section>
+          </section>
+        </section>
       </section>
     </section>
   </test_method>
-  <section name='Count of errors (unexpected exceptions)'>
-    <verdict id='error_count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
-      <exp_value>0</exp_value>
-      <act_value>0</act_value>
-    </verdict>
-  </section>
 </first_test>
 ```
 

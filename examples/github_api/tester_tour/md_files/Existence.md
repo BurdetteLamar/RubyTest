@@ -70,26 +70,26 @@ Notes:
 ```xml
 <existence_test>
   <summary errors='0' failures='0' verdicts='3'/>
-  <test_method duration_seconds='5.703' name='existence_test' timestamp='2017-11-18-Sat-11.23.06.171'>
+  <test_method duration_seconds='5.516' name='existence_test' timestamp='2017-11-18-Sat-13.25.10.338'>
     <section name='With GithubClient'>
       <section name='Create a label'>
         <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-          <execution duration_seconds='3.422' timestamp='2017-11-18-Sat-11.23.06.171'/>
+          <execution duration_seconds='3.344' timestamp='2017-11-18-Sat-13.25.10.338'/>
         </GithubClient>
         <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
           <parameters color='000000' name='test_label'/>
-          <execution duration_seconds='0.422' timestamp='2017-11-18-Sat-11.23.09.593'/>
+          <execution duration_seconds='0.375' timestamp='2017-11-18-Sat-13.25.13.682'/>
         </GithubClient>
       </section>
       <section name='Determine existence'>
         <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-          <execution duration_seconds='0.344' timestamp='2017-11-18-Sat-11.23.10.015'/>
+          <execution duration_seconds='0.375' timestamp='2017-11-18-Sat-13.25.14.057'/>
         </GithubClient>
         <comment>Label exists? true</comment>
       </section>
       <section name='Assert existence in verdict'>
         <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-          <execution duration_seconds='0.391' timestamp='2017-11-18-Sat-11.23.10.359'/>
+          <execution duration_seconds='0.375' timestamp='2017-11-18-Sat-13.25.14.432'/>
         </GithubClient>
         <verdict id='assert_exist' method='verdict_assert?' outcome='passed' volatile='false'>
           <act_value>true</act_value>
@@ -97,16 +97,16 @@ Notes:
       </section>
       <section name='Delete if exist'>
         <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-          <execution duration_seconds='0.391' timestamp='2017-11-18-Sat-11.23.10.750'/>
+          <execution duration_seconds='0.344' timestamp='2017-11-18-Sat-13.25.14.807'/>
         </GithubClient>
         <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-          <execution duration_seconds='0.391' timestamp='2017-11-18-Sat-11.23.11.140'/>
+          <execution duration_seconds='0.344' timestamp='2017-11-18-Sat-13.25.15.151'/>
         </GithubClient>
         <comment>Label deleted? true</comment>
       </section>
       <section name='Refute existence in verdict'>
         <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-          <execution duration_seconds='0.344' timestamp='2017-11-18-Sat-11.23.11.531'/>
+          <execution duration_seconds='0.359' timestamp='2017-11-18-Sat-13.25.15.494'/>
         </GithubClient>
         <verdict id='refute_exist' method='verdict_refute?' outcome='passed' volatile='false'>
           <act_value>false</act_value>

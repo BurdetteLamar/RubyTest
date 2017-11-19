@@ -52,11 +52,11 @@ Notes:
 ```xml
 <getters_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='3.735' name='getters_test' timestamp='2017-11-18-Sat-11.23.01.452'>
+  <test_method duration_seconds='3.735' name='getters_test' timestamp='2017-11-18-Sat-13.25.05.603'>
     <section name='With GithubClient'>
       <section name='Get the first label'>
         <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
-          <execution duration_seconds='3.391' timestamp='2017-11-18-Sat-11.23.01.452'/>
+          <execution duration_seconds='3.375' timestamp='2017-11-18-Sat-13.25.05.603'/>
         </GithubClient>
         <section name='Label'>
           <data field='id' value='562043326'/>
@@ -68,7 +68,7 @@ Notes:
       </section>
       <section name='Get all labels'>
         <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
-          <execution duration_seconds='0.344' timestamp='2017-11-18-Sat-11.23.04.843'/>
+          <execution duration_seconds='0.359' timestamp='2017-11-18-Sat-13.25.08.978'/>
         </GithubClient>
         <section name='Label'>
           <data field='id' value='562043326'/>

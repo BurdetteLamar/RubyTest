@@ -55,81 +55,85 @@ Notes:
 ```xml
 <flat_data_valid_test>
   <summary errors='0' failures='1' verdicts='15'/>
-  <test_method duration_seconds='3.344' name='flat_data_valid_test' timestamp='2017-11-18-Sat-11.22.35.830'>
+  <test_method duration_seconds='3.391' name='flat_data_valid_test' timestamp='2017-11-18-Sat-13.24.39.891'>
     <section name='With GithubClient'>
       <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
-        <execution duration_seconds='3.328' timestamp='2017-11-18-Sat-11.22.35.830'/>
+        <execution duration_seconds='3.360' timestamp='2017-11-18-Sat-13.24.39.907'/>
       </GithubClient>
       <section name='This is valid'>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='label_valid:id:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Integer</exp_value>
-            <act_value>562043326</act_value>
+        <section class='Label' method='verdict_valid?' name='label_valid'>
+          <section name='verdict_assert_integer_positive?'>
+            <verdict id='label_valid:id:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+              <exp_value>Integer</exp_value>
+              <act_value>562043326</act_value>
+            </verdict>
+            <verdict id='label_valid:id:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+              <object_1>562043326</object_1>
+              <operator>:&gt;</operator>
+              <object_2>0</object_2>
+            </verdict>
+          </section>
+          <verdict id='label_valid:url' method='verdict_assert_match?' outcome='passed' volatile='false'>
+            <exp_value>/^https:\/\/api.github.com\/repos/</exp_value>
+            <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/bug</act_value>
           </verdict>
-          <verdict id='label_valid:id:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>562043326</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
+          <section name='verdict_assert_string_not_empty?'>
+            <verdict id='label_valid:name:string' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+              <exp_value>String</exp_value>
+              <act_value>bug</act_value>
+            </verdict>
+            <verdict id='label_valid:name:not_empty' method='verdict_refute_empty?' outcome='passed' volatile='false'>
+              <act_value>bug</act_value>
+            </verdict>
+          </section>
+          <verdict id='label_valid:color' method='verdict_assert_match?' outcome='passed' volatile='false'>
+            <exp_value>/[0-9a-f]{6}/i</exp_value>
+            <act_value>ee0701</act_value>
+          </verdict>
+          <verdict id='label_valid:default' method='verdict_assert_includes?' outcome='passed' volatile='false'>
+            <exp_value>[TrueClass, FalseClass]</exp_value>
+            <act_value>TrueClass</act_value>
           </verdict>
         </section>
-        <verdict id='label_valid:url' method='verdict_assert_match?' outcome='passed' volatile='false'>
-          <exp_value>/^https:\/\/api.github.com\/repos/</exp_value>
-          <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/bug</act_value>
-        </verdict>
-        <section name='verdict_assert_string_not_empty?'>
-          <verdict id='label_valid:name:string' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>String</exp_value>
-            <act_value>bug</act_value>
-          </verdict>
-          <verdict id='label_valid:name:not_empty' method='verdict_refute_empty?' outcome='passed' volatile='false'>
-            <act_value>bug</act_value>
-          </verdict>
-        </section>
-        <verdict id='label_valid:color' method='verdict_assert_match?' outcome='passed' volatile='false'>
-          <exp_value>/[0-9a-f]{6}/i</exp_value>
-          <act_value>ee0701</act_value>
-        </verdict>
-        <verdict id='label_valid:default' method='verdict_assert_includes?' outcome='passed' volatile='false'>
-          <exp_value>[TrueClass, FalseClass]</exp_value>
-          <act_value>TrueClass</act_value>
-        </verdict>
       </section>
       <section name='This is not valid'>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='label_not_valid:id:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Integer</exp_value>
-            <act_value>562043326</act_value>
+        <section class='Label' method='verdict_valid?' name='label_not_valid'>
+          <section name='verdict_assert_integer_positive?'>
+            <verdict id='label_not_valid:id:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+              <exp_value>Integer</exp_value>
+              <act_value>562043326</act_value>
+            </verdict>
+            <verdict id='label_not_valid:id:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+              <object_1>562043326</object_1>
+              <operator>:&gt;</operator>
+              <object_2>0</object_2>
+            </verdict>
+          </section>
+          <verdict id='label_not_valid:url' method='verdict_assert_match?' outcome='passed' volatile='false'>
+            <exp_value>/^https:\/\/api.github.com\/repos/</exp_value>
+            <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/bug</act_value>
           </verdict>
-          <verdict id='label_not_valid:id:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>562043326</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-          </verdict>
-        </section>
-        <verdict id='label_not_valid:url' method='verdict_assert_match?' outcome='passed' volatile='false'>
-          <exp_value>/^https:\/\/api.github.com\/repos/</exp_value>
-          <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/bug</act_value>
-        </verdict>
-        <section name='verdict_assert_string_not_empty?'>
-          <verdict id='label_not_valid:name:string' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>String</exp_value>
-            <act_value>bug</act_value>
-          </verdict>
-          <verdict id='label_not_valid:name:not_empty' method='verdict_refute_empty?' outcome='passed' volatile='false'>
-            <act_value>bug</act_value>
-          </verdict>
-        </section>
-        <verdict id='label_not_valid:color' method='verdict_assert_match?' outcome='failed' volatile='false'>
-          <exp_value>/[0-9a-f]{6}/i</exp_value>
-          <act_value>red</act_value>
-          <exception>
-            <class>Minitest::Assertion</class>
-            <message>Expected /[0-9a-f]{6}/i to match # encoding: UTF-8 &quot;red&quot;.</message>
-            <backtrace>
-              <![CDATA[
+          <section name='verdict_assert_string_not_empty?'>
+            <verdict id='label_not_valid:name:string' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+              <exp_value>String</exp_value>
+              <act_value>bug</act_value>
+            </verdict>
+            <verdict id='label_not_valid:name:not_empty' method='verdict_refute_empty?' outcome='passed' volatile='false'>
+              <act_value>bug</act_value>
+            </verdict>
+          </section>
+          <verdict id='label_not_valid:color' method='verdict_assert_match?' outcome='failed' volatile='false'>
+            <exp_value>/[0-9a-f]{6}/i</exp_value>
+            <act_value>red</act_value>
+            <exception>
+              <class>Minitest::Assertion</class>
+              <message>Expected /[0-9a-f]{6}/i to match # encoding: UTF-8 &quot;red&quot;.</message>
+              <backtrace>
+                <![CDATA[
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/data/label.rb:33:in `verdict_field_valid?'
-C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:43:in `block in verdict_valid?'
-C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:41:in `verdict_valid?'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:48:in `block (2 levels) in verdict_valid?'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:46:in `block in verdict_valid?'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:45:in `verdict_valid?'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/flat_data_valid_test.rb:15:in `block (2 levels) in test_flat_data_valid'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/flat_data_valid_test.rb:13:in `block in test_flat_data_valid'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
@@ -141,13 +145,14 @@ C:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `bl
 C:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:11:in `prelude'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/flat_data_valid_test.rb:8:in `test_flat_data_valid']]>
-            </backtrace>
-          </exception>
-        </verdict>
-        <verdict id='label_not_valid:default' method='verdict_assert_includes?' outcome='passed' volatile='false'>
-          <exp_value>[TrueClass, FalseClass]</exp_value>
-          <act_value>TrueClass</act_value>
-        </verdict>
+              </backtrace>
+            </exception>
+          </verdict>
+          <verdict id='label_not_valid:default' method='verdict_assert_includes?' outcome='passed' volatile='false'>
+            <exp_value>[TrueClass, FalseClass]</exp_value>
+            <act_value>TrueClass</act_value>
+          </verdict>
+        </section>
       </section>
     </section>
   </test_method>

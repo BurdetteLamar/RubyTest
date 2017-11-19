@@ -51,191 +51,209 @@ Notes:
 ```xml
 <nested_data_valid_test>
   <summary errors='0' failures='1' verdicts='49'/>
-  <test_method duration_seconds='3.360' name='nested_data_valid_test' timestamp='2017-11-18-Sat-11.22.51.081'>
+  <test_method duration_seconds='3.547' name='nested_data_valid_test' timestamp='2017-11-18-Sat-13.24.55.150'>
     <section name='With GithubClient'>
       <GithubClient method='GET' url='https://api.github.com/rate_limit'>
-        <execution duration_seconds='3.313' timestamp='2017-11-18-Sat-11.22.51.081'/>
+        <execution duration_seconds='3.500' timestamp='2017-11-18-Sat-13.24.55.150'/>
       </GithubClient>
       <section name='This is valid'>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='rate_limit_valid:resources:resources:core:core:limit:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Integer</exp_value>
-            <act_value>5000</act_value>
-          </verdict>
-          <verdict id='rate_limit_valid:resources:resources:core:core:limit:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>5000</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-          </verdict>
-        </section>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='rate_limit_valid:resources:resources:core:core:remaining:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Integer</exp_value>
-            <act_value>4845</act_value>
-          </verdict>
-          <verdict id='rate_limit_valid:resources:resources:core:core:remaining:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>4845</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-          </verdict>
-        </section>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='rate_limit_valid:resources:resources:core:core:reset:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Integer</exp_value>
-            <act_value>1511027803</act_value>
-          </verdict>
-          <verdict id='rate_limit_valid:resources:resources:core:core:reset:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>1511027803</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-          </verdict>
-        </section>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='rate_limit_valid:resources:resources:search:search:limit:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Integer</exp_value>
-            <act_value>30</act_value>
-          </verdict>
-          <verdict id='rate_limit_valid:resources:resources:search:search:limit:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>30</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-          </verdict>
-        </section>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='rate_limit_valid:resources:resources:search:search:remaining:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Integer</exp_value>
-            <act_value>30</act_value>
-          </verdict>
-          <verdict id='rate_limit_valid:resources:resources:search:search:remaining:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>30</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-          </verdict>
-        </section>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='rate_limit_valid:resources:resources:search:search:reset:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Integer</exp_value>
-            <act_value>1511025833</act_value>
-          </verdict>
-          <verdict id='rate_limit_valid:resources:resources:search:search:reset:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>1511025833</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-          </verdict>
-        </section>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='rate_limit_valid:resources:resources:graphql:graphql:limit:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Integer</exp_value>
-            <act_value>5000</act_value>
-          </verdict>
-          <verdict id='rate_limit_valid:resources:resources:graphql:graphql:limit:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>5000</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-          </verdict>
-        </section>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='rate_limit_valid:resources:resources:graphql:graphql:remaining:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Integer</exp_value>
-            <act_value>5000</act_value>
-          </verdict>
-          <verdict id='rate_limit_valid:resources:resources:graphql:graphql:remaining:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>5000</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-          </verdict>
-        </section>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='rate_limit_valid:resources:resources:graphql:graphql:reset:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Integer</exp_value>
-            <act_value>1511029373</act_value>
-          </verdict>
-          <verdict id='rate_limit_valid:resources:resources:graphql:graphql:reset:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>1511029373</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-          </verdict>
-        </section>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='rate_limit_valid:rate:rate:limit:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Integer</exp_value>
-            <act_value>5000</act_value>
-          </verdict>
-          <verdict id='rate_limit_valid:rate:rate:limit:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>5000</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-          </verdict>
-        </section>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='rate_limit_valid:rate:rate:remaining:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Integer</exp_value>
-            <act_value>4845</act_value>
-          </verdict>
-          <verdict id='rate_limit_valid:rate:rate:remaining:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>4845</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-          </verdict>
-        </section>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='rate_limit_valid:rate:rate:reset:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Integer</exp_value>
-            <act_value>1511027803</act_value>
-          </verdict>
-          <verdict id='rate_limit_valid:rate:rate:reset:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>1511027803</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-          </verdict>
+        <section class='RateLimit' method='verdict_valid?' name='rate_limit_valid'>
+          <section class='RateLimit::Resources' method='verdict_valid?' name='resources'>
+            <section class='RateLimit::Core_' method='verdict_valid?' name='core'>
+              <section name='verdict_assert_integer_positive?'>
+                <verdict id='rate_limit_valid:resources:resources:core:core:limit:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                  <exp_value>Integer</exp_value>
+                  <act_value>5000</act_value>
+                </verdict>
+                <verdict id='rate_limit_valid:resources:resources:core:core:limit:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+                  <object_1>5000</object_1>
+                  <operator>:&gt;</operator>
+                  <object_2>0</object_2>
+                </verdict>
+              </section>
+              <section name='verdict_assert_integer_positive?'>
+                <verdict id='rate_limit_valid:resources:resources:core:core:remaining:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                  <exp_value>Integer</exp_value>
+                  <act_value>4924</act_value>
+                </verdict>
+                <verdict id='rate_limit_valid:resources:resources:core:core:remaining:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+                  <object_1>4924</object_1>
+                  <operator>:&gt;</operator>
+                  <object_2>0</object_2>
+                </verdict>
+              </section>
+              <section name='verdict_assert_integer_positive?'>
+                <verdict id='rate_limit_valid:resources:resources:core:core:reset:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                  <exp_value>Integer</exp_value>
+                  <act_value>1511035219</act_value>
+                </verdict>
+                <verdict id='rate_limit_valid:resources:resources:core:core:reset:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+                  <object_1>1511035219</object_1>
+                  <operator>:&gt;</operator>
+                  <object_2>0</object_2>
+                </verdict>
+              </section>
+            </section>
+            <section class='RateLimit::Search' method='verdict_valid?' name='search'>
+              <section name='verdict_assert_integer_positive?'>
+                <verdict id='rate_limit_valid:resources:resources:search:search:limit:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                  <exp_value>Integer</exp_value>
+                  <act_value>30</act_value>
+                </verdict>
+                <verdict id='rate_limit_valid:resources:resources:search:search:limit:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+                  <object_1>30</object_1>
+                  <operator>:&gt;</operator>
+                  <object_2>0</object_2>
+                </verdict>
+              </section>
+              <section name='verdict_assert_integer_positive?'>
+                <verdict id='rate_limit_valid:resources:resources:search:search:remaining:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                  <exp_value>Integer</exp_value>
+                  <act_value>30</act_value>
+                </verdict>
+                <verdict id='rate_limit_valid:resources:resources:search:search:remaining:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+                  <object_1>30</object_1>
+                  <operator>:&gt;</operator>
+                  <object_2>0</object_2>
+                </verdict>
+              </section>
+              <section name='verdict_assert_integer_positive?'>
+                <verdict id='rate_limit_valid:resources:resources:search:search:reset:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                  <exp_value>Integer</exp_value>
+                  <act_value>1511033158</act_value>
+                </verdict>
+                <verdict id='rate_limit_valid:resources:resources:search:search:reset:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+                  <object_1>1511033158</object_1>
+                  <operator>:&gt;</operator>
+                  <object_2>0</object_2>
+                </verdict>
+              </section>
+            </section>
+            <section class='RateLimit::Graphql' method='verdict_valid?' name='graphql'>
+              <section name='verdict_assert_integer_positive?'>
+                <verdict id='rate_limit_valid:resources:resources:graphql:graphql:limit:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                  <exp_value>Integer</exp_value>
+                  <act_value>5000</act_value>
+                </verdict>
+                <verdict id='rate_limit_valid:resources:resources:graphql:graphql:limit:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+                  <object_1>5000</object_1>
+                  <operator>:&gt;</operator>
+                  <object_2>0</object_2>
+                </verdict>
+              </section>
+              <section name='verdict_assert_integer_positive?'>
+                <verdict id='rate_limit_valid:resources:resources:graphql:graphql:remaining:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                  <exp_value>Integer</exp_value>
+                  <act_value>5000</act_value>
+                </verdict>
+                <verdict id='rate_limit_valid:resources:resources:graphql:graphql:remaining:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+                  <object_1>5000</object_1>
+                  <operator>:&gt;</operator>
+                  <object_2>0</object_2>
+                </verdict>
+              </section>
+              <section name='verdict_assert_integer_positive?'>
+                <verdict id='rate_limit_valid:resources:resources:graphql:graphql:reset:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                  <exp_value>Integer</exp_value>
+                  <act_value>1511036698</act_value>
+                </verdict>
+                <verdict id='rate_limit_valid:resources:resources:graphql:graphql:reset:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+                  <object_1>1511036698</object_1>
+                  <operator>:&gt;</operator>
+                  <object_2>0</object_2>
+                </verdict>
+              </section>
+            </section>
+          </section>
+          <section class='RateLimit::Rate' method='verdict_valid?' name='rate'>
+            <section name='verdict_assert_integer_positive?'>
+              <verdict id='rate_limit_valid:rate:rate:limit:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                <exp_value>Integer</exp_value>
+                <act_value>5000</act_value>
+              </verdict>
+              <verdict id='rate_limit_valid:rate:rate:limit:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+                <object_1>5000</object_1>
+                <operator>:&gt;</operator>
+                <object_2>0</object_2>
+              </verdict>
+            </section>
+            <section name='verdict_assert_integer_positive?'>
+              <verdict id='rate_limit_valid:rate:rate:remaining:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                <exp_value>Integer</exp_value>
+                <act_value>4924</act_value>
+              </verdict>
+              <verdict id='rate_limit_valid:rate:rate:remaining:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+                <object_1>4924</object_1>
+                <operator>:&gt;</operator>
+                <object_2>0</object_2>
+              </verdict>
+            </section>
+            <section name='verdict_assert_integer_positive?'>
+              <verdict id='rate_limit_valid:rate:rate:reset:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                <exp_value>Integer</exp_value>
+                <act_value>1511035219</act_value>
+              </verdict>
+              <verdict id='rate_limit_valid:rate:rate:reset:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+                <object_1>1511035219</object_1>
+                <operator>:&gt;</operator>
+                <object_2>0</object_2>
+              </verdict>
+            </section>
+          </section>
         </section>
       </section>
       <section name='This is not valid'>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='rate_limit_not_valid:resources:resources:core:core:limit:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Integer</exp_value>
-            <act_value>5000</act_value>
-          </verdict>
-          <verdict id='rate_limit_not_valid:resources:resources:core:core:limit:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>5000</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-          </verdict>
-        </section>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='rate_limit_not_valid:resources:resources:core:core:remaining:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Integer</exp_value>
-            <act_value>4845</act_value>
-          </verdict>
-          <verdict id='rate_limit_not_valid:resources:resources:core:core:remaining:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>4845</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-          </verdict>
-        </section>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='rate_limit_not_valid:resources:resources:core:core:reset:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Integer</exp_value>
-            <act_value>0</act_value>
-          </verdict>
-          <verdict id='rate_limit_not_valid:resources:resources:core:core:reset:positive' method='verdict_assert_operator?' outcome='failed' volatile='false'>
-            <object_1>0</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-            <exception>
-              <class>Minitest::Assertion</class>
-              <message>Expected 0 to be &gt; 0.</message>
-              <backtrace>
-                <![CDATA[
+        <section class='RateLimit' method='verdict_valid?' name='rate_limit_not_valid'>
+          <section class='RateLimit::Resources' method='verdict_valid?' name='resources'>
+            <section class='RateLimit::Core_' method='verdict_valid?' name='core'>
+              <section name='verdict_assert_integer_positive?'>
+                <verdict id='rate_limit_not_valid:resources:resources:core:core:limit:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                  <exp_value>Integer</exp_value>
+                  <act_value>5000</act_value>
+                </verdict>
+                <verdict id='rate_limit_not_valid:resources:resources:core:core:limit:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+                  <object_1>5000</object_1>
+                  <operator>:&gt;</operator>
+                  <object_2>0</object_2>
+                </verdict>
+              </section>
+              <section name='verdict_assert_integer_positive?'>
+                <verdict id='rate_limit_not_valid:resources:resources:core:core:remaining:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                  <exp_value>Integer</exp_value>
+                  <act_value>4924</act_value>
+                </verdict>
+                <verdict id='rate_limit_not_valid:resources:resources:core:core:remaining:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+                  <object_1>4924</object_1>
+                  <operator>:&gt;</operator>
+                  <object_2>0</object_2>
+                </verdict>
+              </section>
+              <section name='verdict_assert_integer_positive?'>
+                <verdict id='rate_limit_not_valid:resources:resources:core:core:reset:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                  <exp_value>Integer</exp_value>
+                  <act_value>0</act_value>
+                </verdict>
+                <verdict id='rate_limit_not_valid:resources:resources:core:core:reset:positive' method='verdict_assert_operator?' outcome='failed' volatile='false'>
+                  <object_1>0</object_1>
+                  <operator>:&gt;</operator>
+                  <object_2>0</object_2>
+                  <exception>
+                    <class>Minitest::Assertion</class>
+                    <message>Expected 0 to be &gt; 0.</message>
+                    <backtrace>
+                      <![CDATA[
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/data/rate_limit.rb:71:in `verdict_field_valid?'
-C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:43:in `block in verdict_valid?'
-C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:41:in `verdict_valid?'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:48:in `block (2 levels) in verdict_valid?'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:46:in `block in verdict_valid?'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:45:in `verdict_valid?'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/data/rate_limit.rb:113:in `verdict_field_valid?'
-C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:43:in `block in verdict_valid?'
-C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:41:in `verdict_valid?'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:48:in `block (2 levels) in verdict_valid?'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:46:in `block in verdict_valid?'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:45:in `verdict_valid?'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/data/rate_limit.rb:28:in `verdict_field_valid?'
-C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:43:in `block in verdict_valid?'
-C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:41:in `verdict_valid?'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:48:in `block (2 levels) in verdict_valid?'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:46:in `block in verdict_valid?'
+C:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:45:in `verdict_valid?'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/nested_data_valid_test.rb:15:in `block (2 levels) in test_nested_data_valid'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/nested_data_valid_test.rb:13:in `block in test_nested_data_valid'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
@@ -247,108 +265,117 @@ C:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `bl
 C:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/base_classes/base_class_for_test.rb:11:in `prelude'
 C:/Users/Burdette/Documents/GitHub/RubyTest/examples/github_api/tester_tour/tests/nested_data_valid_test.rb:8:in `test_nested_data_valid']]>
-              </backtrace>
-            </exception>
-          </verdict>
-        </section>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='rate_limit_not_valid:resources:resources:search:search:limit:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Integer</exp_value>
-            <act_value>30</act_value>
-          </verdict>
-          <verdict id='rate_limit_not_valid:resources:resources:search:search:limit:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>30</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-          </verdict>
-        </section>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='rate_limit_not_valid:resources:resources:search:search:remaining:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Integer</exp_value>
-            <act_value>30</act_value>
-          </verdict>
-          <verdict id='rate_limit_not_valid:resources:resources:search:search:remaining:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>30</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-          </verdict>
-        </section>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='rate_limit_not_valid:resources:resources:search:search:reset:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Integer</exp_value>
-            <act_value>1511025833</act_value>
-          </verdict>
-          <verdict id='rate_limit_not_valid:resources:resources:search:search:reset:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>1511025833</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-          </verdict>
-        </section>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='rate_limit_not_valid:resources:resources:graphql:graphql:limit:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Integer</exp_value>
-            <act_value>5000</act_value>
-          </verdict>
-          <verdict id='rate_limit_not_valid:resources:resources:graphql:graphql:limit:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>5000</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-          </verdict>
-        </section>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='rate_limit_not_valid:resources:resources:graphql:graphql:remaining:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Integer</exp_value>
-            <act_value>5000</act_value>
-          </verdict>
-          <verdict id='rate_limit_not_valid:resources:resources:graphql:graphql:remaining:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>5000</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-          </verdict>
-        </section>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='rate_limit_not_valid:resources:resources:graphql:graphql:reset:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Integer</exp_value>
-            <act_value>1511029373</act_value>
-          </verdict>
-          <verdict id='rate_limit_not_valid:resources:resources:graphql:graphql:reset:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>1511029373</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-          </verdict>
-        </section>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='rate_limit_not_valid:rate:rate:limit:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Integer</exp_value>
-            <act_value>5000</act_value>
-          </verdict>
-          <verdict id='rate_limit_not_valid:rate:rate:limit:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>5000</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-          </verdict>
-        </section>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='rate_limit_not_valid:rate:rate:remaining:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Integer</exp_value>
-            <act_value>4845</act_value>
-          </verdict>
-          <verdict id='rate_limit_not_valid:rate:rate:remaining:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>4845</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-          </verdict>
-        </section>
-        <section name='verdict_assert_integer_positive?'>
-          <verdict id='rate_limit_not_valid:rate:rate:reset:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-            <exp_value>Integer</exp_value>
-            <act_value>1511027803</act_value>
-          </verdict>
-          <verdict id='rate_limit_not_valid:rate:rate:reset:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-            <object_1>1511027803</object_1>
-            <operator>:&gt;</operator>
-            <object_2>0</object_2>
-          </verdict>
+                    </backtrace>
+                  </exception>
+                </verdict>
+              </section>
+            </section>
+            <section class='RateLimit::Search' method='verdict_valid?' name='search'>
+              <section name='verdict_assert_integer_positive?'>
+                <verdict id='rate_limit_not_valid:resources:resources:search:search:limit:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                  <exp_value>Integer</exp_value>
+                  <act_value>30</act_value>
+                </verdict>
+                <verdict id='rate_limit_not_valid:resources:resources:search:search:limit:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+                  <object_1>30</object_1>
+                  <operator>:&gt;</operator>
+                  <object_2>0</object_2>
+                </verdict>
+              </section>
+              <section name='verdict_assert_integer_positive?'>
+                <verdict id='rate_limit_not_valid:resources:resources:search:search:remaining:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                  <exp_value>Integer</exp_value>
+                  <act_value>30</act_value>
+                </verdict>
+                <verdict id='rate_limit_not_valid:resources:resources:search:search:remaining:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+                  <object_1>30</object_1>
+                  <operator>:&gt;</operator>
+                  <object_2>0</object_2>
+                </verdict>
+              </section>
+              <section name='verdict_assert_integer_positive?'>
+                <verdict id='rate_limit_not_valid:resources:resources:search:search:reset:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                  <exp_value>Integer</exp_value>
+                  <act_value>1511033158</act_value>
+                </verdict>
+                <verdict id='rate_limit_not_valid:resources:resources:search:search:reset:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+                  <object_1>1511033158</object_1>
+                  <operator>:&gt;</operator>
+                  <object_2>0</object_2>
+                </verdict>
+              </section>
+            </section>
+            <section class='RateLimit::Graphql' method='verdict_valid?' name='graphql'>
+              <section name='verdict_assert_integer_positive?'>
+                <verdict id='rate_limit_not_valid:resources:resources:graphql:graphql:limit:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                  <exp_value>Integer</exp_value>
+                  <act_value>5000</act_value>
+                </verdict>
+                <verdict id='rate_limit_not_valid:resources:resources:graphql:graphql:limit:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+                  <object_1>5000</object_1>
+                  <operator>:&gt;</operator>
+                  <object_2>0</object_2>
+                </verdict>
+              </section>
+              <section name='verdict_assert_integer_positive?'>
+                <verdict id='rate_limit_not_valid:resources:resources:graphql:graphql:remaining:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                  <exp_value>Integer</exp_value>
+                  <act_value>5000</act_value>
+                </verdict>
+                <verdict id='rate_limit_not_valid:resources:resources:graphql:graphql:remaining:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+                  <object_1>5000</object_1>
+                  <operator>:&gt;</operator>
+                  <object_2>0</object_2>
+                </verdict>
+              </section>
+              <section name='verdict_assert_integer_positive?'>
+                <verdict id='rate_limit_not_valid:resources:resources:graphql:graphql:reset:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                  <exp_value>Integer</exp_value>
+                  <act_value>1511036698</act_value>
+                </verdict>
+                <verdict id='rate_limit_not_valid:resources:resources:graphql:graphql:reset:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+                  <object_1>1511036698</object_1>
+                  <operator>:&gt;</operator>
+                  <object_2>0</object_2>
+                </verdict>
+              </section>
+            </section>
+          </section>
+          <section class='RateLimit::Rate' method='verdict_valid?' name='rate'>
+            <section name='verdict_assert_integer_positive?'>
+              <verdict id='rate_limit_not_valid:rate:rate:limit:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                <exp_value>Integer</exp_value>
+                <act_value>5000</act_value>
+              </verdict>
+              <verdict id='rate_limit_not_valid:rate:rate:limit:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+                <object_1>5000</object_1>
+                <operator>:&gt;</operator>
+                <object_2>0</object_2>
+              </verdict>
+            </section>
+            <section name='verdict_assert_integer_positive?'>
+              <verdict id='rate_limit_not_valid:rate:rate:remaining:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                <exp_value>Integer</exp_value>
+                <act_value>4924</act_value>
+              </verdict>
+              <verdict id='rate_limit_not_valid:rate:rate:remaining:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+                <object_1>4924</object_1>
+                <operator>:&gt;</operator>
+                <object_2>0</object_2>
+              </verdict>
+            </section>
+            <section name='verdict_assert_integer_positive?'>
+              <verdict id='rate_limit_not_valid:rate:rate:reset:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                <exp_value>Integer</exp_value>
+                <act_value>1511035219</act_value>
+              </verdict>
+              <verdict id='rate_limit_not_valid:rate:rate:reset:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+                <object_1>1511035219</object_1>
+                <operator>:&gt;</operator>
+                <object_2>0</object_2>
+              </verdict>
+            </section>
+          </section>
         </section>
       </section>
     </section>

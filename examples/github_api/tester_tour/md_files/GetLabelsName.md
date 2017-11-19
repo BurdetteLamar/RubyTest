@@ -69,68 +69,70 @@ Notes:
 ```xml
 <get_labels_name_test>
   <summary errors='0' failures='0' verdicts='9'/>
-  <test_method name='get_labels_name_test' timestamp='2017-11-18-Sat-11.23.23.016'>
-    <section duration_seconds='4.735' name='With GithubClient'>
+  <test_method name='get_labels_name_test' timestamp='2017-11-18-Sat-13.25.26.995'>
+    <section duration_seconds='4.860' name='With GithubClient'>
       <section name='Test GetLabelsName'>
         <section name='Create the label to be fetched'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-            <execution duration_seconds='3.313' timestamp='2017-11-18-Sat-11.23.23.016'/>
+            <execution duration_seconds='3.344' timestamp='2017-11-18-Sat-13.25.26.995'/>
           </GithubClient>
           <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
             <parameters color='000000' name='test_label'/>
-            <execution duration_seconds='0.375' timestamp='2017-11-18-Sat-11.23.26.329'/>
+            <execution duration_seconds='0.422' timestamp='2017-11-18-Sat-13.25.30.339'/>
           </GithubClient>
         </section>
         <section name='Test fetching the created label'>
-          <section name='get_label' timestamp='2017-11-18-Sat-11.23.26.704'>
+          <section name='get_label' timestamp='2017-11-18-Sat-13.25.30.761'>
             <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-              <execution duration_seconds='0.359' timestamp='2017-11-18-Sat-11.23.26.704'/>
+              <execution duration_seconds='0.328' timestamp='2017-11-18-Sat-13.25.30.761'/>
             </GithubClient>
             <section name='Evaluation'>
               <verdict id='get_label:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>test_label</exp_value>
                 <act_value>test_label</act_value>
               </verdict>
-              <section name='verdict_assert_integer_positive?'>
-                <verdict id='get_label:valid:id:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-                  <exp_value>Integer</exp_value>
-                  <act_value>754377667</act_value>
+              <section class='Label' method='verdict_valid?' name='valid'>
+                <section name='verdict_assert_integer_positive?'>
+                  <verdict id='get_label:valid:id:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                    <exp_value>Integer</exp_value>
+                    <act_value>754443844</act_value>
+                  </verdict>
+                  <verdict id='get_label:valid:id:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
+                    <object_1>754443844</object_1>
+                    <operator>:&gt;</operator>
+                    <object_2>0</object_2>
+                  </verdict>
+                </section>
+                <verdict id='get_label:valid:url' method='verdict_assert_match?' outcome='passed' volatile='false'>
+                  <exp_value>/^https:\/\/api.github.com\/repos/</exp_value>
+                  <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label</act_value>
                 </verdict>
-                <verdict id='get_label:valid:id:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-                  <object_1>754377667</object_1>
-                  <operator>:&gt;</operator>
-                  <object_2>0</object_2>
+                <section name='verdict_assert_string_not_empty?'>
+                  <verdict id='get_label:valid:name:string' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
+                    <exp_value>String</exp_value>
+                    <act_value>test_label</act_value>
+                  </verdict>
+                  <verdict id='get_label:valid:name:not_empty' method='verdict_refute_empty?' outcome='passed' volatile='false'>
+                    <act_value>test_label</act_value>
+                  </verdict>
+                </section>
+                <verdict id='get_label:valid:color' method='verdict_assert_match?' outcome='passed' volatile='false'>
+                  <exp_value>/[0-9a-f]{6}/i</exp_value>
+                  <act_value>000000</act_value>
+                </verdict>
+                <verdict id='get_label:valid:default' method='verdict_assert_includes?' outcome='passed' volatile='false'>
+                  <exp_value>[TrueClass, FalseClass]</exp_value>
+                  <act_value>FalseClass</act_value>
                 </verdict>
               </section>
-              <verdict id='get_label:valid:url' method='verdict_assert_match?' outcome='passed' volatile='false'>
-                <exp_value>/^https:\/\/api.github.com\/repos/</exp_value>
-                <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label</act_value>
-              </verdict>
-              <section name='verdict_assert_string_not_empty?'>
-                <verdict id='get_label:valid:name:string' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
-                  <exp_value>String</exp_value>
-                  <act_value>test_label</act_value>
-                </verdict>
-                <verdict id='get_label:valid:name:not_empty' method='verdict_refute_empty?' outcome='passed' volatile='false'>
-                  <act_value>test_label</act_value>
-                </verdict>
-              </section>
-              <verdict id='get_label:valid:color' method='verdict_assert_match?' outcome='passed' volatile='false'>
-                <exp_value>/[0-9a-f]{6}/i</exp_value>
-                <act_value>000000</act_value>
-              </verdict>
-              <verdict id='get_label:valid:default' method='verdict_assert_includes?' outcome='passed' volatile='false'>
-                <exp_value>[TrueClass, FalseClass]</exp_value>
-                <act_value>FalseClass</act_value>
-              </verdict>
             </section>
           </section>
           <section name='Clean up'>
             <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-              <execution duration_seconds='0.328' timestamp='2017-11-18-Sat-11.23.27.063'/>
+              <execution duration_seconds='0.375' timestamp='2017-11-18-Sat-13.25.31.089'/>
             </GithubClient>
             <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-              <execution duration_seconds='0.359' timestamp='2017-11-18-Sat-11.23.27.391'/>
+              <execution duration_seconds='0.391' timestamp='2017-11-18-Sat-13.25.31.464'/>
             </GithubClient>
           </section>
         </section>
