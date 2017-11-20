@@ -14,7 +14,7 @@ Links to the markdown documentation are at:
 
 ## Examples
 
-An important example is about testing for the GitHub REST API.  Take the [Tester Tour](./examples/github_api/TesterTour.md#tester_tour).
+An important example is about testing for the GitHub REST API.  Take the [Tester Tour](./examples/github_api/TesterTour.md#tester-tour).
 
 ## Framework
 
