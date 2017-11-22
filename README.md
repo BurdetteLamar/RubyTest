@@ -10,7 +10,7 @@ The project consists of examples, the framework that supports them, and of cours
 
 Links to the markdown documentation are at:
 
-- [Contents](./Contents.md)
+- [Contents](./Contents.md#contents-markdown-pages)
 
 ## Examples
 
@@ -20,17 +20,17 @@ An important example is about testing for the GitHub REST API.  Take the [Tester
 
 The testing is supported by
 
-- [Robust logging](./lib/log/Log.md)
-- [Helpers](./lib/helpers/Helpers.md)
-- [Base classes](./lib/base_classes/BaseClasses.md)
+- [Robust logging](./lib/log/Log.md#log)
+- [Helpers](./lib/helpers/Helpers.md#helpers)
+- [Base classes](./lib/base_classes/BaseClasses.md#base-classes)
 
 The framework itself is tested by
 
-- [Unit testing](./test/Test.md)
+- [Unit testing](./test/Test.md#unit-tests)
 
 There are also
 
-- [Logging examples](./examples/log/Log.md)
+- [Logging examples](./examples/log/Log.md#log-examples)
 
 ## Rake Tasks
 
@@ -38,7 +38,7 @@ You can also review all rake tasks by running command
 
 - <code>rake -D</code>
 
-or by visiting the documentation for the [Rakefile](./Rakefile.md).
+or by visiting the documentation for the [Rakefile](./Rakefile.md#rakefile).
 
 ## RDoc
 
