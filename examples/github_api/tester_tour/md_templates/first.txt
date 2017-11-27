@@ -10,23 +10,23 @@ Here's a simple first test, one that tests CRUD methods (create, read, update, d
 
 Notes:
 
-- The test first defines variables:
-  - `label_to_create`, which has data for creating a label.
-  - `label_created`, which will have the data for the created label, including new values for `:id` and `:url`.
+- The test first defines:
+  - `label_to_create`, a variable to  house data for creating a label.
+  - `label_created`, a variable that will house the data for the created label, including new values for `:id` and `:url`.
 - In section `Create`:
-  - Instead of method `create`, we use method `create!`, which first deletes the label if it exists.
-  - Symbols `:create_return_correct` and `:created_correctly` are _verdict identifiers_.  A verdict identifier appears in each verict method call.
-  - Method `Label.verdict_equal?` verifies that the returned label data is correct.
-  - Method `label_returned.verdict_read_and_verify?` verifies that the label was correctly created in GitHub.
-  - Variable `label_created` saves the label data for use in the following sections.
+  - `create`, a method that first deletes the label if it exists, then creates the label.  (Method `:create`, without the exclamation point, would fail if the label exists.)
+  - `:create_return_correct` and `:created_correctly`, symbold that are _verdict identifiers_.  A verdict identifier appears in each verict method call.
+  - `Label.verdict_equal?`,  a method that verifies that the returned label data is correct.
+  - `label_returned.verdict_read_and_verify?`, a method that verifies that the label was correctly created in GitHub.
+  - `label_created`, a variable that saves the label data for use in the following sections.
 - Inn section `Read`:
-  - Method `Label.verdict_equal?` verifies that the returned label data is correct.
+  - `Label.verdict_equal?`, a method that verifies that the returned label data is correct.
 - Inn section `Update`:
-  - Method `Label.verdict_equal?` verifies that the returned label data is correct.
-  - Method `label_returned.verdict_read_and_verify?` verifies that the label was correctly updated in GitHub.
+  - `Label.verdict_equal?`, a method that verifies that the returned label data is correct.
+  - `label_returned.verdict_read_and_verify?`, a method that verifies that the label was correctly updated in GitHub.
 - In section `Delete`:
-  - Method `log.verdict_assert_nil?` verifies that the return value is `nil`.
-  - Method `label_created.verdict_refute_exist?` verifies that the label was deleted in GitHub.
+  - `log.verdict_assert_nil?`, a method that verifies that the return value is `nil`.
+  - `label_created.verdict_refute_exist?`, a method that verifies that the label was deleted in GitHub.
 
 ## Log
 

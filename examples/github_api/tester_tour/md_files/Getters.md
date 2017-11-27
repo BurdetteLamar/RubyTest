@@ -52,69 +52,76 @@ Notes:
 ```xml
 <getters_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='3.735' name='getters_test' timestamp='2017-11-18-Sat-13.25.05.603'>
+  <test_method duration_seconds='2.708' name='getters_test' timestamp='2017-11-27-Mon-12.11.36.476'>
     <section name='With GithubClient'>
       <section name='Get the first label'>
-        <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
-          <execution duration_seconds='3.375' timestamp='2017-11-18-Sat-13.25.05.603'/>
+        <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
+          <execution duration_seconds='1.868' timestamp='2017-11-27-Mon-12.11.36.486'/>
         </GithubClient>
         <section name='Label'>
-          <data field='id' value='562043326'/>
-          <data field='url' value='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/bug'/>
+          <data field='id' value='710733208'/>
+          <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/bug'/>
           <data field='name' value='bug'/>
           <data field='color' value='ee0701'/>
           <data field='default' value='true'/>
         </section>
       </section>
       <section name='Get all labels'>
-        <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
-          <execution duration_seconds='0.359' timestamp='2017-11-18-Sat-13.25.08.978'/>
+        <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
+          <execution duration_seconds='0.820' timestamp='2017-11-27-Mon-12.11.38.354'/>
         </GithubClient>
         <section name='Label'>
-          <data field='id' value='562043326'/>
-          <data field='url' value='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/bug'/>
+          <data field='id' value='710733208'/>
+          <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/bug'/>
           <data field='name' value='bug'/>
           <data field='color' value='ee0701'/>
           <data field='default' value='true'/>
         </section>
         <section name='Label'>
-          <data field='id' value='562043327'/>
-          <data field='url' value='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/duplicate'/>
+          <data field='id' value='710733209'/>
+          <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/duplicate'/>
           <data field='name' value='duplicate'/>
           <data field='color' value='cccccc'/>
           <data field='default' value='true'/>
         </section>
         <section name='Label'>
-          <data field='id' value='562043328'/>
-          <data field='url' value='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/enhancement'/>
+          <data field='id' value='710733210'/>
+          <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/enhancement'/>
           <data field='name' value='enhancement'/>
           <data field='color' value='84b6eb'/>
           <data field='default' value='true'/>
         </section>
         <section name='Label'>
-          <data field='id' value='562043329'/>
-          <data field='url' value='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/help%20wanted'/>
-          <data field='name' value='help wanted'/>
-          <data field='color' value='128A0C'/>
+          <data field='id' value='710733213'/>
+          <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/good%20first%20issue'/>
+          <data field='name' value='good first issue'/>
+          <data field='color' value='7057ff'/>
           <data field='default' value='true'/>
         </section>
         <section name='Label'>
-          <data field='id' value='562043330'/>
-          <data field='url' value='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/invalid'/>
+          <data field='id' value='710733211'/>
+          <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/help%20wanted'/>
+          <data field='name' value='help wanted'/>
+          <data field='color' value='33aa3f'/>
+          <data field='default' value='true'/>
+        </section>
+        <section name='Label'>
+          <data field='id' value='710733216'/>
+          <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/invalid'/>
           <data field='name' value='invalid'/>
           <data field='color' value='e6e6e6'/>
           <data field='default' value='true'/>
         </section>
         <section name='Label'>
-          <data field='id' value='562043331'/>
-          <data field='url' value='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/question'/>
+          <data field='id' value='710733218'/>
+          <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/question'/>
           <data field='name' value='question'/>
           <data field='color' value='cc317c'/>
           <data field='default' value='true'/>
         </section>
         <section name='Label'>
-          <data field='id' value='562043332'/>
-          <data field='url' value='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/wontfix'/>
+          <data field='id' value='710733219'/>
+          <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/wontfix'/>
           <data field='name' value='wontfix'/>
           <data field='color' value='ffffff'/>
           <data field='default' value='true'/>

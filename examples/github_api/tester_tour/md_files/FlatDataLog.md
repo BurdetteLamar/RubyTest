@@ -43,17 +43,17 @@ Notes:
 ```xml
 <flat_data_log_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='3.328' name='flat_data_log_test' timestamp='2017-11-18-Sat-13.24.30.235'>
+  <test_method duration_seconds='1.770' name='flat_data_log_test' timestamp='2017-11-27-Mon-12.11.10.105'>
     <section name='With GithubClient'>
       <section name='Fetch and log an instance of Label'>
         <section name='Fetch a label'>
-          <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
-            <execution duration_seconds='3.328' timestamp='2017-11-18-Sat-13.24.30.235'/>
+          <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
+            <execution duration_seconds='1.740' timestamp='2017-11-27-Mon-12.11.10.135'/>
           </GithubClient>
         </section>
         <section name='Fetched label'>
-          <data field='id' value='562043326'/>
-          <data field='url' value='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/bug'/>
+          <data field='id' value='710733208'/>
+          <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/bug'/>
           <data field='name' value='bug'/>
           <data field='color' value='ee0701'/>
           <data field='default' value='true'/>
