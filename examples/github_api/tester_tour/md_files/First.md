@@ -65,23 +65,23 @@ end
 
 Notes:
 
-- The test first defines variables:
-  - `label_to_create`, which has data for creating a label.
-  - `label_created`, which will have the data for the created label, including new values for `:id` and `:url`.
+- The test first defines:
+  - `label_to_create`, a variable to  house data for creating a label.
+  - `label_created`, a variable that will house the data for the created label, including new values for `:id` and `:url`.
 - In section `Create`:
-  - Instead of method `create`, we use method `create!`, which first deletes the label if it exists.
-  - Symbols `:create_return_correct` and `:created_correctly` are _verdict identifiers_.  A verdict identifier appears in each verict method call.
-  - Method `Label.verdict_equal?` verifies that the returned label data is correct.
-  - Method `label_returned.verdict_read_and_verify?` verifies that the label was correctly created in GitHub.
-  - Variable `label_created` saves the label data for use in the following sections.
+  - `create`, a method that first deletes the label if it exists, then creates the label.  (Method `:create`, without the exclamation point, would fail if the label exists.)
+  - `:create_return_correct` and `:created_correctly`, symbold that are _verdict identifiers_.  A verdict identifier appears in each verict method call.
+  - `Label.verdict_equal?`,  a method that verifies that the returned label data is correct.
+  - `label_returned.verdict_read_and_verify?`, a method that verifies that the label was correctly created in GitHub.
+  - `label_created`, a variable that saves the label data for use in the following sections.
 - Inn section `Read`:
-  - Method `Label.verdict_equal?` verifies that the returned label data is correct.
+  - `Label.verdict_equal?`, a method that verifies that the returned label data is correct.
 - Inn section `Update`:
-  - Method `Label.verdict_equal?` verifies that the returned label data is correct.
-  - Method `label_returned.verdict_read_and_verify?` verifies that the label was correctly updated in GitHub.
+  - `Label.verdict_equal?`, a method that verifies that the returned label data is correct.
+  - `label_returned.verdict_read_and_verify?`, a method that verifies that the label was correctly updated in GitHub.
 - In section `Delete`:
-  - Method `log.verdict_assert_nil?` verifies that the return value is `nil`.
-  - Method `label_created.verdict_refute_exist?` verifies that the label was deleted in GitHub.
+  - `log.verdict_assert_nil?`, a method that verifies that the return value is `nil`.
+  - `label_created.verdict_refute_exist?`, a method that verifies that the label was deleted in GitHub.
 
 ## Log
 
@@ -91,15 +91,15 @@ You're welcome to review this log, but the smaller logs in other tour stops will
 ```xml
 <first_test>
   <summary errors='0' failures='0' verdicts='26'/>
-  <test_method name='first_test' timestamp='2017-11-18-Sat-13.24.13.179'>
+  <test_method name='first_test' timestamp='2017-11-27-Mon-12.10.53.775'>
     <section name='With GithubClient'>
       <section name='Create'>
-        <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
-          <execution duration_seconds='3.485' timestamp='2017-11-18-Sat-13.24.13.179'/>
+        <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/label%20name'>
+          <execution duration_seconds='2.090' timestamp='2017-11-27-Mon-12.10.53.805'/>
         </GithubClient>
-        <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
+        <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
           <parameters color='000000' name='label name'/>
-          <execution duration_seconds='0.391' timestamp='2017-11-18-Sat-13.24.16.663'/>
+          <execution duration_seconds='0.340' timestamp='2017-11-27-Mon-12.10.55.925'/>
         </GithubClient>
         <section class='Label' method='verdict_equal?' name='create_return_correct'>
           <verdict id='create_return_correct:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
@@ -114,17 +114,17 @@ You're welcome to review this log, but the smaller logs in other tour stops will
             <exp_value>false</exp_value>
             <act_value>false</act_value>
           </verdict>
-          <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
-            <execution duration_seconds='0.438' timestamp='2017-11-18-Sat-13.24.17.054'/>
+          <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/label%20name'>
+            <execution duration_seconds='0.320' timestamp='2017-11-27-Mon-12.10.56.265'/>
           </GithubClient>
           <section class='Label' method='verdict_equal?' name='created_correctly'>
             <verdict id='created_correctly:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>754443171</exp_value>
-              <act_value>754443171</act_value>
+              <exp_value>762479441</exp_value>
+              <act_value>762479441</act_value>
             </verdict>
             <verdict id='created_correctly:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</exp_value>
-              <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</act_value>
+              <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/label%20name</exp_value>
+              <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/label%20name</act_value>
             </verdict>
             <verdict id='created_correctly:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
               <exp_value>label name</exp_value>
@@ -140,17 +140,17 @@ You're welcome to review this log, but the smaller logs in other tour stops will
             </verdict>
           </section>
           <section name='Read'>
-            <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
-              <execution duration_seconds='0.375' timestamp='2017-11-18-Sat-13.24.17.492'/>
+            <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/label%20name'>
+              <execution duration_seconds='0.350' timestamp='2017-11-27-Mon-12.10.56.585'/>
             </GithubClient>
             <section class='Label' method='verdict_equal?' name='read_correctly'>
               <verdict id='read_correctly:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                <exp_value>754443171</exp_value>
-                <act_value>754443171</act_value>
+                <exp_value>762479441</exp_value>
+                <act_value>762479441</act_value>
               </verdict>
               <verdict id='read_correctly:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</exp_value>
-                <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</act_value>
+                <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/label%20name</exp_value>
+                <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/label%20name</act_value>
               </verdict>
               <verdict id='read_correctly:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>label name</exp_value>
@@ -165,19 +165,19 @@ You're welcome to review this log, but the smaller logs in other tour stops will
                 <act_value>false</act_value>
               </verdict>
             </section>
-            <section duration_seconds='6.203' name='Update'>
-              <GithubClient method='PATCH' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
+            <section duration_seconds='4.730' name='Update'>
+              <GithubClient method='PATCH' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/label%20name'>
                 <parameters color='ffffff'/>
-                <execution duration_seconds='0.406' timestamp='2017-11-18-Sat-13.24.17.867'/>
+                <execution duration_seconds='0.350' timestamp='2017-11-27-Mon-12.10.56.975'/>
               </GithubClient>
               <section class='Label' method='verdict_equal?' name='update_return_correct'>
                 <verdict id='update_return_correct:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                  <exp_value>754443171</exp_value>
-                  <act_value>754443171</act_value>
+                  <exp_value>762479441</exp_value>
+                  <act_value>762479441</act_value>
                 </verdict>
                 <verdict id='update_return_correct:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                  <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</exp_value>
-                  <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</act_value>
+                  <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/label%20name</exp_value>
+                  <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/label%20name</act_value>
                 </verdict>
                 <verdict id='update_return_correct:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                   <exp_value>label name</exp_value>
@@ -191,17 +191,17 @@ You're welcome to review this log, but the smaller logs in other tour stops will
                   <exp_value>false</exp_value>
                   <act_value>false</act_value>
                 </verdict>
-                <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
-                  <execution duration_seconds='0.375' timestamp='2017-11-18-Sat-13.24.18.273'/>
+                <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/label%20name'>
+                  <execution duration_seconds='0.360' timestamp='2017-11-27-Mon-12.10.57.325'/>
                 </GithubClient>
                 <section class='Label' method='verdict_equal?' name='updated_correctly'>
                   <verdict id='updated_correctly:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                    <exp_value>754443171</exp_value>
-                    <act_value>754443171</act_value>
+                    <exp_value>762479441</exp_value>
+                    <act_value>762479441</act_value>
                   </verdict>
                   <verdict id='updated_correctly:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                    <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</exp_value>
-                    <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</act_value>
+                    <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/label%20name</exp_value>
+                    <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/label%20name</act_value>
                   </verdict>
                   <verdict id='updated_correctly:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                     <exp_value>label name</exp_value>
@@ -217,14 +217,14 @@ You're welcome to review this log, but the smaller logs in other tour stops will
                   </verdict>
                 </section>
                 <section name='Delete'>
-                  <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
-                    <execution duration_seconds='0.359' timestamp='2017-11-18-Sat-13.24.18.648'/>
+                  <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/label%20name'>
+                    <execution duration_seconds='0.410' timestamp='2017-11-27-Mon-12.10.57.715'/>
                   </GithubClient>
                   <verdict id='delete_return_correct' method='verdict_assert_nil?' outcome='passed' volatile='false'>
                     <act_value>nil</act_value>
                   </verdict>
-                  <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
-                    <execution duration_seconds='0.375' timestamp='2017-11-18-Sat-13.24.19.007'/>
+                  <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/label%20name'>
+                    <execution duration_seconds='0.380' timestamp='2017-11-27-Mon-12.10.58.125'/>
                   </GithubClient>
                   <verdict id='deleted_correctly' method='verdict_refute?' outcome='passed' volatile='false'>
                     <act_value>false</act_value>
