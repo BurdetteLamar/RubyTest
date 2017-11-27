@@ -15,7 +15,7 @@ Notes:
   - `label_created`, a variable that will house the data for the created label, including new values for `:id` and `:url`.
 - In section `Create`:
   - `create`, a method that first deletes the label if it exists, then creates the label.  (Method `:create`, without the exclamation point, would fail if the label exists.)
-  - `:create_return_correct` and `:created_correctly`, symbold that are _verdict identifiers_.  A verdict identifier appears in each verict method call.
+  - `:create_return_correct` and `:created_correctly`, symbols that are _verdict identifiers_.  A verdict identifier appears in each verdict method call.
   - `Label.verdict_equal?`,  a method that verifies that the returned label data is correct.
   - `label_returned.verdict_read_and_verify?`, a method that verifies that the label was correctly created in GitHub.
   - `label_created`, a variable that saves the label data for use in the following sections.
