@@ -70,26 +70,26 @@ Notes:
 ```xml
 <existence_test>
   <summary errors='0' failures='0' verdicts='3'/>
-  <test_method duration_seconds='4.220' name='existence_test' timestamp='2017-11-27-Mon-12.11.40.274'>
+  <test_method duration_seconds='3.884' name='existence_test' timestamp='2017-11-27-Mon-15.37.51.096'>
     <section name='With GithubClient'>
       <section name='Create a label'>
         <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-          <execution duration_seconds='1.840' timestamp='2017-11-27-Mon-12.11.40.284'/>
+          <execution duration_seconds='1.763' timestamp='2017-11-27-Mon-15.37.51.096'/>
         </GithubClient>
         <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
           <parameters color='000000' name='test_label'/>
-          <execution duration_seconds='0.370' timestamp='2017-11-27-Mon-12.11.42.124'/>
+          <execution duration_seconds='0.359' timestamp='2017-11-27-Mon-15.37.52.859'/>
         </GithubClient>
       </section>
       <section name='Determine existence'>
         <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-          <execution duration_seconds='0.630' timestamp='2017-11-27-Mon-12.11.42.494'/>
+          <execution duration_seconds='0.359' timestamp='2017-11-27-Mon-15.37.53.218'/>
         </GithubClient>
         <comment>Label exists? true</comment>
       </section>
       <section name='Assert existence in verdict'>
         <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-          <execution duration_seconds='0.330' timestamp='2017-11-27-Mon-12.11.43.124'/>
+          <execution duration_seconds='0.359' timestamp='2017-11-27-Mon-15.37.53.576'/>
         </GithubClient>
         <verdict id='assert_exist' method='verdict_assert?' outcome='passed' volatile='false'>
           <act_value>true</act_value>
@@ -97,16 +97,16 @@ Notes:
       </section>
       <section name='Delete if exist'>
         <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-          <execution duration_seconds='0.350' timestamp='2017-11-27-Mon-12.11.43.454'/>
+          <execution duration_seconds='0.343' timestamp='2017-11-27-Mon-15.37.53.935'/>
         </GithubClient>
         <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-          <execution duration_seconds='0.350' timestamp='2017-11-27-Mon-12.11.43.804'/>
+          <execution duration_seconds='0.359' timestamp='2017-11-27-Mon-15.37.54.278'/>
         </GithubClient>
         <comment>Label deleted? true</comment>
       </section>
       <section name='Refute existence in verdict'>
         <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-          <execution duration_seconds='0.340' timestamp='2017-11-27-Mon-12.11.44.154'/>
+          <execution duration_seconds='0.343' timestamp='2017-11-27-Mon-15.37.54.637'/>
         </GithubClient>
         <verdict id='refute_exist' method='verdict_refute?' outcome='passed' volatile='false'>
           <act_value>false</act_value>
