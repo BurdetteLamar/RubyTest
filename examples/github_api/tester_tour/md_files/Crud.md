@@ -113,7 +113,7 @@ Notes:
 ```xml
 <crud_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='3.635' name='crud_test' timestamp='2017-11-27-Mon-15.37.43.093'>
+  <test_method duration_seconds='3.323' name='crud_test' timestamp='2017-11-27-Mon-15.41.46.652'>
     <section name='With GithubClient'>
       <section name='Create'>
         <section name='Label to create'>
@@ -123,16 +123,16 @@ Notes:
         </section>
         <section name='Delete if exists, to avoid collision'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/label%20name'>
-            <execution duration_seconds='2.137' timestamp='2017-11-27-Mon-15.37.43.093'/>
+            <execution duration_seconds='1.903' timestamp='2017-11-27-Mon-15.41.46.652'/>
           </GithubClient>
           <comment>Deleted? No.</comment>
         </section>
         <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
           <parameters color='000000' name='label name'/>
-          <execution duration_seconds='0.343' timestamp='2017-11-27-Mon-15.37.45.230'/>
+          <execution duration_seconds='0.328' timestamp='2017-11-27-Mon-15.41.48.555'/>
         </GithubClient>
         <section name='Label created'>
-          <data field='id' value='762646370'/>
+          <data field='id' value='762649160'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/label%20name'/>
           <data field='name' value='label name'/>
           <data field='color' value='000000'/>
@@ -141,17 +141,17 @@ Notes:
       </section>
       <section name='Read'>
         <section name='Log to read'>
-          <data field='id' value='762646370'/>
+          <data field='id' value='762649160'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/label%20name'/>
           <data field='name' value='label name'/>
           <data field='color' value='000000'/>
           <data field='default' value='false'/>
         </section>
         <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/label%20name'>
-          <execution duration_seconds='0.359' timestamp='2017-11-27-Mon-15.37.45.574'/>
+          <execution duration_seconds='0.343' timestamp='2017-11-27-Mon-15.41.48.883'/>
         </GithubClient>
         <section name='Label read'>
-          <data field='id' value='762646370'/>
+          <data field='id' value='762649160'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/label%20name'/>
           <data field='name' value='label name'/>
           <data field='color' value='000000'/>
@@ -160,7 +160,7 @@ Notes:
       </section>
       <section name='Update'>
         <section name='Label to update'>
-          <data field='id' value='762646370'/>
+          <data field='id' value='762649160'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/label%20name'/>
           <data field='name' value='label name'/>
           <data field='color' value='ffffff'/>
@@ -168,10 +168,10 @@ Notes:
         </section>
         <GithubClient method='PATCH' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/label%20name'>
           <parameters color='ffffff'/>
-          <execution duration_seconds='0.359' timestamp='2017-11-27-Mon-15.37.45.932'/>
+          <execution duration_seconds='0.390' timestamp='2017-11-27-Mon-15.41.49.226'/>
         </GithubClient>
         <section name='Label updated'>
-          <data field='id' value='762646370'/>
+          <data field='id' value='762649160'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/label%20name'/>
           <data field='name' value='label name'/>
           <data field='color' value='ffffff'/>
@@ -180,7 +180,7 @@ Notes:
       </section>
       <section name='Delete'>
         <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/label%20name'>
-          <execution duration_seconds='0.437' timestamp='2017-11-27-Mon-15.37.46.291'/>
+          <execution duration_seconds='0.359' timestamp='2017-11-27-Mon-15.41.49.616'/>
         </GithubClient>
       </section>
     </section>
