@@ -20,7 +20,6 @@ class RateLimit < BaseClassForResource
 
   Contract Log, VERDICT_ID, Symbol => Bool
   def verdict_field_valid?(log, verdict_id, field)
-    value = self.send(field)
     case field
       when :rate
         rate.verdict_valid?(log, [verdict_id, :rate])

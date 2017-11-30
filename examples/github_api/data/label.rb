@@ -56,6 +56,24 @@ class Label < BaseClassForResource
     end
   end
 
+  Contract Symbol => Any
+  def perturbed_value_for(field)
+    case field
+      when :id
+        self.id + 1
+      when :url
+        'http://www.yahoo.com'
+      when :name
+        'not ' + self.name
+      when :color
+        self.color == '000000' ? 'ffffff' : '000000'
+      when :default
+        self.default ? false : true
+      else
+        raise ArgumentError.new(field)
+    end
+  end
+
   # CRUD.
 
   Contract GithubClient => Label
@@ -100,6 +118,25 @@ class Label < BaseClassForResource
   def self.get_all(client)
     require_relative '../endpoints/labels/get_labels'
     GetLabels.call(client)
+  end
+
+  def self.provisioned(name = 'test label')
+    self.new({
+        :id => nil,
+        :url => nil,
+        :name => name,
+        :color => '000000',
+        :default => false,
+             })
+  end
+
+  def perturb!
+    self.color = perturbed_value_for(:color)
+    self.default = perturbed_value_for(:default)
+  end
+
+  def perturb
+    self.clone.perturb!
   end
 
   # This is harmlessly redundant, but helps RubyMine code inspection.
