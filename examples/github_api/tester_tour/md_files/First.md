@@ -22,13 +22,7 @@ class FirstTest < BaseClassForTest
 
     prelude do |client, log|
 
-      label_to_create = Label.new(
-          :id => nil,
-          :url => nil,
-          :name => 'label name',
-          :color => '000000',
-          :default => false,
-      )
+      label_to_create = Label.provisioned
       label_created = nil
 
       log.section('Create') do
@@ -44,7 +38,7 @@ class FirstTest < BaseClassForTest
       end
 
       log.section('Update') do
-        label_created.color = 'ffffff'
+        label_to_update = label_created.perturb
         label_returned = label_created.update(client)
         Label.verdict_equal?(log, :update_return_correct, label_created, label_returned)
         label_returned.verdict_read_and_verify?(client, log, :updated_correctly)
@@ -66,7 +60,7 @@ end
 Notes:
 
 - The test first defines variables:
-  - `label_to_create`, which has data for creating a label.
+  - `label_to_create`, which gets data for creating a label via method `Label.provisioned`.
   - `label_created`, which will have the data for the created label, including new values for `:id` and `:url`.
 - In section `Create`:
   - Instead of method `create`, we use method `create!`, which first deletes the label if it exists.
@@ -91,20 +85,23 @@ You're welcome to review this log, but the smaller logs in other tour stops will
 ```xml
 <first_test>
   <summary errors='0' failures='0' verdicts='26'/>
-  <test_method name='first_test' timestamp='2017-11-30-Thu-14.31.28.047'>
+  <test_method name='first_test' timestamp='2017-11-30-Thu-15.20.20.185'>
     <section name='With GithubClient'>
       <section name='Create'>
-        <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
-          <execution duration_seconds='3.429' timestamp='2017-11-30-Thu-14.31.28.062'/>
+        <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label'>
+          <execution duration_seconds='3.438' timestamp='2017-11-30-Thu-15.20.20.185'/>
+        </GithubClient>
+        <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label'>
+          <execution duration_seconds='0.359' timestamp='2017-11-30-Thu-15.20.23.623'/>
         </GithubClient>
         <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
-          <parameters color='000000' name='label name'/>
-          <execution duration_seconds='0.344' timestamp='2017-11-30-Thu-14.31.31.491'/>
+          <parameters color='000000' name='test label'/>
+          <execution duration_seconds='0.406' timestamp='2017-11-30-Thu-15.20.23.982'/>
         </GithubClient>
         <section class='Label' method='verdict_equal?' name='create_return_correct'>
           <verdict id='create_return_correct:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-            <exp_value>label name</exp_value>
-            <act_value>label name</act_value>
+            <exp_value>test label</exp_value>
+            <act_value>test label</act_value>
           </verdict>
           <verdict id='create_return_correct:color' method='verdict_assert_equal?' outcome='passed' volatile='false'>
             <exp_value>000000</exp_value>
@@ -114,21 +111,21 @@ You're welcome to review this log, but the smaller logs in other tour stops will
             <exp_value>false</exp_value>
             <act_value>false</act_value>
           </verdict>
-          <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
-            <execution duration_seconds='0.359' timestamp='2017-11-30-Thu-14.31.31.835'/>
+          <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label'>
+            <execution duration_seconds='0.375' timestamp='2017-11-30-Thu-15.20.24.389'/>
           </GithubClient>
           <section class='Label' method='verdict_equal?' name='created_correctly'>
             <verdict id='created_correctly:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>765919448</exp_value>
-              <act_value>765919448</act_value>
+              <exp_value>765955010</exp_value>
+              <act_value>765955010</act_value>
             </verdict>
             <verdict id='created_correctly:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</exp_value>
-              <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</act_value>
+              <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label</exp_value>
+              <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label</act_value>
             </verdict>
             <verdict id='created_correctly:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>label name</exp_value>
-              <act_value>label name</act_value>
+              <exp_value>test label</exp_value>
+              <act_value>test label</act_value>
             </verdict>
             <verdict id='created_correctly:color' method='verdict_assert_equal?' outcome='passed' volatile='false'>
               <exp_value>000000</exp_value>
@@ -140,21 +137,21 @@ You're welcome to review this log, but the smaller logs in other tour stops will
             </verdict>
           </section>
           <section name='Read'>
-            <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
-              <execution duration_seconds='0.453' timestamp='2017-11-30-Thu-14.31.32.194'/>
+            <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label'>
+              <execution duration_seconds='0.359' timestamp='2017-11-30-Thu-15.20.24.764'/>
             </GithubClient>
             <section class='Label' method='verdict_equal?' name='read_correctly'>
               <verdict id='read_correctly:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                <exp_value>765919448</exp_value>
-                <act_value>765919448</act_value>
+                <exp_value>765955010</exp_value>
+                <act_value>765955010</act_value>
               </verdict>
               <verdict id='read_correctly:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</exp_value>
-                <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</act_value>
+                <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label</exp_value>
+                <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label</act_value>
               </verdict>
               <verdict id='read_correctly:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                <exp_value>label name</exp_value>
-                <act_value>label name</act_value>
+                <exp_value>test label</exp_value>
+                <act_value>test label</act_value>
               </verdict>
               <verdict id='read_correctly:color' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>000000</exp_value>
@@ -165,51 +162,51 @@ You're welcome to review this log, but the smaller logs in other tour stops will
                 <act_value>false</act_value>
               </verdict>
             </section>
-            <section duration_seconds='6.132' name='Update'>
-              <GithubClient method='PATCH' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
-                <parameters color='ffffff'/>
-                <execution duration_seconds='0.391' timestamp='2017-11-30-Thu-14.31.32.647'/>
+            <section duration_seconds='6.572' name='Update'>
+              <GithubClient method='PATCH' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label'>
+                <parameters color='000000'/>
+                <execution duration_seconds='0.453' timestamp='2017-11-30-Thu-15.20.25.123'/>
               </GithubClient>
               <section class='Label' method='verdict_equal?' name='update_return_correct'>
                 <verdict id='update_return_correct:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                  <exp_value>765919448</exp_value>
-                  <act_value>765919448</act_value>
+                  <exp_value>765955010</exp_value>
+                  <act_value>765955010</act_value>
                 </verdict>
                 <verdict id='update_return_correct:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                  <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</exp_value>
-                  <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</act_value>
+                  <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label</exp_value>
+                  <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label</act_value>
                 </verdict>
                 <verdict id='update_return_correct:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                  <exp_value>label name</exp_value>
-                  <act_value>label name</act_value>
+                  <exp_value>test label</exp_value>
+                  <act_value>test label</act_value>
                 </verdict>
                 <verdict id='update_return_correct:color' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                  <exp_value>ffffff</exp_value>
-                  <act_value>ffffff</act_value>
+                  <exp_value>000000</exp_value>
+                  <act_value>000000</act_value>
                 </verdict>
                 <verdict id='update_return_correct:default' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                   <exp_value>false</exp_value>
                   <act_value>false</act_value>
                 </verdict>
-                <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
-                  <execution duration_seconds='0.359' timestamp='2017-11-30-Thu-14.31.33.038'/>
+                <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label'>
+                  <execution duration_seconds='0.375' timestamp='2017-11-30-Thu-15.20.25.576'/>
                 </GithubClient>
                 <section class='Label' method='verdict_equal?' name='updated_correctly'>
                   <verdict id='updated_correctly:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                    <exp_value>765919448</exp_value>
-                    <act_value>765919448</act_value>
+                    <exp_value>765955010</exp_value>
+                    <act_value>765955010</act_value>
                   </verdict>
                   <verdict id='updated_correctly:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                    <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</exp_value>
-                    <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name</act_value>
+                    <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label</exp_value>
+                    <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label</act_value>
                   </verdict>
                   <verdict id='updated_correctly:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                    <exp_value>label name</exp_value>
-                    <act_value>label name</act_value>
+                    <exp_value>test label</exp_value>
+                    <act_value>test label</act_value>
                   </verdict>
                   <verdict id='updated_correctly:color' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                    <exp_value>ffffff</exp_value>
-                    <act_value>ffffff</act_value>
+                    <exp_value>000000</exp_value>
+                    <act_value>000000</act_value>
                   </verdict>
                   <verdict id='updated_correctly:default' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                     <exp_value>false</exp_value>
@@ -217,14 +214,14 @@ You're welcome to review this log, but the smaller logs in other tour stops will
                   </verdict>
                 </section>
                 <section name='Delete'>
-                  <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
-                    <execution duration_seconds='0.391' timestamp='2017-11-30-Thu-14.31.33.397'/>
+                  <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label'>
+                    <execution duration_seconds='0.438' timestamp='2017-11-30-Thu-15.20.25.951'/>
                   </GithubClient>
                   <verdict id='delete_return_correct' method='verdict_assert_nil?' outcome='passed' volatile='false'>
                     <act_value>nil</act_value>
                   </verdict>
-                  <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/label%20name'>
-                    <execution duration_seconds='0.391' timestamp='2017-11-30-Thu-14.31.33.788'/>
+                  <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label'>
+                    <execution duration_seconds='0.368' timestamp='2017-11-30-Thu-15.20.26.389'/>
                   </GithubClient>
                   <verdict id='deleted_correctly' method='verdict_refute?' outcome='passed' volatile='false'>
                     <act_value>false</act_value>

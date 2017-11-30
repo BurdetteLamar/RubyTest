@@ -120,6 +120,7 @@ class Label < BaseClassForResource
     GetLabels.call(client)
   end
 
+  Contract Maybe[String] => self
   def self.provisioned(name = 'test label')
     self.new({
         :id => nil,
@@ -130,11 +131,14 @@ class Label < BaseClassForResource
              })
   end
 
+  Contract nil => self
   def perturb!
     self.color = perturbed_value_for(:color)
     self.default = perturbed_value_for(:default)
+    self
   end
 
+  Contract nil => self
   def perturb
     self.clone.perturb!
   end

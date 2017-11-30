@@ -11,7 +11,7 @@ Here's a simple first test, one that tests CRUD methods (create, read, update, d
 Notes:
 
 - The test first defines variables:
-  - `label_to_create`, which has data for creating a label.
+  - `label_to_create`, which gets data for creating a label via method `Label.provisioned`.
   - `label_created`, which will have the data for the created label, including new values for `:id` and `:url`.
 - In section `Create`:
   - Instead of method `create`, we use method `create!`, which first deletes the label if it exists.
