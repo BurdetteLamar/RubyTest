@@ -54,36 +54,36 @@ Notes:
 ```xml
 <nested_data_log_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='3.320' name='nested_data_log_test' timestamp='2017-11-30-Thu-15.20.52.103'>
+  <test_method duration_seconds='3.422' name='nested_data_log_test' timestamp='2017-12-02-Sat-12.54.05.788'>
     <section name='With GithubClient'>
       <section name='Fetch and log a rate limit'>
         <section name='Fetch rate limit'>
           <GithubClient method='GET' url='https://api.github.com/rate_limit'>
-            <execution duration_seconds='3.320' timestamp='2017-11-30-Thu-15.20.52.103'/>
+            <execution duration_seconds='3.406' timestamp='2017-12-02-Sat-12.54.05.804'/>
           </GithubClient>
         </section>
         <section name='Fetched rate limit'>
           <section name='RateLimit::Resources'>
             <section name='RateLimit::Core_'>
               <data field='limit' value='5000'/>
-              <data field='remaining' value='4820'/>
-              <data field='reset' value='1512077492'/>
+              <data field='remaining' value='4947'/>
+              <data field='reset' value='1512244135'/>
             </section>
             <section name='RateLimit::Search'>
               <data field='limit' value='30'/>
               <data field='remaining' value='30'/>
-              <data field='reset' value='1512076916'/>
+              <data field='reset' value='1512240909'/>
             </section>
             <section name='RateLimit::Graphql'>
               <data field='limit' value='5000'/>
               <data field='remaining' value='5000'/>
-              <data field='reset' value='1512080456'/>
+              <data field='reset' value='1512244449'/>
             </section>
           </section>
           <section name='RateLimit::Rate'>
             <data field='limit' value='5000'/>
-            <data field='remaining' value='4820'/>
-            <data field='reset' value='1512077492'/>
+            <data field='remaining' value='4947'/>
+            <data field='reset' value='1512244135'/>
           </section>
         </section>
       </section>

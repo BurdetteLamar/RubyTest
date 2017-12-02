@@ -26,13 +26,7 @@ class DeleteLabelsNameTest < BaseClassForTest
         label_to_create = nil
         label_to_delete = nil
         log.section('Create the label to be deleted') do
-          label_to_create = Label.new(
-              :id => nil,
-              :url => nil,
-              :name => 'test_label',
-              :color => '000000',
-              :default => false,
-          )
+          label_to_create = Label.provisioned
           label_to_create.delete_if_exist?(client)
           label_to_delete = label_to_create.create(client)
         end
@@ -69,22 +63,22 @@ Notes:
 ```xml
 <delete_labels_name_test>
   <summary errors='0' failures='0' verdicts='3'/>
-  <test_method name='delete_labels_name_test' timestamp='2017-11-30-Thu-15.21.46.597'>
-    <section duration_seconds='4.766' name='With GithubClient'>
+  <test_method name='delete_labels_name_test' timestamp='2017-12-02-Sat-12.55.03.444'>
+    <section duration_seconds='5.031' name='With GithubClient'>
       <section name='Test DeleteLabelsName'>
         <section name='Create the label to be deleted'>
-          <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-            <execution duration_seconds='3.297' timestamp='2017-11-30-Thu-15.21.46.597'/>
+          <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label'>
+            <execution duration_seconds='3.625' timestamp='2017-12-02-Sat-12.55.03.444'/>
           </GithubClient>
           <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
-            <parameters color='000000' name='test_label'/>
-            <execution duration_seconds='0.391' timestamp='2017-11-30-Thu-15.21.49.895'/>
+            <parameters color='000000' name='test label'/>
+            <execution duration_seconds='0.344' timestamp='2017-12-02-Sat-12.55.07.069'/>
           </GithubClient>
         </section>
         <section name='Test deleting the created label'>
-          <section name='delete_label' timestamp='2017-11-30-Thu-15.21.50.285'>
-            <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-              <execution duration_seconds='0.391' timestamp='2017-11-30-Thu-15.21.50.285'/>
+          <section name='delete_label' timestamp='2017-12-02-Sat-12.55.07.413'>
+            <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label'>
+              <execution duration_seconds='0.406' timestamp='2017-12-02-Sat-12.55.07.413'/>
             </GithubClient>
             <section name='Evaluation'>
               <section name='Response empty'>
@@ -93,8 +87,8 @@ Notes:
                 </verdict>
               </section>
               <section name='Label deleted'>
-                <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-                  <execution duration_seconds='0.328' timestamp='2017-11-30-Thu-15.21.50.676'/>
+                <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label'>
+                  <execution duration_seconds='0.328' timestamp='2017-12-02-Sat-12.55.07.819'/>
                 </GithubClient>
                 <verdict id='delete_label:label_deleted' method='verdict_refute?' outcome='passed' volatile='false'>
                   <act_value>false</act_value>
@@ -103,8 +97,8 @@ Notes:
             </section>
           </section>
           <section name='Clean up'>
-            <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-              <execution duration_seconds='0.359' timestamp='2017-11-30-Thu-15.21.51.004'/>
+            <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label'>
+              <execution duration_seconds='0.328' timestamp='2017-12-02-Sat-12.55.08.147'/>
             </GithubClient>
           </section>
         </section>

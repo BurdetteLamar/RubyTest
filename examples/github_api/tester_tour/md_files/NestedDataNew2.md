@@ -76,7 +76,7 @@ Notes:
 ```xml
 <nested_data_new_2_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='nested_data_new_2_test' timestamp='2017-11-30-Thu-15.20.57.486'>
+  <test_method duration_seconds='0.000' name='nested_data_new_2_test' timestamp='2017-12-02-Sat-12.54.12.007'>
     <section name='With GithubClient'>
       <section name='Create and log nested data objects'>
         <section name='RateLimit'>
