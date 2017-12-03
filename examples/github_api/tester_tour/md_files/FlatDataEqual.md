@@ -67,16 +67,16 @@ Notes:
 ```xml
 <flat_data_equal_test>
   <summary errors='0' failures='2' verdicts='11'/>
-  <test_method name='flat_data_equal_test' timestamp='2017-12-02-Sat-12.53.56.475'>
+  <test_method name='flat_data_equal_test' timestamp='2017-12-03-Sun-10.03.06.984'>
     <section name='With GithubClient'>
       <section name='Fetch an instance of Label'>
         <section name='Fetch a label'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
-            <execution duration_seconds='3.688' timestamp='2017-12-02-Sat-12.53.56.491'/>
+            <execution duration_seconds='3.344' timestamp='2017-12-03-Sun-10.03.06.984'/>
           </GithubClient>
         </section>
       </section>
-      <section duration_seconds='3.813' name='These are equal'>
+      <section duration_seconds='3.688' name='These are equal'>
         <section class='Label' method='verdict_equal?' name='label_equal'>
           <verdict id='label_equal:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
             <exp_value>562043326</exp_value>

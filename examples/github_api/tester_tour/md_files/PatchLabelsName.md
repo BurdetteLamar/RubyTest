@@ -60,27 +60,27 @@ Notes:
 ```xml
 <patch_labels_name_test>
   <summary errors='0' failures='0' verdicts='11'/>
-  <test_method name='patch_labels_name_test' timestamp='2017-12-02-Sat-12.54.57.334'>
+  <test_method name='patch_labels_name_test' timestamp='2017-12-03-Sun-10.04.09.642'>
     <section name='With GithubClient'>
       <section name='Test PatchLabelsName'>
         <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-          <execution duration_seconds='3.360' timestamp='2017-12-02-Sat-12.54.57.334'/>
+          <execution duration_seconds='3.375' timestamp='2017-12-03-Sun-10.04.09.657'/>
         </GithubClient>
         <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
           <parameters color='000000' name='test_label'/>
-          <execution duration_seconds='0.313' timestamp='2017-12-02-Sat-12.55.00.693'/>
+          <execution duration_seconds='0.391' timestamp='2017-12-03-Sun-10.04.13.032'/>
         </GithubClient>
-        <section duration_seconds='4.985' name='patch_label' timestamp='2017-12-02-Sat-12.55.01.006'>
+        <section duration_seconds='5.141' name='patch_label' timestamp='2017-12-03-Sun-10.04.13.423'>
           <GithubClient method='PATCH' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
             <parameters color='ffffff'/>
-            <execution duration_seconds='0.344' timestamp='2017-12-02-Sat-12.55.01.006'/>
+            <execution duration_seconds='0.328' timestamp='2017-12-03-Sun-10.04.13.423'/>
           </GithubClient>
           <section name='Evaluation'>
             <section name='Returned label correct'>
               <section class='Label' method='verdict_equal?' name='updated_label'>
                 <verdict id='patch_label:updated_label:id' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                  <exp_value>767616637</exp_value>
-                  <act_value>767616637</act_value>
+                  <exp_value>768211609</exp_value>
+                  <act_value>768211609</act_value>
                 </verdict>
                 <verdict id='patch_label:updated_label:url' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                   <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label</exp_value>
@@ -101,12 +101,12 @@ Notes:
               </section>
               <section name='Label updated'>
                 <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-                  <execution duration_seconds='0.313' timestamp='2017-12-02-Sat-12.55.01.350'/>
+                  <execution duration_seconds='0.344' timestamp='2017-12-03-Sun-10.04.13.751'/>
                 </GithubClient>
                 <section class='Label' method='verdict_equal?' name='fetched_label'>
                   <verdict id='patch_label:fetched_label:id' message='Fetched label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                    <exp_value>767616637</exp_value>
-                    <act_value>767616637</act_value>
+                    <exp_value>768211609</exp_value>
+                    <act_value>768211609</act_value>
                   </verdict>
                   <verdict id='patch_label:fetched_label:url' message='Fetched label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                     <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label</exp_value>
@@ -127,10 +127,10 @@ Notes:
                 </section>
               </section>
               <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-                <execution duration_seconds='0.313' timestamp='2017-12-02-Sat-12.55.01.662'/>
+                <execution duration_seconds='0.344' timestamp='2017-12-03-Sun-10.04.14.095'/>
               </GithubClient>
               <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
-                <execution duration_seconds='0.344' timestamp='2017-12-02-Sat-12.55.01.975'/>
+                <execution duration_seconds='0.344' timestamp='2017-12-03-Sun-10.04.14.439'/>
               </GithubClient>
             </section>
           </section>
