@@ -8,13 +8,7 @@ class FirstTest < BaseClassForTest
 
     prelude do |client, log|
 
-      label_to_create = Label.new(
-          :id => nil,
-          :url => nil,
-          :name => 'label name',
-          :color => '000000',
-          :default => false,
-      )
+      label_to_create = Label.provisioned
       label_created = nil
 
       log.section('Create') do
@@ -30,7 +24,7 @@ class FirstTest < BaseClassForTest
       end
 
       log.section('Update') do
-        label_created.color = 'ffffff'
+        label_to_update = label_created.perturb
         label_returned = label_created.update(client)
         Label.verdict_equal?(log, :update_return_correct, label_created, label_returned)
         label_returned.verdict_read_and_verify?(client, log, :updated_correctly)

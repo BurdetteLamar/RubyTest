@@ -62,16 +62,16 @@ Notes:
 ```xml
 <post_labels_test>
   <summary errors='0' failures='0' verdicts='11'/>
-  <test_method name='post_labels_test' timestamp='2017-11-27-Mon-15.42.02.835'>
-    <section duration_seconds='3.229' name='With GithubClient'>
+  <test_method name='post_labels_test' timestamp='2017-12-03-Sun-10.03.56.172'>
+    <section duration_seconds='4.688' name='With GithubClient'>
       <section name='Test PostLabels'>
-        <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-          <execution duration_seconds='1.810' timestamp='2017-11-27-Mon-15.42.02.835'/>
+        <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
+          <execution duration_seconds='3.391' timestamp='2017-12-03-Sun-10.03.56.172'/>
         </GithubClient>
-        <section name='post_label' timestamp='2017-11-27-Mon-15.42.04.644'>
-          <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
+        <section name='post_label' timestamp='2017-12-03-Sun-10.03.59.563'>
+          <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
             <parameters color='000000' name='test_label'/>
-            <execution duration_seconds='0.359' timestamp='2017-11-27-Mon-15.42.04.644'/>
+            <execution duration_seconds='0.328' timestamp='2017-12-03-Sun-10.03.59.563'/>
           </GithubClient>
           <section name='Evaluation'>
             <section name='Returned label correct'>
@@ -89,17 +89,17 @@ Notes:
                 <section name='verdict_assert_integer_positive?'>
                   <verdict id='post_label:valid:id:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
                     <exp_value>Integer</exp_value>
-                    <act_value>762649372</act_value>
+                    <act_value>768211467</act_value>
                   </verdict>
                   <verdict id='post_label:valid:id:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-                    <object_1>762649372</object_1>
+                    <object_1>768211467</object_1>
                     <operator>:&gt;</operator>
                     <object_2>0</object_2>
                   </verdict>
                 </section>
                 <verdict id='post_label:valid:url' method='verdict_assert_match?' outcome='passed' volatile='false'>
                   <exp_value>/^https:\/\/api.github.com\/repos/</exp_value>
-                  <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label</act_value>
+                  <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label</act_value>
                 </verdict>
                 <section name='verdict_assert_string_not_empty?'>
                   <verdict id='post_label:valid:name:string' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
@@ -121,8 +121,8 @@ Notes:
               </section>
             </section>
             <section name='Label created'>
-              <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-                <execution duration_seconds='0.359' timestamp='2017-11-27-Mon-15.42.05.003'/>
+              <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
+                <execution duration_seconds='0.313' timestamp='2017-12-03-Sun-10.03.59.891'/>
               </GithubClient>
               <verdict id='post_label:exists' method='verdict_assert?' outcome='passed' volatile='false'>
                 <act_value>true</act_value>
@@ -131,11 +131,11 @@ Notes:
           </section>
         </section>
         <section name='Clean up'>
-          <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-            <execution duration_seconds='0.328' timestamp='2017-11-27-Mon-15.42.05.362'/>
+          <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
+            <execution duration_seconds='0.297' timestamp='2017-12-03-Sun-10.04.00.219'/>
           </GithubClient>
-          <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-            <execution duration_seconds='0.374' timestamp='2017-11-27-Mon-15.42.05.690'/>
+          <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test_label'>
+            <execution duration_seconds='0.344' timestamp='2017-12-03-Sun-10.04.00.516'/>
           </GithubClient>
         </section>
       </section>

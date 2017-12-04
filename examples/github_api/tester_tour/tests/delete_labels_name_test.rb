@@ -12,13 +12,7 @@ class DeleteLabelsNameTest < BaseClassForTest
         label_to_create = nil
         label_to_delete = nil
         log.section('Create the label to be deleted') do
-          label_to_create = Label.new(
-              :id => nil,
-              :url => nil,
-              :name => 'test_label',
-              :color => '000000',
-              :default => false,
-          )
+          label_to_create = Label.provisioned
           label_to_create.delete_if_exist?(client)
           label_to_delete = label_to_create.create(client)
         end

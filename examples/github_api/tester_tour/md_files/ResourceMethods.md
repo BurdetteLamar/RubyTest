@@ -11,7 +11,7 @@ The data objects in this framework offer methods for accessing the API resources
 - CRUD methods:
   - `create`
   - `read`
-  - `upate`
+  - `update`
   - `delete`
 - Getter methods:
   - `self.get_all`

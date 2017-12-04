@@ -13,11 +13,7 @@ class CrudTest < BaseClassForTest
       label_updated = nil
 
       log.section('Create') do
-        label_to_create = Label.new(
-            :name => 'label name',
-            :color => '000000',
-            :default => false,
-        )
+        label_to_create = Label.provisioned
         label_to_create.log(log, 'Label to create')
         log.section('Delete if exists, to avoid collision') do
           deleted = label_to_create.delete_if_exist?(client)
@@ -36,7 +32,7 @@ class CrudTest < BaseClassForTest
 
       log.section('Read') do
         label_to_read = label_created
-        label_to_read.log(log, 'Log to read')
+        label_to_read.log(log, 'Label to read')
         if ENV['NO_CRUD']
           # Here's how we read a label via the endpoint.
           require_relative '../../endpoints/labels/get_labels_name'

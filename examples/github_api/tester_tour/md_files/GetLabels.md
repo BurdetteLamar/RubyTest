@@ -49,18 +49,18 @@ Notes:
 ```xml
 <get_labels_test>
   <summary errors='0' failures='0' verdicts='8'/>
-  <test_method name='get_labels_test' timestamp='2017-11-27-Mon-15.41.59.886'>
-    <section duration_seconds='1.825' name='With GithubClient'>
+  <test_method name='get_labels_test' timestamp='2017-12-03-Sun-10.03.51.328'>
+    <section duration_seconds='3.672' name='With GithubClient'>
       <section name='Test GetLabels'>
-        <section name='get_labels' timestamp='2017-11-27-Mon-15.41.59.886'>
-          <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-            <execution duration_seconds='1.810' timestamp='2017-11-27-Mon-15.41.59.902'/>
+        <section name='get_labels' timestamp='2017-12-03-Sun-10.03.51.328'>
+          <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
+            <execution duration_seconds='3.672' timestamp='2017-12-03-Sun-10.03.51.328'/>
           </GithubClient>
           <section name='Info'>
-            <data fetched_labels_count='8'/>
+            <data fetched_labels_count='7'/>
             <section name='First label fetched'>
-              <data field='id' value='710733208'/>
-              <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/bug'/>
+              <data field='id' value='562043326'/>
+              <data field='url' value='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/bug'/>
               <data field='name' value='bug'/>
               <data field='color' value='ee0701'/>
               <data field='default' value='true'/>
@@ -72,17 +72,17 @@ Notes:
                 <section name='verdict_assert_integer_positive?'>
                   <verdict id='get_labels:valid:id:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
                     <exp_value>Integer</exp_value>
-                    <act_value>710733208</act_value>
+                    <act_value>562043326</act_value>
                   </verdict>
                   <verdict id='get_labels:valid:id:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-                    <object_1>710733208</object_1>
+                    <object_1>562043326</object_1>
                     <operator>:&gt;</operator>
                     <object_2>0</object_2>
                   </verdict>
                 </section>
                 <verdict id='get_labels:valid:url' method='verdict_assert_match?' outcome='passed' volatile='false'>
                   <exp_value>/^https:\/\/api.github.com\/repos/</exp_value>
-                  <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/bug</act_value>
+                  <act_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/bug</act_value>
                 </verdict>
                 <section name='verdict_assert_string_not_empty?'>
                   <verdict id='get_labels:valid:name:string' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
