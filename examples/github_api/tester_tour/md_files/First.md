@@ -85,15 +85,15 @@ You're welcome to review this log, but the smaller logs in other tour stops will
 ```xml
 <first_test>
   <summary errors='0' failures='0' verdicts='26'/>
-  <test_method name='first_test' timestamp='2017-12-03-Sun-10.02.43.364'>
+  <test_method name='first_test' timestamp='2017-12-07-Thu-10.48.48.088'>
     <section name='With GithubClient'>
       <section name='Create'>
         <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label'>
-          <execution duration_seconds='3.766' timestamp='2017-12-03-Sun-10.02.43.395'/>
+          <execution duration_seconds='3.328' timestamp='2017-12-07-Thu-10.48.48.088'/>
         </GithubClient>
         <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
           <parameters color='000000' name='test label'/>
-          <execution duration_seconds='0.344' timestamp='2017-12-03-Sun-10.02.47.255'/>
+          <execution duration_seconds='0.375' timestamp='2017-12-07-Thu-10.48.51.416'/>
         </GithubClient>
         <section class='Label' method='verdict_equal?' name='create_return_correct'>
           <verdict id='create_return_correct:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
@@ -109,12 +109,12 @@ You're welcome to review this log, but the smaller logs in other tour stops will
             <act_value>false</act_value>
           </verdict>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label'>
-            <execution duration_seconds='0.328' timestamp='2017-12-03-Sun-10.02.47.598'/>
+            <execution duration_seconds='0.359' timestamp='2017-12-07-Thu-10.48.51.791'/>
           </GithubClient>
           <section class='Label' method='verdict_equal?' name='created_correctly'>
             <verdict id='created_correctly:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>768210733</exp_value>
-              <act_value>768210733</act_value>
+              <exp_value>772515467</exp_value>
+              <act_value>772515467</act_value>
             </verdict>
             <verdict id='created_correctly:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
               <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label</exp_value>
@@ -135,12 +135,12 @@ You're welcome to review this log, but the smaller logs in other tour stops will
           </section>
           <section name='Read'>
             <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label'>
-              <execution duration_seconds='0.328' timestamp='2017-12-03-Sun-10.02.47.927'/>
+              <execution duration_seconds='0.844' timestamp='2017-12-07-Thu-10.48.52.151'/>
             </GithubClient>
             <section class='Label' method='verdict_equal?' name='read_correctly'>
               <verdict id='read_correctly:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                <exp_value>768210733</exp_value>
-                <act_value>768210733</act_value>
+                <exp_value>772515467</exp_value>
+                <act_value>772515467</act_value>
               </verdict>
               <verdict id='read_correctly:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label</exp_value>
@@ -159,15 +159,15 @@ You're welcome to review this log, but the smaller logs in other tour stops will
                 <act_value>false</act_value>
               </verdict>
             </section>
-            <section duration_seconds='6.250' name='Update'>
+            <section duration_seconds='6.422' name='Update'>
               <GithubClient method='PATCH' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label'>
                 <parameters color='000000'/>
-                <execution duration_seconds='0.281' timestamp='2017-12-03-Sun-10.02.48.286'/>
+                <execution duration_seconds='0.391' timestamp='2017-12-07-Thu-10.48.52.994'/>
               </GithubClient>
               <section class='Label' method='verdict_equal?' name='update_return_correct'>
                 <verdict id='update_return_correct:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                  <exp_value>768210733</exp_value>
-                  <act_value>768210733</act_value>
+                  <exp_value>772515467</exp_value>
+                  <act_value>772515467</act_value>
                 </verdict>
                 <verdict id='update_return_correct:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                   <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label</exp_value>
@@ -186,12 +186,12 @@ You're welcome to review this log, but the smaller logs in other tour stops will
                   <act_value>false</act_value>
                 </verdict>
                 <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label'>
-                  <execution duration_seconds='0.328' timestamp='2017-12-03-Sun-10.02.48.567'/>
+                  <execution duration_seconds='0.344' timestamp='2017-12-07-Thu-10.48.53.385'/>
                 </GithubClient>
                 <section class='Label' method='verdict_equal?' name='updated_correctly'>
                   <verdict id='updated_correctly:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                    <exp_value>768210733</exp_value>
-                    <act_value>768210733</act_value>
+                    <exp_value>772515467</exp_value>
+                    <act_value>772515467</act_value>
                   </verdict>
                   <verdict id='updated_correctly:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                     <exp_value>https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label</exp_value>
@@ -212,13 +212,13 @@ You're welcome to review this log, but the smaller logs in other tour stops will
                 </section>
                 <section name='Delete'>
                   <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label'>
-                    <execution duration_seconds='0.328' timestamp='2017-12-03-Sun-10.02.48.927'/>
+                    <execution duration_seconds='0.375' timestamp='2017-12-07-Thu-10.48.53.729'/>
                   </GithubClient>
                   <verdict id='delete_return_correct' method='verdict_assert_nil?' outcome='passed' volatile='false'>
                     <act_value>nil</act_value>
                   </verdict>
                   <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label'>
-                    <execution duration_seconds='0.359' timestamp='2017-12-03-Sun-10.02.49.255'/>
+                    <execution duration_seconds='0.406' timestamp='2017-12-07-Thu-10.48.54.104'/>
                   </GithubClient>
                   <verdict id='deleted_correctly' method='verdict_refute?' outcome='passed' volatile='false'>
                     <act_value>false</act_value>

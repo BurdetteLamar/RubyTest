@@ -1,6 +1,6 @@
 require 'lorem-ipsum'
 
-require_relative 'base_classes/base_class'
+require_relative '../base_classes/base_class'
 
 class LoremHelper < BaseClass
 
