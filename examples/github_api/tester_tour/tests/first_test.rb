@@ -25,7 +25,7 @@ class FirstTest < BaseClassForTest
 
       log.section('Update') do
         label_to_update = label_created.perturb
-        label_returned = label_created.update(client)
+        label_returned = label_to_update.update(client)
         Label.verdict_equal?(log, :update_return_correct, label_created, label_returned)
         label_returned.verdict_read_and_verify?(client, log, :updated_correctly)
       end

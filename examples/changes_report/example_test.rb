@@ -2,7 +2,7 @@ require 'minitest/autorun'
 
 require_relative '../../lib/helpers/test_helper'
 require_relative '../../lib/log/log'
-require_relative '../../lib/lorem_helper'
+require_relative '../../lib/helpers/lorem_helper'
 
 class ExampleTest < Minitest::Test
 

@@ -63,22 +63,22 @@ Notes:
 ```xml
 <delete_labels_name_test>
   <summary errors='0' failures='0' verdicts='3'/>
-  <test_method name='delete_labels_name_test' timestamp='2017-12-03-Sun-10.04.16.158'>
-    <section duration_seconds='4.703' name='With GithubClient'>
+  <test_method name='delete_labels_name_test' timestamp='2017-12-07-Thu-10.50.18.515'>
+    <section duration_seconds='4.953' name='With GithubClient'>
       <section name='Test DeleteLabelsName'>
         <section name='Create the label to be deleted'>
           <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label'>
-            <execution duration_seconds='3.391' timestamp='2017-12-03-Sun-10.04.16.158'/>
+            <execution duration_seconds='3.313' timestamp='2017-12-07-Thu-10.50.18.515'/>
           </GithubClient>
           <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels'>
             <parameters color='000000' name='test label'/>
-            <execution duration_seconds='0.328' timestamp='2017-12-03-Sun-10.04.19.548'/>
+            <execution duration_seconds='0.359' timestamp='2017-12-07-Thu-10.50.21.828'/>
           </GithubClient>
         </section>
         <section name='Test deleting the created label'>
-          <section name='delete_label' timestamp='2017-12-03-Sun-10.04.19.877'>
+          <section name='delete_label' timestamp='2017-12-07-Thu-10.50.22.187'>
             <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label'>
-              <execution duration_seconds='0.359' timestamp='2017-12-03-Sun-10.04.19.877'/>
+              <execution duration_seconds='0.563' timestamp='2017-12-07-Thu-10.50.22.187'/>
             </GithubClient>
             <section name='Evaluation'>
               <section name='Response empty'>
@@ -88,7 +88,7 @@ Notes:
               </section>
               <section name='Label deleted'>
                 <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label'>
-                  <execution duration_seconds='0.313' timestamp='2017-12-03-Sun-10.04.20.236'/>
+                  <execution duration_seconds='0.359' timestamp='2017-12-07-Thu-10.50.22.750'/>
                 </GithubClient>
                 <verdict id='delete_label:label_deleted' method='verdict_refute?' outcome='passed' volatile='false'>
                   <act_value>false</act_value>
@@ -98,7 +98,7 @@ Notes:
           </section>
           <section name='Clean up'>
             <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/RubyTest/labels/test%20label'>
-              <execution duration_seconds='0.312' timestamp='2017-12-03-Sun-10.04.20.548'/>
+              <execution duration_seconds='0.359' timestamp='2017-12-07-Thu-10.50.23.109'/>
             </GithubClient>
           </section>
         </section>
