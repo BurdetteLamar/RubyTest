@@ -6,15 +6,15 @@ class GettersTest < BaseClassForTest
 
   def test_getters
 
-    prelude do |client, log|
+    prelude do |log, api_client|
 
       log.section('Get the first label') do
-        label = Label.get_first(client)
+        label = Label.get_first(api_client)
         label.log(log)
       end
 
       log.section('Get all labels') do
-        labels = Label.get_all(client)
+        labels = Label.get_all(api_client)
         labels.each do |label|
           label.log(log)
         end

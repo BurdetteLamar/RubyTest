@@ -4,7 +4,7 @@ require_relative '../../data/label'
 
 class PatchLabelsName < BaseClassForEndpoint
 
-  Contract GithubClient, Label, Maybe[Hash] => [Label, Any]
+  Contract ApiClient, Label, Maybe[Hash] => [Label, Any]
   def self.call_and_return_payload(client, label_to_update, query_elements = {})
     url_elements = [
         client.repo_url_elements,
@@ -20,7 +20,7 @@ class PatchLabelsName < BaseClassForEndpoint
     [label_updated, payload]
   end
 
-  Contract GithubClient, VERDICT_ID, Label, Maybe[Hash] => Label
+  Contract ApiClient, VERDICT_ID, Label, Maybe[Hash] => Label
   def self.verdict_call_and_verify_success(client, verdict_id, label_to_update, query_elements = {})
     log = client.log
     log.section(verdict_id.to_s, :rescue, :timestamp, :duration) do

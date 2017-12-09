@@ -3,7 +3,7 @@ require_relative '../../base_classes/base_class_for_test'
 class SectionsTest < BaseClassForTest
 
   def test_sections
-    prelude do |_, log|
+    prelude do |log, _|
       log.section('First outer section') do
         log.section('First inner section') do
           log.comment('Some test code can go here')

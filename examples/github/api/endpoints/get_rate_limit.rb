@@ -4,7 +4,7 @@ require_relative '../data/rate_limit'
 
 class GetRateLimit < BaseClassForEndpoint
 
-  Contract GithubClient, Maybe[Hash] => [RateLimit, Any]
+  Contract ApiClient, Maybe[Hash] => [RateLimit, Any]
   def self.call_and_return_payload(client, query_elements = {})
     url_elements = [
         'rate_limit',
@@ -15,7 +15,7 @@ class GetRateLimit < BaseClassForEndpoint
     [rate_limit, payload]
   end
 
-  Contract GithubClient, VERDICT_ID, Maybe[Hash] => RateLimit
+  Contract ApiClient, VERDICT_ID, Maybe[Hash] => RateLimit
   def self.verdict_call_and_verify_success(client, verdict_id, query_elements = {})
     log = client.log
     log.section(verdict_id.to_s, :rescue, :timestamp, :duration) do

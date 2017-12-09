@@ -5,8 +5,8 @@ require_relative '../../data/label'
 class FlatDataValidTest < BaseClassForTest
 
   def test_flat_data_valid
-    prelude do |client, log|
-      label = Label.get_first(client)
+    prelude do |log, api_client|
+      label = Label.get_first(api_client)
       log.section('This is valid') do
         label.verdict_valid?(log, :label_valid)
       end

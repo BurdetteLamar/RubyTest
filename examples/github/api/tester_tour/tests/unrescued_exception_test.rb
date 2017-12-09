@@ -3,7 +3,7 @@ require_relative '../../base_classes/base_class_for_test'
 class UnrescuedExceptionTest < BaseClassForTest
 
   def test_unrescued_exception
-    prelude do |_, log|
+    prelude do |log, _|
       log.section('Unrescued exception') do
         numerator = 1
         denominator = 0

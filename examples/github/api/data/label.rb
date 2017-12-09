@@ -76,25 +76,25 @@ class Label < BaseClassForResource
 
   # CRUD.
 
-  Contract GithubClient => Label
+  Contract ApiClient => Label
   def create(client)
     require_relative '../endpoints/labels/post_labels'
     PostLabels.call(client, self)
   end
 
-  Contract GithubClient => Label
+  Contract ApiClient => Label
   def read(client)
     require_relative '../endpoints/labels/get_labels_name'
     GetLabelsName.call(client, self)
   end
 
-  Contract GithubClient => Label
+  Contract ApiClient => Label
   def update(client)
     require_relative '../endpoints/labels/patch_labels_name'
     PatchLabelsName.call(client, self)
   end
 
-  Contract GithubClient => nil
+  Contract ApiClient => nil
   def delete(client)
     require_relative '../endpoints/labels/delete_labels_name'
     DeleteLabelsName.call(client, self)
@@ -102,19 +102,19 @@ class Label < BaseClassForResource
 
   # Convenience.
 
-  Contract GithubClient => self
+  Contract ApiClient => self
   def create!(client)
     delete_if_exist?(client)
     create(client)
   end
 
-  Contract GithubClient, Log, VERDICT_ID => Bool
+  Contract ApiClient, Log, VERDICT_ID => Bool
   def verdict_read_and_verify?(client, log, verdict_id)
     label_read = read(client)
     Label.verdict_equal?(log, verdict_id, self, label_read)
   end
 
-  Contract GithubClient => ArrayOf[Label ]
+  Contract ApiClient => ArrayOf[Label ]
   def self.get_all(client)
     require_relative '../endpoints/labels/get_labels'
     GetLabels.call(client)

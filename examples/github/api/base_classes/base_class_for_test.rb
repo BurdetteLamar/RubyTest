@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 
 require_relative '../../../../lib/helpers/test_helper'
-require_relative '../github_client'
+require_relative '../api_client'
 
 class BaseClassForTest < Minitest::Test
 
@@ -16,8 +16,10 @@ class BaseClassForTest < Minitest::Test
         message = 'ENV must define REPO_USERNAME, REPO_PASSWORD, REPO_NAME'
         raise RuntimeError.new(message)
       end
-      GithubClient.with(log, repo_username, ENV['REPO_PASSWORD'], ENV['REPO_NAME']) do |client|
-        yield client, log
+      log.section('Test') do
+        ApiClient.with(log, repo_username, repo_password, repo_name) do |api_client|
+          yield log, api_client
+        end
       end
     end
   end

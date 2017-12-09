@@ -5,8 +5,8 @@ require_relative '../../data/rate_limit'
 class NestedDataValidTest < BaseClassForTest
 
   def test_nested_data_valid
-    prelude do |client, log|
-      rate_limit = RateLimit.get(client)
+    prelude do |log, api_client|
+      rate_limit = RateLimit.get(api_client)
       log.section('This is valid') do
         rate_limit.verdict_valid?(log, :rate_limit_valid)
       end

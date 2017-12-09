@@ -4,7 +4,7 @@ require_relative '../../data/label'
 
 class DeleteLabelsName < BaseClassForEndpoint
 
-  Contract GithubClient, Label, Maybe[Hash] => [nil, nil]
+  Contract ApiClient, Label, Maybe[Hash] => [nil, nil]
   def self.call_and_return_payload(client, label_to_delete, query_elements = {})
     url_elements = [
         client.repo_url_elements,
@@ -15,7 +15,7 @@ class DeleteLabelsName < BaseClassForEndpoint
     [payload, payload]
   end
 
-  Contract GithubClient, VERDICT_ID, Label, Maybe[Hash] => nil
+  Contract ApiClient, VERDICT_ID, Label, Maybe[Hash] => nil
   def self.verdict_call_and_verify_success(client, verdict_id, label_to_delete, query_elements = {})
     log = client.log
     log.section(verdict_id.to_s, :rescue, :timestamp, :duration) do

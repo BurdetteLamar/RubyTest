@@ -29,11 +29,11 @@ require_relative '../../data/rate_limit'
 class NestedDataLogTest < BaseClassForTest
 
   def test_nested_data_log
-    prelude do |client, log|
+    prelude do |log, api_client|
       log.section('Fetch and log a rate limit') do
         rate_limit = nil
         log.section('Fetch rate limit') do
-          rate_limit = RateLimit.get(client)
+          rate_limit = RateLimit.get(api_client)
         end
         rate_limit.log(log, 'Fetched rate limit')
       end
@@ -54,36 +54,36 @@ Notes:
 ```xml
 <nested_data_log_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='1.747' name='nested_data_log_test' timestamp='2017-12-09-Sat-09.54.30.095'>
-    <section name='With GithubClient'>
+  <test_method duration_seconds='1.747' name='nested_data_log_test' timestamp='2017-12-09-Sat-10.49.22.062'>
+    <section name='Test'>
       <section name='Fetch and log a rate limit'>
         <section name='Fetch rate limit'>
-          <GithubClient method='GET' url='https://api.github.com/rate_limit'>
-            <execution duration_seconds='1.747' timestamp='2017-12-09-Sat-09.54.30.095'/>
-          </GithubClient>
+          <ApiClient method='GET' url='https://api.github.com/rate_limit'>
+            <execution duration_seconds='1.747' timestamp='2017-12-09-Sat-10.49.22.062'/>
+          </ApiClient>
         </section>
         <section name='Fetched rate limit'>
           <section name='RateLimit::Resources'>
             <section name='RateLimit::Core_'>
               <data field='limit' value='5000'/>
-              <data field='remaining' value='4938'/>
-              <data field='reset' value='1512837456'/>
+              <data field='remaining' value='4942'/>
+              <data field='reset' value='1512841064'/>
             </section>
             <section name='RateLimit::Search'>
               <data field='limit' value='30'/>
               <data field='remaining' value='30'/>
-              <data field='reset' value='1512834937'/>
+              <data field='reset' value='1512838229'/>
             </section>
             <section name='RateLimit::Graphql'>
               <data field='limit' value='5000'/>
               <data field='remaining' value='5000'/>
-              <data field='reset' value='1512838477'/>
+              <data field='reset' value='1512841769'/>
             </section>
           </section>
           <section name='RateLimit::Rate'>
             <data field='limit' value='5000'/>
-            <data field='remaining' value='4938'/>
-            <data field='reset' value='1512837456'/>
+            <data field='remaining' value='4942'/>
+            <data field='reset' value='1512841064'/>
           </section>
         </section>
       </section>

@@ -20,12 +20,12 @@ require_relative '../../base_classes/base_class_for_test'
 class MeetTest < BaseClassForTest
 
   def test_meet
-    prelude do |client, log|
+    prelude do |log, api_client|
 
       log.comment('Test code goes here')
 
       log.comment('Method prelude yields two objects:')
-      log.comment('1. Instance of %s, for access to the GitHub API.' % client.class.name)
+      log.comment('1. Instance of %s, for access to the GitHub API.' % api_client.class.name)
       log.comment('2. Instance of %s, for logging the test.' % log.class.name)
 
     end
@@ -49,11 +49,11 @@ Notes:
 ```xml
 <meet_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='meet_test' timestamp='2017-12-09-Sat-09.54.03.435'>
-    <section name='With GithubClient'>
+  <test_method duration_seconds='0.000' name='meet_test' timestamp='2017-12-09-Sat-10.48.55.464'>
+    <section name='Test'>
       <comment>Test code goes here</comment>
       <comment>Method prelude yields two objects:</comment>
-      <comment>1. Instance of GithubClient, for access to the GitHub API.</comment>
+      <comment>1. Instance of ApiClient, for access to the GitHub API.</comment>
       <comment>2. Instance of Log, for logging the test.</comment>
     </section>
   </test_method>
@@ -70,7 +70,7 @@ Notes:
 
 - At the top of the log is a summary of the counts of verdicts, failures (failed verdicts), and errors (unexpected exceptions).
 - Element `test_method` gives the test name, timestamp, and duration.
-- The section named `With GitHubClient` contains all logging from the test itself.
+- The section named `Test` contains all logging from the test itself.
 - The last section gives the count of errors (unexpected exceptions).  Its verdict expects that count to be 0.
 - (Attribute `volatile`, seen in element `verdict`, has to do with the Changes Report, and is of no present interest.)
 

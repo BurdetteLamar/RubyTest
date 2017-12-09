@@ -6,7 +6,7 @@ class PatchLabelsNameTest < BaseClassForTest
 
   def test_patch_labels_name
 
-    prelude do |client, log|
+    prelude do |log, api_client|
 
       log.section('Test PatchLabelsName') do
         label_to_create = Label.new(
@@ -16,11 +16,11 @@ class PatchLabelsNameTest < BaseClassForTest
             :color => '000000',
             :default => false,
         )
-        label_to_create.delete_if_exist?(client)
-        label_to_patch = label_to_create.create(client)
+        label_to_create.delete_if_exist?(api_client)
+        label_to_patch = label_to_create.create(api_client)
         label_to_patch.color = 'ffffff'
-        PatchLabelsName.verdict_call_and_verify_success(client, :patch_label, label_to_patch)
-        label_to_patch.delete_if_exist?(client)
+        PatchLabelsName.verdict_call_and_verify_success(api_client, :patch_label, label_to_patch)
+        label_to_patch.delete_if_exist?(api_client)
       end
 
     end

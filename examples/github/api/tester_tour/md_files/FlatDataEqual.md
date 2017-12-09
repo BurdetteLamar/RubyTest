@@ -22,11 +22,11 @@ require_relative '../../data/label'
 class FlatDataEqualTest < BaseClassForTest
 
   def test_flat_data_equal
-    prelude do |client, log|
+    prelude do |log, api_client|
       label_0 = nil
       log.section('Fetch an instance of Label') do
         log.section('Fetch a label') do
-          label_0 = Label.get_first(client)
+          label_0 = Label.get_first(api_client)
         end
       end
       label_1 = Label.deep_clone(label_0)
@@ -67,13 +67,13 @@ Notes:
 ```xml
 <flat_data_equal_test>
   <summary errors='0' failures='1' verdicts='11'/>
-  <test_method name='flat_data_equal_test' timestamp='2017-12-09-Sat-09.54.24.354'>
-    <section name='With GithubClient'>
+  <test_method name='flat_data_equal_test' timestamp='2017-12-09-Sat-10.49.16.259'>
+    <section name='Test'>
       <section name='Fetch an instance of Label'>
         <section name='Fetch a label'>
-          <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-            <execution duration_seconds='1.763' timestamp='2017-12-09-Sat-09.54.24.354'/>
-          </GithubClient>
+          <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
+            <execution duration_seconds='1.763' timestamp='2017-12-09-Sat-10.49.16.259'/>
+          </ApiClient>
         </section>
       </section>
       <section duration_seconds='1.841' name='These are equal'>
@@ -130,9 +130,9 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:68:in `verdict_equal?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/tester_tour/tests/flat_data_equal_test.rb:23:in `block (2 levels) in test_flat_data_equal'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/tester_tour/tests/flat_data_equal_test.rb:20:in `block in test_flat_data_equal'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/base_classes/base_class_for_test.rb:21:in `block (3 levels) in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/api_client.rb:19:in `with'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/github_client.rb:20:in `block in with'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/github_client.rb:16:in `with'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/base_classes/base_class_for_test.rb:19:in `block in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'

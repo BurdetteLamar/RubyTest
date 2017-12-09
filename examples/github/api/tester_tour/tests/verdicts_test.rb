@@ -3,7 +3,7 @@ require_relative '../../base_classes/base_class_for_test'
 class VerdictsTest < BaseClassForTest
 
   def test_verdicts
-    prelude do |_, log|
+    prelude do |log, _|
       # Using extra variables in these verdicts, to make usage clear.
       log.section('These verdicts should pass') do
         log.section('An assert verdict that should pass') do

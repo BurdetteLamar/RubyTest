@@ -5,8 +5,8 @@ require_relative '../../data/rate_limit'
 class NestedDataEqualTest < BaseClassForTest
 
   def test_nested_data_equal
-    prelude do |client, log|
-      rate_limit_0 = RateLimit.get(client)
+    prelude do |log, api_client|
+      rate_limit_0 = RateLimit.get(api_client)
       rate_limit_1 = RateLimit.deep_clone(rate_limit_0)
       log.section('These are equal') do
         fail unless RateLimit.equal?(rate_limit_0, rate_limit_1)

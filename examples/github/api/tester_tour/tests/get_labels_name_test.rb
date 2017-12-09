@@ -6,7 +6,7 @@ class GetLabelsNameTest < BaseClassForTest
 
   def test_get_labels_name
 
-    prelude do |client, log|
+    prelude do |log, api_client|
 
       log.section('Test GetLabelsName') do
         label_to_fetch = nil
@@ -18,14 +18,14 @@ class GetLabelsNameTest < BaseClassForTest
               :color => '000000',
               :default => false,
           )
-          label_to_create.delete_if_exist?(client)
-          label_to_fetch = label_to_create.create(client)
+          label_to_create.delete_if_exist?(api_client)
+          label_to_fetch = label_to_create.create(api_client)
         end
         log.section('Test fetching the created label') do
-          GetLabelsName.verdict_call_and_verify_success(client, :get_label, label_to_fetch)
+          GetLabelsName.verdict_call_and_verify_success(api_client, :get_label, label_to_fetch)
         end
         log.section('Clean up') do
-          label_to_fetch.delete_if_exist?(client)
+          label_to_fetch.delete_if_exist?(api_client)
         end
       end
 

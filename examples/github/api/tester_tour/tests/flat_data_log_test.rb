@@ -5,11 +5,11 @@ require_relative '../../data/label'
 class FlatDataLogTest < BaseClassForTest
 
   def test_flat_data_log
-    prelude do |client, log|
+    prelude do |log, api_client|
       log.section('Fetch and log an instance of Label') do
         label = nil
         log.section('Fetch a label') do
-          label = Label.get_first(client)
+          label = Label.get_first(api_client)
         end
         label.log(log, 'Fetched label')
       end

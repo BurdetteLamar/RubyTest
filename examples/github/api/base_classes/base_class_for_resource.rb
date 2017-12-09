@@ -3,7 +3,7 @@ require_relative '../../../../lib/helpers/object_helper'
 
 class BaseClassForResource < BaseClassForData
 
-  Contract GithubClient => Bool
+  Contract ApiClient => Bool
   # RubyMine cannot find RestClient::NotFound
   # noinspection RubyResolve
   def exist?(client)
@@ -15,19 +15,19 @@ class BaseClassForResource < BaseClassForData
     end
   end
 
-  Contract GithubClient, Log, VERDICT_ID => Bool
+  Contract ApiClient, Log, VERDICT_ID => Bool
   def verdict_assert_exist?(client, log, verdict_id)
     log.va?(verdict_id, exist?(client))
   end
   alias va_exist? verdict_assert_exist?
 
-  Contract GithubClient, Log, VERDICT_ID => Bool
+  Contract ApiClient, Log, VERDICT_ID => Bool
   def verdict_refute_exist?(client, log, verdict_id)
     log.vr?(verdict_id, exist?(client))
   end
   alias vr_exist? verdict_refute_exist?
 
-  Contract GithubClient => Bool
+  Contract ApiClient => Bool
   def delete_if_exist?(client)
     if exist?(client)
       delete(client)
@@ -36,7 +36,7 @@ class BaseClassForResource < BaseClassForData
     false
   end
 
-  Contract GithubClient => self
+  Contract ApiClient => self
   def self.get_first(client)
     all = self.get_all(client)
     raise RuntimeError.new('No %s available' % self.name) unless all.size > 0

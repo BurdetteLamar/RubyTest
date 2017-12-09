@@ -20,21 +20,21 @@ class DeleteLabelsNameTest < BaseClassForTest
 
   def test_delete_labels_name
 
-    prelude do |client, log|
+    prelude do |log, api_client|
 
       log.section('Test DeleteLabelsName') do
         label_to_create = nil
         label_to_delete = nil
         log.section('Create the label to be deleted') do
           label_to_create = Label.provisioned
-          label_to_create.delete_if_exist?(client)
-          label_to_delete = label_to_create.create(client)
+          label_to_create.delete_if_exist?(api_client)
+          label_to_delete = label_to_create.create(api_client)
         end
         log.section('Test deleting the created label') do
-          DeleteLabelsName.verdict_call_and_verify_success(client, :delete_label, label_to_delete)
+          DeleteLabelsName.verdict_call_and_verify_success(api_client, :delete_label, label_to_delete)
         end
         log.section('Clean up') do
-          label_to_create.delete_if_exist?(client)
+          label_to_create.delete_if_exist?(api_client)
         end
       end
 
@@ -63,23 +63,23 @@ Notes:
 ```xml
 <delete_labels_name_test>
   <summary errors='0' failures='0' verdicts='3'/>
-  <test_method name='delete_labels_name_test' timestamp='2017-12-09-Sat-09.55.10.265'>
-    <section duration_seconds='3.151' name='With GithubClient'>
+  <test_method name='delete_labels_name_test' timestamp='2017-12-09-Sat-10.50.02.092'>
+    <section duration_seconds='3.136' name='Test'>
       <section name='Test DeleteLabelsName'>
         <section name='Create the label to be deleted'>
-          <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-            <execution duration_seconds='1.763' timestamp='2017-12-09-Sat-09.55.10.265'/>
-          </GithubClient>
-          <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
+          <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
+            <execution duration_seconds='1.763' timestamp='2017-12-09-Sat-10.50.02.108'/>
+          </ApiClient>
+          <ApiClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
             <parameters color='000000' name='test label'/>
-            <execution duration_seconds='0.343' timestamp='2017-12-09-Sat-09.55.12.028'/>
-          </GithubClient>
+            <execution duration_seconds='0.343' timestamp='2017-12-09-Sat-10.50.03.870'/>
+          </ApiClient>
         </section>
         <section name='Test deleting the created label'>
-          <section name='delete_label' timestamp='2017-12-09-Sat-09.55.12.371'>
-            <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-              <execution duration_seconds='0.343' timestamp='2017-12-09-Sat-09.55.12.371'/>
-            </GithubClient>
+          <section name='delete_label' timestamp='2017-12-09-Sat-10.50.04.214'>
+            <ApiClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
+              <execution duration_seconds='0.359' timestamp='2017-12-09-Sat-10.50.04.214'/>
+            </ApiClient>
             <section name='Evaluation'>
               <section name='Response empty'>
                 <verdict id='delete_label:payload_nil' method='verdict_assert_nil?' outcome='passed' volatile='false'>
@@ -87,9 +87,9 @@ Notes:
                 </verdict>
               </section>
               <section name='Label deleted'>
-                <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-                  <execution duration_seconds='0.328' timestamp='2017-12-09-Sat-09.55.12.715'/>
-                </GithubClient>
+                <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
+                  <execution duration_seconds='0.343' timestamp='2017-12-09-Sat-10.50.04.572'/>
+                </ApiClient>
                 <verdict id='delete_label:label_deleted' method='verdict_refute?' outcome='passed' volatile='false'>
                   <act_value>false</act_value>
                 </verdict>
@@ -97,9 +97,9 @@ Notes:
             </section>
           </section>
           <section name='Clean up'>
-            <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-              <execution duration_seconds='0.374' timestamp='2017-12-09-Sat-09.55.13.042'/>
-            </GithubClient>
+            <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
+              <execution duration_seconds='0.312' timestamp='2017-12-09-Sat-10.50.04.916'/>
+            </ApiClient>
           </section>
         </section>
       </section>
@@ -116,7 +116,7 @@ Notes:
 
 Notes:
 
-- Section `GithubClient` shows the endpoint access.
+- Section `ApiClient` shows the endpoint access.
 - In section `Evaluation`:
   - Section `Response empty` verifies that the response was empty.
   - Section `Label deleted` verifies that the label no longer exists.

@@ -17,7 +17,7 @@ require_relative '../../base_classes/base_class_for_test'
 class UnrescuedExceptionTest < BaseClassForTest
 
   def test_unrescued_exception
-    prelude do |_, log|
+    prelude do |log, _|
       log.section('Unrescued exception') do
         numerator = 1
         denominator = 0
@@ -45,11 +45,11 @@ Notes:
 ```xml
 <unrescued_exception_test>
   <summary errors='1' failures='1' verdicts='1'/>
-  <test_method name='unrescued_exception_test' timestamp='2017-12-09-Sat-09.54.19.425'>
-    <section duration_seconds='0.000' name='With GithubClient'>
-      <section name='Unrescued exception'>
+  <test_method name='unrescued_exception_test' timestamp='2017-12-09-Sat-10.49.11.251'>
+    <section name='Test'>
+      <section duration_seconds='0.000' name='Unrescued exception'>
         <uncaught_exception>
-          <verdict_id>With GithubClient</verdict_id>
+          <verdict_id>unrescued_exception_test</verdict_id>
           <class>ZeroDivisionError</class>
           <message>divided by 0</message>
           <backtrace>
@@ -57,9 +57,9 @@ Notes:
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/tester_tour/tests/unrescued_exception_test.rb:10:in `/'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/tester_tour/tests/unrescued_exception_test.rb:10:in `block (2 levels) in test_unrescued_exception'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/tester_tour/tests/unrescued_exception_test.rb:7:in `block in test_unrescued_exception'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/base_classes/base_class_for_test.rb:21:in `block (3 levels) in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/api_client.rb:19:in `with'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/github_client.rb:20:in `block in with'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/github_client.rb:16:in `with'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/base_classes/base_class_for_test.rb:19:in `block in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
@@ -69,22 +69,22 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/tester_tour/test
           </backtrace>
         </uncaught_exception>
       </section>
-    </section>
-    <section name='Count of errors (unexpected exceptions)'>
-      <verdict id='error_count' method='verdict_assert_equal?' outcome='failed' volatile='true'>
-        <exp_value>0</exp_value>
-        <act_value>1</act_value>
-        <exception>
-          <class>Minitest::Assertion</class>
-          <message>Expected: 0 Actual: 1</message>
-          <backtrace>
-            <![CDATA[
+      <section name='Count of errors (unexpected exceptions)'>
+        <verdict id='error_count' method='verdict_assert_equal?' outcome='failed' volatile='true'>
+          <exp_value>0</exp_value>
+          <act_value>1</act_value>
+          <exception>
+            <class>Minitest::Assertion</class>
+            <message>Expected: 0 Actual: 1</message>
+            <backtrace>
+              <![CDATA[
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/base_classes/base_class_for_test.rb:11:in `prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/tester_tour/tests/unrescued_exception_test.rb:6:in `test_unrescued_exception']]>
-          </backtrace>
-        </exception>
-      </verdict>
+            </backtrace>
+          </exception>
+        </verdict>
+      </section>
     </section>
   </test_method>
 </unrescued_exception_test>

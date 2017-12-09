@@ -5,11 +5,11 @@ require_relative '../../data/label'
 class FlatDataEqualTest < BaseClassForTest
 
   def test_flat_data_equal
-    prelude do |client, log|
+    prelude do |log, api_client|
       label_0 = nil
       log.section('Fetch an instance of Label') do
         log.section('Fetch a label') do
-          label_0 = Label.get_first(client)
+          label_0 = Label.get_first(api_client)
         end
       end
       label_1 = Label.deep_clone(label_0)

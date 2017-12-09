@@ -20,7 +20,7 @@ class GetLabelsNameTest < BaseClassForTest
 
   def test_get_labels_name
 
-    prelude do |client, log|
+    prelude do |log, api_client|
 
       log.section('Test GetLabelsName') do
         label_to_fetch = nil
@@ -32,14 +32,14 @@ class GetLabelsNameTest < BaseClassForTest
               :color => '000000',
               :default => false,
           )
-          label_to_create.delete_if_exist?(client)
-          label_to_fetch = label_to_create.create(client)
+          label_to_create.delete_if_exist?(api_client)
+          label_to_fetch = label_to_create.create(api_client)
         end
         log.section('Test fetching the created label') do
-          GetLabelsName.verdict_call_and_verify_success(client, :get_label, label_to_fetch)
+          GetLabelsName.verdict_call_and_verify_success(api_client, :get_label, label_to_fetch)
         end
         log.section('Clean up') do
-          label_to_fetch.delete_if_exist?(client)
+          label_to_fetch.delete_if_exist?(api_client)
         end
       end
 
@@ -69,23 +69,23 @@ Notes:
 ```xml
 <get_labels_name_test>
   <summary errors='0' failures='0' verdicts='9'/>
-  <test_method name='get_labels_name_test' timestamp='2017-12-09-Sat-09.55.01.295'>
-    <section duration_seconds='3.182' name='With GithubClient'>
+  <test_method name='get_labels_name_test' timestamp='2017-12-09-Sat-10.49.52.326'>
+    <section duration_seconds='3.167' name='Test'>
       <section name='Test GetLabelsName'>
         <section name='Create the label to be fetched'>
-          <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-            <execution duration_seconds='1.747' timestamp='2017-12-09-Sat-09.55.01.311'/>
-          </GithubClient>
-          <GithubClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
+          <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
+            <execution duration_seconds='1.763' timestamp='2017-12-09-Sat-10.49.52.326'/>
+          </ApiClient>
+          <ApiClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
             <parameters color='000000' name='test_label'/>
-            <execution duration_seconds='0.374' timestamp='2017-12-09-Sat-09.55.03.058'/>
-          </GithubClient>
+            <execution duration_seconds='0.312' timestamp='2017-12-09-Sat-10.49.54.089'/>
+          </ApiClient>
         </section>
         <section name='Test fetching the created label'>
-          <section name='get_label' timestamp='2017-12-09-Sat-09.55.03.433'>
-            <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-              <execution duration_seconds='0.328' timestamp='2017-12-09-Sat-09.55.03.433'/>
-            </GithubClient>
+          <section name='get_label' timestamp='2017-12-09-Sat-10.49.54.401'>
+            <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
+              <execution duration_seconds='0.343' timestamp='2017-12-09-Sat-10.49.54.401'/>
+            </ApiClient>
             <section name='Evaluation'>
               <verdict id='get_label:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>test_label</exp_value>
@@ -95,10 +95,10 @@ Notes:
                 <section name='verdict_assert_integer_positive?'>
                   <verdict id='get_label:valid:id:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
                     <exp_value>Integer</exp_value>
-                    <act_value>774168948</act_value>
+                    <act_value>774198168</act_value>
                   </verdict>
                   <verdict id='get_label:valid:id:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-                    <object_1>774168948</object_1>
+                    <object_1>774198168</object_1>
                     <operator>:&gt;</operator>
                     <object_2>0</object_2>
                   </verdict>
@@ -128,12 +128,12 @@ Notes:
             </section>
           </section>
           <section name='Clean up'>
-            <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-              <execution duration_seconds='0.359' timestamp='2017-12-09-Sat-09.55.03.760'/>
-            </GithubClient>
-            <GithubClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-              <execution duration_seconds='0.359' timestamp='2017-12-09-Sat-09.55.04.119'/>
-            </GithubClient>
+            <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
+              <execution duration_seconds='0.359' timestamp='2017-12-09-Sat-10.49.54.744'/>
+            </ApiClient>
+            <ApiClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
+              <execution duration_seconds='0.390' timestamp='2017-12-09-Sat-10.49.55.103'/>
+            </ApiClient>
           </section>
         </section>
       </section>
@@ -150,7 +150,7 @@ Notes:
 
 Notes:
 
-- Section `GithubClient` shows the endpoint access.
+- Section `ApiClient` shows the endpoint access.
 - Section `Evaluation` verifies the returned label.
 
 **Prev Stop:** [PostLabels Test](./PostLabels.md#postlabels-test)

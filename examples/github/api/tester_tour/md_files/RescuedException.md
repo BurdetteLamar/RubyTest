@@ -19,7 +19,7 @@ require_relative '../../base_classes/base_class_for_test'
 class RescuedExceptionTest < BaseClassForTest
 
   def test_rescued_exception
-    prelude do |_, log|
+    prelude do |log, _|
       log.section('Rescued exception', :rescue) do
         numerator = 1
         denominator = 0
@@ -50,8 +50,8 @@ Notes:
 ```xml
 <rescued_exception_test>
   <summary errors='1' failures='1' verdicts='2'/>
-  <test_method duration_seconds='0.000' name='rescued_exception_test' timestamp='2017-12-09-Sat-09.54.18.380'>
-    <section name='With GithubClient'>
+  <test_method duration_seconds='0.000' name='rescued_exception_test' timestamp='2017-12-09-Sat-10.49.10.191'>
+    <section name='Test'>
       <section name='Rescued exception'>
         <uncaught_exception>
           <verdict_id>Rescued exception</verdict_id>
@@ -62,9 +62,9 @@ Notes:
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/tester_tour/tests/rescued_exception_test.rb:10:in `/'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/tester_tour/tests/rescued_exception_test.rb:10:in `block (2 levels) in test_rescued_exception'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/tester_tour/tests/rescued_exception_test.rb:7:in `block in test_rescued_exception'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/base_classes/base_class_for_test.rb:21:in `block (3 levels) in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/api_client.rb:19:in `with'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/github_client.rb:20:in `block in with'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/github_client.rb:16:in `with'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/base_classes/base_class_for_test.rb:19:in `block in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'

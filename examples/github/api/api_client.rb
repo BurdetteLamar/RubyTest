@@ -5,7 +5,7 @@ require 'uri'
 
 require_relative '../../../lib/base_classes/base_class'
 
-class GithubClient < BaseClass
+class ApiClient < BaseClass
 
   attr_accessor :log
 
@@ -13,14 +13,12 @@ class GithubClient < BaseClass
   Contract Log, String, String, String, Proc => nil
   def self.with(log, repo_username, repo_password, repo_name)
     raise 'No block given' unless (block_given?)
-    log.section('With %s' % self, :rescue) do
-      client = self.new(log, repo_username, repo_password, repo_name, im_ok_youre_not_ok = true)
-      # Client should retrieve and log the API version if it's available.
-      # (Here, it's not.)
-      yield client
-      # Client should calculate and log summary information here.
-      # TBS.
-    end
+    client = self.new(log, repo_username, repo_password, repo_name, im_ok_youre_not_ok = true)
+    # Client should retrieve and log the API version if it's available.
+    # (Here, it's not.)
+    yield client
+    # Client should calculate and log summary information here.
+    # TBS.
     nil
   end
 

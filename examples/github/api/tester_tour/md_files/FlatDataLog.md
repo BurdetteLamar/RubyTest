@@ -19,11 +19,11 @@ require_relative '../../data/label'
 class FlatDataLogTest < BaseClassForTest
 
   def test_flat_data_log
-    prelude do |client, log|
+    prelude do |log, api_client|
       log.section('Fetch and log an instance of Label') do
         label = nil
         log.section('Fetch a label') do
-          label = Label.get_first(client)
+          label = Label.get_first(api_client)
         end
         label.log(log, 'Fetched label')
       end
@@ -43,13 +43,13 @@ Notes:
 ```xml
 <flat_data_log_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='1.732' name='flat_data_log_test' timestamp='2017-12-09-Sat-09.54.20.486'>
-    <section name='With GithubClient'>
+  <test_method duration_seconds='1.732' name='flat_data_log_test' timestamp='2017-12-09-Sat-10.49.12.312'>
+    <section name='Test'>
       <section name='Fetch and log an instance of Label'>
         <section name='Fetch a label'>
-          <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-            <execution duration_seconds='1.716' timestamp='2017-12-09-Sat-09.54.20.501'/>
-          </GithubClient>
+          <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
+            <execution duration_seconds='1.732' timestamp='2017-12-09-Sat-10.49.12.312'/>
+          </ApiClient>
         </section>
         <section name='Fetched label'>
           <data field='id' value='710733208'/>
@@ -72,7 +72,7 @@ Notes:
 
 Notes:
 
-- Element `GithubClient` records an interaction with the GitHub API, showing the HTTP method and url.
+- Element `ApiClient` records an interaction with the GitHub API, showing the HTTP method and url.
 - Its subelement `execution` shows the timestamp and duration for the interaction.
 - The section named `Fetched Label` shows the values in the fetched rate limit.
 

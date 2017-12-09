@@ -20,15 +20,15 @@ class GettersTest < BaseClassForTest
 
   def test_getters
 
-    prelude do |client, log|
+    prelude do |log, api_client|
 
       log.section('Get the first label') do
-        label = Label.get_first(client)
+        label = Label.get_first(api_client)
         label.log(log)
       end
 
       log.section('Get all labels') do
-        labels = Label.get_all(client)
+        labels = Label.get_all(api_client)
         labels.each do |label|
           label.log(log)
         end
@@ -52,12 +52,12 @@ Notes:
 ```xml
 <getters_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='2.122' name='getters_test' timestamp='2017-12-09-Sat-09.54.45.992'>
-    <section name='With GithubClient'>
+  <test_method duration_seconds='2.106' name='getters_test' timestamp='2017-12-09-Sat-10.49.37.163'>
+    <section name='Test'>
       <section name='Get the first label'>
-        <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-          <execution duration_seconds='1.747' timestamp='2017-12-09-Sat-09.54.46.007'/>
-        </GithubClient>
+        <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
+          <execution duration_seconds='1.763' timestamp='2017-12-09-Sat-10.49.37.179'/>
+        </ApiClient>
         <section name='Label'>
           <data field='id' value='710733208'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/bug'/>
@@ -67,9 +67,9 @@ Notes:
         </section>
       </section>
       <section name='Get all labels'>
-        <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-          <execution duration_seconds='0.359' timestamp='2017-12-09-Sat-09.54.47.755'/>
-        </GithubClient>
+        <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
+          <execution duration_seconds='0.328' timestamp='2017-12-09-Sat-10.49.38.942'/>
+        </ApiClient>
         <section name='Label'>
           <data field='id' value='710733208'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/bug'/>

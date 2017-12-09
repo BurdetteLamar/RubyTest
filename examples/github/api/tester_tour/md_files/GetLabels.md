@@ -20,10 +20,10 @@ class LabelBasicsTest < BaseClassForTest
 
   def test_get_labels
 
-    prelude do |client, log|
+    prelude do |log, api_client|
 
       log.section('Test GetLabels') do
-        GetLabels.verdict_call_and_verify_success(client, :get_labels)
+        GetLabels.verdict_call_and_verify_success(api_client, :get_labels)
       end
 
     end
@@ -49,13 +49,13 @@ Notes:
 ```xml
 <get_labels_test>
   <summary errors='0' failures='0' verdicts='8'/>
-  <test_method name='get_labels_test' timestamp='2017-12-09-Sat-09.54.54.166'>
-    <section duration_seconds='1.794' name='With GithubClient'>
+  <test_method name='get_labels_test' timestamp='2017-12-09-Sat-10.49.45.228'>
+    <section duration_seconds='1.747' name='Test'>
       <section name='Test GetLabels'>
-        <section name='get_labels' timestamp='2017-12-09-Sat-09.54.54.166'>
-          <GithubClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-            <execution duration_seconds='1.794' timestamp='2017-12-09-Sat-09.54.54.166'/>
-          </GithubClient>
+        <section name='get_labels' timestamp='2017-12-09-Sat-10.49.45.228'>
+          <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
+            <execution duration_seconds='1.747' timestamp='2017-12-09-Sat-10.49.45.228'/>
+          </ApiClient>
           <section name='Info'>
             <data fetched_labels_count='8'/>
             <section name='First label fetched'>
@@ -119,7 +119,7 @@ Notes:
 
 Notes:
 
-- Section `GithubClient` shows the endpoint access.
+- Section `ApiClient` shows the endpoint access.
 - We don't know what labels to expect, so section `Info` just shows:
   - The count of labels.
   - The first label.

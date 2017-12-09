@@ -26,7 +26,7 @@ Notes:
 
 Notes:
 
-- Section `GithubClient` shows the endpoint access, including the parameters.
+- Section `ApiClient` shows the endpoint access, including the parameters.
 - In section `Evaluation`:
   - Section `Returned label correct` verifies the created label: `:name` and `:color`.
   - Section `Returned label valid` validates the created label: all fields.

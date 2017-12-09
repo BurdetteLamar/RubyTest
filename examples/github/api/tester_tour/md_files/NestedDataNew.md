@@ -19,7 +19,7 @@ require_relative '../../data/rate_limit'
 class NestedDataNewTest < BaseClassForTest
 
   def test_nested_data_new
-    prelude do |_, log|
+    prelude do |log, _|
       log.section('Create and log nested data objects') do
         rate_limit = RateLimit.new(
             {
@@ -67,8 +67,8 @@ Notes:
 ```xml
 <nested_data_new_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.016' name='nested_data_new_test' timestamp='2017-12-09-Sat-09.54.32.934'>
-    <section name='With GithubClient'>
+  <test_method duration_seconds='0.000' name='nested_data_new_test' timestamp='2017-12-09-Sat-10.49.24.901'>
+    <section name='Test'>
       <section name='Create and log nested data objects'>
         <section name='RateLimit'>
           <section name='RateLimit::Resources'>

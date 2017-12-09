@@ -19,7 +19,7 @@ require_relative '../../base_classes/base_class_for_test'
 class VerdictsTest < BaseClassForTest
 
   def test_verdicts
-    prelude do |_, log|
+    prelude do |log, _|
       # Using extra variables in these verdicts, to make usage clear.
       log.section('These verdicts should pass') do
         log.section('An assert verdict that should pass') do
@@ -74,8 +74,8 @@ Notes:
 ```xml
 <verdicts_test>
   <summary errors='0' failures='2' verdicts='5'/>
-  <test_method duration_seconds='0.016' name='verdicts_test' timestamp='2017-12-09-Sat-09.54.17.319'>
-    <section name='With GithubClient'>
+  <test_method duration_seconds='0.016' name='verdicts_test' timestamp='2017-12-09-Sat-10.49.09.145'>
+    <section name='Test'>
       <section name='These verdicts should pass'>
         <section name='An assert verdict that should pass'>
           <verdict id='assert_should_pass' method='verdict_assert?' outcome='passed' volatile='false'>
@@ -100,9 +100,9 @@ Notes:
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/tester_tour/tests/verdicts_test.rb:24:in `block (3 levels) in test_verdicts'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/tester_tour/tests/verdicts_test.rb:23:in `block (2 levels) in test_verdicts'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/tester_tour/tests/verdicts_test.rb:22:in `block in test_verdicts'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/base_classes/base_class_for_test.rb:21:in `block (3 levels) in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/api_client.rb:19:in `with'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/github_client.rb:20:in `block in with'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/github_client.rb:16:in `with'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/base_classes/base_class_for_test.rb:19:in `block in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
@@ -124,9 +124,9 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/tester_tour/test
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/tester_tour/tests/verdicts_test.rb:30:in `block (3 levels) in test_verdicts'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/tester_tour/tests/verdicts_test.rb:29:in `block (2 levels) in test_verdicts'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/tester_tour/tests/verdicts_test.rb:22:in `block in test_verdicts'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/base_classes/base_class_for_test.rb:21:in `block (3 levels) in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/api_client.rb:19:in `with'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/github_client.rb:20:in `block in with'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/github_client.rb:16:in `with'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/base_classes/base_class_for_test.rb:19:in `block in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'

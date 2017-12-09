@@ -24,7 +24,7 @@ Notes:
 
 Notes:
 
-- Section `GithubClient` shows the endpoint access.
+- Section `ApiClient` shows the endpoint access.
 - We don't know what labels to expect, so section `Info` just shows:
   - The count of labels.
   - The first label.
