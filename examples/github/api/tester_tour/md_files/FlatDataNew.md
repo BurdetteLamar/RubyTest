@@ -14,7 +14,7 @@ A data object's `new` method takes a hash of name/value pairs that initialize it
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
 
-require_relative '../../data/label'
+require_relative '../../../data/label'
 
 class FlatDataNewTest < BaseClassForTest
 
@@ -50,7 +50,7 @@ Notes:
 ```xml
 <flat_data_new_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='flat_data_new_test' timestamp='2017-12-09-Sat-10.49.15.198'>
+  <test_method duration_seconds='0.000' name='flat_data_new_test' timestamp='2017-12-09-Sat-15.16.37.523'>
     <section name='Test'>
       <section name='Instantiate and log an instance of Label'>
         <section name='Instantiated label'>

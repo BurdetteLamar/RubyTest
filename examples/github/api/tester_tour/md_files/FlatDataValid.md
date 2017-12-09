@@ -18,7 +18,7 @@ Example of usefulness:  creating a new label returns an `Label` object with a ne
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
 
-require_relative '../../data/label'
+require_relative '../../../data/label'
 
 class FlatDataValidTest < BaseClassForTest
 
@@ -55,10 +55,10 @@ Notes:
 ```xml
 <flat_data_valid_test>
   <summary errors='0' failures='1' verdicts='15'/>
-  <test_method duration_seconds='1.778' name='flat_data_valid_test' timestamp='2017-12-09-Sat-10.49.19.207'>
+  <test_method duration_seconds='1.747' name='flat_data_valid_test' timestamp='2017-12-09-Sat-15.16.41.547'>
     <section name='Test'>
       <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-        <execution duration_seconds='1.763' timestamp='2017-12-09-Sat-10.49.19.207'/>
+        <execution duration_seconds='1.732' timestamp='2017-12-09-Sat-15.16.41.563'/>
       </ApiClient>
       <section name='This is valid'>
         <section class='Label' method='verdict_valid?' name='label_valid'>
@@ -130,7 +130,7 @@ Notes:
               <message>Expected /[0-9a-f]{6}/i to match # encoding: UTF-8 &quot;red&quot;.</message>
               <backtrace>
                 <![CDATA[
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/data/label.rb:33:in `verdict_field_valid?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/data/label.rb:33:in `verdict_field_valid?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:48:in `block (2 levels) in verdict_valid?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:46:in `block in verdict_valid?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:45:in `verdict_valid?'

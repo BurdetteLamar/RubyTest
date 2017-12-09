@@ -1,5 +1,5 @@
-require_relative '../../../../lib/base_classes/base_class_for_data'
-require_relative '../../../../lib/helpers/object_helper'
+require_relative '../../../lib/base_classes/base_class_for_data'
+require_relative '../../../lib/helpers/object_helper'
 
 class BaseClassForResource < BaseClassForData
 

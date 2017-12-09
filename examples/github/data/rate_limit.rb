@@ -44,7 +44,7 @@ class RateLimit < BaseClassForResource
 
   Contract ApiClient => self
   def self.get(client)
-    require_relative '../endpoints/get_rate_limit'
+    require_relative '../api/endpoints/get_rate_limit'
     GetRateLimit.call(client)
   end
 

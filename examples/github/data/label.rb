@@ -78,25 +78,25 @@ class Label < BaseClassForResource
 
   Contract ApiClient => Label
   def create(client)
-    require_relative '../endpoints/labels/post_labels'
+    require_relative '../api/endpoints/labels/post_labels'
     PostLabels.call(client, self)
   end
 
   Contract ApiClient => Label
   def read(client)
-    require_relative '../endpoints/labels/get_labels_name'
+    require_relative '../api/endpoints/labels/get_labels_name'
     GetLabelsName.call(client, self)
   end
 
   Contract ApiClient => Label
   def update(client)
-    require_relative '../endpoints/labels/patch_labels_name'
+    require_relative '../api/endpoints/labels/patch_labels_name'
     PatchLabelsName.call(client, self)
   end
 
   Contract ApiClient => nil
   def delete(client)
-    require_relative '../endpoints/labels/delete_labels_name'
+    require_relative '../api/endpoints/labels/delete_labels_name'
     DeleteLabelsName.call(client, self)
   end
 
@@ -116,7 +116,7 @@ class Label < BaseClassForResource
 
   Contract ApiClient => ArrayOf[Label ]
   def self.get_all(client)
-    require_relative '../endpoints/labels/get_labels'
+    require_relative '../api/endpoints/labels/get_labels'
     GetLabels.call(client)
   end
 

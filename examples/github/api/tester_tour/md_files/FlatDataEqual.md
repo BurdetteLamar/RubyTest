@@ -17,7 +17,7 @@ A data class has methods for:
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
 
-require_relative '../../data/label'
+require_relative '../../../data/label'
 
 class FlatDataEqualTest < BaseClassForTest
 
@@ -67,16 +67,16 @@ Notes:
 ```xml
 <flat_data_equal_test>
   <summary errors='0' failures='1' verdicts='11'/>
-  <test_method name='flat_data_equal_test' timestamp='2017-12-09-Sat-10.49.16.259'>
+  <test_method name='flat_data_equal_test' timestamp='2017-12-09-Sat-15.16.38.583'>
     <section name='Test'>
       <section name='Fetch an instance of Label'>
         <section name='Fetch a label'>
           <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-            <execution duration_seconds='1.763' timestamp='2017-12-09-Sat-10.49.16.259'/>
+            <execution duration_seconds='1.763' timestamp='2017-12-09-Sat-15.16.38.583'/>
           </ApiClient>
         </section>
       </section>
-      <section duration_seconds='1.841' name='These are equal'>
+      <section duration_seconds='1.872' name='These are equal'>
         <section class='Label' method='verdict_equal?' name='label_equal'>
           <verdict id='label_equal:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
             <exp_value>710733208</exp_value>

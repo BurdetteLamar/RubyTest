@@ -24,7 +24,7 @@ Now we begin to look at the handling of objects in class `RateLimit`, some of wh
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
 
-require_relative '../../data/rate_limit'
+require_relative '../../../data/rate_limit'
 
 class NestedDataLogTest < BaseClassForTest
 
@@ -54,36 +54,36 @@ Notes:
 ```xml
 <nested_data_log_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='1.747' name='nested_data_log_test' timestamp='2017-12-09-Sat-10.49.22.062'>
+  <test_method duration_seconds='1.747' name='nested_data_log_test' timestamp='2017-12-09-Sat-15.16.44.371'>
     <section name='Test'>
       <section name='Fetch and log a rate limit'>
         <section name='Fetch rate limit'>
           <ApiClient method='GET' url='https://api.github.com/rate_limit'>
-            <execution duration_seconds='1.747' timestamp='2017-12-09-Sat-10.49.22.062'/>
+            <execution duration_seconds='1.747' timestamp='2017-12-09-Sat-15.16.44.371'/>
           </ApiClient>
         </section>
         <section name='Fetched rate limit'>
           <section name='RateLimit::Resources'>
             <section name='RateLimit::Core_'>
               <data field='limit' value='5000'/>
-              <data field='remaining' value='4942'/>
-              <data field='reset' value='1512841064'/>
+              <data field='remaining' value='4989'/>
+              <data field='reset' value='1512857786'/>
             </section>
             <section name='RateLimit::Search'>
               <data field='limit' value='30'/>
               <data field='remaining' value='30'/>
-              <data field='reset' value='1512838229'/>
+              <data field='reset' value='1512854271'/>
             </section>
             <section name='RateLimit::Graphql'>
               <data field='limit' value='5000'/>
               <data field='remaining' value='5000'/>
-              <data field='reset' value='1512841769'/>
+              <data field='reset' value='1512857811'/>
             </section>
           </section>
           <section name='RateLimit::Rate'>
             <data field='limit' value='5000'/>
-            <data field='remaining' value='4942'/>
-            <data field='reset' value='1512841064'/>
+            <data field='remaining' value='4989'/>
+            <data field='reset' value='1512857786'/>
           </section>
         </section>
       </section>

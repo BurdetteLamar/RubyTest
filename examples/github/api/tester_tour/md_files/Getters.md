@@ -14,7 +14,7 @@ A data class may offer convenience methods for getting resources from the API.
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
 
-require_relative '../../data/label'
+require_relative '../../../data/label'
 
 class GettersTest < BaseClassForTest
 
@@ -52,11 +52,11 @@ Notes:
 ```xml
 <getters_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='2.106' name='getters_test' timestamp='2017-12-09-Sat-10.49.37.163'>
+  <test_method duration_seconds='2.590' name='getters_test' timestamp='2017-12-09-Sat-15.16.59.643'>
     <section name='Test'>
       <section name='Get the first label'>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-          <execution duration_seconds='1.763' timestamp='2017-12-09-Sat-10.49.37.179'/>
+          <execution duration_seconds='2.231' timestamp='2017-12-09-Sat-15.16.59.659'/>
         </ApiClient>
         <section name='Label'>
           <data field='id' value='710733208'/>
@@ -68,7 +68,7 @@ Notes:
       </section>
       <section name='Get all labels'>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-          <execution duration_seconds='0.328' timestamp='2017-12-09-Sat-10.49.38.942'/>
+          <execution duration_seconds='0.343' timestamp='2017-12-09-Sat-15.17.01.890'/>
         </ApiClient>
         <section name='Label'>
           <data field='id' value='710733208'/>

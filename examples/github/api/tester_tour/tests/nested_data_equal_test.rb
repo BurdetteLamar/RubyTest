@@ -1,6 +1,6 @@
 require_relative '../../base_classes/base_class_for_test'
 
-require_relative '../../data/rate_limit'
+require_relative '../../../data/rate_limit'
 
 class NestedDataEqualTest < BaseClassForTest
 

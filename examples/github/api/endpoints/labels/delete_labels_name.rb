@@ -1,6 +1,6 @@
 require_relative '../../base_classes/base_class_for_endpoint'
 
-require_relative '../../data/label'
+require_relative '../../../data/label'
 
 class DeleteLabelsName < BaseClassForEndpoint
 
