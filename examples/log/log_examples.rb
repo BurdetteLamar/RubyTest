@@ -4,6 +4,7 @@ require_relative '../../test/common_requires'
 require_relative '../../lib/helpers/test_helper'
 
 # Class to show how to use the Log object.
+# noinspection RubyTooManyMethodsInspection
 class LogExamples < MiniTest::Test
 
   # This is just a caller for the other, specific, example methods.

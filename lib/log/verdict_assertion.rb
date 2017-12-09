@@ -1,5 +1,6 @@
 require_relative 'constants'
 
+# noinspection RubyTooManyMethodsInspection
 module VerdictAssertion
 
   # TODO:  Separate testing for this module from that for Log class.
@@ -431,7 +432,7 @@ module VerdictAssertion
   end
   private :_verdict_same?
 
-  # Method :assert_send is deprecated, and emite a message to that effect.
+  # Method :assert_send is deprecated, and emits a message to that effect.
   # Let's omit it.
   # Contract VERDICT_ID, Object, Symbol, VERDICT_MESSAGE, VERDICT_VOLATILE => Bool
   # # \Log a verdict using :assert_send.
