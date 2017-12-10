@@ -54,12 +54,12 @@ Notes:
 ```xml
 <nested_data_log_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='1.747' name='nested_data_log_test' timestamp='2017-12-09-Sat-15.16.44.371'>
+  <test_method duration_seconds='1.760' name='nested_data_log_test' timestamp='2017-12-10-Sun-13.56.35.565'>
     <section name='Test'>
       <section name='Fetch and log a rate limit'>
         <section name='Fetch rate limit'>
           <ApiClient method='GET' url='https://api.github.com/rate_limit'>
-            <execution duration_seconds='1.747' timestamp='2017-12-09-Sat-15.16.44.371'/>
+            <execution duration_seconds='1.740' timestamp='2017-12-10-Sun-13.56.35.585'/>
           </ApiClient>
         </section>
         <section name='Fetched rate limit'>
@@ -67,23 +67,23 @@ Notes:
             <section name='RateLimit::Core_'>
               <data field='limit' value='5000'/>
               <data field='remaining' value='4989'/>
-              <data field='reset' value='1512857786'/>
+              <data field='reset' value='1512939371'/>
             </section>
             <section name='RateLimit::Search'>
               <data field='limit' value='30'/>
               <data field='remaining' value='30'/>
-              <data field='reset' value='1512854271'/>
+              <data field='reset' value='1512935856'/>
             </section>
             <section name='RateLimit::Graphql'>
               <data field='limit' value='5000'/>
               <data field='remaining' value='5000'/>
-              <data field='reset' value='1512857811'/>
+              <data field='reset' value='1512939396'/>
             </section>
           </section>
           <section name='RateLimit::Rate'>
             <data field='limit' value='5000'/>
             <data field='remaining' value='4989'/>
-            <data field='reset' value='1512857786'/>
+            <data field='reset' value='1512939371'/>
           </section>
         </section>
       </section>

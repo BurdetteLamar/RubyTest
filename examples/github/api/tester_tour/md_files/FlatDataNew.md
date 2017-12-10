@@ -50,7 +50,7 @@ Notes:
 ```xml
 <flat_data_new_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='flat_data_new_test' timestamp='2017-12-09-Sat-15.16.37.523'>
+  <test_method duration_seconds='0.010' name='flat_data_new_test' timestamp='2017-12-10-Sun-13.56.28.525'>
     <section name='Test'>
       <section name='Instantiate and log an instance of Label'>
         <section name='Instantiated label'>

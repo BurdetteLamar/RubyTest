@@ -4,8 +4,8 @@
 
 The test framework sets up for the test by delivering objects the test will need:
 
-- A domain-specific GitHub API client.
 - An open test log.
+- A domain-specific GitHub API client.
 
 ## Example Test
 
@@ -17,8 +17,8 @@ Notes:
 - Choose a test method-name that begins with `test`, which tells the test framework that it can be executed at test-time.
 - Call method `prelude`, inherited from the base class.
 - Use the yielded values for your test.
-  - A domain-specific GitHub API client.
   - An open test log.  When the test exits the `prelude` block, the log builds its summaries, closes itself, and writes itself as XML.
+  - A domain-specific GitHub API client.
 
 ## Log
 

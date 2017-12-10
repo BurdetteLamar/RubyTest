@@ -8,8 +8,8 @@
 
 The test framework sets up for the test by delivering objects the test will need:
 
-- A domain-specific GitHub API client.
 - An open test log.
+- A domain-specific GitHub API client.
 
 ## Example Test
 
@@ -25,8 +25,8 @@ class MeetTest < BaseClassForTest
       log.comment('Test code goes here')
 
       log.comment('Method prelude yields two objects:')
-      log.comment('1. Instance of %s, for access to the GitHub API.' % api_client.class.name)
-      log.comment('2. Instance of %s, for logging the test.' % log.class.name)
+      log.comment('1. Instance of %s, for logging the test.' % log.class.name)
+      log.comment('2. Instance of %s, for access to the GitHub API.' % api_client.class.name)
 
     end
   end
@@ -40,8 +40,8 @@ Notes:
 - Choose a test method-name that begins with `test`, which tells the test framework that it can be executed at test-time.
 - Call method `prelude`, inherited from the base class.
 - Use the yielded values for your test.
-  - A domain-specific GitHub API client.
   - An open test log.  When the test exits the `prelude` block, the log builds its summaries, closes itself, and writes itself as XML.
+  - A domain-specific GitHub API client.
 
 ## Log
 
@@ -49,12 +49,12 @@ Notes:
 ```xml
 <meet_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='meet_test' timestamp='2017-12-09-Sat-15.16.17.523'>
+  <test_method duration_seconds='0.000' name='meet_test' timestamp='2017-12-10-Sun-13.56.08.275'>
     <section name='Test'>
       <comment>Test code goes here</comment>
       <comment>Method prelude yields two objects:</comment>
-      <comment>1. Instance of ApiClient, for access to the GitHub API.</comment>
-      <comment>2. Instance of Log, for logging the test.</comment>
+      <comment>1. Instance of Log, for logging the test.</comment>
+      <comment>2. Instance of ApiClient, for access to the GitHub API.</comment>
     </section>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>

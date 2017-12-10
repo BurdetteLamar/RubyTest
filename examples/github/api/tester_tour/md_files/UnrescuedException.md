@@ -45,7 +45,7 @@ Notes:
 ```xml
 <unrescued_exception_test>
   <summary errors='1' failures='1' verdicts='1'/>
-  <test_method name='unrescued_exception_test' timestamp='2017-12-09-Sat-15.16.33.529'>
+  <test_method name='unrescued_exception_test' timestamp='2017-12-10-Sun-13.56.24.525'>
     <section name='Test'>
       <section duration_seconds='0.000' name='Unrescued exception'>
         <uncaught_exception>

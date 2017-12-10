@@ -8,8 +8,8 @@ class MeetTest < BaseClassForTest
       log.comment('Test code goes here')
 
       log.comment('Method prelude yields two objects:')
-      log.comment('1. Instance of %s, for access to the GitHub API.' % api_client.class.name)
-      log.comment('2. Instance of %s, for logging the test.' % log.class.name)
+      log.comment('1. Instance of %s, for logging the test.' % log.class.name)
+      log.comment('2. Instance of %s, for access to the GitHub API.' % api_client.class.name)
 
     end
   end
