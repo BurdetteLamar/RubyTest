@@ -1,0 +1,33 @@
+[navigation_links]
+
+# DeleteLabelsName Test
+
+This is a test for endpoint `DELETE /labels/:name`, which deletes a label.
+
+## Example Test
+
+[file_source](../tests/delete_labels_name_test.rb)
+
+Notes:
+
+- The test creates the label that it will delete.
+- It uses method `Label#delete_if_exist?` before and after, to avoid collisions and to clean up.
+- Test uses the data-object method `Label#create` to create the label.
+- Class `DeleteLabelsName` encapsulates the endpoint.
+- Its method `verdict_call_and_verify_success`:
+  - Accepts the client, a verdict id, and the label to be deleted.
+  - Accesses the endpoint.
+  - Verifies that the response is empty.
+  - Verifies that the label no longer exists.
+
+## Log
+
+[file_source](../logs/test_delete_labels_name.xml)
+
+Notes:
+
+- Section `ApiClient` shows the endpoint access.
+- In section `Evaluation`:
+  - Section `Response empty` verifies that the response was empty.
+  - Section `Label deleted` verifies that the label no longer exists.
+[navigation_links]

@@ -1,0 +1,35 @@
+[navigation_links]
+
+# PostLabels Test
+
+This is a test for endpoint `POST /labels`, which creates a label.
+
+## Example Test
+
+[file_source](../tests/post_labels_test.rb)
+
+Notes:
+
+- The test calls method `Label#delete_if_exist?` before the creation, to avoid collision with an existing label.
+- Class `PostLabels` encapsulates endpoint `POST /labels`.
+- Its method `PostLabels.verdict_call_and_verify_success`:
+  - Accepts the client, a verdict id, and the label to be created.
+  - Accesses the endpoint.
+  - Forms the returned data into a `Label` object.
+  - Performs verifications on the label object.
+  - Returns the label object.
+- The test calls method `Label#delete_if_exist?` after the creation, to clean up.
+
+## Log
+
+[file_source](../logs/test_post_labels.xml)
+
+Notes:
+
+- Section `ApiClient` shows the endpoint access, including the parameters.
+- In section `Evaluation`:
+  - Section `Returned label correct` verifies the created label: `:name` and `:color`.
+  - Section `Returned label valid` validates the created label: all fields.
+  - Section `Label exists` fetches the new label and verifies all its fields.
+
+[navigation_links]
