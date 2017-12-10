@@ -1,8 +1,8 @@
 # Moved
 
-The GitHub API example code has moved:
+The GitHub example code has moved:
 
-- [github/api](../github/api)
+- [github](../github)
 
 The move is in preparation for adding GitHub UI example testing.
 
