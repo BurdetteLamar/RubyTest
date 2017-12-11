@@ -15,7 +15,7 @@ The test framework sets up for the test by delivering objects the test will need
 
 <code>meet_test.rb</code>
 ```ruby
-require_relative '../../api/base_classes/base_class_for_test'
+require_relative '../../base_classes/base_class_for_test'
 
 class MeetTest < BaseClassForTest
 
@@ -49,7 +49,7 @@ Notes:
 ```xml
 <meet_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='meet_test' timestamp='2017-12-10-Sun-14.15.25.831'>
+  <test_method duration_seconds='0.000' name='meet_test' timestamp='2017-12-11-Mon-15.03.39.994'>
     <section name='Test'>
       <comment>Test code goes here</comment>
       <comment>Method prelude yields two objects:</comment>

@@ -12,7 +12,7 @@ A data object can log itself.
 
 <code>flat_data_log_test.rb</code>
 ```ruby
-require_relative '../../api/base_classes/base_class_for_test'
+require_relative '../../base_classes/base_class_for_test'
 
 require_relative '../../data/label'
 
@@ -43,12 +43,12 @@ Notes:
 ```xml
 <flat_data_log_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='1.780' name='flat_data_log_test' timestamp='2017-12-10-Sun-14.15.42.851'>
+  <test_method duration_seconds='1.997' name='flat_data_log_test' timestamp='2017-12-11-Mon-15.03.58.792'>
     <section name='Test'>
       <section name='Fetch and log an instance of Label'>
         <section name='Fetch a label'>
           <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-            <execution duration_seconds='1.770' timestamp='2017-12-10-Sun-14.15.42.861'/>
+            <execution duration_seconds='1.966' timestamp='2017-12-11-Mon-15.03.58.823'/>
           </ApiClient>
         </section>
         <section name='Fetched label'>

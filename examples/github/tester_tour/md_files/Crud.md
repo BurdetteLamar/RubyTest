@@ -17,7 +17,7 @@ s
 
 <code>crud_test.rb</code>
 ```ruby
-require_relative '../../api/base_classes/base_class_for_test'
+require_relative '../../base_classes/base_class_for_test'
 
 require_relative '../../data/label'
 
@@ -109,7 +109,7 @@ Notes:
 ```xml
 <crud_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='3.300' name='crud_test' timestamp='2017-12-10-Sun-14.16.03.592'>
+  <test_method duration_seconds='3.463' name='crud_test' timestamp='2017-12-11-Mon-15.04.20.585'>
     <section name='Test'>
       <section name='Create'>
         <section name='Label to create'>
@@ -119,16 +119,16 @@ Notes:
         </section>
         <section name='Delete if exists, to avoid collision'>
           <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-            <execution duration_seconds='1.760' timestamp='2017-12-10-Sun-14.16.03.602'/>
+            <execution duration_seconds='1.778' timestamp='2017-12-11-Mon-15.04.20.585'/>
           </ApiClient>
           <comment>Deleted? No.</comment>
         </section>
         <ApiClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
           <parameters color='000000' name='test label'/>
-          <execution duration_seconds='0.340' timestamp='2017-12-10-Sun-14.16.05.362'/>
+          <execution duration_seconds='0.343' timestamp='2017-12-11-Mon-15.04.22.364'/>
         </ApiClient>
         <section name='Label created'>
-          <data field='id' value='774960854'/>
+          <data field='id' value='775993204'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'/>
           <data field='name' value='test label'/>
           <data field='color' value='000000'/>
@@ -137,17 +137,17 @@ Notes:
       </section>
       <section name='Read'>
         <section name='Label to read'>
-          <data field='id' value='774960854'/>
+          <data field='id' value='775993204'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'/>
           <data field='name' value='test label'/>
           <data field='color' value='000000'/>
           <data field='default' value='false'/>
         </section>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-          <execution duration_seconds='0.330' timestamp='2017-12-10-Sun-14.16.05.702'/>
+          <execution duration_seconds='0.624' timestamp='2017-12-11-Mon-15.04.22.707'/>
         </ApiClient>
         <section name='Label read'>
-          <data field='id' value='774960854'/>
+          <data field='id' value='775993204'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'/>
           <data field='name' value='test label'/>
           <data field='color' value='000000'/>
@@ -156,7 +156,7 @@ Notes:
       </section>
       <section name='Update'>
         <section name='Label to update'>
-          <data field='id' value='774960854'/>
+          <data field='id' value='775993204'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'/>
           <data field='name' value='test label'/>
           <data field='color' value='ffffff'/>
@@ -164,10 +164,10 @@ Notes:
         </section>
         <ApiClient method='PATCH' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
           <parameters color='ffffff'/>
-          <execution duration_seconds='0.440' timestamp='2017-12-10-Sun-14.16.06.042'/>
+          <execution duration_seconds='0.359' timestamp='2017-12-11-Mon-15.04.23.331'/>
         </ApiClient>
         <section name='Label updated'>
-          <data field='id' value='774960854'/>
+          <data field='id' value='775993204'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'/>
           <data field='name' value='test label'/>
           <data field='color' value='ffffff'/>
@@ -176,7 +176,7 @@ Notes:
       </section>
       <section name='Delete'>
         <ApiClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-          <execution duration_seconds='0.400' timestamp='2017-12-10-Sun-14.16.06.492'/>
+          <execution duration_seconds='0.359' timestamp='2017-12-11-Mon-15.04.23.690'/>
         </ApiClient>
       </section>
     </section>

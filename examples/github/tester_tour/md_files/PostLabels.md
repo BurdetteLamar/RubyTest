@@ -12,7 +12,7 @@ This is a test for endpoint `POST /labels`, which creates a label.
 
 <code>post_labels_test.rb</code>
 ```ruby
-require_relative '../../api/base_classes/base_class_for_test'
+require_relative '../../base_classes/base_class_for_test'
 
 require_relative '../../api/endpoints/labels/post_labels'
 
@@ -62,16 +62,16 @@ Notes:
 ```xml
 <post_labels_test>
   <summary errors='0' failures='0' verdicts='11'/>
-  <test_method name='post_labels_test' timestamp='2017-12-10-Sun-14.16.19.462'>
-    <section duration_seconds='3.140' name='Test'>
+  <test_method name='post_labels_test' timestamp='2017-12-11-Mon-15.04.36.388'>
+    <section duration_seconds='3.635' name='Test'>
       <section name='Test PostLabels'>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-          <execution duration_seconds='1.730' timestamp='2017-12-10-Sun-14.16.19.472'/>
+          <execution duration_seconds='1.825' timestamp='2017-12-11-Mon-15.04.36.388'/>
         </ApiClient>
-        <section name='post_label' timestamp='2017-12-10-Sun-14.16.21.202'>
+        <section name='post_label' timestamp='2017-12-11-Mon-15.04.38.213'>
           <ApiClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
             <parameters color='000000' name='test_label'/>
-            <execution duration_seconds='0.340' timestamp='2017-12-10-Sun-14.16.21.202'/>
+            <execution duration_seconds='0.390' timestamp='2017-12-11-Mon-15.04.38.213'/>
           </ApiClient>
           <section name='Evaluation'>
             <section name='Returned label correct'>
@@ -89,10 +89,10 @@ Notes:
                 <section name='verdict_assert_integer_positive?'>
                   <verdict id='post_label:valid:id:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
                     <exp_value>Integer</exp_value>
-                    <act_value>774961008</act_value>
+                    <act_value>775993390</act_value>
                   </verdict>
                   <verdict id='post_label:valid:id:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-                    <object_1>774961008</object_1>
+                    <object_1>775993390</object_1>
                     <operator>:&gt;</operator>
                     <object_2>0</object_2>
                   </verdict>
@@ -122,7 +122,7 @@ Notes:
             </section>
             <section name='Label created'>
               <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-                <execution duration_seconds='0.350' timestamp='2017-12-10-Sun-14.16.21.552'/>
+                <execution duration_seconds='0.655' timestamp='2017-12-11-Mon-15.04.38.619'/>
               </ApiClient>
               <verdict id='post_label:exists' method='verdict_assert?' outcome='passed' volatile='false'>
                 <act_value>true</act_value>
@@ -132,10 +132,10 @@ Notes:
         </section>
         <section name='Clean up'>
           <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-            <execution duration_seconds='0.330' timestamp='2017-12-10-Sun-14.16.21.902'/>
+            <execution duration_seconds='0.390' timestamp='2017-12-11-Mon-15.04.39.274'/>
           </ApiClient>
           <ApiClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-            <execution duration_seconds='0.370' timestamp='2017-12-10-Sun-14.16.22.232'/>
+            <execution duration_seconds='0.359' timestamp='2017-12-11-Mon-15.04.39.664'/>
           </ApiClient>
         </section>
       </section>

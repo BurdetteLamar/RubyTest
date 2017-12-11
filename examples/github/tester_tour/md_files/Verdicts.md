@@ -14,7 +14,7 @@ The framework offers robust support for logging verifications, via its `verdict`
 
 <code>verdicts_test.rb</code>
 ```ruby
-require_relative '../../api/base_classes/base_class_for_test'
+require_relative '../../base_classes/base_class_for_test'
 
 class VerdictsTest < BaseClassForTest
 
@@ -74,7 +74,7 @@ Notes:
 ```xml
 <verdicts_test>
   <summary errors='0' failures='2' verdicts='5'/>
-  <test_method duration_seconds='0.010' name='verdicts_test' timestamp='2017-12-10-Sun-14.15.39.571'>
+  <test_method duration_seconds='0.016' name='verdicts_test' timestamp='2017-12-11-Mon-15.03.55.672'>
     <section name='Test'>
       <section name='These verdicts should pass'>
         <section name='An assert verdict that should pass'>
@@ -100,14 +100,14 @@ Notes:
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/verdicts_test.rb:24:in `block (3 levels) in test_verdicts'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/verdicts_test.rb:23:in `block (2 levels) in test_verdicts'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/verdicts_test.rb:22:in `block in test_verdicts'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/base_classes/base_class_for_test.rb:21:in `block (3 levels) in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:21:in `block (3 levels) in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/api_client.rb:19:in `with'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/base_classes/base_class_for_test.rb:19:in `block in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:19:in `block in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/base_classes/base_class_for_test.rb:11:in `prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:11:in `prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/verdicts_test.rb:6:in `test_verdicts']]>
               </backtrace>
             </exception>
@@ -124,14 +124,14 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/ve
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/verdicts_test.rb:30:in `block (3 levels) in test_verdicts'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/verdicts_test.rb:29:in `block (2 levels) in test_verdicts'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/verdicts_test.rb:22:in `block in test_verdicts'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/base_classes/base_class_for_test.rb:21:in `block (3 levels) in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:21:in `block (3 levels) in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/api_client.rb:19:in `with'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/base_classes/base_class_for_test.rb:19:in `block in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:19:in `block in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/base_classes/base_class_for_test.rb:11:in `prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:11:in `prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/verdicts_test.rb:6:in `test_verdicts']]>
               </backtrace>
             </exception>

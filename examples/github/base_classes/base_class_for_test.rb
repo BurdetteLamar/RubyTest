@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 
-require_relative '../../../../lib/helpers/test_helper'
-require_relative '../api_client'
+require_relative '../../../lib/helpers/test_helper'
+require_relative '../api/api_client'
 
 class BaseClassForTest < Minitest::Test
 
