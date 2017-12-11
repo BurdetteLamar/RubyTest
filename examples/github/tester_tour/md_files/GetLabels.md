@@ -12,7 +12,7 @@ This is a test for endpoint `GET /labels`, which returns all labels.
 
 <code>get_labels_test.rb</code>
 ```ruby
-require_relative '../../api/base_classes/base_class_for_test'
+require_relative '../../base_classes/base_class_for_test'
 
 require_relative '../../api/endpoints/labels/get_labels'
 
@@ -49,12 +49,12 @@ Notes:
 ```xml
 <get_labels_test>
   <summary errors='0' failures='0' verdicts='8'/>
-  <test_method name='get_labels_test' timestamp='2017-12-10-Sun-14.16.16.612'>
-    <section duration_seconds='1.770' name='Test'>
+  <test_method name='get_labels_test' timestamp='2017-12-11-Mon-15.04.33.268'>
+    <section duration_seconds='1.903' name='Test'>
       <section name='Test GetLabels'>
-        <section name='get_labels' timestamp='2017-12-10-Sun-14.16.16.612'>
+        <section name='get_labels' timestamp='2017-12-11-Mon-15.04.33.284'>
           <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-            <execution duration_seconds='1.760' timestamp='2017-12-10-Sun-14.16.16.612'/>
+            <execution duration_seconds='1.888' timestamp='2017-12-11-Mon-15.04.33.284'/>
           </ApiClient>
           <section name='Info'>
             <data fetched_labels_count='8'/>
