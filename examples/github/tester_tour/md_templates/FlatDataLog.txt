@@ -1,0 +1,25 @@
+[navigation_links]
+
+# Logging a Data Object
+
+A data object can log itself.
+
+## Example Test
+
+[file_source](../tests/flat_data_log_test.rb)
+
+Notes:
+
+- Log a data object by calling its `log` method.
+
+## Log
+
+[file_source](../logs/test_flat_data_log.xml)
+
+Notes:
+
+- Element `ApiClient` records an interaction with the GitHub API, showing the HTTP method and url.
+- Its subelement `execution` shows the timestamp and duration for the interaction.
+- The section named `Fetched Label` shows the values in the fetched rate limit.
+
+[navigation_links]
