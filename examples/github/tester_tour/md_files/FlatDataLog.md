@@ -19,13 +19,15 @@ require_relative '../../data/label'
 class FlatDataLogTest < BaseClassForTest
 
   def test_flat_data_log
-    prelude do |log, api_client|
-      log.section('Fetch and log an instance of Label') do
-        label = nil
-        log.section('Fetch a label') do
-          label = Label.get_first(api_client)
+    prelude do |log|
+      with_api_client(log) do |api_client|
+        log.section('Fetch and log an instance of Label') do
+          label = nil
+          log.section('Fetch a label') do
+            label = Label.get_first(api_client)
+          end
+          label.log(log, 'Fetched label')
         end
-        label.log(log, 'Fetched label')
       end
     end
   end
@@ -43,12 +45,12 @@ Notes:
 ```xml
 <flat_data_log_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='1.997' name='flat_data_log_test' timestamp='2017-12-11-Mon-15.03.58.792'>
+  <test_method duration_seconds='3.791' name='flat_data_log_test' timestamp='2017-12-14-Thu-11.59.18.927'>
     <section name='Test'>
       <section name='Fetch and log an instance of Label'>
         <section name='Fetch a label'>
           <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-            <execution duration_seconds='1.966' timestamp='2017-12-11-Mon-15.03.58.823'/>
+            <execution duration_seconds='3.775' timestamp='2017-12-14-Thu-11.59.18.943'/>
           </ApiClient>
         </section>
         <section name='Fetched label'>

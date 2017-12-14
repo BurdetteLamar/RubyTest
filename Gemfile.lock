@@ -1,7 +1,9 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    contracts (0.14.0)
+    childprocess (0.8.0)
+      ffi (~> 1.0, >= 1.0.11)
+    contracts (0.16.0)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
     ffi (1.9.18-x64-mingw32)
@@ -31,10 +33,16 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     retriable (3.0.1)
+    rubyzip (1.2.1)
+    selenium-webdriver (3.8.0)
+      childprocess (~> 0.5)
+      rubyzip (~> 1.0)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.4-x64-mingw32)
     unf_ext (0.0.7.4-x86-mingw32)
+    watir (6.10.0)
+      selenium-webdriver (~> 3.4, >= 3.4.1)
 
 PLATFORMS
   x64-mingw32
@@ -42,13 +50,14 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (= 1.14.6)
-  contracts (= 0.14.0)
+  contracts (= 0.16.0)
   json (= 1.8.1)
   lorem-ipsum (= 0.1.1)
   minitest (= 5.10.1)
   nokogiri (= 1.6.7.2)
   rest-client (= 2.0.1)
   retriable (= 3.0.1)
+  watir (= 6.10.0)
 
 BUNDLED WITH
    1.14.6

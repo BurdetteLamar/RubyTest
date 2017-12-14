@@ -5,7 +5,7 @@ require_relative '../../data/label'
 class FlatDataNewTest < BaseClassForTest
 
   def test_flat_data_new
-    prelude do |log, _|
+    prelude do |log|
       log.section('Instantiate and log an instance of Label') do
         label = Label.new(
             :id => 710733210,

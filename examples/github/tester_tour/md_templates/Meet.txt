@@ -15,10 +15,9 @@ Notes:
 
 - Create a new test class by deriving from `BaseClassForTest`.
 - Choose a test method-name that begins with `test`, which tells the test framework that it can be executed at test-time.
-- Call method `prelude`, inherited from the base class.
-- Use the yielded values for your test.
-  - An open test log.  When the test exits the `prelude` block, the log builds its summaries, closes itself, and writes itself as XML.
-  - A domain-specific GitHub API client.
+- Call methods inherited from the base class:
+  - `prelude`:  yields a `Log` object.
+  - `with_api_client`:  yields an `ApiClient` object.
 
 ## Log
 

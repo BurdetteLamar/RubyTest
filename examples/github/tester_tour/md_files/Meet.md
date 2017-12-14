@@ -20,14 +20,11 @@ require_relative '../../base_classes/base_class_for_test'
 class MeetTest < BaseClassForTest
 
   def test_meet
-    prelude do |log, api_client|
-
-      log.comment('Test code goes here')
-
-      log.comment('Method prelude yields two objects:')
-      log.comment('1. Instance of %s, for logging the test.' % log.class.name)
-      log.comment('2. Instance of %s, for access to the GitHub API.' % api_client.class.name)
-
+    prelude do |log|
+      log.comment('Method prelude yields an instance of %s, for logging the test.' % log.class.name)
+      with_api_client(log) do |api_client|
+        log.comment('Method with_api_client yields an instance of %s, for accessing the GitHub API' % api_client.class.name)
+      end
     end
   end
 
@@ -38,10 +35,9 @@ Notes:
 
 - Create a new test class by deriving from `BaseClassForTest`.
 - Choose a test method-name that begins with `test`, which tells the test framework that it can be executed at test-time.
-- Call method `prelude`, inherited from the base class.
-- Use the yielded values for your test.
-  - An open test log.  When the test exits the `prelude` block, the log builds its summaries, closes itself, and writes itself as XML.
-  - A domain-specific GitHub API client.
+- Call methods inherited from the base class:
+  - `prelude`:  yields a `Log` object.
+  - `with_api_client`:  yields an `ApiClient` object.
 
 ## Log
 
@@ -49,12 +45,13 @@ Notes:
 ```xml
 <meet_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='meet_test' timestamp='2017-12-11-Mon-15.03.39.994'>
+  <test_method duration_seconds='0.000' name='meet_test' timestamp='2017-12-14-Thu-11.58.57.820'>
     <section name='Test'>
-      <comment>Test code goes here</comment>
-      <comment>Method prelude yields two objects:</comment>
-      <comment>1. Instance of Log, for logging the test.</comment>
-      <comment>2. Instance of ApiClient, for access to the GitHub API.</comment>
+      <comment>Method prelude yields an instance of Log, for logging the test.</comment>
+      <comment>
+        Method with_api_client yields an instance of ApiClient, for accessing
+        the GitHub API
+      </comment>
     </section>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>

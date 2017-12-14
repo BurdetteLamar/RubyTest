@@ -6,10 +6,14 @@ class LabelBasicsTest < BaseClassForTest
 
   def test_get_labels
 
-    prelude do |log, api_client|
+    prelude do |log|
 
-      log.section('Test GetLabels') do
-        GetLabels.verdict_call_and_verify_success(api_client, :get_labels)
+      with_api_client(log) do |api_client|
+
+        log.section('Test GetLabels') do
+          GetLabels.verdict_call_and_verify_success(api_client, :get_labels)
+        end
+
       end
 
     end

@@ -3,14 +3,11 @@ require_relative '../../base_classes/base_class_for_test'
 class MeetTest < BaseClassForTest
 
   def test_meet
-    prelude do |log, api_client|
-
-      log.comment('Test code goes here')
-
-      log.comment('Method prelude yields two objects:')
-      log.comment('1. Instance of %s, for logging the test.' % log.class.name)
-      log.comment('2. Instance of %s, for access to the GitHub API.' % api_client.class.name)
-
+    prelude do |log|
+      log.comment('Method prelude yields an instance of %s, for logging the test.' % log.class.name)
+      with_api_client(log) do |api_client|
+        log.comment('Method with_api_client yields an instance of %s, for accessing the GitHub API' % api_client.class.name)
+      end
     end
   end
 

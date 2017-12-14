@@ -18,38 +18,42 @@ class ExistenceTest < BaseClassForTest
 
   def test_existence
 
-    prelude do |log, api_client|
+    prelude do |log|
 
-      label_to_create = Label.new(
-                                 :name => 'test_label',
-                                 :color => '000000',
-                                 :default => false,
-      )
+      with_api_client(log) do |api_client|
 
-      existing_label = nil
-      log.section('Create a label') do
-        label_to_create.delete_if_exist?(api_client)
-        existing_label = label_to_create.create(api_client)
-      end
+        label_to_create = Label.new(
+                                   :name => 'test_label',
+                                   :color => '000000',
+                                   :default => false,
+        )
 
-      log.section('Determine existence') do
-        exist = existing_label.exist?(api_client)
-        comment = format('Label exists? %s', exist)
-        log.comment(comment)
-      end
+        existing_label = nil
+        log.section('Create a label') do
+          label_to_create.delete_if_exist?(api_client)
+          existing_label = label_to_create.create(api_client)
+        end
 
-      log.section('Assert existence in verdict') do
-        existing_label.verdict_assert_exist?(api_client, log, :assert_exist)
-      end
+        log.section('Determine existence') do
+          exist = existing_label.exist?(api_client)
+          comment = format('Label exists? %s', exist)
+          log.comment(comment)
+        end
 
-      log.section('Delete if exist') do
-        deleted = existing_label.delete_if_exist?(api_client)
-        comment = format('Label deleted? %s', deleted)
-        log.comment(comment)
-      end
+        log.section('Assert existence in verdict') do
+          existing_label.verdict_assert_exist?(api_client, log, :assert_exist)
+        end
 
-      log.section('Refute existence in verdict') do
-        existing_label.verdict_refute_exist?(api_client, log, :refute_exist)
+        log.section('Delete if exist') do
+          deleted = existing_label.delete_if_exist?(api_client)
+          comment = format('Label deleted? %s', deleted)
+          log.comment(comment)
+        end
+
+        log.section('Refute existence in verdict') do
+          existing_label.verdict_refute_exist?(api_client, log, :refute_exist)
+        end
+
       end
 
     end
@@ -70,26 +74,26 @@ Notes:
 ```xml
 <existence_test>
   <summary errors='0' failures='0' verdicts='3'/>
-  <test_method duration_seconds='3.931' name='existence_test' timestamp='2017-12-11-Mon-15.04.28.276'>
+  <test_method duration_seconds='6.349' name='existence_test' timestamp='2017-12-14-Thu-12.00.08.988'>
     <section name='Test'>
       <section name='Create a label'>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-          <execution duration_seconds='1.747' timestamp='2017-12-11-Mon-15.04.28.292'/>
+          <execution duration_seconds='4.103' timestamp='2017-12-14-Thu-12.00.08.988'/>
         </ApiClient>
         <ApiClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
           <parameters color='000000' name='test_label'/>
-          <execution duration_seconds='0.390' timestamp='2017-12-11-Mon-15.04.30.039'/>
+          <execution duration_seconds='0.390' timestamp='2017-12-14-Thu-12.00.13.091'/>
         </ApiClient>
       </section>
       <section name='Determine existence'>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-          <execution duration_seconds='0.359' timestamp='2017-12-11-Mon-15.04.30.429'/>
+          <execution duration_seconds='0.343' timestamp='2017-12-14-Thu-12.00.13.481'/>
         </ApiClient>
         <comment>Label exists? true</comment>
       </section>
       <section name='Assert existence in verdict'>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-          <execution duration_seconds='0.374' timestamp='2017-12-11-Mon-15.04.30.788'/>
+          <execution duration_seconds='0.359' timestamp='2017-12-14-Thu-12.00.13.824'/>
         </ApiClient>
         <verdict id='assert_exist' method='verdict_assert?' outcome='passed' volatile='false'>
           <act_value>true</act_value>
@@ -97,16 +101,16 @@ Notes:
       </section>
       <section name='Delete if exist'>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-          <execution duration_seconds='0.328' timestamp='2017-12-11-Mon-15.04.31.162'/>
+          <execution duration_seconds='0.437' timestamp='2017-12-14-Thu-12.00.14.183'/>
         </ApiClient>
         <ApiClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-          <execution duration_seconds='0.374' timestamp='2017-12-11-Mon-15.04.31.490'/>
+          <execution duration_seconds='0.359' timestamp='2017-12-14-Thu-12.00.14.619'/>
         </ApiClient>
         <comment>Label deleted? true</comment>
       </section>
       <section name='Refute existence in verdict'>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-          <execution duration_seconds='0.343' timestamp='2017-12-11-Mon-15.04.31.864'/>
+          <execution duration_seconds='0.359' timestamp='2017-12-14-Thu-12.00.14.978'/>
         </ApiClient>
         <verdict id='refute_exist' method='verdict_refute?' outcome='passed' volatile='false'>
           <act_value>false</act_value>

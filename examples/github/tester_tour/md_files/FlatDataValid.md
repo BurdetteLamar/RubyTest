@@ -23,14 +23,16 @@ require_relative '../../data/label'
 class FlatDataValidTest < BaseClassForTest
 
   def test_flat_data_valid
-    prelude do |log, api_client|
-      label = Label.get_first(api_client)
-      log.section('This is valid') do
-        label.verdict_valid?(log, :label_valid)
-      end
-      log.section('This is not valid') do
-        label.color = Label.invalid_value_for(:color)
-        label.verdict_valid?(log, :label_not_valid)
+    prelude do |log|
+      with_api_client(log) do |api_client|
+        label = Label.get_first(api_client)
+        log.section('This is valid') do
+          label.verdict_valid?(log, :label_valid)
+        end
+        log.section('This is not valid') do
+          label.color = Label.invalid_value_for(:color)
+          label.verdict_valid?(log, :label_not_valid)
+        end
       end
     end
   end
@@ -55,10 +57,10 @@ Notes:
 ```xml
 <flat_data_valid_test>
   <summary errors='0' failures='1' verdicts='15'/>
-  <test_method duration_seconds='1.997' name='flat_data_valid_test' timestamp='2017-12-11-Mon-15.04.06.202'>
+  <test_method duration_seconds='3.791' name='flat_data_valid_test' timestamp='2017-12-14-Thu-11.59.30.861'>
     <section name='Test'>
       <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-        <execution duration_seconds='1.981' timestamp='2017-12-11-Mon-15.04.06.202'/>
+        <execution duration_seconds='3.760' timestamp='2017-12-14-Thu-11.59.30.877'/>
       </ApiClient>
       <section name='This is valid'>
         <section class='Label' method='verdict_valid?' name='label_valid'>
@@ -134,16 +136,18 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/data/label.rb:33:in 
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:48:in `block (2 levels) in verdict_valid?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:46:in `block in verdict_valid?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:45:in `verdict_valid?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/flat_data_valid_test.rb:15:in `block (2 levels) in test_flat_data_valid'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/flat_data_valid_test.rb:13:in `block in test_flat_data_valid'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:21:in `block (3 levels) in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/flat_data_valid_test.rb:16:in `block (3 levels) in test_flat_data_valid'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/flat_data_valid_test.rb:14:in `block (2 levels) in test_flat_data_valid'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:28:in `block in with_api_client'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/api_client.rb:19:in `with'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:19:in `block in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:27:in `with_api_client'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/flat_data_valid_test.rb:9:in `block in test_flat_data_valid'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:21:in `block (2 levels) in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:20:in `block in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:11:in `prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:12:in `prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/flat_data_valid_test.rb:8:in `test_flat_data_valid']]>
               </backtrace>
             </exception>

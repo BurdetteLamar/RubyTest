@@ -20,36 +20,40 @@ class FirstTest < BaseClassForTest
 
   def test_first
 
-    prelude do |log, api_client|
+    prelude do |log|
 
-      label_to_create = Label.provisioned
-      label_created = nil
+      with_api_client(log) do |api_client|
 
-      log.section('Create') do
-        label_returned = label_to_create.create!(api_client)
-        Label.verdict_equal?(log, :create_return_correct, label_to_create, label_returned)
-        label_returned.verdict_read_and_verify?(api_client, log, :created_correctly)
-        label_created = label_returned
-      end
+        label_to_create = Label.provisioned
+        label_created = nil
 
-      log.section('Read') do
-        label_returned = label_created.read(api_client)
-        Label.verdict_equal?(log, :read_correctly, label_created, label_returned)
-      end
+        log.section('Create') do
+          label_returned = label_to_create.create!(api_client)
+          Label.verdict_equal?(log, :create_return_correct, label_to_create, label_returned)
+          label_returned.verdict_read_and_verify?(api_client, log, :created_correctly)
+          label_created = label_returned
+        end
 
-      log.section('Update') do
-        label_to_update = label_created.perturb
-        label_returned = label_to_update.update(api_client)
-        label_to_update.log(log, 'Label to update')
-        label_returned.log(log, 'Label returned')
-        Label.verdict_equal?(log, :update_return_correct, label_to_update, label_returned)
-        label_returned.verdict_read_and_verify?(api_client, log, :updated_correctly)
-      end
+        log.section('Read') do
+          label_returned = label_created.read(api_client)
+          Label.verdict_equal?(log, :read_correctly, label_created, label_returned)
+        end
 
-      log.section('Delete') do
-        label_returned = label_created.delete(api_client)
-        log.verdict_assert_nil?(:delete_return_correct, label_returned)
-        label_created.verdict_refute_exist?(api_client, log, :deleted_correctly)
+        log.section('Update') do
+          label_to_update = label_created.perturb
+          label_returned = label_to_update.update(api_client)
+          label_to_update.log(log, 'Label to update')
+          label_returned.log(log, 'Label returned')
+          Label.verdict_equal?(log, :update_return_correct, label_to_update, label_returned)
+          label_returned.verdict_read_and_verify?(api_client, log, :updated_correctly)
+        end
+
+        log.section('Delete') do
+          label_returned = label_created.delete(api_client)
+          log.verdict_assert_nil?(:delete_return_correct, label_returned)
+          label_created.verdict_refute_exist?(api_client, log, :deleted_correctly)
+        end
+
       end
 
     end
@@ -87,15 +91,15 @@ You're welcome to review this log, but the smaller logs in other tour stops will
 ```xml
 <first_test>
   <summary errors='0' failures='0' verdicts='26'/>
-  <test_method name='first_test' timestamp='2017-12-11-Mon-15.03.41.336'>
+  <test_method name='first_test' timestamp='2017-12-14-Thu-11.58.59.271'>
     <section name='Test'>
       <section name='Create'>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-          <execution duration_seconds='2.075' timestamp='2017-12-11-Mon-15.03.41.367'/>
+          <execution duration_seconds='3.760' timestamp='2017-12-14-Thu-11.58.59.271'/>
         </ApiClient>
         <ApiClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
           <parameters color='000000' name='test label'/>
-          <execution duration_seconds='0.390' timestamp='2017-12-11-Mon-15.03.43.489'/>
+          <execution duration_seconds='0.374' timestamp='2017-12-14-Thu-11.59.03.031'/>
         </ApiClient>
         <section class='Label' method='verdict_equal?' name='create_return_correct'>
           <verdict id='create_return_correct:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
@@ -111,12 +115,12 @@ You're welcome to review this log, but the smaller logs in other tour stops will
             <act_value>false</act_value>
           </verdict>
           <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-            <execution duration_seconds='0.328' timestamp='2017-12-11-Mon-15.03.43.894'/>
+            <execution duration_seconds='0.390' timestamp='2017-12-14-Thu-11.59.03.405'/>
           </ApiClient>
           <section class='Label' method='verdict_equal?' name='created_correctly'>
             <verdict id='created_correctly:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>775992679</exp_value>
-              <act_value>775992679</act_value>
+              <exp_value>778992551</exp_value>
+              <act_value>778992551</act_value>
             </verdict>
             <verdict id='created_correctly:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
               <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label</exp_value>
@@ -137,12 +141,12 @@ You're welcome to review this log, but the smaller logs in other tour stops will
           </section>
           <section name='Read'>
             <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-              <execution duration_seconds='0.406' timestamp='2017-12-11-Mon-15.03.44.237'/>
+              <execution duration_seconds='0.359' timestamp='2017-12-14-Thu-11.59.03.795'/>
             </ApiClient>
             <section class='Label' method='verdict_equal?' name='read_correctly'>
               <verdict id='read_correctly:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                <exp_value>775992679</exp_value>
-                <act_value>775992679</act_value>
+                <exp_value>778992551</exp_value>
+                <act_value>778992551</act_value>
               </verdict>
               <verdict id='read_correctly:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                 <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label</exp_value>
@@ -161,20 +165,20 @@ You're welcome to review this log, but the smaller logs in other tour stops will
                 <act_value>false</act_value>
               </verdict>
             </section>
-            <section duration_seconds='6.068' name='Update'>
+            <section duration_seconds='6.380' name='Update'>
               <ApiClient method='PATCH' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
                 <parameters color='ffffff'/>
-                <execution duration_seconds='0.374' timestamp='2017-12-11-Mon-15.03.44.705'/>
+                <execution duration_seconds='0.374' timestamp='2017-12-14-Thu-11.59.04.170'/>
               </ApiClient>
               <section name='Label to update'>
-                <data field='id' value='775992679'/>
+                <data field='id' value='778992551'/>
                 <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'/>
                 <data field='name' value='test label'/>
                 <data field='color' value='ffffff'/>
                 <data field='default' value='false'/>
               </section>
               <section name='Label returned'>
-                <data field='id' value='775992679'/>
+                <data field='id' value='778992551'/>
                 <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'/>
                 <data field='name' value='test label'/>
                 <data field='color' value='ffffff'/>
@@ -182,8 +186,8 @@ You're welcome to review this log, but the smaller logs in other tour stops will
               </section>
               <section class='Label' method='verdict_equal?' name='update_return_correct'>
                 <verdict id='update_return_correct:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                  <exp_value>775992679</exp_value>
-                  <act_value>775992679</act_value>
+                  <exp_value>778992551</exp_value>
+                  <act_value>778992551</act_value>
                 </verdict>
                 <verdict id='update_return_correct:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                   <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label</exp_value>
@@ -202,12 +206,12 @@ You're welcome to review this log, but the smaller logs in other tour stops will
                   <act_value>false</act_value>
                 </verdict>
                 <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-                  <execution duration_seconds='0.328' timestamp='2017-12-11-Mon-15.03.45.095'/>
+                  <execution duration_seconds='0.343' timestamp='2017-12-14-Thu-11.59.04.544'/>
                 </ApiClient>
                 <section class='Label' method='verdict_equal?' name='updated_correctly'>
                   <verdict id='updated_correctly:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                    <exp_value>775992679</exp_value>
-                    <act_value>775992679</act_value>
+                    <exp_value>778992551</exp_value>
+                    <act_value>778992551</act_value>
                   </verdict>
                   <verdict id='updated_correctly:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                     <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label</exp_value>
@@ -228,13 +232,13 @@ You're welcome to review this log, but the smaller logs in other tour stops will
                 </section>
                 <section name='Delete'>
                   <ApiClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-                    <execution duration_seconds='0.343' timestamp='2017-12-11-Mon-15.03.45.485'/>
+                    <execution duration_seconds='0.390' timestamp='2017-12-14-Thu-11.59.04.903'/>
                   </ApiClient>
                   <verdict id='delete_return_correct' method='verdict_assert_nil?' outcome='passed' volatile='false'>
                     <act_value>nil</act_value>
                   </verdict>
                   <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-                    <execution duration_seconds='1.560' timestamp='2017-12-11-Mon-15.03.45.829'/>
+                    <execution duration_seconds='0.359' timestamp='2017-12-14-Thu-11.59.05.293'/>
                   </ApiClient>
                   <verdict id='deleted_correctly' method='verdict_refute?' outcome='passed' volatile='false'>
                     <act_value>false</act_value>

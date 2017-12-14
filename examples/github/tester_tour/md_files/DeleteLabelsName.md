@@ -20,22 +20,26 @@ class DeleteLabelsNameTest < BaseClassForTest
 
   def test_delete_labels_name
 
-    prelude do |log, api_client|
+    prelude do |log|
 
-      log.section('Test DeleteLabelsName') do
-        label_to_create = nil
-        label_to_delete = nil
-        log.section('Create the label to be deleted') do
-          label_to_create = Label.provisioned
-          label_to_create.delete_if_exist?(api_client)
-          label_to_delete = label_to_create.create(api_client)
+      with_api_client(log) do |api_client|
+
+        log.section('Test DeleteLabelsName') do
+          label_to_create = nil
+          label_to_delete = nil
+          log.section('Create the label to be deleted') do
+            label_to_create = Label.provisioned
+            label_to_create.delete_if_exist?(api_client)
+            label_to_delete = label_to_create.create(api_client)
+          end
+          log.section('Test deleting the created label') do
+            DeleteLabelsName.verdict_call_and_verify_success(api_client, :delete_label, label_to_delete)
+          end
+          log.section('Clean up') do
+            label_to_create.delete_if_exist?(api_client)
+          end
         end
-        log.section('Test deleting the created label') do
-          DeleteLabelsName.verdict_call_and_verify_success(api_client, :delete_label, label_to_delete)
-        end
-        log.section('Clean up') do
-          label_to_create.delete_if_exist?(api_client)
-        end
+
       end
 
     end
@@ -63,22 +67,22 @@ Notes:
 ```xml
 <delete_labels_name_test>
   <summary errors='0' failures='0' verdicts='3'/>
-  <test_method name='delete_labels_name_test' timestamp='2017-12-11-Mon-15.04.50.225'>
-    <section duration_seconds='3.292' name='Test'>
+  <test_method name='delete_labels_name_test' timestamp='2017-12-14-Thu-12.00.43.199'>
+    <section duration_seconds='7.254' name='Test'>
       <section name='Test DeleteLabelsName'>
         <section name='Create the label to be deleted'>
           <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-            <execution duration_seconds='1.747' timestamp='2017-12-11-Mon-15.04.50.241'/>
+            <execution duration_seconds='3.744' timestamp='2017-12-14-Thu-12.00.43.214'/>
           </ApiClient>
           <ApiClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
             <parameters color='000000' name='test label'/>
-            <execution duration_seconds='0.328' timestamp='2017-12-11-Mon-15.04.51.988'/>
+            <execution duration_seconds='0.374' timestamp='2017-12-14-Thu-12.00.46.958'/>
           </ApiClient>
         </section>
         <section name='Test deleting the created label'>
-          <section name='delete_label' timestamp='2017-12-11-Mon-15.04.52.316'>
+          <section name='delete_label' timestamp='2017-12-14-Thu-12.00.47.333'>
             <ApiClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-              <execution duration_seconds='0.374' timestamp='2017-12-11-Mon-15.04.52.316'/>
+              <execution duration_seconds='1.045' timestamp='2017-12-14-Thu-12.00.47.333'/>
             </ApiClient>
             <section name='Evaluation'>
               <section name='Response empty'>
@@ -88,7 +92,7 @@ Notes:
               </section>
               <section name='Label deleted'>
                 <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-                  <execution duration_seconds='0.484' timestamp='2017-12-11-Mon-15.04.52.690'/>
+                  <execution duration_seconds='0.343' timestamp='2017-12-14-Thu-12.00.48.378'/>
                 </ApiClient>
                 <verdict id='delete_label:label_deleted' method='verdict_refute?' outcome='passed' volatile='false'>
                   <act_value>false</act_value>
@@ -98,7 +102,7 @@ Notes:
           </section>
           <section name='Clean up'>
             <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-              <execution duration_seconds='0.343' timestamp='2017-12-11-Mon-15.04.53.174'/>
+              <execution duration_seconds='1.732' timestamp='2017-12-14-Thu-12.00.48.721'/>
             </ApiClient>
           </section>
         </section>
