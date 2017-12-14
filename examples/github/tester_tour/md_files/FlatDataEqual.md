@@ -22,22 +22,24 @@ require_relative '../../data/label'
 class FlatDataEqualTest < BaseClassForTest
 
   def test_flat_data_equal
-    prelude do |log, api_client|
-      label_0 = nil
-      log.section('Fetch an instance of Label') do
-        log.section('Fetch a label') do
-          label_0 = Label.get_first(api_client)
+    prelude do |log|
+      with_api_client(log) do |api_client|
+        label_0 = nil
+        log.section('Fetch an instance of Label') do
+          log.section('Fetch a label') do
+            label_0 = Label.get_first(api_client)
+          end
         end
-      end
-      label_1 = Label.deep_clone(label_0)
-      log.section('These are equal') do
-        fail unless Label.equal?(label_0, label_1)
-        Label.verdict_equal?(log, :label_equal, label_0, label_1)
-      end
-      log.section('These are not equal') do
-        label_1.perturb!
-        fail if Label.equal?(label_0, label_1)
-        Label.verdict_equal?(log, :label_not_equal, label_0, label_1)
+        label_1 = Label.deep_clone(label_0)
+        log.section('These are equal') do
+          fail unless Label.equal?(label_0, label_1)
+          Label.verdict_equal?(log, :label_equal, label_0, label_1)
+        end
+        log.section('These are not equal') do
+          label_1.perturb!
+          fail if Label.equal?(label_0, label_1)
+          Label.verdict_equal?(log, :label_not_equal, label_0, label_1)
+        end
       end
     end
   end
@@ -67,16 +69,16 @@ Notes:
 ```xml
 <flat_data_equal_test>
   <summary errors='0' failures='1' verdicts='11'/>
-  <test_method name='flat_data_equal_test' timestamp='2017-12-11-Mon-15.04.03.067'>
+  <test_method name='flat_data_equal_test' timestamp='2017-12-14-Thu-11.59.25.635'>
     <section name='Test'>
       <section name='Fetch an instance of Label'>
         <section name='Fetch a label'>
           <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-            <execution duration_seconds='1.778' timestamp='2017-12-11-Mon-15.04.03.082'/>
+            <execution duration_seconds='3.744' timestamp='2017-12-14-Thu-11.59.25.635'/>
           </ApiClient>
         </section>
       </section>
-      <section duration_seconds='1.966' name='These are equal'>
+      <section duration_seconds='3.822' name='These are equal'>
         <section class='Label' method='verdict_equal?' name='label_equal'>
           <verdict id='label_equal:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
             <exp_value>710733208</exp_value>
@@ -128,16 +130,18 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:142:in `verdict_equal_recursive?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:69:in `block in verdict_equal?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:68:in `verdict_equal?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/flat_data_equal_test.rb:23:in `block (2 levels) in test_flat_data_equal'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/flat_data_equal_test.rb:20:in `block in test_flat_data_equal'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:21:in `block (3 levels) in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/flat_data_equal_test.rb:24:in `block (3 levels) in test_flat_data_equal'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/flat_data_equal_test.rb:21:in `block (2 levels) in test_flat_data_equal'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:28:in `block in with_api_client'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/api_client.rb:19:in `with'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:19:in `block in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:27:in `with_api_client'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/flat_data_equal_test.rb:9:in `block in test_flat_data_equal'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:21:in `block (2 levels) in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:20:in `block in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:11:in `prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:12:in `prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/flat_data_equal_test.rb:8:in `test_flat_data_equal']]>
                 </backtrace>
               </exception>

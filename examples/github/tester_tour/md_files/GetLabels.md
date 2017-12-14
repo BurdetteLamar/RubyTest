@@ -20,10 +20,14 @@ class LabelBasicsTest < BaseClassForTest
 
   def test_get_labels
 
-    prelude do |log, api_client|
+    prelude do |log|
 
-      log.section('Test GetLabels') do
-        GetLabels.verdict_call_and_verify_success(api_client, :get_labels)
+      with_api_client(log) do |api_client|
+
+        log.section('Test GetLabels') do
+          GetLabels.verdict_call_and_verify_success(api_client, :get_labels)
+        end
+
       end
 
     end
@@ -49,12 +53,12 @@ Notes:
 ```xml
 <get_labels_test>
   <summary errors='0' failures='0' verdicts='8'/>
-  <test_method name='get_labels_test' timestamp='2017-12-11-Mon-15.04.33.268'>
-    <section duration_seconds='1.903' name='Test'>
+  <test_method name='get_labels_test' timestamp='2017-12-14-Thu-12.00.16.788'>
+    <section duration_seconds='3.869' name='Test'>
       <section name='Test GetLabels'>
-        <section name='get_labels' timestamp='2017-12-11-Mon-15.04.33.284'>
+        <section name='get_labels' timestamp='2017-12-14-Thu-12.00.16.788'>
           <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-            <execution duration_seconds='1.888' timestamp='2017-12-11-Mon-15.04.33.284'/>
+            <execution duration_seconds='3.869' timestamp='2017-12-14-Thu-12.00.16.788'/>
           </ApiClient>
           <section name='Info'>
             <data fetched_labels_count='8'/>

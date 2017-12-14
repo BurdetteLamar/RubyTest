@@ -20,18 +20,22 @@ class GettersTest < BaseClassForTest
 
   def test_getters
 
-    prelude do |log, api_client|
+    prelude do |log|
 
-      log.section('Get the first label') do
-        label = Label.get_first(api_client)
-        label.log(log)
-      end
+      with_api_client(log) do |api_client|
 
-      log.section('Get all labels') do
-        labels = Label.get_all(api_client)
-        labels.each do |label|
+        log.section('Get the first label') do
+          label = Label.get_first(api_client)
           label.log(log)
         end
+
+        log.section('Get all labels') do
+          labels = Label.get_all(api_client)
+          labels.each do |label|
+            label.log(log)
+          end
+        end
+
       end
 
     end
@@ -52,11 +56,11 @@ Notes:
 ```xml
 <getters_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='2.090' name='getters_test' timestamp='2017-12-11-Mon-15.04.25.109'>
+  <test_method duration_seconds='4.524' name='getters_test' timestamp='2017-12-14-Thu-12.00.03.029'>
     <section name='Test'>
       <section name='Get the first label'>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-          <execution duration_seconds='1.747' timestamp='2017-12-11-Mon-15.04.25.109'/>
+          <execution duration_seconds='4.150' timestamp='2017-12-14-Thu-12.00.03.029'/>
         </ApiClient>
         <section name='Label'>
           <data field='id' value='710733208'/>
@@ -68,7 +72,7 @@ Notes:
       </section>
       <section name='Get all labels'>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-          <execution duration_seconds='0.343' timestamp='2017-12-11-Mon-15.04.26.857'/>
+          <execution duration_seconds='0.359' timestamp='2017-12-14-Thu-12.00.07.178'/>
         </ApiClient>
         <section name='Label'>
           <data field='id' value='710733208'/>

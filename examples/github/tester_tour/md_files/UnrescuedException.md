@@ -45,7 +45,7 @@ Notes:
 ```xml
 <unrescued_exception_test>
   <summary errors='1' failures='1' verdicts='1'/>
-  <test_method name='unrescued_exception_test' timestamp='2017-12-11-Mon-15.03.57.747'>
+  <test_method name='unrescued_exception_test' timestamp='2017-12-14-Thu-11.59.17.461'>
     <section name='Test'>
       <section duration_seconds='0.000' name='Unrescued exception'>
         <uncaught_exception>
@@ -57,14 +57,12 @@ Notes:
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/unrescued_exception_test.rb:10:in `/'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/unrescued_exception_test.rb:10:in `block (2 levels) in test_unrescued_exception'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/unrescued_exception_test.rb:7:in `block in test_unrescued_exception'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:21:in `block (3 levels) in prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/api_client.rb:19:in `with'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:20:in `block (2 levels) in prelude'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:19:in `block in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:21:in `block (2 levels) in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:20:in `block in prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:11:in `prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:12:in `prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/unrescued_exception_test.rb:6:in `test_unrescued_exception']]>
           </backtrace>
         </uncaught_exception>
@@ -79,7 +77,7 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/un
             <backtrace>
               <![CDATA[
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:11:in `prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:12:in `prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/unrescued_exception_test.rb:6:in `test_unrescued_exception']]>
             </backtrace>
           </exception>

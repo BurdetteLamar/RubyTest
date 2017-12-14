@@ -19,7 +19,7 @@ require_relative '../../data/label'
 class FlatDataNewTest < BaseClassForTest
 
   def test_flat_data_new
-    prelude do |log, _|
+    prelude do |log|
       log.section('Instantiate and log an instance of Label') do
         label = Label.new(
             :id => 710733210,
@@ -50,7 +50,7 @@ Notes:
 ```xml
 <flat_data_new_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='flat_data_new_test' timestamp='2017-12-11-Mon-15.04.01.928'>
+  <test_method duration_seconds='0.000' name='flat_data_new_test' timestamp='2017-12-14-Thu-11.59.24.153'>
     <section name='Test'>
       <section name='Instantiate and log an instance of Label'>
         <section name='Instantiated label'>

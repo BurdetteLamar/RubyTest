@@ -5,14 +5,16 @@ require_relative '../../data/rate_limit'
 class NestedDataValidTest < BaseClassForTest
 
   def test_nested_data_valid
-    prelude do |log, api_client|
-      rate_limit = RateLimit.get(api_client)
-      log.section('This is valid') do
-        rate_limit.verdict_valid?(log, :rate_limit_valid)
-      end
-      log.section('This is not valid') do
-        rate_limit.resources.core.reset = RateLimit::Core_.invalid_value_for(:reset)
-        rate_limit.verdict_valid?(log, :rate_limit_not_valid)
+    prelude do |log|
+      with_api_client(log) do |api_client|
+        rate_limit = RateLimit.get(api_client)
+        log.section('This is valid') do
+          rate_limit.verdict_valid?(log, :rate_limit_valid)
+        end
+        log.section('This is not valid') do
+          rate_limit.resources.core.reset = RateLimit::Core_.invalid_value_for(:reset)
+          rate_limit.verdict_valid?(log, :rate_limit_not_valid)
+        end
       end
     end
   end

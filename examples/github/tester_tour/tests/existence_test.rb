@@ -6,38 +6,42 @@ class ExistenceTest < BaseClassForTest
 
   def test_existence
 
-    prelude do |log, api_client|
+    prelude do |log|
 
-      label_to_create = Label.new(
-                                 :name => 'test_label',
-                                 :color => '000000',
-                                 :default => false,
-      )
+      with_api_client(log) do |api_client|
 
-      existing_label = nil
-      log.section('Create a label') do
-        label_to_create.delete_if_exist?(api_client)
-        existing_label = label_to_create.create(api_client)
-      end
+        label_to_create = Label.new(
+                                   :name => 'test_label',
+                                   :color => '000000',
+                                   :default => false,
+        )
 
-      log.section('Determine existence') do
-        exist = existing_label.exist?(api_client)
-        comment = format('Label exists? %s', exist)
-        log.comment(comment)
-      end
+        existing_label = nil
+        log.section('Create a label') do
+          label_to_create.delete_if_exist?(api_client)
+          existing_label = label_to_create.create(api_client)
+        end
 
-      log.section('Assert existence in verdict') do
-        existing_label.verdict_assert_exist?(api_client, log, :assert_exist)
-      end
+        log.section('Determine existence') do
+          exist = existing_label.exist?(api_client)
+          comment = format('Label exists? %s', exist)
+          log.comment(comment)
+        end
 
-      log.section('Delete if exist') do
-        deleted = existing_label.delete_if_exist?(api_client)
-        comment = format('Label deleted? %s', deleted)
-        log.comment(comment)
-      end
+        log.section('Assert existence in verdict') do
+          existing_label.verdict_assert_exist?(api_client, log, :assert_exist)
+        end
 
-      log.section('Refute existence in verdict') do
-        existing_label.verdict_refute_exist?(api_client, log, :refute_exist)
+        log.section('Delete if exist') do
+          deleted = existing_label.delete_if_exist?(api_client)
+          comment = format('Label deleted? %s', deleted)
+          log.comment(comment)
+        end
+
+        log.section('Refute existence in verdict') do
+          existing_label.verdict_refute_exist?(api_client, log, :refute_exist)
+        end
+
       end
 
     end

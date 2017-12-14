@@ -5,7 +5,7 @@ require_relative '../../data/rate_limit'
 class NestedDataNewTest < BaseClassForTest
 
   def test_nested_data_new_2
-    prelude do |log, _|
+    prelude do |log|
       log.section('Create and log nested data objects') do
         core = RateLimit::Core_.new(
             :limit => 5000,
