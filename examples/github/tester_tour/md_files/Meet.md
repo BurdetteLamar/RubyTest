@@ -45,7 +45,7 @@ Notes:
 ```xml
 <meet_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='meet_test' timestamp='2017-12-14-Thu-11.58.57.820'>
+  <test_method duration_seconds='0.000' name='meet_test' timestamp='2017-12-15-Fri-15.26.07.448'>
     <section name='Test'>
       <comment>Method prelude yields an instance of Log, for logging the test.</comment>
       <comment>
