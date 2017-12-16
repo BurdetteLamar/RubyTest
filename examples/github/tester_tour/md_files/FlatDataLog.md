@@ -45,12 +45,12 @@ Notes:
 ```xml
 <flat_data_log_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='3.650' name='flat_data_log_test' timestamp='2017-12-15-Fri-15.26.31.504'>
+  <test_method duration_seconds='3.666' name='flat_data_log_test' timestamp='2017-12-16-Sat-09.51.48.773'>
     <section name='Test'>
       <section name='Fetch and log an instance of Label'>
         <section name='Fetch a label'>
           <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-            <execution duration_seconds='3.635' timestamp='2017-12-15-Fri-15.26.31.519'/>
+            <execution duration_seconds='3.666' timestamp='2017-12-16-Sat-09.51.48.773'/>
           </ApiClient>
         </section>
         <section name='Fetched label'>

@@ -57,10 +57,10 @@ Notes:
 ```xml
 <flat_data_valid_test>
   <summary errors='0' failures='1' verdicts='15'/>
-  <test_method duration_seconds='24.710' name='flat_data_valid_test' timestamp='2017-12-15-Fri-15.26.43.157'>
+  <test_method duration_seconds='3.682' name='flat_data_valid_test' timestamp='2017-12-16-Sat-09.52.00.957'>
     <section name='Test'>
       <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-        <execution duration_seconds='24.695' timestamp='2017-12-15-Fri-15.26.43.157'/>
+        <execution duration_seconds='3.650' timestamp='2017-12-16-Sat-09.52.00.972'/>
       </ApiClient>
       <section name='This is valid'>
         <section class='Label' method='verdict_valid?' name='label_valid'>

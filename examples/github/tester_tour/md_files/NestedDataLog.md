@@ -56,36 +56,36 @@ Notes:
 ```xml
 <nested_data_log_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='3.744' name='nested_data_log_test' timestamp='2017-12-15-Fri-15.27.09.349'>
+  <test_method duration_seconds='3.650' name='nested_data_log_test' timestamp='2017-12-16-Sat-09.52.06.198'>
     <section name='Test'>
       <section name='Fetch and log a rate limit'>
         <section name='Fetch rate limit'>
           <ApiClient method='GET' url='https://api.github.com/rate_limit'>
-            <execution duration_seconds='3.697' timestamp='2017-12-15-Fri-15.27.09.396'/>
+            <execution duration_seconds='3.619' timestamp='2017-12-16-Sat-09.52.06.229'/>
           </ApiClient>
         </section>
         <section name='Fetched rate limit'>
           <section name='RateLimit::Resources'>
             <section name='RateLimit::Core_'>
               <data field='limit' value='5000'/>
-              <data field='remaining' value='4989'/>
-              <data field='reset' value='1513376779'/>
+              <data field='remaining' value='4981'/>
+              <data field='reset' value='1513442659'/>
             </section>
             <section name='RateLimit::Search'>
               <data field='limit' value='30'/>
               <data field='remaining' value='30'/>
-              <data field='reset' value='1513373299'/>
+              <data field='reset' value='1513439598'/>
             </section>
             <section name='RateLimit::Graphql'>
               <data field='limit' value='5000'/>
               <data field='remaining' value='5000'/>
-              <data field='reset' value='1513376839'/>
+              <data field='reset' value='1513443138'/>
             </section>
           </section>
           <section name='RateLimit::Rate'>
             <data field='limit' value='5000'/>
-            <data field='remaining' value='4989'/>
-            <data field='reset' value='1513376779'/>
+            <data field='remaining' value='4981'/>
+            <data field='reset' value='1513442659'/>
           </section>
         </section>
       </section>

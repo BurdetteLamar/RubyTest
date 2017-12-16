@@ -4,12 +4,13 @@
 **Next Stop:** [First Test](./First.md#first-test)
 
 
-# Meet the Client and Log
+# Meet the Log and Clients
 
 The test framework sets up for the test by delivering objects the test will need:
 
 - An open test log.
 - A domain-specific GitHub API client.
+- A domain-specific GitHub UI client.
 
 ## Example Test
 
@@ -25,6 +26,9 @@ class MeetTest < BaseClassForTest
       with_api_client(log) do |api_client|
         log.comment('Method with_api_client yields an instance of %s, for accessing the GitHub API' % api_client.class.name)
       end
+      with_ui_client(log) do |ui_client|
+        log.comment('Method with_ui_client yields an instance of %s, for accessing the GitHub UI' % ui_client.class.name)
+      end
     end
   end
 
@@ -38,6 +42,7 @@ Notes:
 - Call methods inherited from the base class:
   - `prelude`:  yields a `Log` object.
   - `with_api_client`:  yields an `ApiClient` object.
+  - `with_ui_client`:  yields an `UiClient` object.
 
 ## Log
 
@@ -45,12 +50,16 @@ Notes:
 ```xml
 <meet_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='meet_test' timestamp='2017-12-15-Fri-15.26.07.448'>
+  <test_method duration_seconds='5.470' name='meet_test' timestamp='2017-12-16-Sat-09.51.01.920'>
     <section name='Test'>
       <comment>Method prelude yields an instance of Log, for logging the test.</comment>
       <comment>
         Method with_api_client yields an instance of ApiClient, for accessing
         the GitHub API
+      </comment>
+      <comment>
+        Method with_ui_client yields an instance of UiClient, for accessing the
+        GitHub UI
       </comment>
     </section>
   </test_method>

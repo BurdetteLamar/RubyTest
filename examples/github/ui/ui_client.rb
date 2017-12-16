@@ -22,11 +22,9 @@ class UiClient < BaseClass
     raise RuntimeError('Call method with, not new') unless im_ok_youre_not_ok
     self.log = log
     @base_url = 'https://github.com'
-    p ['BASE_URL', @base_url]
     @uri = URI.parse(@base_url)
     browser = Watir::Browser.new
     login_url = File.join(@base_url, 'login')
-    p ['LOGIN_URL', login_url]
     browser.goto(login_url)
     browser.text_field(:id, 'login_field').set(repo_username)
     browser.text_field(:id,'password').set(repo_password)

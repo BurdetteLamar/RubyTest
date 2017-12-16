@@ -1,11 +1,12 @@
 [navigation_links]
 
-# Meet the Client and Log
+# Meet the Log and Clients
 
 The test framework sets up for the test by delivering objects the test will need:
 
 - An open test log.
 - A domain-specific GitHub API client.
+- A domain-specific GitHub UI client.
 
 ## Example Test
 
@@ -18,6 +19,7 @@ Notes:
 - Call methods inherited from the base class:
   - `prelude`:  yields a `Log` object.
   - `with_api_client`:  yields an `ApiClient` object.
+  - `with_ui_client`:  yields a `UiClient` object.
 
 ## Log
 
