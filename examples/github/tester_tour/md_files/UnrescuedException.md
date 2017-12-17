@@ -45,9 +45,9 @@ Notes:
 ```xml
 <unrescued_exception_test>
   <summary errors='1' failures='1' verdicts='1'/>
-  <test_method name='unrescued_exception_test' timestamp='2017-12-16-Sat-09.51.47.275'>
+  <test_method name='unrescued_exception_test' timestamp='2017-12-17-Sun-13.27.06.994'>
     <section name='Test'>
-      <section duration_seconds='0.016' name='Unrescued exception'>
+      <section duration_seconds='0.000' name='Unrescued exception'>
         <uncaught_exception>
           <verdict_id>unrescued_exception_test</verdict_id>
           <class>ZeroDivisionError</class>

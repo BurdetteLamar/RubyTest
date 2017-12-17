@@ -30,8 +30,8 @@ class BaseClassForTest < Minitest::Test
   end
 
   def with_ui_client(log)
-    UiClient.with(log, @repo_username, @repo_password, @repo_name) do |ui_client|
-      yield ui_client
+    UiClient.with(log, @repo_username, @repo_password, @repo_name) do |ui_client, home_page|
+      yield ui_client, home_page
     end
   end
 

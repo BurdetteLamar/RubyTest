@@ -26,8 +26,8 @@ class MeetTest < BaseClassForTest
       with_api_client(log) do |api_client|
         log.comment('Method with_api_client yields an instance of %s, for accessing the GitHub API' % api_client.class.name)
       end
-      with_ui_client(log) do |ui_client|
-        log.comment('Method with_ui_client yields an instance of %s, for accessing the GitHub UI' % ui_client.class.name)
+      with_ui_client(log) do |ui_client, home_page|
+        log.comment('Method with_ui_client yields an instance of %s, for accessing the GitHub UI, and an instance of %s.' % [ui_client.class.name, home_page.class.name])
       end
     end
   end
@@ -42,7 +42,7 @@ Notes:
 - Call methods inherited from the base class:
   - `prelude`:  yields a `Log` object.
   - `with_api_client`:  yields an `ApiClient` object.
-  - `with_ui_client`:  yields an `UiClient` object.
+  - `with_ui_client`:  yields a `UiClient` object.
 
 ## Log
 
@@ -50,7 +50,7 @@ Notes:
 ```xml
 <meet_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='5.470' name='meet_test' timestamp='2017-12-16-Sat-09.51.01.920'>
+  <test_method duration_seconds='8.757' name='meet_test' timestamp='2017-12-17-Sun-13.26.17.907'>
     <section name='Test'>
       <comment>Method prelude yields an instance of Log, for logging the test.</comment>
       <comment>
@@ -59,7 +59,7 @@ Notes:
       </comment>
       <comment>
         Method with_ui_client yields an instance of UiClient, for accessing the
-        GitHub UI
+        GitHub UI, and an instance of HomePage.
       </comment>
     </section>
   </test_method>

@@ -5,6 +5,8 @@ require_relative '../../../lib/log/log'
 
 require_relative '../../../lib/base_classes/base_class'
 
+require_relative 'pages/login_page'
+
 class UiClient < BaseClass
 
   attr_accessor :log, :browser
@@ -13,22 +15,18 @@ class UiClient < BaseClass
   Contract Log, String, String, String, Proc => nil
   def self.with(log, repo_username, repo_password, repo_name)
     raise 'No block given' unless (block_given?)
-    ui_client = self.new(log, repo_username, repo_password, repo_name, im_ok_youre_not_ok = true)
-    yield ui_client
+    ui_client = self.new(log, im_ok_youre_not_ok = true)
+    browser = Watir::Browser.new
+    login_page = LoginPage.new(log, browser)
+    browser.goto(LoginPage.url)
+    home_page = login_page.login(repo_username, repo_password)
+    yield ui_client, home_page
     nil
   end
 
-  def initialize(log, repo_username, repo_password, repo_name, im_ok_youre_not_ok = false)
+  def initialize(log, im_ok_youre_not_ok = false)
     raise RuntimeError('Call method with, not new') unless im_ok_youre_not_ok
     self.log = log
-    @base_url = 'https://github.com'
-    @uri = URI.parse(@base_url)
-    browser = Watir::Browser.new
-    login_url = File.join(@base_url, 'login')
-    browser.goto(login_url)
-    browser.text_field(:id, 'login_field').set(repo_username)
-    browser.text_field(:id,'password').set(repo_password)
-    browser.button(:name, 'commit').click
   end
 
 end
