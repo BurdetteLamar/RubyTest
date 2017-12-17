@@ -8,8 +8,8 @@ class MeetTest < BaseClassForTest
       with_api_client(log) do |api_client|
         log.comment('Method with_api_client yields an instance of %s, for accessing the GitHub API' % api_client.class.name)
       end
-      with_ui_client(log) do |ui_client, home_page|
-        log.comment('Method with_ui_client yields an instance of %s, for accessing the GitHub UI, and an instance of %s.' % [ui_client.class.name, home_page.class.name])
+      with_ui_client(log) do |ui_client, repo_page|
+        log.comment('Method with_ui_client yields an instance of %s, for accessing the GitHub UI, and an instance of %s.' % [ui_client.class.name, repo_page.class.name])
       end
     end
   end

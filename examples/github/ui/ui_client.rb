@@ -6,6 +6,7 @@ require_relative '../../../lib/log/log'
 require_relative '../../../lib/base_classes/base_class'
 
 require_relative 'pages/login_page'
+require_relative 'pages/repo_page'
 
 class UiClient < BaseClass
 
@@ -19,8 +20,15 @@ class UiClient < BaseClass
     browser = Watir::Browser.new
     login_page = LoginPage.new(log, browser)
     browser.goto(LoginPage.url)
-    home_page = login_page.login(repo_username, repo_password)
-    yield ui_client, home_page
+    login_page.login(repo_username, repo_password)
+    repo_url = File.join(
+        BaseClassForPage.base_url,
+        repo_username,
+        repo_name,
+    )
+    browser.goto(repo_url)
+    repo_page = RepoPage.new(log, browser)
+    yield ui_client, repo_page
     nil
   end
 
