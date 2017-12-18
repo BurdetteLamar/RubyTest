@@ -32,7 +32,8 @@ class UiClient < BaseClass
   def login
     self.browser = Watir::Browser.new
     require_relative 'pages/login_page'
-    LoginPage.new(self).login(username, password)
+    page = LoginPage.new(self).visit
+    page.login(username, password)
   end
 
 end

@@ -53,12 +53,12 @@ Notes:
 ```xml
 <get_labels_test>
   <summary errors='0' failures='0' verdicts='8'/>
-  <test_method name='get_labels_test' timestamp='2017-12-18-Mon-11.44.02.993'>
-    <section duration_seconds='3.697' name='Test'>
+  <test_method name='get_labels_test' timestamp='2017-12-18-Mon-12.02.05.642'>
+    <section duration_seconds='3.666' name='Test'>
       <section name='Test GetLabels'>
-        <section name='get_labels' timestamp='2017-12-18-Mon-11.44.02.993'>
+        <section name='get_labels' timestamp='2017-12-18-Mon-12.02.05.658'>
           <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-            <execution duration_seconds='3.697' timestamp='2017-12-18-Mon-11.44.02.993'/>
+            <execution duration_seconds='3.650' timestamp='2017-12-18-Mon-12.02.05.658'/>
           </ApiClient>
           <section name='Info'>
             <data fetched_labels_count='8'/>

@@ -16,9 +16,10 @@ class BaseClassForPage < BaseClass
     nil
   end
 
-  Contract nil => String
+  Contract nil => self
   def visit
     ui_client.browser.goto(url)
+    self
   end
 
   Contract Symbol => Watir::Element

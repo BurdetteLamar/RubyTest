@@ -8,8 +8,7 @@ class SecondTest < BaseClassForTest
     prelude do |log|
       with_ui_client(log) do |ui_client|
         ui_client.login
-        page = LabelsPage.new(ui_client)
-        page.visit
+        page = LabelsPage.new(ui_client).visit
       end
     end
   end

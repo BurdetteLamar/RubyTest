@@ -18,7 +18,6 @@ class LoginPage < BaseClassForPage
 
   Contract String, String => HomePage
   def login(username, password)
-    visit
     locate(:username).set(username)
     locate(:password).set(password)
     locate(:submit).click
