@@ -26,8 +26,8 @@ class MeetTest < BaseClassForTest
       with_api_client(log) do |api_client|
         log.comment('Method with_api_client yields an instance of %s, for accessing the GitHub API' % api_client.class.name)
       end
-      with_ui_client(log) do |ui_client, repo_page|
-        log.comment('Method with_ui_client yields an instance of %s, for accessing the GitHub UI, and an instance of %s.' % [ui_client.class.name, repo_page.class.name])
+      with_ui_client(log) do |ui_client|
+        log.comment('Method with_ui_client yields an instance of %s, for accessing the GitHub UI.' % ui_client.class.name)
       end
     end
   end
@@ -50,7 +50,7 @@ Notes:
 ```xml
 <meet_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='8.257' name='meet_test' timestamp='2017-12-17-Sun-14.08.35.561'>
+  <test_method duration_seconds='0.000' name='meet_test' timestamp='2017-12-18-Mon-08.03.56.273'>
     <section name='Test'>
       <comment>Method prelude yields an instance of Log, for logging the test.</comment>
       <comment>
@@ -59,7 +59,7 @@ Notes:
       </comment>
       <comment>
         Method with_ui_client yields an instance of UiClient, for accessing the
-        GitHub UI, and an instance of RepoPage.
+        GitHub UI.
       </comment>
     </section>
   </test_method>

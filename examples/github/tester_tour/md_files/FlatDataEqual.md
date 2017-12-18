@@ -69,16 +69,16 @@ Notes:
 ```xml
 <flat_data_equal_test>
   <summary errors='0' failures='1' verdicts='11'/>
-  <test_method name='flat_data_equal_test' timestamp='2017-12-17-Sun-14.09.32.498'>
+  <test_method name='flat_data_equal_test' timestamp='2017-12-18-Mon-08.04.25.149'>
     <section name='Test'>
       <section name='Fetch an instance of Label'>
         <section name='Fetch a label'>
           <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-            <execution duration_seconds='3.853' timestamp='2017-12-17-Sun-14.09.32.513'/>
+            <execution duration_seconds='3.791' timestamp='2017-12-18-Mon-08.04.25.149'/>
           </ApiClient>
         </section>
       </section>
-      <section duration_seconds='3.931' name='These are equal'>
+      <section duration_seconds='3.884' name='These are equal'>
         <section class='Label' method='verdict_equal?' name='label_equal'>
           <verdict id='label_equal:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
             <exp_value>710733208</exp_value>

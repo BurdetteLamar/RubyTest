@@ -14,21 +14,13 @@ class UiClient < BaseClass
 
   # Instantiate a client for the caller's block.
   Contract Log, String, String, String, Proc => nil
-  def self.with(log, repo_username, repo_password, repo_name)
+  def self.with(log, username, password, repo_name)
     raise 'No block given' unless (block_given?)
+    @username = username
+    @password = password
+    @reponame = repo_name
     ui_client = self.new(log, im_ok_youre_not_ok = true)
-    browser = Watir::Browser.new
-    login_page = LoginPage.new(log, browser)
-    browser.goto(LoginPage.url)
-    login_page.login(repo_username, repo_password)
-    repo_url = File.join(
-        BaseClassForPage.base_url,
-        repo_username,
-        repo_name,
-    )
-    browser.goto(repo_url)
-    repo_page = RepoPage.new(log, browser)
-    yield ui_client, repo_page
+    yield ui_client
     nil
   end
 

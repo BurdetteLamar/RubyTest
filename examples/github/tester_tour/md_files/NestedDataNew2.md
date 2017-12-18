@@ -76,7 +76,7 @@ Notes:
 ```xml
 <nested_data_new_2_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.016' name='nested_data_new_2_test' timestamp='2017-12-17-Sun-14.09.50.141'>
+  <test_method duration_seconds='0.016' name='nested_data_new_2_test' timestamp='2017-12-18-Mon-08.04.42.904'>
     <section name='Test'>
       <section name='Create and log nested data objects'>
         <section name='RateLimit'>
