@@ -6,7 +6,8 @@ class HomePage < BaseClassForPage
 
   Contract Log, Watir::Browser => nil
   def initialize(log, browser)
-    super(log, browser, LOCATORS)
+    relative_url = ''
+    super(log, browser, relative_url, LOCATORS)
   end
 
 end

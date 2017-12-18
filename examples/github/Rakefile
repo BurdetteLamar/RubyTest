@@ -109,6 +109,7 @@ EOT
           overview
           meet
           first
+          second
       /,
       :logging => %w/
           sections

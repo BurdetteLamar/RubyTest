@@ -12,16 +12,13 @@ class LoginPage < BaseClassForPage
 
   Contract Log, Watir::Browser => nil
   def initialize(log, browser)
-    super(log, browser, LOCATORS)
-  end
-
-  Contract nil => String
-  def self.url
-    File.join(self.base_url, 'login')
+    relative_url = 'login'
+    super(log, browser, relative_url, LOCATORS)
   end
 
   Contract String, String => HomePage
   def login(username, password)
+    visit
     locate(:username).set(username)
     locate(:password).set(password)
     locate(:submit).click
