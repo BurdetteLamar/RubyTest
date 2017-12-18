@@ -4,9 +4,10 @@ class RepoPage < BaseClassForPage
 
   LOCATORS = {}
 
-  Contract Log, Watir::Browser => nil
-  def initialize(log, browser)
-    super(log, browser, LOCATORS)
+  Contract UiClient => nil
+  def initialize(ui_client)
+    relative_url = 'BurdetteLamar/RubyTest'
+    super(ui_client, relative_url, LOCATORS)
   end
 
 end

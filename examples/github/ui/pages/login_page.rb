@@ -10,10 +10,10 @@ class LoginPage < BaseClassForPage
       :submit => [:button, {:name => 'commit'}],
   }
 
-  Contract Log, Watir::Browser => nil
-  def initialize(log, browser)
+  Contract UiClient => nil
+  def initialize(ui_client)
     relative_url = 'login'
-    super(log, browser, relative_url, LOCATORS)
+    super(ui_client, relative_url, LOCATORS)
   end
 
   Contract String, String => HomePage
@@ -22,6 +22,6 @@ class LoginPage < BaseClassForPage
     locate(:username).set(username)
     locate(:password).set(password)
     locate(:submit).click
-    HomePage.new(log, browser)
+    HomePage.new(ui_client)
   end
 end

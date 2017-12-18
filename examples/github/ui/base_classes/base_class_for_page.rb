@@ -2,26 +2,28 @@ require_relative '../../../../lib/base_classes/base_class'
 
 require_relative '../../../../lib/log/log'
 
+require_relative '../ui_client'
+
 class BaseClassForPage < BaseClass
 
-  attr_accessor :log, :browser, :url, :locators
+  attr_accessor :ui_client, :url, :locators
 
-  Contract Log, Watir::Browser, String, HashOf[Symbol, Array[Symbol, HashOf[Symbol, String]]] => nil
-  def initialize(log, browser, relative_url, locators)
-    self.log = log
-    self.browser = browser
+  Contract UiClient, String, HashOf[Symbol, Array[Symbol, HashOf[Symbol, String]]] => nil
+  def initialize(ui_client, relative_url, locators)
+    self.ui_client = ui_client
     self.url = File.join('https://github.com', relative_url)
     self.locators = locators
     nil
   end
 
+  Contract nil => String
   def visit
-    browser.goto(url)
+    ui_client.browser.goto(url)
   end
 
   Contract Symbol => Watir::Element
   def locate(locator_name)
-    browser.send(*locators[locator_name])
+    ui_client.browser.send(*locators[locator_name])
   end
 
 end

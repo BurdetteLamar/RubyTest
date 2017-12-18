@@ -5,7 +5,7 @@ class SecondTest < BaseClassForTest
   def test_second
     prelude do |log|
       with_ui_client(log) do |ui_client|
-        home_page = ui_client.login
+        ui_client.login
       end
     end
   end

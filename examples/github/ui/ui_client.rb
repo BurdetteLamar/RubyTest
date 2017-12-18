@@ -1,12 +1,8 @@
-
 require 'watir'
 
 require_relative '../../../lib/log/log'
 
 require_relative '../../../lib/base_classes/base_class'
-
-require_relative 'pages/login_page'
-require_relative 'pages/repo_page'
 
 class UiClient < BaseClass
 
@@ -21,18 +17,22 @@ class UiClient < BaseClass
     nil
   end
 
+  Contract Log, String, String, String, Maybe[Bool] => nil
   def initialize(log, username, password, repo_name, im_ok_youre_not_ok = false)
     raise RuntimeError('Call method with, not new') unless im_ok_youre_not_ok
     self.log = log
     self.username = username
     self.password = password
     self.repo_name = repo_name
+    nil
   end
 
+  require_relative 'pages/home_page'
+  Contract nil => HomePage
   def login
     self.browser = Watir::Browser.new
-    login_page = LoginPage.new(log, browser)
-    login_page.login(username, password)
+    require_relative 'pages/login_page'
+    LoginPage.new(self).login(username, password)
   end
 
 end

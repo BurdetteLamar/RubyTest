@@ -73,22 +73,22 @@ Notes:
 ```xml
 <get_labels_name_test>
   <summary errors='0' failures='0' verdicts='9'/>
-  <test_method name='get_labels_name_test' timestamp='2017-12-18-Mon-09.46.25.075'>
-    <section duration_seconds='5.226' name='Test'>
+  <test_method name='get_labels_name_test' timestamp='2017-12-18-Mon-11.33.55.899'>
+    <section duration_seconds='5.288' name='Test'>
       <section name='Test GetLabelsName'>
         <section name='Create the label to be fetched'>
           <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-            <execution duration_seconds='3.666' timestamp='2017-12-18-Mon-09.46.25.091'/>
+            <execution duration_seconds='3.806' timestamp='2017-12-18-Mon-11.33.55.899'/>
           </ApiClient>
           <ApiClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
             <parameters color='000000' name='test_label'/>
-            <execution duration_seconds='0.359' timestamp='2017-12-18-Mon-09.46.28.757'/>
+            <execution duration_seconds='0.437' timestamp='2017-12-18-Mon-11.33.59.705'/>
           </ApiClient>
         </section>
         <section name='Test fetching the created label'>
-          <section name='get_label' timestamp='2017-12-18-Mon-09.46.29.115'>
+          <section name='get_label' timestamp='2017-12-18-Mon-11.34.00.142'>
             <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-              <execution duration_seconds='0.390' timestamp='2017-12-18-Mon-09.46.29.115'/>
+              <execution duration_seconds='0.359' timestamp='2017-12-18-Mon-11.34.00.142'/>
             </ApiClient>
             <section name='Evaluation'>
               <verdict id='get_label:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
@@ -99,10 +99,10 @@ Notes:
                 <section name='verdict_assert_integer_positive?'>
                   <verdict id='get_label:valid:id:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
                     <exp_value>Integer</exp_value>
-                    <act_value>782031971</act_value>
+                    <act_value>782119691</act_value>
                   </verdict>
                   <verdict id='get_label:valid:id:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-                    <object_1>782031971</object_1>
+                    <object_1>782119691</object_1>
                     <operator>:&gt;</operator>
                     <object_2>0</object_2>
                   </verdict>
@@ -133,10 +133,10 @@ Notes:
           </section>
           <section name='Clean up'>
             <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-              <execution duration_seconds='0.374' timestamp='2017-12-18-Mon-09.46.29.505'/>
+              <execution duration_seconds='0.328' timestamp='2017-12-18-Mon-11.34.00.517'/>
             </ApiClient>
             <ApiClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-              <execution duration_seconds='0.421' timestamp='2017-12-18-Mon-09.46.29.880'/>
+              <execution duration_seconds='0.343' timestamp='2017-12-18-Mon-11.34.00.844'/>
             </ApiClient>
           </section>
         </section>

@@ -19,7 +19,7 @@ class SecondTest < BaseClassForTest
   def test_second
     prelude do |log|
       with_ui_client(log) do |ui_client|
-        home_page = ui_client.login
+        ui_client.login
       end
     end
   end
@@ -55,7 +55,7 @@ You're welcome to review this log, but the smaller logs in other tour stops will
 ```xml
 <second_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='5.052' name='second_test' timestamp='2017-12-18-Mon-09.44.36.587'>
+  <test_method duration_seconds='5.111' name='second_test' timestamp='2017-12-18-Mon-11.32.09.776'>
     <section name='Test'/>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
