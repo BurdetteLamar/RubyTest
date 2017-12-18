@@ -56,11 +56,11 @@ Notes:
 ```xml
 <getters_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='4.368' name='getters_test' timestamp='2017-12-18-Mon-11.33.30.705'>
+  <test_method duration_seconds='4.040' name='getters_test' timestamp='2017-12-18-Mon-11.43.49.951'>
     <section name='Test'>
       <section name='Get the first label'>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-          <execution duration_seconds='4.009' timestamp='2017-12-18-Mon-11.33.30.705'/>
+          <execution duration_seconds='3.728' timestamp='2017-12-18-Mon-11.43.49.951'/>
         </ApiClient>
         <section name='Label'>
           <data field='id' value='710733208'/>
@@ -72,7 +72,7 @@ Notes:
       </section>
       <section name='Get all labels'>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-          <execution duration_seconds='0.359' timestamp='2017-12-18-Mon-11.33.34.714'/>
+          <execution duration_seconds='0.312' timestamp='2017-12-18-Mon-11.43.53.680'/>
         </ApiClient>
         <section name='Label'>
           <data field='id' value='710733208'/>

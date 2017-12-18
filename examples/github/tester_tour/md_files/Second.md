@@ -14,12 +14,16 @@ Here's a simple second test, one that tests CRUD methods (create, read, update, 
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
 
+require_relative '../../ui/pages/labels_page'
+
 class SecondTest < BaseClassForTest
 
   def test_second
     prelude do |log|
       with_ui_client(log) do |ui_client|
         ui_client.login
+        page = LabelsPage.new(ui_client)
+        page.visit
       end
     end
   end
@@ -55,7 +59,7 @@ You're welcome to review this log, but the smaller logs in other tour stops will
 ```xml
 <second_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='5.111' name='second_test' timestamp='2017-12-18-Mon-11.32.09.776'>
+  <test_method duration_seconds='5.809' name='second_test' timestamp='2017-12-18-Mon-11.42.28.041'>
     <section name='Test'/>
   </test_method>
   <section name='Count of errors (unexpected exceptions)'>
