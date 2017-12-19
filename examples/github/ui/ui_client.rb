@@ -31,6 +31,7 @@ class UiClient < BaseClass
   Contract nil => HomePage
   def login
     self.browser = Watir::Browser.new
+    browser.window.maximize
     require_relative 'pages/login_page'
     page = LoginPage.new(self).visit
     page.login(username, password)

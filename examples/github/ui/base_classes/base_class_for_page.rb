@@ -8,7 +8,7 @@ class BaseClassForPage < BaseClass
 
   attr_accessor :ui_client, :url, :locators
 
-  Contract UiClient, String, HashOf[Symbol, Array[Symbol, HashOf[Symbol, String]]] => nil
+  Contract UiClient, String, HashOf[Symbol, Array[Symbol, HashOf[Symbol, Or[Regexp, String, ArrayOf[String]]]]] => nil
   def initialize(ui_client, relative_url, locators)
     self.ui_client = ui_client
     self.url = File.join('https://github.com', relative_url)
@@ -22,7 +22,7 @@ class BaseClassForPage < BaseClass
     self
   end
 
-  Contract Symbol => Watir::Element
+  Contract Symbol => Or[Watir::Element, Watir::ElementCollection]
   def locate(locator_name)
     ui_client.browser.send(*locators[locator_name])
   end
