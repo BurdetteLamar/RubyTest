@@ -69,15 +69,24 @@ class LabelsPage < BaseClassForPage
     )
   end
 
-  Contract Label => nil
-  def update_label(label)
-    label_index = label_index_for(label.name)
+  Contract Label, Label => nil
+  def update_label(target_label, source_label)
+    label_index = label_index_for(target_label.name)
     edit_button(label_index)
     edit_button(label_index).click
-    edit_label_name_text_field(label_index).set(label.name)
-    edit_label_color_text_field(label_index).set(label.color)
+    edit_label_name_text_field(label_index).set(source_label.name)
+    edit_label_color_text_field(label_index).set(source_label.color)
     edit_label_save_changes_button(label_index).click
     nil
+  end
+
+  Contract Label, Label => nil
+  def update_label!(target_label, source_label)
+    ApiClient.with(ui_client.log, ui_client.username, ui_client.password, ui_client.repo_name) do |api_client|
+      source_label.delete_if_exist?(api_client)
+    end
+    ui_client.browser.refresh
+    update_label(target_label, source_label)
   end
 
   Contract Label => nil

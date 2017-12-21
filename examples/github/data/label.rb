@@ -15,7 +15,11 @@ class Label < BaseClassForResource
   # Constructor.
   Contract Hash => nil
   def initialize(values = {})
-    super(FIELDS, values)
+    conditioned_values = values.clone
+    if values.include?(:color)
+      conditioned_values[:color].sub!('#', '')
+    end
+    super(FIELDS, conditioned_values)
   end
 
   Contract Log, VERDICT_ID, Symbol => Bool
@@ -133,7 +137,9 @@ class Label < BaseClassForResource
 
   Contract nil => self
   def perturb!
+    self.name = perturbed_value_for(:name)
     self.color = perturbed_value_for(:color)
+    self.default = perturbed_value_for(:default)
     self
   end
 
