@@ -33,22 +33,6 @@ class LabelsPage < BaseClassForPage
 
   # CRUD.
 
-  def get_create_label_name_text_field
-    locate(:create_label_name_text_field)
-  end
-
-  def get_create_label_color_text_field
-    locate(:create_label_color_text_field)
-  end
-
-  def get_create_label_button
-    locate(:create_label_button)
-  end
-
-  def get_create_label_cancel_button
-    locate(:cancel_buttons)[0]
-  end
-
   Contract Label => nil
   def create_label(label)
     label_name = label.name
@@ -96,6 +80,19 @@ class LabelsPage < BaseClassForPage
 
   # Convenience.
 
+  Contract Label => nil
+  def wait_for_label(label)
+    Watir::Wait.until(
+        message: format('Did not find label "%s"', label.name),
+        timeout: 5
+    ) do
+      get_label_names.include?(label.name)
+    end
+    nil
+  end
+
+  private
+
   Contract Label => ArrayOf[String]
   def get_label_names
     locate(:label_name_spans).collect {|span| span.text}
@@ -118,18 +115,18 @@ class LabelsPage < BaseClassForPage
   end
 
   Contract Num => Watir::Button
+  def get_create_label_button
+    locate(:create_label_button)
+  end
+
+  Contract Num => Watir::Button
+  def get_create_label_cancel_button
+    locate(:cancel_buttons)[0]
+  end
+
+  Contract Num => Watir::Button
   def get_edit_button(label_index)
     locate(:edit_buttons)[label_index]
-  end
-
-  Contract Num => Watir::TextField
-  def get_edit_label_color_text_field(label_index)
-    locate(:edit_label_color_text_fields)[label_index]
-  end
-
-  Contract Num => Watir::TextField
-  def get_edit_label_name_text_field(label_index)
-    locate(:edit_label_name_text_fields)[label_index]
   end
 
   Contract Num => Watir::Button
@@ -153,12 +150,24 @@ class LabelsPage < BaseClassForPage
     locate(:delete_label_buttons)[label_index]
   end
 
-  def wait_for_label(label)
-    Watir::Wait.until(
-        message: format('Did not find label "%s"', label.name),
-        timeout: 5
-    ) do
-      get_label_names.include?(label.name)
-    end
+  Contract Num => Watir::TextField
+  def get_create_label_name_text_field
+    locate(:create_label_name_text_field)
   end
+
+  Contract Num => Watir::TextField
+  def get_create_label_color_text_field
+    locate(:create_label_color_text_field)
+  end
+
+  Contract Num => Watir::TextField
+  def get_edit_label_color_text_field(label_index)
+    locate(:edit_label_color_text_fields)[label_index]
+  end
+
+  Contract Num => Watir::TextField
+  def get_edit_label_name_text_field(label_index)
+    locate(:edit_label_name_text_fields)[label_index]
+  end
+
 end
