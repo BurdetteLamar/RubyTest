@@ -33,14 +33,30 @@ class LabelsPage < BaseClassForPage
 
   # CRUD.
 
+  def get_create_label_name_text_field
+    locate(:create_label_name_text_field)
+  end
+
+  def get_create_label_color_text_field
+    locate(:create_label_color_text_field)
+  end
+
+  def get_create_label_button
+    locate(:create_label_button)
+  end
+
+  def get_create_label_cancel_button
+    locate(:cancel_buttons)[0]
+  end
+
   Contract Label => nil
   def create_label(label)
     label_name = label.name
-    locate(:new_label_button).click
-    locate(:create_label_name_text_field).set(label_name)
-    locate(:create_label_color_text_field).set(label.color)
-    locate(:create_label_button).click
-    locate(:cancel_buttons)[0].click
+    get_new_label_button.click
+    get_create_label_name_text_field.set(label_name)
+    get_create_label_color_text_field.set(label.color)
+    get_create_label_button.click
+    get_create_label_cancel_button.click
     nil
   end
 
@@ -60,8 +76,6 @@ class LabelsPage < BaseClassForPage
     get_edit_button(label_index).click
     label_name = get_edit_label_name_text_field(label_index).value
     label_color = get_edit_label_color_text_field(label_index).value
-    locate(:cancel_buttons).each do |button|
-    end
     get_edit_label_save_changes_button(label_index).click
     sleep 5
     Label.new(
@@ -96,6 +110,11 @@ class LabelsPage < BaseClassForPage
       raise ArgumentError.new(message)
     end
     label_index
+  end
+
+  Contract Num => Watir::Button
+  def get_new_label_button
+    locate(:new_label_button)
   end
 
   Contract Num => Watir::Button
