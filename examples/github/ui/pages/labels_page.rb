@@ -40,13 +40,14 @@ class LabelsPage < BaseClassForPage
     locate(:create_label_name_text_field).set(label_name)
     locate(:create_label_color_text_field).set(label.color)
     locate(:create_label_button).click
+    locate(:cancel_buttons)[0].click
     nil
   end
 
   Contract Label => nil
   def create_label!(label)
     ApiClient.with(ui_client.log, ui_client.username, ui_client.password, ui_client.repo_name) do |api_client|
-      p label.delete_if_exist?(api_client)
+      label.delete_if_exist?(api_client)
     end
     ui_client.browser.refresh
     create_label(label)
@@ -55,10 +56,14 @@ class LabelsPage < BaseClassForPage
   Contract Label => Label
   def read_label(label)
     label_index = get_label_index(label.name)
-    p get_edit_button(label_index)
+    get_edit_button(label_index)
     get_edit_button(label_index).click
     label_name = get_edit_label_name_text_field(label_index).value
     label_color = get_edit_label_color_text_field(label_index).value
+    locate(:cancel_buttons).each do |button|
+    end
+    get_edit_label_save_changes_button(label_index).click
+    sleep 5
     Label.new(
         {
             :name => label_name,
@@ -110,8 +115,13 @@ class LabelsPage < BaseClassForPage
 
   Contract Num => Watir::Button
   def get_edit_label_cancel_button(label_index)
-    # First is for cancelling create, followed by pairs for cancelling edit/delete.
-    locate(:cancel_buttons)[1 + 2 * label_index]
+    # First is for cancelling create, followed by pairs for cancelling delete/edit.
+    locate(:cancel_buttons)[2 + 2 * label_index]
+  end
+
+  Contract Num => Watir::Button
+  def get_edit_label_save_changes_button(label_index)
+    locate(:save_changes_buttons)[label_index]
   end
 
   Contract Num => Watir::Button
