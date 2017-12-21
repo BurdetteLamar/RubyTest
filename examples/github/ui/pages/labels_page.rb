@@ -36,11 +36,11 @@ class LabelsPage < BaseClassForPage
   Contract Label => nil
   def create_label(label)
     label_name = label.name
-    get_new_label_button.click
-    get_create_label_name_text_field.set(label_name)
-    get_create_label_color_text_field.set(label.color)
-    get_create_label_button.click
-    get_create_label_cancel_button.click
+    new_label_button.click
+    create_label_name_text_field.set(label_name)
+    create_label_color_text_field.set(label.color)
+    create_label_button.click
+    create_label_cancel_button.click
     nil
   end
 
@@ -55,12 +55,12 @@ class LabelsPage < BaseClassForPage
 
   Contract Label => Label
   def read_label(label)
-    label_index = get_label_index(label.name)
-    get_edit_button(label_index)
-    get_edit_button(label_index).click
-    label_name = get_edit_label_name_text_field(label_index).value
-    label_color = get_edit_label_color_text_field(label_index).value
-    get_edit_label_save_changes_button(label_index).click
+    label_index = label_index_for(label.name)
+    edit_button(label_index)
+    edit_button(label_index).click
+    label_name = edit_label_name_text_field(label_index).value
+    label_color = edit_label_color_text_field(label_index).value
+    edit_label_save_changes_button(label_index).click
     sleep 5
     Label.new(
         {
@@ -72,9 +72,9 @@ class LabelsPage < BaseClassForPage
 
   Contract Label => nil
   def delete_label(label)
-    label_index = get_label_index(label.name)
-    get_delete_button(label_index).click
-    get_delete_label_button(label_index).click
+    label_index = label_index_for(label.name)
+    delete_button(label_index).click
+    delete_label_button(label_index).click
     nil
   end
 
@@ -86,7 +86,7 @@ class LabelsPage < BaseClassForPage
         message: format('Did not find label "%s"', label.name),
         timeout: 5
     ) do
-      get_label_names.include?(label.name)
+      label_names.include?(label.name)
     end
     nil
   end
@@ -94,13 +94,12 @@ class LabelsPage < BaseClassForPage
   private
 
   Contract Label => ArrayOf[String]
-  def get_label_names
+  def label_names
     locate(:label_name_spans).collect {|span| span.text}
   end
 
   Contract String => Num
-  def get_label_index(label_name)
-    label_names = get_label_names
+  def label_index_for(label_name)
     label_index = label_names.index(label_name)
     if label_index.nil?
       message = format('Did not find label name "%s" among %s', label_name, label_names.inspect)
@@ -110,63 +109,63 @@ class LabelsPage < BaseClassForPage
   end
 
   Contract Num => Watir::Button
-  def get_new_label_button
+  def new_label_button
     locate(:new_label_button)
   end
 
   Contract Num => Watir::Button
-  def get_create_label_button
+  def create_label_button
     locate(:create_label_button)
   end
 
   Contract Num => Watir::Button
-  def get_create_label_cancel_button
+  def create_label_cancel_button
     locate(:cancel_buttons)[0]
   end
 
   Contract Num => Watir::Button
-  def get_edit_button(label_index)
+  def edit_button(label_index)
     locate(:edit_buttons)[label_index]
   end
 
   Contract Num => Watir::Button
-  def get_edit_label_cancel_button(label_index)
+  def edit_label_cancel_button(label_index)
     # First is for cancelling create, followed by pairs for cancelling delete/edit.
     locate(:cancel_buttons)[2 + 2 * label_index]
   end
 
   Contract Num => Watir::Button
-  def get_edit_label_save_changes_button(label_index)
+  def edit_label_save_changes_button(label_index)
     locate(:save_changes_buttons)[label_index]
   end
 
   Contract Num => Watir::Button
-  def get_delete_button(label_index)
+  def delete_button(label_index)
     locate(:delete_buttons)[label_index]
   end
 
   Contract Num => Watir::Button
-  def get_delete_label_button(label_index)
+  def delete_label_button(label_index)
     locate(:delete_label_buttons)[label_index]
   end
 
   Contract Num => Watir::TextField
-  def get_create_label_name_text_field
+  def create_label_name_text_field
     locate(:create_label_name_text_field)
   end
 
   Contract Num => Watir::TextField
-  def get_create_label_color_text_field
+  def create_label_color_text_field
     locate(:create_label_color_text_field)
   end
 
   Contract Num => Watir::TextField
-  def get_edit_label_color_text_field(label_index)
+  def edit_label_color_text_field(label_index)
     locate(:edit_label_color_text_fields)[label_index]
   end
 
   Contract Num => Watir::TextField
-  def get_edit_label_name_text_field(label_index)
+  def edit_label_name_text_field(label_index)
     locate(:edit_label_name_text_fields)[label_index]
   end
 
