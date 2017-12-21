@@ -60,14 +60,24 @@ class LabelsPage < BaseClassForPage
     edit_button(label_index).click
     label_name = edit_label_name_text_field(label_index).value
     label_color = edit_label_color_text_field(label_index).value
-    edit_label_save_changes_button(label_index).click
-    sleep 5
+    edit_label_cancel_button(label_index).click
     Label.new(
         {
             :name => label_name,
             :color => label_color,
         }
     )
+  end
+
+  Contract Label => nil
+  def update_label(label)
+    label_index = label_index_for(label.name)
+    edit_button(label_index)
+    edit_button(label_index).click
+    edit_label_name_text_field(label_index).set(label.name)
+    edit_label_color_text_field(label_index).set(label.color)
+    edit_label_save_changes_button(label_index).click
+    nil
   end
 
   Contract Label => nil
