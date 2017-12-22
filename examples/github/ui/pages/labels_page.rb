@@ -110,6 +110,20 @@ class LabelsPage < BaseClassForPage
     nil
   end
 
+  # Verdicts
+
+  # Contract Log, VERDICT_ID, Label => Bool
+  def verdict_assert_exist?(log, verdict_id, label)
+    if log.verdict_assert_includes?([verdict_id, :exist], label_names, label.name)
+      label_read = read_label(label)
+      Label.verdict_equal?(log, [verdict_id, :equal], label, label_read)
+    end
+  end
+
+  Contract Log, VERDICT_ID, Label => Bool
+  def verdict_refute_exist?(log, verdict_id, label)
+    log.verdict_refute_includes?(verdict_id, label_names, label.name)
+  end
   private
 
   Contract Label => ArrayOf[String]
