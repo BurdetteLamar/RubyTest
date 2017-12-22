@@ -65,9 +65,13 @@ class BaseClassForData < BaseClass
   # Verify recursively, so that nested objects can verify themselves.
   def self.verdict_equal?(log, verdict_id, expected_obj, actual_obj, message = nil)
     if expected_obj.kind_of?(BaseClassForData)
+      # Careful here;  it's a no-no to return from within a log section.
+      # The log section needs to clean itself up before it returns.
+      return_value = nil
       log.section(self.last_verdict_id_element(verdict_id), {:class => self.name, :method => __method__}) do
-        return self.verdict_equal_recursive?(log, verdict_id, expected_obj, actual_obj, message)
+        return_value = self.verdict_equal_recursive?(log, verdict_id, expected_obj, actual_obj, message)
       end
+      return return_value
     else
       log.verdict_assert_equal?(verdict_id, expected_obj, actual_obj, message: message)
     end
