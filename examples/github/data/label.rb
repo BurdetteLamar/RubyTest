@@ -92,10 +92,10 @@ class Label < BaseClassForResource
     GetLabelsName.call(client, self)
   end
 
-  Contract ApiClient => Label
-  def update(client)
+  Contract ApiClient, Label => Label
+  def update(client, label_source)
     require_relative '../api/endpoints/labels/patch_labels_name'
-    PatchLabelsName.call(client, self)
+    PatchLabelsName.call(client, self, label_source)
   end
 
   Contract ApiClient => nil
@@ -110,6 +110,12 @@ class Label < BaseClassForResource
   def create!(client)
     delete_if_exist?(client)
     create(client)
+  end
+
+  Contract ApiClient, Label => Label
+  def update!(client, label_source)
+    label_source.delete_if_exist?(client)
+    update(client, label_source)
   end
 
   Contract ApiClient, Log, VERDICT_ID => Bool
