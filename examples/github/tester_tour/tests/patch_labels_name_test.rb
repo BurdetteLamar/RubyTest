@@ -18,11 +18,12 @@ class PatchLabelsNameTest < BaseClassForTest
               :color => '000000',
               :default => false,
           )
-          label_to_create.delete_if_exist?(api_client)
-          label_to_patch = label_to_create.create(api_client)
-          label_to_patch.color = 'ffffff'
-          PatchLabelsName.verdict_call_and_verify_success(api_client, :patch_label, label_to_patch)
-          label_to_patch.delete_if_exist?(api_client)
+          label_target = label_to_create.create!(api_client)
+          label_source = label_target.perturb
+          label_source.url = nil
+          label_source.default = nil
+          PatchLabelsName.verdict_call_and_verify_success(api_client, :patch_label, label_target, label_source)
+          label_source.delete_if_exist?(api_client)
         end
 
       end

@@ -23,7 +23,7 @@ class CrudTest < BaseClassForTest
           end
           if ENV['NO_CRUD']
             # Here's how we create a label via the endpoint.
-            require_relative '../../endpoints/labels/post_labels'
+            require_relative '../../api/endpoints/labels/post_labels'
             label_created = PostLabels.call(api_client, label_to_create)
           else
             # And here's how via the CRUD method.
@@ -37,7 +37,7 @@ class CrudTest < BaseClassForTest
           label_to_read.log(log, 'Label to read')
           if ENV['NO_CRUD']
             # Here's how we read a label via the endpoint.
-            require_relative '../../endpoints/labels/get_labels_name'
+            require_relative '../../api/endpoints/labels/get_labels_name'
             label_read = GetLabelsName.call(api_client, label_to_read)
           else
             # And here's how via the CRUD method.
@@ -47,16 +47,16 @@ class CrudTest < BaseClassForTest
         end
 
         log.section('Update') do
-          label_to_update = label_read
-          label_to_update.color = 'ffffff'
-          label_to_update.log(log, 'Label to update')
+          label_target = label_read
+          label_source = label_target.perturb
+          label_target.log(log, 'Label to update')
           if ENV['NO_CRUD']
             # Here's how we update a label via the endpoint.
-            require_relative '../../endpoints/labels/patch_labels_name'
-            label_updated = PatchLabelsName.call(api_client, label_to_update)
+            require_relative '../../api/endpoints/labels/patch_labels_name'
+            label_updated = PatchLabelsName.call(api_client, label_target, label_source)
           else
             # And here's how via the CRUD method.
-            label_updated = label_to_update.update(api_client)
+            label_updated = label_target.update(api_client, label_source)
           end
           label_updated.log(log, 'Label updated')
         end
@@ -65,7 +65,7 @@ class CrudTest < BaseClassForTest
           label_to_delete = label_updated
           if ENV['NO_CRUD']
             # Here's how we delete a label via the endpoint.
-            require_relative '../../endpoints/labels/delete_labels_name'
+            require_relative '../../api/endpoints/labels/delete_labels_name'
             DeleteLabelsName.call(api_client, label_to_delete)
           else
             # And here's how via the CRUD method.

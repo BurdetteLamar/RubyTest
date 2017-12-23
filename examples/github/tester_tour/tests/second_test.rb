@@ -32,18 +32,18 @@ class SecondTest < BaseClassForTest
           Label.verdict_equal?(log, :label_created, label_to_read, label_read)
         end
 
-        label_to_update = nil
+        label_source = nil
         log.section('Update label') do
-          label_to_update = label_to_create.perturb
+          label_source = label_to_create.perturb
           # Boolean value for field :default is not available in the UI.
-          label_to_update.default = nil
-          labels_page.update_label!(label_to_create, label_to_update)
-          labels_page.wait_for_label(label_to_update)
-          labels_page.verdict_assert_exist?(log, :label_updated, label_to_update)
+          label_source.default = nil
+          labels_page.update_label!(label_to_create, label_source)
+          labels_page.wait_for_label(label_source)
+          labels_page.verdict_assert_exist?(log, :label_updated, label_source)
         end
 
         log.section('Delete label') do
-          label_to_delete = label_to_update
+          label_to_delete = label_source
           labels_page.delete_label(label_to_delete)
           ui_client.browser.refresh
           labels_page.verdict_refute_exist?(log, :label_deleted, label_to_delete)

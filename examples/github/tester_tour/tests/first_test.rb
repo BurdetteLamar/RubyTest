@@ -18,7 +18,6 @@ class FirstTest < BaseClassForTest
           label_created = label_to_create.create!(api_client)
           Label.verdict_equal?(log, :create_return_correct, label_to_create, label_created)
           label_created.verdict_read_and_verify?(api_client, log, :created_correctly)
-          label_created = label_created
         end
 
         log.section('Read') do
@@ -36,8 +35,8 @@ class FirstTest < BaseClassForTest
         end
 
         log.section('Delete') do
-          label_deleted = label_updated.delete(api_client)
-          log.verdict_assert_nil?(:delete_return_correct, label_deleted)
+          return_value = label_updated.delete(api_client)
+          log.verdict_assert_nil?(:delete_return_correct, return_value)
           label_created.verdict_refute_exist?(api_client, log, :deleted_correctly)
         end
 

@@ -25,7 +25,7 @@ class PatchLabelsName < BaseClassForEndpoint
   def self.verdict_call_and_verify_success(client, verdict_id, label_target, label_source, query_elements = {})
     log = client.log
     log.section(verdict_id.to_s, :rescue, :timestamp, :duration) do
-      label_updated = self.call(client, label_to_update, query_elements)
+      label_updated = self.call(client, label_target, label_source, query_elements)
       log.section('Evaluation') do
         log.section('Returned label correct') do
           v_id = [verdict_id, :updated_label]
@@ -34,7 +34,7 @@ class PatchLabelsName < BaseClassForEndpoint
         log.section('Label updated') do
           fetched_label = label_updated.read(client,)
           v_id = [verdict_id, :fetched_label]
-          Label.verdict_equal?(log, v_id, source_label, fetched_label, 'Fetched label correct')
+          Label.verdict_equal?(log, v_id, label_source, fetched_label, 'Fetched label correct')
         end
       end
       return label_updated
