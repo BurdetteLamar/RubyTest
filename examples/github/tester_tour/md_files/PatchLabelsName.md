@@ -30,11 +30,12 @@ class PatchLabelsNameTest < BaseClassForTest
               :color => '000000',
               :default => false,
           )
-          label_to_create.delete_if_exist?(api_client)
-          label_to_patch = label_to_create.create(api_client)
-          label_to_patch.color = 'ffffff'
-          PatchLabelsName.verdict_call_and_verify_success(api_client, :patch_label, label_to_patch)
-          label_to_patch.delete_if_exist?(api_client)
+          label_target = label_to_create.create!(api_client)
+          label_source = label_target.perturb
+          label_source.url = nil
+          label_source.default = nil
+          PatchLabelsName.verdict_call_and_verify_success(api_client, :patch_label, label_target, label_source)
+          label_source.delete_if_exist?(api_client)
         end
 
       end
@@ -63,89 +64,202 @@ Notes:
 <code>test_patch_labels_name.xml</code>
 ```xml
 <patch_labels_name_test>
-  <summary errors='0' failures='0' verdicts='11'/>
-  <test_method name='patch_labels_name_test' timestamp='2017-12-18-Mon-12.02.24.144'>
-    <section name='Test'>
+  <summary errors='0' failures='4' verdicts='9'/>
+  <test_method name='patch_labels_name_test' timestamp='2017-12-22-Fri-18.07.23.775'>
+    <section duration_seconds='5.647' name='Test'>
       <section name='Test PatchLabelsName'>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-          <execution duration_seconds='3.744' timestamp='2017-12-18-Mon-12.02.24.144'/>
+          <execution duration_seconds='3.682' timestamp='2017-12-22-Fri-18.07.23.775'/>
         </ApiClient>
         <ApiClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
           <parameters color='000000' name='test_label'/>
-          <execution duration_seconds='0.343' timestamp='2017-12-18-Mon-12.02.27.888'/>
+          <execution duration_seconds='0.406' timestamp='2017-12-22-Fri-18.07.27.457'/>
         </ApiClient>
-        <section duration_seconds='5.569' name='patch_label' timestamp='2017-12-18-Mon-12.02.28.231'>
+        <section name='patch_label' timestamp='2017-12-22-Fri-18.07.27.862'>
           <ApiClient method='PATCH' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-            <parameters color='ffffff'/>
-            <execution duration_seconds='0.359' timestamp='2017-12-18-Mon-12.02.28.231'/>
+            <parameters color='ffffff' name='not test_label'/>
+            <execution duration_seconds='0.359' timestamp='2017-12-22-Fri-18.07.27.862'/>
           </ApiClient>
           <section name='Evaluation'>
             <section name='Returned label correct'>
               <section class='Label' method='verdict_equal?' name='updated_label'>
                 <verdict id='patch_label:updated_label:id' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                  <exp_value>782141399</exp_value>
-                  <act_value>782141399</act_value>
+                  <exp_value>786061452</exp_value>
+                  <act_value>786061452</act_value>
                 </verdict>
-                <verdict id='patch_label:updated_label:url' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                <verdict id='patch_label:updated_label:url' message='Updated label correct' method='verdict_assert_equal?' outcome='failed' volatile='false'>
                   <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label</exp_value>
-                  <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label</act_value>
+                  <act_value>nil</act_value>
+                  <exception>
+                    <class>Minitest::Assertion</class>
+                    <message>
+                      --- expected +++ actual @@ -1,2 +1 @@ -# encoding: UTF-8
+                      -&quot;https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label&quot; +nil
+                    </message>
+                    <backtrace>
+                      <![CDATA[
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:158:in `block in verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:146:in `verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:72:in `block in verdict_equal?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:71:in `verdict_equal?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/endpoints/labels/patch_labels_name.rb:32:in `block (3 levels) in verdict_call_and_verify_success'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/endpoints/labels/patch_labels_name.rb:30:in `block (2 levels) in verdict_call_and_verify_success'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/endpoints/labels/patch_labels_name.rb:29:in `block in verdict_call_and_verify_success'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/endpoints/labels/patch_labels_name.rb:27:in `verdict_call_and_verify_success'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/patch_labels_name_test.rb:25:in `block (3 levels) in test_patch_labels_name'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/patch_labels_name_test.rb:13:in `block (2 levels) in test_patch_labels_name'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:28:in `block in with_api_client'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/api_client.rb:19:in `with'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:27:in `with_api_client'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/patch_labels_name_test.rb:11:in `block in test_patch_labels_name'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:21:in `block (2 levels) in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:20:in `block in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:12:in `prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/patch_labels_name_test.rb:9:in `test_patch_labels_name']]>
+                    </backtrace>
+                  </exception>
                 </verdict>
-                <verdict id='patch_label:updated_label:name' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                <verdict id='patch_label:updated_label:name' message='Updated label correct' method='verdict_assert_equal?' outcome='failed' volatile='false'>
                   <exp_value>test_label</exp_value>
-                  <act_value>test_label</act_value>
+                  <act_value>not test_label</act_value>
+                  <exception>
+                    <class>Minitest::Assertion</class>
+                    <message>
+                      --- expected +++ actual @@ -1,2 +1,2 @@ # encoding: UTF-8
+                      -&quot;test_label&quot; +&quot;not test_label&quot;
+                    </message>
+                    <backtrace>
+                      <![CDATA[
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:158:in `block in verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:146:in `verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:72:in `block in verdict_equal?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:71:in `verdict_equal?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/endpoints/labels/patch_labels_name.rb:32:in `block (3 levels) in verdict_call_and_verify_success'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/endpoints/labels/patch_labels_name.rb:30:in `block (2 levels) in verdict_call_and_verify_success'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/endpoints/labels/patch_labels_name.rb:29:in `block in verdict_call_and_verify_success'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/endpoints/labels/patch_labels_name.rb:27:in `verdict_call_and_verify_success'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/patch_labels_name_test.rb:25:in `block (3 levels) in test_patch_labels_name'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/patch_labels_name_test.rb:13:in `block (2 levels) in test_patch_labels_name'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:28:in `block in with_api_client'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/api_client.rb:19:in `with'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:27:in `with_api_client'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/patch_labels_name_test.rb:11:in `block in test_patch_labels_name'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:21:in `block (2 levels) in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:20:in `block in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:12:in `prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/patch_labels_name_test.rb:9:in `test_patch_labels_name']]>
+                    </backtrace>
+                  </exception>
                 </verdict>
-                <verdict id='patch_label:updated_label:color' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                <verdict id='patch_label:updated_label:color' message='Updated label correct' method='verdict_assert_equal?' outcome='failed' volatile='false'>
+                  <exp_value>000000</exp_value>
+                  <act_value>ffffff</act_value>
+                  <exception>
+                    <class>Minitest::Assertion</class>
+                    <message>
+                      --- expected +++ actual @@ -1,2 +1,2 @@ # encoding: UTF-8
+                      -&quot;000000&quot; +&quot;ffffff&quot;
+                    </message>
+                    <backtrace>
+                      <![CDATA[
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:158:in `block in verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:146:in `verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:72:in `block in verdict_equal?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:71:in `verdict_equal?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/endpoints/labels/patch_labels_name.rb:32:in `block (3 levels) in verdict_call_and_verify_success'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/endpoints/labels/patch_labels_name.rb:30:in `block (2 levels) in verdict_call_and_verify_success'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/endpoints/labels/patch_labels_name.rb:29:in `block in verdict_call_and_verify_success'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/endpoints/labels/patch_labels_name.rb:27:in `verdict_call_and_verify_success'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/patch_labels_name_test.rb:25:in `block (3 levels) in test_patch_labels_name'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/patch_labels_name_test.rb:13:in `block (2 levels) in test_patch_labels_name'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:28:in `block in with_api_client'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/api_client.rb:19:in `with'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:27:in `with_api_client'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/patch_labels_name_test.rb:11:in `block in test_patch_labels_name'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:21:in `block (2 levels) in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:20:in `block in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:12:in `prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/patch_labels_name_test.rb:9:in `test_patch_labels_name']]>
+                    </backtrace>
+                  </exception>
+                </verdict>
+                <verdict id='patch_label:updated_label:default' message='Updated label correct' method='verdict_assert_equal?' outcome='failed' volatile='false'>
+                  <exp_value>false</exp_value>
+                  <act_value>nil</act_value>
+                  <exception>
+                    <class>Minitest::Assertion</class>
+                    <message>Expected: false Actual: nil</message>
+                    <backtrace>
+                      <![CDATA[
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:158:in `block in verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:146:in `verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:72:in `block in verdict_equal?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:71:in `verdict_equal?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/endpoints/labels/patch_labels_name.rb:32:in `block (3 levels) in verdict_call_and_verify_success'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/endpoints/labels/patch_labels_name.rb:30:in `block (2 levels) in verdict_call_and_verify_success'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/endpoints/labels/patch_labels_name.rb:29:in `block in verdict_call_and_verify_success'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/endpoints/labels/patch_labels_name.rb:27:in `verdict_call_and_verify_success'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/patch_labels_name_test.rb:25:in `block (3 levels) in test_patch_labels_name'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/patch_labels_name_test.rb:13:in `block (2 levels) in test_patch_labels_name'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:28:in `block in with_api_client'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/api_client.rb:19:in `with'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:27:in `with_api_client'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/patch_labels_name_test.rb:11:in `block in test_patch_labels_name'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:21:in `block (2 levels) in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:20:in `block in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:12:in `prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/patch_labels_name_test.rb:9:in `test_patch_labels_name']]>
+                    </backtrace>
+                  </exception>
+                </verdict>
+              </section>
+            </section>
+            <section name='Label updated'>
+              <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/not%20test_label'>
+                <execution duration_seconds='0.312' timestamp='2017-12-22-Fri-18.07.28.408'/>
+              </ApiClient>
+              <section class='Label' method='verdict_equal?' name='fetched_label'>
+                <verdict id='patch_label:fetched_label:id' message='Fetched label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                  <exp_value>786061452</exp_value>
+                  <act_value>786061452</act_value>
+                </verdict>
+                <verdict id='patch_label:fetched_label:name' message='Fetched label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+                  <exp_value>not test_label</exp_value>
+                  <act_value>not test_label</act_value>
+                </verdict>
+                <verdict id='patch_label:fetched_label:color' message='Fetched label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                   <exp_value>ffffff</exp_value>
                   <act_value>ffffff</act_value>
                 </verdict>
-                <verdict id='patch_label:updated_label:default' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                  <exp_value>false</exp_value>
-                  <act_value>false</act_value>
-                </verdict>
               </section>
-              <section name='Label updated'>
-                <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-                  <execution duration_seconds='0.359' timestamp='2017-12-18-Mon-12.02.28.590'/>
-                </ApiClient>
-                <section class='Label' method='verdict_equal?' name='fetched_label'>
-                  <verdict id='patch_label:fetched_label:id' message='Fetched label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                    <exp_value>782141399</exp_value>
-                    <act_value>782141399</act_value>
-                  </verdict>
-                  <verdict id='patch_label:fetched_label:url' message='Fetched label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                    <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label</exp_value>
-                    <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label</act_value>
-                  </verdict>
-                  <verdict id='patch_label:fetched_label:name' message='Fetched label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                    <exp_value>test_label</exp_value>
-                    <act_value>test_label</act_value>
-                  </verdict>
-                  <verdict id='patch_label:fetched_label:color' message='Fetched label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                    <exp_value>ffffff</exp_value>
-                    <act_value>ffffff</act_value>
-                  </verdict>
-                  <verdict id='patch_label:fetched_label:default' message='Fetched label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                    <exp_value>false</exp_value>
-                    <act_value>false</act_value>
-                  </verdict>
-                </section>
-              </section>
-              <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-                <execution duration_seconds='0.374' timestamp='2017-12-18-Mon-12.02.28.949'/>
-              </ApiClient>
-              <ApiClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-                <execution duration_seconds='0.390' timestamp='2017-12-18-Mon-12.02.29.323'/>
-              </ApiClient>
             </section>
           </section>
-        </section>
-        <section name='Count of errors (unexpected exceptions)'>
-          <verdict id='error_count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
-            <exp_value>0</exp_value>
-            <act_value>0</act_value>
-          </verdict>
+          <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/not%20test_label'>
+            <execution duration_seconds='0.328' timestamp='2017-12-22-Fri-18.07.28.720'/>
+          </ApiClient>
+          <ApiClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/not%20test_label'>
+            <execution duration_seconds='0.374' timestamp='2017-12-22-Fri-18.07.29.048'/>
+          </ApiClient>
         </section>
       </section>
+    </section>
+    <section name='Count of errors (unexpected exceptions)'>
+      <verdict id='error_count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
+        <exp_value>0</exp_value>
+        <act_value>0</act_value>
+      </verdict>
     </section>
   </test_method>
 </patch_labels_name_test>

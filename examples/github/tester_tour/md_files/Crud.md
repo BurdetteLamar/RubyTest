@@ -42,7 +42,7 @@ class CrudTest < BaseClassForTest
           end
           if ENV['NO_CRUD']
             # Here's how we create a label via the endpoint.
-            require_relative '../../endpoints/labels/post_labels'
+            require_relative '../../api/endpoints/labels/post_labels'
             label_created = PostLabels.call(api_client, label_to_create)
           else
             # And here's how via the CRUD method.
@@ -56,7 +56,7 @@ class CrudTest < BaseClassForTest
           label_to_read.log(log, 'Label to read')
           if ENV['NO_CRUD']
             # Here's how we read a label via the endpoint.
-            require_relative '../../endpoints/labels/get_labels_name'
+            require_relative '../../api/endpoints/labels/get_labels_name'
             label_read = GetLabelsName.call(api_client, label_to_read)
           else
             # And here's how via the CRUD method.
@@ -66,16 +66,16 @@ class CrudTest < BaseClassForTest
         end
 
         log.section('Update') do
-          label_to_update = label_read
-          label_to_update.color = 'ffffff'
-          label_to_update.log(log, 'Label to update')
+          label_target = label_read
+          label_source = label_target.perturb
+          label_target.log(log, 'Label to update')
           if ENV['NO_CRUD']
             # Here's how we update a label via the endpoint.
-            require_relative '../../endpoints/labels/patch_labels_name'
-            label_updated = PatchLabelsName.call(api_client, label_to_update)
+            require_relative '../../api/endpoints/labels/patch_labels_name'
+            label_updated = PatchLabelsName.call(api_client, label_target, label_source)
           else
             # And here's how via the CRUD method.
-            label_updated = label_to_update.update(api_client)
+            label_updated = label_target.update(api_client, label_source)
           end
           label_updated.log(log, 'Label updated')
         end
@@ -84,7 +84,7 @@ class CrudTest < BaseClassForTest
           label_to_delete = label_updated
           if ENV['NO_CRUD']
             # Here's how we delete a label via the endpoint.
-            require_relative '../../endpoints/labels/delete_labels_name'
+            require_relative '../../api/endpoints/labels/delete_labels_name'
             DeleteLabelsName.call(api_client, label_to_delete)
           else
             # And here's how via the CRUD method.
@@ -112,7 +112,7 @@ Notes:
 ```xml
 <crud_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='5.132' name='crud_test' timestamp='2017-12-18-Mon-12.01.45.955'>
+  <test_method duration_seconds='5.086' name='crud_test' timestamp='2017-12-22-Fri-18.06.45.554'>
     <section name='Test'>
       <section name='Create'>
         <section name='Label to create'>
@@ -122,16 +122,16 @@ Notes:
         </section>
         <section name='Delete if exists, to avoid collision'>
           <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-            <execution duration_seconds='3.682' timestamp='2017-12-18-Mon-12.01.45.955'/>
+            <execution duration_seconds='3.619' timestamp='2017-12-22-Fri-18.06.45.570'/>
           </ApiClient>
           <comment>Deleted? No.</comment>
         </section>
         <ApiClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
           <parameters color='000000' name='test label'/>
-          <execution duration_seconds='0.328' timestamp='2017-12-18-Mon-12.01.49.637'/>
+          <execution duration_seconds='0.390' timestamp='2017-12-22-Fri-18.06.49.189'/>
         </ApiClient>
         <section name='Label created'>
-          <data field='id' value='782140758'/>
+          <data field='id' value='786061239'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'/>
           <data field='name' value='test label'/>
           <data field='color' value='000000'/>
@@ -140,17 +140,17 @@ Notes:
       </section>
       <section name='Read'>
         <section name='Label to read'>
-          <data field='id' value='782140758'/>
+          <data field='id' value='786061239'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'/>
           <data field='name' value='test label'/>
           <data field='color' value='000000'/>
           <data field='default' value='false'/>
         </section>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-          <execution duration_seconds='0.359' timestamp='2017-12-18-Mon-12.01.49.964'/>
+          <execution duration_seconds='0.312' timestamp='2017-12-22-Fri-18.06.49.579'/>
         </ApiClient>
         <section name='Label read'>
-          <data field='id' value='782140758'/>
+          <data field='id' value='786061239'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'/>
           <data field='name' value='test label'/>
           <data field='color' value='000000'/>
@@ -159,27 +159,27 @@ Notes:
       </section>
       <section name='Update'>
         <section name='Label to update'>
-          <data field='id' value='782140758'/>
+          <data field='id' value='786061239'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'/>
           <data field='name' value='test label'/>
-          <data field='color' value='ffffff'/>
+          <data field='color' value='000000'/>
           <data field='default' value='false'/>
         </section>
         <ApiClient method='PATCH' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-          <parameters color='ffffff'/>
-          <execution duration_seconds='0.390' timestamp='2017-12-18-Mon-12.01.50.323'/>
+          <parameters color='ffffff' name='not test label'/>
+          <execution duration_seconds='0.390' timestamp='2017-12-22-Fri-18.06.49.891'/>
         </ApiClient>
         <section name='Label updated'>
-          <data field='id' value='782140758'/>
-          <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'/>
-          <data field='name' value='test label'/>
+          <data field='id' value='786061239'/>
+          <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/not%20test%20label'/>
+          <data field='name' value='not test label'/>
           <data field='color' value='ffffff'/>
           <data field='default' value='false'/>
         </section>
       </section>
       <section name='Delete'>
-        <ApiClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-          <execution duration_seconds='0.374' timestamp='2017-12-18-Mon-12.01.50.713'/>
+        <ApiClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/not%20test%20label'>
+          <execution duration_seconds='0.359' timestamp='2017-12-22-Fri-18.06.50.281'/>
         </ApiClient>
       </section>
     </section>

@@ -26,31 +26,31 @@ class FirstTest < BaseClassForTest
 
         label_to_create = Label.provisioned
         label_created = nil
+        label_updated = nil
 
         log.section('Create') do
-          label_returned = label_to_create.create!(api_client)
-          Label.verdict_equal?(log, :create_return_correct, label_to_create, label_returned)
-          label_returned.verdict_read_and_verify?(api_client, log, :created_correctly)
-          label_created = label_returned
+          label_created = label_to_create.create!(api_client)
+          Label.verdict_equal?(log, :create_return_correct, label_to_create, label_created)
+          label_created.verdict_read_and_verify?(api_client, log, :created_correctly)
         end
 
         log.section('Read') do
-          label_returned = label_created.read(api_client)
-          Label.verdict_equal?(log, :read_correctly, label_created, label_returned)
+          label_read = label_created.read(api_client)
+          Label.verdict_equal?(log, :read_correctly, label_created, label_read)
         end
 
         log.section('Update') do
-          label_to_update = label_created.perturb
-          label_returned = label_to_update.update(api_client)
-          label_to_update.log(log, 'Label to update')
-          label_returned.log(log, 'Label returned')
-          Label.verdict_equal?(log, :update_return_correct, label_to_update, label_returned)
-          label_returned.verdict_read_and_verify?(api_client, log, :updated_correctly)
+          label_source = label_created.perturb
+          label_source.url = nil
+          label_source.default = nil
+          label_updated = label_created.update!(api_client, label_source)
+          Label.verdict_equal?(log, :update_return_correct, label_source, label_updated)
+          label_updated.verdict_read_and_verify?(api_client, log, :updated_correctly)
         end
 
         log.section('Delete') do
-          label_returned = label_created.delete(api_client)
-          log.verdict_assert_nil?(:delete_return_correct, label_returned)
+          return_value = label_updated.delete(api_client)
+          log.verdict_assert_nil?(:delete_return_correct, return_value)
           label_created.verdict_refute_exist?(api_client, log, :deleted_correctly)
         end
 
@@ -67,19 +67,23 @@ Notes:
 
 - The test first defines:
   - `label_to_create`, a variable to  house data for creating a label.
-  - `label_created`, a variable that will house the data for the created label, including new values for `:id` and `:url`.
+  - `label_created`, a variable that will house the data for a created label, including new values for `:id` and `:url`.
+  - `label_updated`, a variable that will house the data for an updated label, including new values for `:id` and `:url`.
 - In section `Create`:
   - `create!`, a method that first deletes the label if it exists, then creates the label.  (Method `:create`, without the exclamation point, would fail if the label exists.)
   - `:create_return_correct` and `:created_correctly`, symbols that are _verdict identifiers_.  A verdict identifier appears in each verdict method call.
   - `Label.verdict_equal?`,  a method that verifies that the returned label data is correct.
   - `label_returned.verdict_read_and_verify?`, a method that verifies that the label was correctly created in GitHub.
-  - `label_created`, a variable that saves the label data for use in the following sections.
-- Inn section `Read`:
+- In section `Read`:
+  - `label_created.read` a method that reads a label, which is stored into variable `label_read`.
   - `Label.verdict_equal?`, a method that verifies that the returned label data is correct.
-- Inn section `Update`:
+- In section `Update`:
+  - `label_created.perturb`, a method that perturbs data from `label_created`, which is stored into `label_source`.
+  - The UI does not have the label's url or default, so these are set to nil, and will be ignored.
   - `Label.verdict_equal?`, a method that verifies that the returned label data is correct.
   - `label_returned.verdict_read_and_verify?`, a method that verifies that the label was correctly updated in GitHub.
 - In section `Delete`:
+  - `label_updated.delete`, a method that deletes a label.
   - `log.verdict_assert_nil?`, a method that verifies that the return value is `nil`.
   - `label_created.verdict_refute_exist?`, a method that verifies that the label was deleted in GitHub.
 
@@ -90,16 +94,16 @@ You're welcome to review this log, but the smaller logs in other tour stops will
 <code>test_first.xml</code>
 ```xml
 <first_test>
-  <summary errors='0' failures='0' verdicts='26'/>
-  <test_method name='first_test' timestamp='2017-12-18-Mon-12.00.22.661'>
+  <summary errors='0' failures='0' verdicts='24'/>
+  <test_method duration_seconds='6.614' name='first_test' timestamp='2017-12-22-Fri-18.04.58.639'>
     <section name='Test'>
       <section name='Create'>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-          <execution duration_seconds='3.806' timestamp='2017-12-18-Mon-12.00.22.676'/>
+          <execution duration_seconds='3.697' timestamp='2017-12-22-Fri-18.04.58.654'/>
         </ApiClient>
         <ApiClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
           <parameters color='000000' name='test label'/>
-          <execution duration_seconds='0.374' timestamp='2017-12-18-Mon-12.00.26.483'/>
+          <execution duration_seconds='0.343' timestamp='2017-12-22-Fri-18.05.02.352'/>
         </ApiClient>
         <section class='Label' method='verdict_equal?' name='create_return_correct'>
           <verdict id='create_return_correct:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
@@ -114,149 +118,130 @@ You're welcome to review this log, but the smaller logs in other tour stops will
             <exp_value>false</exp_value>
             <act_value>false</act_value>
           </verdict>
-          <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-            <execution duration_seconds='0.359' timestamp='2017-12-18-Mon-12.00.26.857'/>
-          </ApiClient>
-          <section class='Label' method='verdict_equal?' name='created_correctly'>
-            <verdict id='created_correctly:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>782139225</exp_value>
-              <act_value>782139225</act_value>
-            </verdict>
-            <verdict id='created_correctly:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label</exp_value>
-              <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label</act_value>
-            </verdict>
-            <verdict id='created_correctly:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>test label</exp_value>
-              <act_value>test label</act_value>
-            </verdict>
-            <verdict id='created_correctly:color' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>000000</exp_value>
-              <act_value>000000</act_value>
-            </verdict>
-            <verdict id='created_correctly:default' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>false</exp_value>
-              <act_value>false</act_value>
-            </verdict>
-          </section>
-          <section name='Read'>
-            <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-              <execution duration_seconds='0.390' timestamp='2017-12-18-Mon-12.00.27.216'/>
-            </ApiClient>
-            <section class='Label' method='verdict_equal?' name='read_correctly'>
-              <verdict id='read_correctly:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                <exp_value>782139225</exp_value>
-                <act_value>782139225</act_value>
-              </verdict>
-              <verdict id='read_correctly:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label</exp_value>
-                <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label</act_value>
-              </verdict>
-              <verdict id='read_correctly:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                <exp_value>test label</exp_value>
-                <act_value>test label</act_value>
-              </verdict>
-              <verdict id='read_correctly:color' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                <exp_value>000000</exp_value>
-                <act_value>000000</act_value>
-              </verdict>
-              <verdict id='read_correctly:default' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                <exp_value>false</exp_value>
-                <act_value>false</act_value>
-              </verdict>
-            </section>
-            <section duration_seconds='6.365' name='Update'>
-              <ApiClient method='PATCH' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-                <parameters color='ffffff'/>
-                <execution duration_seconds='0.374' timestamp='2017-12-18-Mon-12.00.27.606'/>
-              </ApiClient>
-              <section name='Label to update'>
-                <data field='id' value='782139225'/>
-                <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'/>
-                <data field='name' value='test label'/>
-                <data field='color' value='ffffff'/>
-                <data field='default' value='false'/>
-              </section>
-              <section name='Label returned'>
-                <data field='id' value='782139225'/>
-                <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'/>
-                <data field='name' value='test label'/>
-                <data field='color' value='ffffff'/>
-                <data field='default' value='false'/>
-              </section>
-              <section class='Label' method='verdict_equal?' name='update_return_correct'>
-                <verdict id='update_return_correct:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                  <exp_value>782139225</exp_value>
-                  <act_value>782139225</act_value>
-                </verdict>
-                <verdict id='update_return_correct:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                  <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label</exp_value>
-                  <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label</act_value>
-                </verdict>
-                <verdict id='update_return_correct:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                  <exp_value>test label</exp_value>
-                  <act_value>test label</act_value>
-                </verdict>
-                <verdict id='update_return_correct:color' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                  <exp_value>ffffff</exp_value>
-                  <act_value>ffffff</act_value>
-                </verdict>
-                <verdict id='update_return_correct:default' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                  <exp_value>false</exp_value>
-                  <act_value>false</act_value>
-                </verdict>
-                <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-                  <execution duration_seconds='0.343' timestamp='2017-12-18-Mon-12.00.27.980'/>
-                </ApiClient>
-                <section class='Label' method='verdict_equal?' name='updated_correctly'>
-                  <verdict id='updated_correctly:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                    <exp_value>782139225</exp_value>
-                    <act_value>782139225</act_value>
-                  </verdict>
-                  <verdict id='updated_correctly:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                    <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label</exp_value>
-                    <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label</act_value>
-                  </verdict>
-                  <verdict id='updated_correctly:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                    <exp_value>test label</exp_value>
-                    <act_value>test label</act_value>
-                  </verdict>
-                  <verdict id='updated_correctly:color' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                    <exp_value>ffffff</exp_value>
-                    <act_value>ffffff</act_value>
-                  </verdict>
-                  <verdict id='updated_correctly:default' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                    <exp_value>false</exp_value>
-                    <act_value>false</act_value>
-                  </verdict>
-                </section>
-                <section name='Delete'>
-                  <ApiClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-                    <execution duration_seconds='0.343' timestamp='2017-12-18-Mon-12.00.28.323'/>
-                  </ApiClient>
-                  <verdict id='delete_return_correct' method='verdict_assert_nil?' outcome='passed' volatile='false'>
-                    <act_value>nil</act_value>
-                  </verdict>
-                  <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-                    <execution duration_seconds='0.359' timestamp='2017-12-18-Mon-12.00.28.667'/>
-                  </ApiClient>
-                  <verdict id='deleted_correctly' method='verdict_refute?' outcome='passed' volatile='false'>
-                    <act_value>false</act_value>
-                  </verdict>
-                </section>
-              </section>
-            </section>
-            <section name='Count of errors (unexpected exceptions)'>
-              <verdict id='error_count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
-                <exp_value>0</exp_value>
-                <act_value>0</act_value>
-              </verdict>
-            </section>
-          </section>
         </section>
+        <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
+          <execution duration_seconds='0.359' timestamp='2017-12-22-Fri-18.05.02.695'/>
+        </ApiClient>
+        <section class='Label' method='verdict_equal?' name='created_correctly'>
+          <verdict id='created_correctly:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+            <exp_value>786060615</exp_value>
+            <act_value>786060615</act_value>
+          </verdict>
+          <verdict id='created_correctly:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+            <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label</exp_value>
+            <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label</act_value>
+          </verdict>
+          <verdict id='created_correctly:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+            <exp_value>test label</exp_value>
+            <act_value>test label</act_value>
+          </verdict>
+          <verdict id='created_correctly:color' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+            <exp_value>000000</exp_value>
+            <act_value>000000</act_value>
+          </verdict>
+          <verdict id='created_correctly:default' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+            <exp_value>false</exp_value>
+            <act_value>false</act_value>
+          </verdict>
+        </section>
+      </section>
+      <section name='Read'>
+        <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
+          <execution duration_seconds='0.374' timestamp='2017-12-22-Fri-18.05.03.054'/>
+        </ApiClient>
+        <section class='Label' method='verdict_equal?' name='read_correctly'>
+          <verdict id='read_correctly:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+            <exp_value>786060615</exp_value>
+            <act_value>786060615</act_value>
+          </verdict>
+          <verdict id='read_correctly:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+            <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label</exp_value>
+            <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label</act_value>
+          </verdict>
+          <verdict id='read_correctly:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+            <exp_value>test label</exp_value>
+            <act_value>test label</act_value>
+          </verdict>
+          <verdict id='read_correctly:color' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+            <exp_value>000000</exp_value>
+            <act_value>000000</act_value>
+          </verdict>
+          <verdict id='read_correctly:default' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+            <exp_value>false</exp_value>
+            <act_value>false</act_value>
+          </verdict>
+        </section>
+      </section>
+      <section name='Update'>
+        <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/not%20test%20label'>
+          <execution duration_seconds='0.343' timestamp='2017-12-22-Fri-18.05.03.428'/>
+        </ApiClient>
+        <ApiClient method='PATCH' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
+          <parameters color='ffffff' name='not test label'/>
+          <execution duration_seconds='0.374' timestamp='2017-12-22-Fri-18.05.03.771'/>
+        </ApiClient>
+        <section class='Label' method='verdict_equal?' name='update_return_correct'>
+          <verdict id='update_return_correct:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+            <exp_value>786060615</exp_value>
+            <act_value>786060615</act_value>
+          </verdict>
+          <verdict id='update_return_correct:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+            <exp_value>not test label</exp_value>
+            <act_value>not test label</act_value>
+          </verdict>
+          <verdict id='update_return_correct:color' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+            <exp_value>ffffff</exp_value>
+            <act_value>ffffff</act_value>
+          </verdict>
+        </section>
+        <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/not%20test%20label'>
+          <execution duration_seconds='0.359' timestamp='2017-12-22-Fri-18.05.04.146'/>
+        </ApiClient>
+        <section class='Label' method='verdict_equal?' name='updated_correctly'>
+          <verdict id='updated_correctly:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+            <exp_value>786060615</exp_value>
+            <act_value>786060615</act_value>
+          </verdict>
+          <verdict id='updated_correctly:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+            <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/not%20test%20label</exp_value>
+            <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/not%20test%20label</act_value>
+          </verdict>
+          <verdict id='updated_correctly:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+            <exp_value>not test label</exp_value>
+            <act_value>not test label</act_value>
+          </verdict>
+          <verdict id='updated_correctly:color' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+            <exp_value>ffffff</exp_value>
+            <act_value>ffffff</act_value>
+          </verdict>
+          <verdict id='updated_correctly:default' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+            <exp_value>false</exp_value>
+            <act_value>false</act_value>
+          </verdict>
+        </section>
+      </section>
+      <section name='Delete'>
+        <ApiClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/not%20test%20label'>
+          <execution duration_seconds='0.374' timestamp='2017-12-22-Fri-18.05.04.520'/>
+        </ApiClient>
+        <verdict id='delete_return_correct' method='verdict_assert_nil?' outcome='passed' volatile='false'>
+          <act_value>nil</act_value>
+        </verdict>
+        <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
+          <execution duration_seconds='0.359' timestamp='2017-12-22-Fri-18.05.04.894'/>
+        </ApiClient>
+        <verdict id='deleted_correctly' method='verdict_refute?' outcome='passed' volatile='false'>
+          <act_value>false</act_value>
+        </verdict>
       </section>
     </section>
   </test_method>
+  <section name='Count of errors (unexpected exceptions)'>
+    <verdict id='error_count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
+      <exp_value>0</exp_value>
+      <act_value>0</act_value>
+    </verdict>
+  </section>
 </first_test>
 ```
 
