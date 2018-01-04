@@ -1,24 +1,24 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop:** [Meet the Log and Clients](./Meet.md#meet-the-log-and-clients)
+**Prev Stop:** [Web UI Test](./WebUi.md#web-ui-test)
 
-**Next Stop:** [Second Test](./Second.md#second-test)
+**Next Stop:** [Test Sections and Nesting](./Sections.md#test-sections-and-nesting)
 
 
-# First Test
+# Rest API Test
 
-Here's a simple first test, one that tests CRUD methods (create, read, update, delete) to operate on `Label` objects.
+Here's a simple REST API test, one that tests CRUD methods (create, read, update, delete) to operate on `Label` objects.
 
 ## Example Test
 
-<code>first_test.rb</code>
+<code>rest_api_test.rb</code>
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
 
 require_relative '../../data/label'
 
-class FirstTest < BaseClassForTest
+class RestApiTest < BaseClassForTest
 
-  def test_first
+  def test_rest_api
 
     prelude do |log|
 
@@ -91,19 +91,19 @@ Notes:
 
 You're welcome to review this log, but the smaller logs in other tour stops will introduce log features step by step.
 
-<code>test_first.xml</code>
+<code>test_rest_api.xml</code>
 ```xml
-<first_test>
+<rest_api_test>
   <summary errors='0' failures='0' verdicts='24'/>
-  <test_method duration_seconds='6.614' name='first_test' timestamp='2017-12-22-Fri-18.04.58.639'>
+  <test_method duration_seconds='6.864' name='rest_api_test' timestamp='2018-01-04-Thu-12.30.46.495'>
     <section name='Test'>
       <section name='Create'>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-          <execution duration_seconds='3.697' timestamp='2017-12-22-Fri-18.04.58.654'/>
+          <execution duration_seconds='3.806' timestamp='2018-01-04-Thu-12.30.46.511'/>
         </ApiClient>
         <ApiClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
           <parameters color='000000' name='test label'/>
-          <execution duration_seconds='0.343' timestamp='2017-12-22-Fri-18.05.02.352'/>
+          <execution duration_seconds='0.374' timestamp='2018-01-04-Thu-12.30.50.364'/>
         </ApiClient>
         <section class='Label' method='verdict_equal?' name='create_return_correct'>
           <verdict id='create_return_correct:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
@@ -120,12 +120,12 @@ You're welcome to review this log, but the smaller logs in other tour stops will
           </verdict>
         </section>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-          <execution duration_seconds='0.359' timestamp='2017-12-22-Fri-18.05.02.695'/>
+          <execution duration_seconds='0.374' timestamp='2018-01-04-Thu-12.30.50.739'/>
         </ApiClient>
         <section class='Label' method='verdict_equal?' name='created_correctly'>
           <verdict id='created_correctly:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-            <exp_value>786060615</exp_value>
-            <act_value>786060615</act_value>
+            <exp_value>795190168</exp_value>
+            <act_value>795190168</act_value>
           </verdict>
           <verdict id='created_correctly:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
             <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label</exp_value>
@@ -147,12 +147,12 @@ You're welcome to review this log, but the smaller logs in other tour stops will
       </section>
       <section name='Read'>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-          <execution duration_seconds='0.374' timestamp='2017-12-22-Fri-18.05.03.054'/>
+          <execution duration_seconds='0.359' timestamp='2018-01-04-Thu-12.30.51.113'/>
         </ApiClient>
         <section class='Label' method='verdict_equal?' name='read_correctly'>
           <verdict id='read_correctly:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-            <exp_value>786060615</exp_value>
-            <act_value>786060615</act_value>
+            <exp_value>795190168</exp_value>
+            <act_value>795190168</act_value>
           </verdict>
           <verdict id='read_correctly:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
             <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label</exp_value>
@@ -174,16 +174,16 @@ You're welcome to review this log, but the smaller logs in other tour stops will
       </section>
       <section name='Update'>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/not%20test%20label'>
-          <execution duration_seconds='0.343' timestamp='2017-12-22-Fri-18.05.03.428'/>
+          <execution duration_seconds='0.343' timestamp='2018-01-04-Thu-12.30.51.472'/>
         </ApiClient>
         <ApiClient method='PATCH' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
           <parameters color='ffffff' name='not test label'/>
-          <execution duration_seconds='0.374' timestamp='2017-12-22-Fri-18.05.03.771'/>
+          <execution duration_seconds='0.421' timestamp='2018-01-04-Thu-12.30.51.846'/>
         </ApiClient>
         <section class='Label' method='verdict_equal?' name='update_return_correct'>
           <verdict id='update_return_correct:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-            <exp_value>786060615</exp_value>
-            <act_value>786060615</act_value>
+            <exp_value>795190168</exp_value>
+            <act_value>795190168</act_value>
           </verdict>
           <verdict id='update_return_correct:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
             <exp_value>not test label</exp_value>
@@ -195,12 +195,12 @@ You're welcome to review this log, but the smaller logs in other tour stops will
           </verdict>
         </section>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/not%20test%20label'>
-          <execution duration_seconds='0.359' timestamp='2017-12-22-Fri-18.05.04.146'/>
+          <execution duration_seconds='0.343' timestamp='2018-01-04-Thu-12.30.52.267'/>
         </ApiClient>
         <section class='Label' method='verdict_equal?' name='updated_correctly'>
           <verdict id='updated_correctly:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-            <exp_value>786060615</exp_value>
-            <act_value>786060615</act_value>
+            <exp_value>795190168</exp_value>
+            <act_value>795190168</act_value>
           </verdict>
           <verdict id='updated_correctly:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
             <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/not%20test%20label</exp_value>
@@ -222,13 +222,13 @@ You're welcome to review this log, but the smaller logs in other tour stops will
       </section>
       <section name='Delete'>
         <ApiClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/not%20test%20label'>
-          <execution duration_seconds='0.374' timestamp='2017-12-22-Fri-18.05.04.520'/>
+          <execution duration_seconds='0.359' timestamp='2018-01-04-Thu-12.30.52.642'/>
         </ApiClient>
         <verdict id='delete_return_correct' method='verdict_assert_nil?' outcome='passed' volatile='false'>
           <act_value>nil</act_value>
         </verdict>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-          <execution duration_seconds='0.359' timestamp='2017-12-22-Fri-18.05.04.894'/>
+          <execution duration_seconds='0.359' timestamp='2018-01-04-Thu-12.30.53.001'/>
         </ApiClient>
         <verdict id='deleted_correctly' method='verdict_refute?' outcome='passed' volatile='false'>
           <act_value>false</act_value>
@@ -242,10 +242,10 @@ You're welcome to review this log, but the smaller logs in other tour stops will
       <act_value>0</act_value>
     </verdict>
   </section>
-</first_test>
+</rest_api_test>
 ```
 
-**Prev Stop:** [Meet the Log and Clients](./Meet.md#meet-the-log-and-clients)
+**Prev Stop:** [Web UI Test](./WebUi.md#web-ui-test)
 
-**Next Stop:** [Second Test](./Second.md#second-test)
+**Next Stop:** [Test Sections and Nesting](./Sections.md#test-sections-and-nesting)
 

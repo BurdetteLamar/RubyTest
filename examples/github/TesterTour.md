@@ -13,8 +13,8 @@ Each following tour stop assumes you've seen all its predecessors, so repetition
 ### Getting Started
 - [Overview](./tester_tour/md_files/Overview.md/#overview)
 - [Meet the Log and Clients](./tester_tour/md_files/Meet.md/#meet-the-log-and-clients)
-- [First Test](./tester_tour/md_files/First.md/#first-test)
-- [Second Test](./tester_tour/md_files/Second.md/#second-test)
+- [Web UI Test](./tester_tour/md_files/WebUi.md/#web-ui-test)
+- [Rest API Test](./tester_tour/md_files/RestApi.md/#rest-api-test)
 ### Logging
 - [Test Sections and Nesting](./tester_tour/md_files/Sections.md/#test-sections-and-nesting)
 - [Verdicts](./tester_tour/md_files/Verdicts.md/#verdicts)

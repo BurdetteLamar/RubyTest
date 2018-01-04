@@ -108,8 +108,8 @@ EOT
       :getting_started => %w/
           overview
           meet
-          first
-          second
+          web_ui
+          rest_api
       /,
       :logging => %w/
           sections

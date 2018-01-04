@@ -2,9 +2,9 @@ require_relative '../../base_classes/base_class_for_test'
 
 require_relative '../../data/label'
 
-class FirstTest < BaseClassForTest
+class RestApiTest < BaseClassForTest
 
-  def test_first
+  def test_rest_api
 
     prelude do |log|
 

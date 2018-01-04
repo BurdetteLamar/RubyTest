@@ -4,9 +4,9 @@ require_relative '../../data/label'
 
 require_relative '../../ui/pages/labels_page'
 
-class SecondTest < BaseClassForTest
+class WebUiTest < BaseClassForTest
 
-  def test_second
+  def test_web_ui
 
     prelude do |log|
 

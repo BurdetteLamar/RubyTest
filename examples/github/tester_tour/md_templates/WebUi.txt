@@ -1,12 +1,12 @@
 [navigation_links]
 
-# First Test
+# Web UI Test
 
-Here's a simple first test, one that tests CRUD methods (create, read, update, delete) to operate on `Label` objects.
+Here's a simple web UI test, one that tests CRUD methods (create, read, update, delete) to operate on `Label` objects.
 
 ## Example Test
 
-[file_source](../tests/first_test.rb)
+[file_source](../tests/web_ui_test.rb)
 
 Notes:
 
@@ -32,6 +32,6 @@ Notes:
 
 You're welcome to review this log, but the smaller logs in other tour stops will introduce log features step by step.
 
-[file_source](../logs/test_first.xml)
+[file_source](../logs/test_web_ui.xml)
 
 [navigation_links]

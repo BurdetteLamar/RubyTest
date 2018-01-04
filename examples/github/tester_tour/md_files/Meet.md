@@ -1,7 +1,7 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
 **Prev Stop:** [Overview](./Overview.md#overview)
 
-**Next Stop:** [First Test](./First.md#first-test)
+**Next Stop:** [Web UI Test](./WebUi.md#web-ui-test)
 
 
 # Meet the Log and Clients
@@ -50,7 +50,7 @@ Notes:
 ```xml
 <meet_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='meet_test' timestamp='2017-12-22-Fri-18.04.57.157'>
+  <test_method duration_seconds='0.000' name='meet_test' timestamp='2018-01-04-Thu-12.29.53.511'>
     <section name='Test'>
       <comment>Method prelude yields an instance of Log, for logging the test.</comment>
       <comment>
@@ -82,5 +82,5 @@ Notes:
 
 **Prev Stop:** [Overview](./Overview.md#overview)
 
-**Next Stop:** [First Test](./First.md#first-test)
+**Next Stop:** [Web UI Test](./WebUi.md#web-ui-test)
 

@@ -1,16 +1,16 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop:** [First Test](./First.md#first-test)
+**Prev Stop:** [Meet the Log and Clients](./Meet.md#meet-the-log-and-clients)
 
-**Next Stop:** [Test Sections and Nesting](./Sections.md#test-sections-and-nesting)
+**Next Stop:** [Rest API Test](./RestApi.md#rest-api-test)
 
 
-# Second Test
+# Web UI Test
 
-Here's a simple second test, one that tests CRUD methods (create, read, update, delete) to operate on `Label` objects.
+Here's a simple web UI test, one that tests CRUD methods (create, read, update, delete) to operate on `Label` objects.
 
 ## Example Test
 
-<code>second_test.rb</code>
+<code>web_ui_test.rb</code>
 ```ruby
 require_relative '../../base_classes/base_class_for_test'
 
@@ -18,9 +18,9 @@ require_relative '../../data/label'
 
 require_relative '../../ui/pages/labels_page'
 
-class SecondTest < BaseClassForTest
+class WebUiTest < BaseClassForTest
 
-  def test_second
+  def test_web_ui
 
     prelude do |log|
 
@@ -72,11 +72,11 @@ end
 
 Notes:
 
-- The test second defines:
+- The test first defines:
   - `label_to_create`, a variable to  house data for creating a label.
   - `label_created`, a variable that will house the data for the created label, including new values for `:id` and `:url`.
 - In section `Create`:
-  - `create!`, a method that second deletes the label if it exists, then creates the label.  (Method `:create`, without the exclamation point, would fail if the label exists.)
+  - `create!`, a method that first deletes the label if it exists, then creates the label.  (Method `:create`, without the exclamation point, would fail if the label exists.)
   - `:create_return_correct` and `:created_correctly`, symbols that are _verdict identifiers_.  A verdict identifier appears in each verdict method call.
   - `Label.verdict_equal?`,  a method that verifies that the returned label data is correct.
   - `label_returned.verdict_read_and_verify?`, a method that verifies that the label was correctly created in GitHub.
@@ -94,15 +94,15 @@ Notes:
 
 You're welcome to review this log, but the smaller logs in other tour stops will introduce log features step by step.
 
-<code>test_second.xml</code>
+<code>test_web_ui.xml</code>
 ```xml
-<second_test>
+<web_ui_test>
   <summary errors='0' failures='0' verdicts='10'/>
-  <test_method duration_seconds='28.566' name='second_test' timestamp='2017-12-22-Fri-18.05.06.829'>
+  <test_method duration_seconds='29.540' name='web_ui_test' timestamp='2018-01-04-Thu-12.29.54.962'>
     <section name='Test'>
       <section name='Create label'>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-          <execution duration_seconds='3.855' timestamp='2017-12-22-Fri-18.05.13.753'/>
+          <execution duration_seconds='3.842' timestamp='2018-01-04-Thu-12.30.02.464'/>
         </ApiClient>
         <verdict id='label_created:exist' method='verdict_assert_includes?' outcome='passed' volatile='false'>
           <exp_value>
@@ -137,7 +137,7 @@ You're welcome to review this log, but the smaller logs in other tour stops will
       </section>
       <section name='Update label'>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/not%20test%20label'>
-          <execution duration_seconds='0.321' timestamp='2017-12-22-Fri-18.05.27.951'/>
+          <execution duration_seconds='0.364' timestamp='2018-01-04-Thu-12.30.16.873'/>
         </ApiClient>
         <verdict id='label_updated:exist' method='verdict_assert_includes?' outcome='passed' volatile='false'>
           <exp_value>
@@ -177,10 +177,10 @@ You're welcome to review this log, but the smaller logs in other tour stops will
       <act_value>0</act_value>
     </verdict>
   </section>
-</second_test>
+</web_ui_test>
 ```
 
-**Prev Stop:** [First Test](./First.md#first-test)
+**Prev Stop:** [Meet the Log and Clients](./Meet.md#meet-the-log-and-clients)
 
-**Next Stop:** [Test Sections and Nesting](./Sections.md#test-sections-and-nesting)
+**Next Stop:** [Rest API Test](./RestApi.md#rest-api-test)
 

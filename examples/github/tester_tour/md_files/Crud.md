@@ -112,7 +112,7 @@ Notes:
 ```xml
 <crud_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='5.086' name='crud_test' timestamp='2017-12-22-Fri-18.06.45.554'>
+  <test_method duration_seconds='5.164' name='crud_test' timestamp='2018-01-04-Thu-12.31.42.751'>
     <section name='Test'>
       <section name='Create'>
         <section name='Label to create'>
@@ -122,16 +122,16 @@ Notes:
         </section>
         <section name='Delete if exists, to avoid collision'>
           <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-            <execution duration_seconds='3.619' timestamp='2017-12-22-Fri-18.06.45.570'/>
+            <execution duration_seconds='3.682' timestamp='2018-01-04-Thu-12.31.42.751'/>
           </ApiClient>
           <comment>Deleted? No.</comment>
         </section>
         <ApiClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
           <parameters color='000000' name='test label'/>
-          <execution duration_seconds='0.390' timestamp='2017-12-22-Fri-18.06.49.189'/>
+          <execution duration_seconds='0.374' timestamp='2018-01-04-Thu-12.31.46.433'/>
         </ApiClient>
         <section name='Label created'>
-          <data field='id' value='786061239'/>
+          <data field='id' value='795190820'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'/>
           <data field='name' value='test label'/>
           <data field='color' value='000000'/>
@@ -140,17 +140,17 @@ Notes:
       </section>
       <section name='Read'>
         <section name='Label to read'>
-          <data field='id' value='786061239'/>
+          <data field='id' value='795190820'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'/>
           <data field='name' value='test label'/>
           <data field='color' value='000000'/>
           <data field='default' value='false'/>
         </section>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-          <execution duration_seconds='0.312' timestamp='2017-12-22-Fri-18.06.49.579'/>
+          <execution duration_seconds='0.328' timestamp='2018-01-04-Thu-12.31.46.807'/>
         </ApiClient>
         <section name='Label read'>
-          <data field='id' value='786061239'/>
+          <data field='id' value='795190820'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'/>
           <data field='name' value='test label'/>
           <data field='color' value='000000'/>
@@ -159,7 +159,7 @@ Notes:
       </section>
       <section name='Update'>
         <section name='Label to update'>
-          <data field='id' value='786061239'/>
+          <data field='id' value='795190820'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'/>
           <data field='name' value='test label'/>
           <data field='color' value='000000'/>
@@ -167,10 +167,10 @@ Notes:
         </section>
         <ApiClient method='PATCH' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
           <parameters color='ffffff' name='not test label'/>
-          <execution duration_seconds='0.390' timestamp='2017-12-22-Fri-18.06.49.891'/>
+          <execution duration_seconds='0.406' timestamp='2018-01-04-Thu-12.31.47.135'/>
         </ApiClient>
         <section name='Label updated'>
-          <data field='id' value='786061239'/>
+          <data field='id' value='795190820'/>
           <data field='url' value='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/not%20test%20label'/>
           <data field='name' value='not test label'/>
           <data field='color' value='ffffff'/>
@@ -179,7 +179,7 @@ Notes:
       </section>
       <section name='Delete'>
         <ApiClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/not%20test%20label'>
-          <execution duration_seconds='0.359' timestamp='2017-12-22-Fri-18.06.50.281'/>
+          <execution duration_seconds='0.374' timestamp='2018-01-04-Thu-12.31.47.540'/>
         </ApiClient>
       </section>
     </section>

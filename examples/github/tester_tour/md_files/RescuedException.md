@@ -50,7 +50,7 @@ Notes:
 ```xml
 <rescued_exception_test>
   <summary errors='1' failures='1' verdicts='2'/>
-  <test_method duration_seconds='0.016' name='rescued_exception_test' timestamp='2017-12-22-Fri-18.06.06.382'>
+  <test_method duration_seconds='0.016' name='rescued_exception_test' timestamp='2018-01-04-Thu-12.31.03.749'>
     <section name='Test'>
       <section name='Rescued exception'>
         <uncaught_exception>

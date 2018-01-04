@@ -1,30 +1,34 @@
 [navigation_links]
 
-# Second Test
+# Rest API Test
 
-Here's a simple second test, one that tests CRUD methods (create, read, update, delete) to operate on `Label` objects.
+Here's a simple REST API test, one that tests CRUD methods (create, read, update, delete) to operate on `Label` objects.
 
 ## Example Test
 
-[file_source](../tests/second_test.rb)
+[file_source](../tests/rest_api_test.rb)
 
 Notes:
 
-- The test second defines:
+- The test first defines:
   - `label_to_create`, a variable to  house data for creating a label.
-  - `label_created`, a variable that will house the data for the created label, including new values for `:id` and `:url`.
+  - `label_created`, a variable that will house the data for a created label, including new values for `:id` and `:url`.
+  - `label_updated`, a variable that will house the data for an updated label, including new values for `:id` and `:url`.
 - In section `Create`:
-  - `create!`, a method that second deletes the label if it exists, then creates the label.  (Method `:create`, without the exclamation point, would fail if the label exists.)
+  - `create!`, a method that first deletes the label if it exists, then creates the label.  (Method `:create`, without the exclamation point, would fail if the label exists.)
   - `:create_return_correct` and `:created_correctly`, symbols that are _verdict identifiers_.  A verdict identifier appears in each verdict method call.
   - `Label.verdict_equal?`,  a method that verifies that the returned label data is correct.
   - `label_returned.verdict_read_and_verify?`, a method that verifies that the label was correctly created in GitHub.
-  - `label_created`, a variable that saves the label data for use in the following sections.
-- Inn section `Read`:
+- In section `Read`:
+  - `label_created.read` a method that reads a label, which is stored into variable `label_read`.
   - `Label.verdict_equal?`, a method that verifies that the returned label data is correct.
-- Inn section `Update`:
+- In section `Update`:
+  - `label_created.perturb`, a method that perturbs data from `label_created`, which is stored into `label_source`.
+  - The UI does not have the label's url or default, so these are set to nil, and will be ignored.
   - `Label.verdict_equal?`, a method that verifies that the returned label data is correct.
   - `label_returned.verdict_read_and_verify?`, a method that verifies that the label was correctly updated in GitHub.
 - In section `Delete`:
+  - `label_updated.delete`, a method that deletes a label.
   - `log.verdict_assert_nil?`, a method that verifies that the return value is `nil`.
   - `label_created.verdict_refute_exist?`, a method that verifies that the label was deleted in GitHub.
 
@@ -32,6 +36,6 @@ Notes:
 
 You're welcome to review this log, but the smaller logs in other tour stops will introduce log features step by step.
 
-[file_source](../logs/test_second.xml)
+[file_source](../logs/test_rest_api.xml)
 
 [navigation_links]
