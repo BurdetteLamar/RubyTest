@@ -10,28 +10,27 @@ Here's a simple web UI test, one that tests CRUD methods (create, read, update, 
 
 Notes:
 
-- The test first defines:
-  - `label_to_create`, a variable to  house data for creating a label.
-  - `label_created`, a variable that will house the data for the created label, including new values for `:id` and `:url`.
-- In section `Create`:
-  - `create!`, a method that first deletes the label if it exists, then creates the label.  (Method `:create`, without the exclamation point, would fail if the label exists.)
-  - `:create_return_correct` and `:created_correctly`, symbols that are _verdict identifiers_.  A verdict identifier appears in each verdict method call.
-  - `Label.verdict_equal?`,  a method that verifies that the returned label data is correct.
-  - `label_returned.verdict_read_and_verify?`, a method that verifies that the label was correctly created in GitHub.
-  - `label_created`, a variable that saves the label data for use in the following sections.
-- Inn section `Read`:
-  - `Label.verdict_equal?`, a method that verifies that the returned label data is correct.
-- Inn section `Update`:
-  - `Label.verdict_equal?`, a method that verifies that the returned label data is correct.
-  - `label_returned.verdict_read_and_verify?`, a method that verifies that the label was correctly updated in GitHub.
-- In section `Delete`:
-  - `log.verdict_assert_nil?`, a method that verifies that the return value is `nil`.
-  - `label_created.verdict_refute_exist?`, a method that verifies that the label was deleted in GitHub.
-
-## Log
-
-You're welcome to review this log, but the smaller logs in other tour stops will introduce log features step by step.
-
-[file_source](../logs/test_web_ui.xml)
+- The test first:
+  - Declares variable `label_to_create` to house data for creating a label.
+- It then calls methods:
+  - `ui_client.login` to log into the web UI.
+  - `LabelsPage.new(ui_client).visit` to visit the labels page.
+- In section `Create` the test calls methods:
+  - `Label.provisioned` to acquire a provisioned label object, ready for creation.
+  - `labels_page.create_label!` to first delete the label if it exists, then creates the label.  (Method `:create_label`, without the exclamation point, would fail if the label exists.)
+  - `labels_page.wait_for_label` to wait for the created label to appear.
+  - `labels_page.verdict_assert_exist?` to verify that the new label exists.  Symbol `:label_created` is a verdict identifier.
+- In section `Read` the test call methods:
+  - `labels_page.read_label` to read the new label in the UI.
+  - `Label.verdict_equal?` to verify that the label read is correct.  Symbol `:label_read` is a verdict identifier.
+- In section `Update` the test calls methods:
+  - `label_to_create.perturb` to modify the label to be updated.
+  - `labels_page.update_label` to update the label.
+  - `labels_page.wait_for_label` to wait for the updated label to appear.
+  - `labels_page.verdict_assert_exist?` to verify that the updated label appears on the page.  Symbol `:label_updated` is a verdict identifer.
+- In section `Delete` the test calls methods:
+  - `labels_page.delete_label` to delete the label.
+  - `ui_client.browser.refresh` to refresh the page.
+  - `labels_page.verdict_refute_exist?` to verify that the label no longer appears on the page.  Symbol `:label_deleted` is a verdict identifier.
 
 [navigation_links]

@@ -67,22 +67,22 @@ Notes:
 ```xml
 <delete_labels_name_test>
   <summary errors='0' failures='0' verdicts='3'/>
-  <test_method name='delete_labels_name_test' timestamp='2018-01-04-Thu-12.32.28.787'>
-    <section duration_seconds='5.460' name='Test'>
+  <test_method name='delete_labels_name_test' timestamp='2018-01-15-Mon-12.39.01.534'>
+    <section duration_seconds='5.289' name='Test'>
       <section name='Test DeleteLabelsName'>
         <section name='Create the label to be deleted'>
           <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-            <execution duration_seconds='3.791' timestamp='2018-01-04-Thu-12.32.28.787'/>
+            <execution duration_seconds='3.782' timestamp='2018-01-15-Mon-12.39.01.534'/>
           </ApiClient>
           <ApiClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
             <parameters color='000000' name='test label'/>
-            <execution duration_seconds='0.374' timestamp='2018-01-04-Thu-12.32.32.578'/>
+            <execution duration_seconds='0.370' timestamp='2018-01-15-Mon-12.39.05.326'/>
           </ApiClient>
         </section>
         <section name='Test deleting the created label'>
-          <section name='delete_label' timestamp='2018-01-04-Thu-12.32.32.952'>
+          <section name='delete_label' timestamp='2018-01-15-Mon-12.39.05.696'>
             <ApiClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-              <execution duration_seconds='0.343' timestamp='2018-01-04-Thu-12.32.32.952'/>
+              <execution duration_seconds='0.370' timestamp='2018-01-15-Mon-12.39.05.696'/>
             </ApiClient>
             <section name='Evaluation'>
               <section name='Response empty'>
@@ -92,7 +92,7 @@ Notes:
               </section>
               <section name='Label deleted'>
                 <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-                  <execution duration_seconds='0.343' timestamp='2018-01-04-Thu-12.32.33.295'/>
+                  <execution duration_seconds='0.360' timestamp='2018-01-15-Mon-12.39.06.066'/>
                 </ApiClient>
                 <verdict id='delete_label:label_deleted' method='verdict_refute?' outcome='passed' volatile='false'>
                   <act_value>false</act_value>
@@ -102,7 +102,7 @@ Notes:
           </section>
           <section name='Clean up'>
             <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test%20label'>
-              <execution duration_seconds='0.608' timestamp='2018-01-04-Thu-12.32.33.638'/>
+              <execution duration_seconds='0.397' timestamp='2018-01-15-Mon-12.39.06.426'/>
             </ApiClient>
           </section>
         </section>

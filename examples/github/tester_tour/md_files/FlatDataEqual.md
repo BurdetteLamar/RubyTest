@@ -69,12 +69,12 @@ Notes:
 ```xml
 <flat_data_equal_test>
   <summary errors='0' failures='3' verdicts='11'/>
-  <test_method duration_seconds='3.916' name='flat_data_equal_test' timestamp='2018-01-04-Thu-12.31.13.297'>
+  <test_method duration_seconds='3.950' name='flat_data_equal_test' timestamp='2018-01-15-Mon-12.37.44.614'>
     <section name='Test'>
       <section name='Fetch an instance of Label'>
         <section name='Fetch a label'>
           <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-            <execution duration_seconds='3.666' timestamp='2018-01-04-Thu-12.31.13.297'/>
+            <execution duration_seconds='3.650' timestamp='2018-01-15-Mon-12.37.44.624'/>
           </ApiClient>
         </section>
       </section>

@@ -80,15 +80,6 @@ class LabelsPage < BaseClassForPage
     nil
   end
 
-  Contract Label, Label => nil
-  def update_label!(target_label, source_label)
-    ApiClient.with(ui_client.log, ui_client.username, ui_client.password, ui_client.repo_name) do |api_client|
-      source_label.delete_if_exist?(api_client)
-    end
-    ui_client.browser.refresh
-    update_label(target_label, source_label)
-  end
-
   Contract Label => nil
   def delete_label(label)
     label_index = label_index_for(label.name)

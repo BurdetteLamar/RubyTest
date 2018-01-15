@@ -32,10 +32,4 @@ Notes:
   - `log.verdict_assert_nil?`, a method that verifies that the return value is `nil`.
   - `label_created.verdict_refute_exist?`, a method that verifies that the label was deleted in GitHub.
 
-## Log
-
-You're welcome to review this log, but the smaller logs in other tour stops will introduce log features step by step.
-
-[file_source](../logs/test_rest_api.xml)
-
 [navigation_links]
