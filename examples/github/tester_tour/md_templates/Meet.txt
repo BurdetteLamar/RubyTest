@@ -2,7 +2,7 @@
 
 # Meet the Log and Clients
 
-The test framework sets up for the test by delivering objects the test will need:
+The test framework sets up for the test by offers objects the test will need:
 
 - An open test log.
 - A domain-specific GitHub API client.

@@ -65,27 +65,27 @@ Notes:
 ```xml
 <patch_labels_name_test>
   <summary errors='0' failures='4' verdicts='9'/>
-  <test_method name='patch_labels_name_test' timestamp='2018-01-15-Mon-13.16.09.519'>
-    <section duration_seconds='5.678' name='Test'>
+  <test_method name='patch_labels_name_test' timestamp='2018-01-15-Mon-13.29.36.411'>
+    <section duration_seconds='5.616' name='Test'>
       <section name='Test PatchLabelsName'>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-          <execution duration_seconds='3.744' timestamp='2018-01-15-Mon-13.16.09.534'/>
+          <execution duration_seconds='3.682' timestamp='2018-01-15-Mon-13.29.36.411'/>
         </ApiClient>
         <ApiClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
           <parameters color='000000' name='test_label'/>
-          <execution duration_seconds='0.359' timestamp='2018-01-15-Mon-13.16.13.278'/>
+          <execution duration_seconds='0.343' timestamp='2018-01-15-Mon-13.29.40.092'/>
         </ApiClient>
-        <section name='patch_label' timestamp='2018-01-15-Mon-13.16.13.637'>
+        <section name='patch_label' timestamp='2018-01-15-Mon-13.29.40.436'>
           <ApiClient method='PATCH' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
             <parameters color='ffffff' name='not test_label'/>
-            <execution duration_seconds='0.374' timestamp='2018-01-15-Mon-13.16.13.637'/>
+            <execution duration_seconds='0.390' timestamp='2018-01-15-Mon-13.29.40.436'/>
           </ApiClient>
           <section name='Evaluation'>
             <section name='Returned label correct'>
               <section class='Label' method='verdict_equal?' name='updated_label'>
                 <verdict id='patch_label:updated_label:id' message='Updated label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                  <exp_value>805582612</exp_value>
-                  <act_value>805582612</act_value>
+                  <exp_value>805592977</exp_value>
+                  <act_value>805592977</act_value>
                 </verdict>
                 <verdict id='patch_label:updated_label:url' message='Updated label correct' method='verdict_assert_equal?' outcome='failed' volatile='false'>
                   <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label</exp_value>
@@ -228,12 +228,12 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/pa
             </section>
             <section name='Label updated'>
               <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/not%20test_label'>
-                <execution duration_seconds='0.343' timestamp='2018-01-15-Mon-13.16.14.152'/>
+                <execution duration_seconds='0.374' timestamp='2018-01-15-Mon-13.29.40.950'/>
               </ApiClient>
               <section class='Label' method='verdict_equal?' name='fetched_label'>
                 <verdict id='patch_label:fetched_label:id' message='Fetched label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-                  <exp_value>805582612</exp_value>
-                  <act_value>805582612</act_value>
+                  <exp_value>805592977</exp_value>
+                  <act_value>805592977</act_value>
                 </verdict>
                 <verdict id='patch_label:fetched_label:name' message='Fetched label correct' method='verdict_assert_equal?' outcome='passed' volatile='false'>
                   <exp_value>not test_label</exp_value>
@@ -247,10 +247,10 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/pa
             </section>
           </section>
           <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/not%20test_label'>
-            <execution duration_seconds='0.359' timestamp='2018-01-15-Mon-13.16.14.495'/>
+            <execution duration_seconds='0.359' timestamp='2018-01-15-Mon-13.29.41.325'/>
           </ApiClient>
           <ApiClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/not%20test_label'>
-            <execution duration_seconds='0.343' timestamp='2018-01-15-Mon-13.16.14.854'/>
+            <execution duration_seconds='0.343' timestamp='2018-01-15-Mon-13.29.41.684'/>
           </ApiClient>
         </section>
       </section>

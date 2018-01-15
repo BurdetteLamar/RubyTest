@@ -59,12 +59,8 @@ task :tester_tour do
 
 This Tester Tour covers topics that are of interest to a tester who wants to develop and run tests for:
 
-- A REST API.
-- A web UI.
-
-The target REST API may be seen at [GitHub REST API](https://developer.github.com/v3/).
-
-The target web UI may be seen at [GitHub web UI](https://github.com/BurdetteLamar/CrashDummy).
+- A REST API.  The target REST API is the [GitHub REST API](https://developer.github.com/v3/).
+- A web UI.  The target web UI is the [GitHub web UI](https://github.com/BurdetteLamar/CrashDummy).
 
 Each tour stop assumes you've seen all its predecessors, so repetition is minimal.
 
