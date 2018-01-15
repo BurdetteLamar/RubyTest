@@ -79,7 +79,7 @@ Notes:
   - `Label.verdict_equal?`, a method that verifies that the returned label data is correct.
 - In section `Update`:
   - `label_created.perturb`, a method that perturbs data from `label_created`, which is stored into `label_source`.
-  - The UI does not have the label's url or default, so these are set to nil, and will be ignored.
+  - The web UI does not expose the label's url or default, so these are set to nil, and will be ignored.
   - `Label.verdict_equal?`, a method that verifies that the returned label data is correct.
   - `label_returned.verdict_read_and_verify?`, a method that verifies that the label was correctly updated in GitHub.
 - In section `Delete`:

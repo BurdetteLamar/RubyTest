@@ -10,7 +10,7 @@ The test framework sets up for the test by delivering objects the test will need
 
 - An open test log.
 - A domain-specific GitHub API client.
-- A domain-specific GitHub UI client.
+- A domain-specific GitHub web UI client.
 
 ## Example Test
 
@@ -50,7 +50,7 @@ Notes:
 ```xml
 <meet_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='meet_test' timestamp='2018-01-15-Mon-12.36.12.593'>
+  <test_method duration_seconds='0.000' name='meet_test' timestamp='2018-01-15-Mon-13.13.39.706'>
     <section name='Test'>
       <comment>Method prelude yields an instance of Log, for logging the test.</comment>
       <comment>

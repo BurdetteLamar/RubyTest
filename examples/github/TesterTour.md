@@ -1,12 +1,15 @@
 # Tester Tour
 
-The Tester Tour covers topics that are of interest to a tester who wants to develop and run tests for a REST API.
+This Tester Tour covers topics that are of interest to a tester who wants to develop and run tests for:
 
-The tour shows how to use the example infrastructure to test a REST API.  The target REST API may be seen at:
+- A REST API.
+- A web UI.
 
-- [GitHub REST API](https://developer.github.com/v3/)
+The target REST API may be seen at [GitHub REST API](https://developer.github.com/v3/).
 
-Each following tour stop assumes you've seen all its predecessors, so repetition is minimal.
+The target web UI may be seen at [GitHub web UI](https://github.com/BurdetteLamar/CrashDummy).
+
+Each tour stop assumes you've seen all its predecessors, so repetition is minimal.
 
 ## Tour Stops
 
