@@ -15,7 +15,11 @@ class Label < BaseClassForResource
   # Constructor.
   Contract Hash => nil
   def initialize(values = {})
-    super(FIELDS, values)
+    conditioned_values = values.clone
+    if values.include?(:color)
+      conditioned_values[:color].sub!('#', '')
+    end
+    super(FIELDS, conditioned_values)
   end
 
   Contract Log, VERDICT_ID, Symbol => Bool
@@ -88,10 +92,10 @@ class Label < BaseClassForResource
     GetLabelsName.call(client, self)
   end
 
-  Contract ApiClient => Label
-  def update(client)
+  Contract ApiClient, Label => Label
+  def update(client, label_source)
     require_relative '../api/endpoints/labels/patch_labels_name'
-    PatchLabelsName.call(client, self)
+    PatchLabelsName.call(client, self, label_source)
   end
 
   Contract ApiClient => nil
@@ -106,6 +110,12 @@ class Label < BaseClassForResource
   def create!(client)
     delete_if_exist?(client)
     create(client)
+  end
+
+  Contract ApiClient, Label => Label
+  def update!(client, label_source)
+    label_source.delete_if_exist?(client)
+    update(client, label_source)
   end
 
   Contract ApiClient, Log, VERDICT_ID => Bool
@@ -133,7 +143,9 @@ class Label < BaseClassForResource
 
   Contract nil => self
   def perturb!
+    self.name = perturbed_value_for(:name)
     self.color = perturbed_value_for(:color)
+    self.default = perturbed_value_for(:default)
     self
   end
 

@@ -1,19 +1,21 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Next Stop:** [Meet the Client and Log](./Meet.md#meet-the-client-and-log)
+**Next Stop:** [Meet the Log and Clients](./Meet.md#meet-the-log-and-clients)
 
 
 # Overview
 
-This tour shows how to use the `RubyTest` framework for testing the GitHub REST API.
+This tour shows how to use the `RubyTest` framework to test:
 
-This domain-specific GitHub REST API framework is layered onto the underlying RubyTest core framework, and implements:
+- The GitHub REST API.
+- The GitHub web UI.
 
-- A domain-specific API client.
-- Nested test sections that product corresponding nested log sections.
-- Verifications and validations.
-- Exception handling.
-- Data objects, derived from robust base classes.
-- (More to come).
+The domain-specific GitHub framework is layered onto the underlying RubyTest core framework, and implements:
 
-**Next Stop:** [Meet the Client and Log](./Meet.md#meet-the-client-and-log)
+- A domain-specific web UI client.
+- Page objects, corresponding to web UI pages.
+- A domain-specific REST API client.
+- Endpoint objects, corresponding to REST API endpoints.
+- Data objects, corresponding to REST API resources.
+
+**Next Stop:** [Meet the Log and Clients](./Meet.md#meet-the-log-and-clients)
 

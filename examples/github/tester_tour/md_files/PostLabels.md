@@ -40,7 +40,7 @@ class PostLabelsTest < BaseClassForTest
         end
 
       end
-      
+
     end
 
   end
@@ -66,16 +66,16 @@ Notes:
 ```xml
 <post_labels_test>
   <summary errors='0' failures='0' verdicts='11'/>
-  <test_method name='post_labels_test' timestamp='2017-12-14-Thu-12.00.22.107'>
-    <section duration_seconds='5.476' name='Test'>
+  <test_method name='post_labels_test' timestamp='2018-01-15-Mon-13.29.23.057'>
+    <section duration_seconds='5.117' name='Test'>
       <section name='Test PostLabels'>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-          <execution duration_seconds='3.869' timestamp='2017-12-14-Thu-12.00.22.107'/>
+          <execution duration_seconds='3.713' timestamp='2018-01-15-Mon-13.29.23.057'/>
         </ApiClient>
-        <section name='post_label' timestamp='2017-12-14-Thu-12.00.25.976'>
+        <section name='post_label' timestamp='2018-01-15-Mon-13.29.26.770'>
           <ApiClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
             <parameters color='000000' name='test_label'/>
-            <execution duration_seconds='0.374' timestamp='2017-12-14-Thu-12.00.25.976'/>
+            <execution duration_seconds='0.359' timestamp='2018-01-15-Mon-13.29.26.770'/>
           </ApiClient>
           <section name='Evaluation'>
             <section name='Returned label correct'>
@@ -93,10 +93,10 @@ Notes:
                 <section name='verdict_assert_integer_positive?'>
                   <verdict id='post_label:valid:id:integer' method='verdict_assert_kind_of?' outcome='passed' volatile='false'>
                     <exp_value>Integer</exp_value>
-                    <act_value>778993543</act_value>
+                    <act_value>805592862</act_value>
                   </verdict>
                   <verdict id='post_label:valid:id:positive' method='verdict_assert_operator?' outcome='passed' volatile='false'>
-                    <object_1>778993543</object_1>
+                    <object_1>805592862</object_1>
                     <operator>:&gt;</operator>
                     <object_2>0</object_2>
                   </verdict>
@@ -126,7 +126,7 @@ Notes:
             </section>
             <section name='Label created'>
               <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-                <execution duration_seconds='0.499' timestamp='2017-12-14-Thu-12.00.26.366'/>
+                <execution duration_seconds='0.312' timestamp='2018-01-15-Mon-13.29.27.144'/>
               </ApiClient>
               <verdict id='post_label:exists' method='verdict_assert?' outcome='passed' volatile='false'>
                 <act_value>true</act_value>
@@ -136,10 +136,10 @@ Notes:
         </section>
         <section name='Clean up'>
           <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-            <execution duration_seconds='0.328' timestamp='2017-12-14-Thu-12.00.26.865'/>
+            <execution duration_seconds='0.374' timestamp='2018-01-15-Mon-13.29.27.456'/>
           </ApiClient>
           <ApiClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-            <execution duration_seconds='0.390' timestamp='2017-12-14-Thu-12.00.27.193'/>
+            <execution duration_seconds='0.343' timestamp='2018-01-15-Mon-13.29.27.831'/>
           </ApiClient>
         </section>
       </section>

@@ -55,6 +55,7 @@ class ApiClient < BaseClass
   # Patch.
   Contract Array, Hash, Hash => Hash
   def patch(url_elements, query_elements, parameters)
+    p ['URL ELEMENTS', url_elements]
     client_method(__method__, url_elements, query_elements, parameters)
   end
 

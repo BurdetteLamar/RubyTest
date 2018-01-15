@@ -74,26 +74,26 @@ Notes:
 ```xml
 <existence_test>
   <summary errors='0' failures='0' verdicts='3'/>
-  <test_method duration_seconds='6.349' name='existence_test' timestamp='2017-12-14-Thu-12.00.08.988'>
+  <test_method duration_seconds='5.975' name='existence_test' timestamp='2018-01-15-Mon-13.29.10.296'>
     <section name='Test'>
       <section name='Create a label'>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-          <execution duration_seconds='4.103' timestamp='2017-12-14-Thu-12.00.08.988'/>
+          <execution duration_seconds='3.791' timestamp='2018-01-15-Mon-13.29.10.296'/>
         </ApiClient>
         <ApiClient method='POST' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
           <parameters color='000000' name='test_label'/>
-          <execution duration_seconds='0.390' timestamp='2017-12-14-Thu-12.00.13.091'/>
+          <execution duration_seconds='0.406' timestamp='2018-01-15-Mon-13.29.14.087'/>
         </ApiClient>
       </section>
       <section name='Determine existence'>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-          <execution duration_seconds='0.343' timestamp='2017-12-14-Thu-12.00.13.481'/>
+          <execution duration_seconds='0.359' timestamp='2018-01-15-Mon-13.29.14.493'/>
         </ApiClient>
         <comment>Label exists? true</comment>
       </section>
       <section name='Assert existence in verdict'>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-          <execution duration_seconds='0.359' timestamp='2017-12-14-Thu-12.00.13.824'/>
+          <execution duration_seconds='0.374' timestamp='2018-01-15-Mon-13.29.14.852'/>
         </ApiClient>
         <verdict id='assert_exist' method='verdict_assert?' outcome='passed' volatile='false'>
           <act_value>true</act_value>
@@ -101,16 +101,16 @@ Notes:
       </section>
       <section name='Delete if exist'>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-          <execution duration_seconds='0.437' timestamp='2017-12-14-Thu-12.00.14.183'/>
+          <execution duration_seconds='0.343' timestamp='2018-01-15-Mon-13.29.15.226'/>
         </ApiClient>
         <ApiClient method='DELETE' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-          <execution duration_seconds='0.359' timestamp='2017-12-14-Thu-12.00.14.619'/>
+          <execution duration_seconds='0.343' timestamp='2018-01-15-Mon-13.29.15.569'/>
         </ApiClient>
         <comment>Label deleted? true</comment>
       </section>
       <section name='Refute existence in verdict'>
         <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/test_label'>
-          <execution duration_seconds='0.359' timestamp='2017-12-14-Thu-12.00.14.978'/>
+          <execution duration_seconds='0.359' timestamp='2018-01-15-Mon-13.29.15.912'/>
         </ApiClient>
         <verdict id='refute_exist' method='verdict_refute?' outcome='passed' volatile='false'>
           <act_value>false</act_value>

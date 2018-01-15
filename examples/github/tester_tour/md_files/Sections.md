@@ -1,5 +1,5 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
-**Prev Stop:** [First Test](./First.md#first-test)
+**Prev Stop:** [Rest API Test](./RestApi.md#rest-api-test)
 
 **Next Stop:** [Verdicts](./Verdicts.md#verdicts)
 
@@ -65,7 +65,7 @@ Notes:
 ```xml
 <sections_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='6.037' name='sections_test' timestamp='2017-12-14-Thu-11.59.07.118'>
+  <test_method duration_seconds='6.037' name='sections_test' timestamp='2018-01-15-Mon-13.28.08.427'>
     <section name='Test'>
       <section name='First outer section'>
         <section name='First inner section'>
@@ -78,16 +78,16 @@ Notes:
       <section name='Second outer section'>
         <comment>Some test code can go here</comment>
       </section>
-      <section name='Section with timestamp' timestamp='2017-12-14-Thu-11.59.07.118'>
+      <section name='Section with timestamp' timestamp='2018-01-15-Mon-13.28.08.427'>
         <comment>Some test code can go here</comment>
       </section>
       <section duration_seconds='1.014' name='Section with timestamp'>
         <comment>Some test code can go here</comment>
       </section>
-      <section duration_seconds='2.012' name='Section with timestamp and duration' timestamp='2017-12-14-Thu-11.59.08.132'>
+      <section duration_seconds='2.012' name='Section with timestamp and duration' timestamp='2018-01-15-Mon-13.28.09.441'>
         <comment>Some test code can go here</comment>
       </section>
-      <section duration_seconds='3.011' name='Order does not matter' timestamp='2017-12-14-Thu-11.59.10.145'>
+      <section duration_seconds='3.011' name='Order does not matter' timestamp='2018-01-15-Mon-13.28.11.453'>
         <comment>Some test code can go here</comment>
       </section>
     </section>
@@ -105,7 +105,7 @@ Notes:
 
 - The sections in the test are propagated to the log, so that the log is organized the same way as the test.
 
-**Prev Stop:** [First Test](./First.md#first-test)
+**Prev Stop:** [Rest API Test](./RestApi.md#rest-api-test)
 
 **Next Stop:** [Verdicts](./Verdicts.md#verdicts)
 

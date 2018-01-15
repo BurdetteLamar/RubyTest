@@ -57,10 +57,10 @@ Notes:
 ```xml
 <flat_data_valid_test>
   <summary errors='0' failures='1' verdicts='15'/>
-  <test_method duration_seconds='3.791' name='flat_data_valid_test' timestamp='2017-12-14-Thu-11.59.30.861'>
+  <test_method duration_seconds='3.744' name='flat_data_valid_test' timestamp='2018-01-15-Mon-13.28.32.887'>
     <section name='Test'>
       <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-        <execution duration_seconds='3.760' timestamp='2017-12-14-Thu-11.59.30.877'/>
+        <execution duration_seconds='3.728' timestamp='2018-01-15-Mon-13.28.32.887'/>
       </ApiClient>
       <section name='This is valid'>
         <section class='Label' method='verdict_valid?' name='label_valid'>
@@ -132,7 +132,7 @@ Notes:
               <message>Expected /[0-9a-f]{6}/i to match # encoding: UTF-8 &quot;red&quot;.</message>
               <backtrace>
                 <![CDATA[
-c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/data/label.rb:33:in `verdict_field_valid?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/data/label.rb:37:in `verdict_field_valid?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:48:in `block (2 levels) in verdict_valid?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:46:in `block in verdict_valid?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:45:in `verdict_valid?'

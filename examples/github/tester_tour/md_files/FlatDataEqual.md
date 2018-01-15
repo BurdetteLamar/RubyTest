@@ -68,17 +68,17 @@ Notes:
 <code>test_flat_data_equal.xml</code>
 ```xml
 <flat_data_equal_test>
-  <summary errors='0' failures='1' verdicts='11'/>
-  <test_method name='flat_data_equal_test' timestamp='2017-12-14-Thu-11.59.25.635'>
+  <summary errors='0' failures='3' verdicts='11'/>
+  <test_method duration_seconds='3.869' name='flat_data_equal_test' timestamp='2018-01-15-Mon-13.28.27.474'>
     <section name='Test'>
       <section name='Fetch an instance of Label'>
         <section name='Fetch a label'>
           <ApiClient method='GET' url='https://api.github.com/repos/BurdetteLamar/CrashDummy/labels'>
-            <execution duration_seconds='3.744' timestamp='2017-12-14-Thu-11.59.25.635'/>
+            <execution duration_seconds='3.744' timestamp='2018-01-15-Mon-13.28.27.474'/>
           </ApiClient>
         </section>
       </section>
-      <section duration_seconds='3.822' name='These are equal'>
+      <section name='These are equal'>
         <section class='Label' method='verdict_equal?' name='label_equal'>
           <verdict id='label_equal:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
             <exp_value>710733208</exp_value>
@@ -101,35 +101,32 @@ Notes:
             <act_value>true</act_value>
           </verdict>
         </section>
-        <section name='These are not equal'>
-          <section class='Label' method='verdict_equal?' name='label_not_equal'>
-            <verdict id='label_not_equal:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>710733208</exp_value>
-              <act_value>710733208</act_value>
-            </verdict>
-            <verdict id='label_not_equal:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/bug</exp_value>
-              <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/bug</act_value>
-            </verdict>
-            <verdict id='label_not_equal:name' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>bug</exp_value>
-              <act_value>bug</act_value>
-            </verdict>
-            <verdict id='label_not_equal:color' method='verdict_assert_equal?' outcome='failed' volatile='false'>
-              <exp_value>ee0701</exp_value>
-              <act_value>000000</act_value>
-              <exception>
-                <class>Minitest::Assertion</class>
-                <message>
-                  --- expected +++ actual @@ -1,2 +1,2 @@ # encoding: UTF-8
-                  -&quot;ee0701&quot; +&quot;000000&quot;
-                </message>
-                <backtrace>
-                  <![CDATA[
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:154:in `block in verdict_equal_recursive?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:142:in `verdict_equal_recursive?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:69:in `block in verdict_equal?'
-c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:68:in `verdict_equal?'
+      </section>
+      <section name='These are not equal'>
+        <section class='Label' method='verdict_equal?' name='label_not_equal'>
+          <verdict id='label_not_equal:id' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+            <exp_value>710733208</exp_value>
+            <act_value>710733208</act_value>
+          </verdict>
+          <verdict id='label_not_equal:url' method='verdict_assert_equal?' outcome='passed' volatile='false'>
+            <exp_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/bug</exp_value>
+            <act_value>https://api.github.com/repos/BurdetteLamar/CrashDummy/labels/bug</act_value>
+          </verdict>
+          <verdict id='label_not_equal:name' method='verdict_assert_equal?' outcome='failed' volatile='false'>
+            <exp_value>bug</exp_value>
+            <act_value>not bug</act_value>
+            <exception>
+              <class>Minitest::Assertion</class>
+              <message>
+                --- expected +++ actual @@ -1,2 +1,2 @@ # encoding: UTF-8
+                -&quot;bug&quot; +&quot;not bug&quot;
+              </message>
+              <backtrace>
+                <![CDATA[
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:158:in `block in verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:146:in `verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:72:in `block in verdict_equal?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:71:in `verdict_equal?'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/flat_data_equal_test.rb:24:in `block (3 levels) in test_flat_data_equal'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/flat_data_equal_test.rb:21:in `block (2 levels) in test_flat_data_equal'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:28:in `block in with_api_client'
@@ -143,24 +140,78 @@ c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `bl
 c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:12:in `prelude'
 c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/flat_data_equal_test.rb:8:in `test_flat_data_equal']]>
-                </backtrace>
-              </exception>
-            </verdict>
-            <verdict id='label_not_equal:default' method='verdict_assert_equal?' outcome='passed' volatile='false'>
-              <exp_value>true</exp_value>
-              <act_value>true</act_value>
-            </verdict>
-          </section>
+              </backtrace>
+            </exception>
+          </verdict>
+          <verdict id='label_not_equal:color' method='verdict_assert_equal?' outcome='failed' volatile='false'>
+            <exp_value>ee0701</exp_value>
+            <act_value>000000</act_value>
+            <exception>
+              <class>Minitest::Assertion</class>
+              <message>
+                --- expected +++ actual @@ -1,2 +1,2 @@ # encoding: UTF-8
+                -&quot;ee0701&quot; +&quot;000000&quot;
+              </message>
+              <backtrace>
+                <![CDATA[
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:158:in `block in verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:146:in `verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:72:in `block in verdict_equal?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:71:in `verdict_equal?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/flat_data_equal_test.rb:24:in `block (3 levels) in test_flat_data_equal'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/flat_data_equal_test.rb:21:in `block (2 levels) in test_flat_data_equal'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:28:in `block in with_api_client'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/api_client.rb:19:in `with'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:27:in `with_api_client'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/flat_data_equal_test.rb:9:in `block in test_flat_data_equal'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:21:in `block (2 levels) in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:20:in `block in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:12:in `prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/flat_data_equal_test.rb:8:in `test_flat_data_equal']]>
+              </backtrace>
+            </exception>
+          </verdict>
+          <verdict id='label_not_equal:default' method='verdict_assert_equal?' outcome='failed' volatile='false'>
+            <exp_value>true</exp_value>
+            <act_value>false</act_value>
+            <exception>
+              <class>Minitest::Assertion</class>
+              <message>Expected: true Actual: false</message>
+              <backtrace>
+                <![CDATA[
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:158:in `block in verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:146:in `verdict_equal_recursive?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:72:in `block in verdict_equal?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/base_classes/base_class_for_data.rb:71:in `verdict_equal?'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/flat_data_equal_test.rb:24:in `block (3 levels) in test_flat_data_equal'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/flat_data_equal_test.rb:21:in `block (2 levels) in test_flat_data_equal'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:28:in `block in with_api_client'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/api/api_client.rb:19:in `with'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:27:in `with_api_client'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/flat_data_equal_test.rb:9:in `block in test_flat_data_equal'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:21:in `block (2 levels) in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:20:in `block in prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:23:in `block (2 levels) in test'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:22:in `block in test'
+c:/Users/Burdette/Documents/GitHub/RubyTest/lib/helpers/test_helper.rb:21:in `test'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/base_classes/base_class_for_test.rb:12:in `prelude'
+c:/Users/Burdette/Documents/GitHub/RubyTest/examples/github/tester_tour/tests/flat_data_equal_test.rb:8:in `test_flat_data_equal']]>
+              </backtrace>
+            </exception>
+          </verdict>
         </section>
-      </section>
-      <section name='Count of errors (unexpected exceptions)'>
-        <verdict id='error_count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
-          <exp_value>0</exp_value>
-          <act_value>0</act_value>
-        </verdict>
       </section>
     </section>
   </test_method>
+  <section name='Count of errors (unexpected exceptions)'>
+    <verdict id='error_count' method='verdict_assert_equal?' outcome='passed' volatile='true'>
+      <exp_value>0</exp_value>
+      <act_value>0</act_value>
+    </verdict>
+  </section>
 </flat_data_equal_test>
 ```
 

@@ -57,13 +57,12 @@ task :tester_tour do
   heading_text = <<EOT
 # Tester Tour
 
-The Tester Tour covers topics that are of interest to a tester who wants to develop and run tests for a REST API.
+This Tester Tour covers topics that are of interest to a tester who wants to develop and run tests for:
 
-The tour shows how to use the example infrastructure to test a REST API.  The target REST API may be seen at:
+- A REST API.  The target REST API is the [GitHub REST API](https://developer.github.com/v3/).
+- A web UI.  The target web UI is the [GitHub web UI](https://github.com/BurdetteLamar/CrashDummy).
 
-- [GitHub REST API](https://developer.github.com/v3/)
-
-Each following tour stop assumes you've seen all its predecessors, so repetition is minimal.
+Each tour stop assumes you've seen all its predecessors, so repetition is minimal.
 
 ## Tour Stops
 
@@ -91,24 +90,12 @@ EOT
   )
   FileUtils.mkdir_p(md_dir_path)
 
-  # To do.
-  # names = %w/
-  # verdict methods
-  #     verdict_return_values and chaining
-  #     data_exist
-  #     data_crud
-  #     data_convenience (get_all, get_first)
-  #     helpers
-  #     volatility
-  # crud test
-  # /
-  # Done.
-  # In work.
   page_names_by_section = {
       :getting_started => %w/
           overview
           meet
-          first
+          web_ui
+          rest_api
       /,
       :logging => %w/
           sections

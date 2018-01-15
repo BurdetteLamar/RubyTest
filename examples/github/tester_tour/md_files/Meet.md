@@ -1,15 +1,16 @@
 <!--- GENERATED FILE, DO NOT EDIT --->
 **Prev Stop:** [Overview](./Overview.md#overview)
 
-**Next Stop:** [First Test](./First.md#first-test)
+**Next Stop:** [Web UI Test](./WebUi.md#web-ui-test)
 
 
-# Meet the Client and Log
+# Meet the Log and Clients
 
-The test framework sets up for the test by delivering objects the test will need:
+The test framework sets up for the test by offers objects the test will need:
 
 - An open test log.
 - A domain-specific GitHub API client.
+- A domain-specific GitHub web UI client.
 
 ## Example Test
 
@@ -25,6 +26,9 @@ class MeetTest < BaseClassForTest
       with_api_client(log) do |api_client|
         log.comment('Method with_api_client yields an instance of %s, for accessing the GitHub API' % api_client.class.name)
       end
+      with_ui_client(log) do |ui_client|
+        log.comment('Method with_ui_client yields an instance of %s, for accessing the GitHub UI.' % ui_client.class.name)
+      end
     end
   end
 
@@ -38,6 +42,7 @@ Notes:
 - Call methods inherited from the base class:
   - `prelude`:  yields a `Log` object.
   - `with_api_client`:  yields an `ApiClient` object.
+  - `with_ui_client`:  yields a `UiClient` object.
 
 ## Log
 
@@ -45,12 +50,16 @@ Notes:
 ```xml
 <meet_test>
   <summary errors='0' failures='0' verdicts='1'/>
-  <test_method duration_seconds='0.000' name='meet_test' timestamp='2017-12-14-Thu-11.58.57.820'>
+  <test_method duration_seconds='0.000' name='meet_test' timestamp='2018-01-15-Mon-13.27.08.090'>
     <section name='Test'>
       <comment>Method prelude yields an instance of Log, for logging the test.</comment>
       <comment>
         Method with_api_client yields an instance of ApiClient, for accessing
         the GitHub API
+      </comment>
+      <comment>
+        Method with_ui_client yields an instance of UiClient, for accessing the
+        GitHub UI.
       </comment>
     </section>
   </test_method>
@@ -73,5 +82,5 @@ Notes:
 
 **Prev Stop:** [Overview](./Overview.md#overview)
 
-**Next Stop:** [First Test](./First.md#first-test)
+**Next Stop:** [Web UI Test](./WebUi.md#web-ui-test)
 

@@ -1,19 +1,19 @@
 # Tester Tour
 
-The Tester Tour covers topics that are of interest to a tester who wants to develop and run tests for a REST API.
+This Tester Tour covers topics that are of interest to a tester who wants to develop and run tests for:
 
-The tour shows how to use the example infrastructure to test a REST API.  The target REST API may be seen at:
+- A REST API.  The target REST API is the [GitHub REST API](https://developer.github.com/v3/).
+- A web UI.  The target web UI is the [GitHub web UI](https://github.com/BurdetteLamar/CrashDummy).
 
-- [GitHub REST API](https://developer.github.com/v3/)
-
-Each following tour stop assumes you've seen all its predecessors, so repetition is minimal.
+Each tour stop assumes you've seen all its predecessors, so repetition is minimal.
 
 ## Tour Stops
 
 ### Getting Started
 - [Overview](./tester_tour/md_files/Overview.md/#overview)
-- [Meet the Client and Log](./tester_tour/md_files/Meet.md/#meet-the-client-and-log)
-- [First Test](./tester_tour/md_files/First.md/#first-test)
+- [Meet the Log and Clients](./tester_tour/md_files/Meet.md/#meet-the-log-and-clients)
+- [Web UI Test](./tester_tour/md_files/WebUi.md/#web-ui-test)
+- [Rest API Test](./tester_tour/md_files/RestApi.md/#rest-api-test)
 ### Logging
 - [Test Sections and Nesting](./tester_tour/md_files/Sections.md/#test-sections-and-nesting)
 - [Verdicts](./tester_tour/md_files/Verdicts.md/#verdicts)

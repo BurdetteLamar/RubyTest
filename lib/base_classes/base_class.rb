@@ -4,7 +4,7 @@ require_relative '../helpers/debug_helper'
 
 module Contracts
   class MethodHandler
-    # Override this with two small (but important) changees.
+    # Override this with two small (but important) changes.
     def validate_decorators!
       return if decorators.size == 1
       # Weird bug; thinks this method has 55 contracts!
