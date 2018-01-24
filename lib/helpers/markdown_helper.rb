@@ -96,6 +96,7 @@ class MarkdownHelper < BaseClass
 
     # The title is from the .md file text, not the file name.
     titles_by_file_path = {}
+    @anchors_by_file_path = {}
     # Use file_path as key;  title may be repeated.
     file_paths.sort.each do |path|
       File.open(path) do |file|
@@ -105,6 +106,8 @@ class MarkdownHelper < BaseClass
           fail path
         end
         title = title_line[2..-1].chomp
+        anchor = title.gsub(/\s+/, '-').downcase
+        @anchors_by_file_path.store(path, anchor)
         titles_by_file_path.store(path, title)
       end
     end
@@ -156,7 +159,8 @@ class MarkdownHelper < BaseClass
         /.each do |node|
           path = inverted_entry.fetch(node)
           entry.delete(path)
-          link = format('%s - [%s](%s)', '  ' * level, node, path)
+          anchor = @anchors_by_file_path[path]
+          link = format('%s - [%s](%s)', '  ' * level, node, format('%s#%s', path, anchor))
           lines.push(link)
         end
       end
@@ -168,8 +172,11 @@ class MarkdownHelper < BaseClass
           end
           self.do_level(lines, node, level+1)
         else
-          link = format('%s - [%s](%s)', '  ' * level, node, path)
+          anchor = @anchors_by_file_path[path]
+          p anchor
+          link = format('%s - [%s](%s)', '  ' * level, node, format('%s#%s', path, anchor))
           lines.push(link)
+          p link
         end
       end
     end
