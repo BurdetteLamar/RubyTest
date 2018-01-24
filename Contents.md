@@ -1,30 +1,30 @@
 # Contents (Markdown Pages)
 
-   - [RubyTest](./README.md#readme)
-   - [Watchwords](./Watchwords.md#watchwords)
-   - [Future](./Future.md#future)
-   - [Rakefile](./Rakefile.md#rakefile)
-   - [Gemfile](./Gemfile.md#gemfile)
+   - [RubyTest](./readme.md#rubytest)
+   - [Watchwords](./watchwords.md#watchwords)
+   - [Future](./future.md#future)
+   - [Rakefile](./rakefile.md#rakefile)
+   - [Gemfile](./gemfile.md#gemfile)
    - examples/
-     - [Examples](./examples/Examples.md#examples)
+     - [Examples](./examples/examples.md#examples)
      - changes_report/
-       - [Changes Report](./examples/changes_report/ChangesReport.md#changes-report)
+       - [Changes Report](./examples/changes_report/changesreport.md#changes-report)
      - github/
-       - [Tester Tour](./examples/github/TesterTour.md#tester-tour)
+       - [Tester Tour](./examples/github/testertour.md#tester-tour)
      - github_api/
-       - [Moved](./examples/github_api/Moved.md#moved)
-       - [Tester Tour](./examples/github_api/TesterTour.md#tester-tour)
+       - [Moved](./examples/github_api/moved.md#moved)
+       - [Tester Tour](./examples/github_api/testertour.md#tester-tour)
      - log/
-       - [Log Examples](./examples/log/Log.md#log)
+       - [Log Examples](./examples/log/log.md#log-examples)
      - rest_api/
-       - [REST API Test Example](./examples/rest_api/RestAPI.md#rest-api)
+       - [REST API Test Example](./examples/rest_api/restapi.md#rest-api-test-example)
    - lib/
-     - [Lib](./lib/Lib.md#lib)
+     - [Lib](./lib/lib.md#lib)
      - base_classes/
-       - [Base Classes](./lib/base_classes/BaseClasses.md#base-classes)
+       - [Base Classes](./lib/base_classes/baseclasses.md#base-classes)
      - helpers/
-       - [Helpers](./lib/helpers/Helpers.md#helpers)
+       - [Helpers](./lib/helpers/helpers.md#helpers)
      - log/
-       - [Log](./lib/log/Log.md#log)
+       - [Log](./lib/log/log.md#log)
    - test/
-     - [Unit Tests](./test/Test.md#test)
+     - [Unit Tests](./test/test.md#unit-tests)
