@@ -103,7 +103,7 @@ class ApiClient < BaseClass
 
     args.store(:timeout, 60)
     require_relative '../../../lib/helpers/debug_helper'
-    DebugHelper.puts_hash(args)
+    DebugHelper.printf(args)
 
     log_retry = Proc.new do |exception, try, elapsed_time, next_interval|
       puts "#{exception.class}: '#{exception.message}'"

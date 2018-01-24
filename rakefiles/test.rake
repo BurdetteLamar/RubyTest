@@ -25,15 +25,27 @@ namespace :test do
     )
   end
 
+  desc 'Test class DebugHelper'
+  task :debug_helper do
+    autorun(File.join(
+        '..',
+        '..',
+        'test',
+        'helpers',
+        'debug_helper_test.rb',
+    )
+    )
+  end
+
   desc 'Test class HashHelper'
   task :hash_helper do
     autorun(File.join(
-                '..',
-                '..',
-                'test',
-                'helpers',
-                'hash_helper_test.rb',
-            )
+        '..',
+        '..',
+        'test',
+        'helpers',
+        'hash_helper_test.rb',
+    )
     )
   end
 
