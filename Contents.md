@@ -10,8 +10,7 @@
      - changes_report/
        - [Changes Report](./examples/changes_report/ChangesReport.md)
      - github/
-       - api/
-         - [Tester Tour](./examples/github/api/TesterTour.md)
+       - [Tester Tour](./examples/github/TesterTour.md)
      - github_api/
        - [Moved](./examples/github_api/Moved.md)
        - [Tester Tour](./examples/github_api/TesterTour.md)
