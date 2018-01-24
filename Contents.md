@@ -1,10 +1,10 @@
 # Contents (Markdown Pages)
 
-   - [RubyTest](./README.md)
-   - [Watchwords](./Watchwords.md)
-   - [Future](./Future.md)
-   - [Rakefile](./Rakefile.md)
-   - [Gemfile](./Gemfile.md)
+   - [RubyTest](./README.md#readme)
+   - [Watchwords](./Watchwords.md#watchwords)
+   - [Future](./Future.md#future)
+   - [Rakefile](./Rakefile.md#rakefile)
+   - [Gemfile](./Gemfile.md#gemfile)
    - examples/
      - [Examples](./examples/Examples.md#examples)
      - changes_report/
