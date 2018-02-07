@@ -71,6 +71,6 @@ In one test environment I worked on, there were thousands of verdicts, including
 
 The ability to safely ignore these saved us *hours* each day.
 
-## Example Changes Report
+## Example
 
-- [In branch master](https://htmlpreview.github.io/?https://github.com/BurdetteLamar/RubyTest/master/examples/changes_report/ChangesReport.html)
+- [Changes Report](https://htmlpreview.github.io/?https://github.com/BurdetteLamar/RubyTest/master/examples/changes_report/ChangesReport.html)
